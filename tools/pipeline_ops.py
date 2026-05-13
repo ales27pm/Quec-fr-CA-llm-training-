@@ -83,7 +83,7 @@ def curate(in_jsonl: Path, out_jsonl: Path, min_fr_ca_score: float) -> int:
         for raw in src:
             rec = json.loads(raw)
             text = rec["text"].lower()
-            marker_hits = sum(1 for m in FR_CA_MARKERS if m in text)
+            marker_hits = sum(1 for m in FR_CA_MARKERS if re.search(rf"\b{re.escape(m)}\b", text))
             score = marker_hits / max(1, len(FR_CA_MARKERS) ** 0.5)
             if score < min_fr_ca_score:
                 continue
@@ -96,13 +96,23 @@ def curate(in_jsonl: Path, out_jsonl: Path, min_fr_ca_score: float) -> int:
 
 def edit_normative(in_jsonl: Path, out_jsonl: Path) -> int:
     changed = 0
+    out_jsonl.parent.mkdir(parents=True, exist_ok=True)
+
+    def _match_case(src: str, replacement: str) -> str:
+        if src.isupper():
+            return replacement.upper()
+        if src[:1].isupper():
+            return replacement[:1].upper() + replacement[1:]
+        return replacement
+
     with in_jsonl.open("r", encoding="utf-8") as src, out_jsonl.open("w", encoding="utf-8") as dst:
         for raw in src:
             rec = json.loads(raw)
             text = rec["text"]
             new_text = text
             for bad, good in FR_FR_REPLACEMENTS.items():
-                new_text = re.sub(rf"\b{re.escape(bad)}\b", good, new_text, flags=re.IGNORECASE)
+                pattern = re.compile(rf"\b{re.escape(bad)}\b", flags=re.IGNORECASE)
+                new_text = pattern.sub(lambda m: _match_case(m.group(0), good), new_text)
             rec["text"] = new_text
             rec["normative_edits"] = int(new_text != text)
             changed += rec["normative_edits"]
@@ -135,6 +145,7 @@ def split_train_dev_test(in_jsonl: Path, out_dir: Path, seed: int = 42) -> dict[
 
 def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:
     recipe = f"""model:\n  base: mistral-7b-instruct\n  dtype: float16\nruntime:\n  target: ctranslate2\ndata:\n  train: {data_dir / 'train.jsonl'}\n  dev: {data_dir / 'dev.jsonl'}\n  test: {data_dir / 'test.jsonl'}\nalignment:\n  include_qfrblimp_gold_pairs: true\n  lp7_post_alignment_max_drop_key: alignment.lp7_standard_negation_max_post_alignment_drop_ratio\n"""
+    out_yaml.parent.mkdir(parents=True, exist_ok=True)
     out_yaml.write_text(recipe, encoding="utf-8")
 
 

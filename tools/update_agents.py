@@ -127,26 +127,39 @@ def init_nested(path_str: str) -> Path:
             raise RuntimeError(f"Failed to write nested AGENTS file {nested}: {exc}") from exc
     return nested
 def _extract_gate_values(yaml_text: str) -> dict[str, str]:
-    patterns = {
-        "asr_wer_max": r"^\s*wer_max:\s*([0-9.]+)\s*$",
-        "overall_lp_accuracy_min": r"^\s*overall_accuracy_min:\s*([0-9.]+)\s*$",
-        "lp9_min": r"^\s*lp9_lexical_semantics_min:\s*([0-9.]+)\s*$",
-        "lp20_min": r"^\s*lp20_orphaned_preposition_min:\s*([0-9.]+)\s*$",
-        "lp7_drop_ratio_max": r"^\s*lp7_standard_negation_max_post_alignment_drop_ratio:\s*([0-9.]+)\s*$",
+    key_map = {
+        "wer_max": "asr_wer_max",
+        "overall_accuracy_min": "overall_lp_accuracy_min",
+        "lp9_lexical_semantics_min": "lp9_min",
+        "lp20_orphaned_preposition_min": "lp20_min",
+        "lp7_standard_negation_max_post_alignment_drop_ratio": "lp7_drop_ratio_max",
     }
     out: dict[str, str] = {}
-    import re
-    for key, pattern in patterns.items():
-        m = re.search(pattern, yaml_text, flags=re.MULTILINE)
-        if not m:
-            raise SystemExit(f"Validation failed; missing `{key}` in {RELEASE_GATES_PATH}.")
-        out[key] = m.group(1)
+    for raw_line in yaml_text.splitlines():
+        line = raw_line.split("#", 1)[0].strip()
+        if not line or ":" not in line:
+            continue
+        key, value = [part.strip() for part in line.split(":", 1)]
+        mapped = key_map.get(key)
+        if not mapped or not value:
+            continue
+        out[mapped] = value
+
+    missing = [name for name in key_map.values() if name not in out]
+    if missing:
+        raise SystemExit(f"Validation failed; missing gate(s) in {RELEASE_GATES_PATH}: {missing}")
     return out
 
 
 def validate() -> None:
+    if not RELEASE_GATES_PATH.exists():
+        raise SystemExit(f"Validation failed; missing release gates file: {RELEASE_GATES_PATH}")
+
     eval_text = EVAL_PATH.read_text()
-    gates_text = RELEASE_GATES_PATH.read_text()
+    try:
+        gates_text = RELEASE_GATES_PATH.read_text()
+    except OSError as exc:
+        raise SystemExit(f"Validation failed; could not read release gates file {RELEASE_GATES_PATH}: {exc}") from exc
     gate_values = _extract_gate_values(gates_text)
 
     required_benchmarks = ["qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"]
