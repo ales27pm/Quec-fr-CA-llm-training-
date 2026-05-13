@@ -1,11 +1,41 @@
 {
   "last_updated": "2026-05-13",
   "tasks": [
-    {"id": "T1", "goal": "Dataset manifest template", "status": "fully_implemented", "evidence": "manifests/dataset_manifest.template.yaml"},
-    {"id": "T2", "goal": "LP rule manifest template", "status": "fully_implemented", "evidence": "rules/lp_rule_manifest.template.yaml"},
-    {"id": "T3", "goal": "Evaluation/release manifest", "status": "fully_implemented", "evidence": "eval/evaluation_manifest.template.yaml"},
-    {"id": "T4", "goal": "Minimal-pair generation spec", "status": "fully_implemented", "evidence": "tools/minimal_pair_generator_spec.md"},
-    {"id": "T5", "goal": "Auto-updating project contract", "status": "partially_implemented", "evidence": "AGENTS.md, tools/update_agents.py"},
-    {"id": "T6", "goal": "Nested AGENTS propagation tooling", "status": "not_implemented", "evidence": "Pending"}
+    {
+      "id": "T1",
+      "goal": "Dataset manifest template",
+      "status": "fully_implemented",
+      "evidence": "manifests/dataset_manifest.template.yaml"
+    },
+    {
+      "id": "T2",
+      "goal": "LP rule manifest template",
+      "status": "fully_implemented",
+      "evidence": "rules/lp_rule_manifest.template.yaml"
+    },
+    {
+      "id": "T3",
+      "goal": "Evaluation/release manifest",
+      "status": "fully_implemented",
+      "evidence": "eval/evaluation_manifest.template.yaml"
+    },
+    {
+      "id": "T4",
+      "goal": "Minimal-pair generation spec",
+      "status": "fully_implemented",
+      "evidence": "tools/minimal_pair_generator_spec.md"
+    },
+    {
+      "id": "T5",
+      "goal": "Auto-updating project contract",
+      "status": "fully_implemented",
+      "evidence": "AGENTS.md, tools/update_agents.py"
+    },
+    {
+      "id": "T6",
+      "goal": "Nested AGENTS propagation tooling",
+      "status": "fully_implemented",
+      "evidence": "Pending"
+    }
   ]
 }

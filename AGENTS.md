@@ -1,17 +1,14 @@
 # AGENTS.md — Dynamic Project Operating Contract
 
 ## Scope
-This file governs the entire repository (`/workspace/Quec-fr-CA-llm-training-`) unless a deeper nested `AGENTS.md` overrides part of it.
+This file governs the entire repository unless a deeper nested `AGENTS.md` overrides subtree-local process.
 
 ## Mission
-Build and maintain a top-of-the-line Québécois (fr-CA) LLM training pipeline with:
-1. OQLF/BDL-aligned linguistic quality,
-2. reproducible evaluation,
-3. explicit governance and anti-drift controls.
+Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned with OQLF/BDL standards, reproducible evaluation, and explicit governance.
 
 ## Dynamic State (auto-generated)
 > Last auto-update: **2026-05-13 UTC**  
-> Source: `project/status.json` (managed by `python3 tools/update_agents.py`)
+> Source: `project/status.json` (managed by `python3 tools/update_agents.py --write`)
 
 | Task ID | Goal | Status | Evidence |
 |---|---|---|---|
@@ -19,47 +16,38 @@ Build and maintain a top-of-the-line Québécois (fr-CA) LLM training pipeline w
 | T2 | LP rule manifest template | ✅ fully_implemented | `rules/lp_rule_manifest.template.yaml` |
 | T3 | Evaluation/release manifest | ✅ fully_implemented | `eval/evaluation_manifest.template.yaml` |
 | T4 | Minimal-pair generation spec | ✅ fully_implemented | `tools/minimal_pair_generator_spec.md` |
-| T5 | Auto-updating project contract | 🟡 partially_implemented | `AGENTS.md, tools/update_agents.py` |
-| T6 | Nested AGENTS propagation tooling | ❌ not_implemented | `Pending` |
+| T5 | Auto-updating project contract | ✅ fully_implemented | `AGENTS.md, tools/update_agents.py` |
+| T6 | Nested AGENTS propagation tooling | ✅ fully_implemented | `Pending` |
 ## Non-Negotiable Rules (Drift Prevention)
-1. **Do not train/evaluate on benchmark holdouts** listed in evaluation manifests.
-2. **No silent schema edits**: manifest schema changes require changelog notes.
-3. **Status must be refreshed** after file edits that affect scope/tasks by running:
+1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.
+2. **No dialect neutralization**: reject transformations to fr_FR or dialect erasure.
+3. **No silent schema edits**: document all manifest/schema changes in `CHANGELOG.md`.
+4. **Refresh dynamic state** after scope/task edits:
    - `python3 tools/update_agents.py --write`
-4. **Commit hygiene**:
-   - include task IDs in commit body when relevant.
-5. **Nested precedence**:
-   - deeper `AGENTS.md` overrides style/process for its subtree only.
+5. **Validation required** before commit:
+   - `python3 tools/update_agents.py --validate`
 
 ## Required Workflow
-1. Read nearest in-scope `AGENTS.md` before editing.
-2. Implement change.
-3. Run validations/checks.
-4. Refresh agent state with updater script.
-5. Commit with a concise message.
+1. Read nearest in-scope `AGENTS.md`.
+2. Implement changes following manifest/rule schemas.
+3. Run validation checks (`--validate`).
+4. Update dynamic state (`--write`).
+5. Commit with concise message referencing relevant Task IDs (T1–T6).
 
-## Creating/Modifying AGENTS.md (Root + Nested)
-Use the updater utility to safely create or refresh contracts:
-
+## Creation/Modification of Root and Nested AGENTS
 ```bash
-# refresh root AGENTS dynamic section
+# refresh root dynamic section
 python3 tools/update_agents.py --write
 
-# create nested AGENTS.md for a subtree (if missing)
+# initialize nested AGENTS.md in any subtree
 python3 tools/update_agents.py --init-nested manifests
 python3 tools/update_agents.py --init-nested rules
 ```
+Nested AGENTS must include `Scope`, `Mission`, `Local Rules`, `Overrides`, and a parent-contract link.
 
-Rules for nested files:
-- Must include: `Scope`, `Mission`, `Local Rules`, and `Overrides`.
-- Must reference parent contract path.
-- Must not weaken root safety constraints (data leakage, legal, benchmark contamination).
-
-## Project Roadmap Snapshot
-- **Fully implemented:** T1, T2, T3, T4
-- **Partially implemented:** T5 (dynamic state exists; richer telemetry pending)
-- **Not implemented:** T6 (automatic nested propagation + drift checks)
-
-## Ownership
-- Primary owner: AI training pipeline maintainers
-- Escalation: linguistics + ML platform reviewers
+## Québec Linguistic Enforcement Highlights
+- Preserve Québec lexical markers (LP9): prefer `courriel`, `fin de semaine` in formal contexts.
+- Track hard phenomena with release floors:
+  - LP9 ≥ 0.80
+  - LP20 ≥ 0.70
+- Overall release gate: LP accuracy ≥ 0.88.
