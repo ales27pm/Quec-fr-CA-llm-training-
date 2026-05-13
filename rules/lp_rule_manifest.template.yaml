@@ -1,0 +1,32 @@
+schema_version: 1.0
+kind: lp_rule_manifest
+lp_id: 9
+name: lexical_semantics_anglicism
+rule_statement: >-
+  Prefer OQLF-recommended lexical choices and avoid non-standard anglicisms
+  in formal Quebec-French output.
+positive_patterns:
+  - pattern: "courriel"
+    note: Preferred over "email" in formal contexts.
+  - pattern: "fin de semaine"
+    note: Preferred regional form.
+negative_patterns:
+  - pattern: "email"
+    severity: medium
+  - pattern: "week-end"
+    severity: low
+exceptions:
+  - condition: quoted_verbatim
+    note: Keep source quote unchanged.
+  - condition: product_name_or_brand
+    note: Do not rewrite trademarked names.
+confidence_threshold:
+  auto_accept: 0.92
+  auto_reject: 0.40
+human_review_required: true
+review_rubric:
+  dimensions:
+    - oqlf_conformity
+    - semantic_fidelity
+    - register_appropriateness
+  pass_floor: 0.85

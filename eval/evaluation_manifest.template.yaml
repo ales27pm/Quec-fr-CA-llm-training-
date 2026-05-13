@@ -1,0 +1,39 @@
+schema_version: 1.0
+kind: evaluation_manifest
+eval_id: qfr_release_gate_v1
+benchmark_sets:
+  - name: qfrblimp
+    type: minimal_pairs
+    split: test
+  - name: multiblimp_fr
+    type: minimal_pairs
+    split: test
+  - name: qfrcore_eval
+    type: idiom_translation
+    split: test
+  - name: qfrcort_eval
+    type: regional_terms
+    split: test
+metrics:
+  - name: lp_accuracy
+    aggregate: macro
+  - name: dialect_gap
+    definition: qfrblimp_accuracy - multiblimp_fr_accuracy
+  - name: semantic_fidelity
+  - name: human_correction_rate
+release_gates:
+  overall_lp_accuracy_min: 0.88
+  lp_floors:
+    "9": 0.80
+    "20": 0.70
+  max_regression_vs_prev: 0.02
+  max_human_correction_rate: 0.15
+inference_settings:
+  temperature: 0.0
+  top_p: 1.0
+  max_tokens: 256
+  seed: 42
+statistics:
+  significance_test: z_test
+  alpha: 0.001
+  multiple_comparisons: holm_bonferroni

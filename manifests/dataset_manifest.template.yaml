@@ -1,0 +1,64 @@
+schema_version: 1.0
+kind: dataset_manifest
+dataset_id: qfr_<name>
+version: 0.1.0
+owner: data-platform
+source:
+  name: <source_name>
+  url: <source_url>
+  collected_at: YYYY-MM-DD
+  license: <license>
+  jurisdiction: ["CA-QC"]
+collection_method: <scrape|api|manual|partner>
+language:
+  primary: fr-CA
+  secondary: []
+domain_tags: ["institutional", "conversational", "terminology"]
+normalization_steps:
+  - unicode_nfc
+  - punctuation_standardization
+  - whitespace_collapse
+allowed_transformations:
+  - sentence_split
+  - anonymization
+  - typo_correction
+forbidden_transformations:
+  - semantic_rewrite
+  - dialect_neutralization
+  - translation_to_fr_FR
+quality_filters:
+  min_chars: 20
+  max_chars: 500
+  deduplication:
+    strategy: minhash
+    threshold: 0.9
+  language_id:
+    provider: fasttext
+    min_confidence: 0.95
+pii_policy:
+  detection: ["email", "phone", "address", "name"]
+  action: redact
+  reviewer_required: true
+toxicity_policy:
+  classifier: detoxify
+  max_score: 0.8
+  exceptions: ["quoted_legal_text"]
+evaluation_split_policy:
+  train: 0.9
+  dev: 0.05
+  test: 0.05
+  stratify_by: ["domain_tags", "lp_coverage"]
+contamination_checks:
+  blocklisted_eval_sets: ["qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"]
+  exact_match: true
+  fuzzy_match_threshold: 0.92
+lp_coverage:
+  included_lp_ids: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+review_status:
+  automated: true
+  linguist_reviewed: false
+  legal_reviewed: false
+approval:
+  status: draft
+  approved_by: null
+  approved_at: null

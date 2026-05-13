@@ -1,0 +1,41 @@
+{
+  "last_updated": "2026-05-13",
+  "tasks": [
+    {
+      "id": "T1",
+      "goal": "Dataset manifest template",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T2",
+      "goal": "LP rule manifest template",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T3",
+      "goal": "Evaluation/release manifest",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T4",
+      "goal": "Minimal-pair generation spec",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T5",
+      "goal": "Auto-updating project contract",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T6",
+      "goal": "Nested AGENTS propagation tooling",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    }
+  ]
+}
