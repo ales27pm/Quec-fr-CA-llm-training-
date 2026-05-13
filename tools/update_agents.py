@@ -62,7 +62,7 @@ def render_dynamic(status_doc: dict) -> str:
         if isinstance(evidence, list):
             evidence = ", ".join(str(x) for x in evidence)
         lines.append(f"| {tid} | {goal} | {icon(status)} | `{evidence}` |")
-    lines.append("")
+    lines.extend(["", ""])
     return "\n".join(lines)
 def write_root_agents() -> None:
     try:
@@ -73,11 +73,17 @@ def write_root_agents() -> None:
         original_text = AGENTS_PATH.read_text()
     except OSError as exc:
         raise RuntimeError(f"Failed to read AGENTS file {AGENTS_PATH}: {exc}") from exc
-    if START not in original_text or END not in original_text:
-        raise RuntimeError("AGENTS.md markers missing; cannot safely update dynamic section.")
-    pre, rest = original_text.split(START, 1)
-    _, post = rest.split(END, 1)
-    new_text = pre + render_dynamic(status_doc) + "\n" + END + post
+    lines = original_text.splitlines(keepends=True)
+    start_idx = next((i for i, line in enumerate(lines) if line.strip() == START), None)
+    end_idx = next((i for i, line in enumerate(lines) if line.strip() == END), None)
+    if start_idx is None or end_idx is None or end_idx <= start_idx:
+        raise RuntimeError("AGENTS.md markers missing or out of order; cannot safely update dynamic section.")
+
+    replacement = render_dynamic(status_doc).splitlines(keepends=True)
+    if replacement and not replacement[-1].endswith("\n"):
+        replacement[-1] += "\n"
+    new_lines = lines[:start_idx] + replacement + lines[end_idx:]
+    new_text = "".join(new_lines)
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     backup_path = AGENTS_PATH.with_name(f"AGENTS.md.bak.{ts}")
     try:
