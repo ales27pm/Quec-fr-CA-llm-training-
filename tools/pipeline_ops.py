@@ -267,8 +267,14 @@ def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
             malformed_rows += 1
             continue
         try:
-            ref = [float(x) for x in (row.get("embedding_ref") or "").split()]
-            pred = [float(x) for x in (row.get("embedding_pred") or "").split()]
+            embedding_ref_raw = (row.get("embedding_ref") or "").strip()
+            embedding_pred_raw = (row.get("embedding_pred") or "").strip()
+            if not embedding_ref_raw or not embedding_pred_raw:
+                raise ValueError("Missing embedding values.")
+            ref = [float(x) for x in embedding_ref_raw.split()]
+            pred = [float(x) for x in embedding_pred_raw.split()]
+            if not ref or not pred:
+                raise ValueError("Empty embedding vectors.")
             sim = _cosine_similarity(ref, pred)
         except (ValueError, TypeError):
             malformed_rows += 1
