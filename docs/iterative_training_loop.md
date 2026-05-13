@@ -14,6 +14,32 @@ This runbook operationalizes `docs/strategic_roadmap.md` for release-candidate e
 
 ## 2) Iterative loop steps
 1. Ingest Québec-native corpora and refresh dataset manifests.
+   - Reproducible data-prep CLI (standardized):
+
+     ```bash
+     python3 tools/pipeline_ops.py harvest \
+       --inputs <raw_input_1.txt> <raw_input_2.txt> \
+       --out <artifacts/harvest.jsonl> \
+       --min-chars 20
+
+     python3 tools/pipeline_ops.py curate \
+       --in <artifacts/harvest.jsonl> \
+       --out <artifacts/curated.jsonl> \
+       --min-fr-ca-score 0.34
+
+     python3 tools/pipeline_ops.py edit \
+       --in <artifacts/curated.jsonl> \
+       --out <artifacts/edited.jsonl>
+
+     python3 tools/pipeline_ops.py split \
+       --in <artifacts/edited.jsonl> \
+       --out-dir <artifacts/splits> \
+       --seed 42
+
+     python3 tools/pipeline_ops.py recipe \
+       --data-dir <artifacts/splits> \
+       --out <artifacts/recipe.yaml>
+     ```
 2. Fine-tune with dialect-preserving objectives.
 3. Evaluate LP1–LP20 and ASR metrics against centralized gates.
 4. Run alignment with human-validated QFrBLiMP minimal-pair safeguards.
