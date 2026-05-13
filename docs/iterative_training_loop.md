@@ -51,6 +51,14 @@ This runbook operationalizes `docs/strategic_roadmap.md` for release-candidate e
 - Include human-validated QFrBLiMP minimal pairs in SFT/RLHF preference sets.
 - Block promotion when LP7 post-alignment drop exceeds `alignment.lp7_standard_negation_max_post_alignment_drop_ratio`.
 - When blocked, run rollback or corrective fine-tuning before re-evaluation.
+- Standardized LP7 monitor CLI:
+
+  ```bash
+  python3 tools/pipeline_ops.py monitor-lp7 \
+    --pre <lp7_pre_alignment_score> \
+    --post <lp7_post_alignment_score> \
+    --release-gates project/release_gates.yaml
+  ```
 
 ## 4) Semantic diagnostics requirements (LP9/LP20)
 For each release candidate:
@@ -60,6 +68,13 @@ For each release candidate:
   - `regional_idiomatic_fluency`
   - `rare_syntax_orphaned_preposition`
   - `register_or_normative_grounding`
+- Standardized diagnostics CLI:
+
+  ```bash
+  python3 tools/pipeline_ops.py diagnose-semantic \
+    --in-csv <lp9_lp20_diagnostics.csv> \
+    --out-json <artifacts/semantic_diagnostics.json>
+  ```
 
 ## 5) Pre-commit and pre-release governance checks
 Run before any commit or checkpoint promotion:
