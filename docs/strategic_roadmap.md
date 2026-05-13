@@ -13,7 +13,7 @@ This document operationalizes a sovereignty-first roadmap for a Québécois (fr-
 - Fine-tune Whisper Large V3 Turbo using:
   - **Assemblée nationale du Québec** corpus (formal/political register).
   - **Common Voice, Québec subset** (informal, accent-diverse register).
-- Production readiness target: **WER ≤ 6.65%** on held-out validation data.
+- Production readiness WER threshold is defined in `project/release_gates.yaml` (`asr.wer_max`).
 
 ### Regional lexical corpora
 - Integrate:
@@ -39,7 +39,7 @@ All candidates must be evaluated across LP1–LP20:
 5. Clitics in Infinitive Negation
 6. Rising Clitics
 7. Standard Negation
-8. Determinants
+8. Determiners
 9. Lexical Semantics
 10. Idiomatic Agreement
 11. Adjective Agreement
@@ -54,7 +54,7 @@ All candidates must be evaluated across LP1–LP20:
 20. Orphaned Preposition
 
 ### Scaling-law caution
-- Expect grammar accuracy growth with log-parameters but plateaus around **85–90%**.
+- Expect grammar accuracy growth with log-parameters and a plateau range defined in `project/release_gates.yaml` (`benchmarking.scaling_plateau_expected_min/max`).
 - Do not rely on parameter scaling alone to pass release gates.
 
 ### Dialectal robustness check
@@ -74,7 +74,8 @@ Instruction tuning can degrade formal grammatical competence.
   - Prioritize high-confidence examples (target WAWA ~86.31%).
 
 ### Governance trigger
-- Any LP7 (Standard Negation) degradation ≥ 3 points post-alignment triggers rollback or corrective fine-tuning.
+- The maximum allowable LP7 post-alignment drop is defined in `project/release_gates.yaml` (`alignment.lp7_standard_negation_max_post_alignment_drop_pp`).
+- Exceeding that threshold triggers rollback or corrective fine-tuning.
 
 ## 4) Frontier: Unsolved Phenomena (Semantics + Rare Syntax)
 
@@ -100,12 +101,11 @@ Instruction tuning can degrade formal grammatical competence.
 ## Release Gates (Normative + Technical)
 
 A model is release-candidate ready only if all criteria pass:
-- LP overall accuracy **≥ 0.88**.
-- LP9 accuracy **≥ 0.80**.
-- LP20 accuracy **≥ 0.70**.
+- Thresholds in `project/release_gates.yaml` for overall LP accuracy, LP9, LP20, and ASR WER.
 - No significant QFrBLiMP regression versus prior release.
 - No contamination of evaluation holdouts.
-- ASR WER meets target threshold on approved validation sets.
+
+This document intentionally references the centralized threshold file to avoid drift across docs and governance artifacts.
 
 ## Execution Plan (Iterative Loop)
 1. Ingest and normalize multimodal Québec corpora.
