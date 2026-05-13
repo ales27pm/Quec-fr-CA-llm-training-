@@ -16,7 +16,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T2 | LP rule manifest template | ✅ fully_implemented | `rules/lp_rule_manifest.template.yaml` |
 | T3 | Evaluation/release manifest | ✅ fully_implemented | `eval/evaluation_manifest.template.yaml` |
 | T4 | Minimal-pair generation spec | ✅ fully_implemented | `tools/minimal_pair_generator_spec.md` |
-| T5 | Auto-updating project contract | ✅ fully_implemented | `AGENTS.md, tools/update_agents.py` |
+| T5 | Auto-updating project contract | ✅ fully_implemented | `AGENTS.md` |
 | T6 | Nested AGENTS propagation tooling | ✅ fully_implemented | `Pending` |
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.

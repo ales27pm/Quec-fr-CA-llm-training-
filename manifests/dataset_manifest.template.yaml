@@ -49,7 +49,7 @@ evaluation_split_policy:
   test: 0.05
   stratify_by: ["domain_tags", "lp_coverage"]
 contamination_checks:
-  blocklisted_eval_sets: ["qfrblimp", "qfrcore_eval", "qfrcort_eval"]
+  blocklisted_eval_sets: ["qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"]
   exact_match: true
   fuzzy_match_threshold: 0.92
 lp_coverage:

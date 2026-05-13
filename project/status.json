@@ -29,7 +29,7 @@
       "id": "T5",
       "goal": "Auto-updating project contract",
       "status": "fully_implemented",
-      "evidence": "AGENTS.md, tools/update_agents.py"
+      "evidence": "AGENTS.md"
     },
     {
       "id": "T6",
