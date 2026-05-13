@@ -288,15 +288,20 @@ def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
             taxonomy[label] = taxonomy.get(label, 0) + 1
 
     result = {"phenomena": {}, "error_taxonomy": taxonomy, "malformed_rows": malformed_rows}
+    missing_phenomena: list[str] = []
     for ph, stats in by_lp.items():
         n = int(stats["n"])
         if n == 0:
+            missing_phenomena.append(ph)
             continue
         result["phenomena"][ph] = {
             "n": n,
             "binary_accuracy": round(stats["correct"] / n, 6),
             "mean_semantic_similarity": round(stats["semantic_sum"] / n, 6),
         }
+    if missing_phenomena:
+        missing_str = ", ".join(missing_phenomena)
+        raise SystemExit(f"Missing diagnostics rows for required phenomena: {missing_str}")
     out_json.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return result
