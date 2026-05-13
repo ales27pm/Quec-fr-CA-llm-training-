@@ -9,6 +9,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import random
 import re
 from dataclasses import dataclass
@@ -180,6 +181,78 @@ def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:
     out_yaml.write_text(yaml.safe_dump(recipe, sort_keys=False, allow_unicode=True), encoding="utf-8")
 
 
+def _cosine_similarity(vec_a: list[float], vec_b: list[float]) -> float:
+    if len(vec_a) != len(vec_b):
+        raise ValueError("Vector dimensions must match.")
+    dot = sum(a * b for a, b in zip(vec_a, vec_b))
+    norm_a = math.sqrt(sum(a * a for a in vec_a))
+    norm_b = math.sqrt(sum(b * b for b in vec_b))
+    if norm_a == 0.0 or norm_b == 0.0:
+        return 0.0
+    return dot / (norm_a * norm_b)
+
+
+def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:
+    gates = yaml.safe_load(release_gates_path.read_text(encoding="utf-8")) or {}
+    max_drop = gates["alignment"]["lp7_standard_negation_max_post_alignment_drop_ratio"]
+    if pre_alignment_score <= 0:
+        raise SystemExit("LP7 pre-alignment score must be > 0.")
+    drop_ratio = (pre_alignment_score - post_alignment_score) / pre_alignment_score
+    return {
+        "pre_alignment_score": round(pre_alignment_score, 6),
+        "post_alignment_score": round(post_alignment_score, 6),
+        "drop_ratio": round(drop_ratio, 6),
+        "max_allowed_drop_ratio": max_drop,
+        "rollback_required": drop_ratio > max_drop,
+    }
+
+
+def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
+    rows: list[dict[str, str]] = []
+    with in_csv.open("r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            rows.append(row)
+
+    required = {"phenomenon", "is_correct", "embedding_ref", "embedding_pred", "error_label"}
+    if not rows:
+        raise SystemExit("No diagnostic rows found.")
+    if not required.issubset(set(rows[0].keys())):
+        missing = sorted(required - set(rows[0].keys()))
+        raise SystemExit(f"Missing required columns: {missing}")
+
+    by_lp: dict[str, dict[str, float | int]] = {"LP9": {"n": 0, "correct": 0, "semantic_sum": 0.0}, "LP20": {"n": 0, "correct": 0, "semantic_sum": 0.0}}
+    taxonomy: dict[str, int] = {}
+    for row in rows:
+        ph = row["phenomenon"].strip().upper()
+        if ph not in by_lp:
+            continue
+        ref = [float(x) for x in row["embedding_ref"].split()]
+        pred = [float(x) for x in row["embedding_pred"].split()]
+        sim = _cosine_similarity(ref, pred)
+        correct = row["is_correct"].strip() == "1"
+        by_lp[ph]["n"] += 1
+        by_lp[ph]["correct"] += int(correct)
+        by_lp[ph]["semantic_sum"] += sim
+        if not correct:
+            label = row["error_label"].strip() or "unknown"
+            taxonomy[label] = taxonomy.get(label, 0) + 1
+
+    result = {"phenomena": {}, "error_taxonomy": taxonomy}
+    for ph, stats in by_lp.items():
+        n = int(stats["n"])
+        if n == 0:
+            continue
+        result["phenomena"][ph] = {
+            "n": n,
+            "binary_accuracy": round(stats["correct"] / n, 6),
+            "mean_semantic_similarity": round(stats["semantic_sum"] / n, 6),
+        }
+    out_json.parent.mkdir(parents=True, exist_ok=True)
+    out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return result
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -208,6 +281,15 @@ def main() -> None:
     p_r.add_argument("--data-dir", type=Path, required=True)
     p_r.add_argument("--out", type=Path, required=True)
 
+    p_m = sub.add_parser("monitor-lp7")
+    p_m.add_argument("--pre", type=float, required=True)
+    p_m.add_argument("--post", type=float, required=True)
+    p_m.add_argument("--release-gates", type=Path, default=Path("project/release_gates.yaml"))
+
+    p_d = sub.add_parser("diagnose-semantic")
+    p_d.add_argument("--in-csv", type=Path, required=True)
+    p_d.add_argument("--out-json", type=Path, required=True)
+
     args = ap.parse_args()
     if args.cmd == "harvest":
         print(harvest(args.inputs, args.out, args.min_chars, args.dedupe_batch_size))
@@ -220,6 +302,10 @@ def main() -> None:
     elif args.cmd == "recipe":
         write_training_recipe(args.data_dir, args.out)
         print(args.out)
+    elif args.cmd == "monitor-lp7":
+        print(json.dumps(monitor_lp7(args.pre, args.post, args.release_gates), ensure_ascii=False))
+    elif args.cmd == "diagnose-semantic":
+        print(json.dumps(lp_semantic_diagnostics(args.in_csv, args.out_json), ensure_ascii=False))
 
 
 if __name__ == "__main__":
