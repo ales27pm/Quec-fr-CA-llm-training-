@@ -1,0 +1,17 @@
+# Centralized release and quality gates for the Québec French pipeline.
+# Keep this file as the single source of truth for thresholds referenced in docs.
+
+asr:
+  wer_max: 0.0665
+
+linguistic_phenomena:
+  overall_accuracy_min: 0.88
+  lp9_lexical_semantics_min: 0.80
+  lp20_orphaned_preposition_min: 0.70
+
+alignment:
+  lp7_standard_negation_max_post_alignment_drop_ratio: 0.03
+
+benchmarking:
+  scaling_plateau_expected_min: 0.85
+  scaling_plateau_expected_max: 0.90
