@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Update AGENTS dynamic state, scaffold nested AGENTS, and run governance validations."""
 from __future__ import annotations
-
 import argparse
 import datetime as dt
 import json
@@ -9,14 +8,12 @@ import os
 import shutil
 import tempfile
 from pathlib import Path
-
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "project" / "status.json"
 AGENTS_PATH = ROOT / "AGENTS.md"
 EVAL_PATH = ROOT / "eval" / "evaluation_manifest.template.yaml"
 START = "## Dynamic State (auto-generated)"
 END = "## Non-Negotiable Rules (Drift Prevention)"
-
 TASK_FILES = {
     "T1": ROOT / "manifests" / "dataset_manifest.template.yaml",
     "T2": ROOT / "rules" / "lp_rule_manifest.template.yaml",
@@ -25,27 +22,23 @@ TASK_FILES = {
     "T5": ROOT / "tools" / "update_agents.py",
     "T6": ROOT / "manifests" / "AGENTS.md",
 }
-
-
 def icon(status: str) -> str:
     return {
         "fully_implemented": "✅ fully_implemented",
         "partially_implemented": "🟡 partially_implemented",
         "not_implemented": "❌ not_implemented",
     }.get(status, status)
-
-
 def sync_status() -> dict:
     data = json.loads(STATUS_PATH.read_text())
     for task in data.get("tasks", []):
         tid = task.get("id")
         path = TASK_FILES.get(tid)
-        task["status"] = "fully_implemented" if (path and path.exists()) else "not_implemented"
+        new_status = "fully_implemented" if (path and path.exists()) else "not_implemented"
+        task["status"] = new_status
+        task["evidence"] = "Provided" if new_status == "fully_implemented" else "Pending"
     data["last_updated"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
     STATUS_PATH.write_text(json.dumps(data, indent=2) + "\n")
     return data
-
-
 def render_dynamic(status_doc: dict) -> str:
     date = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d UTC")
     lines = [
@@ -71,26 +64,20 @@ def render_dynamic(status_doc: dict) -> str:
         lines.append(f"| {tid} | {goal} | {icon(status)} | `{evidence}` |")
     lines.append("")
     return "\n".join(lines)
-
-
 def write_root_agents() -> None:
     try:
         status_doc = sync_status()
     except (json.JSONDecodeError, OSError) as exc:
         raise RuntimeError(f"Failed to load/sync status JSON at {STATUS_PATH}: {exc}") from exc
-
     try:
         original_text = AGENTS_PATH.read_text()
     except OSError as exc:
         raise RuntimeError(f"Failed to read AGENTS file {AGENTS_PATH}: {exc}") from exc
-
     if START not in original_text or END not in original_text:
         raise RuntimeError("AGENTS.md markers missing; cannot safely update dynamic section.")
-
     pre, rest = original_text.split(START, 1)
     _, post = rest.split(END, 1)
-    new_text = pre + render_dynamic(status_doc) + END + post
-
+    new_text = pre + render_dynamic(status_doc) + "\n" + END + post
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     backup_path = AGENTS_PATH.with_name(f"AGENTS.md.bak.{ts}")
     try:
@@ -103,15 +90,16 @@ def write_root_agents() -> None:
         tmp_path.replace(AGENTS_PATH)
     except OSError as exc:
         raise RuntimeError(f"Failed atomic AGENTS update (backup: {backup_path}): {exc}") from exc
-
-
 def init_nested(path_str: str) -> Path:
-    target_dir = (ROOT / path_str).resolve()
+    root_resolved = ROOT.resolve()
+    resolved_target = (ROOT / path_str).resolve()
+    if os.path.commonpath([str(root_resolved), str(resolved_target)]) != str(root_resolved):
+        raise RuntimeError(f"Refusing to create nested AGENTS outside repository root: {resolved_target}")
+    target_dir = resolved_target
     try:
         target_dir.mkdir(parents=True, exist_ok=True)
     except OSError as exc:
         raise RuntimeError(f"Failed to create directory {target_dir}: {exc}") from exc
-
     nested = target_dir / "AGENTS.md"
     if not nested.exists():
         try:
@@ -131,8 +119,6 @@ def init_nested(path_str: str) -> Path:
         except OSError as exc:
             raise RuntimeError(f"Failed to write nested AGENTS file {nested}: {exc}") from exc
     return nested
-
-
 def validate() -> None:
     text = EVAL_PATH.read_text()
     required = [
@@ -148,8 +134,6 @@ def validate() -> None:
     if missing:
         raise SystemExit(f"Validation failed; missing required release-gate/holdout markers: {missing}")
     print("Validation passed: contamination holdouts and release gates present.")
-
-
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
@@ -157,7 +141,6 @@ def main() -> None:
     parser.add_argument("--validate", action="store_true")
     parser.add_argument("--init-nested", metavar="PATH")
     args = parser.parse_args()
-
     if args.sync_status:
         sync_status()
         print("Status synced.")
@@ -170,7 +153,5 @@ def main() -> None:
         print(f"Nested AGENTS ready at: {init_nested(args.init_nested)}")
     if not any([args.sync_status, args.write, args.validate, args.init_nested]):
         parser.print_help()
-
-
 if __name__ == "__main__":
     main()

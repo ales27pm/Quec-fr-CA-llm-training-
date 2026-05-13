@@ -12,12 +12,13 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 
 | Task ID | Goal | Status | Evidence |
 |---|---|---|---|
-| T1 | Dataset manifest template | ✅ fully_implemented | `manifests/dataset_manifest.template.yaml` |
-| T2 | LP rule manifest template | ✅ fully_implemented | `rules/lp_rule_manifest.template.yaml` |
-| T3 | Evaluation/release manifest | ✅ fully_implemented | `eval/evaluation_manifest.template.yaml` |
-| T4 | Minimal-pair generation spec | ✅ fully_implemented | `tools/minimal_pair_generator_spec.md` |
-| T5 | Auto-updating project contract | ✅ fully_implemented | `AGENTS.md` |
-| T6 | Nested AGENTS propagation tooling | ✅ fully_implemented | `Pending` |
+| T1 | Dataset manifest template | ✅ fully_implemented | `Provided` |
+| T2 | LP rule manifest template | ✅ fully_implemented | `Provided` |
+| T3 | Evaluation/release manifest | ✅ fully_implemented | `Provided` |
+| T4 | Minimal-pair generation spec | ✅ fully_implemented | `Provided` |
+| T5 | Auto-updating project contract | ✅ fully_implemented | `Provided` |
+| T6 | Nested AGENTS propagation tooling | ✅ fully_implemented | `Provided` |
+
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.
 2. **No dialect neutralization**: reject transformations to fr_FR or dialect erasure.

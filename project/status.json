@@ -5,37 +5,37 @@
       "id": "T1",
       "goal": "Dataset manifest template",
       "status": "fully_implemented",
-      "evidence": "manifests/dataset_manifest.template.yaml"
+      "evidence": "Provided"
     },
     {
       "id": "T2",
       "goal": "LP rule manifest template",
       "status": "fully_implemented",
-      "evidence": "rules/lp_rule_manifest.template.yaml"
+      "evidence": "Provided"
     },
     {
       "id": "T3",
       "goal": "Evaluation/release manifest",
       "status": "fully_implemented",
-      "evidence": "eval/evaluation_manifest.template.yaml"
+      "evidence": "Provided"
     },
     {
       "id": "T4",
       "goal": "Minimal-pair generation spec",
       "status": "fully_implemented",
-      "evidence": "tools/minimal_pair_generator_spec.md"
+      "evidence": "Provided"
     },
     {
       "id": "T5",
       "goal": "Auto-updating project contract",
       "status": "fully_implemented",
-      "evidence": "AGENTS.md"
+      "evidence": "Provided"
     },
     {
       "id": "T6",
       "goal": "Nested AGENTS propagation tooling",
       "status": "fully_implemented",
-      "evidence": "Pending"
+      "evidence": "Provided"
     }
   ]
 }
