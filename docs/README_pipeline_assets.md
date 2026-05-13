@@ -8,3 +8,5 @@ This repository now includes starter assets to bootstrap a top-tier fr-CA pipeli
 - `tools/minimal_pair_generator_spec.md`: synthetic minimal pair generation spec.
 
 Use these files as canonical templates and version them alongside training runs.
+
+- `docs/iterative_training_loop.md`: operator runbook for threshold-driven iterative alignment loops.

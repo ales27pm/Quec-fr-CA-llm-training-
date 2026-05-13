@@ -14,3 +14,9 @@
 
 - Corrected README H1 to remove the trailing hyphen in the project title.
 - Standardized roadmap gate units on 0–1 ratios and renamed LP7 alignment threshold key to `alignment.lp7_standard_negation_max_post_alignment_drop_ratio`.
+
+- Added `docs/iterative_training_loop.md` to operationalize the strategic loop with centralized threshold enforcement, LP7 post-alignment rollback triggers, LP9/LP20 semantic diagnostics, and Float16 CTranslate2 release packaging guidance.
+
+- Hardened `tools/update_agents.py --validate` to enforce evaluation-gate synchronization against `project/release_gates.yaml` (removing hardcoded threshold checks in validation logic).
+
+- Added `tools/pipeline_ops.py` with concrete algorithms for data harvesting, fr-CA marker curation, normative lexical editing, train/dev/test splitting, and Float16/CTranslate2 training recipe generation.

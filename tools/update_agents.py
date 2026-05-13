@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "project" / "status.json"
 AGENTS_PATH = ROOT / "AGENTS.md"
 EVAL_PATH = ROOT / "eval" / "evaluation_manifest.template.yaml"
+RELEASE_GATES_PATH = ROOT / "project" / "release_gates.yaml"
 START = "## Dynamic State (auto-generated)"
 END = "## Non-Negotiable Rules (Drift Prevention)"
 TASK_FILES = {
@@ -125,21 +126,47 @@ def init_nested(path_str: str) -> Path:
         except OSError as exc:
             raise RuntimeError(f"Failed to write nested AGENTS file {nested}: {exc}") from exc
     return nested
+def _extract_gate_values(yaml_text: str) -> dict[str, str]:
+    patterns = {
+        "asr_wer_max": r"^\s*wer_max:\s*([0-9.]+)\s*$",
+        "overall_lp_accuracy_min": r"^\s*overall_accuracy_min:\s*([0-9.]+)\s*$",
+        "lp9_min": r"^\s*lp9_lexical_semantics_min:\s*([0-9.]+)\s*$",
+        "lp20_min": r"^\s*lp20_orphaned_preposition_min:\s*([0-9.]+)\s*$",
+        "lp7_drop_ratio_max": r"^\s*lp7_standard_negation_max_post_alignment_drop_ratio:\s*([0-9.]+)\s*$",
+    }
+    out: dict[str, str] = {}
+    import re
+    for key, pattern in patterns.items():
+        m = re.search(pattern, yaml_text, flags=re.MULTILINE)
+        if not m:
+            raise SystemExit(f"Validation failed; missing `{key}` in {RELEASE_GATES_PATH}.")
+        out[key] = m.group(1)
+    return out
+
+
 def validate() -> None:
-    text = EVAL_PATH.read_text()
-    required = [
-        "qfrblimp",
-        "multiblimp_fr",
-        "qfrcore_eval",
-        "qfrcort_eval",
-        "overall_lp_accuracy_min: 0.88",
-        '"9": 0.80',
-        '"20": 0.70',
+    eval_text = EVAL_PATH.read_text()
+    gates_text = RELEASE_GATES_PATH.read_text()
+    gate_values = _extract_gate_values(gates_text)
+
+    required_benchmarks = ["qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"]
+    missing_benchmarks = [name for name in required_benchmarks if name not in eval_text]
+    if missing_benchmarks:
+        raise SystemExit(f"Validation failed; missing required holdout benchmark markers: {missing_benchmarks}")
+
+    required_eval_markers = [
+        f"overall_lp_accuracy_min: {gate_values['overall_lp_accuracy_min']}",
+        f'"9": {gate_values["lp9_min"]}',
+        f'"20": {gate_values["lp20_min"]}',
     ]
-    missing = [r for r in required if r not in text]
-    if missing:
-        raise SystemExit(f"Validation failed; missing required release-gate/holdout markers: {missing}")
-    print("Validation passed: contamination holdouts and release gates present.")
+    missing_eval_markers = [m for m in required_eval_markers if m not in eval_text]
+    if missing_eval_markers:
+        raise SystemExit(
+            "Validation failed; evaluation manifest thresholds are out of sync with project/release_gates.yaml: "
+            f"{missing_eval_markers}"
+        )
+
+    print("Validation passed: contamination holdouts present and release gates synchronized to project/release_gates.yaml.")
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true")
