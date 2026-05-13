@@ -239,33 +239,36 @@ def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release
 
 def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
     rows: list[dict[str, str]] = []
+    fieldnames: list[str] | None = None
     with in_csv.open("r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
         for row in reader:
             rows.append(row)
 
     required = {"phenomenon", "is_correct", "embedding_ref", "embedding_pred", "error_label"}
     if not rows:
         raise SystemExit("No diagnostic rows found.")
-    if not required.issubset(set(rows[0].keys())):
-        missing = sorted(required - set(rows[0].keys()))
+    header = set(fieldnames or [])
+    if not required.issubset(header):
+        missing = sorted(required - header)
         raise SystemExit(f"Missing required columns: {missing}")
 
     by_lp: dict[str, dict[str, float | int]] = {"LP9": {"n": 0, "correct": 0, "semantic_sum": 0.0}, "LP20": {"n": 0, "correct": 0, "semantic_sum": 0.0}}
     taxonomy: dict[str, int] = {}
     malformed_rows = 0
     for row in rows:
-        ph = row["phenomenon"].strip().upper()
+        ph = (row.get("phenomenon") or "").strip().upper()
         if ph not in by_lp:
             malformed_rows += 1
             continue
-        correct_raw = row["is_correct"].strip()
+        correct_raw = (row.get("is_correct") or "").strip()
         if correct_raw not in {"0", "1"}:
             malformed_rows += 1
             continue
         try:
-            ref = [float(x) for x in row["embedding_ref"].split()]
-            pred = [float(x) for x in row["embedding_pred"].split()]
+            ref = [float(x) for x in (row.get("embedding_ref") or "").split()]
+            pred = [float(x) for x in (row.get("embedding_pred") or "").split()]
             sim = _cosine_similarity(ref, pred)
         except (ValueError, TypeError):
             malformed_rows += 1
@@ -275,7 +278,7 @@ def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
         by_lp[ph]["correct"] += int(correct)
         by_lp[ph]["semantic_sum"] += sim
         if not correct:
-            label = row["error_label"].strip() or "unknown"
+            label = (row.get("error_label") or "").strip() or "unknown"
             taxonomy[label] = taxonomy.get(label, 0) + 1
 
     result = {"phenomena": {}, "error_taxonomy": taxonomy, "malformed_rows": malformed_rows}
