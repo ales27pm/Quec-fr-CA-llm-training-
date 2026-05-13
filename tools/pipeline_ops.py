@@ -193,14 +193,44 @@ def _cosine_similarity(vec_a: list[float], vec_b: list[float]) -> float:
 
 
 def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:
-    gates = yaml.safe_load(release_gates_path.read_text(encoding="utf-8")) or {}
-    max_drop = gates["alignment"]["lp7_standard_negation_max_post_alignment_drop_ratio"]
-    if pre_alignment_score <= 0:
-        raise SystemExit("LP7 pre-alignment score must be > 0.")
-    drop_ratio = (pre_alignment_score - post_alignment_score) / pre_alignment_score
+    try:
+        gates = yaml.safe_load(release_gates_path.read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError) as exc:
+        raise SystemExit(f"Failed to read/parse release gates YAML at {release_gates_path}: {exc}")
+    if not isinstance(gates, dict):
+        raise SystemExit(f"Malformed release gates config at {release_gates_path}: expected top-level mapping.")
+    if "alignment" not in gates or not isinstance(gates["alignment"], dict):
+        raise SystemExit(f"Malformed release gates config at {release_gates_path}: missing mapping key `alignment`.")
+    if "lp7_standard_negation_max_post_alignment_drop_ratio" not in gates["alignment"]:
+        raise SystemExit(
+            "Malformed release gates config at "
+            f"{release_gates_path}: missing key `alignment.lp7_standard_negation_max_post_alignment_drop_ratio`."
+        )
+    try:
+        max_drop = float(gates["alignment"]["lp7_standard_negation_max_post_alignment_drop_ratio"])
+    except (TypeError, ValueError):
+        raise SystemExit(
+            "Malformed release gates config at "
+            f"{release_gates_path}: `alignment.lp7_standard_negation_max_post_alignment_drop_ratio` must be numeric."
+        )
+    if not 0.0 <= max_drop <= 1.0:
+        raise SystemExit(
+            "Malformed release gates config at "
+            f"{release_gates_path}: `alignment.lp7_standard_negation_max_post_alignment_drop_ratio` must be in [0.0, 1.0]."
+        )
+    try:
+        pre = float(pre_alignment_score)
+        post = float(post_alignment_score)
+    except (TypeError, ValueError):
+        raise SystemExit("LP7 scores must be numeric values.")
+    if not 0.0 < pre <= 1.0:
+        raise SystemExit("LP7 pre-alignment score must be in (0.0, 1.0].")
+    if not 0.0 <= post <= 1.0:
+        raise SystemExit("LP7 post-alignment score must be in [0.0, 1.0].")
+    drop_ratio = (pre - post) / pre
     return {
-        "pre_alignment_score": round(pre_alignment_score, 6),
-        "post_alignment_score": round(post_alignment_score, 6),
+        "pre_alignment_score": round(pre, 6),
+        "post_alignment_score": round(post, 6),
         "drop_ratio": round(drop_ratio, 6),
         "max_allowed_drop_ratio": max_drop,
         "rollback_required": drop_ratio > max_drop,
@@ -223,14 +253,24 @@ def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
 
     by_lp: dict[str, dict[str, float | int]] = {"LP9": {"n": 0, "correct": 0, "semantic_sum": 0.0}, "LP20": {"n": 0, "correct": 0, "semantic_sum": 0.0}}
     taxonomy: dict[str, int] = {}
+    malformed_rows = 0
     for row in rows:
         ph = row["phenomenon"].strip().upper()
         if ph not in by_lp:
+            malformed_rows += 1
             continue
-        ref = [float(x) for x in row["embedding_ref"].split()]
-        pred = [float(x) for x in row["embedding_pred"].split()]
-        sim = _cosine_similarity(ref, pred)
-        correct = row["is_correct"].strip() == "1"
+        correct_raw = row["is_correct"].strip()
+        if correct_raw not in {"0", "1"}:
+            malformed_rows += 1
+            continue
+        try:
+            ref = [float(x) for x in row["embedding_ref"].split()]
+            pred = [float(x) for x in row["embedding_pred"].split()]
+            sim = _cosine_similarity(ref, pred)
+        except (ValueError, TypeError):
+            malformed_rows += 1
+            continue
+        correct = correct_raw == "1"
         by_lp[ph]["n"] += 1
         by_lp[ph]["correct"] += int(correct)
         by_lp[ph]["semantic_sum"] += sim
@@ -238,7 +278,7 @@ def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
             label = row["error_label"].strip() or "unknown"
             taxonomy[label] = taxonomy.get(label, 0) + 1
 
-    result = {"phenomena": {}, "error_taxonomy": taxonomy}
+    result = {"phenomena": {}, "error_taxonomy": taxonomy, "malformed_rows": malformed_rows}
     for ph, stats in by_lp.items():
         n = int(stats["n"])
         if n == 0:
