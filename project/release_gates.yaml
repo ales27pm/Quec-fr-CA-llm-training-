@@ -10,7 +10,7 @@ linguistic_phenomena:
   lp20_orphaned_preposition_min: 0.70
 
 alignment:
-  lp7_standard_negation_max_post_alignment_drop_pp: 3.0
+  lp7_standard_negation_max_post_alignment_drop_ratio: 0.03
 
 benchmarking:
   scaling_plateau_expected_min: 0.85

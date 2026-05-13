@@ -1,4 +1,4 @@
-# Quec-fr-CA-llm-training-
+# Quec-fr-CA-llm-training
 
 ## Strategic planning
 This repository includes a sovereignty-first roadmap and centralized release thresholds for the Québécois (fr-CA) training program.

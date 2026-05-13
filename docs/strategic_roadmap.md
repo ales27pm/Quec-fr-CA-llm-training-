@@ -74,7 +74,8 @@ Instruction tuning can degrade formal grammatical competence.
   - Prioritize high-confidence examples (target WAWA ~86.31%).
 
 ### Governance trigger
-- The maximum allowable LP7 post-alignment drop is defined in `project/release_gates.yaml` (`alignment.lp7_standard_negation_max_post_alignment_drop_pp`).
+- Unit convention: all score thresholds are expressed as 0–1 ratios for consistency in release automation.
+- The maximum allowable LP7 post-alignment drop is defined in `project/release_gates.yaml` (`alignment.lp7_standard_negation_max_post_alignment_drop_ratio`).
 - Exceeding that threshold triggers rollback or corrective fine-tuning.
 
 ## 4) Frontier: Unsolved Phenomena (Semantics + Rare Syntax)
