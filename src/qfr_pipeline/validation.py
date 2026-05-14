@@ -65,11 +65,13 @@ def validate_repository(root: Path) -> ValidationReport:
             report.issues.append(ValidationIssue(str(path), "dataset_manifest", str(exc)))
 
     for path in sorted((root / "rules").glob("*.y*ml")):
+        manifest_kind = "lp_manifest_unknown"
         try:
             doc = load_yaml(path)
             if not isinstance(doc, dict) or "kind" not in doc:
                 raise ValueError("Rules manifest must be a mapping and include a 'kind' field")
             kind = doc.get("kind")
+            manifest_kind = str(kind)
             if kind == "lp_context_manifest":
                 validate_lp_context_manifest(path)
                 report.checked_files.append(str(path))
@@ -80,8 +82,7 @@ def validate_repository(root: Path) -> ValidationReport:
                 raise ValueError(f"Unsupported rules manifest kind: {kind}")
         except Exception as exc:
             report.ok = False
-            issue_kind = "lp_context_manifest" if "contexts" in path.name else "lp_rule_manifest"
-            report.issues.append(ValidationIssue(str(path), issue_kind, str(exc)))
+            report.issues.append(ValidationIssue(str(path), manifest_kind, str(exc)))
 
     for path in sorted((root / "eval").glob("*.y*ml")):
         try:
