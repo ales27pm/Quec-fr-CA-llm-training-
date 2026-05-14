@@ -52,10 +52,10 @@ def detect_contamination(train_items, holdout_items, threshold: float):
         hon = normalize_text(ho["text"])
         ho_id = ho["id"]
         for tr_id, trn in exact_index.get(hon, []):
-            if hon:
+            if hon and len(hon) >= 3 and len(trn) >= 3:
                 matches.append(ContaminationMatch(tr_id, ho_id, 1.0, "exact", trn, hon))
         for tr_id, trn in train_norm:
-            if trn == hon or not trn or not hon:
+            if trn == hon or not trn or not hon or len(trn) < 3 or len(hon) < 3:
                 continue
             score = _jaccard(trn, hon)
             if score >= threshold:

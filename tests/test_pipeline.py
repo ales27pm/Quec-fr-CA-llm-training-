@@ -55,6 +55,29 @@ def test_contamination_clean_case():
     assert not matches
 
 
+@pytest.mark.parametrize(
+    "hypothesis_text,reference_text",
+    [
+        ("Courriel “officiel”", 'courriel "officiel"'),
+        ("L’affaire d’aujourd’hui", "l'affaire d'aujourd'hui"),
+        ("\u00C5ngstr\u00F6m", "A\u030Angstr\u00F6m"),
+    ],
+)
+def test_contamination_normalization_handles_smart_quotes_and_unicode(hypothesis_text: str, reference_text: str):
+    matches = detect_contamination([{"id": "t1", "text": hypothesis_text}], [{"id": "h1", "text": reference_text}], 0.92)
+    assert matches
+    assert matches[0].match_type == "exact"
+
+
+@pytest.mark.parametrize(
+    "hypothesis_text,reference_text",
+    [("", ""), ("", "nonempty"), ("nonempty", ""), ("a", "a"), ("hi", "hi"), ("x", "y")],
+)
+def test_contamination_very_short_and_empty_strings_do_not_match(hypothesis_text: str, reference_text: str):
+    matches = detect_contamination([{"id": "t1", "text": hypothesis_text}], [{"id": "h1", "text": reference_text}], 0.92)
+    assert not matches
+
+
 def test_minimal_pair_generation_from_lp9_rule():
     out = generate_lp9_minimal_pairs(ROOT / "rules/lp_rule_manifest.template.yaml")
     assert out and out[0]["expected"] == "good"

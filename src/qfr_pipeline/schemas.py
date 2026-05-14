@@ -3,6 +3,7 @@ from typing import Any
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 REQUIRED_HOLDOUTS = {"qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"}
+GATE_TOLERANCE = 1e-6
 
 
 def _parse_unit_interval(value: Any, field_name: str) -> float:
@@ -153,9 +154,14 @@ def ensure_eval_gates_sync(eval_manifest: EvaluationManifest, release_gates: Rel
         lp20_f = float(lp20)
     except (TypeError, ValueError) as exc:
         raise ValueError("Evaluation manifest release_gates must contain numeric overall/lp9/lp20 thresholds") from exc
-    if overall_f != release_gates.linguistic_phenomena.overall_accuracy_min:
-        raise ValueError("Mismatch in overall_lp_accuracy_min between evaluation manifest and release gates")
-    if lp9_f != release_gates.linguistic_phenomena.lp9_lexical_semantics_min:
-        raise ValueError("Mismatch in lp_floors.9 between evaluation manifest and release gates")
-    if lp20_f != release_gates.linguistic_phenomena.lp20_orphaned_preposition_min:
-        raise ValueError("Mismatch in lp_floors.20 between evaluation manifest and release gates")
+    rg_overall = release_gates.linguistic_phenomena.overall_accuracy_min
+    rg_lp9 = release_gates.linguistic_phenomena.lp9_lexical_semantics_min
+    rg_lp20 = release_gates.linguistic_phenomena.lp20_orphaned_preposition_min
+    if abs(overall_f - rg_overall) > GATE_TOLERANCE:
+        raise ValueError(
+            f"Mismatch in overall_lp_accuracy_min: eval={overall_f} release_gates={rg_overall}"
+        )
+    if abs(lp9_f - rg_lp9) > GATE_TOLERANCE:
+        raise ValueError(f"Mismatch in lp_floors.9: eval={lp9_f} release_gates={rg_lp9}")
+    if abs(lp20_f - rg_lp20) > GATE_TOLERANCE:
+        raise ValueError(f"Mismatch in lp_floors.20: eval={lp20_f} release_gates={rg_lp20}")
