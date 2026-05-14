@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "per_gate": {
+    "asr_wer": {
+      "actual": 0.05,
+      "target": 0.0665,
+      "pass": true
+    },
+    "overall_lp_accuracy": {
+      "actual": 0.9,
+      "target": 0.88,
+      "pass": true
+    },
+    "lp9_lexical_semantics": {
+      "actual": 0.81,
+      "target": 0.8,
+      "pass": true
+    },
+    "lp20_orphaned_preposition": {
+      "actual": 0.72,
+      "target": 0.7,
+      "pass": true
+    },
+    "lp7_standard_negation_post_alignment_drop_ratio": {
+      "actual": 0.02,
+      "target": 0.03,
+      "pass": true
+    }
+  },
+  "missing_metrics": []
+}

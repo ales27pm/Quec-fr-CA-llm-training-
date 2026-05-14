@@ -7,7 +7,7 @@ This file governs the entire repository unless a deeper nested `AGENTS.md` overr
 Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned with OQLF/BDL standards, reproducible evaluation, and explicit governance.
 
 ## Dynamic State (auto-generated)
-> Last auto-update: **2026-05-13 UTC**  
+> Last auto-update: **2026-05-14 UTC**  
 > Source: `project/status.json` (managed by `python3 tools/update_agents.py --write`)
 
 | Task ID | Goal | Status | Evidence |
@@ -18,6 +18,11 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T4 | Minimal-pair generation spec | ✅ fully_implemented | `Provided` |
 | T5 | Auto-updating project contract | ✅ fully_implemented | `Provided` |
 | T6 | Nested AGENTS propagation tooling | ✅ fully_implemented | `Provided` |
+| T7 | Executable Python validation package | ✅ fully_implemented | `Provided` |
+| T8 | Contamination detection tooling | ✅ fully_implemented | `Provided` |
+| T9 | Minimal-pair generator | ✅ fully_implemented | `Provided` |
+| T10 | Release-readiness reporter | ✅ fully_implemented | `Provided` |
+| T11 | CI validation workflow | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.

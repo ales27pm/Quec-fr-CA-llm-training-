@@ -23,6 +23,11 @@ TASK_FILES = {
     "T4": ROOT / "tools" / "minimal_pair_generator_spec.md",
     "T5": ROOT / "tools" / "update_agents.py",
     "T6": ROOT / "manifests" / "AGENTS.md",
+    "T7": ROOT / "src" / "qfr_pipeline" / "validation.py",
+    "T8": ROOT / "src" / "qfr_pipeline" / "contamination.py",
+    "T9": ROOT / "src" / "qfr_pipeline" / "minimal_pairs.py",
+    "T10": ROOT / "src" / "qfr_pipeline" / "release_report.py",
+    "T11": ROOT / ".github" / "workflows" / "ci.yml",
 }
 def icon(status: str) -> str:
     return {
@@ -176,6 +181,13 @@ def validate() -> None:
             "Validation failed; evaluation manifest thresholds are out of sync with project/release_gates.yaml: "
             f"{mismatched_thresholds}"
         )
+
+
+    status_doc = json.loads(STATUS_PATH.read_text())
+    for task in status_doc.get("tasks", []):
+        if task.get("status") == "fully_implemented" and task.get("id") in TASK_FILES:
+            if not TASK_FILES[task["id"]].exists():
+                raise SystemExit(f"Validation failed; task {task['id']} marked fully_implemented but missing required file: {TASK_FILES[task['id']]}")
 
     print("Validation passed: contamination holdouts present and release gates synchronized to project/release_gates.yaml.")
 def main() -> None:

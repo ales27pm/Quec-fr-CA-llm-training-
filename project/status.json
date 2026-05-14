@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-13",
+  "last_updated": "2026-05-14",
   "tasks": [
     {
       "id": "T1",
@@ -34,6 +34,36 @@
     {
       "id": "T6",
       "goal": "Nested AGENTS propagation tooling",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T7",
+      "goal": "Executable Python validation package",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T8",
+      "goal": "Contamination detection tooling",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T9",
+      "goal": "Minimal-pair generator",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T10",
+      "goal": "Release-readiness reporter",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T11",
+      "goal": "CI validation workflow",
       "status": "fully_implemented",
       "evidence": "Provided"
     }
