@@ -67,6 +67,7 @@ def validate_file(path: Path):
 
 @app.command("generate-minimal-pairs")
 def generate_minimal_pairs(rule: Path = typer.Option(..., "--rule"), out: Path = typer.Option(..., "--out")):
+    _refresh_dynamic_agents()
     pairs = generate_lp9_minimal_pairs(rule)
     write_jsonl(pairs, out)
     print(f"Wrote {len(pairs)} records to {out}")
@@ -74,6 +75,7 @@ def generate_minimal_pairs(rule: Path = typer.Option(..., "--rule"), out: Path =
 
 @app.command("contamination-check")
 def contamination_check(train: Path = typer.Option(..., "--train"), holdout: Path = typer.Option(..., "--holdout"), threshold: float = typer.Option(0.92, "--threshold"), out: Path = typer.Option(Path("reports/contamination_report.json"), "--out")):
+    _refresh_dynamic_agents()
     train_items = load_json(train)
     holdout_items = load_json(holdout)
     matches = detect_contamination(train_items, holdout_items, threshold)
@@ -83,6 +85,7 @@ def contamination_check(train: Path = typer.Option(..., "--train"), holdout: Pat
 
 @app.command("release-report")
 def release_report(metrics: Path = typer.Option(..., "--metrics"), out_json: Path = typer.Option(..., "--out-json"), out_md: Path = typer.Option(..., "--out-md")):
+    _refresh_dynamic_agents()
     report = evaluate_release(metrics, RELEASE_GATES_PATH)
     write_json(out_json, report.to_json())
     out_md.parent.mkdir(parents=True, exist_ok=True)
