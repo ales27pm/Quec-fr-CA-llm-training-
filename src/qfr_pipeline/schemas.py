@@ -142,6 +142,68 @@ class ProjectStatus(BaseModel):
     tasks: list[StatusTask]
 
 
+
+
+class LPContextContrast(BaseModel):
+    model_config = {"populate_by_name": True}
+    contrast_id: str
+    positive_pattern: str
+    negative_pattern: str
+    register_value: str = Field(alias="register")
+    term_type: str
+    allowed_contexts: list[str]
+    blocked_contexts: list[str]
+    good_templates: list[str]
+    bad_templates: list[str]
+    notes: str
+    source_authority: str
+
+    @field_validator("register_value")
+    @classmethod
+    def valid_register(cls, v: str) -> str:
+        if v not in {"formal", "informal", "neutral"}:
+            raise ValueError("register must be one of formal|informal|neutral")
+        return v
+
+    @field_validator("term_type")
+    @classmethod
+    def valid_term_type(cls, v: str) -> str:
+        if v not in {"noun", "noun_phrase", "idiom", "anglicism", "expression"}:
+            raise ValueError("term_type must be one of noun|noun_phrase|idiom|anglicism|expression")
+        return v
+
+    @model_validator(mode="after")
+    def validate_templates(self):
+        if not self.positive_pattern.strip() or not self.negative_pattern.strip():
+            raise ValueError("positive_pattern and negative_pattern must be non-empty")
+        if not self.good_templates or not self.bad_templates:
+            raise ValueError("good_templates and bad_templates must be non-empty")
+        if any(not t.strip() for t in [*self.good_templates, *self.bad_templates]):
+            raise ValueError("templates must be non-empty strings")
+        if len(self.good_templates) != len(self.bad_templates):
+            raise ValueError("good_templates and bad_templates must be the same length")
+        return self
+
+
+class LPContextManifest(BaseModel):
+    kind: str
+    lp_id: int
+    name: str
+    phenomenon: str
+    contrasts: list[LPContextContrast]
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "lp_context_manifest":
+            raise ValueError("kind must be lp_context_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def validate_lp_id(self):
+        if not (1 <= self.lp_id <= 20):
+            raise ValueError("lp_id must be in 1..20")
+        return self
 def ensure_eval_gates_sync(eval_manifest: EvaluationManifest, release_gates: ReleaseGates) -> None:
     rg = eval_manifest.release_gates
     lp_floors = rg.get("lp_floors", {})
