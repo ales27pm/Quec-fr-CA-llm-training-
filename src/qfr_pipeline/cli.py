@@ -33,6 +33,29 @@ def _refresh_dynamic_agents() -> None:
     module.write_root_agents()
 
 
+def _build_minimal_pair_report(
+    *,
+    context: Path,
+    context_manifest,
+    quality,
+    gen_report=None,
+) -> dict:
+    payload = {
+        "ok": quality.ok if gen_report is None else (gen_report.ok and quality.ok),
+        "total_records": quality.total_records,
+        "issues": [asdict(i) for i in quality.issues],
+        "context_manifest": str(context),
+        "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts),
+        "lp_id": context_manifest.lp_id,
+        "phenomenon": context_manifest.phenomenon,
+        "name": context_manifest.name,
+    }
+    if gen_report is not None:
+        payload["records_generated"] = gen_report.records_generated
+        payload["issues"] = [asdict(i) for i in gen_report.issues] + payload["issues"]
+    return payload
+
+
 @app.command("validate")
 def validate_repo():
     _refresh_dynamic_agents()
@@ -51,7 +74,7 @@ def generate_minimal_pairs_cmd(rule: Path = typer.Option(..., "--rule"), context
     context_manifest = load_context_manifest(context)
     quality = validate_minimal_pairs_against_context([p.__dict__ for p in pairs], context_manifest, source_context=str(context))
     if report:
-        write_json(report, {"ok": gen_report.ok and quality.ok, "records_generated": gen_report.records_generated, "total_records": quality.total_records, "issues": [asdict(i) for i in gen_report.issues] + [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts), "lp_id": context_manifest.lp_id, "phenomenon": context_manifest.phenomenon, "name": context_manifest.name})
+        write_json(report, _build_minimal_pair_report(context=context, context_manifest=context_manifest, quality=quality, gen_report=gen_report))
     if (not gen_report.ok) or (not quality.ok):
         raise typer.Exit(code=1)
     write_jsonl(pairs, out)
@@ -64,7 +87,7 @@ def validate_minimal_pairs_cmd(input: Path = typer.Option(..., "--input"), conte
     context_manifest = validate_lp_context_manifest(context)
     records = read_jsonl(input)
     quality = validate_minimal_pairs_against_context(records, context_manifest, source_context=str(context))
-    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts), "lp_id": context_manifest.lp_id, "phenomenon": context_manifest.phenomenon, "name": context_manifest.name})
+    write_json(report, _build_minimal_pair_report(context=context, context_manifest=context_manifest, quality=quality))
     if not quality.ok:
         raise typer.Exit(code=1)
 
