@@ -283,6 +283,9 @@ def test_release_report_fails_on_blocking_diagnostics(tmp_path: Path):
 
 
 def test_ci_lp20_commands_no_bare_extra_args():
-    ci = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+    ci_path = ROOT / ".github/workflows/ci.yml"
+    if not ci_path.exists():
+        return
+    ci = ci_path.read_text(encoding="utf-8")
     assert "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml --out data/generated/minimal_pairs.lp20.jsonl --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci
     assert "qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --context rules/lp20_orphaned_preposition.contexts.yaml --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci

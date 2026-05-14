@@ -64,8 +64,8 @@
     {
       "id": "T11",
       "goal": "CI validation workflow",
-      "status": "fully_implemented",
-      "evidence": "Provided"
+      "status": "not_implemented",
+      "evidence": "Pending"
     },
     {
       "id": "T12",
