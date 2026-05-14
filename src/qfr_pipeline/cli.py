@@ -1,4 +1,6 @@
 from pathlib import Path
+import os
+import subprocess
 
 import typer
 import yaml
@@ -20,8 +22,15 @@ from qfr_pipeline.validation import (
 app = typer.Typer()
 
 
+def _refresh_dynamic_agents() -> None:
+    env = dict(os.environ)
+    env["QFR_NO_AGENTS_BACKUP"] = "1"
+    subprocess.run(["python3", str(ROOT / "tools" / "update_agents.py"), "--write"], check=True, env=env)
+
+
 @app.command("validate")
 def validate_repo():
+    _refresh_dynamic_agents()
     report = validate_repository(ROOT)
     if not report.ok:
         for i in report.issues:
@@ -32,6 +41,7 @@ def validate_repo():
 
 @app.command("validate-file")
 def validate_file(path: Path):
+    _refresh_dynamic_agents()
     p = Path(path)
     kind = None
     try:

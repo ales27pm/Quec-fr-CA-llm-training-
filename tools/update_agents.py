@@ -93,8 +93,10 @@ def write_root_agents() -> None:
     new_text = "".join(new_lines)
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     backup_path = AGENTS_PATH.with_name(f"AGENTS.md.bak.{ts}")
+    skip_backup = os.environ.get("QFR_NO_AGENTS_BACKUP") == "1"
     try:
-        shutil.copy2(AGENTS_PATH, backup_path)
+        if not skip_backup:
+            shutil.copy2(AGENTS_PATH, backup_path)
         with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=AGENTS_PATH.parent, delete=False) as tmp:
             tmp.write(new_text)
             tmp.flush()
