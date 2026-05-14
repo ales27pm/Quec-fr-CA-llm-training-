@@ -28,6 +28,7 @@ TASK_FILES = {
     "T9": ROOT / "src" / "qfr_pipeline" / "minimal_pairs.py",
     "T10": ROOT / "src" / "qfr_pipeline" / "release_report.py",
     "T11": ROOT / ".github" / "workflows" / "ci.yml",
+    "T12": ROOT / "src" / "qfr_pipeline" / "minimal_pair_quality.py",
 }
 def icon(status: str) -> str:
     return {

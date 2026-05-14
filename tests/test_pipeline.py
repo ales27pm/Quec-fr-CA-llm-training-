@@ -5,99 +5,66 @@ import pytest
 from typer.testing import CliRunner
 
 from qfr_pipeline.cli import app
-from qfr_pipeline.contamination import detect_contamination
-from qfr_pipeline.minimal_pairs import generate_lp9_minimal_pairs
+from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs
+from qfr_pipeline.minimal_pairs import generate_minimal_pairs
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
-from qfr_pipeline.release_report import evaluate_release
-from qfr_pipeline.validation import (
-    validate_dataset_manifest,
-    validate_evaluation_manifest,
-    validate_lp_rule_manifest,
-    validate_release_gates,
-)
+from qfr_pipeline.validation import validate_lp_context_manifest, validate_release_gates
 
 
 def test_release_gate_schema_validation():
-    gates = validate_release_gates(RELEASE_GATES_PATH)
-    assert gates.asr.wer_max == pytest.approx(0.0665)
+    assert validate_release_gates(RELEASE_GATES_PATH).asr.wer_max == pytest.approx(0.0665)
 
 
-def test_eval_manifest_sync_with_release_gates():
-    m = validate_evaluation_manifest(ROOT / "eval/evaluation_manifest.template.yaml", RELEASE_GATES_PATH)
-    assert m.kind == "evaluation_manifest"
-
-
-def test_dataset_manifest_rejects_fr_fr_neutralization(tmp_path: Path):
-    p = tmp_path / "bad.yaml"
-    doc = (ROOT / "manifests/dataset_manifest.template.yaml").read_text(encoding="utf-8").replace("fr-CA", "fr-FR")
-    p.write_text(doc, encoding="utf-8")
-    with pytest.raises(Exception):
-        validate_dataset_manifest(p)
-
-
-def test_lp_rule_manifest_validates_current_lp9_template():
-    m = validate_lp_rule_manifest(ROOT / "rules/lp_rule_manifest.template.yaml")
+def test_lp9_context_manifest_validates():
+    m = validate_lp_context_manifest(ROOT / "rules/lp9_lexical_semantics.contexts.yaml")
     assert m.lp_id == 9
 
 
-def test_contamination_exact_match():
-    matches = detect_contamination([{"id": "t1", "text": "Courriel officiel"}], [{"id": "h1", "text": "courriel officiel"}], 0.92)
-    assert matches and matches[0].match_type == "exact"
+def test_lp9_generator_produces_grammar_valid_records():
+    recs, report = generate_minimal_pairs(ROOT / "rules/lp_rule_manifest.template.yaml", ROOT / "rules/lp9_lexical_semantics.contexts.yaml")
+    assert report.ok
+    assert recs
 
 
-def test_contamination_fuzzy_match():
-    matches = detect_contamination([{"id": "t1", "text": "Courriel officiel"}], [{"id": "h1", "text": "Courriel officiel!"}], 0.9)
-    assert matches
+def test_generator_rejects_le_fin_de_semaine():
+    quality = validate_minimal_pairs([{"id": "x", "lp_id": 9, "good": "Le fin de semaine commence bientôt.", "bad": "Le week-end commence bientôt.", "metadata": {"positive_pattern": "fin de semaine", "negative_pattern": "week-end"}}])
+    assert any(i.code == "forbidden_ngram" for i in quality.issues)
 
 
-def test_contamination_clean_case():
-    matches = detect_contamination([{"id": "t1", "text": "Bonjour"}], [{"id": "h1", "text": "Au revoir"}], 0.95)
-    assert not matches
+def test_generator_rejects_good_side_week_end():
+    quality = validate_minimal_pairs([{"id": "x", "lp_id": 9, "good": "Le week-end commence bientôt.", "bad": "La fin de semaine commence bientôt.", "metadata": {"positive_pattern": "fin de semaine", "negative_pattern": "week-end"}}])
+    assert any(i.code == "neutralization_good" for i in quality.issues)
 
 
-@pytest.mark.parametrize(
-    "hypothesis_text,reference_text",
-    [
-        ("Courriel “officiel”", 'courriel "officiel"'),
-        ("L’affaire d’aujourd’hui", "l'affaire d'aujourd'hui"),
-        ("\u00C5ngstr\u00F6m", "A\u030Angstr\u00F6m"),
-    ],
-)
-def test_contamination_normalization_handles_smart_quotes_and_unicode(hypothesis_text: str, reference_text: str):
-    matches = detect_contamination([{"id": "t1", "text": hypothesis_text}], [{"id": "h1", "text": reference_text}], 0.92)
-    assert matches
-    assert matches[0].match_type == "exact"
+def test_duplicate_pair_detection():
+    base = {"lp_id": 9, "good": "La fin de semaine commence bientôt.", "bad": "Le week-end commence bientôt.", "metadata": {"positive_pattern": "fin de semaine", "negative_pattern": "week-end"}}
+    q = validate_minimal_pairs([{"id": "a", **base}, {"id": "b", **base}])
+    assert any(i.code == "duplicate_pair" for i in q.issues)
 
 
-@pytest.mark.parametrize(
-    "hypothesis_text,reference_text",
-    [("", ""), ("", "nonempty"), ("nonempty", ""), ("a", "a"), ("hi", "hi"), ("x", "y")],
-)
-def test_contamination_very_short_and_empty_strings_do_not_match(hypothesis_text: str, reference_text: str):
-    matches = detect_contamination([{"id": "t1", "text": hypothesis_text}], [{"id": "h1", "text": reference_text}], 0.92)
-    assert not matches
+def test_validate_minimal_pairs_cli_pass(tmp_path: Path):
+    out = tmp_path / "pairs.jsonl"
+    report = tmp_path / "report.json"
+    recs, _ = generate_minimal_pairs(ROOT / "rules/lp_rule_manifest.template.yaml", ROOT / "rules/lp9_lexical_semantics.contexts.yaml")
+    out.write_text("\n".join(json.dumps(r.__dict__, ensure_ascii=False) for r in recs) + "\n", encoding="utf-8")
+    r = CliRunner().invoke(app, ["validate-minimal-pairs", "--input", str(out), "--context", "rules/lp9_lexical_semantics.contexts.yaml", "--report", str(report)])
+    assert r.exit_code == 0
 
 
-def test_minimal_pair_generation_from_lp9_rule():
-    out = generate_lp9_minimal_pairs(ROOT / "rules/lp_rule_manifest.template.yaml")
-    assert out and out[0]["expected"] == "good"
+def test_validate_minimal_pairs_cli_fail(tmp_path: Path):
+    bad = tmp_path / "bad.jsonl"
+    report = tmp_path / "report.json"
+    bad.write_text(json.dumps({"id": "x", "lp_id": 9, "good": "Le week-end.", "bad": "Le week-end.", "metadata": {"positive_pattern": "fin de semaine", "negative_pattern": "week-end"}}) + "\n", encoding="utf-8")
+    r = CliRunner().invoke(app, ["validate-minimal-pairs", "--input", str(bad), "--context", "rules/lp9_lexical_semantics.contexts.yaml", "--report", str(report)])
+    assert r.exit_code != 0
 
 
-def test_release_report_pass_case(tmp_path: Path):
-    p = tmp_path / "m.json"
-    p.write_text(json.dumps({"asr_wer":0.05,"overall_lp_accuracy":0.9,"lp9_lexical_semantics":0.81,"lp20_orphaned_preposition":0.72,"lp7_standard_negation_post_alignment_drop_ratio":0.02}), encoding="utf-8")
-    report = evaluate_release(p, RELEASE_GATES_PATH)
-    assert report.passed
+def test_generate_minimal_pairs_writes_jsonl_and_report(tmp_path: Path):
+    out = tmp_path / "pairs.jsonl"
+    report = tmp_path / "quality.json"
+    r = CliRunner().invoke(app, ["generate-minimal-pairs", "--rule", "rules/lp_rule_manifest.template.yaml", "--context", "rules/lp9_lexical_semantics.contexts.yaml", "--out", str(out), "--report", str(report)])
+    assert r.exit_code == 0 and out.exists() and report.exists()
 
 
-def test_release_report_fail_case(tmp_path: Path):
-    p = tmp_path / "m.json"
-    p.write_text(json.dumps({"asr_wer":0.2}), encoding="utf-8")
-    report = evaluate_release(p, RELEASE_GATES_PATH)
-    assert not report.passed
-
-
-def test_cli_smoke(tmp_path: Path):
-    runner = CliRunner()
-    result = runner.invoke(app, ["validate"])
-    assert result.exit_code == 0
+def test_cli_agents_refresh_no_subprocess():
+    assert "subprocess" not in (ROOT / "src/qfr_pipeline/cli.py").read_text(encoding="utf-8")

@@ -1,0 +1,41 @@
+kind: lp_context_manifest
+lp_id: 9
+name: lexical_semantics
+phenomenon: Québec lexical preference in normative contexts
+contrasts:
+  - contrast_id: lp9_courriel_email
+    positive_pattern: courriel
+    negative_pattern: email
+    register: formal
+    term_type: noun
+    source_authority: OQLF/BDL-style normative guidance (internal reference)
+    allowed_contexts:
+      - administrative communication
+      - official notices
+    blocked_contexts:
+      - malformed determiner agreement
+      - decontextualized term injection
+    good_templates:
+      - "Merci de m'envoyer le {positive_pattern} avant vendredi."
+      - "Dans un avis officiel, on privilégie « {positive_pattern} »."
+    bad_templates:
+      - "Merci de m'envoyer l'{negative_pattern} avant vendredi."
+      - "Dans un avis officiel, on évite « {negative_pattern} » lorsque le contexte exige un français normatif québécois."
+    notes: Prefer Québec French lexical markers in formal contexts.
+  - contrast_id: lp9_fin_de_semaine_week_end
+    positive_pattern: fin de semaine
+    negative_pattern: week-end
+    register: neutral
+    term_type: noun_phrase
+    source_authority: OQLF/BDL-style normative guidance (internal reference)
+    allowed_contexts:
+      - schedule planning
+      - general announcements
+    blocked_contexts:
+      - determiner mismatch before noun phrase
+      - malformed noun phrase substitutions
+    good_templates:
+      - "La {positive_pattern} commence bientôt."
+    bad_templates:
+      - "Le {negative_pattern} commence bientôt."
+    notes: Keep noun phrase grammar intact and avoid malformed substitutions.

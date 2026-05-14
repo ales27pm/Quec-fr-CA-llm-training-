@@ -29,3 +29,6 @@
 - Added pytest coverage for schema validation, gate sync, contamination detection, minimal-pair generation, release-report pass/fail behavior, and CLI smoke validation.
 - Added GitHub Actions CI workflow running `ruff`, `pytest`, `python3 tools/update_agents.py --validate`, and `qfr validate`.
 - Extended `tools/update_agents.py` task mapping and validation checks for executable-phase tasks T7–T11.
+
+- Implemented T12 gold minimal-pair quality gate with grammar-aware LP9 context manifest and deterministic validation checks.
+- Removed subprocess usage from CLI AGENTS governance refresh path in favor of direct safe module invocation.

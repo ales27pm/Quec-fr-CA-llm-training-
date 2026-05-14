@@ -66,6 +66,12 @@
       "goal": "CI validation workflow",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T12",
+      "goal": "Gold minimal-pair quality gate",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

@@ -23,6 +23,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T9 | Minimal-pair generator | ✅ fully_implemented | `Provided` |
 | T10 | Release-readiness reporter | ✅ fully_implemented | `Provided` |
 | T11 | CI validation workflow | ✅ fully_implemented | `Provided` |
+| T12 | Gold minimal-pair quality gate | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.
