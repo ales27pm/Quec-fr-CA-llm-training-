@@ -1,0 +1,2788 @@
+[
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "typer",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "typer",
+        "description": "typer",
+        "detail": "typer",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "print",
+        "importPath": "rich",
+        "description": "rich",
+        "isExtraImport": true,
+        "detail": "rich",
+        "documentation": {}
+    },
+    {
+        "label": "detect_contamination",
+        "importPath": "qfr_pipeline.contamination",
+        "description": "qfr_pipeline.contamination",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.contamination",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_rows",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_taxonomies",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_diagnostics",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_json",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_markdown",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "_parse_is_correct",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_taxonomies",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_diagnostics",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_json",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_rows",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_taxonomies",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_diagnostics",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_json",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_markdown",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_rows",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_taxonomies",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_diagnostics",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "run_legacy_semantic_diagnostics",
+        "importPath": "qfr_pipeline.legacy_diagnostics",
+        "description": "qfr_pipeline.legacy_diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_legacy_semantic_csv",
+        "importPath": "qfr_pipeline.legacy_diagnostics",
+        "description": "qfr_pipeline.legacy_diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_legacy_semantic_diagnostics",
+        "importPath": "qfr_pipeline.legacy_diagnostics",
+        "description": "qfr_pipeline.legacy_diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs_against_context",
+        "importPath": "qfr_pipeline.minimal_pair_quality",
+        "description": "qfr_pipeline.minimal_pair_quality",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs_against_context",
+        "importPath": "qfr_pipeline.minimal_pair_quality",
+        "description": "qfr_pipeline.minimal_pair_quality",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs",
+        "importPath": "qfr_pipeline.minimal_pair_quality",
+        "description": "qfr_pipeline.minimal_pair_quality",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs_against_context",
+        "importPath": "qfr_pipeline.minimal_pair_quality",
+        "description": "qfr_pipeline.minimal_pair_quality",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "generate_minimal_pairs",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "load_context_manifest",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "read_jsonl",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "write_jsonl",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "build_authorized_pair_index",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "stable_minimal_pair_id",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "generate_minimal_pairs",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "load_context_manifest",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "write_jsonl",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "expand_contrast_templates",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "generate_minimal_pairs",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "load_context_manifest",
+        "importPath": "qfr_pipeline.minimal_pairs",
+        "description": "qfr_pipeline.minimal_pairs",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "RELEASE_GATES_PATH",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "EVAL_DIR",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "RELEASE_GATES_PATH",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "RELEASE_GATES_PATH",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_release",
+        "importPath": "qfr_pipeline.release_report",
+        "description": "qfr_pipeline.release_report",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseReport",
+        "importPath": "qfr_pipeline.release_report",
+        "description": "qfr_pipeline.release_report",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseReport",
+        "importPath": "qfr_pipeline.release_report",
+        "description": "qfr_pipeline.release_report",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_release",
+        "importPath": "qfr_pipeline.release_report",
+        "description": "qfr_pipeline.release_report",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "run_release_candidate",
+        "importPath": "qfr_pipeline.release_candidate",
+        "description": "qfr_pipeline.release_candidate",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
+        "label": "validate_dataset_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_error_taxonomy_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_evaluation_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp_context_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp_rule_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_release_gates",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_repository",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_error_taxonomy_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_repository",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_release_gates",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_error_taxonomy_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp_context_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_release_gates",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "unicodedata",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "unicodedata",
+        "description": "unicodedata",
+        "detail": "unicodedata",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorTaxonomyManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextContrast",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorTaxonomyManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPRuleManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseGates",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_eval_gates_sync",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextContrast",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "field_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "model_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "validate_repo",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_repo():\n    _refresh_dynamic_agents()\n    report = validate_repository(ROOT)\n    if not report.ok:\n        for i in report.issues:\n            print(f\"[red]{i.path}[/red] {i.message}\")\n        raise typer.Exit(code=1)\n    print(\"Validation passed\")\n@app.command(\"generate-minimal-pairs\")\ndef generate_minimal_pairs_cmd(rule: Path = typer.Option(..., \"--rule\"), context: Path = typer.Option(..., \"--context\"), out: Path = typer.Option(..., \"--out\"), report: Path | None = typer.Option(None, \"--report\")):",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "generate_minimal_pairs_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def generate_minimal_pairs_cmd(rule: Path = typer.Option(..., \"--rule\"), context: Path = typer.Option(..., \"--context\"), out: Path = typer.Option(..., \"--out\"), report: Path | None = typer.Option(None, \"--report\")):\n    _refresh_dynamic_agents()\n    pairs, gen_report = generate_minimal_pairs(rule, context)\n    context_manifest = load_context_manifest(context)\n    quality = validate_minimal_pairs_against_context([p.__dict__ for p in pairs], context_manifest, source_context=str(context))\n    if report:\n        write_json(report, _build_minimal_pair_report(context=context, context_manifest=context_manifest, quality=quality, gen_report=gen_report))\n    if (not gen_report.ok) or (not quality.ok):\n        raise typer.Exit(code=1)\n    write_jsonl(pairs, out)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_minimal_pairs_cmd(input: Path = typer.Option(..., \"--input\"), context: Path = typer.Option(..., \"--context\"), report: Path = typer.Option(..., \"--report\")):\n    _refresh_dynamic_agents()\n    context_manifest = validate_lp_context_manifest(context)\n    records = read_jsonl(input)\n    quality = validate_minimal_pairs_against_context(records, context_manifest, source_context=str(context))\n    write_json(report, _build_minimal_pair_report(context=context, context_manifest=context_manifest, quality=quality))\n    if not quality.ok:\n        raise typer.Exit(code=1)\n@app.command(\"validate-file\")\ndef validate_file(path: Path):",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_file",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_file(path: Path):\n    _refresh_dynamic_agents()\n    p = Path(path)\n    kind = None\n    try:\n        raw = p.read_text(encoding=\"utf-8\")\n        parsed = load_json(p) if p.suffix == \".json\" else yaml.safe_load(raw)\n        if isinstance(parsed, dict):\n            kind = parsed.get(\"kind\")\n    except Exception:",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "contamination_check",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def contamination_check(train: Path = typer.Option(..., \"--train\"), holdout: Path = typer.Option(..., \"--holdout\"), threshold: float = typer.Option(0.92, \"--threshold\"), out: Path = typer.Option(Path(\"reports/contamination_report.json\"), \"--out\")):\n    _refresh_dynamic_agents()\n    matches = detect_contamination(load_json(train), load_json(holdout), threshold)\n    write_json(out, {\"threshold\": threshold, \"matches\": [m.__dict__ for m in matches]})\n@app.command(\"release-report\")\ndef release_report(metrics: Path = typer.Option(..., \"--metrics\"), out_json: Path = typer.Option(..., \"--out-json\"), out_md: Path = typer.Option(..., \"--out-md\"), diagnostics: Path | None = typer.Option(None, \"--diagnostics\"), allow_missing_diagnostics_phenomena: bool = typer.Option(False, \"--allow-missing-diagnostics-phenomena\")):\n    _refresh_dynamic_agents()\n    report = evaluate_release(metrics, RELEASE_GATES_PATH)\n    if diagnostics is not None:\n        d = load_json(diagnostics)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "release_report",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def release_report(metrics: Path = typer.Option(..., \"--metrics\"), out_json: Path = typer.Option(..., \"--out-json\"), out_md: Path = typer.Option(..., \"--out-md\"), diagnostics: Path | None = typer.Option(None, \"--diagnostics\"), allow_missing_diagnostics_phenomena: bool = typer.Option(False, \"--allow-missing-diagnostics-phenomena\")):\n    _refresh_dynamic_agents()\n    report = evaluate_release(metrics, RELEASE_GATES_PATH)\n    if diagnostics is not None:\n        d = load_json(diagnostics)\n        has_lp9 = any(v.get(\"lp_id\") == 9 for v in d.get(\"phenomena\", {}).values())\n        has_lp20 = any(v.get(\"lp_id\") == 20 for v in d.get(\"phenomena\", {}).values())\n        if not d.get(\"ok\", False):\n            raise typer.Exit(code=1)\n        if (not allow_missing_diagnostics_phenomena) and (not (has_lp9 and has_lp20)):",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_taxonomy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_taxonomy(taxonomy: Path = typer.Option(..., \"--taxonomy\")):\n    _refresh_dynamic_agents()\n    validate_error_taxonomy_manifest(taxonomy)\n    print(\"Taxonomy valid\")\n@app.command(\"diagnose-eval\")\ndef diagnose_eval(input: Path = typer.Option(..., \"--input\"), taxonomy: list[Path] = typer.Option(..., \"--taxonomy\"), out_json: Path = typer.Option(..., \"--out-json\"), out_md: Path = typer.Option(..., \"--out-md\"), allow_missing_phenomena: bool = typer.Option(False, \"--allow-missing-phenomena\")):\n    _refresh_dynamic_agents()\n    taxonomies = load_taxonomies(taxonomy)\n    rows = load_eval_rows(input)\n    report = run_diagnostics(rows, taxonomies, allow_missing_phenomena=allow_missing_phenomena)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "diagnose_eval",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def diagnose_eval(input: Path = typer.Option(..., \"--input\"), taxonomy: list[Path] = typer.Option(..., \"--taxonomy\"), out_json: Path = typer.Option(..., \"--out-json\"), out_md: Path = typer.Option(..., \"--out-md\"), allow_missing_phenomena: bool = typer.Option(False, \"--allow-missing-phenomena\")):\n    _refresh_dynamic_agents()\n    taxonomies = load_taxonomies(taxonomy)\n    rows = load_eval_rows(input)\n    report = run_diagnostics(rows, taxonomies, allow_missing_phenomena=allow_missing_phenomena)\n    write_diagnostics_json(report, out_json)\n    write_diagnostics_markdown(report, out_md)\n    if not report.ok:\n        raise typer.Exit(code=1)\n@app.command(\"diagnose-legacy-csv\")",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "diagnose_legacy_csv",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def diagnose_legacy_csv(\n    in_csv: Path = typer.Option(..., \"--in-csv\"),\n    out_json: Path = typer.Option(..., \"--out-json\"),\n    taxonomy: list[Path] | None = typer.Option(None, \"--taxonomy\"),\n    allow_missing_phenomena: bool = typer.Option(False, \"--allow-missing-phenomena\"),\n):\n    _refresh_dynamic_agents()\n    try:\n        payload = run_legacy_semantic_diagnostics(\n            in_csv,",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "release_candidate",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def release_candidate(\n    metrics: Path = typer.Option(..., \"--metrics\"),\n    diagnostics_input: Path = typer.Option(..., \"--diagnostics-input\"),\n    out_json: Path = typer.Option(..., \"--out-json\"),\n    out_md: Path = typer.Option(..., \"--out-md\"),\n    allow_missing_diagnostics_phenomena: bool = typer.Option(False, \"--allow-missing-diagnostics-phenomena\"),\n    lp9_context: Path = typer.Option(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\", \"--lp9-context\"),\n    lp20_context: Path = typer.Option(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\", \"--lp20-context\"),\n):\n    _refresh_dynamic_agents()",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "app = typer.Typer()\ndef _refresh_dynamic_agents() -> None:\n    import importlib.util\n    update_agents_path = ROOT / \"tools\" / \"update_agents.py\"\n    spec = importlib.util.spec_from_file_location(\"qfr_update_agents\", update_agents_path)\n    if spec is None or spec.loader is None:\n        raise RuntimeError(f\"Could not load update_agents module from {update_agents_path}\")\n    module = importlib.util.module_from_spec(spec)\n    spec.loader.exec_module(module)\n    if os.environ.get(\"QFR_NO_AGENTS_BACKUP\") is None:",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "ContaminationMatch",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.contamination",
+        "description": "src.qfr_pipeline.contamination",
+        "peekOfCode": "class ContaminationMatch:\n    train_id: str\n    holdout_id: str\n    score: float\n    match_type: str\n    train_normalized: str\n    holdout_normalized: str\ndef normalize_text(text: str) -> str:\n    text = unicodedata.normalize(\"NFC\", text)\n    text = re.sub(r\"[\\u2018\\u2019]\", \"'\", text)",
+        "detail": "src.qfr_pipeline.contamination",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_text",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.contamination",
+        "description": "src.qfr_pipeline.contamination",
+        "peekOfCode": "def normalize_text(text: str) -> str:\n    text = unicodedata.normalize(\"NFC\", text)\n    text = re.sub(r\"[\\u2018\\u2019]\", \"'\", text)\n    text = re.sub(r\"[\\u201C\\u201D]\", '\"', text)\n    text = re.sub(r\"[^\\w\\s']\", \" \", text)\n    text = re.sub(r\"\\s+\", \" \", text).strip().lower()\n    return text\ndef _ngrams(s: str, n: int = 3) -> set[str]:\n    if len(s) < n:\n        return {s} if s else set()",
+        "detail": "src.qfr_pipeline.contamination",
+        "documentation": {}
+    },
+    {
+        "label": "detect_contamination",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.contamination",
+        "description": "src.qfr_pipeline.contamination",
+        "peekOfCode": "def detect_contamination(train_items, holdout_items, threshold: float) -> list[ContaminationMatch]:\n    matches = []\n    train_norm = []\n    exact_index: dict[str, list[tuple[str, str]]] = {}\n    for tr in train_items:\n        trn = normalize_text(tr[\"text\"])\n        tr_id = tr[\"id\"]\n        train_norm.append((tr_id, trn))\n        exact_index.setdefault(trn, []).append((tr_id, trn))\n    for ho in holdout_items:",
+        "detail": "src.qfr_pipeline.contamination",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosticIssue",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "class DiagnosticIssue:\n    code: str\n    message: str\n    blocking: bool = True\n@dataclass\nclass PhenomenonSummary:\n    lp_id: int\n    phenomenon: str\n    n: int\n    correct: int",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "PhenomenonSummary",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "class PhenomenonSummary:\n    lp_id: int\n    phenomenon: str\n    n: int\n    correct: int\n    binary_accuracy: float\n    mean_semantic_similarity: float | None\n    error_distribution: dict[str, int]\n    blocking_error_count: int\n    non_blocking_error_count: int",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "DiagnosticsReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "class DiagnosticsReport:\n    ok: bool\n    phenomena: dict[str, PhenomenonSummary]\n    global_summary: dict[str, Any]\n    issues: list[DiagnosticIssue] = field(default_factory=list)\n    def to_json(self) -> dict[str, Any]:\n        return {\n            \"ok\": self.ok,\n            \"phenomena\": {k: asdict(v) for k, v in self.phenomena.items()},\n            \"global_summary\": self.global_summary,",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_rows",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "def load_eval_rows(path: Path) -> list[dict[str, Any]]:\n    text = path.read_text(encoding=\"utf-8\").strip()\n    if path.suffix == \".jsonl\":\n        return [json.loads(line) for line in text.splitlines() if line.strip()]\n    parsed = json.loads(text)\n    return parsed if isinstance(parsed, list) else [parsed]\ndef load_taxonomies(paths: list[Path]) -> dict[int, ErrorTaxonomyManifest]:\n    out: dict[int, ErrorTaxonomyManifest] = {}\n    for path in paths:\n        manifest = ErrorTaxonomyManifest.model_validate(load_yaml(path))",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "load_taxonomies",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "def load_taxonomies(paths: list[Path]) -> dict[int, ErrorTaxonomyManifest]:\n    out: dict[int, ErrorTaxonomyManifest] = {}\n    for path in paths:\n        manifest = ErrorTaxonomyManifest.model_validate(load_yaml(path))\n        out[manifest.lp_id] = manifest\n    return out\ndef run_diagnostics(rows: list[dict[str, Any]], taxonomies: dict[int, ErrorTaxonomyManifest], allow_missing_phenomena: bool = False) -> DiagnosticsReport:\n    issues: list[DiagnosticIssue] = []\n    by_key: dict[tuple[int, str], dict[str, Any]] = {}\n    malformed_rows = 0",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_diagnostics",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "def run_diagnostics(rows: list[dict[str, Any]], taxonomies: dict[int, ErrorTaxonomyManifest], allow_missing_phenomena: bool = False) -> DiagnosticsReport:\n    issues: list[DiagnosticIssue] = []\n    by_key: dict[tuple[int, str], dict[str, Any]] = {}\n    malformed_rows = 0\n    unknown_codes = 0\n    global_errors = Counter()\n    for idx, row in enumerate(rows):\n        try:\n            lp_id = int(row[\"lp_id\"])\n            phenomenon = str(row[\"phenomenon\"]).strip()",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_markdown",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "def write_diagnostics_markdown(report: DiagnosticsReport, out: Path) -> None:\n    lines = [\"# LP9/LP20 Diagnostics\", \"\", f\"- OK: `{report.ok}`\", f\"- Total records: `{report.global_summary['total_records']}`\", \"\", \"## Per-phenomenon\"]\n    for key, p in report.phenomena.items():\n        lines.extend([\n            f\"### {key}\",\n            f\"- Binary accuracy: `{p.binary_accuracy:.4f}` ({p.correct}/{p.n})\",\n            f\"- Mean semantic similarity: `{(p.mean_semantic_similarity if p.mean_semantic_similarity is not None else 'n/a')}`\",\n            f\"- Blocking/non-blocking: `{p.blocking_error_count}/{p.non_blocking_error_count}`\",\n            f\"- Top error codes: `{p.top_error_codes}`\",\n        ])",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "write_diagnostics_json",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "def write_diagnostics_json(report: DiagnosticsReport, out: Path) -> None:\n    write_json(out, report.to_json())",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "FileIOError",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.io",
+        "description": "src.qfr_pipeline.io",
+        "peekOfCode": "class FileIOError(RuntimeError):\n    pass\ndef _atomic_write(path: Path, content: str) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    tmp_path: Path | None = None\n    try:\n        with tempfile.NamedTemporaryFile(\"w\", encoding=\"utf-8\", dir=path.parent, delete=False) as tmp:\n            tmp.write(content)\n            tmp.flush()\n            os.fsync(tmp.fileno())",
+        "detail": "src.qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.io",
+        "description": "src.qfr_pipeline.io",
+        "peekOfCode": "def load_yaml(path: Path) -> dict[str, Any]:\n    try:\n        data = yaml.safe_load(path.read_text(encoding=\"utf-8\"))\n    except Exception as exc:\n        raise FileIOError(f\"Failed to read YAML {path}: {exc}\") from exc\n    if not isinstance(data, dict):\n        raise FileIOError(f\"YAML at {path} must be a mapping\")\n    return data\ndef write_yaml(path: Path, data: dict[str, Any]) -> None:\n    _atomic_write(path, yaml.safe_dump(data, sort_keys=False, allow_unicode=True))",
+        "detail": "src.qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_yaml",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.io",
+        "description": "src.qfr_pipeline.io",
+        "peekOfCode": "def write_yaml(path: Path, data: dict[str, Any]) -> None:\n    _atomic_write(path, yaml.safe_dump(data, sort_keys=False, allow_unicode=True))\ndef load_json(path: Path) -> Any:\n    try:\n        return json.loads(path.read_text(encoding=\"utf-8\"))\n    except Exception as exc:\n        raise FileIOError(f\"Failed to read JSON {path}: {exc}\") from exc\ndef write_json(path: Path, data: Any) -> None:\n    _atomic_write(path, json.dumps(data, ensure_ascii=False, indent=2) + \"\\n\")",
+        "detail": "src.qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_json",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.io",
+        "description": "src.qfr_pipeline.io",
+        "peekOfCode": "def load_json(path: Path) -> Any:\n    try:\n        return json.loads(path.read_text(encoding=\"utf-8\"))\n    except Exception as exc:\n        raise FileIOError(f\"Failed to read JSON {path}: {exc}\") from exc\ndef write_json(path: Path, data: Any) -> None:\n    _atomic_write(path, json.dumps(data, ensure_ascii=False, indent=2) + \"\\n\")",
+        "detail": "src.qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.io",
+        "description": "src.qfr_pipeline.io",
+        "peekOfCode": "def write_json(path: Path, data: Any) -> None:\n    _atomic_write(path, json.dumps(data, ensure_ascii=False, indent=2) + \"\\n\")",
+        "detail": "src.qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_legacy_semantic_csv",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.legacy_diagnostics",
+        "description": "src.qfr_pipeline.legacy_diagnostics",
+        "peekOfCode": "def load_legacy_semantic_csv(path: Path) -> list[dict[str, str]]:\n    rows: list[dict[str, str]] = []\n    with path.open(\"r\", encoding=\"utf-8\", newline=\"\") as handle:\n        reader = csv.DictReader(handle)\n        header = set(reader.fieldnames or [])\n        missing = sorted(LEGACY_REQUIRED_COLUMNS - header)\n        if missing:\n            raise ValueError(f\"Missing required columns: {missing}\")\n        for row in reader:\n            rows.append(dict(row))",
+        "detail": "src.qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "run_legacy_semantic_diagnostics",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.legacy_diagnostics",
+        "description": "src.qfr_pipeline.legacy_diagnostics",
+        "peekOfCode": "def run_legacy_semantic_diagnostics(\n    in_csv: Path,\n    out_json: Path,\n    *,\n    taxonomy_paths: list[Path] | None = None,\n    allow_missing_phenomena: bool = False,\n) -> dict[str, Any]:\n    raw_rows = load_legacy_semantic_csv(in_csv)\n    rows = [_convert_legacy_row(row, idx) for idx, row in enumerate(raw_rows)]\n    taxonomies = load_taxonomies(taxonomy_paths or DEFAULT_LEGACY_TAXONOMY_PATHS)",
+        "detail": "src.qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "LEGACY_REQUIRED_COLUMNS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.legacy_diagnostics",
+        "description": "src.qfr_pipeline.legacy_diagnostics",
+        "peekOfCode": "LEGACY_REQUIRED_COLUMNS = {\n    \"phenomenon\",\n    \"is_correct\",\n    \"embedding_ref\",\n    \"embedding_pred\",\n    \"error_label\",\n}\n_PHENOMENON_ALIAS_TO_TARGET: dict[str, tuple[int, str]] = {\n    \"lp9\": (9, \"lexical_semantics\"),\n    \"lp9:lexical_semantics\": (9, \"lexical_semantics\"),",
+        "detail": "src.qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_LEGACY_TAXONOMY_PATHS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.legacy_diagnostics",
+        "description": "src.qfr_pipeline.legacy_diagnostics",
+        "peekOfCode": "DEFAULT_LEGACY_TAXONOMY_PATHS = [\n    EVAL_DIR / \"lp9_error_taxonomy.yaml\",\n    EVAL_DIR / \"lp20_error_taxonomy.yaml\",\n]\ndef load_legacy_semantic_csv(path: Path) -> list[dict[str, str]]:\n    rows: list[dict[str, str]] = []\n    with path.open(\"r\", encoding=\"utf-8\", newline=\"\") as handle:\n        reader = csv.DictReader(handle)\n        header = set(reader.fieldnames or [])\n        missing = sorted(LEGACY_REQUIRED_COLUMNS - header)",
+        "detail": "src.qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "QualityIssue",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "class QualityIssue:\n    code: str\n    message: str\n    record_id: str | None = None\n    blocking: bool = True\n@dataclass\nclass QualityReport:\n    ok: bool\n    issues: list[QualityIssue]\n    total_records: int",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "QualityReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "class QualityReport:\n    ok: bool\n    issues: list[QualityIssue]\n    total_records: int\ndef normalize_text(text: str) -> str:\n    return \" \".join(unicodedata.normalize(\"NFC\", text).casefold().split())\ndef _canonicalize_context_path(path_value: str | None) -> str | None:\n    if not path_value:\n        return None\n    path = Path(path_value).expanduser()",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_text",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "def normalize_text(text: str) -> str:\n    return \" \".join(unicodedata.normalize(\"NFC\", text).casefold().split())\ndef _canonicalize_context_path(path_value: str | None) -> str | None:\n    if not path_value:\n        return None\n    path = Path(path_value).expanduser()\n    try:\n        return str(path.resolve(strict=False))\n    except OSError:\n        return str(path)",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "def validate_minimal_pairs(records: list[dict], min_len: int = 8, max_len: int = 220) -> QualityReport:\n    issues: list[QualityIssue] = []\n    seen_pairs: set[tuple[str, str]] = set()\n    for record in records:\n        rid = record.get(\"id\")\n        good = str(record.get(\"good\", \"\"))\n        bad = str(record.get(\"bad\", \"\"))\n        try:\n            lp_id = int(record.get(\"lp_id\", -1))\n        except (ValueError, TypeError) as exc:",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "validate_minimal_pairs_against_context",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "def validate_minimal_pairs_against_context(\n    records: list[dict], context_manifest: LPContextManifest, source_context: str | None = None\n) -> QualityReport:\n    quality = validate_minimal_pairs(records)\n    issues = list(quality.issues)\n    contrast_index = {c.contrast_id: c for c in context_manifest.contrasts}\n    authorized_pairs = build_authorized_pair_index(context_manifest)\n    for record in records:\n        rid = str(record.get(\"id\", \"\")) or None\n        contrast_id = str(record.get(\"contrast_id\", \"\"))",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "FORBIDDEN_NGRAMS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "FORBIDDEN_NGRAMS = {\"le fin de semaine\", \"un fin de semaine\", \"du fin de semaine\", \"de le\"}\nNEUTRALIZATION_MARKERS = {\"week-end\", \"email\"}\n@dataclass\nclass QualityIssue:\n    code: str\n    message: str\n    record_id: str | None = None\n    blocking: bool = True\n@dataclass\nclass QualityReport:",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "NEUTRALIZATION_MARKERS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.minimal_pair_quality",
+        "description": "src.qfr_pipeline.minimal_pair_quality",
+        "peekOfCode": "NEUTRALIZATION_MARKERS = {\"week-end\", \"email\"}\n@dataclass\nclass QualityIssue:\n    code: str\n    message: str\n    record_id: str | None = None\n    blocking: bool = True\n@dataclass\nclass QualityReport:\n    ok: bool",
+        "detail": "src.qfr_pipeline.minimal_pair_quality",
+        "documentation": {}
+    },
+    {
+        "label": "MinimalPairRecord",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "class MinimalPairRecord:\n    id: str\n    lp_id: int\n    phenomenon: str\n    contrast_id: str\n    good: str\n    bad: str\n    expected: str\n    register: str\n    term_type: str",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "MinimalPairGenerationIssue",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "class MinimalPairGenerationIssue:\n    code: str\n    message: str\n    record_id: str | None = None\n    blocking: bool = True\n@dataclass\nclass MinimalPairGenerationReport:\n    ok: bool\n    records_generated: int\n    issues: list[MinimalPairGenerationIssue]",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "MinimalPairGenerationReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "class MinimalPairGenerationReport:\n    ok: bool\n    records_generated: int\n    issues: list[MinimalPairGenerationIssue]\ndef load_context_manifest(path: Path) -> LPContextManifest:\n    return LPContextManifest.model_validate(load_yaml(path))\ndef stable_minimal_pair_id(lp_id: int, contrast_id: str, good: str, bad: str) -> str:\n    digest = hashlib.sha1(f\"{lp_id}|{contrast_id}|{good}|{bad}\".encode(\"utf-8\")).hexdigest()[:10]\n    return f\"lp{lp_id}-{digest}\"\ndef expand_contrast_templates(contrast: LPContextContrast) -> list[tuple[str, str]]:",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "load_context_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def load_context_manifest(path: Path) -> LPContextManifest:\n    return LPContextManifest.model_validate(load_yaml(path))\ndef stable_minimal_pair_id(lp_id: int, contrast_id: str, good: str, bad: str) -> str:\n    digest = hashlib.sha1(f\"{lp_id}|{contrast_id}|{good}|{bad}\".encode(\"utf-8\")).hexdigest()[:10]\n    return f\"lp{lp_id}-{digest}\"\ndef expand_contrast_templates(contrast: LPContextContrast) -> list[tuple[str, str]]:\n    if len(contrast.good_templates) != len(contrast.bad_templates):\n        raise ValueError(\n            f\"Mismatched template counts for {contrast.contrast_id}: \"\n            f\"{len(contrast.good_templates)} good vs {len(contrast.bad_templates)} bad\"",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "stable_minimal_pair_id",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def stable_minimal_pair_id(lp_id: int, contrast_id: str, good: str, bad: str) -> str:\n    digest = hashlib.sha1(f\"{lp_id}|{contrast_id}|{good}|{bad}\".encode(\"utf-8\")).hexdigest()[:10]\n    return f\"lp{lp_id}-{digest}\"\ndef expand_contrast_templates(contrast: LPContextContrast) -> list[tuple[str, str]]:\n    if len(contrast.good_templates) != len(contrast.bad_templates):\n        raise ValueError(\n            f\"Mismatched template counts for {contrast.contrast_id}: \"\n            f\"{len(contrast.good_templates)} good vs {len(contrast.bad_templates)} bad\"\n        )\n    return [",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "expand_contrast_templates",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def expand_contrast_templates(contrast: LPContextContrast) -> list[tuple[str, str]]:\n    if len(contrast.good_templates) != len(contrast.bad_templates):\n        raise ValueError(\n            f\"Mismatched template counts for {contrast.contrast_id}: \"\n            f\"{len(contrast.good_templates)} good vs {len(contrast.bad_templates)} bad\"\n        )\n    return [\n        (\n            g_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern),\n            b_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern),",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "build_authorized_pair_index",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def build_authorized_pair_index(context_manifest: LPContextManifest) -> dict[str, set[tuple[str, str]]]:\n    return {contrast.contrast_id: set(expand_contrast_templates(contrast)) for contrast in context_manifest.contrasts}\ndef generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[MinimalPairRecord], MinimalPairGenerationReport]:\n    load_yaml(rule_path)\n    contexts = load_context_manifest(context_path)\n    records: list[MinimalPairRecord] = []\n    for contrast in contexts.contrasts:\n        for good, bad in expand_contrast_templates(contrast):\n            rid = stable_minimal_pair_id(contexts.lp_id, contrast.contrast_id, good, bad)\n            records.append(MinimalPairRecord(id=rid, lp_id=contexts.lp_id, phenomenon=contexts.name, contrast_id=contrast.contrast_id, good=good, bad=bad, expected=\"good\", register=contrast.register_value, term_type=contrast.term_type, source_rule=repo_relative_path(rule_path), source_context=repo_relative_path(context_path), metadata={\"dialect\": \"fr-CA\", \"normative\": contrast.register_value == \"formal\", \"allowed_contexts\": contrast.allowed_contexts, \"blocked_contexts\": contrast.blocked_contexts, \"quality_checks\": [], \"positive_pattern\": contrast.positive_pattern, \"negative_pattern\": contrast.negative_pattern}))",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "generate_minimal_pairs",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[MinimalPairRecord], MinimalPairGenerationReport]:\n    load_yaml(rule_path)\n    contexts = load_context_manifest(context_path)\n    records: list[MinimalPairRecord] = []\n    for contrast in contexts.contrasts:\n        for good, bad in expand_contrast_templates(contrast):\n            rid = stable_minimal_pair_id(contexts.lp_id, contrast.contrast_id, good, bad)\n            records.append(MinimalPairRecord(id=rid, lp_id=contexts.lp_id, phenomenon=contexts.name, contrast_id=contrast.contrast_id, good=good, bad=bad, expected=\"good\", register=contrast.register_value, term_type=contrast.term_type, source_rule=repo_relative_path(rule_path), source_context=repo_relative_path(context_path), metadata={\"dialect\": \"fr-CA\", \"normative\": contrast.register_value == \"formal\", \"allowed_contexts\": contrast.allowed_contexts, \"blocked_contexts\": contrast.blocked_contexts, \"quality_checks\": [], \"positive_pattern\": contrast.positive_pattern, \"negative_pattern\": contrast.negative_pattern}))\n    return records, MinimalPairGenerationReport(ok=True, records_generated=len(records), issues=[])\ndef write_jsonl(records: list[MinimalPairRecord], out_path: Path) -> None:",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "write_jsonl",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def write_jsonl(records: list[MinimalPairRecord], out_path: Path) -> None:\n    out_path.parent.mkdir(parents=True, exist_ok=True)\n    with out_path.open(\"w\", encoding=\"utf-8\") as f:\n        for r in records:\n            f.write(json.dumps(r.__dict__, ensure_ascii=False) + \"\\n\")\ndef read_jsonl(path: Path) -> list[dict]:\n    rows = []\n    with path.open(\"r\", encoding=\"utf-8\") as f:\n        for line in f:\n            if line.strip():",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "read_jsonl",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.minimal_pairs",
+        "description": "src.qfr_pipeline.minimal_pairs",
+        "peekOfCode": "def read_jsonl(path: Path) -> list[dict]:\n    rows = []\n    with path.open(\"r\", encoding=\"utf-8\") as f:\n        for line in f:\n            if line.strip():\n                rows.append(json.loads(line))\n    return rows",
+        "detail": "src.qfr_pipeline.minimal_pairs",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "def repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()\n    try:\n        return p.resolve().relative_to(ROOT.resolve()).as_posix()\n    except Exception:\n        return p.as_posix()",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "ROOT = _find_root()\nPROJECT_DIR = ROOT / \"project\"\nMANIFESTS_DIR = ROOT / \"manifests\"\nRULES_DIR = ROOT / \"rules\"\nEVAL_DIR = ROOT / \"eval\"\nRELEASE_GATES_PATH = PROJECT_DIR / \"release_gates.yaml\"\nSTATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "PROJECT_DIR",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "PROJECT_DIR = ROOT / \"project\"\nMANIFESTS_DIR = ROOT / \"manifests\"\nRULES_DIR = ROOT / \"rules\"\nEVAL_DIR = ROOT / \"eval\"\nRELEASE_GATES_PATH = PROJECT_DIR / \"release_gates.yaml\"\nSTATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "MANIFESTS_DIR",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "MANIFESTS_DIR = ROOT / \"manifests\"\nRULES_DIR = ROOT / \"rules\"\nEVAL_DIR = ROOT / \"eval\"\nRELEASE_GATES_PATH = PROJECT_DIR / \"release_gates.yaml\"\nSTATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "RULES_DIR",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "RULES_DIR = ROOT / \"rules\"\nEVAL_DIR = ROOT / \"eval\"\nRELEASE_GATES_PATH = PROJECT_DIR / \"release_gates.yaml\"\nSTATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()\n    try:",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "EVAL_DIR",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "EVAL_DIR = ROOT / \"eval\"\nRELEASE_GATES_PATH = PROJECT_DIR / \"release_gates.yaml\"\nSTATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()\n    try:\n        return p.resolve().relative_to(ROOT.resolve()).as_posix()",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "RELEASE_GATES_PATH",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "RELEASE_GATES_PATH = PROJECT_DIR / \"release_gates.yaml\"\nSTATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()\n    try:\n        return p.resolve().relative_to(ROOT.resolve()).as_posix()\n    except Exception:",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "STATUS_PATH",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "STATUS_PATH = PROJECT_DIR / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()\n    try:\n        return p.resolve().relative_to(ROOT.resolve()).as_posix()\n    except Exception:\n        return p.as_posix()",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "AGENTS_PATH",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.paths",
+        "description": "src.qfr_pipeline.paths",
+        "peekOfCode": "AGENTS_PATH = ROOT / \"AGENTS.md\"\ndef repo_relative_path(path: Path | str) -> str:\n    p = Path(path)\n    if not p.is_absolute():\n        return p.as_posix()\n    try:\n        return p.resolve().relative_to(ROOT.resolve()).as_posix()\n    except Exception:\n        return p.as_posix()",
+        "detail": "src.qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseCandidateStage",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.release_candidate",
+        "description": "src.qfr_pipeline.release_candidate",
+        "peekOfCode": "class ReleaseCandidateStage:\n    name: str\n    ok: bool\n    artifacts: list[str]\n    blocking: bool = True\n    details: dict[str, Any] | None = None\n    error: str | None = None\n@dataclass\nclass ReleaseCandidateReport:\n    ok: bool",
+        "detail": "src.qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseCandidateReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.release_candidate",
+        "description": "src.qfr_pipeline.release_candidate",
+        "peekOfCode": "class ReleaseCandidateReport:\n    ok: bool\n    deterministic_timestamp: str\n    stages: list[ReleaseCandidateStage]\n    artifacts: dict[str, str]\n    release_report_summary: dict[str, Any] | None = None\n    diagnostics_summary: dict[str, Any] | None = None\n    minimal_pair_summary: dict[str, Any] | None = None\n    blocking_failures: list[str] | None = None\n    def to_json(self) -> dict[str, Any]:",
+        "detail": "src.qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
+        "label": "run_release_candidate",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.release_candidate",
+        "description": "src.qfr_pipeline.release_candidate",
+        "peekOfCode": "def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: Path, out_md: Path, allow_missing_diagnostics_phenomena: bool = False, lp9_context: Path = ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\", lp20_context: Path = ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\") -> ReleaseCandidateReport:\n    artifacts = {\n        \"diagnostics_json\": \"reports/diagnostics.lp9_lp20.json\",\n        \"diagnostics_md\": \"reports/diagnostics.lp9_lp20.md\",\n        \"lp9_pairs\": \"data/generated/minimal_pairs.lp9.jsonl\",\n        \"lp9_quality\": \"reports/minimal_pair_quality.lp9.json\",\n        \"lp20_pairs\": \"data/generated/minimal_pairs.lp20.jsonl\",\n        \"lp20_quality\": \"reports/minimal_pair_quality.lp20.json\",\n        \"release_report_json\": \"reports/release_report.json\",\n        \"release_report_md\": \"reports/release_report.md\",",
+        "detail": "src.qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.release_report",
+        "description": "src.qfr_pipeline.release_report",
+        "peekOfCode": "class ReleaseReport:\n    passed: bool\n    per_gate: dict\n    missing_metrics: list[str]\n    diagnostics: dict[str, Any] | None = None\n    def to_json(self):\n        payload = {\"passed\": self.passed, \"per_gate\": self.per_gate, \"missing_metrics\": self.missing_metrics}\n        if self.diagnostics is not None:\n            payload[\"diagnostics\"] = self.diagnostics\n        return payload",
+        "detail": "src.qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "parse_numeric_metric",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.release_report",
+        "description": "src.qfr_pipeline.release_report",
+        "peekOfCode": "def parse_numeric_metric(value):\n    try:\n        return float(value)\n    except (TypeError, ValueError):\n        return None\n@dataclass\nclass ReleaseReport:\n    passed: bool\n    per_gate: dict\n    missing_metrics: list[str]",
+        "detail": "src.qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_release",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.release_report",
+        "description": "src.qfr_pipeline.release_report",
+        "peekOfCode": "def evaluate_release(metrics_path: Path, gates_path: Path) -> ReleaseReport:\n    metrics = load_json(metrics_path)\n    gates = validate_release_gates(gates_path)\n    missing = sorted(list(REQUIRED_METRICS - set(metrics.keys())))\n    asr_wer = parse_numeric_metric(metrics.get(\"asr_wer\"))\n    overall_lp = parse_numeric_metric(metrics.get(\"overall_lp_accuracy\"))\n    lp9 = parse_numeric_metric(metrics.get(\"lp9_lexical_semantics\"))\n    lp20 = parse_numeric_metric(metrics.get(\"lp20_orphaned_preposition\"))\n    lp7_drop = parse_numeric_metric(metrics.get(\"lp7_standard_negation_post_alignment_drop_ratio\"))\n    per = {",
+        "detail": "src.qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "REQUIRED_METRICS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.release_report",
+        "description": "src.qfr_pipeline.release_report",
+        "peekOfCode": "REQUIRED_METRICS = {\n    \"asr_wer\",\n    \"overall_lp_accuracy\",\n    \"lp9_lexical_semantics\",\n    \"lp20_orphaned_preposition\",\n    \"lp7_standard_negation_post_alignment_drop_ratio\",\n}\ndef parse_numeric_metric(value):\n    try:\n        return float(value)",
+        "detail": "src.qfr_pipeline.release_report",
+        "documentation": {}
+    },
+    {
+        "label": "AsrGates",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class AsrGates(BaseModel):\n    wer_max: float = Field(ge=0, le=1)\nclass LPPhenomenaGates(BaseModel):\n    overall_accuracy_min: float = Field(ge=0, le=1)\n    lp9_lexical_semantics_min: float = Field(ge=0, le=1)\n    lp20_orphaned_preposition_min: float = Field(ge=0, le=1)\nclass AlignmentGates(BaseModel):\n    lp7_standard_negation_max_post_alignment_drop_ratio: float = Field(ge=0, le=1)\nclass BenchmarkingGates(BaseModel):\n    scaling_plateau_expected_min: float = Field(ge=0, le=1)",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPPhenomenaGates",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LPPhenomenaGates(BaseModel):\n    overall_accuracy_min: float = Field(ge=0, le=1)\n    lp9_lexical_semantics_min: float = Field(ge=0, le=1)\n    lp20_orphaned_preposition_min: float = Field(ge=0, le=1)\nclass AlignmentGates(BaseModel):\n    lp7_standard_negation_max_post_alignment_drop_ratio: float = Field(ge=0, le=1)\nclass BenchmarkingGates(BaseModel):\n    scaling_plateau_expected_min: float = Field(ge=0, le=1)\n    scaling_plateau_expected_max: float = Field(ge=0, le=1)\n    @model_validator(mode=\"after\")",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "AlignmentGates",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class AlignmentGates(BaseModel):\n    lp7_standard_negation_max_post_alignment_drop_ratio: float = Field(ge=0, le=1)\nclass BenchmarkingGates(BaseModel):\n    scaling_plateau_expected_min: float = Field(ge=0, le=1)\n    scaling_plateau_expected_max: float = Field(ge=0, le=1)\n    @model_validator(mode=\"after\")\n    def check_order(self):\n        if self.scaling_plateau_expected_min > self.scaling_plateau_expected_max:\n            raise ValueError(\"scaling plateau min cannot exceed max\")\n        return self",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "BenchmarkingGates",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class BenchmarkingGates(BaseModel):\n    scaling_plateau_expected_min: float = Field(ge=0, le=1)\n    scaling_plateau_expected_max: float = Field(ge=0, le=1)\n    @model_validator(mode=\"after\")\n    def check_order(self):\n        if self.scaling_plateau_expected_min > self.scaling_plateau_expected_max:\n            raise ValueError(\"scaling plateau min cannot exceed max\")\n        return self\nclass ReleaseGates(BaseModel):\n    asr: AsrGates",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ReleaseGates",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class ReleaseGates(BaseModel):\n    asr: AsrGates\n    linguistic_phenomena: LPPhenomenaGates\n    alignment: AlignmentGates\n    benchmarking: BenchmarkingGates\nclass DatasetManifest(BaseModel):\n    kind: str\n    language: dict[str, Any]\n    forbidden_transformations: list[str]\n    contamination_checks: dict[str, Any]",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class DatasetManifest(BaseModel):\n    kind: str\n    language: dict[str, Any]\n    forbidden_transformations: list[str]\n    contamination_checks: dict[str, Any]\n    lp_coverage: dict[str, Any]\n    quality_filters: dict[str, Any]\n    @field_validator(\"kind\")\n    @classmethod\n    def valid_kind(cls, v: str) -> str:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPRuleManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LPRuleManifest(BaseModel):\n    kind: str\n    lp_id: int\n    positive_patterns: list[dict[str, Any]]\n    negative_patterns: list[dict[str, Any]]\n    confidence_threshold: dict[str, float]\n    @field_validator(\"kind\")\n    @classmethod\n    def rule_kind(cls, v: str) -> str:\n        if v != \"lp_rule_manifest\":",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "EvaluationManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class EvaluationManifest(BaseModel):\n    kind: str\n    benchmark_sets: list[dict[str, Any]]\n    release_gates: dict[str, Any]\n    @field_validator(\"kind\")\n    @classmethod\n    def eval_kind(cls, v: str) -> str:\n        if v != \"evaluation_manifest\":\n            raise ValueError(\"kind must be evaluation_manifest\")\n        return v",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "StatusTask",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class StatusTask(BaseModel):\n    id: str\n    goal: str\n    status: str\n    evidence: Any\nclass ProjectStatus(BaseModel):\n    last_updated: str\n    tasks: list[StatusTask]\nclass ErrorTaxonomyItem(BaseModel):\n    error_code: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectStatus",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class ProjectStatus(BaseModel):\n    last_updated: str\n    tasks: list[StatusTask]\nclass ErrorTaxonomyItem(BaseModel):\n    error_code: str\n    label: str\n    severity: str\n    description: str\n    detection_guidance: str\n    remediation_guidance: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorTaxonomyItem",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class ErrorTaxonomyItem(BaseModel):\n    error_code: str\n    label: str\n    severity: str\n    description: str\n    detection_guidance: str\n    remediation_guidance: str\n    examples: list[str]\n    applies_to: list[str]\n    @field_validator(\"severity\")",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ErrorTaxonomyManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class ErrorTaxonomyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    lp_id: int\n    phenomenon: str\n    taxonomy: list[ErrorTaxonomyItem]\n    @field_validator(\"kind\")\n    @classmethod\n    def valid_kind(cls, v: str) -> str:\n        if v != \"error_taxonomy_manifest\":",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextContrast",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LPContextContrast(BaseModel):\n    model_config = {\"populate_by_name\": True}\n    contrast_id: str\n    positive_pattern: str\n    negative_pattern: str\n    register_value: str = Field(alias=\"register\")\n    term_type: str\n    allowed_contexts: list[str]\n    blocked_contexts: list[str]\n    good_templates: list[str]",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LPContextManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LPContextManifest(BaseModel):\n    kind: str\n    lp_id: int\n    name: str\n    phenomenon: str\n    contrasts: list[LPContextContrast]\n    @field_validator(\"kind\")\n    @classmethod\n    def valid_kind(cls, v: str) -> str:\n        if v != \"lp_context_manifest\":",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_text",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "def normalize_text(text: str) -> str:\n    return \" \".join(unicodedata.normalize(\"NFC\", text).casefold().split())\ndef _parse_unit_interval(value: Any, field_name: str) -> float:\n    if value is None:\n        raise ValueError(f\"{field_name} must be a number in [0,1]\")\n    try:\n        parsed = float(value)\n    except (TypeError, ValueError) as exc:\n        raise ValueError(f\"{field_name} must be a number in [0,1]\") from exc\n    if not 0 <= parsed <= 1:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ensure_eval_gates_sync",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "def ensure_eval_gates_sync(eval_manifest: EvaluationManifest, release_gates: ReleaseGates) -> None:\n    rg = eval_manifest.release_gates\n    lp_floors = rg.get(\"lp_floors\", {})\n    overall = rg.get(\"overall_lp_accuracy_min\")\n    lp9 = lp_floors.get(\"9\", lp_floors.get(9))\n    lp20 = lp_floors.get(\"20\", lp_floors.get(20))\n    try:\n        overall_f = float(overall)\n        lp9_f = float(lp9)\n        lp20_f = float(lp20)",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "REQUIRED_HOLDOUTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "REQUIRED_HOLDOUTS = {\"qfrblimp\", \"multiblimp_fr\", \"qfrcore_eval\", \"qfrcort_eval\"}\nGATE_TOLERANCE = 1e-6\ndef normalize_text(text: str) -> str:\n    return \" \".join(unicodedata.normalize(\"NFC\", text).casefold().split())\ndef _parse_unit_interval(value: Any, field_name: str) -> float:\n    if value is None:\n        raise ValueError(f\"{field_name} must be a number in [0,1]\")\n    try:\n        parsed = float(value)\n    except (TypeError, ValueError) as exc:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "GATE_TOLERANCE",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "GATE_TOLERANCE = 1e-6\ndef normalize_text(text: str) -> str:\n    return \" \".join(unicodedata.normalize(\"NFC\", text).casefold().split())\ndef _parse_unit_interval(value: Any, field_name: str) -> float:\n    if value is None:\n        raise ValueError(f\"{field_name} must be a number in [0,1]\")\n    try:\n        parsed = float(value)\n    except (TypeError, ValueError) as exc:\n        raise ValueError(f\"{field_name} must be a number in [0,1]\") from exc",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationIssue",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "class ValidationIssue:\n    path: str\n    kind: str\n    message: str\n@dataclass\nclass ValidationReport:\n    ok: bool\n    issues: list[ValidationIssue] = field(default_factory=list)\n    checked_files: list[str] = field(default_factory=list)\ndef _validate(path: Path, model):",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "class ValidationReport:\n    ok: bool\n    issues: list[ValidationIssue] = field(default_factory=list)\n    checked_files: list[str] = field(default_factory=list)\ndef _validate(path: Path, model):\n    return model.model_validate(load_yaml(path))\ndef validate_release_gates(path: Path) -> ReleaseGates:\n    return _validate(path, ReleaseGates)\ndef validate_dataset_manifest(path: Path) -> DatasetManifest:\n    return _validate(path, DatasetManifest)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_release_gates",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_release_gates(path: Path) -> ReleaseGates:\n    return _validate(path, ReleaseGates)\ndef validate_dataset_manifest(path: Path) -> DatasetManifest:\n    return _validate(path, DatasetManifest)\ndef validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_dataset_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_dataset_manifest(path: Path) -> DatasetManifest:\n    return _validate(path, DatasetManifest)\ndef validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp_rule_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp_context_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_error_taxonomy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_evaluation_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"\n    try:\n        validate_release_gates(gates_path)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_repository",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"\n    try:\n        validate_release_gates(gates_path)\n        report.checked_files.append(str(gates_path))\n    except Exception as exc:\n        report.ok = False\n        report.issues.append(ValidationIssue(str(gates_path), \"release_gates\", str(exc)))\n    for path in sorted((root / \"manifests\").glob(\"*.y*ml\")):",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "test_load_legacy_semantic_csv_reads_fixture",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_load_legacy_semantic_csv_reads_fixture():\n    rows = load_legacy_semantic_csv(\n        ROOT / \"fixtures/diagnostics/lp9_lp20_legacy_semantic.csv\"\n    )\n    assert len(rows) == 4\n    assert set(rows[0]) == {\n        \"phenomenon\",\n        \"is_correct\",\n        \"embedding_ref\",\n        \"embedding_pred\",",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_legacy_alias_mapping_to_maintained_shape",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_legacy_alias_mapping_to_maintained_shape(tmp_path: Path):\n    out_json = tmp_path / \"legacy_diag.json\"\n    payload = run_legacy_semantic_diagnostics(\n        ROOT / \"fixtures/diagnostics/lp9_lp20_legacy_semantic.csv\",\n        out_json,\n    )\n    _assert_maintained_shape(payload)\n    assert out_json.exists()\n    assert set(payload[\"phenomena\"].keys()) == {\n        \"LP9:lexical_semantics\",",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_legacy_aliases_all_supported_variants",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_legacy_aliases_all_supported_variants(tmp_path: Path):\n    lp9_aliases = [\"LP9\", \"lp9\", \"LP9:lexical_semantics\", \"lexical_semantics\"]\n    lp20_aliases = [\"LP20\", \"lp20\", \"LP20:orphaned_preposition\", \"orphaned_preposition\"]\n    for lp9_alias in lp9_aliases:\n        for lp20_alias in lp20_aliases:\n            csv_text = \"\\n\".join(\n                [\n                    \"phenomenon,is_correct,embedding_ref,embedding_pred,error_label\",\n                    f\"{lp9_alias},1,1 0 0,1 0 0,\",\n                    f\"{lp20_alias},1,1 0 0,1 0 0,\",",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_legacy_phenomenon_becomes_malformed_issue",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_invalid_legacy_phenomenon_becomes_malformed_issue(tmp_path: Path):\n    in_csv = tmp_path / \"bad_phenomenon.csv\"\n    out_json = tmp_path / \"bad_phenomenon.json\"\n    in_csv.write_text(\n        \"\\n\".join(\n            [\n                \"phenomenon,is_correct,embedding_ref,embedding_pred,error_label\",\n                \"unknown_thing,1,1 0 0,1 0 0,\",\n                \"LP20,1,1 0 0,1 0 0,\",\n            ]",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_legacy_non_blocking_fixture_ok_true",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_legacy_non_blocking_fixture_ok_true(tmp_path: Path):\n    payload = run_legacy_semantic_diagnostics(\n        ROOT / \"fixtures/diagnostics/lp9_lp20_legacy_semantic.csv\",\n        tmp_path / \"non_blocking.json\",\n    )\n    assert payload[\"ok\"]\ndef test_legacy_blocking_fixture_ok_false(tmp_path: Path):\n    payload = run_legacy_semantic_diagnostics(\n        ROOT / \"fixtures/diagnostics/lp9_lp20_legacy_semantic_blocking.csv\",\n        tmp_path / \"blocking.json\",",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_legacy_blocking_fixture_ok_false",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_legacy_blocking_fixture_ok_false(tmp_path: Path):\n    payload = run_legacy_semantic_diagnostics(\n        ROOT / \"fixtures/diagnostics/lp9_lp20_legacy_semantic_blocking.csv\",\n        tmp_path / \"blocking.json\",\n    )\n    assert not payload[\"ok\"]\n    assert payload[\"global_summary\"][\"blocking_error_count\"] > 0\ndef test_pipeline_ops_diagnose_semantic_legacy_wrapper_succeeds(tmp_path: Path):\n    out_json = tmp_path / \"tool.json\"\n    cmd = [",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_pipeline_ops_diagnose_semantic_legacy_wrapper_succeeds",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_pipeline_ops_diagnose_semantic_legacy_wrapper_succeeds(tmp_path: Path):\n    out_json = tmp_path / \"tool.json\"\n    cmd = [\n        sys.executable,\n        \"tools/pipeline_ops.py\",\n        \"diagnose-semantic\",\n        \"--in-csv\",\n        \"fixtures/diagnostics/lp9_lp20_legacy_semantic.csv\",\n        \"--out-json\",\n        str(out_json),",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_pipeline_ops_diagnose_semantic_blocking_fixture_signals_failure",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_pipeline_ops_diagnose_semantic_blocking_fixture_signals_failure(tmp_path: Path):\n    out_json = tmp_path / \"tool_blocking.json\"\n    cmd = [\n        sys.executable,\n        \"tools/pipeline_ops.py\",\n        \"diagnose-semantic\",\n        \"--in-csv\",\n        \"fixtures/diagnostics/lp9_lp20_legacy_semantic_blocking.csv\",\n        \"--out-json\",\n        str(out_json),",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_qfr_diagnose_legacy_csv_matches_pipeline_ops_output",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_qfr_diagnose_legacy_csv_matches_pipeline_ops_output(tmp_path: Path):\n    tool_out = tmp_path / \"tool.json\"\n    qfr_out = tmp_path / \"qfr.json\"\n    cmd = [\n        sys.executable,\n        \"tools/pipeline_ops.py\",\n        \"diagnose-semantic\",\n        \"--in-csv\",\n        \"fixtures/diagnostics/lp9_lp20_legacy_semantic.csv\",\n        \"--out-json\",",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_pipeline_ops_no_standalone_semantic_diagnostics_engine",
+        "kind": 2,
+        "importPath": "tests.test_legacy_diagnostics",
+        "description": "tests.test_legacy_diagnostics",
+        "peekOfCode": "def test_pipeline_ops_no_standalone_semantic_diagnostics_engine():\n    text = (ROOT / \"tools/pipeline_ops.py\").read_text(encoding=\"utf-8\")\n    assert \"def lp_semantic_diagnostics\" not in text\n    assert \"_cosine_similarity\" not in text",
+        "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_gate_schema_validation",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_gate_schema_validation():\n    assert validate_release_gates(RELEASE_GATES_PATH).asr.wer_max == pytest.approx(0.0665)\ndef test_lp9_context_manifest_validates():\n    m = validate_lp_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    assert m.lp_id == 9\ndef test_lp9_generated_records_pass_context_bound_validation():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([r.__dict__ for r in recs], manifest, str(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\"))\n    assert report.ok",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_context_manifest_validates",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp9_context_manifest_validates():\n    m = validate_lp_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    assert m.lp_id == 9\ndef test_lp9_generated_records_pass_context_bound_validation():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([r.__dict__ for r in recs], manifest, str(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\"))\n    assert report.ok\ndef test_lp9_generated_records_count_matches_committed_artifact():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_generated_records_pass_context_bound_validation",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp9_generated_records_pass_context_bound_validation():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([r.__dict__ for r in recs], manifest, str(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\"))\n    assert report.ok\ndef test_lp9_generated_records_count_matches_committed_artifact():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    committed = (ROOT / \"data/generated/minimal_pairs.lp9.jsonl\").read_text(encoding=\"utf-8\").strip().splitlines()\n    assert len(recs) == len(committed)\ndef test_context_binding_forged_contrast_fails():",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_generated_records_count_matches_committed_artifact",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp9_generated_records_count_matches_committed_artifact():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    committed = (ROOT / \"data/generated/minimal_pairs.lp9.jsonl\").read_text(encoding=\"utf-8\").strip().splitlines()\n    assert len(recs) == len(committed)\ndef test_context_binding_forged_contrast_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"contrast_id\"] = \"forged\"\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([bad], manifest)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_context_binding_forged_contrast_fails",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_context_binding_forged_contrast_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"contrast_id\"] = \"forged\"\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([bad], manifest)\n    assert any(i.code == \"context_unknown_contrast\" for i in report.issues)\ndef test_context_binding_wrong_pattern_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_context_binding_wrong_pattern_fails",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_context_binding_wrong_pattern_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"metadata\"] = dict(bad[\"metadata\"])\n    bad[\"metadata\"][\"positive_pattern\"] = \"PATTERN_FORGÉ\"\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([bad], manifest)\n    assert any(i.code == \"context_positive_pattern_mismatch\" for i in report.issues)\ndef test_context_binding_unauthorized_good_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_context_binding_unauthorized_good_fails",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_context_binding_unauthorized_good_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"good\"] = bad[\"good\"] + \" EXTRA\"\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([bad], manifest)\n    assert any(i.code == \"context_unauthorized_pair\" for i in report.issues)\ndef test_context_binding_wrong_stable_id_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_context_binding_wrong_stable_id_fails",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_context_binding_wrong_stable_id_fails():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"id\"] = \"lp9-deadbeef00\"\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([bad], manifest)\n    assert any(i.code == \"context_stable_id_mismatch\" for i in report.issues)\ndef test_context_binding_register_term_type_source_failures():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_context_binding_register_term_type_source_failures",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_context_binding_register_term_type_source_failures():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"register\"] = \"informal\"\n    bad[\"term_type\"] = \"idiom\"\n    bad[\"source_context\"] = \"wrong.yaml\"\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([bad], manifest, source_context=\"rules/lp9_lexical_semantics.contexts.yaml\")\n    codes = {i.code for i in report.issues}\n    assert \"context_register_mismatch\" in codes and \"context_term_type_mismatch\" in codes and \"context_source_path_mismatch\" in codes",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_generator_rejects_le_fin_de_semaine",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_generator_rejects_le_fin_de_semaine():\n    quality = validate_minimal_pairs([{\"id\": \"x\", \"lp_id\": 9, \"good\": \"Le fin de semaine commence bientôt.\", \"bad\": \"Le week-end commence bientôt.\", \"metadata\": {\"positive_pattern\": \"fin de semaine\", \"negative_pattern\": \"week-end\"}}])\n    assert any(i.code == \"forbidden_ngram\" for i in quality.issues)\ndef test_generator_rejects_good_side_week_end():\n    quality = validate_minimal_pairs([{\"id\": \"x\", \"lp_id\": 9, \"good\": \"Le week-end commence bientôt.\", \"bad\": \"La fin de semaine commence bientôt.\", \"metadata\": {\"positive_pattern\": \"fin de semaine\", \"negative_pattern\": \"week-end\"}}])\n    assert any(i.code == \"neutralization_good\" for i in quality.issues)\ndef test_validate_minimal_pairs_cli_fail_on_forged_record(tmp_path: Path):\n    out = tmp_path / \"pairs.jsonl\"\n    report = tmp_path / \"report.json\"\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_generator_rejects_good_side_week_end",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_generator_rejects_good_side_week_end():\n    quality = validate_minimal_pairs([{\"id\": \"x\", \"lp_id\": 9, \"good\": \"Le week-end commence bientôt.\", \"bad\": \"La fin de semaine commence bientôt.\", \"metadata\": {\"positive_pattern\": \"fin de semaine\", \"negative_pattern\": \"week-end\"}}])\n    assert any(i.code == \"neutralization_good\" for i in quality.issues)\ndef test_validate_minimal_pairs_cli_fail_on_forged_record(tmp_path: Path):\n    out = tmp_path / \"pairs.jsonl\"\n    report = tmp_path / \"report.json\"\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    forged = recs[0].__dict__.copy()\n    forged[\"contrast_id\"] = \"forged\"\n    out.write_text(json.dumps(forged, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_validate_minimal_pairs_cli_fail_on_forged_record",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_validate_minimal_pairs_cli_fail_on_forged_record(tmp_path: Path):\n    out = tmp_path / \"pairs.jsonl\"\n    report = tmp_path / \"report.json\"\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    forged = recs[0].__dict__.copy()\n    forged[\"contrast_id\"] = \"forged\"\n    out.write_text(json.dumps(forged, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\n    r = CliRunner().invoke(app, [\"validate-minimal-pairs\", \"--input\", str(out), \"--context\", \"rules/lp9_lexical_semantics.contexts.yaml\", \"--report\", str(report)])\n    assert r.exit_code != 0\ndef test_generate_minimal_pairs_writes_jsonl_and_report(tmp_path: Path):",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_minimal_pairs_writes_jsonl_and_report",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_generate_minimal_pairs_writes_jsonl_and_report(tmp_path: Path):\n    out = tmp_path / \"pairs.jsonl\"\n    report = tmp_path / \"quality.json\"\n    r = CliRunner().invoke(app, [\"generate-minimal-pairs\", \"--rule\", \"rules/lp_rule_manifest.template.yaml\", \"--context\", \"rules/lp9_lexical_semantics.contexts.yaml\", \"--out\", str(out), \"--report\", str(report)])\n    assert r.exit_code == 0 and out.exists() and report.exists()\ndef test_cli_agents_refresh_no_subprocess():\n    assert \"subprocess\" not in (ROOT / \"src/qfr_pipeline/cli.py\").read_text(encoding=\"utf-8\")\ndef test_expand_contrast_templates_rejects_mismatched_lengths():\n    contrast = LPContextContrast.model_construct(\n        contrast_id=\"x\",",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_agents_refresh_no_subprocess",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_cli_agents_refresh_no_subprocess():\n    assert \"subprocess\" not in (ROOT / \"src/qfr_pipeline/cli.py\").read_text(encoding=\"utf-8\")\ndef test_expand_contrast_templates_rejects_mismatched_lengths():\n    contrast = LPContextContrast.model_construct(\n        contrast_id=\"x\",\n        positive_pattern=\"fin de semaine\",\n        negative_pattern=\"week-end\",\n        register=\"formal\",\n        term_type=\"noun_phrase\",\n        allowed_contexts=[\"a\"],",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_expand_contrast_templates_rejects_mismatched_lengths",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_expand_contrast_templates_rejects_mismatched_lengths():\n    contrast = LPContextContrast.model_construct(\n        contrast_id=\"x\",\n        positive_pattern=\"fin de semaine\",\n        negative_pattern=\"week-end\",\n        register=\"formal\",\n        term_type=\"noun_phrase\",\n        allowed_contexts=[\"a\"],\n        blocked_contexts=[\"b\"],\n        good_templates=[\"{positive_pattern} A\", \"{positive_pattern} B\"],",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_context_binding_source_context_canonical_path_match",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_context_binding_source_context_canonical_path_match():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([recs[0].__dict__], manifest, source_context=str((ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\").resolve()))\n    assert not any(i.code == \"context_source_path_mismatch\" for i in report.issues)\ndef test_lp20_context_manifest_validates():\n    m = validate_lp_context_manifest(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    assert m.lp_id == 20 and len(m.contrasts) >= 4\n    assert any(c.phenomenon_tags for c in m.contrasts)\n    assert any(c.required_good_substrings or c.required_bad_substrings for c in m.contrasts)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp20_context_manifest_validates",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp20_context_manifest_validates():\n    m = validate_lp_context_manifest(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    assert m.lp_id == 20 and len(m.contrasts) >= 4\n    assert any(c.phenomenon_tags for c in m.contrasts)\n    assert any(c.required_good_substrings or c.required_bad_substrings for c in m.contrasts)\n    assert any(c.forbidden_good_substrings or c.forbidden_bad_substrings for c in m.contrasts)\n    assert any(c.minimal_contrast_focus for c in m.contrasts)\ndef test_lp20_context_manifest_invalid_fields_rejected(tmp_path: Path):\n    data = yaml.safe_load((ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\").read_text(encoding=\"utf-8\"))\n    first = data[\"contrasts\"][0]",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp20_context_manifest_invalid_fields_rejected",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp20_context_manifest_invalid_fields_rejected(tmp_path: Path):\n    data = yaml.safe_load((ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\").read_text(encoding=\"utf-8\"))\n    first = data[\"contrasts\"][0]\n    first[\"phenomenon_tags\"] = []\n    first[\"required_good_substrings\"] = [\"   \"]\n    bad_path = tmp_path / \"bad_lp20.contexts.yaml\"\n    bad_path.write_text(yaml.safe_dump(data, sort_keys=False), encoding=\"utf-8\")\n    with pytest.raises(ValidationError):\n        validate_lp_context_manifest(bad_path)\ndef test_lp20_generation_and_validation_pass():",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp20_generation_and_validation_pass",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp20_generation_and_validation_pass():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    report = validate_minimal_pairs_against_context([r.__dict__ for r in recs], manifest, str(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\"))\n    assert len(recs) >= 8 and report.ok\ndef test_lp20_context_binding_failures():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"good\"] = \"...\"",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp20_context_binding_failures",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp20_context_binding_failures():\n    recs, _ = generate_minimal_pairs(ROOT / \"rules/lp_rule_manifest.template.yaml\", ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    manifest = load_context_manifest(ROOT / \"rules/lp20_orphaned_preposition.contexts.yaml\")\n    bad = recs[0].__dict__.copy()\n    bad[\"good\"] = \"...\"\n    bad[\"bad\"] = \"...\"\n    bad[\"id\"] = \"lp20-deadbeef00\"\n    report = validate_minimal_pairs_against_context([bad], manifest)\n    codes = {i.code for i in report.issues}\n    assert \"context_unauthorized_pair\" in codes and \"context_stable_id_mismatch\" in codes and \"lp20_too_short\" in codes",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp20_punctuation_only_and_duplicate_pair_fail",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_lp20_punctuation_only_and_duplicate_pair_fail():\n    records = [\n        {\"id\": \"x1\", \"lp_id\": 20, \"good\": \"De quoi parles-tu?\", \"bad\": \"De quoi parles-tu !\", \"metadata\": {\"positive_pattern\": \"de\", \"negative_pattern\": \"\"}},\n        {\"id\": \"x2\", \"lp_id\": 20, \"good\": \"De quoi parles-tu?\", \"bad\": \"De quoi parles-tu !\", \"metadata\": {\"positive_pattern\": \"de\", \"negative_pattern\": \"\"}},\n    ]\n    quality = validate_minimal_pairs(records)\n    codes = {i.code for i in quality.issues}\n    assert \"punctuation_only_change\" in codes and \"duplicate_pair\" in codes\ndef test_taxonomy_schema_validation_passes():\n    assert validate_error_taxonomy_manifest(ROOT / \"eval/lp9_error_taxonomy.yaml\").lp_id == 9",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_taxonomy_schema_validation_passes",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_taxonomy_schema_validation_passes():\n    assert validate_error_taxonomy_manifest(ROOT / \"eval/lp9_error_taxonomy.yaml\").lp_id == 9\n    assert validate_error_taxonomy_manifest(ROOT / \"eval/lp20_error_taxonomy.yaml\").lp_id == 20\ndef test_taxonomy_duplicate_error_code_fails(tmp_path: Path):\n    bad = yaml.safe_load((ROOT / \"eval/lp9_error_taxonomy.yaml\").read_text())\n    bad[\"taxonomy\"].append(dict(bad[\"taxonomy\"][0]))\n    p = tmp_path / \"dup.yaml\"\n    p.write_text(yaml.safe_dump(bad, sort_keys=False), encoding=\"utf-8\")\n    with pytest.raises(ValidationError):\n        validate_error_taxonomy_manifest(p)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_taxonomy_duplicate_error_code_fails",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_taxonomy_duplicate_error_code_fails(tmp_path: Path):\n    bad = yaml.safe_load((ROOT / \"eval/lp9_error_taxonomy.yaml\").read_text())\n    bad[\"taxonomy\"].append(dict(bad[\"taxonomy\"][0]))\n    p = tmp_path / \"dup.yaml\"\n    p.write_text(yaml.safe_dump(bad, sort_keys=False), encoding=\"utf-8\")\n    with pytest.raises(ValidationError):\n        validate_error_taxonomy_manifest(p)\ndef test_diagnostics_aggregation_and_cosine():\n    rows = load_eval_rows(ROOT / \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\")\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_aggregation_and_cosine",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_aggregation_and_cosine():\n    rows = load_eval_rows(ROOT / \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\")\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert report.global_summary[\"total_records\"] == 4\n    assert report.phenomena[\"LP9:lexical_semantics\"].binary_accuracy == pytest.approx(0.5)\n    assert report.phenomena[\"LP20:orphaned_preposition\"].mean_semantic_similarity is not None\ndef test_diagnostics_unknown_error_code_blocking():\n    rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": 0, \"error_code\": \"nope\"}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_unknown_error_code_blocking",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_unknown_error_code_blocking():\n    rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": 0, \"error_code\": \"nope\"}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert not report.ok\ndef test_diagnostics_missing_error_code_blocking():\n    rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": 0}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert any(i.code == \"missing_error_code\" for i in report.issues)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_missing_error_code_blocking",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_missing_error_code_blocking():\n    rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": 0}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert any(i.code == \"missing_error_code\" for i in report.issues)\ndef test_cli_validate_taxonomy_and_diagnose_eval(tmp_path: Path):\n    outj = tmp_path / \"d.json\"\n    outm = tmp_path / \"d.md\"\n    r1 = CliRunner().invoke(app, [\"validate-taxonomy\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\"])\n    r2 = CliRunner().invoke(app, [\"diagnose-eval\", \"--input\", \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\", \"--taxonomy\", \"eval/lp20_error_taxonomy.yaml\", \"--out-json\", str(outj), \"--out-md\", str(outm)])",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_validate_taxonomy_and_diagnose_eval",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_cli_validate_taxonomy_and_diagnose_eval(tmp_path: Path):\n    outj = tmp_path / \"d.json\"\n    outm = tmp_path / \"d.md\"\n    r1 = CliRunner().invoke(app, [\"validate-taxonomy\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\"])\n    r2 = CliRunner().invoke(app, [\"diagnose-eval\", \"--input\", \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\", \"--taxonomy\", \"eval/lp20_error_taxonomy.yaml\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r1.exit_code == 0 and r2.exit_code == 0 and outj.exists() and outm.exists()\ndef test_diagnostics_known_blocking_taxonomy_sets_not_ok():\n    rows = load_eval_rows(ROOT / \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\")\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_known_blocking_taxonomy_sets_not_ok",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_known_blocking_taxonomy_sets_not_ok():\n    rows = load_eval_rows(ROOT / \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\")\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert not report.ok and report.global_summary[\"blocking_error_count\"] > 0\ndef test_diagnostics_known_non_blocking_taxonomy_can_stay_ok():\n    rows = load_eval_rows(ROOT / \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\")\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert report.ok",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_known_non_blocking_taxonomy_can_stay_ok",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_known_non_blocking_taxonomy_can_stay_ok():\n    rows = load_eval_rows(ROOT / \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\")\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    report = run_diagnostics(rows, tax)\n    assert report.ok\ndef test_diagnostics_invalid_is_correct_values_rejected():\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    for bad in (2, -1, \"yes\"):\n        rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": bad}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n        report = run_diagnostics(rows, tax)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_invalid_is_correct_values_rejected",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_invalid_is_correct_values_rejected():\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    for bad in (2, -1, \"yes\"):\n        rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": bad}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n        report = run_diagnostics(rows, tax)\n        assert report.global_summary[\"malformed_rows\"] >= 1 and not report.ok\ndef test_diagnostics_zero_one_is_correct_supported():\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": 0, \"error_code\": \"normative_register_mismatch\"}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n    report = run_diagnostics(rows, tax)",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_diagnostics_zero_one_is_correct_supported",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_diagnostics_zero_one_is_correct_supported():\n    tax = load_taxonomies([ROOT / \"eval/lp9_error_taxonomy.yaml\", ROOT / \"eval/lp20_error_taxonomy.yaml\"])\n    rows = [{\"id\": \"x\", \"lp_id\": 9, \"phenomenon\": \"lexical_semantics\", \"is_correct\": 0, \"error_code\": \"normative_register_mismatch\"}, {\"id\": \"y\", \"lp_id\": 20, \"phenomenon\": \"orphaned_preposition\", \"is_correct\": 1}]\n    report = run_diagnostics(rows, tax)\n    assert report.ok\ndef test_cli_diagnose_eval_fails_on_known_blocking(tmp_path: Path):\n    outj = tmp_path / \"d.json\"\n    outm = tmp_path / \"d.md\"\n    r = CliRunner().invoke(app, [\"diagnose-eval\", \"--input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\", \"--taxonomy\", \"eval/lp20_error_taxonomy.yaml\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r.exit_code != 0",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_diagnose_eval_fails_on_known_blocking",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_cli_diagnose_eval_fails_on_known_blocking(tmp_path: Path):\n    outj = tmp_path / \"d.json\"\n    outm = tmp_path / \"d.md\"\n    r = CliRunner().invoke(app, [\"diagnose-eval\", \"--input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\", \"--taxonomy\", \"eval/lp20_error_taxonomy.yaml\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r.exit_code != 0\ndef test_release_report_fails_on_blocking_diagnostics(tmp_path: Path):\n    djson = tmp_path / \"blocking.json\"\n    dmd = tmp_path / \"blocking.md\"\n    rc = CliRunner()\n    r1 = rc.invoke(app, [\"diagnose-eval\", \"--input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\", \"--taxonomy\", \"eval/lp20_error_taxonomy.yaml\", \"--out-json\", str(djson), \"--out-md\", str(dmd)])",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_report_fails_on_blocking_diagnostics",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_report_fails_on_blocking_diagnostics(tmp_path: Path):\n    djson = tmp_path / \"blocking.json\"\n    dmd = tmp_path / \"blocking.md\"\n    rc = CliRunner()\n    r1 = rc.invoke(app, [\"diagnose-eval\", \"--input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--taxonomy\", \"eval/lp9_error_taxonomy.yaml\", \"--taxonomy\", \"eval/lp20_error_taxonomy.yaml\", \"--out-json\", str(djson), \"--out-md\", str(dmd)])\n    assert r1.exit_code != 0\n    r2 = rc.invoke(app, [\"release-report\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics\", str(djson), \"--out-json\", str(tmp_path / \"r.json\"), \"--out-md\", str(tmp_path / \"r.md\")])\n    assert r2.exit_code != 0\ndef test_ci_lp20_commands_no_bare_extra_args():\n    ci_path = ROOT / \".github/workflows/ci.yml\"",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_ci_lp20_commands_no_bare_extra_args",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_ci_lp20_commands_no_bare_extra_args():\n    ci_path = ROOT / \".github/workflows/ci.yml\"\n    if not ci_path.exists():\n        return\n    ci = ci_path.read_text(encoding=\"utf-8\")\n    assert \"qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml --out data/generated/minimal_pairs.lp20.jsonl --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json\" not in ci\n    assert \"qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --context rules/lp20_orphaned_preposition.contexts.yaml --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json\" not in ci\ndef test_workflow_file_exists():\n    assert (ROOT / \".github/workflows/ci.yml\").exists()\ndef test_local_validation_script_exists_and_has_required_commands():",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_workflow_file_exists",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_workflow_file_exists():\n    assert (ROOT / \".github/workflows/ci.yml\").exists()\ndef test_local_validation_script_exists_and_has_required_commands():\n    script = (ROOT / \"scripts/run_local_validation.sh\")\n    assert script.exists()\n    text = script.read_text(encoding=\"utf-8\")\n    for cmd in [\n        \"set -euo pipefail\",\n        \"ruff check .\",\n        \"python -m pytest\",",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_local_validation_script_exists_and_has_required_commands",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_local_validation_script_exists_and_has_required_commands():\n    script = (ROOT / \"scripts/run_local_validation.sh\")\n    assert script.exists()\n    text = script.read_text(encoding=\"utf-8\")\n    for cmd in [\n        \"set -euo pipefail\",\n        \"ruff check .\",\n        \"python -m pytest\",\n        \"python3 tools/update_agents.py --validate\",\n        \"qfr validate\",",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_t11_t15_t16_t17_remain_fully_implemented_after_write",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_t11_t15_t16_t17_remain_fully_implemented_after_write():\n    status = json.loads((ROOT / \"project/status.json\").read_text(encoding=\"utf-8\"))\n    by_id = {t[\"id\"]: t[\"status\"] for t in status[\"tasks\"]}\n    assert by_id.get(\"T11\") == \"fully_implemented\"\n    assert by_id.get(\"T15\") == \"fully_implemented\"\n    assert by_id.get(\"T16\") == \"fully_implemented\"\n    assert by_id.get(\"T17\") == \"fully_implemented\"\ndef test_release_candidate_command_succeeds_with_valid_fixtures(tmp_path: Path):\n    rc = CliRunner()\n    outj = tmp_path / \"rc.json\"",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_candidate_command_succeeds_with_valid_fixtures",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_candidate_command_succeeds_with_valid_fixtures(tmp_path: Path):\n    rc = CliRunner()\n    outj = tmp_path / \"rc.json\"\n    outm = tmp_path / \"rc.md\"\n    r = rc.invoke(app, [\"release-candidate\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics-input\", \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r.exit_code == 0\n    payload = json.loads(outj.read_text(encoding=\"utf-8\"))\n    assert payload[\"ok\"]\n    assert \"LP9:lexical_semantics\" in payload[\"diagnostics_summary\"][\"phenomena\"]\n    assert \"LP20:orphaned_preposition\" in payload[\"diagnostics_summary\"][\"phenomena\"]",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_candidate_fails_with_blocking_diagnostics_and_writes_partial",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_candidate_fails_with_blocking_diagnostics_and_writes_partial(tmp_path: Path):\n    rc = CliRunner()\n    outj = tmp_path / \"rc_fail.json\"\n    outm = tmp_path / \"rc_fail.md\"\n    r = rc.invoke(app, [\"release-candidate\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics-input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r.exit_code != 0\n    payload = json.loads(outj.read_text(encoding=\"utf-8\"))\n    assert \"diagnostics_generation\" in payload[\"blocking_failures\"]\n    assert len(payload[\"stages\"]) >= 3\ndef test_release_candidate_has_minimal_pair_summaries_and_no_subprocess_usage():",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_candidate_has_minimal_pair_summaries_and_no_subprocess_usage",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_candidate_has_minimal_pair_summaries_and_no_subprocess_usage():\n    text = (ROOT / \"src/qfr_pipeline/release_candidate.py\").read_text(encoding=\"utf-8\")\n    assert \"subprocess\" not in text\n    assert \"lp9_records\" in text and \"lp20_records\" in text\ndef test_ci_and_local_runner_include_release_candidate_and_stale_guard():\n    ci = (ROOT / \".github/workflows/ci.yml\").read_text(encoding=\"utf-8\")\n    local = (ROOT / \"scripts/run_local_validation.sh\").read_text(encoding=\"utf-8\")\n    assert \"qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md\" in ci\n    assert \"qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md\" in local\n    assert \"python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json\" in ci",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_ci_and_local_runner_include_release_candidate_and_stale_guard",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_ci_and_local_runner_include_release_candidate_and_stale_guard():\n    ci = (ROOT / \".github/workflows/ci.yml\").read_text(encoding=\"utf-8\")\n    local = (ROOT / \"scripts/run_local_validation.sh\").read_text(encoding=\"utf-8\")\n    assert \"qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md\" in ci\n    assert \"qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md\" in local\n    assert \"python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json\" in ci\n    assert \"qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json\" in ci\n    assert \"python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json\" in local\n    assert \"qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json\" in local\n    assert \"reports/release_candidate.json reports/release_candidate.md\" in ci",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_repo_relative_path_normalizes_root_and_relative",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_repo_relative_path_normalizes_root_and_relative():\n    assert repo_relative_path(ROOT / \"rules/lp9_lexical_semantics.contexts.yaml\") == \"rules/lp9_lexical_semantics.contexts.yaml\"\n    assert repo_relative_path(Path(\"rules/lp9_lexical_semantics.contexts.yaml\")) == \"rules/lp9_lexical_semantics.contexts.yaml\"\ndef test_release_candidate_and_generated_artifacts_have_no_absolute_paths():\n    rc = CliRunner()\n    r = rc.invoke(app, [\"release-candidate\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics-input\", \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\", \"--out-json\", \"reports/release_candidate.json\", \"--out-md\", \"reports/release_candidate.md\"])\n    assert r.exit_code == 0\n    repo_root = str(ROOT.resolve())\n    for path in [\n        ROOT / \"reports/release_candidate.json\",",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_candidate_and_generated_artifacts_have_no_absolute_paths",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_candidate_and_generated_artifacts_have_no_absolute_paths():\n    rc = CliRunner()\n    r = rc.invoke(app, [\"release-candidate\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics-input\", \"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\", \"--out-json\", \"reports/release_candidate.json\", \"--out-md\", \"reports/release_candidate.md\"])\n    assert r.exit_code == 0\n    repo_root = str(ROOT.resolve())\n    for path in [\n        ROOT / \"reports/release_candidate.json\",\n        ROOT / \"reports/release_candidate.md\",\n        ROOT / \"data/generated/minimal_pairs.lp9.jsonl\",\n        ROOT / \"data/generated/minimal_pairs.lp20.jsonl\",",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "Record",
+        "kind": 6,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "class Record:\n    source: str\n    text: str\n    register: str\n    confidence: float\ndef _norm_text(text: str) -> str:\n    text = text.strip()\n    text = re.sub(r\"\\s+\", \" \", text)\n    return text\ndef _hash_text(text: str) -> str:",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def harvest(input_paths: list[Path], out_jsonl: Path, min_chars: int, dedupe_batch_size: int = 0) -> int:\n    seen: set[str] = set()\n    kept = 0\n    kept_since_clear = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    with out_jsonl.open(\"w\", encoding=\"utf-8\") as out:\n        for path in input_paths:\n            with path.open(\"r\", encoding=\"utf-8\") as f:\n                for line in f:\n                    line = _norm_text(line)",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "curate",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def curate(in_jsonl: Path, out_jsonl: Path, min_fr_ca_score: float) -> int:\n    kept = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src, out_jsonl.open(\"w\", encoding=\"utf-8\") as dst:\n        for raw in src:\n            rec = json.loads(raw)\n            text = rec[\"text\"].lower()\n            marker_hits = sum(1 for m in FR_CA_MARKERS if re.search(rf\"\\b{re.escape(m)}\\b\", text))\n            score = marker_hits / max(1, len(text.split()))\n            if score < min_fr_ca_score:",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "edit_normative",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def edit_normative(in_jsonl: Path, out_jsonl: Path) -> int:\n    changed = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    def _match_case(src: str, replacement: str) -> str:\n        if src.isupper():\n            return replacement.upper()\n        if src[:1].isupper():\n            return replacement[:1].upper() + replacement[1:]\n        return replacement\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src, out_jsonl.open(\"w\", encoding=\"utf-8\") as dst:",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "split_train_dev_test",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def split_train_dev_test(in_jsonl: Path, out_dir: Path, seed: int = 42) -> dict[str, int]:\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src:\n        rows = [json.loads(line) for line in src if line.strip()]\n    rnd = random.Random(seed)\n    rnd.shuffle(rows)\n    n = len(rows)\n    n_train = int(n * 0.9)\n    n_dev = int(n * 0.05)\n    splits = {\n        \"train\": rows[:n_train],",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "write_training_recipe",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:\n    splits = {\n        \"train\": data_dir / \"train.jsonl\",\n        \"dev\": data_dir / \"dev.jsonl\",\n        \"test\": data_dir / \"test.jsonl\",\n    }\n    missing = [name for name, path in splits.items() if not path.exists()]\n    if missing:\n        raise SystemExit(f\"Missing split files in {data_dir}: {missing}\")\n    release_gates_path = Path(__file__).resolve().parents[1] / \"project\" / \"release_gates.yaml\"",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_lp7",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:\n    try:\n        gates = yaml.safe_load(release_gates_path.read_text(encoding=\"utf-8\")) or {}\n    except (OSError, yaml.YAMLError) as exc:\n        raise SystemExit(f\"Failed to read/parse release gates YAML at {release_gates_path}: {exc}\")\n    if not isinstance(gates, dict):\n        raise SystemExit(f\"Malformed release gates config at {release_gates_path}: expected top-level mapping.\")\n    if \"alignment\" not in gates or not isinstance(gates[\"alignment\"], dict):\n        raise SystemExit(f\"Malformed release gates config at {release_gates_path}: missing mapping key `alignment`.\")\n    if \"lp7_standard_negation_max_post_alignment_drop_ratio\" not in gates[\"alignment\"]:",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "def main() -> None:\n    ap = argparse.ArgumentParser()\n    sub = ap.add_subparsers(dest=\"cmd\", required=True)\n    p_h = sub.add_parser(\"harvest\")\n    p_h.add_argument(\"--inputs\", nargs=\"+\", type=Path, required=True)\n    p_h.add_argument(\"--out\", type=Path, required=True)\n    p_h.add_argument(\"--min-chars\", type=int, default=20)\n    p_h.add_argument(\"--dedupe-batch-size\", type=int, default=0)\n    p_c = sub.add_parser(\"curate\")\n    p_c.add_argument(\"--in\", dest=\"inp\", type=Path, required=True)",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "FR_CA_MARKERS",
+        "kind": 5,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "FR_CA_MARKERS = {\n    \"courriel\",\n    \"fin de semaine\",\n    \"magasiner\",\n    \"char\",\n    \"dépanneur\",\n    \"chu\",\n    \"icitte\",\n    \"pantoute\",\n}",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "FR_FR_TO_FR_CA_REPLACEMENTS",
+        "kind": 5,
+        "importPath": "tools.pipeline_ops",
+        "description": "tools.pipeline_ops",
+        "peekOfCode": "FR_FR_TO_FR_CA_REPLACEMENTS = {\n    \"email\": \"courriel\",\n    \"week-end\": \"fin de semaine\",\n    \"voiture\": \"char\",\n}\n@dataclass\nclass Record:\n    source: str\n    text: str\n    register: str",
+        "detail": "tools.pipeline_ops",
+        "documentation": {}
+    },
+    {
+        "label": "icon",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def icon(status: str) -> str:\n    return {\n        \"fully_implemented\": \"✅ fully_implemented\",\n        \"partially_implemented\": \"🟡 partially_implemented\",\n        \"not_implemented\": \"❌ not_implemented\",\n    }.get(status, status)\ndef sync_status() -> dict:\n    data = json.loads(STATUS_PATH.read_text())\n    for task in data.get(\"tasks\", []):\n        tid = task.get(\"id\")",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "sync_status",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def sync_status() -> dict:\n    data = json.loads(STATUS_PATH.read_text())\n    for task in data.get(\"tasks\", []):\n        tid = task.get(\"id\")\n        path = TASK_FILES.get(tid)\n        new_status = \"fully_implemented\" if (path and path.exists()) else \"not_implemented\"\n        task[\"status\"] = new_status\n        task[\"evidence\"] = \"Provided\" if new_status == \"fully_implemented\" else \"Pending\"\n    data[\"last_updated\"] = dt.datetime.now(dt.timezone.utc).strftime(\"%Y-%m-%d\")\n    STATUS_PATH.write_text(json.dumps(data, indent=2) + \"\\n\")",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "render_dynamic",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def render_dynamic(status_doc: dict) -> str:\n    date = dt.datetime.now(dt.timezone.utc).strftime(\"%Y-%m-%d UTC\")\n    lines = [\n        START,\n        f\"> Last auto-update: **{date}**  \",\n        \"> Source: `project/status.json` (managed by `python3 tools/update_agents.py --write`)\",\n        \"\",\n        \"| Task ID | Goal | Status | Evidence |\",\n        \"|---|---|---|---|\",\n    ]",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "write_root_agents",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def write_root_agents() -> None:\n    try:\n        status_doc = sync_status()\n    except (json.JSONDecodeError, OSError) as exc:\n        raise RuntimeError(f\"Failed to load/sync status JSON at {STATUS_PATH}: {exc}\") from exc\n    try:\n        original_text = AGENTS_PATH.read_text()\n    except OSError as exc:\n        raise RuntimeError(f\"Failed to read AGENTS file {AGENTS_PATH}: {exc}\") from exc\n    lines = original_text.splitlines(keepends=True)",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "init_nested",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def init_nested(path_str: str) -> Path:\n    root_resolved = ROOT.resolve()\n    resolved_target = (ROOT / path_str).resolve()\n    if os.path.commonpath([str(root_resolved), str(resolved_target)]) != str(root_resolved):\n        raise RuntimeError(f\"Refusing to create nested AGENTS outside repository root: {resolved_target}\")\n    target_dir = resolved_target\n    try:\n        target_dir.mkdir(parents=True, exist_ok=True)\n    except OSError as exc:\n        raise RuntimeError(f\"Failed to create directory {target_dir}: {exc}\") from exc",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "validate",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def validate() -> None:\n    if not RELEASE_GATES_PATH.exists():\n        raise SystemExit(f\"Validation failed; missing release gates file: {RELEASE_GATES_PATH}\")\n    eval_text = EVAL_PATH.read_text()\n    try:\n        gates_text = RELEASE_GATES_PATH.read_text()\n    except OSError as exc:\n        raise SystemExit(f\"Validation failed; could not read release gates file {RELEASE_GATES_PATH}: {exc}\") from exc\n    gate_values = _extract_gate_values(gates_text)\n    eval_doc = yaml.safe_load(eval_text) or {}",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def main() -> None:\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--write\", action=\"store_true\")\n    parser.add_argument(\"--sync-status\", action=\"store_true\")\n    parser.add_argument(\"--validate\", action=\"store_true\")\n    parser.add_argument(\"--init-nested\", metavar=\"PATH\")\n    args = parser.parse_args()\n    if args.sync_status:\n        sync_status()\n        print(\"Status synced.\")",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTATUS_PATH = ROOT / \"project\" / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "STATUS_PATH",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "STATUS_PATH = ROOT / \"project\" / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "AGENTS_PATH",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "AGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "EVAL_PATH",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "EVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "RELEASE_GATES_PATH",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "RELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "START",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "START = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "END",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "END = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",\n    \"T8\": ROOT / \"src\" / \"qfr_pipeline\" / \"contamination.py\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "TASK_FILES",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "TASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",\n    \"T8\": ROOT / \"src\" / \"qfr_pipeline\" / \"contamination.py\",\n    \"T9\": ROOT / \"src\" / \"qfr_pipeline\" / \"minimal_pairs.py\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    }
+]

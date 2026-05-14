@@ -1,0 +1,2 @@
+[console_scripts]
+qfr = qfr_pipeline.cli:app
