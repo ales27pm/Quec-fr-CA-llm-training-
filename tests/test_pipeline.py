@@ -125,3 +125,10 @@ def test_expand_contrast_templates_rejects_mismatched_lengths():
     )
     with pytest.raises(ValueError, match="Mismatched template counts"):
         expand_contrast_templates(contrast)
+
+
+def test_context_binding_source_context_canonical_path_match():
+    recs, _ = generate_minimal_pairs(ROOT / "rules/lp_rule_manifest.template.yaml", ROOT / "rules/lp9_lexical_semantics.contexts.yaml")
+    manifest = load_context_manifest(ROOT / "rules/lp9_lexical_semantics.contexts.yaml")
+    report = validate_minimal_pairs_against_context([recs[0].__dict__], manifest, source_context=str((ROOT / "rules/lp9_lexical_semantics.contexts.yaml").resolve()))
+    assert not any(i.code == "context_source_path_mismatch" for i in report.issues)
