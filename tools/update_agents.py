@@ -23,6 +23,11 @@ TASK_FILES = {
     "T4": ROOT / "tools" / "minimal_pair_generator_spec.md",
     "T5": ROOT / "tools" / "update_agents.py",
     "T6": ROOT / "manifests" / "AGENTS.md",
+    "T7": ROOT / "src" / "qfr_pipeline" / "validation.py",
+    "T8": ROOT / "src" / "qfr_pipeline" / "contamination.py",
+    "T9": ROOT / "src" / "qfr_pipeline" / "minimal_pairs.py",
+    "T10": ROOT / "src" / "qfr_pipeline" / "release_report.py",
+    "T11": ROOT / ".github" / "workflows" / "ci.yml",
 }
 def icon(status: str) -> str:
     return {
@@ -88,8 +93,10 @@ def write_root_agents() -> None:
     new_text = "".join(new_lines)
     ts = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     backup_path = AGENTS_PATH.with_name(f"AGENTS.md.bak.{ts}")
+    skip_backup = os.environ.get("QFR_NO_AGENTS_BACKUP") == "1"
     try:
-        shutil.copy2(AGENTS_PATH, backup_path)
+        if not skip_backup:
+            shutil.copy2(AGENTS_PATH, backup_path)
         with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=AGENTS_PATH.parent, delete=False) as tmp:
             tmp.write(new_text)
             tmp.flush()
@@ -176,6 +183,15 @@ def validate() -> None:
             "Validation failed; evaluation manifest thresholds are out of sync with project/release_gates.yaml: "
             f"{mismatched_thresholds}"
         )
+
+    try:
+        status_doc = json.loads(STATUS_PATH.read_text())
+    except (FileNotFoundError, PermissionError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"Validation failed; could not load status file {STATUS_PATH}: {exc}") from exc
+    for task in status_doc.get("tasks", []):
+        if task.get("status") == "fully_implemented" and task.get("id") in TASK_FILES:
+            if not TASK_FILES[task["id"]].exists():
+                raise SystemExit(f"Validation failed; task {task['id']} marked fully_implemented but missing required file: {TASK_FILES[task['id']]}")
 
     print("Validation passed: contamination holdouts present and release gates synchronized to project/release_gates.yaml.")
 def main() -> None:

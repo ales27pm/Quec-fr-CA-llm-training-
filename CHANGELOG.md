@@ -22,3 +22,10 @@
 - Added `tools/pipeline_ops.py` with concrete algorithms for data harvesting, fr-CA marker curation, normative lexical editing, train/dev/test splitting, and Float16/CTranslate2 training recipe generation.
 - Extended `tools/pipeline_ops.py` with centralized-gate LP7 post-alignment monitoring (`monitor-lp7`) and LP9/LP20 semantic diagnostics + error taxonomy export (`diagnose-semantic`) for iterative alignment governance.
 - Updated `docs/iterative_training_loop.md` with standardized LP7 monitoring and semantic diagnostics CLI workflows tied to `project/release_gates.yaml`.
+
+## 2026-05-14
+- Implemented executable `qfr-pipeline` package under `src/qfr_pipeline` with strict schemas, repository validation, CLI commands, release reporting, contamination checks, and LP9 minimal-pair generation.
+- Added deterministic YAML/JSON IO helpers with atomic writes and UTF-8 handling.
+- Added pytest coverage for schema validation, gate sync, contamination detection, minimal-pair generation, release-report pass/fail behavior, and CLI smoke validation.
+- Added GitHub Actions CI workflow running `ruff`, `pytest`, `python3 tools/update_agents.py --validate`, and `qfr validate`.
+- Extended `tools/update_agents.py` task mapping and validation checks for executable-phase tasks T7–T11.
