@@ -1,6 +1,5 @@
 {
   "ok": true,
-  "records_generated": 3,
   "total_records": 3,
   "issues": [],
   "context_manifest": "rules/lp9_lexical_semantics.contexts.yaml",
