@@ -23,10 +23,20 @@ def _validate(path: Path, model):
     return model.model_validate(load_yaml(path))
 
 
-def validate_release_gates(path: Path) -> ReleaseGates: return _validate(path, ReleaseGates)
-def validate_dataset_manifest(path: Path) -> DatasetManifest: return _validate(path, DatasetManifest)
-def validate_lp_rule_manifest(path: Path) -> LPRuleManifest: return _validate(path, LPRuleManifest)
-def validate_lp_context_manifest(path: Path) -> LPContextManifest: return _validate(path, LPContextManifest)
+def validate_release_gates(path: Path) -> ReleaseGates:
+    return _validate(path, ReleaseGates)
+
+
+def validate_dataset_manifest(path: Path) -> DatasetManifest:
+    return _validate(path, DatasetManifest)
+
+
+def validate_lp_rule_manifest(path: Path) -> LPRuleManifest:
+    return _validate(path, LPRuleManifest)
+
+
+def validate_lp_context_manifest(path: Path) -> LPContextManifest:
+    return _validate(path, LPContextManifest)
 
 
 def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:
@@ -39,15 +49,12 @@ def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> Evalua
 def validate_repository(root: Path) -> ValidationReport:
     report = ValidationReport(ok=True)
     gates_path = root / "project" / "release_gates.yaml"
-    for path, fn, kind in [
-        (gates_path, validate_release_gates, "release_gates"),
-    ]:
-        try:
-            fn(path)
-            report.checked_files.append(str(path))
-        except Exception as exc:
-            report.ok = False
-            report.issues.append(ValidationIssue(str(path), kind, str(exc)))
+    try:
+        validate_release_gates(gates_path)
+        report.checked_files.append(str(gates_path))
+    except Exception as exc:
+        report.ok = False
+        report.issues.append(ValidationIssue(str(gates_path), "release_gates", str(exc)))
 
     for path in sorted((root / "manifests").glob("*.y*ml")):
         try:
@@ -60,16 +67,21 @@ def validate_repository(root: Path) -> ValidationReport:
     for path in sorted((root / "rules").glob("*.y*ml")):
         try:
             doc = load_yaml(path)
-            kind = (doc or {}).get("kind") if isinstance(doc, dict) else None
-            if kind == "lp_context_manifest" or "contexts" in path.name:
+            if not isinstance(doc, dict) or "kind" not in doc:
+                raise ValueError("Rules manifest must be a mapping and include a 'kind' field")
+            kind = doc.get("kind")
+            if kind == "lp_context_manifest":
                 validate_lp_context_manifest(path)
                 report.checked_files.append(str(path))
-            else:
+            elif kind == "lp_rule_manifest":
                 validate_lp_rule_manifest(path)
                 report.checked_files.append(str(path))
+            else:
+                raise ValueError(f"Unsupported rules manifest kind: {kind}")
         except Exception as exc:
             report.ok = False
-            report.issues.append(ValidationIssue(str(path), "rules_manifest", str(exc)))
+            issue_kind = "lp_context_manifest" if "contexts" in path.name else "lp_rule_manifest"
+            report.issues.append(ValidationIssue(str(path), issue_kind, str(exc)))
 
     for path in sorted((root / "eval").glob("*.y*ml")):
         try:

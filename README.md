@@ -10,4 +10,6 @@ This repository includes a sovereignty-first roadmap and centralized release thr
 - Validate repo: `qfr validate`
 - Generate quality-gated LP9 minimal pairs: `qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml --out data/generated/minimal_pairs.lp9.jsonl --report reports/minimal_pair_quality.lp9.json`
 - Validate generated LP9 minimal pairs: `qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp9.jsonl --context rules/lp9_lexical_semantics.contexts.yaml --report reports/minimal_pair_quality.lp9.json`
+- Contamination guardrail: `qfr contamination-check --train <train-data.json> --holdout <holdout-data.json> --threshold 0.92 --out reports/contamination_report.json` (detects train/holdout overlap risk).
+- Release metrics reporting: `qfr release-report --metrics <metrics-data.json> --out-json <report.json> --out-md <report.md>` (evaluates release readiness against gates).
 - Generated records are blocked when grammar, normalization, duplicate, or lexical-quality checks fail.

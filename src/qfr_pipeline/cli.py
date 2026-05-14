@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+from dataclasses import asdict
 from pathlib import Path
 
 import typer
@@ -48,7 +49,7 @@ def generate_minimal_pairs_cmd(rule: Path = typer.Option(..., "--rule"), context
     _refresh_dynamic_agents()
     pairs, gen_report = generate_minimal_pairs(rule, context)
     if report:
-        write_json(report, {"ok": gen_report.ok, "records_generated": gen_report.records_generated, "issues": [i.__dict__ for i in gen_report.issues]})
+        write_json(report, {"ok": gen_report.ok, "records_generated": gen_report.records_generated, "issues": [asdict(i) for i in gen_report.issues]})
     if not gen_report.ok:
         raise typer.Exit(code=1)
     write_jsonl(pairs, out)
@@ -61,7 +62,7 @@ def validate_minimal_pairs_cmd(input: Path = typer.Option(..., "--input"), conte
     validate_lp_context_manifest(context)
     records = read_jsonl(input)
     quality = validate_minimal_pairs(records)
-    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [i.__dict__ for i in quality.issues]})
+    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [asdict(i) for i in quality.issues]})
     if not quality.ok:
         raise typer.Exit(code=1)
 

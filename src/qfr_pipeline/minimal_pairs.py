@@ -51,10 +51,16 @@ def _stable_id(lp_id: int, contrast_id: str, good: str, bad: str) -> str:
 
 
 def generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[MinimalPairRecord], MinimalPairGenerationReport]:
+    # Validate rule_path exists and is valid YAML; content is not directly used by context-driven generation.
     load_yaml(rule_path)
     contexts = load_context_manifest(context_path)
     records: list[MinimalPairRecord] = []
     for contrast in contexts.contrasts:
+        if len(contrast.good_templates) != len(contrast.bad_templates):
+            raise ValueError(
+                f"Mismatched template counts for {contrast.contrast_id}: "
+                f"{len(contrast.good_templates)} good vs {len(contrast.bad_templates)} bad"
+            )
         for g_t, b_t in zip(contrast.good_templates, contrast.bad_templates):
             good = g_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern)
             bad = b_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern)
@@ -68,13 +74,15 @@ def generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[Mi
                     good=good,
                     bad=bad,
                     expected="good",
-                    register=contrast.register,
+                    register=contrast.register_value,
                     term_type=contrast.term_type,
                     source_rule=str(rule_path),
                     source_context=str(context_path),
                     metadata={
                         "dialect": "fr-CA",
-                        "normative": contrast.register == "formal",
+                        "normative": contrast.register_value == "formal",
+                        "allowed_contexts": contrast.allowed_contexts,
+                        "blocked_contexts": contrast.blocked_contexts,
                         "quality_checks": [],
                         "positive_pattern": contrast.positive_pattern,
                         "negative_pattern": contrast.negative_pattern,

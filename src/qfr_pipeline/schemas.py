@@ -145,10 +145,11 @@ class ProjectStatus(BaseModel):
 
 
 class LPContextContrast(BaseModel):
+    model_config = {"populate_by_name": True}
     contrast_id: str
     positive_pattern: str
     negative_pattern: str
-    register: str
+    register_value: str = Field(alias="register")
     term_type: str
     allowed_contexts: list[str]
     blocked_contexts: list[str]
@@ -157,7 +158,7 @@ class LPContextContrast(BaseModel):
     notes: str
     source_authority: str
 
-    @field_validator("register")
+    @field_validator("register_value")
     @classmethod
     def valid_register(cls, v: str) -> str:
         if v not in {"formal", "informal", "neutral"}:
@@ -179,6 +180,8 @@ class LPContextContrast(BaseModel):
             raise ValueError("good_templates and bad_templates must be non-empty")
         if any(not t.strip() for t in [*self.good_templates, *self.bad_templates]):
             raise ValueError("templates must be non-empty strings")
+        if len(self.good_templates) != len(self.bad_templates):
+            raise ValueError("good_templates and bad_templates must be the same length")
         return self
 
 
