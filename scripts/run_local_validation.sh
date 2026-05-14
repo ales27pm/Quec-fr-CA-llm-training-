@@ -25,6 +25,8 @@ echo "==> Diagnostics generation"
 qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --taxonomy eval/lp9_error_taxonomy.yaml --taxonomy eval/lp20_error_taxonomy.yaml --out-json reports/diagnostics.lp9_lp20.json --out-md reports/diagnostics.lp9_lp20.md
 
 echo "==> Legacy diagnostics compatibility"
+# Intentionally sequential with a shared output path: the CLI run overwrites the pipeline_ops run so we can
+# verify both execution paths succeed and deterministically converge on reports/diagnostics.legacy_semantic.json.
 python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json
 qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json
 

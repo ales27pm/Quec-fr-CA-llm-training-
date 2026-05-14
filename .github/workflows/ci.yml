@@ -17,6 +17,8 @@ jobs:
       - run: qfr validate-taxonomy --taxonomy eval/lp9_error_taxonomy.yaml
       - run: qfr validate-taxonomy --taxonomy eval/lp20_error_taxonomy.yaml
       - run: qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --taxonomy eval/lp9_error_taxonomy.yaml --taxonomy eval/lp20_error_taxonomy.yaml --out-json reports/diagnostics.lp9_lp20.json --out-md reports/diagnostics.lp9_lp20.md
+      # These run sequentially and intentionally target the same output file; the second overwrites the first to verify
+      # both execution paths produce equivalent output (guarded by tests and deterministic artifact checks).
       - run: python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json
       - run: qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json
       - run: qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml --out data/generated/minimal_pairs.lp9.jsonl --report reports/minimal_pair_quality.lp9.json

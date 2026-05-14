@@ -48,7 +48,8 @@ class DiagnosticsReport:
         }
 
 
-def _parse_is_correct(value: Any) -> bool:
+def parse_is_correct(value: Any) -> bool:
+    """Parse legacy/diagnostic correctness flags into a strict bool."""
     if isinstance(value, bool):
         return value
     if isinstance(value, int) and value in {0, 1}:
@@ -56,6 +57,10 @@ def _parse_is_correct(value: Any) -> bool:
     if isinstance(value, str) and value.strip() in {"0", "1"}:
         return value.strip() == "1"
     raise ValueError("is_correct must be bool or 0/1")
+
+
+def _parse_is_correct(value: Any) -> bool:
+    return parse_is_correct(value)
 
 
 def _diagnostics_ok(issues: list[DiagnosticIssue], global_summary: dict[str, Any]) -> bool:
@@ -120,7 +125,7 @@ def run_diagnostics(rows: list[dict[str, Any]], taxonomies: dict[int, ErrorTaxon
         try:
             lp_id = int(row["lp_id"])
             phenomenon = str(row["phenomenon"]).strip()
-            is_correct = _parse_is_correct(row["is_correct"])
+            is_correct = parse_is_correct(row["is_correct"])
             semantic = row.get("semantic_similarity")
             if semantic is not None:
                 semantic = float(semantic)

@@ -5,7 +5,9 @@ from pathlib import Path
 from typing import Any
 
 from qfr_pipeline.diagnostics import (
-    _parse_is_correct,
+    DiagnosticIssue,
+    _parse_embedding,
+    parse_is_correct,
     load_taxonomies,
     run_diagnostics,
     write_diagnostics_json,
@@ -50,7 +52,11 @@ def load_legacy_semantic_csv(path: Path) -> list[dict[str, str]]:
     return rows
 
 
-def _convert_legacy_row(row: dict[str, str], idx: int) -> dict[str, Any]:
+def _convert_legacy_row(
+    row: dict[str, str],
+    idx: int,
+    issues: list[DiagnosticIssue],
+) -> dict[str, Any]:
     converted: dict[str, Any] = {"id": f"legacy-{idx}"}
 
     raw_phenomenon = (row.get("phenomenon") or "").strip()
@@ -67,9 +73,30 @@ def _convert_legacy_row(row: dict[str, str], idx: int) -> dict[str, Any]:
     converted["embedding_pred"] = row.get("embedding_pred")
 
     try:
-        is_correct = _parse_is_correct(converted["is_correct"])
-    except Exception:
+        is_correct = parse_is_correct(converted["is_correct"])
+    except ValueError:
         return converted
+
+    emb_ref_raw = converted["embedding_ref"]
+    emb_pred_raw = converted["embedding_pred"]
+    emb_ref = _parse_embedding(emb_ref_raw)
+    emb_pred = _parse_embedding(emb_pred_raw)
+    if emb_ref_raw is not None and emb_ref_raw != "" and not emb_ref:
+        issues.append(
+            DiagnosticIssue(
+                code="malformed_embedding",
+                message=f"legacy row {idx} malformed embedding_ref",
+                blocking=False,
+            )
+        )
+    if emb_pred_raw is not None and emb_pred_raw != "" and not emb_pred:
+        issues.append(
+            DiagnosticIssue(
+                code="malformed_embedding",
+                message=f"legacy row {idx} malformed embedding_pred",
+                blocking=False,
+            )
+        )
 
     if not is_correct:
         error_label = (row.get("error_label") or "").strip()
@@ -87,12 +114,18 @@ def run_legacy_semantic_diagnostics(
     allow_missing_phenomena: bool = False,
 ) -> dict[str, Any]:
     raw_rows = load_legacy_semantic_csv(in_csv)
-    rows = [_convert_legacy_row(row, idx) for idx, row in enumerate(raw_rows)]
+    pre_issues: list[DiagnosticIssue] = []
+    rows = [_convert_legacy_row(row, idx, pre_issues) for idx, row in enumerate(raw_rows)]
     taxonomies = load_taxonomies(taxonomy_paths or DEFAULT_LEGACY_TAXONOMY_PATHS)
     report = run_diagnostics(
         rows,
         taxonomies,
         allow_missing_phenomena=allow_missing_phenomena,
+    )
+    report.issues = [*pre_issues, *report.issues]
+    report.ok = (
+        report.ok
+        and all(not issue.blocking for issue in pre_issues)
     )
     write_diagnostics_json(report, out_json)
     return report.to_json()
