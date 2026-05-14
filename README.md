@@ -21,3 +21,5 @@ This repository includes a sovereignty-first roadmap and centralized release thr
 - Optional release diagnostics integration: `qfr release-report --metrics <metrics-data.json> --diagnostics reports/diagnostics.lp9_lp20.json --out-json <report.json> --out-md <report.md>`.
 
 - GitHub Actions CI is kept in `.github/workflows/ci.yml`; for local execution use: `bash scripts/run_local_validation.sh`.
+
+- Unified release-candidate orchestration: `qfr release-candidate --metrics <metrics-data.json> --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md`.

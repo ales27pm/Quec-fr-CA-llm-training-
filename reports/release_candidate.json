@@ -1,0 +1,158 @@
+{
+  "ok": true,
+  "deterministic_timestamp": "project-status-last-updated:2026-05-14",
+  "stages": [
+    {
+      "name": "repository_validation",
+      "ok": true,
+      "artifacts": [],
+      "blocking": true,
+      "details": {
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "name": "taxonomy_validation",
+      "ok": true,
+      "artifacts": [],
+      "blocking": true,
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "diagnostics_generation",
+      "ok": true,
+      "artifacts": [
+        "reports/diagnostics.lp9_lp20.json",
+        "reports/diagnostics.lp9_lp20.md"
+      ],
+      "blocking": true,
+      "details": {
+        "ok": true,
+        "phenomena": {
+          "LP9:lexical_semantics": {
+            "lp_id": 9,
+            "phenomenon": "lexical_semantics",
+            "n": 2,
+            "correct": 1,
+            "binary_accuracy": 0.5,
+            "mean_semantic_similarity": 0.9869418673368094,
+            "error_distribution": {
+              "normative_register_mismatch": 1
+            },
+            "blocking_error_count": 0,
+            "non_blocking_error_count": 1,
+            "top_error_codes": [
+              {
+                "error_code": "normative_register_mismatch",
+                "count": 1
+              }
+            ]
+          },
+          "LP20:orphaned_preposition": {
+            "lp_id": 20,
+            "phenomenon": "orphaned_preposition",
+            "n": 2,
+            "correct": 1,
+            "binary_accuracy": 0.5,
+            "mean_semantic_similarity": 0.7093089146662548,
+            "error_distribution": {
+              "relative_clause_attachment_error": 1
+            },
+            "blocking_error_count": 0,
+            "non_blocking_error_count": 1,
+            "top_error_codes": [
+              {
+                "error_code": "relative_clause_attachment_error",
+                "count": 1
+              }
+            ]
+          }
+        },
+        "global_summary": {
+          "total_records": 4,
+          "malformed_rows": 0,
+          "unknown_error_codes": 0,
+          "blocking_error_count": 0,
+          "non_blocking_error_count": 2,
+          "top_error_codes": [
+            {
+              "error_code": "normative_register_mismatch",
+              "count": 1
+            },
+            {
+              "error_code": "relative_clause_attachment_error",
+              "count": 1
+            }
+          ]
+        },
+        "issues": []
+      },
+      "error": null
+    },
+    {
+      "name": "lp9_minimal_pairs",
+      "ok": true,
+      "artifacts": [
+        "data/generated/minimal_pairs.lp9.jsonl",
+        "reports/minimal_pair_quality.lp9.json"
+      ],
+      "blocking": true,
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "lp20_minimal_pairs",
+      "ok": true,
+      "artifacts": [
+        "data/generated/minimal_pairs.lp20.jsonl",
+        "reports/minimal_pair_quality.lp20.json"
+      ],
+      "blocking": true,
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "release_report",
+      "ok": true,
+      "artifacts": [
+        "reports/release_report.json",
+        "reports/release_report.md"
+      ],
+      "blocking": true,
+      "details": null,
+      "error": null
+    }
+  ],
+  "artifacts": {
+    "diagnostics_json": "reports/diagnostics.lp9_lp20.json",
+    "diagnostics_md": "reports/diagnostics.lp9_lp20.md",
+    "lp9_pairs": "data/generated/minimal_pairs.lp9.jsonl",
+    "lp9_quality": "reports/minimal_pair_quality.lp9.json",
+    "lp20_pairs": "data/generated/minimal_pairs.lp20.jsonl",
+    "lp20_quality": "reports/minimal_pair_quality.lp20.json",
+    "release_report_json": "reports/release_report.json",
+    "release_report_md": "reports/release_report.md",
+    "release_candidate_json": "reports/release_candidate.json",
+    "release_candidate_md": "reports/release_candidate.md"
+  },
+  "release_report_summary": {
+    "passed": true,
+    "missing_metrics": []
+  },
+  "diagnostics_summary": {
+    "ok": true,
+    "phenomena": [
+      "LP20:orphaned_preposition",
+      "LP9:lexical_semantics"
+    ]
+  },
+  "minimal_pair_summary": {
+    "lp9_records": 3,
+    "lp20_records": 8,
+    "lp9_artifact": "data/generated/minimal_pairs.lp9.jsonl",
+    "lp20_artifact": "data/generated/minimal_pairs.lp20.jsonl"
+  },
+  "blocking_failures": []
+}

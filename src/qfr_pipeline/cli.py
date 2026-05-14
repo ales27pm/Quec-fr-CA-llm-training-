@@ -13,8 +13,9 @@ from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagno
 from qfr_pipeline.io import load_json, write_json
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
 from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, read_jsonl, write_jsonl
-from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
+from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import evaluate_release, ReleaseReport
+from qfr_pipeline.release_candidate import run_release_candidate
 from qfr_pipeline.validation import validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
 
 app = typer.Typer()
@@ -45,7 +46,7 @@ def _build_minimal_pair_report(
         "ok": quality.ok if gen_report is None else (gen_report.ok and quality.ok),
         "total_records": quality.total_records,
         "issues": [asdict(i) for i in quality.issues],
-        "context_manifest": str(context),
+        "context_manifest": repo_relative_path(context),
         "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts),
         "lp_id": context_manifest.lp_id,
         "phenomenon": context_manifest.phenomenon,
@@ -162,6 +163,30 @@ def diagnose_eval(input: Path = typer.Option(..., "--input"), taxonomy: list[Pat
     report = run_diagnostics(rows, taxonomies, allow_missing_phenomena=allow_missing_phenomena)
     write_diagnostics_json(report, out_json)
     write_diagnostics_markdown(report, out_md)
+    if not report.ok:
+        raise typer.Exit(code=1)
+
+
+@app.command("release-candidate")
+def release_candidate(
+    metrics: Path = typer.Option(..., "--metrics"),
+    diagnostics_input: Path = typer.Option(..., "--diagnostics-input"),
+    out_json: Path = typer.Option(..., "--out-json"),
+    out_md: Path = typer.Option(..., "--out-md"),
+    allow_missing_diagnostics_phenomena: bool = typer.Option(False, "--allow-missing-diagnostics-phenomena"),
+    lp9_context: Path = typer.Option(ROOT / "rules/lp9_lexical_semantics.contexts.yaml", "--lp9-context"),
+    lp20_context: Path = typer.Option(ROOT / "rules/lp20_orphaned_preposition.contexts.yaml", "--lp20-context"),
+):
+    _refresh_dynamic_agents()
+    report = run_release_candidate(
+        metrics=metrics,
+        diagnostics_input=diagnostics_input,
+        out_json=out_json,
+        out_md=out_md,
+        allow_missing_diagnostics_phenomena=allow_missing_diagnostics_phenomena,
+        lp9_context=lp9_context,
+        lp20_context=lp20_context,
+    )
     if not report.ok:
         raise typer.Exit(code=1)
 
