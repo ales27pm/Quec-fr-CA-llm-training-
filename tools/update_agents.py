@@ -33,6 +33,7 @@ TASK_FILES = {
     "T14": ROOT / "rules" / "lp20_orphaned_preposition.contexts.yaml",
     "T15": ROOT / "src" / "qfr_pipeline" / "diagnostics.py",
     "T16": ROOT / "src" / "qfr_pipeline" / "release_candidate.py",
+    "T17": ROOT / "src" / "qfr_pipeline" / "legacy_diagnostics.py",
 }
 def icon(status: str) -> str:
     return {

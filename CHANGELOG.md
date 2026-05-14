@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-14 — T17 legacy diagnostics compatibility wrapper
+- Added `src/qfr_pipeline/legacy_diagnostics.py` with legacy CSV ingestion and LP9/LP20 alias mapping, then delegated diagnostics execution to maintained `qfr_pipeline.diagnostics` taxonomy-aware logic.
+- Refactored `tools/pipeline_ops.py diagnose-semantic` into a compatibility wrapper over maintained diagnostics logic (kept `--in-csv`/`--out-json`; added optional `--taxonomy` and `--allow-missing-phenomena`).
+- Added `qfr diagnose-legacy-csv` and deterministic legacy diagnostics fixture/artifact coverage.
+- Added legacy compatibility tests (adapter mapping, malformed behavior, blocking/non-blocking outcomes, CLI parity) and removed standalone semantic diagnostics engine duplication from `tools/pipeline_ops.py`.
+- Extended CI/local validation plus deterministic stale-artifact guard to include `reports/diagnostics.legacy_semantic.json`.
+
 ## 2026-05-14 — T16 release-candidate orchestration
 - Added deterministic `qfr release-candidate` command orchestrating repository validation, taxonomy validation, LP9/LP20 diagnostics, LP9/LP20 minimal-pair generation+validation, and release report generation in one entry point.
 - Added consolidated `reports/release_candidate.json` and `reports/release_candidate.md` artifacts, plus CI/local-runner integration and stale-artifact guard coverage.

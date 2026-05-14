@@ -11,6 +11,7 @@ from rich import print
 from qfr_pipeline.contamination import detect_contamination
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
 from qfr_pipeline.io import load_json, write_json
+from qfr_pipeline.legacy_diagnostics import run_legacy_semantic_diagnostics
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
 from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, read_jsonl, write_jsonl
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
@@ -164,6 +165,27 @@ def diagnose_eval(input: Path = typer.Option(..., "--input"), taxonomy: list[Pat
     write_diagnostics_json(report, out_json)
     write_diagnostics_markdown(report, out_md)
     if not report.ok:
+        raise typer.Exit(code=1)
+
+
+@app.command("diagnose-legacy-csv")
+def diagnose_legacy_csv(
+    in_csv: Path = typer.Option(..., "--in-csv"),
+    out_json: Path = typer.Option(..., "--out-json"),
+    taxonomy: list[Path] | None = typer.Option(None, "--taxonomy"),
+    allow_missing_phenomena: bool = typer.Option(False, "--allow-missing-phenomena"),
+):
+    _refresh_dynamic_agents()
+    try:
+        payload = run_legacy_semantic_diagnostics(
+            in_csv,
+            out_json,
+            taxonomy_paths=taxonomy,
+            allow_missing_phenomena=allow_missing_phenomena,
+        )
+    except ValueError as exc:
+        raise typer.BadParameter(str(exc)) from exc
+    if not payload["ok"]:
         raise typer.Exit(code=1)
 
 

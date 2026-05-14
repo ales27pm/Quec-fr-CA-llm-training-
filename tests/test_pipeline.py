@@ -309,6 +309,8 @@ def test_local_validation_script_exists_and_has_required_commands():
         "qfr validate-taxonomy --taxonomy eval/lp9_error_taxonomy.yaml",
         "qfr validate-taxonomy --taxonomy eval/lp20_error_taxonomy.yaml",
         "qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl",
+        "python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json",
+        "qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json",
         "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml",
         "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml",
         "qfr release-report --metrics fixtures/valid_metrics.json --diagnostics reports/diagnostics.lp9_lp20.json",
@@ -316,11 +318,13 @@ def test_local_validation_script_exists_and_has_required_commands():
         assert cmd in text
 
 
-def test_t11_t15_remain_fully_implemented_after_write():
+def test_t11_t15_t16_t17_remain_fully_implemented_after_write():
     status = json.loads((ROOT / "project/status.json").read_text(encoding="utf-8"))
     by_id = {t["id"]: t["status"] for t in status["tasks"]}
     assert by_id.get("T11") == "fully_implemented"
     assert by_id.get("T15") == "fully_implemented"
+    assert by_id.get("T16") == "fully_implemented"
+    assert by_id.get("T17") == "fully_implemented"
 
 
 def test_release_candidate_command_succeeds_with_valid_fixtures(tmp_path: Path):
@@ -357,7 +361,13 @@ def test_ci_and_local_runner_include_release_candidate_and_stale_guard():
     local = (ROOT / "scripts/run_local_validation.sh").read_text(encoding="utf-8")
     assert "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md" in ci
     assert "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md" in local
+    assert "python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json" in ci
+    assert "qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json" in ci
+    assert "python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json" in local
+    assert "qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json" in local
     assert "reports/release_candidate.json reports/release_candidate.md" in ci
+    assert "reports/diagnostics.legacy_semantic.json" in ci
+    assert "reports/diagnostics.legacy_semantic.json" in local
     assert "reports/release_candidate.json reports/release_candidate.md" in local
     assert local.index("qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md") < local.index("git diff --exit-code --")
 

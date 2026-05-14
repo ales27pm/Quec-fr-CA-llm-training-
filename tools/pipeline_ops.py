@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """Core fr-CA data pipeline algorithms: harvest, curate, edit, and train-prep.
 
-Designed to be dependency-light (stdlib only) for reproducible execution in CI.
+Most subcommands stay dependency-light (stdlib only). `diagnose-semantic` delegates
+to the maintained `qfr_pipeline` diagnostics implementation.
 """
 from __future__ import annotations
 
 import argparse
-import csv
 import hashlib
 import json
-import math
 import random
 import re
 from dataclasses import dataclass
@@ -181,17 +180,6 @@ def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:
     out_yaml.write_text(yaml.safe_dump(recipe, sort_keys=False, allow_unicode=True), encoding="utf-8")
 
 
-def _cosine_similarity(vec_a: list[float], vec_b: list[float]) -> float:
-    if len(vec_a) != len(vec_b):
-        raise ValueError("Vector dimensions must match.")
-    dot = sum(a * b for a, b in zip(vec_a, vec_b))
-    norm_a = math.sqrt(sum(a * a for a in vec_a))
-    norm_b = math.sqrt(sum(b * b for b in vec_b))
-    if norm_a == 0.0 or norm_b == 0.0:
-        return 0.0
-    return dot / (norm_a * norm_b)
-
-
 def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:
     try:
         gates = yaml.safe_load(release_gates_path.read_text(encoding="utf-8")) or {}
@@ -237,76 +225,6 @@ def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release
     }
 
 
-def lp_semantic_diagnostics(in_csv: Path, out_json: Path) -> dict[str, object]:
-    rows: list[dict[str, str]] = []
-    fieldnames: list[str] | None = None
-    with in_csv.open("r", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames
-        for row in reader:
-            rows.append(row)
-
-    required = {"phenomenon", "is_correct", "embedding_ref", "embedding_pred", "error_label"}
-    if not rows:
-        raise SystemExit("No diagnostic rows found.")
-    header = set(fieldnames or [])
-    if not required.issubset(header):
-        missing = sorted(required - header)
-        raise SystemExit(f"Missing required columns: {missing}")
-
-    by_lp: dict[str, dict[str, float | int]] = {"LP9": {"n": 0, "correct": 0, "semantic_sum": 0.0}, "LP20": {"n": 0, "correct": 0, "semantic_sum": 0.0}}
-    taxonomy: dict[str, int] = {}
-    malformed_rows = 0
-    for row in rows:
-        ph = (row.get("phenomenon") or "").strip().upper()
-        if ph not in by_lp:
-            malformed_rows += 1
-            continue
-        correct_raw = (row.get("is_correct") or "").strip()
-        if correct_raw not in {"0", "1"}:
-            malformed_rows += 1
-            continue
-        try:
-            embedding_ref_raw = (row.get("embedding_ref") or "").strip()
-            embedding_pred_raw = (row.get("embedding_pred") or "").strip()
-            if not embedding_ref_raw or not embedding_pred_raw:
-                raise ValueError("Missing embedding values.")
-            ref = [float(x) for x in embedding_ref_raw.split()]
-            pred = [float(x) for x in embedding_pred_raw.split()]
-            if not ref or not pred:
-                raise ValueError("Empty embedding vectors.")
-            sim = _cosine_similarity(ref, pred)
-        except (ValueError, TypeError):
-            malformed_rows += 1
-            continue
-        correct = correct_raw == "1"
-        by_lp[ph]["n"] += 1
-        by_lp[ph]["correct"] += int(correct)
-        by_lp[ph]["semantic_sum"] += sim
-        if not correct:
-            label = (row.get("error_label") or "").strip() or "unknown"
-            taxonomy[label] = taxonomy.get(label, 0) + 1
-
-    result = {"phenomena": {}, "error_taxonomy": taxonomy, "malformed_rows": malformed_rows}
-    missing_phenomena: list[str] = []
-    for ph, stats in by_lp.items():
-        n = int(stats["n"])
-        if n == 0:
-            missing_phenomena.append(ph)
-            continue
-        result["phenomena"][ph] = {
-            "n": n,
-            "binary_accuracy": round(stats["correct"] / n, 6),
-            "mean_semantic_similarity": round(stats["semantic_sum"] / n, 6),
-        }
-    if missing_phenomena:
-        missing_str = ", ".join(missing_phenomena)
-        raise SystemExit(f"Missing diagnostics rows for required phenomena: {missing_str}")
-    out_json.parent.mkdir(parents=True, exist_ok=True)
-    out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    return result
-
-
 def main() -> None:
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -343,6 +261,8 @@ def main() -> None:
     p_d = sub.add_parser("diagnose-semantic")
     p_d.add_argument("--in-csv", type=Path, required=True)
     p_d.add_argument("--out-json", type=Path, required=True)
+    p_d.add_argument("--taxonomy", type=Path, action="append", default=None)
+    p_d.add_argument("--allow-missing-phenomena", action="store_true")
 
     args = ap.parse_args()
     if args.cmd == "harvest":
@@ -359,7 +279,25 @@ def main() -> None:
     elif args.cmd == "monitor-lp7":
         print(json.dumps(monitor_lp7(args.pre, args.post, args.release_gates), ensure_ascii=False))
     elif args.cmd == "diagnose-semantic":
-        print(json.dumps(lp_semantic_diagnostics(args.in_csv, args.out_json), ensure_ascii=False))
+        from qfr_pipeline.legacy_diagnostics import run_legacy_semantic_diagnostics
+
+        try:
+            payload = run_legacy_semantic_diagnostics(
+                args.in_csv,
+                args.out_json,
+                taxonomy_paths=args.taxonomy,
+                allow_missing_phenomena=args.allow_missing_phenomena,
+            )
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        print(
+            json.dumps(
+                payload,
+                ensure_ascii=False,
+            )
+        )
+        if not payload.get("ok", False):
+            raise SystemExit(1)
 
 
 if __name__ == "__main__":

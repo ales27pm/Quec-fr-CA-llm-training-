@@ -1,0 +1,5 @@
+phenomenon,is_correct,embedding_ref,embedding_pred,error_label
+LP9,1,1 0 0,0.98 0.02 0,
+lexical_semantics,0,1 0 0,0.9 0.1 0,normative_register_mismatch
+lp20,1,1 1 0,1 0.9 0,
+orphaned_preposition,0,1 0 1,0.9 0.1 0.9,relative_clause_attachment_error

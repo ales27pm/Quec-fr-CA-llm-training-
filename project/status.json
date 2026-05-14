@@ -96,6 +96,12 @@
       "goal": "Release-candidate orchestration command",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T17",
+      "goal": "Legacy diagnostics compatibility wrapper",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }
