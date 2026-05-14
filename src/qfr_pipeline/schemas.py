@@ -1,9 +1,14 @@
 from typing import Any
+import unicodedata
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 REQUIRED_HOLDOUTS = {"qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"}
 GATE_TOLERANCE = 1e-6
+
+
+def normalize_text(text: str) -> str:
+    return " ".join(unicodedata.normalize("NFC", text).casefold().split())
 
 
 def _parse_unit_interval(value: Any, field_name: str) -> float:
@@ -157,6 +162,22 @@ class LPContextContrast(BaseModel):
     bad_templates: list[str]
     notes: str
     source_authority: str
+    phenomenon_tags: list[str] | None = None
+    required_good_substrings: list[str] = Field(default_factory=list)
+    required_bad_substrings: list[str] = Field(default_factory=list)
+    forbidden_good_substrings: list[str] = Field(default_factory=list)
+    forbidden_bad_substrings: list[str] = Field(default_factory=list)
+    minimal_contrast_focus: str | None = None
+    normalized_required_good_substrings: list[str] = Field(default_factory=list, exclude=True)
+    normalized_required_bad_substrings: list[str] = Field(default_factory=list, exclude=True)
+    normalized_forbidden_good_substrings: list[str] = Field(default_factory=list, exclude=True)
+    normalized_forbidden_bad_substrings: list[str] = Field(default_factory=list, exclude=True)
+
+    _allowed_contrast_focuses = {
+        "preposition_attachment",
+        "required_preposition_retention",
+        "stranded_preposition",
+    }
 
     @field_validator("register_value")
     @classmethod
@@ -182,6 +203,44 @@ class LPContextContrast(BaseModel):
             raise ValueError("templates must be non-empty strings")
         if len(self.good_templates) != len(self.bad_templates):
             raise ValueError("good_templates and bad_templates must be the same length")
+        for field_name in (
+            "required_good_substrings",
+            "required_bad_substrings",
+            "forbidden_good_substrings",
+            "forbidden_bad_substrings",
+        ):
+            values = getattr(self, field_name)
+            stripped_values: list[str] = []
+            for v in values:
+                if not isinstance(v, str):
+                    raise ValueError(f"{field_name} must contain non-empty strings")
+                s = v.strip()
+                if not s:
+                    raise ValueError(f"{field_name} must contain non-empty strings")
+                stripped_values.append(s)
+            setattr(self, field_name, stripped_values)
+        if self.phenomenon_tags is not None:
+            stripped_tags: list[str] = []
+            for v in self.phenomenon_tags:
+                if not isinstance(v, str):
+                    raise ValueError("phenomenon_tags must contain at least one non-empty string when provided")
+                s = v.strip()
+                if not s:
+                    raise ValueError("phenomenon_tags must contain at least one non-empty string when provided")
+                stripped_tags.append(s)
+            if not stripped_tags:
+                raise ValueError("phenomenon_tags must contain at least one non-empty string when provided")
+            self.phenomenon_tags = stripped_tags
+        if self.minimal_contrast_focus is not None:
+            focus = self.minimal_contrast_focus.strip()
+            if focus not in self._allowed_contrast_focuses:
+                allowed = "|".join(sorted(self._allowed_contrast_focuses))
+                raise ValueError(f"minimal_contrast_focus must be one of {allowed}")
+            self.minimal_contrast_focus = focus
+        self.normalized_required_good_substrings = [normalize_text(v) for v in self.required_good_substrings]
+        self.normalized_required_bad_substrings = [normalize_text(v) for v in self.required_bad_substrings]
+        self.normalized_forbidden_good_substrings = [normalize_text(v) for v in self.forbidden_good_substrings]
+        self.normalized_forbidden_bad_substrings = [normalize_text(v) for v in self.forbidden_bad_substrings]
         return self
 
 

@@ -78,6 +78,12 @@
       "goal": "Context-bound gold-data validation",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T14",
+      "goal": "LP20 orphaned-preposition gold-pair support",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

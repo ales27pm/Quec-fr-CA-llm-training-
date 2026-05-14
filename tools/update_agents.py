@@ -30,6 +30,7 @@ TASK_FILES = {
     "T11": ROOT / ".github" / "workflows" / "ci.yml",
     "T12": ROOT / "src" / "qfr_pipeline" / "minimal_pair_quality.py",
     "T13": ROOT / "src" / "qfr_pipeline" / "cli.py",
+    "T14": ROOT / "rules" / "lp20_orphaned_preposition.contexts.yaml",
 }
 def icon(status: str) -> str:
     return {

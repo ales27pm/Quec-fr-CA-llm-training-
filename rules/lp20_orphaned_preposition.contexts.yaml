@@ -1,0 +1,97 @@
+kind: lp_context_manifest
+lp_id: 20
+name: orphaned_preposition
+phenomenon: Québec/French rare syntax — orphaned preposition
+contrasts:
+  - contrast_id: lp20_relative_attachment_a_propos_de
+    positive_pattern: à propos
+    negative_pattern: à propos
+    register: formal
+    term_type: expression
+    source_authority: Grammaire normative (référence interne)
+    allowed_contexts:
+      - subordonnée relative explicative
+      - prose soignée
+    blocked_contexts:
+      - ellipse familière non balisée
+      - suppression de préposition régie
+    good_templates:
+      - "Le sujet à propos duquel le comité a voté demeure sensible."
+      - "Voici la question à propos de laquelle nous devons trancher."
+    bad_templates:
+      - "Le sujet auquel le comité a voté à propos demeure sensible."
+      - "Voici la question laquelle nous devons trancher à propos."
+    notes: La préposition régie doit rester rattachée au relatif (pied-piping).
+    phenomenon_tags: [orphaned_preposition, relative_clause]
+    required_good_substrings: ["à propos"]
+    required_bad_substrings: ["à propos"]
+    minimal_contrast_focus: preposition_attachment
+  - contrast_id: lp20_interrogative_de_quoi
+    positive_pattern: de
+    negative_pattern: "?"
+    register: neutral
+    term_type: expression
+    source_authority: Grammaire de l'interrogation (référence interne)
+    allowed_contexts:
+      - interrogation directe
+      - registre conversationnel surveillé
+    blocked_contexts:
+      - calque anglais
+      - omission de préposition exigée
+    good_templates:
+      - "De quoi parles-tu exactement?"
+      - "De qui se moque-t-il ici?"
+    bad_templates:
+      - "Quoi parles-tu exactement?"
+      - "Qui se moque-t-il ici?"
+    notes: L'interrogatif exige le maintien de la préposition de régie.
+    phenomenon_tags: [orphaned_preposition, interrogative]
+    required_good_substrings: ["de "]
+    forbidden_bad_substrings: ["de quoi", "de qui"]
+    minimal_contrast_focus: required_preposition_retention
+  - contrast_id: lp20_relative_avec_qui
+    positive_pattern: avec
+    negative_pattern: avec
+    register: formal
+    term_type: expression
+    source_authority: BDL (référence interne)
+    allowed_contexts:
+      - subordonnée relative déterminative
+      - rédaction institutionnelle
+    blocked_contexts:
+      - déplacement libre de la préposition
+      - trou syntaxique post-verbal
+    good_templates:
+      - "La personne avec qui je collabore arrivera demain."
+      - "Le collègue avec qui elle a signé est absent."
+    bad_templates:
+      - "La personne qui je collabore avec arrivera demain."
+      - "Le collègue qui elle a signé avec est absent."
+    notes: Éviter l'orphelinage final de la préposition dans ce registre.
+    phenomenon_tags: [orphaned_preposition, relative_clause]
+    required_good_substrings: ["avec qui"]
+    required_bad_substrings: [" avec"]
+    minimal_contrast_focus: stranded_preposition
+  - contrast_id: lp20_interrogative_pour_qui
+    positive_pattern: pour
+    negative_pattern: "?"
+    register: informal
+    term_type: expression
+    source_authority: Usage québécois surveillé (référence interne)
+    allowed_contexts:
+      - question orale surveillée
+      - reformulation spontanée
+    blocked_contexts:
+      - effacement de la préposition régie
+      - permutation non motivée
+    good_templates:
+      - "Pour qui as-tu réservé cette place?"
+      - "Pour quoi vote-t-on ce soir?"
+    bad_templates:
+      - "Qui as-tu réservé cette place?"
+      - "Quoi vote-t-on ce soir?"
+    notes: La préposition régie reste obligatoire même en registre informel surveillé.
+    phenomenon_tags: [orphaned_preposition, interrogative]
+    required_good_substrings: ["pour "]
+    forbidden_bad_substrings: ["pour qui", "pour quoi"]
+    minimal_contrast_focus: required_preposition_retention
