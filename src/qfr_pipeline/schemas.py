@@ -157,6 +157,12 @@ class LPContextContrast(BaseModel):
     bad_templates: list[str]
     notes: str
     source_authority: str
+    phenomenon_tags: list[str] | None = None
+    required_good_substrings: list[str] = Field(default_factory=list)
+    required_bad_substrings: list[str] = Field(default_factory=list)
+    forbidden_good_substrings: list[str] = Field(default_factory=list)
+    forbidden_bad_substrings: list[str] = Field(default_factory=list)
+    minimal_contrast_focus: str | None = None
 
     @field_validator("register_value")
     @classmethod
@@ -182,6 +188,18 @@ class LPContextContrast(BaseModel):
             raise ValueError("templates must be non-empty strings")
         if len(self.good_templates) != len(self.bad_templates):
             raise ValueError("good_templates and bad_templates must be the same length")
+        for field_name in (
+            "required_good_substrings",
+            "required_bad_substrings",
+            "forbidden_good_substrings",
+            "forbidden_bad_substrings",
+        ):
+            values = getattr(self, field_name)
+            if any(not isinstance(v, str) or not v.strip() for v in values):
+                raise ValueError(f"{field_name} must contain non-empty strings")
+        if self.phenomenon_tags is not None:
+            if not self.phenomenon_tags or any(not isinstance(v, str) or not v.strip() for v in self.phenomenon_tags):
+                raise ValueError("phenomenon_tags must contain at least one non-empty string when provided")
         return self
 
 

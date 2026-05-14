@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "total_records": 8,
+  "issues": [],
+  "context_manifest": "rules/lp20_orphaned_preposition.contexts.yaml",
+  "authorized_pair_count": 8,
+  "lp_id": 20,
+  "phenomenon": "Québec/French rare syntax — orphaned preposition",
+  "name": "orphaned_preposition"
+}

@@ -51,7 +51,7 @@ def generate_minimal_pairs_cmd(rule: Path = typer.Option(..., "--rule"), context
     context_manifest = load_context_manifest(context)
     quality = validate_minimal_pairs_against_context([p.__dict__ for p in pairs], context_manifest, source_context=str(context))
     if report:
-        write_json(report, {"ok": gen_report.ok and quality.ok, "records_generated": gen_report.records_generated, "total_records": quality.total_records, "issues": [asdict(i) for i in gen_report.issues] + [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts)})
+        write_json(report, {"ok": gen_report.ok and quality.ok, "records_generated": gen_report.records_generated, "total_records": quality.total_records, "issues": [asdict(i) for i in gen_report.issues] + [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts), "lp_id": context_manifest.lp_id, "phenomenon": context_manifest.phenomenon, "name": context_manifest.name})
     if (not gen_report.ok) or (not quality.ok):
         raise typer.Exit(code=1)
     write_jsonl(pairs, out)
@@ -64,7 +64,7 @@ def validate_minimal_pairs_cmd(input: Path = typer.Option(..., "--input"), conte
     context_manifest = validate_lp_context_manifest(context)
     records = read_jsonl(input)
     quality = validate_minimal_pairs_against_context(records, context_manifest, source_context=str(context))
-    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts)})
+    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts), "lp_id": context_manifest.lp_id, "phenomenon": context_manifest.phenomenon, "name": context_manifest.name})
     if not quality.ok:
         raise typer.Exit(code=1)
 

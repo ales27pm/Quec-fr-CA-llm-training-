@@ -25,6 +25,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T11 | CI validation workflow | ✅ fully_implemented | `Provided` |
 | T12 | Gold minimal-pair quality gate | ✅ fully_implemented | `Provided` |
 | T13 | Context-bound gold-data validation | ✅ fully_implemented | `Provided` |
+| T14 | LP20 orphaned-preposition gold-pair support | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.

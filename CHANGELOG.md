@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-14 — T14 LP20 orphaned-preposition gold pairs
+- Added manifest-driven LP20 orphaned-preposition context set (`rules/lp20_orphaned_preposition.contexts.yaml`) and deterministic generated artifacts (`data/generated/minimal_pairs.lp20.jsonl`, `reports/minimal_pair_quality.lp20.json`).
+- Generalized minimal-pair quality/context validation for LP-specific rules, including LP20-focused checks for preposition retention, unauthorized/forged pairs, stable IDs, punctuation-only diffs, and minimum meaningful length.
+- Extended CLI and CI to generate/validate LP9 and LP20 artifacts and fail on stale generated outputs.
+- Added LP20 success/failure test coverage while keeping LP9 regression/context-binding guarantees intact.
+
 ## 2026-05-13
 - Added governance and manifest scaffolding for Québec French LLM pipeline.
 - Added dynamic AGENTS updater and nested AGENTS scaffolding.

@@ -68,6 +68,8 @@ def validate_minimal_pairs(records: list[dict], min_len: int = 8, max_len: int =
         ngood, nbad = normalize_text(good), normalize_text(bad)
         if ngood == nbad:
             issues.append(QualityIssue("identical_pair", "Good and bad are identical after normalization", rid))
+        if "".join(ch for ch in ngood if ch.isalnum()) == "".join(ch for ch in nbad if ch.isalnum()) and ngood != nbad:
+            issues.append(QualityIssue("punctuation_only_change", "Contrast differs only by punctuation/spacing", rid))
 
         for side, text in (("good", ngood), ("bad", nbad)):
             if len(text) < min_len:
@@ -153,5 +155,24 @@ def validate_minimal_pairs_against_context(
             issues.append(QualityIssue("context_missing_positive_pattern", "good side missing context positive pattern", rid))
         if neg and neg not in nbad and f"« {neg} »" not in nbad:
             issues.append(QualityIssue("context_missing_negative_pattern", "bad side missing context negative pattern", rid))
+        for required in contrast.required_good_substrings:
+            if normalize_text(required) not in ngood:
+                issues.append(QualityIssue("context_missing_required_good_substring", f"good side missing required substring: {required}", rid))
+        for required in contrast.required_bad_substrings:
+            if normalize_text(required) not in nbad:
+                issues.append(QualityIssue("context_missing_required_bad_substring", f"bad side missing required substring: {required}", rid))
+        for forbidden in contrast.forbidden_good_substrings:
+            if normalize_text(forbidden) in ngood:
+                issues.append(QualityIssue("context_forbidden_good_substring", f"good side contains forbidden substring: {forbidden}", rid))
+        for forbidden in contrast.forbidden_bad_substrings:
+            if normalize_text(forbidden) in nbad:
+                issues.append(QualityIssue("context_forbidden_bad_substring", f"bad side contains forbidden substring: {forbidden}", rid))
+        if context_manifest.lp_id == 20:
+            if len(ngood) < 16 or len(nbad) < 16:
+                issues.append(QualityIssue("lp20_too_short", "LP20 minimal pair is too short for meaningful contrast", rid))
+            if pos and pos not in ngood:
+                issues.append(QualityIssue("lp20_missing_preposition_focus", "LP20 good side missing expected preposition pattern", rid))
+            if neg and neg not in nbad:
+                issues.append(QualityIssue("lp20_missing_negative_focus", "LP20 bad side missing expected malformed/negative pattern", rid))
 
     return QualityReport(ok=not any(i.blocking for i in issues), issues=issues, total_records=len(records))
