@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-14 — T16 release-candidate orchestration
+- Added deterministic `qfr release-candidate` command orchestrating repository validation, taxonomy validation, LP9/LP20 diagnostics, LP9/LP20 minimal-pair generation+validation, and release report generation in one entry point.
+- Added consolidated `reports/release_candidate.json` and `reports/release_candidate.md` artifacts, plus CI/local-runner integration and stale-artifact guard coverage.
+- Added focused tests for success/failure/partial-report behavior and pipeline wiring guarantees without subprocess usage.
+
+
 ## 2026-05-14 — T14 LP20 orphaned-preposition gold pairs
 - Added manifest-driven LP20 orphaned-preposition context set (`rules/lp20_orphaned_preposition.contexts.yaml`) and deterministic generated artifacts (`data/generated/minimal_pairs.lp20.jsonl`, `reports/minimal_pair_quality.lp20.json`).
 - Generalized minimal-pair quality/context validation for LP-specific rules, including LP20-focused checks for preposition retention, unauthorized/forged pairs, stable IDs, punctuation-only diffs, and minimum meaningful length.

@@ -90,6 +90,12 @@
       "goal": "LP9/LP20 diagnostic taxonomy and release integration",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T16",
+      "goal": "Release-candidate orchestration command",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

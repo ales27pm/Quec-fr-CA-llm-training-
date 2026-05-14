@@ -320,3 +320,41 @@ def test_t11_t15_remain_fully_implemented_after_write():
     by_id = {t["id"]: t["status"] for t in status["tasks"]}
     assert by_id.get("T11") == "fully_implemented"
     assert by_id.get("T15") == "fully_implemented"
+
+
+def test_release_candidate_command_succeeds_with_valid_fixtures(tmp_path: Path):
+    rc = CliRunner()
+    outj = tmp_path / "rc.json"
+    outm = tmp_path / "rc.md"
+    r = rc.invoke(app, ["release-candidate", "--metrics", "fixtures/valid_metrics.json", "--diagnostics-input", "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl", "--out-json", str(outj), "--out-md", str(outm)])
+    assert r.exit_code == 0
+    payload = json.loads(outj.read_text(encoding="utf-8"))
+    assert payload["ok"]
+    assert "LP9:lexical_semantics" in payload["diagnostics_summary"]["phenomena"]
+    assert "LP20:orphaned_preposition" in payload["diagnostics_summary"]["phenomena"]
+
+
+def test_release_candidate_fails_with_blocking_diagnostics_and_writes_partial(tmp_path: Path):
+    rc = CliRunner()
+    outj = tmp_path / "rc_fail.json"
+    outm = tmp_path / "rc_fail.md"
+    r = rc.invoke(app, ["release-candidate", "--metrics", "fixtures/valid_metrics.json", "--diagnostics-input", "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl", "--out-json", str(outj), "--out-md", str(outm)])
+    assert r.exit_code != 0
+    payload = json.loads(outj.read_text(encoding="utf-8"))
+    assert "diagnostics_generation" in payload["blocking_failures"]
+    assert len(payload["stages"]) >= 3
+
+
+def test_release_candidate_has_minimal_pair_summaries_and_no_subprocess_usage():
+    text = (ROOT / "src/qfr_pipeline/release_candidate.py").read_text(encoding="utf-8")
+    assert "subprocess" not in text
+    assert "lp9_records" in text and "lp20_records" in text
+
+
+def test_ci_and_local_runner_include_release_candidate_and_stale_guard():
+    ci = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+    local = (ROOT / "scripts/run_local_validation.sh").read_text(encoding="utf-8")
+    assert "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md" in ci
+    assert "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md" in local
+    assert "reports/release_candidate.json reports/release_candidate.md" in ci
+    assert "reports/release_candidate.json reports/release_candidate.md" in local

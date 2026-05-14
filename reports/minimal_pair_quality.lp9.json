@@ -2,9 +2,10 @@
   "ok": true,
   "total_records": 3,
   "issues": [],
-  "context_manifest": "rules/lp9_lexical_semantics.contexts.yaml",
+  "context_manifest": "/workspace/Quec-fr-CA-llm-training-/rules/lp9_lexical_semantics.contexts.yaml",
   "authorized_pair_count": 3,
   "lp_id": 9,
   "phenomenon": "Québec lexical preference in normative contexts",
-  "name": "lexical_semantics"
+  "name": "lexical_semantics",
+  "records_generated": 3
 }

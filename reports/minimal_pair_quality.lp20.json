@@ -2,9 +2,10 @@
   "ok": true,
   "total_records": 8,
   "issues": [],
-  "context_manifest": "rules/lp20_orphaned_preposition.contexts.yaml",
+  "context_manifest": "/workspace/Quec-fr-CA-llm-training-/rules/lp20_orphaned_preposition.contexts.yaml",
   "authorized_pair_count": 8,
   "lp_id": 20,
   "phenomenon": "Québec/French rare syntax — orphaned preposition",
-  "name": "orphaned_preposition"
+  "name": "orphaned_preposition",
+  "records_generated": 8
 }
