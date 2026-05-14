@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
+from qfr_pipeline.paths import repo_relative_path
 from qfr_pipeline.schemas import LPContextContrast, LPContextManifest
 
 
@@ -75,7 +76,7 @@ def generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[Mi
     for contrast in contexts.contrasts:
         for good, bad in expand_contrast_templates(contrast):
             rid = stable_minimal_pair_id(contexts.lp_id, contrast.contrast_id, good, bad)
-            records.append(MinimalPairRecord(id=rid, lp_id=contexts.lp_id, phenomenon=contexts.name, contrast_id=contrast.contrast_id, good=good, bad=bad, expected="good", register=contrast.register_value, term_type=contrast.term_type, source_rule=str(rule_path), source_context=str(context_path), metadata={"dialect": "fr-CA", "normative": contrast.register_value == "formal", "allowed_contexts": contrast.allowed_contexts, "blocked_contexts": contrast.blocked_contexts, "quality_checks": [], "positive_pattern": contrast.positive_pattern, "negative_pattern": contrast.negative_pattern}))
+            records.append(MinimalPairRecord(id=rid, lp_id=contexts.lp_id, phenomenon=contexts.name, contrast_id=contrast.contrast_id, good=good, bad=bad, expected="good", register=contrast.register_value, term_type=contrast.term_type, source_rule=repo_relative_path(rule_path), source_context=repo_relative_path(context_path), metadata={"dialect": "fr-CA", "normative": contrast.register_value == "formal", "allowed_contexts": contrast.allowed_contexts, "blocked_contexts": contrast.blocked_contexts, "quality_checks": [], "positive_pattern": contrast.positive_pattern, "negative_pattern": contrast.negative_pattern}))
 
     return records, MinimalPairGenerationReport(ok=True, records_generated=len(records), issues=[])
 

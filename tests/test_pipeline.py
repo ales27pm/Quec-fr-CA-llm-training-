@@ -10,6 +10,7 @@ from qfr_pipeline.cli import app
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs, validate_minimal_pairs_against_context
 from qfr_pipeline.minimal_pairs import expand_contrast_templates, generate_minimal_pairs, load_context_manifest
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
+from qfr_pipeline.paths import repo_relative_path
 from qfr_pipeline.schemas import LPContextContrast
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics
 from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_lp_context_manifest, validate_release_gates
@@ -358,3 +359,36 @@ def test_ci_and_local_runner_include_release_candidate_and_stale_guard():
     assert "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md" in local
     assert "reports/release_candidate.json reports/release_candidate.md" in ci
     assert "reports/release_candidate.json reports/release_candidate.md" in local
+
+
+def test_repo_relative_path_normalizes_root_and_relative():
+    assert repo_relative_path(ROOT / "rules/lp9_lexical_semantics.contexts.yaml") == "rules/lp9_lexical_semantics.contexts.yaml"
+    assert repo_relative_path(Path("rules/lp9_lexical_semantics.contexts.yaml")) == "rules/lp9_lexical_semantics.contexts.yaml"
+
+
+def test_release_candidate_and_generated_artifacts_have_no_absolute_paths():
+    rc = CliRunner()
+    r = rc.invoke(app, ["release-candidate", "--metrics", "fixtures/valid_metrics.json", "--diagnostics-input", "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl", "--out-json", "reports/release_candidate.json", "--out-md", "reports/release_candidate.md"])
+    assert r.exit_code == 0
+    repo_root = str(ROOT.resolve())
+    for path in [
+        ROOT / "reports/release_candidate.json",
+        ROOT / "reports/release_candidate.md",
+        ROOT / "data/generated/minimal_pairs.lp9.jsonl",
+        ROOT / "data/generated/minimal_pairs.lp20.jsonl",
+        ROOT / "reports/minimal_pair_quality.lp9.json",
+        ROOT / "reports/minimal_pair_quality.lp20.json",
+    ]:
+        text = path.read_text(encoding="utf-8")
+        assert "/workspace" not in text
+        assert repo_root not in text
+    lp9 = (ROOT / "data/generated/minimal_pairs.lp9.jsonl").read_text(encoding="utf-8").splitlines()
+    lp20 = (ROOT / "data/generated/minimal_pairs.lp20.jsonl").read_text(encoding="utf-8").splitlines()
+    for row in lp9 + lp20:
+        payload = json.loads(row)
+        assert payload["source_rule"] == "rules/lp_rule_manifest.template.yaml"
+        assert payload["source_context"].startswith("rules/")
+    q9 = json.loads((ROOT / "reports/minimal_pair_quality.lp9.json").read_text(encoding="utf-8"))
+    q20 = json.loads((ROOT / "reports/minimal_pair_quality.lp20.json").read_text(encoding="utf-8"))
+    assert q9["context_manifest"] == "rules/lp9_lexical_semantics.contexts.yaml"
+    assert q20["context_manifest"] == "rules/lp20_orphaned_preposition.contexts.yaml"

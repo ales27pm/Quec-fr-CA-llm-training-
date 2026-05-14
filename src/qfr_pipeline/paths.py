@@ -17,3 +17,13 @@ EVAL_DIR = ROOT / "eval"
 RELEASE_GATES_PATH = PROJECT_DIR / "release_gates.yaml"
 STATUS_PATH = PROJECT_DIR / "status.json"
 AGENTS_PATH = ROOT / "AGENTS.md"
+
+
+def repo_relative_path(path: Path | str) -> str:
+    p = Path(path)
+    if not p.is_absolute():
+        return p.as_posix()
+    try:
+        return p.resolve().relative_to(ROOT.resolve()).as_posix()
+    except Exception:
+        return p.as_posix()

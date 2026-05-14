@@ -8,7 +8,7 @@ from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagno
 from qfr_pipeline.io import write_json
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
 from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, write_jsonl
-from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
+from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import ReleaseReport, evaluate_release
 from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_repository
 
@@ -18,7 +18,7 @@ def _build_minimal_pair_report(*, context: Path, context_manifest, quality, gen_
         "ok": quality.ok if gen_report is None else (gen_report.ok and quality.ok),
         "total_records": quality.total_records,
         "issues": [asdict(i) for i in quality.issues],
-        "context_manifest": str(context),
+        "context_manifest": repo_relative_path(context),
         "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts),
         "lp_id": context_manifest.lp_id,
         "phenomenon": context_manifest.phenomenon,
@@ -92,8 +92,8 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "lp20_quality": "reports/minimal_pair_quality.lp20.json",
         "release_report_json": "reports/release_report.json",
         "release_report_md": "reports/release_report.md",
-        "release_candidate_json": str(out_json),
-        "release_candidate_md": str(out_md),
+        "release_candidate_json": repo_relative_path(out_json),
+        "release_candidate_md": repo_relative_path(out_md),
     }
     stages: list[ReleaseCandidateStage] = []
     blocking_failures: list[str] = []
