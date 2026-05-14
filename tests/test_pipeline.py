@@ -6,8 +6,9 @@ from typer.testing import CliRunner
 
 from qfr_pipeline.cli import app
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs, validate_minimal_pairs_against_context
-from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest
+from qfr_pipeline.minimal_pairs import expand_contrast_templates, generate_minimal_pairs, load_context_manifest
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
+from qfr_pipeline.schemas import LPContextContrast
 from qfr_pipeline.validation import validate_lp_context_manifest, validate_release_gates
 
 
@@ -106,3 +107,21 @@ def test_generate_minimal_pairs_writes_jsonl_and_report(tmp_path: Path):
 
 def test_cli_agents_refresh_no_subprocess():
     assert "subprocess" not in (ROOT / "src/qfr_pipeline/cli.py").read_text(encoding="utf-8")
+
+
+def test_expand_contrast_templates_rejects_mismatched_lengths():
+    contrast = LPContextContrast.model_construct(
+        contrast_id="x",
+        positive_pattern="fin de semaine",
+        negative_pattern="week-end",
+        register="formal",
+        term_type="noun_phrase",
+        allowed_contexts=["a"],
+        blocked_contexts=["b"],
+        good_templates=["{positive_pattern} A", "{positive_pattern} B"],
+        bad_templates=["{negative_pattern} A"],
+        notes="n",
+        source_authority="s",
+    )
+    with pytest.raises(ValueError, match="Mismatched template counts"):
+        expand_contrast_templates(contrast)

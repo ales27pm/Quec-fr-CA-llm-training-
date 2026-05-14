@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
-from qfr_pipeline.schemas import LPContextManifest
+from qfr_pipeline.schemas import LPContextContrast, LPContextManifest
 
 
 @dataclass
@@ -49,16 +49,23 @@ def stable_minimal_pair_id(lp_id: int, contrast_id: str, good: str, bad: str) ->
     return f"lp{lp_id}-{digest}"
 
 
+def expand_contrast_templates(contrast: LPContextContrast) -> list[tuple[str, str]]:
+    if len(contrast.good_templates) != len(contrast.bad_templates):
+        raise ValueError(
+            f"Mismatched template counts for {contrast.contrast_id}: "
+            f"{len(contrast.good_templates)} good vs {len(contrast.bad_templates)} bad"
+        )
+    return [
+        (
+            g_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern),
+            b_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern),
+        )
+        for g_t, b_t in zip(contrast.good_templates, contrast.bad_templates)
+    ]
+
+
 def build_authorized_pair_index(context_manifest: LPContextManifest) -> dict[str, set[tuple[str, str]]]:
-    authorized: dict[str, set[tuple[str, str]]] = {}
-    for contrast in context_manifest.contrasts:
-        pairs: set[tuple[str, str]] = set()
-        for g_t, b_t in zip(contrast.good_templates, contrast.bad_templates):
-            good = g_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern)
-            bad = b_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern)
-            pairs.add((good, bad))
-        authorized[contrast.contrast_id] = pairs
-    return authorized
+    return {contrast.contrast_id: set(expand_contrast_templates(contrast)) for contrast in context_manifest.contrasts}
 
 
 def generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[MinimalPairRecord], MinimalPairGenerationReport]:
@@ -66,9 +73,7 @@ def generate_minimal_pairs(rule_path: Path, context_path: Path) -> tuple[list[Mi
     contexts = load_context_manifest(context_path)
     records: list[MinimalPairRecord] = []
     for contrast in contexts.contrasts:
-        for g_t, b_t in zip(contrast.good_templates, contrast.bad_templates):
-            good = g_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern)
-            bad = b_t.format(positive_pattern=contrast.positive_pattern, negative_pattern=contrast.negative_pattern)
+        for good, bad in expand_contrast_templates(contrast):
             rid = stable_minimal_pair_id(contexts.lp_id, contrast.contrast_id, good, bad)
             records.append(MinimalPairRecord(id=rid, lp_id=contexts.lp_id, phenomenon=contexts.name, contrast_id=contrast.contrast_id, good=good, bad=bad, expected="good", register=contrast.register_value, term_type=contrast.term_type, source_rule=str(rule_path), source_context=str(context_path), metadata={"dialect": "fr-CA", "normative": contrast.register_value == "formal", "allowed_contexts": contrast.allowed_contexts, "blocked_contexts": contrast.blocked_contexts, "quality_checks": [], "positive_pattern": contrast.positive_pattern, "negative_pattern": contrast.negative_pattern}))
 
