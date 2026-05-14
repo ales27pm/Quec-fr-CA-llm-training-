@@ -10,8 +10,8 @@ from rich import print
 
 from qfr_pipeline.contamination import detect_contamination
 from qfr_pipeline.io import load_json, write_json
-from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs
-from qfr_pipeline.minimal_pairs import generate_minimal_pairs, read_jsonl, write_jsonl
+from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
+from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, read_jsonl, write_jsonl
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
 from qfr_pipeline.release_report import evaluate_release
 from qfr_pipeline.validation import validate_dataset_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
@@ -48,9 +48,11 @@ def validate_repo():
 def generate_minimal_pairs_cmd(rule: Path = typer.Option(..., "--rule"), context: Path = typer.Option(..., "--context"), out: Path = typer.Option(..., "--out"), report: Path | None = typer.Option(None, "--report")):
     _refresh_dynamic_agents()
     pairs, gen_report = generate_minimal_pairs(rule, context)
+    context_manifest = load_context_manifest(context)
+    quality = validate_minimal_pairs_against_context([p.__dict__ for p in pairs], context_manifest, source_context=str(context))
     if report:
-        write_json(report, {"ok": gen_report.ok, "records_generated": gen_report.records_generated, "issues": [asdict(i) for i in gen_report.issues]})
-    if not gen_report.ok:
+        write_json(report, {"ok": gen_report.ok and quality.ok, "records_generated": gen_report.records_generated, "total_records": quality.total_records, "issues": [asdict(i) for i in gen_report.issues] + [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts)})
+    if (not gen_report.ok) or (not quality.ok):
         raise typer.Exit(code=1)
     write_jsonl(pairs, out)
     print(f"Wrote {len(pairs)} records to {out}")
@@ -59,10 +61,10 @@ def generate_minimal_pairs_cmd(rule: Path = typer.Option(..., "--rule"), context
 @app.command("validate-minimal-pairs")
 def validate_minimal_pairs_cmd(input: Path = typer.Option(..., "--input"), context: Path = typer.Option(..., "--context"), report: Path = typer.Option(..., "--report")):
     _refresh_dynamic_agents()
-    validate_lp_context_manifest(context)
+    context_manifest = validate_lp_context_manifest(context)
     records = read_jsonl(input)
-    quality = validate_minimal_pairs(records)
-    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [asdict(i) for i in quality.issues]})
+    quality = validate_minimal_pairs_against_context(records, context_manifest, source_context=str(context))
+    write_json(report, {"ok": quality.ok, "total_records": quality.total_records, "issues": [asdict(i) for i in quality.issues], "context_manifest": str(context), "authorized_pair_count": sum(len(c.good_templates) for c in context_manifest.contrasts)})
     if not quality.ok:
         raise typer.Exit(code=1)
 

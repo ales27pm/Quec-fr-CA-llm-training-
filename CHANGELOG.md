@@ -32,3 +32,5 @@
 
 - Implemented T12 gold minimal-pair quality gate with grammar-aware LP9 context manifest and deterministic validation checks.
 - Removed subprocess usage from CLI AGENTS governance refresh path in favor of direct safe module invocation.
+
+- Implemented T13 context-bound gold-data validation: minimal-pair validation now binds each JSONL record to manifest-authorized contrasts/templates, stable IDs, and context metadata; CLI/CI now enforce context authorization on generation and validation.
