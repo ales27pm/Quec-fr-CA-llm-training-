@@ -1,0 +1,37 @@
+kind: error_taxonomy_manifest
+schema_version: "1.0"
+lp_id: 9
+phenomenon: lexical_semantics
+taxonomy:
+  - error_code: regional_lexical_mismatch
+    label: Québec lexical marker replaced
+    severity: blocking
+    description: Québec lexical choice is replaced by non-target regional wording.
+    detection_guidance: Check if expected Québec token is absent and substituted.
+    remediation_guidance: Restore Québec lexical form matching context/register.
+    examples: ["courriel -> email"]
+    applies_to: ["LP9", "lexical_semantics"]
+  - error_code: normative_register_mismatch
+    label: Register mismatch
+    severity: non_blocking
+    description: Output register drifts from requested normative register.
+    detection_guidance: Compare requested register metadata with output style.
+    remediation_guidance: Add register-aware decoding/reranking constraints.
+    examples: ["formal prompt answered with slang"]
+    applies_to: ["LP9"]
+  - error_code: anglicism_preference_error
+    label: Anglicism preferred
+    severity: blocking
+    description: Anglicism selected when recommended Québec equivalent exists.
+    detection_guidance: Detect anglicism in presence of preferred Québec term.
+    remediation_guidance: Bias toward OQLF/BDL preferred variant.
+    examples: ["week-end preferred over fin de semaine"]
+    applies_to: ["LP9"]
+  - error_code: semantic_fidelity_loss
+    label: Meaning drift
+    severity: blocking
+    description: Lexical substitution changes intended semantics.
+    detection_guidance: Validate entailment and contextual meaning preservation.
+    remediation_guidance: Use semantic consistency checks before acceptance.
+    examples: ["char replaced with generic véhicule in narrow context"]
+    applies_to: ["LP9", "semantic"]

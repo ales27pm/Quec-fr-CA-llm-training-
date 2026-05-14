@@ -1,0 +1,2 @@
+{"id":"a1","lp_id":9,"phenomenon":"lexical_semantics","is_correct":0,"error_code":"anglicism_preference_error","semantic_similarity":0.31}
+{"id":"b1","lp_id":20,"phenomenon":"orphaned_preposition","is_correct":1,"semantic_similarity":0.93}

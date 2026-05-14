@@ -40,3 +40,14 @@
 - Removed subprocess usage from CLI AGENTS governance refresh path in favor of direct safe module invocation.
 
 - Implemented T13 context-bound gold-data validation: minimal-pair validation now binds each JSONL record to manifest-authorized contrasts/templates, stable IDs, and context metadata; CLI/CI now enforce context authorization on generation and validation.
+
+## 2026-05-14 — T15 LP9/LP20 diagnostic taxonomy integration
+- Added first-class LP9/LP20 error taxonomy manifests and schema validation.
+- Added `qfr diagnose-eval` deterministic JSON/Markdown diagnostics with semantic similarity aggregation and taxonomy-aware blocking logic.
+- Extended release-report JSON/Markdown to optionally embed diagnostics and fail on blocking diagnostics issues.
+- Added CI checks and deterministic diagnostics artifacts stale-guard coverage.
+
+## 2026-05-14 — CI restoration and local validator
+- Restored `.github/workflows/ci.yml` with valid LP9/LP20 diagnostics + deterministic artifact checks (including release report artifacts).
+- Added `scripts/run_local_validation.sh` to run the same validation sequence locally when GitHub Actions is unreliable.
+- Preserved governance status for T11/T15 without downgrade after AGENTS/status refresh.

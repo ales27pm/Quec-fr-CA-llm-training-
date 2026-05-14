@@ -11,7 +11,8 @@ from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs, validate_m
 from qfr_pipeline.minimal_pairs import expand_contrast_templates, generate_minimal_pairs, load_context_manifest
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
 from qfr_pipeline.schemas import LPContextContrast
-from qfr_pipeline.validation import validate_lp_context_manifest, validate_release_gates
+from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics
+from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_lp_context_manifest, validate_release_gates
 
 
 def test_release_gate_schema_validation():
@@ -189,3 +190,133 @@ def test_lp20_punctuation_only_and_duplicate_pair_fail():
     quality = validate_minimal_pairs(records)
     codes = {i.code for i in quality.issues}
     assert "punctuation_only_change" in codes and "duplicate_pair" in codes
+
+def test_taxonomy_schema_validation_passes():
+    assert validate_error_taxonomy_manifest(ROOT / "eval/lp9_error_taxonomy.yaml").lp_id == 9
+    assert validate_error_taxonomy_manifest(ROOT / "eval/lp20_error_taxonomy.yaml").lp_id == 20
+
+
+def test_taxonomy_duplicate_error_code_fails(tmp_path: Path):
+    bad = yaml.safe_load((ROOT / "eval/lp9_error_taxonomy.yaml").read_text())
+    bad["taxonomy"].append(dict(bad["taxonomy"][0]))
+    p = tmp_path / "dup.yaml"
+    p.write_text(yaml.safe_dump(bad, sort_keys=False), encoding="utf-8")
+    with pytest.raises(ValidationError):
+        validate_error_taxonomy_manifest(p)
+
+
+def test_diagnostics_aggregation_and_cosine():
+    rows = load_eval_rows(ROOT / "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl")
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert report.global_summary["total_records"] == 4
+    assert report.phenomena["LP9:lexical_semantics"].binary_accuracy == pytest.approx(0.5)
+    assert report.phenomena["LP20:orphaned_preposition"].mean_semantic_similarity is not None
+
+
+def test_diagnostics_unknown_error_code_blocking():
+    rows = [{"id": "x", "lp_id": 9, "phenomenon": "lexical_semantics", "is_correct": 0, "error_code": "nope"}, {"id": "y", "lp_id": 20, "phenomenon": "orphaned_preposition", "is_correct": 1}]
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert not report.ok
+
+
+def test_diagnostics_missing_error_code_blocking():
+    rows = [{"id": "x", "lp_id": 9, "phenomenon": "lexical_semantics", "is_correct": 0}, {"id": "y", "lp_id": 20, "phenomenon": "orphaned_preposition", "is_correct": 1}]
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert any(i.code == "missing_error_code" for i in report.issues)
+
+
+def test_cli_validate_taxonomy_and_diagnose_eval(tmp_path: Path):
+    outj = tmp_path / "d.json"
+    outm = tmp_path / "d.md"
+    r1 = CliRunner().invoke(app, ["validate-taxonomy", "--taxonomy", "eval/lp9_error_taxonomy.yaml"])
+    r2 = CliRunner().invoke(app, ["diagnose-eval", "--input", "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl", "--taxonomy", "eval/lp9_error_taxonomy.yaml", "--taxonomy", "eval/lp20_error_taxonomy.yaml", "--out-json", str(outj), "--out-md", str(outm)])
+    assert r1.exit_code == 0 and r2.exit_code == 0 and outj.exists() and outm.exists()
+
+
+def test_diagnostics_known_blocking_taxonomy_sets_not_ok():
+    rows = load_eval_rows(ROOT / "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl")
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert not report.ok and report.global_summary["blocking_error_count"] > 0
+
+
+def test_diagnostics_known_non_blocking_taxonomy_can_stay_ok():
+    rows = load_eval_rows(ROOT / "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl")
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert report.ok
+
+
+def test_diagnostics_invalid_is_correct_values_rejected():
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    for bad in (2, -1, "yes"):
+        rows = [{"id": "x", "lp_id": 9, "phenomenon": "lexical_semantics", "is_correct": bad}, {"id": "y", "lp_id": 20, "phenomenon": "orphaned_preposition", "is_correct": 1}]
+        report = run_diagnostics(rows, tax)
+        assert report.global_summary["malformed_rows"] >= 1 and not report.ok
+
+
+def test_diagnostics_zero_one_is_correct_supported():
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    rows = [{"id": "x", "lp_id": 9, "phenomenon": "lexical_semantics", "is_correct": 0, "error_code": "normative_register_mismatch"}, {"id": "y", "lp_id": 20, "phenomenon": "orphaned_preposition", "is_correct": 1}]
+    report = run_diagnostics(rows, tax)
+    assert report.ok
+
+
+def test_cli_diagnose_eval_fails_on_known_blocking(tmp_path: Path):
+    outj = tmp_path / "d.json"
+    outm = tmp_path / "d.md"
+    r = CliRunner().invoke(app, ["diagnose-eval", "--input", "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl", "--taxonomy", "eval/lp9_error_taxonomy.yaml", "--taxonomy", "eval/lp20_error_taxonomy.yaml", "--out-json", str(outj), "--out-md", str(outm)])
+    assert r.exit_code != 0
+
+
+def test_release_report_fails_on_blocking_diagnostics(tmp_path: Path):
+    djson = tmp_path / "blocking.json"
+    dmd = tmp_path / "blocking.md"
+    rc = CliRunner()
+    r1 = rc.invoke(app, ["diagnose-eval", "--input", "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl", "--taxonomy", "eval/lp9_error_taxonomy.yaml", "--taxonomy", "eval/lp20_error_taxonomy.yaml", "--out-json", str(djson), "--out-md", str(dmd)])
+    assert r1.exit_code != 0
+    r2 = rc.invoke(app, ["release-report", "--metrics", "fixtures/valid_metrics.json", "--diagnostics", str(djson), "--out-json", str(tmp_path / "r.json"), "--out-md", str(tmp_path / "r.md")])
+    assert r2.exit_code != 0
+
+
+def test_ci_lp20_commands_no_bare_extra_args():
+    ci_path = ROOT / ".github/workflows/ci.yml"
+    if not ci_path.exists():
+        return
+    ci = ci_path.read_text(encoding="utf-8")
+    assert "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml --out data/generated/minimal_pairs.lp20.jsonl --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci
+    assert "qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --context rules/lp20_orphaned_preposition.contexts.yaml --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci
+
+
+def test_workflow_file_exists():
+    assert (ROOT / ".github/workflows/ci.yml").exists()
+
+
+def test_local_validation_script_exists_and_has_required_commands():
+    script = (ROOT / "scripts/run_local_validation.sh")
+    assert script.exists()
+    text = script.read_text(encoding="utf-8")
+    for cmd in [
+        "set -euo pipefail",
+        "ruff check .",
+        "python -m pytest",
+        "python3 tools/update_agents.py --validate",
+        "qfr validate",
+        "qfr validate-taxonomy --taxonomy eval/lp9_error_taxonomy.yaml",
+        "qfr validate-taxonomy --taxonomy eval/lp20_error_taxonomy.yaml",
+        "qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl",
+        "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml",
+        "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml",
+        "qfr release-report --metrics fixtures/valid_metrics.json --diagnostics reports/diagnostics.lp9_lp20.json",
+    ]:
+        assert cmd in text
+
+
+def test_t11_t15_remain_fully_implemented_after_write():
+    status = json.loads((ROOT / "project/status.json").read_text(encoding="utf-8"))
+    by_id = {t["id"]: t["status"] for t in status["tasks"]}
+    assert by_id.get("T11") == "fully_implemented"
+    assert by_id.get("T15") == "fully_implemented"

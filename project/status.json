@@ -84,6 +84,12 @@
       "goal": "LP20 orphaned-preposition gold-pair support",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T15",
+      "goal": "LP9/LP20 diagnostic taxonomy and release integration",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

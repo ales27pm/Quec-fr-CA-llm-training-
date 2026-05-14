@@ -1,0 +1,4 @@
+{"id":"a1","lp_id":9,"phenomenon":"lexical_semantics","is_correct":1,"semantic_similarity":0.98}
+{"id":"a2","lp_id":9,"phenomenon":"lexical_semantics","is_correct":0,"error_code":"normative_register_mismatch","embedding_ref":"1 0 0","embedding_pred":"0.9 0.1 0"}
+{"id":"b1","lp_id":20,"phenomenon":"orphaned_preposition","is_correct":"1","embedding_ref":[1,1,0],"embedding_pred":[1,0.9,0]}
+{"id":"b2","lp_id":20,"phenomenon":"orphaned_preposition","is_correct":0,"error_code":"relative_clause_attachment_error","semantic_similarity":0.42}

@@ -149,6 +149,59 @@ class ProjectStatus(BaseModel):
 
 
 
+
+
+class ErrorTaxonomyItem(BaseModel):
+    error_code: str
+    label: str
+    severity: str
+    description: str
+    detection_guidance: str
+    remediation_guidance: str
+    examples: list[str]
+    applies_to: list[str]
+
+    @field_validator("severity")
+    @classmethod
+    def valid_severity(cls, v: str) -> str:
+        if v not in {"blocking", "non_blocking"}:
+            raise ValueError("severity must be blocking or non_blocking")
+        return v
+
+    @model_validator(mode="after")
+    def validate_nonempty(self):
+        for field_name in ("error_code", "label", "description", "detection_guidance", "remediation_guidance"):
+            if not getattr(self, field_name).strip():
+                raise ValueError(f"{field_name} must be non-empty")
+        if not self.examples or any((not isinstance(e, str)) or (not e.strip()) for e in self.examples):
+            raise ValueError("examples must contain non-empty strings")
+        if not self.applies_to or any((not isinstance(e, str)) or (not e.strip()) for e in self.applies_to):
+            raise ValueError("applies_to must contain non-empty strings")
+        return self
+
+
+class ErrorTaxonomyManifest(BaseModel):
+    kind: str
+    schema_version: str
+    lp_id: int
+    phenomenon: str
+    taxonomy: list[ErrorTaxonomyItem]
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "error_taxonomy_manifest":
+            raise ValueError("kind must be error_taxonomy_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if not (1 <= self.lp_id <= 20):
+            raise ValueError("lp_id must be in 1..20")
+        codes=[item.error_code for item in self.taxonomy]
+        if len(set(codes)) != len(codes):
+            raise ValueError("error_code entries must be unique within taxonomy")
+        return self
 class LPContextContrast(BaseModel):
     model_config = {"populate_by_name": True}
     contrast_id: str
