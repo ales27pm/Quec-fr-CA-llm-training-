@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 
 import pytest
+import yaml
+from pydantic import ValidationError
 from typer.testing import CliRunner
 
 from qfr_pipeline.cli import app
@@ -143,6 +145,21 @@ def test_context_binding_source_context_canonical_path_match():
 def test_lp20_context_manifest_validates():
     m = validate_lp_context_manifest(ROOT / "rules/lp20_orphaned_preposition.contexts.yaml")
     assert m.lp_id == 20 and len(m.contrasts) >= 4
+    assert any(c.phenomenon_tags for c in m.contrasts)
+    assert any(c.required_good_substrings or c.required_bad_substrings for c in m.contrasts)
+    assert any(c.forbidden_good_substrings or c.forbidden_bad_substrings for c in m.contrasts)
+    assert any(c.minimal_contrast_focus for c in m.contrasts)
+
+
+def test_lp20_context_manifest_invalid_fields_rejected(tmp_path: Path):
+    data = yaml.safe_load((ROOT / "rules/lp20_orphaned_preposition.contexts.yaml").read_text(encoding="utf-8"))
+    first = data["contrasts"][0]
+    first["phenomenon_tags"] = []
+    first["required_good_substrings"] = ["   "]
+    bad_path = tmp_path / "bad_lp20.contexts.yaml"
+    bad_path.write_text(yaml.safe_dump(data, sort_keys=False), encoding="utf-8")
+    with pytest.raises(ValidationError):
+        validate_lp_context_manifest(bad_path)
 
 
 def test_lp20_generation_and_validation_pass():
