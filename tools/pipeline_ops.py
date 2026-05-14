@@ -296,6 +296,8 @@ def main() -> None:
                 ensure_ascii=False,
             )
         )
+        if not payload.get("ok", False):
+            raise SystemExit(1)
 
 
 if __name__ == "__main__":
