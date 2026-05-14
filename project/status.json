@@ -72,6 +72,12 @@
       "goal": "Gold minimal-pair quality gate",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T13",
+      "goal": "Context-bound gold-data validation",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

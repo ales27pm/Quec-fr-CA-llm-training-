@@ -1,5 +1,7 @@
 {
   "ok": true,
   "total_records": 3,
-  "issues": []
+  "issues": [],
+  "context_manifest": "rules/lp9_lexical_semantics.contexts.yaml",
+  "authorized_pair_count": 3
 }
