@@ -48,6 +48,25 @@ class DiagnosticsReport:
         }
 
 
+def _parse_is_correct(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, int) and value in {0, 1}:
+        return bool(value)
+    if isinstance(value, str) and value.strip() in {"0", "1"}:
+        return value.strip() == "1"
+    raise ValueError("is_correct must be bool or 0/1")
+
+
+def _diagnostics_ok(issues: list[DiagnosticIssue], global_summary: dict[str, Any]) -> bool:
+    return (
+        all(not i.blocking for i in issues)
+        and global_summary["malformed_rows"] == 0
+        and global_summary["unknown_error_codes"] == 0
+        and global_summary["blocking_error_count"] == 0
+    )
+
+
 def _parse_embedding(value: Any) -> list[float] | None:
     if value is None:
         return None
@@ -101,11 +120,7 @@ def run_diagnostics(rows: list[dict[str, Any]], taxonomies: dict[int, ErrorTaxon
         try:
             lp_id = int(row["lp_id"])
             phenomenon = str(row["phenomenon"]).strip()
-            is_correct = row["is_correct"]
-            if isinstance(is_correct, int):
-                is_correct = bool(is_correct)
-            if not isinstance(is_correct, bool):
-                raise ValueError("is_correct must be bool or 0/1")
+            is_correct = _parse_is_correct(row["is_correct"])
             semantic = row.get("semantic_similarity")
             if semantic is not None:
                 semantic = float(semantic)
@@ -171,7 +186,7 @@ def run_diagnostics(rows: list[dict[str, Any]], taxonomies: dict[int, ErrorTaxon
         "non_blocking_error_count": total_non,
         "top_error_codes": [{"error_code": c, "count": k} for c, k in global_errors.most_common(5)],
     }
-    ok = all(not i.blocking for i in issues)
+    ok = _diagnostics_ok(issues, global_summary)
     return DiagnosticsReport(ok=ok, phenomena=phenomena, global_summary=global_summary, issues=issues)
 
 

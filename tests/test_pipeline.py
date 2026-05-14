@@ -234,3 +234,55 @@ def test_cli_validate_taxonomy_and_diagnose_eval(tmp_path: Path):
     r1 = CliRunner().invoke(app, ["validate-taxonomy", "--taxonomy", "eval/lp9_error_taxonomy.yaml"])
     r2 = CliRunner().invoke(app, ["diagnose-eval", "--input", "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl", "--taxonomy", "eval/lp9_error_taxonomy.yaml", "--taxonomy", "eval/lp20_error_taxonomy.yaml", "--out-json", str(outj), "--out-md", str(outm)])
     assert r1.exit_code == 0 and r2.exit_code == 0 and outj.exists() and outm.exists()
+
+
+def test_diagnostics_known_blocking_taxonomy_sets_not_ok():
+    rows = load_eval_rows(ROOT / "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl")
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert not report.ok and report.global_summary["blocking_error_count"] > 0
+
+
+def test_diagnostics_known_non_blocking_taxonomy_can_stay_ok():
+    rows = load_eval_rows(ROOT / "fixtures/diagnostics/lp9_lp20_eval_sample.jsonl")
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    report = run_diagnostics(rows, tax)
+    assert report.ok
+
+
+def test_diagnostics_invalid_is_correct_values_rejected():
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    for bad in (2, -1, "yes"):
+        rows = [{"id": "x", "lp_id": 9, "phenomenon": "lexical_semantics", "is_correct": bad}, {"id": "y", "lp_id": 20, "phenomenon": "orphaned_preposition", "is_correct": 1}]
+        report = run_diagnostics(rows, tax)
+        assert report.global_summary["malformed_rows"] >= 1 and not report.ok
+
+
+def test_diagnostics_zero_one_is_correct_supported():
+    tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
+    rows = [{"id": "x", "lp_id": 9, "phenomenon": "lexical_semantics", "is_correct": 0, "error_code": "normative_register_mismatch"}, {"id": "y", "lp_id": 20, "phenomenon": "orphaned_preposition", "is_correct": 1}]
+    report = run_diagnostics(rows, tax)
+    assert report.ok
+
+
+def test_cli_diagnose_eval_fails_on_known_blocking(tmp_path: Path):
+    outj = tmp_path / "d.json"
+    outm = tmp_path / "d.md"
+    r = CliRunner().invoke(app, ["diagnose-eval", "--input", "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl", "--taxonomy", "eval/lp9_error_taxonomy.yaml", "--taxonomy", "eval/lp20_error_taxonomy.yaml", "--out-json", str(outj), "--out-md", str(outm)])
+    assert r.exit_code != 0
+
+
+def test_release_report_fails_on_blocking_diagnostics(tmp_path: Path):
+    djson = tmp_path / "blocking.json"
+    dmd = tmp_path / "blocking.md"
+    rc = CliRunner()
+    r1 = rc.invoke(app, ["diagnose-eval", "--input", "fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl", "--taxonomy", "eval/lp9_error_taxonomy.yaml", "--taxonomy", "eval/lp20_error_taxonomy.yaml", "--out-json", str(djson), "--out-md", str(dmd)])
+    assert r1.exit_code != 0
+    r2 = rc.invoke(app, ["release-report", "--metrics", "fixtures/valid_metrics.json", "--diagnostics", str(djson), "--out-json", str(tmp_path / "r.json"), "--out-md", str(tmp_path / "r.md")])
+    assert r2.exit_code != 0
+
+
+def test_ci_lp20_commands_no_bare_extra_args():
+    ci = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
+    assert "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml --out data/generated/minimal_pairs.lp20.jsonl --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci
+    assert "qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --context rules/lp20_orphaned_preposition.contexts.yaml --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci

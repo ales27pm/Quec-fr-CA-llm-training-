@@ -11,10 +11,10 @@
 ### LP20:orphaned_preposition
 - Binary accuracy: 0.5000
 - Mean semantic similarity: 0.7093089146662548
-- Top recurring failure classes: [{'error_code': 'preposition_omission', 'count': 1}]
-- Blocking/non-blocking error counts: 1/0
+- Top recurring failure classes: [{'error_code': 'relative_clause_attachment_error', 'count': 1}]
+- Blocking/non-blocking error counts: 0/1
 ### LP9:lexical_semantics
 - Binary accuracy: 0.5000
 - Mean semantic similarity: 0.9869418673368094
-- Top recurring failure classes: [{'error_code': 'anglicism_preference_error', 'count': 1}]
-- Blocking/non-blocking error counts: 1/0
+- Top recurring failure classes: [{'error_code': 'normative_register_mismatch', 'count': 1}]
+- Blocking/non-blocking error counts: 0/1
