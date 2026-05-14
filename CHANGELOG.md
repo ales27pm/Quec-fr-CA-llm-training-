@@ -46,3 +46,8 @@
 - Added `qfr diagnose-eval` deterministic JSON/Markdown diagnostics with semantic similarity aggregation and taxonomy-aware blocking logic.
 - Extended release-report JSON/Markdown to optionally embed diagnostics and fail on blocking diagnostics issues.
 - Added CI checks and deterministic diagnostics artifacts stale-guard coverage.
+
+## 2026-05-14 — CI restoration and local validator
+- Restored `.github/workflows/ci.yml` with valid LP9/LP20 diagnostics + deterministic artifact checks (including release report artifacts).
+- Added `scripts/run_local_validation.sh` to run the same validation sequence locally when GitHub Actions is unreliable.
+- Preserved governance status for T11/T15 without downgrade after AGENTS/status refresh.

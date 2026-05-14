@@ -289,3 +289,34 @@ def test_ci_lp20_commands_no_bare_extra_args():
     ci = ci_path.read_text(encoding="utf-8")
     assert "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml --out data/generated/minimal_pairs.lp20.jsonl --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci
     assert "qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --context rules/lp20_orphaned_preposition.contexts.yaml --report reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json" not in ci
+
+
+def test_workflow_file_exists():
+    assert (ROOT / ".github/workflows/ci.yml").exists()
+
+
+def test_local_validation_script_exists_and_has_required_commands():
+    script = (ROOT / "scripts/run_local_validation.sh")
+    assert script.exists()
+    text = script.read_text(encoding="utf-8")
+    for cmd in [
+        "set -euo pipefail",
+        "ruff check .",
+        "python -m pytest",
+        "python3 tools/update_agents.py --validate",
+        "qfr validate",
+        "qfr validate-taxonomy --taxonomy eval/lp9_error_taxonomy.yaml",
+        "qfr validate-taxonomy --taxonomy eval/lp20_error_taxonomy.yaml",
+        "qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl",
+        "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml",
+        "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml",
+        "qfr release-report --metrics fixtures/valid_metrics.json --diagnostics reports/diagnostics.lp9_lp20.json",
+    ]:
+        assert cmd in text
+
+
+def test_t11_t15_remain_fully_implemented_after_write():
+    status = json.loads((ROOT / "project/status.json").read_text(encoding="utf-8"))
+    by_id = {t["id"]: t["status"] for t in status["tasks"]}
+    assert by_id.get("T11") == "fully_implemented"
+    assert by_id.get("T15") == "fully_implemented"
