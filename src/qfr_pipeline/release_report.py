@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 from qfr_pipeline.io import load_json
 from qfr_pipeline.validation import validate_release_gates
-
 
 REQUIRED_METRICS = {
     "asr_wer",
@@ -26,13 +26,13 @@ class ReleaseReport:
     passed: bool
     per_gate: dict
     missing_metrics: list[str]
+    diagnostics: dict[str, Any] | None = None
 
     def to_json(self):
-        return {
-            "passed": self.passed,
-            "per_gate": self.per_gate,
-            "missing_metrics": self.missing_metrics,
-        }
+        payload = {"passed": self.passed, "per_gate": self.per_gate, "missing_metrics": self.missing_metrics}
+        if self.diagnostics is not None:
+            payload["diagnostics"] = self.diagnostics
+        return payload
 
     def to_markdown(self):
         lines = [f"# Release Readiness: {'PASS' if self.passed else 'FAIL'}", "", "## Gate Results"]
@@ -40,6 +40,16 @@ class ReleaseReport:
             lines.append(f"- {k}: {'PASS' if v['pass'] else 'FAIL'} ({v['actual']} vs {v['target']})")
         if self.missing_metrics:
             lines.extend(["", "## Missing Metrics", *[f"- {m}" for m in self.missing_metrics]])
+        if self.diagnostics is not None:
+            lines.extend(["", "## LP9/LP20 Diagnostics"])
+            for key, p in sorted(self.diagnostics.get("phenomena", {}).items()):
+                lines.extend([
+                    f"### {key}",
+                    f"- Binary accuracy: {p['binary_accuracy']:.4f}",
+                    f"- Mean semantic similarity: {p['mean_semantic_similarity']}",
+                    f"- Top recurring failure classes: {p['top_error_codes']}",
+                    f"- Blocking/non-blocking error counts: {p['blocking_error_count']}/{p['non_blocking_error_count']}",
+                ])
         return "\n".join(lines) + "\n"
 
 

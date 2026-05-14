@@ -9,12 +9,13 @@ import yaml
 from rich import print
 
 from qfr_pipeline.contamination import detect_contamination
+from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
 from qfr_pipeline.io import load_json, write_json
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
 from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, read_jsonl, write_jsonl
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
-from qfr_pipeline.release_report import evaluate_release
-from qfr_pipeline.validation import validate_dataset_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
+from qfr_pipeline.release_report import evaluate_release, ReleaseReport
+from qfr_pipeline.validation import validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
 
 app = typer.Typer()
 
@@ -127,13 +128,41 @@ def contamination_check(train: Path = typer.Option(..., "--train"), holdout: Pat
 
 
 @app.command("release-report")
-def release_report(metrics: Path = typer.Option(..., "--metrics"), out_json: Path = typer.Option(..., "--out-json"), out_md: Path = typer.Option(..., "--out-md")):
+def release_report(metrics: Path = typer.Option(..., "--metrics"), out_json: Path = typer.Option(..., "--out-json"), out_md: Path = typer.Option(..., "--out-md"), diagnostics: Path | None = typer.Option(None, "--diagnostics"), allow_missing_diagnostics_phenomena: bool = typer.Option(False, "--allow-missing-diagnostics-phenomena")):
     _refresh_dynamic_agents()
     report = evaluate_release(metrics, RELEASE_GATES_PATH)
+    if diagnostics is not None:
+        d = load_json(diagnostics)
+        has_lp9 = any(v.get("lp_id") == 9 for v in d.get("phenomena", {}).values())
+        has_lp20 = any(v.get("lp_id") == 20 for v in d.get("phenomena", {}).values())
+        if not d.get("ok", False):
+            raise typer.Exit(code=1)
+        if (not allow_missing_diagnostics_phenomena) and (not (has_lp9 and has_lp20)):
+            raise typer.Exit(code=1)
+        report = ReleaseReport(passed=report.passed, per_gate=report.per_gate, missing_metrics=report.missing_metrics, diagnostics=d)
     write_json(out_json, report.to_json())
     out_md.parent.mkdir(parents=True, exist_ok=True)
     out_md.write_text(report.to_markdown(), encoding="utf-8")
     if not report.passed:
+        raise typer.Exit(code=1)
+
+
+@app.command("validate-taxonomy")
+def validate_taxonomy(taxonomy: Path = typer.Option(..., "--taxonomy")):
+    _refresh_dynamic_agents()
+    validate_error_taxonomy_manifest(taxonomy)
+    print("Taxonomy valid")
+
+
+@app.command("diagnose-eval")
+def diagnose_eval(input: Path = typer.Option(..., "--input"), taxonomy: list[Path] = typer.Option(..., "--taxonomy"), out_json: Path = typer.Option(..., "--out-json"), out_md: Path = typer.Option(..., "--out-md"), allow_missing_phenomena: bool = typer.Option(False, "--allow-missing-phenomena")):
+    _refresh_dynamic_agents()
+    taxonomies = load_taxonomies(taxonomy)
+    rows = load_eval_rows(input)
+    report = run_diagnostics(rows, taxonomies, allow_missing_phenomena=allow_missing_phenomena)
+    write_diagnostics_json(report, out_json)
+    write_diagnostics_markdown(report, out_md)
+    if not report.ok:
         raise typer.Exit(code=1)
 
 

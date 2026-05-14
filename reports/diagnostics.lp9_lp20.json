@@ -1,0 +1,61 @@
+{
+  "ok": true,
+  "phenomena": {
+    "LP9:lexical_semantics": {
+      "lp_id": 9,
+      "phenomenon": "lexical_semantics",
+      "n": 2,
+      "correct": 1,
+      "binary_accuracy": 0.5,
+      "mean_semantic_similarity": 0.9869418673368094,
+      "error_distribution": {
+        "anglicism_preference_error": 1
+      },
+      "blocking_error_count": 1,
+      "non_blocking_error_count": 0,
+      "top_error_codes": [
+        {
+          "error_code": "anglicism_preference_error",
+          "count": 1
+        }
+      ]
+    },
+    "LP20:orphaned_preposition": {
+      "lp_id": 20,
+      "phenomenon": "orphaned_preposition",
+      "n": 2,
+      "correct": 1,
+      "binary_accuracy": 0.5,
+      "mean_semantic_similarity": 0.7093089146662548,
+      "error_distribution": {
+        "preposition_omission": 1
+      },
+      "blocking_error_count": 1,
+      "non_blocking_error_count": 0,
+      "top_error_codes": [
+        {
+          "error_code": "preposition_omission",
+          "count": 1
+        }
+      ]
+    }
+  },
+  "global_summary": {
+    "total_records": 4,
+    "malformed_rows": 0,
+    "unknown_error_codes": 0,
+    "blocking_error_count": 2,
+    "non_blocking_error_count": 0,
+    "top_error_codes": [
+      {
+        "error_code": "anglicism_preference_error",
+        "count": 1
+      },
+      {
+        "error_code": "preposition_omission",
+        "count": 1
+      }
+    ]
+  },
+  "issues": []
+}

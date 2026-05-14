@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
-from qfr_pipeline.schemas import DatasetManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, ensure_eval_gates_sync
+from qfr_pipeline.schemas import DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, ensure_eval_gates_sync
 
 
 @dataclass
@@ -37,6 +37,10 @@ def validate_lp_rule_manifest(path: Path) -> LPRuleManifest:
 
 def validate_lp_context_manifest(path: Path) -> LPContextManifest:
     return _validate(path, LPContextManifest)
+
+
+def validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:
+    return _validate(path, ErrorTaxonomyManifest)
 
 
 def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:
@@ -86,9 +90,14 @@ def validate_repository(root: Path) -> ValidationReport:
 
     for path in sorted((root / "eval").glob("*.y*ml")):
         try:
-            validate_evaluation_manifest(path, gates_path)
-            report.checked_files.append(str(path))
+            if "taxonomy" in path.name:
+                validate_error_taxonomy_manifest(path)
+                report.checked_files.append(str(path))
+            else:
+                validate_evaluation_manifest(path, gates_path)
+                report.checked_files.append(str(path))
         except Exception as exc:
             report.ok = False
-            report.issues.append(ValidationIssue(str(path), "evaluation_manifest", str(exc)))
+            kind = "error_taxonomy_manifest" if "taxonomy" in path.name else "evaluation_manifest"
+            report.issues.append(ValidationIssue(str(path), kind, str(exc)))
     return report
