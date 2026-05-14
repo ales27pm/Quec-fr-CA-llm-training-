@@ -359,6 +359,7 @@ def test_ci_and_local_runner_include_release_candidate_and_stale_guard():
     assert "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md" in local
     assert "reports/release_candidate.json reports/release_candidate.md" in ci
     assert "reports/release_candidate.json reports/release_candidate.md" in local
+    assert local.index("qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md") < local.index("git diff --exit-code --")
 
 
 def test_repo_relative_path_normalizes_root_and_relative():

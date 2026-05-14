@@ -35,8 +35,8 @@ qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --con
 echo "==> Release report"
 qfr release-report --metrics fixtures/valid_metrics.json --diagnostics reports/diagnostics.lp9_lp20.json --out-json reports/release_report.json --out-md reports/release_report.md
 
-echo "==> Deterministic artifact guard"
-git diff --exit-code -- data/generated/minimal_pairs.lp9.jsonl reports/minimal_pair_quality.lp9.json data/generated/minimal_pairs.lp20.jsonl reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json reports/diagnostics.lp9_lp20.md reports/release_report.json reports/release_report.md reports/release_candidate.json reports/release_candidate.md
-
 echo "==> Release candidate"
 qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md
+
+echo "==> Deterministic artifact guard"
+git diff --exit-code -- data/generated/minimal_pairs.lp9.jsonl reports/minimal_pair_quality.lp9.json data/generated/minimal_pairs.lp20.jsonl reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json reports/diagnostics.lp9_lp20.md reports/release_report.json reports/release_report.md reports/release_candidate.json reports/release_candidate.md
