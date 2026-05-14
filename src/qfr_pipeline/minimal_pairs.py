@@ -16,8 +16,8 @@ def generate_lp9_minimal_pairs(rule_path: Path):
             f"{len(positives)} vs {len(negatives)}"
         )
     base = [
-        "Merci de m'envoyer le {term} avant la fin de semaine.",
-        "Un {term} officiel sera transmis en début de fin de semaine.",
+        "Merci de m'envoyer {term} avant la fin de semaine.",
+        "Le terme recommandé ici est « {term} ».",
     ]
     out = []
     i = 1

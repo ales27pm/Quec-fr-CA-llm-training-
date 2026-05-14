@@ -1,5 +1,8 @@
 """qfr_pipeline package."""
 
-from importlib.metadata import version
+from importlib.metadata import PackageNotFoundError, version
 
-__version__ = version("qfr-pipeline")
+try:
+    __version__ = version("qfr-pipeline")
+except PackageNotFoundError:
+    __version__ = "0.0.0+unknown"

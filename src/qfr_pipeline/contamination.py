@@ -33,12 +33,10 @@ def _jaccard(a: str, b: str, n: int = 3) -> float:
     if not na and not nb:
         return 0.0
     union = na | nb
-    if not union:
-        return 0.0
     return len(na & nb) / len(union)
 
 
-def detect_contamination(train_items, holdout_items, threshold: float):
+def detect_contamination(train_items, holdout_items, threshold: float) -> list[ContaminationMatch]:
     matches = []
     train_norm = []
     exact_index: dict[str, list[tuple[str, str]]] = {}
