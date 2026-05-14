@@ -1,8 +1,6 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from pydantic import ValidationError
-
 from qfr_pipeline.io import load_yaml
 from qfr_pipeline.schemas import (
     DatasetManifest,
@@ -49,7 +47,7 @@ def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> Evalua
     gates = validate_release_gates(release_gates_path)
     try:
         ensure_eval_gates_sync(eval_manifest, gates)
-    except ValidationError as exc:
+    except ValueError as exc:
         raise ValueError(f"Release gate mismatch between {path} and {release_gates_path}: {exc}") from exc
     return eval_manifest
 

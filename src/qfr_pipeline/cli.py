@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import typer
+import yaml
 from rich import print
 
 from qfr_pipeline.contamination import detect_contamination
@@ -32,17 +33,25 @@ def validate_repo():
 @app.command("validate-file")
 def validate_file(path: Path):
     p = Path(path)
-    doc = p.read_text(encoding="utf-8")
-    if "dataset_manifest" in doc:
+    kind = None
+    try:
+        raw = p.read_text(encoding="utf-8")
+        parsed = load_json(p) if p.suffix == ".json" else yaml.safe_load(raw)
+        if isinstance(parsed, dict):
+            kind = parsed.get("kind")
+    except Exception:
+        kind = None
+
+    if kind == "dataset_manifest":
         validate_dataset_manifest(p)
-    elif "lp_rule_manifest" in doc:
+    elif kind == "lp_rule_manifest":
         validate_lp_rule_manifest(p)
-    elif "evaluation_manifest" in doc:
+    elif kind == "evaluation_manifest":
         validate_evaluation_manifest(p, RELEASE_GATES_PATH)
     elif p.suffix in {".yaml", ".yml"}:
         validate_release_gates(p)
     else:
-        raise typer.BadParameter("Unsupported file")
+        raise typer.BadParameter("Unsupported file or missing kind")
     print("File valid")
 
 
@@ -66,6 +75,7 @@ def contamination_check(train: Path = typer.Option(..., "--train"), holdout: Pat
 def release_report(metrics: Path = typer.Option(..., "--metrics"), out_json: Path = typer.Option(..., "--out-json"), out_md: Path = typer.Option(..., "--out-md")):
     report = evaluate_release(metrics, RELEASE_GATES_PATH)
     write_json(out_json, report.to_json())
+    out_md.parent.mkdir(parents=True, exist_ok=True)
     out_md.write_text(report.to_markdown(), encoding="utf-8")
     if not report.passed:
         raise typer.Exit(code=1)

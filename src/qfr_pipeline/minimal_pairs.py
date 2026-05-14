@@ -10,6 +10,11 @@ def generate_lp9_minimal_pairs(rule_path: Path):
         raise ValueError("Only LP9 generation is supported")
     positives = [p["pattern"] for p in rule.get("positive_patterns", [])]
     negatives = [n["pattern"] for n in rule.get("negative_patterns", [])]
+    if len(positives) != len(negatives):
+        raise ValueError(
+            f"Mismatched positive/negative pattern counts for {rule.get('name')} in {rule_path}: "
+            f"{len(positives)} vs {len(negatives)}"
+        )
     base = [
         "Merci de m'envoyer le {term} avant la fin de semaine.",
         "Un {term} officiel sera transmis en début de fin de semaine.",

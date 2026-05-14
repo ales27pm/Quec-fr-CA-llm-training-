@@ -1,8 +1,20 @@
 from typing import Any
 
-from pydantic import BaseModel, Field, ValidationError, field_validator, model_validator
+from pydantic import BaseModel, Field, field_validator, model_validator
 
 REQUIRED_HOLDOUTS = {"qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"}
+
+
+def _parse_unit_interval(value: Any, field_name: str) -> float:
+    if value is None:
+        raise ValueError(f"{field_name} must be a number in [0,1]")
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{field_name} must be a number in [0,1]") from exc
+    if not 0 <= parsed <= 1:
+        raise ValueError(f"{field_name} must be a number in [0,1]")
+    return parsed
 
 
 class AsrGates(BaseModel):
@@ -63,11 +75,9 @@ class DatasetManifest(BaseModel):
         if not REQUIRED_HOLDOUTS.issubset(blocklisted):
             raise ValueError("missing required holdout benchmark names")
         fuzzy = self.contamination_checks.get("fuzzy_match_threshold")
-        if fuzzy is None or not 0 <= float(fuzzy) <= 1:
-            raise ValueError("fuzzy_match_threshold must be in [0,1]")
+        _parse_unit_interval(fuzzy, "fuzzy_match_threshold")
         confidence = self.quality_filters.get("language_id", {}).get("min_confidence")
-        if confidence is None or not 0 <= float(confidence) <= 1:
-            raise ValueError("min_confidence must be in [0,1]")
+        _parse_unit_interval(confidence, "min_confidence")
         lp_ids = self.lp_coverage.get("included_lp_ids", [])
         if any((not isinstance(i, int)) or i < 1 or i > 20 for i in lp_ids):
             raise ValueError("LP IDs must be integers in 1..20")
@@ -134,9 +144,18 @@ class ProjectStatus(BaseModel):
 def ensure_eval_gates_sync(eval_manifest: EvaluationManifest, release_gates: ReleaseGates) -> None:
     rg = eval_manifest.release_gates
     lp_floors = rg.get("lp_floors", {})
-    if float(rg.get("overall_lp_accuracy_min")) != release_gates.linguistic_phenomena.overall_accuracy_min:
-        raise ValidationError.from_exception_data("EvaluationManifest", [])
-    if float(lp_floors.get("9", lp_floors.get(9))) != release_gates.linguistic_phenomena.lp9_lexical_semantics_min:
-        raise ValidationError.from_exception_data("EvaluationManifest", [])
-    if float(lp_floors.get("20", lp_floors.get(20))) != release_gates.linguistic_phenomena.lp20_orphaned_preposition_min:
-        raise ValidationError.from_exception_data("EvaluationManifest", [])
+    overall = rg.get("overall_lp_accuracy_min")
+    lp9 = lp_floors.get("9", lp_floors.get(9))
+    lp20 = lp_floors.get("20", lp_floors.get(20))
+    try:
+        overall_f = float(overall)
+        lp9_f = float(lp9)
+        lp20_f = float(lp20)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Evaluation manifest release_gates must contain numeric overall/lp9/lp20 thresholds") from exc
+    if overall_f != release_gates.linguistic_phenomena.overall_accuracy_min:
+        raise ValueError("Mismatch in overall_lp_accuracy_min between evaluation manifest and release gates")
+    if lp9_f != release_gates.linguistic_phenomena.lp9_lexical_semantics_min:
+        raise ValueError("Mismatch in lp_floors.9 between evaluation manifest and release gates")
+    if lp20_f != release_gates.linguistic_phenomena.lp20_orphaned_preposition_min:
+        raise ValueError("Mismatch in lp_floors.20 between evaluation manifest and release gates")

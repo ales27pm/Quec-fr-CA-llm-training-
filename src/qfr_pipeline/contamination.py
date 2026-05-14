@@ -17,7 +17,7 @@ def normalize_text(text: str) -> str:
     text = unicodedata.normalize("NFC", text)
     text = re.sub(r"[\u2018\u2019]", "'", text)
     text = re.sub(r"[\u201C\u201D]", '"', text)
-    text = re.sub(r"[^\w\s']", " ", text, flags=re.UNICODE)
+    text = re.sub(r"[^\w\s']", " ", text)
     text = re.sub(r"\s+", " ", text).strip().lower()
     return text
 
@@ -31,7 +31,7 @@ def _ngrams(s: str, n: int = 3) -> set[str]:
 def _jaccard(a: str, b: str, n: int = 3) -> float:
     na, nb = _ngrams(a, n), _ngrams(b, n)
     if not na and not nb:
-        return 1.0
+        return 0.0
     union = na | nb
     if not union:
         return 0.0
@@ -40,14 +40,24 @@ def _jaccard(a: str, b: str, n: int = 3) -> float:
 
 def detect_contamination(train_items, holdout_items, threshold: float):
     matches = []
+    train_norm = []
+    exact_index: dict[str, list[tuple[str, str]]] = {}
     for tr in train_items:
         trn = normalize_text(tr["text"])
-        for ho in holdout_items:
-            hon = normalize_text(ho["text"])
-            if trn == hon and trn:
-                matches.append(ContaminationMatch(tr["id"], ho["id"], 1.0, "exact", trn, hon))
+        tr_id = tr["id"]
+        train_norm.append((tr_id, trn))
+        exact_index.setdefault(trn, []).append((tr_id, trn))
+
+    for ho in holdout_items:
+        hon = normalize_text(ho["text"])
+        ho_id = ho["id"]
+        for tr_id, trn in exact_index.get(hon, []):
+            if hon:
+                matches.append(ContaminationMatch(tr_id, ho_id, 1.0, "exact", trn, hon))
+        for tr_id, trn in train_norm:
+            if trn == hon or not trn or not hon:
                 continue
             score = _jaccard(trn, hon)
             if score >= threshold:
-                matches.append(ContaminationMatch(tr["id"], ho["id"], round(score, 6), "fuzzy", trn, hon))
+                matches.append(ContaminationMatch(tr_id, ho_id, round(score, 6), "fuzzy", trn, hon))
     return matches

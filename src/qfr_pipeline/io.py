@@ -13,6 +13,7 @@ class FileIOError(RuntimeError):
 
 def _atomic_write(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path: Path | None = None
     try:
         with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as tmp:
             tmp.write(content)
@@ -21,6 +22,8 @@ def _atomic_write(path: Path, content: str) -> None:
             tmp_path = Path(tmp.name)
         tmp_path.replace(path)
     except OSError as exc:
+        if tmp_path is not None and tmp_path.exists():
+            tmp_path.unlink(missing_ok=True)
         raise FileIOError(f"Failed atomic write for {path}: {exc}") from exc
 
 

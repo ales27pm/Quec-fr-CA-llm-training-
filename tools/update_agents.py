@@ -182,8 +182,10 @@ def validate() -> None:
             f"{mismatched_thresholds}"
         )
 
-
-    status_doc = json.loads(STATUS_PATH.read_text())
+    try:
+        status_doc = json.loads(STATUS_PATH.read_text())
+    except (FileNotFoundError, PermissionError, json.JSONDecodeError) as exc:
+        raise SystemExit(f"Validation failed; could not load status file {STATUS_PATH}: {exc}") from exc
     for task in status_doc.get("tasks", []):
         if task.get("status") == "fully_implemented" and task.get("id") in TASK_FILES:
             if not TASK_FILES[task["id"]].exists():
