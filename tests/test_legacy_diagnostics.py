@@ -153,8 +153,9 @@ def test_pipeline_ops_diagnose_semantic_blocking_fixture_signals_failure(tmp_pat
         text=True,
         check=False,
     )
+    assert result.returncode != 0
     payload = json.loads(out_json.read_text(encoding="utf-8")) if out_json.exists() else {}
-    assert result.returncode != 0 or payload.get("ok") is False
+    assert payload.get("ok") is False
 
 
 def test_qfr_diagnose_legacy_csv_matches_pipeline_ops_output(tmp_path: Path):
