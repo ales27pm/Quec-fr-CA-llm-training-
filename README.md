@@ -35,6 +35,33 @@ Use legacy + package commands to generate deterministic artifacts under `reports
 - Validate curation policy: `qfr validate-curation-policy --policy manifests/curation_policy_manifest.template.yaml`.
 - Curate ingested corpus deterministically: `qfr curate-corpus --input reports/corpus_ingestion/harvest.jsonl --policy manifests/curation_policy_manifest.template.yaml --out-dir reports/corpus_curation`.
 
+## Real corpus download workflow
+The committed template corpus is intentionally tiny. To materialize real remote text sources, use the separate real-download manifest and downloader:
+
+```bash
+bash scripts/bootstrap_dev_env.sh
+python tools/download_real_corpus_sources.py \
+  --manifest manifests/corpus_source_manifest.real_downloads.yaml \
+  --out-manifest manifests/corpus_source_manifest.real_downloaded.local.yaml \
+  --report reports/corpus_ingestion/downloads.real.json \
+  --overwrite
+
+qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.real_downloaded.local.yaml
+qfr ingest-corpus-sources \
+  --manifest manifests/corpus_source_manifest.real_downloaded.local.yaml \
+  --out reports/corpus_ingestion/harvest.real.jsonl \
+  --report reports/corpus_ingestion/report.real.json \
+  --min-chars 80
+qfr curate-corpus \
+  --input reports/corpus_ingestion/harvest.real.jsonl \
+  --policy manifests/curation_policy_manifest.template.yaml \
+  --out-dir reports/corpus_curation_real
+```
+
+`manifests/corpus_source_manifest.real_downloads.yaml` uses `future_remote` entries plus `download_url` metadata so normal deterministic validation does not download network content. The downloader creates local UTF-8 text files under `data/corpus/raw/` and emits a generated local manifest that the existing ingestion command can validate and ingest.
+
+Review licensing/jurisdiction before using downloaded text for an actual training release. The default real-download manifest uses Project Gutenberg links, which are public-domain-oriented but still require checking local copyright and Project Gutenberg terms.
+
 ## T21 Curated Split
 Use `qfr validate-split-policy` and `qfr split-curated-corpus` to produce `reports/curated_splits/*` from accepted curated corpus only.
 
