@@ -126,6 +126,12 @@
       "goal": "Curated corpus train/dev/test split contract",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T22",
+      "goal": "Training export manifest and dataset card",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

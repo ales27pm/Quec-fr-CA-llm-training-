@@ -83,3 +83,8 @@
 - T18: Data-pipeline logic moved into package modules with legacy `tools/pipeline_ops.py` compatibility wrappers and qfr-native commands.
 
 - Added T21 curated split contract and commands.
+
+## 2026-05-15 — T22 training export manifest + dataset card
+- Added deterministic training export manifest template, schema/model validation, CLI commands, and export artifacts.
+- Added release-candidate integration with training export validation/generation summary.
+- Added bootstrap script and fresh-checkout docs clarifying dependency/install order.

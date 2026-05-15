@@ -16,6 +16,10 @@
   - Artifacts: ['manifests/split_policy_manifest.template.yaml']
 - curated_corpus_split: PASS
   - Artifacts: ['reports/curated_splits/train.jsonl', 'reports/curated_splits/dev.jsonl', 'reports/curated_splits/test.jsonl', 'reports/curated_splits/split_report.json']
+- training_export_manifest_validation: PASS
+  - Artifacts: ['manifests/training_export_manifest.template.yaml']
+- training_export_generation: PASS
+  - Artifacts: ['reports/training_export/training_manifest.json', 'reports/training_export/training_manifest.yaml', 'reports/training_export/dataset_card.md', 'reports/training_export/export_report.json']
 - diagnostics_generation: PASS
   - Artifacts: ['reports/diagnostics.lp9_lp20.json', 'reports/diagnostics.lp9_lp20.md']
 - lp9_minimal_pairs: PASS
@@ -47,3 +51,10 @@
 - Train: `1`
 - Dev: `0`
 - Test: `1`
+
+## Training export summary
+- Dataset: `quebec-fr-curated-training`
+- Version: `0.1.0`
+- Total: `2`
+- Train/Dev/Test: `1`/`0`/`1`
+- Aggregate SHA-256: `0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13`
