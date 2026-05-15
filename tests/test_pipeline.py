@@ -13,6 +13,7 @@ from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT
 from qfr_pipeline.paths import repo_relative_path
 from qfr_pipeline.schemas import LPContextContrast
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics
+import qfr_pipeline.release_candidate as rc_module
 from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_lp_context_manifest, validate_release_gates
 
 
@@ -348,6 +349,28 @@ def test_release_candidate_fails_with_blocking_diagnostics_and_writes_partial(tm
     payload = json.loads(outj.read_text(encoding="utf-8"))
     assert "diagnostics_generation" in payload["blocking_failures"]
     assert len(payload["stages"]) >= 3
+
+
+def test_release_candidate_early_exception_writes_partial_without_unboundlocal(tmp_path: Path, monkeypatch):
+    outj = tmp_path / "rc_early_fail.json"
+    outm = tmp_path / "rc_early_fail.md"
+
+    def _boom(_root):
+        raise RuntimeError("forced early failure before split stage")
+
+    monkeypatch.setattr(rc_module, "validate_repository", _boom)
+    report = rc_module.run_release_candidate(
+        metrics=Path("fixtures/valid_metrics.json"),
+        diagnostics_input=Path("fixtures/diagnostics/lp9_lp20_eval_sample.jsonl"),
+        out_json=outj,
+        out_md=outm,
+    )
+    assert report.ok is False
+    assert report.split_summary is None
+    payload = json.loads(outj.read_text(encoding="utf-8"))
+    assert payload["split_summary"] is None
+    assert "runtime_exception" in payload["blocking_failures"]
+    assert any(stage["name"] == "runtime_exception" for stage in payload["stages"])
 
 
 def test_release_candidate_has_minimal_pair_summaries_and_no_subprocess_usage():

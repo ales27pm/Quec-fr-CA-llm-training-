@@ -119,6 +119,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
     diag_summary: dict[str, Any] | None = None
     mp_summary: dict[str, Any] | None = None
     curation_summary: dict[str, Any] | None = None
+    split_summary: dict[str, Any] | None = None
     det_ts = "project-status-last-updated:" + __import__("json").loads((ROOT / "project/status.json").read_text(encoding="utf-8")).get("last_updated", "unknown")
     try:
         repo_report = validate_repository(ROOT)
