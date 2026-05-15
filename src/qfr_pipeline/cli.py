@@ -9,6 +9,7 @@ import yaml
 from rich import print
 
 from qfr_pipeline.contamination import detect_contamination
+from qfr_pipeline.corpus_sources import ingest_corpus_sources, validate_corpus_source_manifest, write_ingestion_report
 from qfr_pipeline.data_pipeline import curate, edit_normative, harvest, split_train_dev_test, write_training_recipe
 from qfr_pipeline.lp7_monitor import monitor_lp7
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
@@ -19,7 +20,7 @@ from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_mani
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import evaluate_release, ReleaseReport
 from qfr_pipeline.release_candidate import run_release_candidate
-from qfr_pipeline.validation import validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
+from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
 
 app = typer.Typer()
 
@@ -123,6 +124,31 @@ def validate_file(path: Path):
         raise typer.BadParameter("Unsupported file or missing kind")
     print("File valid")
 
+
+
+
+@app.command("validate-corpus-sources")
+def validate_corpus_sources_cmd(manifest: Path = typer.Option(..., "--manifest")):
+    _refresh_dynamic_agents()
+    validate_corpus_source_manifest_model(manifest)
+    validate_corpus_source_manifest(manifest)
+    print("Corpus source manifest valid")
+
+
+@app.command("ingest-corpus-sources")
+def ingest_corpus_sources_cmd(
+    manifest: Path = typer.Option(..., "--manifest"),
+    out: Path = typer.Option(..., "--out"),
+    report: Path = typer.Option(..., "--report"),
+    min_chars: int = typer.Option(20, "--min-chars"),
+    include_review_required: bool = typer.Option(False, "--include-review-required"),
+):
+    _refresh_dynamic_agents()
+    payload = ingest_corpus_sources(manifest, out, min_chars=min_chars, include_review_required=include_review_required)
+    write_ingestion_report(payload, report)
+    print(asdict(payload))
+    if not payload.ok:
+        raise typer.Exit(code=1)
 
 @app.command("contamination-check")
 def contamination_check(train: Path = typer.Option(..., "--train"), holdout: Path = typer.Option(..., "--holdout"), threshold: float = typer.Option(0.92, "--threshold"), out: Path = typer.Option(Path("reports/contamination_report.json"), "--out")):
