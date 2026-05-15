@@ -29,6 +29,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T15 | LP9/LP20 diagnostic taxonomy and release integration | ✅ fully_implemented | `Provided` |
 | T16 | Release-candidate orchestration command | ✅ fully_implemented | `Provided` |
 | T17 | Legacy diagnostics compatibility wrapper | ✅ fully_implemented | `Provided` |
+| T18 | Package data-pipeline compatibility wrappers | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.

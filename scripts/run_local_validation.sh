@@ -44,5 +44,14 @@ qfr release-report --metrics fixtures/valid_metrics.json --diagnostics reports/d
 echo "==> Release candidate"
 qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md
 
+echo "==> Data pipeline demo"
+
+python tools/pipeline_ops.py harvest --inputs fixtures/data_pipeline/raw_sample_1.txt fixtures/data_pipeline/raw_sample_2.txt --out reports/data_pipeline_demo/harvest.jsonl --min-chars 20
+qfr curate --in reports/data_pipeline_demo/harvest.jsonl --out reports/data_pipeline_demo/curated.jsonl --min-fr-ca-score 0.05
+qfr edit-normative --in reports/data_pipeline_demo/curated.jsonl --out reports/data_pipeline_demo/edited.jsonl
+qfr split --in reports/data_pipeline_demo/edited.jsonl --out-dir reports/data_pipeline_demo/splits --seed 42
+qfr training-recipe --data-dir reports/data_pipeline_demo/splits --out reports/data_pipeline_demo/training_recipe.yaml
+qfr monitor-lp7 --pre 0.95 --post 0.94 --release-gates project/release_gates.yaml --out reports/data_pipeline_demo/lp7_monitor.json
+
 echo "==> Deterministic artifact guard"
-git diff --exit-code -- data/generated/minimal_pairs.lp9.jsonl reports/minimal_pair_quality.lp9.json data/generated/minimal_pairs.lp20.jsonl reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json reports/diagnostics.lp9_lp20.md reports/diagnostics.legacy_semantic.json reports/release_report.json reports/release_report.md reports/release_candidate.json reports/release_candidate.md
+git diff --exit-code -- data/generated/minimal_pairs.lp9.jsonl reports/minimal_pair_quality.lp9.json data/generated/minimal_pairs.lp20.jsonl reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json reports/diagnostics.lp9_lp20.md reports/diagnostics.legacy_semantic.json reports/release_report.json reports/release_report.md reports/release_candidate.json reports/release_candidate.md reports/data_pipeline_demo/harvest.jsonl reports/data_pipeline_demo/curated.jsonl reports/data_pipeline_demo/edited.jsonl reports/data_pipeline_demo/splits/train.jsonl reports/data_pipeline_demo/splits/dev.jsonl reports/data_pipeline_demo/splits/test.jsonl reports/data_pipeline_demo/training_recipe.yaml reports/data_pipeline_demo/lp7_monitor.json

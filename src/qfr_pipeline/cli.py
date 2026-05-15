@@ -9,6 +9,8 @@ import yaml
 from rich import print
 
 from qfr_pipeline.contamination import detect_contamination
+from qfr_pipeline.data_pipeline import curate, edit_normative, harvest, split_train_dev_test, write_training_recipe
+from qfr_pipeline.lp7_monitor import monitor_lp7
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
 from qfr_pipeline.io import load_json, write_json
 from qfr_pipeline.legacy_diagnostics import run_legacy_semantic_diagnostics
@@ -211,6 +213,41 @@ def release_candidate(
     )
     if not report.ok:
         raise typer.Exit(code=1)
+
+
+
+@app.command("harvest")
+def harvest_cmd(inputs: list[Path] = typer.Option(..., "--inputs"), out: Path = typer.Option(..., "--out"), min_chars: int = typer.Option(20, "--min-chars"), dedupe_batch_size: int = typer.Option(0, "--dedupe-batch-size")):
+    print(harvest(inputs, out, min_chars, dedupe_batch_size))
+
+
+@app.command("curate")
+def curate_cmd(inp: Path = typer.Option(..., "--in"), out: Path = typer.Option(..., "--out"), min_fr_ca_score: float = typer.Option(0.34, "--min-fr-ca-score")):
+    print(curate(inp, out, min_fr_ca_score))
+
+
+@app.command("edit-normative")
+def edit_normative_cmd(inp: Path = typer.Option(..., "--in"), out: Path = typer.Option(..., "--out")):
+    print(edit_normative(inp, out))
+
+
+@app.command("split")
+def split_cmd(inp: Path = typer.Option(..., "--in"), out_dir: Path = typer.Option(..., "--out-dir"), seed: int = typer.Option(42, "--seed")):
+    print(split_train_dev_test(inp, out_dir, seed))
+
+
+@app.command("training-recipe")
+def training_recipe_cmd(data_dir: Path = typer.Option(..., "--data-dir"), out: Path = typer.Option(..., "--out")):
+    write_training_recipe(data_dir, out)
+    print(out)
+
+
+@app.command("monitor-lp7")
+def monitor_lp7_cmd(pre: float = typer.Option(..., "--pre"), post: float = typer.Option(..., "--post"), release_gates: Path = typer.Option(RELEASE_GATES_PATH, "--release-gates"), out: Path | None = typer.Option(None, "--out")):
+    payload = monitor_lp7(pre, post, release_gates)
+    if out is not None:
+        write_json(out, payload)
+    print(payload)
 
 
 if __name__ == "__main__":

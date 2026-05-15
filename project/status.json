@@ -102,6 +102,12 @@
       "goal": "Legacy diagnostics compatibility wrapper",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T18",
+      "goal": "Package data-pipeline compatibility wrappers",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }
