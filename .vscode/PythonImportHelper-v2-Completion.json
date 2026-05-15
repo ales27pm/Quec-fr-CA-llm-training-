@@ -64,6 +64,62 @@
         "documentation": {}
     },
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -89,6 +145,54 @@
         "documentation": {}
     },
     {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
         "label": "asdict",
         "importPath": "dataclasses",
         "description": "dataclasses",
@@ -153,6 +257,22 @@
         "documentation": {}
     },
     {
+        "label": "asdict",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
         "label": "dataclass",
         "importPath": "dataclasses",
         "description": "dataclasses",
@@ -169,11 +289,107 @@
         "documentation": {}
     },
     {
-        "label": "dataclass",
-        "importPath": "dataclasses",
-        "description": "dataclasses",
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
         "isExtraImport": true,
-        "detail": "dataclasses",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -323,6 +539,326 @@
         "documentation": {}
     },
     {
+        "label": "split_curated_corpus",
+        "importPath": "qfr_pipeline.curated_split",
+        "description": "qfr_pipeline.curated_split",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_manifest",
+        "importPath": "qfr_pipeline.curated_split",
+        "description": "qfr_pipeline.curated_split",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "split_curated_corpus",
+        "importPath": "qfr_pipeline.curated_split",
+        "description": "qfr_pipeline.curated_split",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_manifest",
+        "importPath": "qfr_pipeline.curated_split",
+        "description": "qfr_pipeline.curated_split",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "split_curated_corpus",
+        "importPath": "qfr_pipeline.curated_split",
+        "description": "qfr_pipeline.curated_split",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_manifest",
+        "importPath": "qfr_pipeline.curated_split",
+        "description": "qfr_pipeline.curated_split",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "curate_ingested_corpus",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_manifest",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "curate_ingested_corpus",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_manifest",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "curate_ingested_corpus",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "score_record",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_manifest",
+        "importPath": "qfr_pipeline.curation_policy",
+        "description": "qfr_pipeline.curation_policy",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "ingest_corpus_sources",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_source_manifest",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "write_ingestion_report",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "ingest_corpus_sources",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_source_manifest",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "ingest_corpus_sources",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_source_manifest",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "write_ingestion_report",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "curate",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "edit_normative",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "split_train_dev_test",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "write_training_recipe",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "curate",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "edit_normative",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "split_train_dev_test",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "write_training_recipe",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "curate",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "edit_normative",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "split_train_dev_test",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "write_training_recipe",
+        "importPath": "qfr_pipeline.data_pipeline",
+        "description": "qfr_pipeline.data_pipeline",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_lp7",
+        "importPath": "qfr_pipeline.lp7_monitor",
+        "description": "qfr_pipeline.lp7_monitor",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp7_monitor",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_lp7",
+        "importPath": "qfr_pipeline.lp7_monitor",
+        "description": "qfr_pipeline.lp7_monitor",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp7_monitor",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_lp7",
+        "importPath": "qfr_pipeline.lp7_monitor",
+        "description": "qfr_pipeline.lp7_monitor",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp7_monitor",
+        "documentation": {}
+    },
+    {
         "label": "load_eval_rows",
         "importPath": "qfr_pipeline.diagnostics",
         "description": "qfr_pipeline.diagnostics",
@@ -363,7 +899,23 @@
         "documentation": {}
     },
     {
-        "label": "_parse_is_correct",
+        "label": "DiagnosticIssue",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "_parse_embedding",
+        "importPath": "qfr_pipeline.diagnostics",
+        "description": "qfr_pipeline.diagnostics",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "parse_is_correct",
         "importPath": "qfr_pipeline.diagnostics",
         "description": "qfr_pipeline.diagnostics",
         "isExtraImport": true,
@@ -499,6 +1051,38 @@
         "documentation": {}
     },
     {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
         "label": "write_json",
         "importPath": "qfr_pipeline.io",
         "description": "qfr_pipeline.io",
@@ -508,6 +1092,22 @@
     },
     {
         "label": "load_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
         "importPath": "qfr_pipeline.io",
         "description": "qfr_pipeline.io",
         "isExtraImport": true,
@@ -699,6 +1299,46 @@
         "documentation": {}
     },
     {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "RELEASE_GATES_PATH",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
         "label": "EVAL_DIR",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
@@ -747,6 +1387,46 @@
         "documentation": {}
     },
     {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
         "label": "RELEASE_GATES_PATH",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
@@ -803,11 +1483,92 @@
         "documentation": {}
     },
     {
+        "label": "qfr_pipeline.release_candidate",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "qfr_pipeline.release_candidate",
+        "description": "qfr_pipeline.release_candidate",
+        "detail": "qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
         "label": "run_release_candidate",
         "importPath": "qfr_pipeline.release_candidate",
         "description": "qfr_pipeline.release_candidate",
         "isExtraImport": true,
         "detail": "qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
+        "label": "run_release_candidate",
+        "importPath": "qfr_pipeline.release_candidate",
+        "description": "qfr_pipeline.release_candidate",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.release_candidate",
+        "documentation": {}
+    },
+    {
+        "label": "export_training_dataset",
+        "importPath": "qfr_pipeline.training_export",
+        "description": "qfr_pipeline.training_export",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_export_manifest",
+        "importPath": "qfr_pipeline.training_export",
+        "description": "qfr_pipeline.training_export",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "export_training_dataset",
+        "importPath": "qfr_pipeline.training_export",
+        "description": "qfr_pipeline.training_export",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_export_manifest",
+        "importPath": "qfr_pipeline.training_export",
+        "description": "qfr_pipeline.training_export",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "export_training_dataset",
+        "importPath": "qfr_pipeline.training_export",
+        "description": "qfr_pipeline.training_export",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_export_manifest",
+        "importPath": "qfr_pipeline.training_export",
+        "description": "qfr_pipeline.training_export",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_source_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
         "documentation": {}
     },
     {
@@ -860,6 +1621,14 @@
     },
     {
         "label": "validate_repository",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_manifest",
         "importPath": "qfr_pipeline.validation",
         "description": "qfr_pipeline.validation",
         "isExtraImport": true,
@@ -933,77 +1702,27 @@
         "documentation": {}
     },
     {
-        "label": "json",
-        "kind": 6,
+        "label": "CorpusSourceManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
+        "detail": "qfr_pipeline.schemas",
         "documentation": {}
     },
     {
-        "label": "math",
-        "kind": 6,
+        "label": "SplitPolicyManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
-        "importPath": "math",
-        "description": "math",
-        "detail": "math",
+        "detail": "qfr_pipeline.schemas",
         "documentation": {}
     },
     {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
+        "label": "CurationPolicyManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
+        "detail": "qfr_pipeline.schemas",
         "documentation": {}
     },
     {
@@ -1032,6 +1751,30 @@
     },
     {
         "label": "LPContextManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingExportManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CorpusSourceManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CurationPolicyManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
@@ -1087,7 +1830,47 @@
         "documentation": {}
     },
     {
+        "label": "SplitPolicyManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingExportManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "ensure_eval_gates_sync",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CorpusSourceManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CorpusSourceManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CurationPolicyManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
@@ -1100,6 +1883,122 @@
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
         "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
         "documentation": {}
     },
     {
@@ -1121,16 +2020,15 @@
         "documentation": {}
     },
     {
-        "label": "hashlib",
-        "kind": 6,
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "importPath": "hashlib",
-        "description": "hashlib",
-        "detail": "hashlib",
+        "detail": "pydantic",
         "documentation": {}
     },
     {
-        "label": "BaseModel",
+        "label": "ConfigDict",
         "importPath": "pydantic",
         "description": "pydantic",
         "isExtraImport": true,
@@ -1170,6 +2068,136 @@
         "documentation": {}
     },
     {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "warnings",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "warnings",
+        "description": "warnings",
+        "detail": "warnings",
+        "documentation": {}
+    },
+    {
         "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,
@@ -1188,44 +2216,12 @@
         "documentation": {}
     },
     {
-        "label": "CliRunner",
-        "importPath": "typer.testing",
-        "description": "typer.testing",
-        "isExtraImport": true,
-        "detail": "typer.testing",
-        "documentation": {}
-    },
-    {
-        "label": "CliRunner",
-        "importPath": "typer.testing",
-        "description": "typer.testing",
-        "isExtraImport": true,
-        "detail": "typer.testing",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "qfr_pipeline.cli",
-        "description": "qfr_pipeline.cli",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.cli",
-        "documentation": {}
-    },
-    {
-        "label": "app",
-        "importPath": "qfr_pipeline.cli",
-        "description": "qfr_pipeline.cli",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.cli",
-        "documentation": {}
-    },
-    {
-        "label": "pytest",
+        "label": "importlib.util",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "pytest",
-        "description": "pytest",
-        "detail": "pytest",
+        "importPath": "importlib.util",
+        "description": "importlib.util",
+        "detail": "importlib.util",
         "documentation": {}
     },
     {
@@ -1235,15 +2231,6 @@
         "importPath": "argparse",
         "description": "argparse",
         "detail": "argparse",
-        "documentation": {}
-    },
-    {
-        "label": "random",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
         "documentation": {}
     },
     {
@@ -1297,6 +2284,60 @@
         "importPath": "src.qfr_pipeline.cli",
         "description": "src.qfr_pipeline.cli",
         "peekOfCode": "def validate_file(path: Path):\n    _refresh_dynamic_agents()\n    p = Path(path)\n    kind = None\n    try:\n        raw = p.read_text(encoding=\"utf-8\")\n        parsed = load_json(p) if p.suffix == \".json\" else yaml.safe_load(raw)\n        if isinstance(parsed, dict):\n            kind = parsed.get(\"kind\")\n    except Exception:",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_sources_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_corpus_sources_cmd(manifest: Path = typer.Option(..., \"--manifest\")):\n    _refresh_dynamic_agents()\n    validate_corpus_source_manifest_model(manifest)\n    validate_corpus_source_manifest(manifest)\n    print(\"Corpus source manifest valid\")\n@app.command(\"ingest-corpus-sources\")\ndef ingest_corpus_sources_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out: Path = typer.Option(..., \"--out\"),\n    report: Path = typer.Option(..., \"--report\"),",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "ingest_corpus_sources_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def ingest_corpus_sources_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out: Path = typer.Option(..., \"--out\"),\n    report: Path = typer.Option(..., \"--report\"),\n    min_chars: int = typer.Option(20, \"--min-chars\"),\n    include_review_required: bool = typer.Option(False, \"--include-review-required\"),\n):\n    _refresh_dynamic_agents()\n    payload = ingest_corpus_sources(manifest, out, min_chars=min_chars, include_review_required=include_review_required)\n    write_ingestion_report(payload, report)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_curation_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_curation_policy_manifest_model(policy)\n    validate_curation_policy_manifest(policy)\n    print(\"Curation policy manifest valid\")\n@app.command(\"validate-split-policy\")\ndef validate_split_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_split_policy_manifest_model(policy)\n    validate_split_policy_manifest(policy)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_split_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_split_policy_manifest_model(policy)\n    validate_split_policy_manifest(policy)\n    print(\"Split policy manifest valid\")\n@app.command(\"split-curated-corpus\")\ndef split_curated_corpus_cmd(\n    input: Path = typer.Option(..., \"--input\"),\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path = typer.Option(..., \"--out-dir\"),",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "split_curated_corpus_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def split_curated_corpus_cmd(\n    input: Path = typer.Option(..., \"--input\"),\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path = typer.Option(..., \"--out-dir\"),\n):\n    _refresh_dynamic_agents()\n    report = split_curated_corpus(input, policy, out_dir)\n    print(f\"Curated split report: {out_dir / 'split_report.json'}\")\n    if not report.ok:\n        raise typer.Exit(code=1)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "curate_corpus_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def curate_corpus_cmd(\n    input: Path = typer.Option(..., \"--input\"),\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path = typer.Option(..., \"--out-dir\"),\n):\n    _refresh_dynamic_agents()\n    report = curate_ingested_corpus(input, policy, out_dir)\n    print(asdict(report))\n    if not report.ok:\n        raise typer.Exit(code=1)",
         "detail": "src.qfr_pipeline.cli",
         "documentation": {}
     },
@@ -1355,6 +2396,78 @@
         "documentation": {}
     },
     {
+        "label": "harvest_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def harvest_cmd(ctx: typer.Context, inputs: list[Path] = typer.Option([], \"--inputs\"), out: Path = typer.Option(..., \"--out\"), min_chars: int = typer.Option(20, \"--min-chars\"), dedupe_batch_size: int = typer.Option(0, \"--dedupe-batch-size\")):\n    extra_inputs = [Path(arg) for arg in ctx.args if not str(arg).startswith(\"-\")]\n    all_inputs = [*inputs, *extra_inputs]\n    if not all_inputs:\n        raise typer.BadParameter(\"At least one input path is required via --inputs\")\n    print(harvest(all_inputs, out, min_chars, dedupe_batch_size))\n@app.command(\"curate\")\ndef curate_cmd(inp: Path = typer.Option(..., \"--in\"), out: Path = typer.Option(..., \"--out\"), min_fr_ca_score: float = typer.Option(0.34, \"--min-fr-ca-score\")):\n    print(curate(inp, out, min_fr_ca_score))\n@app.command(\"edit-normative\")",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "curate_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def curate_cmd(inp: Path = typer.Option(..., \"--in\"), out: Path = typer.Option(..., \"--out\"), min_fr_ca_score: float = typer.Option(0.34, \"--min-fr-ca-score\")):\n    print(curate(inp, out, min_fr_ca_score))\n@app.command(\"edit-normative\")\ndef edit_normative_cmd(inp: Path = typer.Option(..., \"--in\"), out: Path = typer.Option(..., \"--out\")):\n    print(edit_normative(inp, out))\n@app.command(\"split\")\ndef split_cmd(inp: Path = typer.Option(..., \"--in\"), out_dir: Path = typer.Option(..., \"--out-dir\"), seed: int = typer.Option(42, \"--seed\")):\n    print(split_train_dev_test(inp, out_dir, seed))\n@app.command(\"training-recipe\")\ndef training_recipe_cmd(data_dir: Path = typer.Option(..., \"--data-dir\"), out: Path = typer.Option(..., \"--out\")):",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "edit_normative_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def edit_normative_cmd(inp: Path = typer.Option(..., \"--in\"), out: Path = typer.Option(..., \"--out\")):\n    print(edit_normative(inp, out))\n@app.command(\"split\")\ndef split_cmd(inp: Path = typer.Option(..., \"--in\"), out_dir: Path = typer.Option(..., \"--out-dir\"), seed: int = typer.Option(42, \"--seed\")):\n    print(split_train_dev_test(inp, out_dir, seed))\n@app.command(\"training-recipe\")\ndef training_recipe_cmd(data_dir: Path = typer.Option(..., \"--data-dir\"), out: Path = typer.Option(..., \"--out\")):\n    write_training_recipe(data_dir, out)\n    print(out)\n@app.command(\"monitor-lp7\")",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "split_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def split_cmd(inp: Path = typer.Option(..., \"--in\"), out_dir: Path = typer.Option(..., \"--out-dir\"), seed: int = typer.Option(42, \"--seed\")):\n    print(split_train_dev_test(inp, out_dir, seed))\n@app.command(\"training-recipe\")\ndef training_recipe_cmd(data_dir: Path = typer.Option(..., \"--data-dir\"), out: Path = typer.Option(..., \"--out\")):\n    write_training_recipe(data_dir, out)\n    print(out)\n@app.command(\"monitor-lp7\")\ndef monitor_lp7_cmd(pre: float = typer.Option(..., \"--pre\"), post: float = typer.Option(..., \"--post\"), release_gates: Path = typer.Option(RELEASE_GATES_PATH, \"--release-gates\"), out: Path | None = typer.Option(None, \"--out\")):\n    payload = monitor_lp7(pre, post, release_gates)\n    if out is not None:",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "training_recipe_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def training_recipe_cmd(data_dir: Path = typer.Option(..., \"--data-dir\"), out: Path = typer.Option(..., \"--out\")):\n    write_training_recipe(data_dir, out)\n    print(out)\n@app.command(\"monitor-lp7\")\ndef monitor_lp7_cmd(pre: float = typer.Option(..., \"--pre\"), post: float = typer.Option(..., \"--post\"), release_gates: Path = typer.Option(RELEASE_GATES_PATH, \"--release-gates\"), out: Path | None = typer.Option(None, \"--out\")):\n    payload = monitor_lp7(pre, post, release_gates)\n    if out is not None:\n        write_json(out, payload)\n    print(payload)\nif __name__ == \"__main__\":",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_lp7_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def monitor_lp7_cmd(pre: float = typer.Option(..., \"--pre\"), post: float = typer.Option(..., \"--post\"), release_gates: Path = typer.Option(RELEASE_GATES_PATH, \"--release-gates\"), out: Path | None = typer.Option(None, \"--out\")):\n    payload = monitor_lp7(pre, post, release_gates)\n    if out is not None:\n        write_json(out, payload)\n    print(payload)\nif __name__ == \"__main__\":\n    app()\n@app.command(\"validate-training-export\")\ndef validate_training_export_cmd(manifest: Path = typer.Option(..., \"--manifest\")):\n    _refresh_dynamic_agents()",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_export_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_training_export_cmd(manifest: Path = typer.Option(..., \"--manifest\")):\n    _refresh_dynamic_agents()\n    validate_training_export_manifest(manifest)\n    print(\"Training export manifest valid\")\n@app.command(\"export-training-dataset\")\ndef export_training_dataset_cmd(manifest: Path = typer.Option(..., \"--manifest\"), out_dir: Path = typer.Option(..., \"--out-dir\")):\n    _refresh_dynamic_agents()\n    report = export_training_dataset(manifest, out_dir)\n    if not report.ok:\n        raise typer.Exit(code=1)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "export_training_dataset_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def export_training_dataset_cmd(manifest: Path = typer.Option(..., \"--manifest\"), out_dir: Path = typer.Option(..., \"--out-dir\")):\n    _refresh_dynamic_agents()\n    report = export_training_dataset(manifest, out_dir)\n    if not report.ok:\n        raise typer.Exit(code=1)\n    print(f\"Training export artifacts generated in {out_dir}\")",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
         "label": "app",
         "kind": 5,
         "importPath": "src.qfr_pipeline.cli",
@@ -1391,6 +2504,222 @@
         "documentation": {}
     },
     {
+        "label": "CorpusIngestionReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "class CorpusIngestionReport:\n    ok: bool\n    manifest: str\n    sources_total: int\n    sources_ingested: int\n    records_written: int\n    skipped_sources: list[dict[str, str]]\n    issues: list[str]\n    output: str\ndef load_corpus_source_manifest(path: Path) -> CorpusSourceManifest:",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "load_corpus_source_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "def load_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return CorpusSourceManifest.model_validate(load_yaml(path))\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    manifest = load_corpus_source_manifest(path)\n    for source in manifest.sources:\n        source_path = ROOT / source.path\n        if source.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"} and not source_path.exists():\n            raise ValueError(f\"source path does not exist: {source.path}\")\n    return manifest\ndef resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_source_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    manifest = load_corpus_source_manifest(path)\n    for source in manifest.sources:\n        source_path = ROOT / source.path\n        if source.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"} and not source_path.exists():\n            raise ValueError(f\"source path does not exist: {source.path}\")\n    return manifest\ndef resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:\n    return [ROOT / s.path for s in manifest.sources if s.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"}]\ndef ingest_corpus_sources(manifest_path: Path, out_jsonl: Path, *, min_chars: int = 20, include_review_required: bool = False) -> CorpusIngestionReport:",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "resolve_source_paths",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "def resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:\n    return [ROOT / s.path for s in manifest.sources if s.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"}]\ndef ingest_corpus_sources(manifest_path: Path, out_jsonl: Path, *, min_chars: int = 20, include_review_required: bool = False) -> CorpusIngestionReport:\n    manifest = validate_corpus_source_manifest(manifest_path)\n    skipped: list[dict[str, str]] = []\n    issues: list[str] = []\n    ingest_paths: list[Path] = []\n    for source in manifest.sources:\n        if source.source_type == \"future_remote\":\n            skipped.append({\"source_id\": source.source_id, \"reason\": \"future_remote\"})",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "ingest_corpus_sources",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "def ingest_corpus_sources(manifest_path: Path, out_jsonl: Path, *, min_chars: int = 20, include_review_required: bool = False) -> CorpusIngestionReport:\n    manifest = validate_corpus_source_manifest(manifest_path)\n    skipped: list[dict[str, str]] = []\n    issues: list[str] = []\n    ingest_paths: list[Path] = []\n    for source in manifest.sources:\n        if source.source_type == \"future_remote\":\n            skipped.append({\"source_id\": source.source_id, \"reason\": \"future_remote\"})\n            continue\n        if not source.allowed_for_training:",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "write_ingestion_report",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "def write_ingestion_report(report: CorpusIngestionReport, out_report: Path) -> None:\n    out_report.parent.mkdir(parents=True, exist_ok=True)\n    write_json(out_report, asdict(report))",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "CuratedSplitReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.curated_split",
+        "description": "src.qfr_pipeline.curated_split",
+        "peekOfCode": "class CuratedSplitReport:\n    ok: bool\n    policy: str\n    input: str\n    records_total: int\n    train: int\n    dev: int\n    test: int\n    seed: int\n    forbidden_records_seen: int",
+        "detail": "src.qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "load_split_policy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curated_split",
+        "description": "src.qfr_pipeline.curated_split",
+        "peekOfCode": "def load_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return SplitPolicyManifest.model_validate(load_yaml(path))\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return load_split_policy_manifest(path)\ndef _validate_input_records(records: list[dict[str, Any]], policy: SplitPolicyManifest) -> tuple[list[str], int]:\n    issues: list[str] = []\n    forbidden = set(policy.source_requirements.forbid_labels)\n    forbidden_seen = 0\n    for idx, record in enumerate(records):\n        label = record.get(\"curation_label\")",
+        "detail": "src.qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curated_split",
+        "description": "src.qfr_pipeline.curated_split",
+        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return load_split_policy_manifest(path)\ndef _validate_input_records(records: list[dict[str, Any]], policy: SplitPolicyManifest) -> tuple[list[str], int]:\n    issues: list[str] = []\n    forbidden = set(policy.source_requirements.forbid_labels)\n    forbidden_seen = 0\n    for idx, record in enumerate(records):\n        label = record.get(\"curation_label\")\n        if label in forbidden:\n            forbidden_seen += 1",
+        "detail": "src.qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "split_curated_corpus",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curated_split",
+        "description": "src.qfr_pipeline.curated_split",
+        "peekOfCode": "def split_curated_corpus(input_jsonl: Path, policy_path: Path, out_dir: Path) -> CuratedSplitReport:\n    policy = validate_split_policy_manifest(policy_path)\n    records = [json.loads(line) for line in input_jsonl.read_text(encoding=\"utf-8\").splitlines() if line.strip()]\n    issues, forbidden_seen = _validate_input_records(records, policy)\n    total = len(records)\n    if total < policy.min_records:\n        issues.append(f\"records_total {total} below min_records {policy.min_records}\")\n    out_dir.mkdir(parents=True, exist_ok=True)\n    train_records: list[dict[str, Any]] = []\n    dev_records: list[dict[str, Any]] = []",
+        "detail": "src.qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "write_curated_split_report",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curated_split",
+        "description": "src.qfr_pipeline.curated_split",
+        "peekOfCode": "def write_curated_split_report(report: CuratedSplitReport, path: Path) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(json.dumps(asdict(report), indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")",
+        "detail": "src.qfr_pipeline.curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "CurationAssessment",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.curation_policy",
+        "description": "src.qfr_pipeline.curation_policy",
+        "peekOfCode": "class CurationAssessment:\n    score: float\n    label: str\n    reasons: list[str]\n@dataclass\nclass CurationRunReport:\n    ok: bool\n    policy: str\n    input: str\n    records_total: int",
+        "detail": "src.qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "CurationRunReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.curation_policy",
+        "description": "src.qfr_pipeline.curation_policy",
+        "peekOfCode": "class CurationRunReport:\n    ok: bool\n    policy: str\n    input: str\n    records_total: int\n    accepted: int\n    review_required: int\n    quarantine: int\n    rejected: int\n    reason_counts: dict[str, int]",
+        "detail": "src.qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "load_curation_policy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curation_policy",
+        "description": "src.qfr_pipeline.curation_policy",
+        "peekOfCode": "def load_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return CurationPolicyManifest.model_validate(load_yaml(path))\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return load_curation_policy_manifest(path)\ndef score_record(record: dict, policy: CurationPolicyManifest, seen_texts: set[str] | None = None) -> CurationAssessment:\n    text = str(record.get(\"text\", \"\"))\n    normalized = _norm_text(text)\n    score = float(policy.scoring.base_score)\n    reasons: list[str] = []\n    marker_hits = 0",
+        "detail": "src.qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curation_policy",
+        "description": "src.qfr_pipeline.curation_policy",
+        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return load_curation_policy_manifest(path)\ndef score_record(record: dict, policy: CurationPolicyManifest, seen_texts: set[str] | None = None) -> CurationAssessment:\n    text = str(record.get(\"text\", \"\"))\n    normalized = _norm_text(text)\n    score = float(policy.scoring.base_score)\n    reasons: list[str] = []\n    marker_hits = 0\n    for marker, weight in policy.scoring.marker_weights.items():\n        if marker.casefold() in normalized:",
+        "detail": "src.qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "score_record",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curation_policy",
+        "description": "src.qfr_pipeline.curation_policy",
+        "peekOfCode": "def score_record(record: dict, policy: CurationPolicyManifest, seen_texts: set[str] | None = None) -> CurationAssessment:\n    text = str(record.get(\"text\", \"\"))\n    normalized = _norm_text(text)\n    score = float(policy.scoring.base_score)\n    reasons: list[str] = []\n    marker_hits = 0\n    for marker, weight in policy.scoring.marker_weights.items():\n        if marker.casefold() in normalized:\n            marker_hits += 1\n            score += float(weight)",
+        "detail": "src.qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "curate_ingested_corpus",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.curation_policy",
+        "description": "src.qfr_pipeline.curation_policy",
+        "peekOfCode": "def curate_ingested_corpus(input_jsonl: Path, policy_path: Path, out_dir: Path) -> CurationRunReport:\n    policy = validate_curation_policy_manifest(policy_path)\n    records = _read_jsonl(input_jsonl)\n    seen: set[str] = set()\n    buckets: dict[str, list[dict]] = {\"accepted\": [], \"review_required\": [], \"quarantine\": [], \"rejected\": []}\n    reasons_counter: Counter[str] = Counter()\n    for rec in records:\n        assessment = score_record(rec, policy, seen)\n        enriched = dict(rec)\n        enriched[\"curation_score\"] = assessment.score",
+        "detail": "src.qfr_pipeline.curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "def harvest(input_paths: list[Path], out_jsonl: Path, min_chars: int, dedupe_batch_size: int = 0) -> int:\n    seen: set[str] = set()\n    kept = 0\n    kept_since_clear = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    with out_jsonl.open(\"w\", encoding=\"utf-8\") as out:\n        for path in input_paths:\n            with path.open(\"r\", encoding=\"utf-8\") as f:\n                for line in f:\n                    line = _norm_text(line)",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "curate",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "def curate(in_jsonl: Path, out_jsonl: Path, min_fr_ca_score: float) -> int:\n    kept = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src, out_jsonl.open(\"w\", encoding=\"utf-8\") as dst:\n        for raw in src:\n            rec = json.loads(raw)\n            text = rec[\"text\"].lower()\n            marker_hits = sum(1 for m in FR_CA_MARKERS if re.search(rf\"\\b{re.escape(m)}\\b\", text))\n            score = marker_hits / max(1, len(text.split()))\n            if score < min_fr_ca_score:",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "edit_normative",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "def edit_normative(in_jsonl: Path, out_jsonl: Path) -> int:\n    changed = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    def _match_case(src: str, replacement: str) -> str:\n        if src.isupper():\n            return replacement.upper()\n        if src[:1].isupper():\n            return replacement[:1].upper() + replacement[1:]\n        return replacement\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src, out_jsonl.open(\"w\", encoding=\"utf-8\") as dst:",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "split_train_dev_test",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "def split_train_dev_test(in_jsonl: Path, out_dir: Path, seed: int = 42) -> dict[str, int]:\n    rows = [json.loads(line) for line in in_jsonl.read_text(encoding=\"utf-8\").splitlines() if line.strip()]\n    rnd = random.Random(seed)\n    rnd.shuffle(rows)\n    n = len(rows)\n    n_train = int(n * 0.9)\n    n_dev = int(n * 0.05)\n    splits = {\"train\": rows[:n_train], \"dev\": rows[n_train : n_train + n_dev], \"test\": rows[n_train + n_dev :]}\n    out_dir.mkdir(parents=True, exist_ok=True)\n    counts: dict[str, int] = {}",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "write_training_recipe",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:\n    splits = {name: data_dir / f\"{name}.jsonl\" for name in (\"train\", \"dev\", \"test\")}\n    missing = [name for name, path in splits.items() if not path.exists()]\n    if missing:\n        raise SystemExit(f\"Missing split files in {data_dir}: {missing}\")\n    gates = yaml.safe_load(RELEASE_GATES_PATH.read_text(encoding=\"utf-8\")) or {}\n    lp7_key = \"alignment.lp7_standard_negation_max_post_alignment_drop_ratio\"\n    if not isinstance(gates, dict):\n        raise SystemExit(f\"Malformed release gates in {RELEASE_GATES_PATH}: expected top-level mapping\")\n    alignment = gates.get(\"alignment\")",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "FR_CA_MARKERS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "FR_CA_MARKERS = {\n    \"courriel\",\n    \"fin de semaine\",\n    \"magasiner\",\n    \"char\",\n    \"dépanneur\",\n    \"chu\",\n    \"icitte\",\n    \"pantoute\",\n}",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "FR_FR_TO_FR_CA_REPLACEMENTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.data_pipeline",
+        "description": "src.qfr_pipeline.data_pipeline",
+        "peekOfCode": "FR_FR_TO_FR_CA_REPLACEMENTS = {\n    \"email\": \"courriel\",\n    \"week-end\": \"fin de semaine\",\n    \"voiture\": \"char\",\n}\ndef _norm_text(text: str) -> str:\n    text = text.strip()\n    return re.sub(r\"\\s+\", \" \", text)\ndef _hash_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()",
+        "detail": "src.qfr_pipeline.data_pipeline",
+        "documentation": {}
+    },
+    {
         "label": "DiagnosticIssue",
         "kind": 6,
         "importPath": "src.qfr_pipeline.diagnostics",
@@ -1414,6 +2743,15 @@
         "importPath": "src.qfr_pipeline.diagnostics",
         "description": "src.qfr_pipeline.diagnostics",
         "peekOfCode": "class DiagnosticsReport:\n    ok: bool\n    phenomena: dict[str, PhenomenonSummary]\n    global_summary: dict[str, Any]\n    issues: list[DiagnosticIssue] = field(default_factory=list)\n    def to_json(self) -> dict[str, Any]:\n        return {\n            \"ok\": self.ok,\n            \"phenomena\": {k: asdict(v) for k, v in self.phenomena.items()},\n            \"global_summary\": self.global_summary,",
+        "detail": "src.qfr_pipeline.diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "parse_is_correct",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.diagnostics",
+        "description": "src.qfr_pipeline.diagnostics",
+        "peekOfCode": "def parse_is_correct(value: Any) -> bool:\n    \"\"\"Parse legacy/diagnostic correctness flags into a strict bool.\"\"\"\n    if isinstance(value, bool):\n        return value\n    if isinstance(value, int) and value in {0, 1}:\n        return bool(value)\n    if isinstance(value, str) and value.strip() in {\"0\", \"1\"}:\n        return value.strip() == \"1\"\n    raise ValueError(\"is_correct must be bool or 0/1\")\ndef _parse_is_correct(value: Any) -> bool:",
         "detail": "src.qfr_pipeline.diagnostics",
         "documentation": {}
     },
@@ -1521,7 +2859,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.legacy_diagnostics",
         "description": "src.qfr_pipeline.legacy_diagnostics",
-        "peekOfCode": "def run_legacy_semantic_diagnostics(\n    in_csv: Path,\n    out_json: Path,\n    *,\n    taxonomy_paths: list[Path] | None = None,\n    allow_missing_phenomena: bool = False,\n) -> dict[str, Any]:\n    raw_rows = load_legacy_semantic_csv(in_csv)\n    rows = [_convert_legacy_row(row, idx) for idx, row in enumerate(raw_rows)]\n    taxonomies = load_taxonomies(taxonomy_paths or DEFAULT_LEGACY_TAXONOMY_PATHS)",
+        "peekOfCode": "def run_legacy_semantic_diagnostics(\n    in_csv: Path,\n    out_json: Path,\n    *,\n    taxonomy_paths: list[Path] | None = None,\n    allow_missing_phenomena: bool = False,\n) -> dict[str, Any]:\n    raw_rows = load_legacy_semantic_csv(in_csv)\n    pre_issues: list[DiagnosticIssue] = []\n    rows = [_convert_legacy_row(row, idx, pre_issues) for idx, row in enumerate(raw_rows)]",
         "detail": "src.qfr_pipeline.legacy_diagnostics",
         "documentation": {}
     },
@@ -1541,6 +2879,15 @@
         "description": "src.qfr_pipeline.legacy_diagnostics",
         "peekOfCode": "DEFAULT_LEGACY_TAXONOMY_PATHS = [\n    EVAL_DIR / \"lp9_error_taxonomy.yaml\",\n    EVAL_DIR / \"lp20_error_taxonomy.yaml\",\n]\ndef load_legacy_semantic_csv(path: Path) -> list[dict[str, str]]:\n    rows: list[dict[str, str]] = []\n    with path.open(\"r\", encoding=\"utf-8\", newline=\"\") as handle:\n        reader = csv.DictReader(handle)\n        header = set(reader.fieldnames or [])\n        missing = sorted(LEGACY_REQUIRED_COLUMNS - header)",
         "detail": "src.qfr_pipeline.legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_lp7",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp7_monitor",
+        "description": "src.qfr_pipeline.lp7_monitor",
+        "peekOfCode": "def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:\n    try:\n        gates = yaml.safe_load(release_gates_path.read_text(encoding=\"utf-8\")) or {}\n    except (OSError, yaml.YAMLError) as exc:\n        raise ValueError(f\"Failed to read/parse release gates YAML at {release_gates_path}: {exc}\") from exc\n    if not isinstance(gates, dict):\n        raise ValueError(f\"Malformed release gates config at {release_gates_path}: expected top-level mapping.\")\n    if \"alignment\" not in gates or not isinstance(gates[\"alignment\"], dict):\n        raise ValueError(f\"Malformed release gates config at {release_gates_path}: missing mapping key `alignment`.\")\n    key = \"lp7_standard_negation_max_post_alignment_drop_ratio\"",
+        "detail": "src.qfr_pipeline.lp7_monitor",
         "documentation": {}
     },
     {
@@ -1791,7 +3138,7 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.release_candidate",
         "description": "src.qfr_pipeline.release_candidate",
-        "peekOfCode": "class ReleaseCandidateReport:\n    ok: bool\n    deterministic_timestamp: str\n    stages: list[ReleaseCandidateStage]\n    artifacts: dict[str, str]\n    release_report_summary: dict[str, Any] | None = None\n    diagnostics_summary: dict[str, Any] | None = None\n    minimal_pair_summary: dict[str, Any] | None = None\n    blocking_failures: list[str] | None = None\n    def to_json(self) -> dict[str, Any]:",
+        "peekOfCode": "class ReleaseCandidateReport:\n    ok: bool\n    deterministic_timestamp: str\n    stages: list[ReleaseCandidateStage]\n    artifacts: dict[str, str]\n    release_report_summary: dict[str, Any] | None = None\n    diagnostics_summary: dict[str, Any] | None = None\n    minimal_pair_summary: dict[str, Any] | None = None\n    curation_summary: dict[str, Any] | None = None\n    split_summary: dict[str, Any] | None = None",
         "detail": "src.qfr_pipeline.release_candidate",
         "documentation": {}
     },
@@ -1917,7 +3264,7 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
         "description": "src.qfr_pipeline.schemas",
-        "peekOfCode": "class StatusTask(BaseModel):\n    id: str\n    goal: str\n    status: str\n    evidence: Any\nclass ProjectStatus(BaseModel):\n    last_updated: str\n    tasks: list[StatusTask]\nclass ErrorTaxonomyItem(BaseModel):\n    error_code: str",
+        "peekOfCode": "class StatusTask(BaseModel):\n    id: str\n    goal: str\n    status: str\n    evidence: Any\nclass ProjectStatus(BaseModel):\n    last_updated: str\n    tasks: list[StatusTask]\nclass CorpusSourceEntry(BaseModel):\n    model_config = ConfigDict(populate_by_name=True)",
         "detail": "src.qfr_pipeline.schemas",
         "documentation": {}
     },
@@ -1926,7 +3273,88 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
         "description": "src.qfr_pipeline.schemas",
-        "peekOfCode": "class ProjectStatus(BaseModel):\n    last_updated: str\n    tasks: list[StatusTask]\nclass ErrorTaxonomyItem(BaseModel):\n    error_code: str\n    label: str\n    severity: str\n    description: str\n    detection_guidance: str\n    remediation_guidance: str",
+        "peekOfCode": "class ProjectStatus(BaseModel):\n    last_updated: str\n    tasks: list[StatusTask]\nclass CorpusSourceEntry(BaseModel):\n    model_config = ConfigDict(populate_by_name=True)\n    source_id: str\n    name: str\n    source_type: str\n    path: str\n    license: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CorpusSourceEntry",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class CorpusSourceEntry(BaseModel):\n    model_config = ConfigDict(populate_by_name=True)\n    source_id: str\n    name: str\n    source_type: str\n    path: str\n    license: str\n    license_url: str | None = None\n    provenance: str\n    collection_method: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CorpusSourceManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class CorpusSourceManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str\n    sources: list[CorpusSourceEntry]\n    @field_validator(\"kind\")\n    @classmethod\n    def valid_kind(cls, v: str) -> str:\n        if v != \"corpus_source_manifest\":\n            raise ValueError(\"kind must be corpus_source_manifest\")",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CurationRule",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class CurationRule(BaseModel):\n    rule_id: str\n    description: str\n    classification: str\n    pattern: str\n    @field_validator(\"classification\")\n    @classmethod\n    def valid_classification(cls, v: str) -> str:\n        if v not in SUPPORTED_CURATION_LABELS:\n            raise ValueError(f\"classification must be one of {sorted(SUPPORTED_CURATION_LABELS)}\")",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CurationThresholds",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class CurationThresholds(BaseModel):\n    accept_min_score: float\n    review_min_score: float\n    quarantine_below_score: float\n    reject_below_score: float\n    @model_validator(mode=\"after\")\n    def validate_thresholds(self):\n        vals = [self.accept_min_score, self.review_min_score, self.quarantine_below_score, self.reject_below_score]\n        if any((not math.isfinite(float(v))) for v in vals):\n            raise ValueError(\"all thresholds must be finite numeric values\")",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CurationScoringConfig",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class CurationScoringConfig(BaseModel):\n    base_score: float\n    marker_weights: dict[str, float]\n    penalties: dict[str, float]\n    thresholds: CurationThresholds\n    blocking_rules: list[CurationRule]\n    review_rules: list[CurationRule]\n    quarantine_rules: list[CurationRule]\n    @model_validator(mode=\"after\")\n    def validate_scoring(self):",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CurationPolicyManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class CurationPolicyManifest(BaseModel):\n    model_config = ConfigDict(populate_by_name=True)\n    kind: str\n    schema_version: str\n    primary_language: str\n    policy_id: str\n    description: str\n    scoring: CurationScoringConfig\n    @field_validator(\"kind\")\n    @classmethod",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SplitRatios",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class SplitRatios(BaseModel):\n    train: float\n    dev: float\n    test: float\n    @model_validator(mode=\"after\")\n    def validate_ratios(self):\n        vals = [self.train, self.dev, self.test]\n        if any((not math.isfinite(float(v))) or float(v) <= 0 for v in vals):\n            raise ValueError(\"split ratios must be finite positive numbers\")\n        if abs(sum(vals) - 1.0) > 1e-6:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SplitSourceRequirements",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class SplitSourceRequirements(BaseModel):\n    forbid_labels: list[str]\n    require_policy_id: bool\n    require_curation_score: bool\n    require_curation_reasons: bool\n    @model_validator(mode=\"after\")\n    def validate_requirements(self):\n        forbidden = set(self.forbid_labels)\n        required = {\"review_required\", \"quarantine\", \"rejected\"}\n        if not required.issubset(forbidden):",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SplitPolicyManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class SplitPolicyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    policy_id: str\n    primary_language: str\n    input_label_required: str\n    split_ratios: SplitRatios\n    seed: int\n    min_records: int\n    allow_empty_dev_test_for_small_fixture: bool",
         "detail": "src.qfr_pipeline.schemas",
         "documentation": {}
     },
@@ -1967,6 +3395,51 @@
         "documentation": {}
     },
     {
+        "label": "TrainingExportInputs",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingExportInputs(BaseModel):\n    train: str\n    dev: str\n    test: str\n    split_report: str\n    corpus_source_manifest: str\n    curation_policy_manifest: str\n    split_policy_manifest: str\nclass TrainingExportLineage(BaseModel):\n    source_contract_report: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingExportLineage",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingExportLineage(BaseModel):\n    source_contract_report: str\n    curation_report: str\n    release_candidate_report: str\nclass TrainingExportQualityRequirements(BaseModel):\n    require_accepted_only: bool\n    require_no_holdout_material: bool\n    require_repo_relative_paths: bool\n    require_nonempty_train: bool\n    allow_empty_dev_test_for_small_fixture: bool",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingExportQualityRequirements",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingExportQualityRequirements(BaseModel):\n    require_accepted_only: bool\n    require_no_holdout_material: bool\n    require_repo_relative_paths: bool\n    require_nonempty_train: bool\n    allow_empty_dev_test_for_small_fixture: bool\nclass DatasetCardMetadata(BaseModel):\n    license: str\n    language: str\n    dialect: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "DatasetCardMetadata",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class DatasetCardMetadata(BaseModel):\n    license: str\n    language: str\n    dialect: str\n    region: str\n    limitations: list[str]\n    ethical_notes: list[str]\n    provenance_summary: str\nclass TrainingExportManifest(BaseModel):\n    kind: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingExportManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingExportManifest(BaseModel):\n    kind: str\n    schema_version: str\n    export_id: str\n    primary_language: str\n    dataset_name: str\n    dataset_version: str\n    description: str\n    intended_use: str\n    forbidden_uses: list[str]",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "normalize_text",
         "kind": 2,
         "importPath": "src.qfr_pipeline.schemas",
@@ -2003,6 +3476,78 @@
         "documentation": {}
     },
     {
+        "label": "SUPPORTED_CURATION_LABELS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "SUPPORTED_CURATION_LABELS = {\"accepted\", \"review_required\", \"quarantine\", \"rejected\"}\nclass CurationRule(BaseModel):\n    rule_id: str\n    description: str\n    classification: str\n    pattern: str\n    @field_validator(\"classification\")\n    @classmethod\n    def valid_classification(cls, v: str) -> str:\n        if v not in SUPPORTED_CURATION_LABELS:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingExportReport",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "class TrainingExportReport:\n    ok: bool\n    manifest: str\n    dataset_name: str\n    dataset_version: str\n    records: dict[str, int]\n    hashes: dict[str, str]\n    lineage: dict[str, str]\n    policy_refs: dict[str, str]\n    issues: list[str]",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "load_training_export_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "def load_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return TrainingExportManifest.model_validate(load_yaml(path))\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    manifest = load_training_export_manifest(path)\n    for p in [\n        manifest.inputs.train,\n        manifest.inputs.dev,\n        manifest.inputs.test,\n        manifest.inputs.split_report,\n        manifest.inputs.corpus_source_manifest,",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_export_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    manifest = load_training_export_manifest(path)\n    for p in [\n        manifest.inputs.train,\n        manifest.inputs.dev,\n        manifest.inputs.test,\n        manifest.inputs.split_report,\n        manifest.inputs.corpus_source_manifest,\n        manifest.inputs.curation_policy_manifest,\n        manifest.inputs.split_policy_manifest,",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "export_training_dataset",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "def export_training_dataset(manifest_path: Path, out_dir: Path) -> TrainingExportReport:\n    manifest = validate_training_export_manifest(manifest_path)\n    issues: list[str] = []\n    counts: dict[str, int] = {}\n    split_hashes: dict[str, str] = {}\n    for split_name, split_rel in ((\"train\", manifest.inputs.train), (\"dev\", manifest.inputs.dev), (\"test\", manifest.inputs.test)):\n        rows = _read_jsonl(ROOT / split_rel)\n        counts[split_name] = len(rows)\n        for idx, row in enumerate(rows):\n            label = row.get(\"curation_label\")",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "write_training_export_report",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "def write_training_export_report(report: TrainingExportReport, path: Path) -> None:\n    write_json(path, asdict(report))\ndef write_dataset_card(report: TrainingExportReport, manifest: TrainingExportManifest, path: Path) -> None:\n    lines = [\n        f\"# Dataset Card — {manifest.dataset_name}\",\n        \"\",\n        f\"- Version: `{manifest.dataset_version}`\",\n        f\"- Language: `{manifest.dataset_card.language}`\",\n        f\"- Dialect: `{manifest.dataset_card.dialect}`\",\n        f\"- Region: `{manifest.dataset_card.region}`\",",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "write_dataset_card",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "def write_dataset_card(report: TrainingExportReport, manifest: TrainingExportManifest, path: Path) -> None:\n    lines = [\n        f\"# Dataset Card — {manifest.dataset_name}\",\n        \"\",\n        f\"- Version: `{manifest.dataset_version}`\",\n        f\"- Language: `{manifest.dataset_card.language}`\",\n        f\"- Dialect: `{manifest.dataset_card.dialect}`\",\n        f\"- Region: `{manifest.dataset_card.region}`\",\n        f\"- Intended use: {manifest.intended_use}\",\n        \"\",",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
+        "label": "FORBIDDEN_LABELS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.training_export",
+        "description": "src.qfr_pipeline.training_export",
+        "peekOfCode": "FORBIDDEN_LABELS = {\"rejected\", \"review_required\", \"quarantine\"}\n@dataclass\nclass TrainingExportReport:\n    ok: bool\n    manifest: str\n    dataset_name: str\n    dataset_version: str\n    records: dict[str, int]\n    hashes: dict[str, str]\n    lineage: dict[str, str]",
+        "detail": "src.qfr_pipeline.training_export",
+        "documentation": {}
+    },
+    {
         "label": "ValidationIssue",
         "kind": 6,
         "importPath": "src.qfr_pipeline.validation",
@@ -2034,7 +3579,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_dataset_manifest(path: Path) -> DatasetManifest:\n    return _validate(path, DatasetManifest)\ndef validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
+        "peekOfCode": "def validate_dataset_manifest(path: Path) -> DatasetManifest:\n    return _validate(path, DatasetManifest)\ndef validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -2043,7 +3588,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "peekOfCode": "def validate_lp_rule_manifest(path: Path) -> LPRuleManifest:\n    return _validate(path, LPRuleManifest)\ndef validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -2052,7 +3597,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "peekOfCode": "def validate_lp_context_manifest(path: Path) -> LPContextManifest:\n    return _validate(path, LPContextManifest)\ndef validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -2061,7 +3606,43 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
+        "peekOfCode": "def validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:\n    return _validate(path, ErrorTaxonomyManifest)\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_corpus_source_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_curation_policy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_split_policy_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_export_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -2081,6 +3662,303 @@
         "description": "src.qfr_pipeline.validation",
         "peekOfCode": "def validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"\n    try:\n        validate_release_gates(gates_path)\n        report.checked_files.append(str(gates_path))\n    except Exception as exc:\n        report.ok = False\n        report.issues.append(ValidationIssue(str(gates_path), \"release_gates\", str(exc)))\n    for path in sorted((root / \"manifests\").glob(\"*.y*ml\")):",
         "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_corpus_manifest_validates",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_valid_corpus_manifest_validates():\n    m = validate_corpus_source_manifest(ROOT / \"manifests/corpus_source_manifest.template.yaml\")\n    assert m.primary_language == \"fr-CA\"\ndef test_duplicate_source_id_fails():\n    d = _manifest_data()\n    d[\"sources\"][1][\"source_id\"] = d[\"sources\"][0][\"source_id\"]\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)\ndef test_non_fr_ca_fails():\n    d = _manifest_data()",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_duplicate_source_id_fails",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_duplicate_source_id_fails():\n    d = _manifest_data()\n    d[\"sources\"][1][\"source_id\"] = d[\"sources\"][0][\"source_id\"]\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)\ndef test_non_fr_ca_fails():\n    d = _manifest_data()\n    d[\"primary_language\"] = \"fr-FR\"\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_non_fr_ca_fails",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_non_fr_ca_fails():\n    d = _manifest_data()\n    d[\"primary_language\"] = \"fr-FR\"\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)\ndef test_holdout_training_fails():\n    d = _manifest_data()\n    d[\"sources\"][0][\"contains_holdout_material\"] = True\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_holdout_training_fails",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_holdout_training_fails():\n    d = _manifest_data()\n    d[\"sources\"][0][\"contains_holdout_material\"] = True\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)\ndef test_quarantine_training_fails():\n    d = _manifest_data()\n    d[\"sources\"][0][\"quality_tier\"] = \"quarantine\"\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_quarantine_training_fails",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_quarantine_training_fails():\n    d = _manifest_data()\n    d[\"sources\"][0][\"quality_tier\"] = \"quarantine\"\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)\ndef test_personal_data_requires_review():\n    d = _manifest_data()\n    d[\"sources\"][1][\"requires_review\"] = False\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_personal_data_requires_review",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_personal_data_requires_review():\n    d = _manifest_data()\n    d[\"sources\"][1][\"requires_review\"] = False\n    with pytest.raises(Exception):\n        CorpusSourceManifest.model_validate(d)\ndef test_ingestion_skip_rules_and_deterministic_output(tmp_path: Path):\n    out = tmp_path / \"harvest.jsonl\"\n    report = ingest_corpus_sources(ROOT / \"manifests/corpus_source_manifest.template.yaml\", out)\n    assert report.ok and report.sources_ingested == 1\n    reasons = {x[\"reason\"] for x in report.skipped_sources}",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_ingestion_skip_rules_and_deterministic_output",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_ingestion_skip_rules_and_deterministic_output(tmp_path: Path):\n    out = tmp_path / \"harvest.jsonl\"\n    report = ingest_corpus_sources(ROOT / \"manifests/corpus_source_manifest.template.yaml\", out)\n    assert report.ok and report.sources_ingested == 1\n    reasons = {x[\"reason\"] for x in report.skipped_sources}\n    assert \"future_remote\" in reasons and \"requires_review\" in reasons\n    lines = out.read_text(encoding=\"utf-8\").splitlines()\n    assert lines and all(\"/workspace\" not in line_text and \"/home/runner\" not in line_text for line_text in lines)\ndef test_review_required_can_be_included(tmp_path: Path):\n    out = tmp_path / \"harvest.jsonl\"",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_review_required_can_be_included",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_review_required_can_be_included(tmp_path: Path):\n    out = tmp_path / \"harvest.jsonl\"\n    report = ingest_corpus_sources(ROOT / \"manifests/corpus_source_manifest.template.yaml\", out, include_review_required=True)\n    assert report.sources_ingested == 2\ndef test_cli_validate_and_ingest_pass(tmp_path: Path):\n    rc = CliRunner()\n    report = tmp_path / \"report.json\"\n    out = tmp_path / \"harvest.jsonl\"\n    r1 = rc.invoke(app, [\"validate-corpus-sources\", \"--manifest\", \"manifests/corpus_source_manifest.template.yaml\"])\n    r2 = rc.invoke(app, [\"ingest-corpus-sources\", \"--manifest\", \"manifests/corpus_source_manifest.template.yaml\", \"--out\", str(out), \"--report\", str(report), \"--min-chars\", \"20\"])",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_validate_and_ingest_pass",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_cli_validate_and_ingest_pass(tmp_path: Path):\n    rc = CliRunner()\n    report = tmp_path / \"report.json\"\n    out = tmp_path / \"harvest.jsonl\"\n    r1 = rc.invoke(app, [\"validate-corpus-sources\", \"--manifest\", \"manifests/corpus_source_manifest.template.yaml\"])\n    r2 = rc.invoke(app, [\"ingest-corpus-sources\", \"--manifest\", \"manifests/corpus_source_manifest.template.yaml\", \"--out\", str(out), \"--report\", str(report), \"--min-chars\", \"20\"])\n    payload = json.loads(report.read_text(encoding=\"utf-8\"))\n    assert r1.exit_code == 0 and r2.exit_code == 0 and payload[\"ok\"]\n    assert \"/workspace\" not in json.dumps(payload) and \"/home/runner\" not in json.dumps(payload)\ndef test_malformed_local_path_fails_validation(tmp_path: Path):",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_malformed_local_path_fails_validation",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_malformed_local_path_fails_validation(tmp_path: Path):\n    d = _manifest_data()\n    d[\"sources\"][0][\"path\"] = \"/tmp/bad.txt\"\n    p = tmp_path / \"bad.yaml\"\n    p.write_text(yaml.safe_dump(d, sort_keys=False), encoding=\"utf-8\")\n    with pytest.raises(Exception):\n        validate_corpus_source_manifest(p)\ndef test_write_report_has_no_absolute_paths(tmp_path: Path):\n    out = tmp_path / \"harvest.jsonl\"\n    rep = tmp_path / \"report.json\"",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_write_report_has_no_absolute_paths",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources",
+        "description": "tests.test_corpus_sources",
+        "peekOfCode": "def test_write_report_has_no_absolute_paths(tmp_path: Path):\n    out = tmp_path / \"harvest.jsonl\"\n    rep = tmp_path / \"report.json\"\n    report = ingest_corpus_sources(ROOT / \"manifests/corpus_source_manifest.template.yaml\", out)\n    write_ingestion_report(report, rep)\n    txt = rep.read_text(encoding=\"utf-8\")\n    assert \"/workspace\" not in txt and \"/home/runner\" not in txt",
+        "detail": "tests.test_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "test_validate_split_policy_manifest_validates",
+        "kind": 2,
+        "importPath": "tests.test_curated_split",
+        "description": "tests.test_curated_split",
+        "peekOfCode": "def test_validate_split_policy_manifest_validates():\n    m = validate_split_policy_manifest(Path(\"manifests/split_policy_manifest.template.yaml\"))\n    assert m.primary_language == \"fr-CA\"\ndef test_split_curated_only_accepted(tmp_path: Path):\n    inp = tmp_path / \"accepted.jsonl\"\n    _write_jsonl(inp, [{\"text\": \"a\", \"curation_label\": \"accepted\", \"policy_id\": \"p\", \"curation_score\": 0.9, \"curation_reasons\": [\"ok\"]} for _ in range(10)])\n    report = split_curated_corpus(inp, Path(\"manifests/split_policy_manifest.template.yaml\"), tmp_path / \"out\")\n    assert report.ok\n    assert report.records_total == 10\ndef test_split_curated_rejects_forbidden_label(tmp_path: Path):",
+        "detail": "tests.test_curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "test_split_curated_only_accepted",
+        "kind": 2,
+        "importPath": "tests.test_curated_split",
+        "description": "tests.test_curated_split",
+        "peekOfCode": "def test_split_curated_only_accepted(tmp_path: Path):\n    inp = tmp_path / \"accepted.jsonl\"\n    _write_jsonl(inp, [{\"text\": \"a\", \"curation_label\": \"accepted\", \"policy_id\": \"p\", \"curation_score\": 0.9, \"curation_reasons\": [\"ok\"]} for _ in range(10)])\n    report = split_curated_corpus(inp, Path(\"manifests/split_policy_manifest.template.yaml\"), tmp_path / \"out\")\n    assert report.ok\n    assert report.records_total == 10\ndef test_split_curated_rejects_forbidden_label(tmp_path: Path):\n    inp = tmp_path / \"accepted.jsonl\"\n    _write_jsonl(inp, [{\"curation_label\": \"rejected\", \"policy_id\": \"p\", \"curation_score\": 0.1, \"curation_reasons\": [\"x\"]}])\n    report = split_curated_corpus(inp, Path(\"manifests/split_policy_manifest.template.yaml\"), tmp_path / \"out\")",
+        "detail": "tests.test_curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "test_split_curated_rejects_forbidden_label",
+        "kind": 2,
+        "importPath": "tests.test_curated_split",
+        "description": "tests.test_curated_split",
+        "peekOfCode": "def test_split_curated_rejects_forbidden_label(tmp_path: Path):\n    inp = tmp_path / \"accepted.jsonl\"\n    _write_jsonl(inp, [{\"curation_label\": \"rejected\", \"policy_id\": \"p\", \"curation_score\": 0.1, \"curation_reasons\": [\"x\"]}])\n    report = split_curated_corpus(inp, Path(\"manifests/split_policy_manifest.template.yaml\"), tmp_path / \"out\")\n    assert not report.ok\ndef test_cli_split_commands():\n    r1 = runner.invoke(app, [\"validate-split-policy\", \"--policy\", \"manifests/split_policy_manifest.template.yaml\"])\n    assert r1.exit_code == 0\ndef test_ci_workflow_contains_split_steps_and_valid_yaml():\n    ci_path = Path(\".github/workflows/ci.yml\")",
+        "detail": "tests.test_curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_split_commands",
+        "kind": 2,
+        "importPath": "tests.test_curated_split",
+        "description": "tests.test_curated_split",
+        "peekOfCode": "def test_cli_split_commands():\n    r1 = runner.invoke(app, [\"validate-split-policy\", \"--policy\", \"manifests/split_policy_manifest.template.yaml\"])\n    assert r1.exit_code == 0\ndef test_ci_workflow_contains_split_steps_and_valid_yaml():\n    ci_path = Path(\".github/workflows/ci.yml\")\n    content = ci_path.read_text(encoding=\"utf-8\")\n    assert \"- run: qfr validate-split-policy --policy manifests/split_policy_manifest.template.yaml\" in content\n    assert \"- run: qfr split-curated-corpus --input reports/corpus_curation/accepted.jsonl --policy manifests/split_policy_manifest.template.yaml --out-dir reports/curated_splits\" in content\n    assert re.search(r\"^qfr validate-split-policy\", content, flags=re.MULTILINE) is None\n    assert re.search(r\"^qfr split-curated-corpus\", content, flags=re.MULTILINE) is None",
+        "detail": "tests.test_curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "test_ci_workflow_contains_split_steps_and_valid_yaml",
+        "kind": 2,
+        "importPath": "tests.test_curated_split",
+        "description": "tests.test_curated_split",
+        "peekOfCode": "def test_ci_workflow_contains_split_steps_and_valid_yaml():\n    ci_path = Path(\".github/workflows/ci.yml\")\n    content = ci_path.read_text(encoding=\"utf-8\")\n    assert \"- run: qfr validate-split-policy --policy manifests/split_policy_manifest.template.yaml\" in content\n    assert \"- run: qfr split-curated-corpus --input reports/corpus_curation/accepted.jsonl --policy manifests/split_policy_manifest.template.yaml --out-dir reports/curated_splits\" in content\n    assert re.search(r\"^qfr validate-split-policy\", content, flags=re.MULTILINE) is None\n    assert re.search(r\"^qfr split-curated-corpus\", content, flags=re.MULTILINE) is None\n    parsed = yaml.safe_load(content)\n    assert isinstance(parsed, dict)",
+        "detail": "tests.test_curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "runner",
+        "kind": 5,
+        "importPath": "tests.test_curated_split",
+        "description": "tests.test_curated_split",
+        "peekOfCode": "runner = CliRunner()\ndef _write_jsonl(path: Path, rows):\n    path.write_text(\"\".join(json.dumps(r)+\"\\n\" for r in rows), encoding=\"utf-8\")\ndef test_validate_split_policy_manifest_validates():\n    m = validate_split_policy_manifest(Path(\"manifests/split_policy_manifest.template.yaml\"))\n    assert m.primary_language == \"fr-CA\"\ndef test_split_curated_only_accepted(tmp_path: Path):\n    inp = tmp_path / \"accepted.jsonl\"\n    _write_jsonl(inp, [{\"text\": \"a\", \"curation_label\": \"accepted\", \"policy_id\": \"p\", \"curation_score\": 0.9, \"curation_reasons\": [\"ok\"]} for _ in range(10)])\n    report = split_curated_corpus(inp, Path(\"manifests/split_policy_manifest.template.yaml\"), tmp_path / \"out\")",
+        "detail": "tests.test_curated_split",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_curation_policy_validates",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_valid_curation_policy_validates():\n    policy = validate_curation_policy_manifest(ROOT / \"manifests/curation_policy_manifest.template.yaml\")\n    assert policy.primary_language == \"fr-CA\"\ndef test_non_fr_ca_policy_fails():\n    d = _policy_data()\n    d[\"primary_language\"] = \"fr-FR\"\n    with pytest.raises(Exception):\n        CurationPolicyManifest.model_validate(d)\ndef test_threshold_ordering_failure_fails():\n    d = _policy_data()",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_non_fr_ca_policy_fails",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_non_fr_ca_policy_fails():\n    d = _policy_data()\n    d[\"primary_language\"] = \"fr-FR\"\n    with pytest.raises(Exception):\n        CurationPolicyManifest.model_validate(d)\ndef test_threshold_ordering_failure_fails():\n    d = _policy_data()\n    d[\"scoring\"][\"thresholds\"][\"accept_min_score\"] = 0.1\n    d[\"scoring\"][\"thresholds\"][\"review_min_score\"] = 0.8\n    with pytest.raises(Exception):",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_threshold_ordering_failure_fails",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_threshold_ordering_failure_fails():\n    d = _policy_data()\n    d[\"scoring\"][\"thresholds\"][\"accept_min_score\"] = 0.1\n    d[\"scoring\"][\"thresholds\"][\"review_min_score\"] = 0.8\n    with pytest.raises(Exception):\n        CurationPolicyManifest.model_validate(d)\ndef test_dialect_neutralization_rule_fails():\n    d = _policy_data()\n    d[\"scoring\"][\"review_rules\"][0][\"description\"] = \"Neutralize toward fr_FR standard parisian\"\n    with pytest.raises(Exception):",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_dialect_neutralization_rule_fails",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_dialect_neutralization_rule_fails():\n    d = _policy_data()\n    d[\"scoring\"][\"review_rules\"][0][\"description\"] = \"Neutralize toward fr_FR standard parisian\"\n    with pytest.raises(Exception):\n        CurationPolicyManifest.model_validate(d)\ndef test_score_record_flows_and_duplicate_detection():\n    policy = validate_curation_policy_manifest(ROOT / \"manifests/curation_policy_manifest.template.yaml\")\n    seen: set[str] = set()\n    a1 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert a1.label == \"accepted\"",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_score_record_flows_and_duplicate_detection",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_score_record_flows_and_duplicate_detection():\n    policy = validate_curation_policy_manifest(ROOT / \"manifests/curation_policy_manifest.template.yaml\")\n    seen: set[str] = set()\n    a1 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert a1.label == \"accepted\"\n    a2 = score_record({\"text\": \"EMAIL WEEK-END VOITURE\"}, policy, seen)\n    assert a2.label in {\"review_required\", \"quarantine\", \"rejected\"}\n    a3 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert any(\"duplicate_text\" in reason for reason in a3.reasons)\ndef test_curate_ingested_corpus_outputs(tmp_path: Path):",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_curate_ingested_corpus_outputs",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_curate_ingested_corpus_outputs(tmp_path: Path):\n    input_jsonl = tmp_path / \"harvest.jsonl\"\n    input_jsonl.write_text(\n        \"\\n\".join(\n            [\n                json.dumps({\"text\": \"Je vais au dépanneur en fin de semaine.\"}, ensure_ascii=False),\n                json.dumps({\"text\": \"EMAIL ET WEEK-END\"}, ensure_ascii=False),\n            ]\n        )\n        + \"\\n\",",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_validate_and_curate_pass",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_cli_validate_and_curate_pass(tmp_path: Path):\n    input_jsonl = tmp_path / \"harvest.jsonl\"\n    input_jsonl.write_text(json.dumps({\"text\": \"Chu icitte pantoute.\"}, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\n    runner = CliRunner()\n    r1 = runner.invoke(app, [\"validate-curation-policy\", \"--policy\", \"manifests/curation_policy_manifest.template.yaml\"])\n    out_dir = tmp_path / \"curation\"\n    r2 = runner.invoke(app, [\"curate-corpus\", \"--input\", str(input_jsonl), \"--policy\", \"manifests/curation_policy_manifest.template.yaml\", \"--out-dir\", str(out_dir)])\n    assert r1.exit_code == 0 and r2.exit_code == 0\ndef test_corpus_source_register_alias_and_no_shadow_warning():\n    d = yaml.safe_load((ROOT / \"manifests/corpus_source_manifest.template.yaml\").read_text(encoding=\"utf-8\"))",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_corpus_source_register_alias_and_no_shadow_warning",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_corpus_source_register_alias_and_no_shadow_warning():\n    d = yaml.safe_load((ROOT / \"manifests/corpus_source_manifest.template.yaml\").read_text(encoding=\"utf-8\"))\n    with warnings.catch_warnings(record=True) as caught:\n        warnings.simplefilter(\"always\")\n        manifest = CorpusSourceManifest.model_validate(d)\n    assert manifest.sources[0].language_register in {\"formal\", \"informal\", \"mixed\", \"unknown\"}\n    assert not any(\"shadows an attribute\" in str(w.message) for w in caught)",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_harvest_filters_and_dedupes",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_harvest_filters_and_dedupes(tmp_path: Path):\n    out = tmp_path / \"h.jsonl\"\n    kept = harvest([ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\", ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"], out, 20)\n    lines = out.read_text(encoding=\"utf-8\").splitlines()\n    assert kept == len(lines) == 5\ndef test_harvest_respects_batch_reset(tmp_path: Path):\n    out = tmp_path / \"h.jsonl\"\n    kept = harvest([ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\", ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"], out, 20, dedupe_batch_size=1)\n    assert kept > 5\ndef test_curate_and_edit_and_split_and_recipe(tmp_path: Path):",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_harvest_respects_batch_reset",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_harvest_respects_batch_reset(tmp_path: Path):\n    out = tmp_path / \"h.jsonl\"\n    kept = harvest([ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\", ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"], out, 20, dedupe_batch_size=1)\n    assert kept > 5\ndef test_curate_and_edit_and_split_and_recipe(tmp_path: Path):\n    h, c, e = tmp_path / \"h.jsonl\", tmp_path / \"c.jsonl\", tmp_path / \"e.jsonl\"\n    harvest([ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\", ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"], h, 20)\n    kept = curate(h, c, 0.0)\n    assert kept >= 3\n    changed = edit_normative(c, e)",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_curate_and_edit_and_split_and_recipe",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_curate_and_edit_and_split_and_recipe(tmp_path: Path):\n    h, c, e = tmp_path / \"h.jsonl\", tmp_path / \"c.jsonl\", tmp_path / \"e.jsonl\"\n    harvest([ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\", ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"], h, 20)\n    kept = curate(h, c, 0.0)\n    assert kept >= 3\n    changed = edit_normative(c, e)\n    txt = e.read_text(encoding=\"utf-8\")\n    assert changed >= 1 and \"courriel\" in txt and \"fin de semaine\" in txt and \"char\" in txt\n    counts = split_train_dev_test(e, tmp_path / \"splits\", 42)\n    assert counts == split_train_dev_test(e, tmp_path / \"splits2\", 42)",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_write_training_recipe_rejects_non_mapping_alignment",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_write_training_recipe_rejects_non_mapping_alignment(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):\n    splits = tmp_path / \"splits\"\n    splits.mkdir()\n    for name in (\"train\", \"dev\", \"test\"):\n        (splits / f\"{name}.jsonl\").write_text(\"{}\\n\", encoding=\"utf-8\")\n    bad = tmp_path / \"bad_gates.yaml\"\n    bad.write_text(\"alignment: []\\n\", encoding=\"utf-8\")\n    import qfr_pipeline.data_pipeline as dp\n    monkeypatch.setattr(dp, \"RELEASE_GATES_PATH\", bad)\n    with pytest.raises(SystemExit, match=\"alignment\"):",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_monitor_lp7",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_monitor_lp7():\n    ok = monitor_lp7(0.95, 0.94, ROOT / \"project/release_gates.yaml\")\n    assert ok[\"rollback_required\"] is False\n    bad = monitor_lp7(0.95, 0.70, ROOT / \"project/release_gates.yaml\")\n    assert bad[\"rollback_required\"] is True\n    with pytest.raises(ValueError):\n        monitor_lp7(0.0, 0.5, ROOT / \"project/release_gates.yaml\")\ndef test_legacy_wrapper_and_qfr_cli(tmp_path: Path):\n    harvest_out = tmp_path / \"h1.jsonl\"\n    subprocess.run([sys.executable, str(ROOT / \"tools/pipeline_ops.py\"), \"harvest\", \"--inputs\", str(ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\"), str(ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"), \"--out\", str(harvest_out), \"--min-chars\", \"20\"], check=True)",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_legacy_wrapper_and_qfr_cli",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_legacy_wrapper_and_qfr_cli(tmp_path: Path):\n    harvest_out = tmp_path / \"h1.jsonl\"\n    subprocess.run([sys.executable, str(ROOT / \"tools/pipeline_ops.py\"), \"harvest\", \"--inputs\", str(ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\"), str(ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"), \"--out\", str(harvest_out), \"--min-chars\", \"20\"], check=True)\n    pkg_out = tmp_path / \"h2.jsonl\"\n    harvest([ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\", ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\"], pkg_out, 20)\n    assert harvest_out.read_text(encoding=\"utf-8\") == pkg_out.read_text(encoding=\"utf-8\")\n    rc = CliRunner()\n    out = tmp_path / \"lp7.json\"\n    r = rc.invoke(app, [\"monitor-lp7\", \"--pre\", \"0.95\", \"--post\", \"0.94\", \"--release-gates\", str(ROOT / \"project/release_gates.yaml\"), \"--out\", str(out)])\n    assert r.exit_code == 0 and out.exists()",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_harvest_cli_accepts_both_input_forms",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_harvest_cli_accepts_both_input_forms(tmp_path: Path):\n    rc = CliRunner()\n    out1 = tmp_path / \"h1.jsonl\"\n    out2 = tmp_path / \"h2.jsonl\"\n    a = str(ROOT / \"fixtures/data_pipeline/raw_sample_1.txt\")\n    b = str(ROOT / \"fixtures/data_pipeline/raw_sample_2.txt\")\n    r1 = rc.invoke(app, [\"harvest\", \"--inputs\", a, b, \"--out\", str(out1), \"--min-chars\", \"20\"])\n    r2 = rc.invoke(app, [\"harvest\", \"--inputs\", a, \"--inputs\", b, \"--out\", str(out2), \"--min-chars\", \"20\"])\n    assert r1.exit_code == 0 and r2.exit_code == 0\n    assert out1.read_text(encoding=\"utf-8\") == out2.read_text(encoding=\"utf-8\")",
+        "detail": "tests.test_data_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_pipeline_ops_is_wrapper_only",
+        "kind": 2,
+        "importPath": "tests.test_data_pipeline",
+        "description": "tests.test_data_pipeline",
+        "peekOfCode": "def test_pipeline_ops_is_wrapper_only():\n    text = (ROOT / \"tools/pipeline_ops.py\").read_text(encoding=\"utf-8\")\n    assert \"def _norm_text\" not in text and \"FR_CA_MARKERS\" not in text",
+        "detail": "tests.test_data_pipeline",
         "documentation": {}
     },
     {
@@ -2520,7 +4398,16 @@
         "kind": 2,
         "importPath": "tests.test_pipeline",
         "description": "tests.test_pipeline",
-        "peekOfCode": "def test_release_candidate_fails_with_blocking_diagnostics_and_writes_partial(tmp_path: Path):\n    rc = CliRunner()\n    outj = tmp_path / \"rc_fail.json\"\n    outm = tmp_path / \"rc_fail.md\"\n    r = rc.invoke(app, [\"release-candidate\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics-input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r.exit_code != 0\n    payload = json.loads(outj.read_text(encoding=\"utf-8\"))\n    assert \"diagnostics_generation\" in payload[\"blocking_failures\"]\n    assert len(payload[\"stages\"]) >= 3\ndef test_release_candidate_has_minimal_pair_summaries_and_no_subprocess_usage():",
+        "peekOfCode": "def test_release_candidate_fails_with_blocking_diagnostics_and_writes_partial(tmp_path: Path):\n    rc = CliRunner()\n    outj = tmp_path / \"rc_fail.json\"\n    outm = tmp_path / \"rc_fail.md\"\n    r = rc.invoke(app, [\"release-candidate\", \"--metrics\", \"fixtures/valid_metrics.json\", \"--diagnostics-input\", \"fixtures/diagnostics/lp9_lp20_eval_blocking_sample.jsonl\", \"--out-json\", str(outj), \"--out-md\", str(outm)])\n    assert r.exit_code != 0\n    payload = json.loads(outj.read_text(encoding=\"utf-8\"))\n    assert \"diagnostics_generation\" in payload[\"blocking_failures\"]\n    assert len(payload[\"stages\"]) >= 3\ndef test_release_candidate_early_exception_writes_partial_without_unboundlocal(tmp_path: Path, monkeypatch):",
+        "detail": "tests.test_pipeline",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_candidate_early_exception_writes_partial_without_unboundlocal",
+        "kind": 2,
+        "importPath": "tests.test_pipeline",
+        "description": "tests.test_pipeline",
+        "peekOfCode": "def test_release_candidate_early_exception_writes_partial_without_unboundlocal(tmp_path: Path, monkeypatch):\n    outj = tmp_path / \"rc_early_fail.json\"\n    outm = tmp_path / \"rc_early_fail.md\"\n    def _boom(_root):\n        raise RuntimeError(\"forced early failure before split stage\")\n    monkeypatch.setattr(rc_module, \"validate_repository\", _boom)\n    report = rc_module.run_release_candidate(\n        metrics=Path(\"fixtures/valid_metrics.json\"),\n        diagnostics_input=Path(\"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\"),\n        out_json=outj,",
         "detail": "tests.test_pipeline",
         "documentation": {}
     },
@@ -2561,66 +4448,111 @@
         "documentation": {}
     },
     {
-        "label": "Record",
-        "kind": 6,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "class Record:\n    source: str\n    text: str\n    register: str\n    confidence: float\ndef _norm_text(text: str) -> str:\n    text = text.strip()\n    text = re.sub(r\"\\s+\", \" \", text)\n    return text\ndef _hash_text(text: str) -> str:",
-        "detail": "tools.pipeline_ops",
+        "label": "test_valid_training_manifest_validates",
+        "kind": 2,
+        "importPath": "tests.test_training_export",
+        "description": "tests.test_training_export",
+        "peekOfCode": "def test_valid_training_manifest_validates():\n    m = validate_training_export_manifest(Path(\"manifests/training_export_manifest.template.yaml\"))\n    assert m.primary_language == \"fr-CA\"\ndef test_export_training_dataset_and_hash_determinism(tmp_path: Path):\n    r1 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out1\")\n    r2 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out2\")\n    assert r1.ok and r2.ok\n    assert r1.hashes == r2.hashes\ndef test_cli_training_export_commands_pass(tmp_path: Path):\n    r1 = runner.invoke(app, [\"validate-training-export\", \"--manifest\", \"manifests/training_export_manifest.template.yaml\"])",
+        "detail": "tests.test_training_export",
         "documentation": {}
     },
     {
-        "label": "harvest",
+        "label": "test_export_training_dataset_and_hash_determinism",
         "kind": 2,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "def harvest(input_paths: list[Path], out_jsonl: Path, min_chars: int, dedupe_batch_size: int = 0) -> int:\n    seen: set[str] = set()\n    kept = 0\n    kept_since_clear = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    with out_jsonl.open(\"w\", encoding=\"utf-8\") as out:\n        for path in input_paths:\n            with path.open(\"r\", encoding=\"utf-8\") as f:\n                for line in f:\n                    line = _norm_text(line)",
-        "detail": "tools.pipeline_ops",
+        "importPath": "tests.test_training_export",
+        "description": "tests.test_training_export",
+        "peekOfCode": "def test_export_training_dataset_and_hash_determinism(tmp_path: Path):\n    r1 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out1\")\n    r2 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out2\")\n    assert r1.ok and r2.ok\n    assert r1.hashes == r2.hashes\ndef test_cli_training_export_commands_pass(tmp_path: Path):\n    r1 = runner.invoke(app, [\"validate-training-export\", \"--manifest\", \"manifests/training_export_manifest.template.yaml\"])\n    r2 = runner.invoke(app, [\"export-training-dataset\", \"--manifest\", \"manifests/training_export_manifest.template.yaml\", \"--out-dir\", str(tmp_path / \"out\")])\n    assert r1.exit_code == 0 and r2.exit_code == 0\ndef test_release_candidate_contains_training_export(tmp_path: Path):",
+        "detail": "tests.test_training_export",
         "documentation": {}
     },
     {
-        "label": "curate",
+        "label": "test_cli_training_export_commands_pass",
         "kind": 2,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "def curate(in_jsonl: Path, out_jsonl: Path, min_fr_ca_score: float) -> int:\n    kept = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src, out_jsonl.open(\"w\", encoding=\"utf-8\") as dst:\n        for raw in src:\n            rec = json.loads(raw)\n            text = rec[\"text\"].lower()\n            marker_hits = sum(1 for m in FR_CA_MARKERS if re.search(rf\"\\b{re.escape(m)}\\b\", text))\n            score = marker_hits / max(1, len(text.split()))\n            if score < min_fr_ca_score:",
-        "detail": "tools.pipeline_ops",
+        "importPath": "tests.test_training_export",
+        "description": "tests.test_training_export",
+        "peekOfCode": "def test_cli_training_export_commands_pass(tmp_path: Path):\n    r1 = runner.invoke(app, [\"validate-training-export\", \"--manifest\", \"manifests/training_export_manifest.template.yaml\"])\n    r2 = runner.invoke(app, [\"export-training-dataset\", \"--manifest\", \"manifests/training_export_manifest.template.yaml\", \"--out-dir\", str(tmp_path / \"out\")])\n    assert r1.exit_code == 0 and r2.exit_code == 0\ndef test_release_candidate_contains_training_export(tmp_path: Path):\n    report = run_release_candidate(metrics=Path(\"fixtures/valid_metrics.json\"), diagnostics_input=Path(\"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\"), out_json=tmp_path / \"rc.json\", out_md=tmp_path / \"rc.md\")\n    assert any(s.name == \"training_export_generation\" for s in report.stages)\n    assert report.training_export_summary is not None\ndef test_bootstrap_script_exists_no_wrapper():\n    content = Path(\"scripts/bootstrap_dev_env.sh\").read_text(encoding=\"utf-8\")",
+        "detail": "tests.test_training_export",
         "documentation": {}
     },
     {
-        "label": "edit_normative",
+        "label": "test_release_candidate_contains_training_export",
         "kind": 2,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "def edit_normative(in_jsonl: Path, out_jsonl: Path) -> int:\n    changed = 0\n    out_jsonl.parent.mkdir(parents=True, exist_ok=True)\n    def _match_case(src: str, replacement: str) -> str:\n        if src.isupper():\n            return replacement.upper()\n        if src[:1].isupper():\n            return replacement[:1].upper() + replacement[1:]\n        return replacement\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src, out_jsonl.open(\"w\", encoding=\"utf-8\") as dst:",
-        "detail": "tools.pipeline_ops",
+        "importPath": "tests.test_training_export",
+        "description": "tests.test_training_export",
+        "peekOfCode": "def test_release_candidate_contains_training_export(tmp_path: Path):\n    report = run_release_candidate(metrics=Path(\"fixtures/valid_metrics.json\"), diagnostics_input=Path(\"fixtures/diagnostics/lp9_lp20_eval_sample.jsonl\"), out_json=tmp_path / \"rc.json\", out_md=tmp_path / \"rc.md\")\n    assert any(s.name == \"training_export_generation\" for s in report.stages)\n    assert report.training_export_summary is not None\ndef test_bootstrap_script_exists_no_wrapper():\n    content = Path(\"scripts/bootstrap_dev_env.sh\").read_text(encoding=\"utf-8\")\n    assert \"pip install -e\" in content\n    assert \"./qfr\" not in content",
+        "detail": "tests.test_training_export",
         "documentation": {}
     },
     {
-        "label": "split_train_dev_test",
+        "label": "test_bootstrap_script_exists_no_wrapper",
         "kind": 2,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "def split_train_dev_test(in_jsonl: Path, out_dir: Path, seed: int = 42) -> dict[str, int]:\n    with in_jsonl.open(\"r\", encoding=\"utf-8\") as src:\n        rows = [json.loads(line) for line in src if line.strip()]\n    rnd = random.Random(seed)\n    rnd.shuffle(rows)\n    n = len(rows)\n    n_train = int(n * 0.9)\n    n_dev = int(n * 0.05)\n    splits = {\n        \"train\": rows[:n_train],",
-        "detail": "tools.pipeline_ops",
+        "importPath": "tests.test_training_export",
+        "description": "tests.test_training_export",
+        "peekOfCode": "def test_bootstrap_script_exists_no_wrapper():\n    content = Path(\"scripts/bootstrap_dev_env.sh\").read_text(encoding=\"utf-8\")\n    assert \"pip install -e\" in content\n    assert \"./qfr\" not in content",
+        "detail": "tests.test_training_export",
         "documentation": {}
     },
     {
-        "label": "write_training_recipe",
-        "kind": 2,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:\n    splits = {\n        \"train\": data_dir / \"train.jsonl\",\n        \"dev\": data_dir / \"dev.jsonl\",\n        \"test\": data_dir / \"test.jsonl\",\n    }\n    missing = [name for name, path in splits.items() if not path.exists()]\n    if missing:\n        raise SystemExit(f\"Missing split files in {data_dir}: {missing}\")\n    release_gates_path = Path(__file__).resolve().parents[1] / \"project\" / \"release_gates.yaml\"",
-        "detail": "tools.pipeline_ops",
+        "label": "runner",
+        "kind": 5,
+        "importPath": "tests.test_training_export",
+        "description": "tests.test_training_export",
+        "peekOfCode": "runner = CliRunner()\ndef test_valid_training_manifest_validates():\n    m = validate_training_export_manifest(Path(\"manifests/training_export_manifest.template.yaml\"))\n    assert m.primary_language == \"fr-CA\"\ndef test_export_training_dataset_and_hash_determinism(tmp_path: Path):\n    r1 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out1\")\n    r2 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out2\")\n    assert r1.ok and r2.ok\n    assert r1.hashes == r2.hashes\ndef test_cli_training_export_commands_pass(tmp_path: Path):",
+        "detail": "tests.test_training_export",
         "documentation": {}
     },
     {
-        "label": "monitor_lp7",
+        "label": "test_ensure_required_nested_agents_returns_all_required_paths",
         "kind": 2,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:\n    try:\n        gates = yaml.safe_load(release_gates_path.read_text(encoding=\"utf-8\")) or {}\n    except (OSError, yaml.YAMLError) as exc:\n        raise SystemExit(f\"Failed to read/parse release gates YAML at {release_gates_path}: {exc}\")\n    if not isinstance(gates, dict):\n        raise SystemExit(f\"Malformed release gates config at {release_gates_path}: expected top-level mapping.\")\n    if \"alignment\" not in gates or not isinstance(gates[\"alignment\"], dict):\n        raise SystemExit(f\"Malformed release gates config at {release_gates_path}: missing mapping key `alignment`.\")\n    if \"lp7_standard_negation_max_post_alignment_drop_ratio\" not in gates[\"alignment\"]:",
-        "detail": "tools.pipeline_ops",
+        "importPath": "tests.test_update_agents",
+        "description": "tests.test_update_agents",
+        "peekOfCode": "def test_ensure_required_nested_agents_returns_all_required_paths():\n    ensured = update_agents.ensure_required_nested_agents()\n    expected = [ROOT / rel / \"AGENTS.md\" for rel in update_agents.REQUIRED_NESTED_DIRS]\n    assert ensured == expected\n    assert all(path.exists() for path in ensured)\ndef test_ensure_nested_cli_output_lists_all_required_paths():\n    proc = subprocess.run(\n        [sys.executable, \"tools/update_agents.py\", \"--ensure-nested\"],\n        cwd=ROOT,\n        check=True,",
+        "detail": "tests.test_update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "test_ensure_nested_cli_output_lists_all_required_paths",
+        "kind": 2,
+        "importPath": "tests.test_update_agents",
+        "description": "tests.test_update_agents",
+        "peekOfCode": "def test_ensure_nested_cli_output_lists_all_required_paths():\n    proc = subprocess.run(\n        [sys.executable, \"tools/update_agents.py\", \"--ensure-nested\"],\n        cwd=ROOT,\n        check=True,\n        capture_output=True,\n        text=True,\n    )\n    out = proc.stdout\n    assert \"manifests/AGENTS.md\" in out",
+        "detail": "tests.test_update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "tests.test_update_agents",
+        "description": "tests.test_update_agents",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nUPDATE_AGENTS_PATH = ROOT / \"tools\" / \"update_agents.py\"\nspec = importlib.util.spec_from_file_location(\"qfr_update_agents_test\", UPDATE_AGENTS_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load update_agents module from {UPDATE_AGENTS_PATH}\")\nupdate_agents = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(update_agents)\ndef test_ensure_required_nested_agents_returns_all_required_paths():\n    ensured = update_agents.ensure_required_nested_agents()\n    expected = [ROOT / rel / \"AGENTS.md\" for rel in update_agents.REQUIRED_NESTED_DIRS]",
+        "detail": "tests.test_update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "UPDATE_AGENTS_PATH",
+        "kind": 5,
+        "importPath": "tests.test_update_agents",
+        "description": "tests.test_update_agents",
+        "peekOfCode": "UPDATE_AGENTS_PATH = ROOT / \"tools\" / \"update_agents.py\"\nspec = importlib.util.spec_from_file_location(\"qfr_update_agents_test\", UPDATE_AGENTS_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load update_agents module from {UPDATE_AGENTS_PATH}\")\nupdate_agents = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(update_agents)\ndef test_ensure_required_nested_agents_returns_all_required_paths():\n    ensured = update_agents.ensure_required_nested_agents()\n    expected = [ROOT / rel / \"AGENTS.md\" for rel in update_agents.REQUIRED_NESTED_DIRS]\n    assert ensured == expected",
+        "detail": "tests.test_update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "spec",
+        "kind": 5,
+        "importPath": "tests.test_update_agents",
+        "description": "tests.test_update_agents",
+        "peekOfCode": "spec = importlib.util.spec_from_file_location(\"qfr_update_agents_test\", UPDATE_AGENTS_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load update_agents module from {UPDATE_AGENTS_PATH}\")\nupdate_agents = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(update_agents)\ndef test_ensure_required_nested_agents_returns_all_required_paths():\n    ensured = update_agents.ensure_required_nested_agents()\n    expected = [ROOT / rel / \"AGENTS.md\" for rel in update_agents.REQUIRED_NESTED_DIRS]\n    assert ensured == expected\n    assert all(path.exists() for path in ensured)",
+        "detail": "tests.test_update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "update_agents",
+        "kind": 5,
+        "importPath": "tests.test_update_agents",
+        "description": "tests.test_update_agents",
+        "peekOfCode": "update_agents = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(update_agents)\ndef test_ensure_required_nested_agents_returns_all_required_paths():\n    ensured = update_agents.ensure_required_nested_agents()\n    expected = [ROOT / rel / \"AGENTS.md\" for rel in update_agents.REQUIRED_NESTED_DIRS]\n    assert ensured == expected\n    assert all(path.exists() for path in ensured)\ndef test_ensure_nested_cli_output_lists_all_required_paths():\n    proc = subprocess.run(\n        [sys.executable, \"tools/update_agents.py\", \"--ensure-nested\"],",
+        "detail": "tests.test_update_agents",
         "documentation": {}
     },
     {
@@ -2629,24 +4561,6 @@
         "importPath": "tools.pipeline_ops",
         "description": "tools.pipeline_ops",
         "peekOfCode": "def main() -> None:\n    ap = argparse.ArgumentParser()\n    sub = ap.add_subparsers(dest=\"cmd\", required=True)\n    p_h = sub.add_parser(\"harvest\")\n    p_h.add_argument(\"--inputs\", nargs=\"+\", type=Path, required=True)\n    p_h.add_argument(\"--out\", type=Path, required=True)\n    p_h.add_argument(\"--min-chars\", type=int, default=20)\n    p_h.add_argument(\"--dedupe-batch-size\", type=int, default=0)\n    p_c = sub.add_parser(\"curate\")\n    p_c.add_argument(\"--in\", dest=\"inp\", type=Path, required=True)",
-        "detail": "tools.pipeline_ops",
-        "documentation": {}
-    },
-    {
-        "label": "FR_CA_MARKERS",
-        "kind": 5,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "FR_CA_MARKERS = {\n    \"courriel\",\n    \"fin de semaine\",\n    \"magasiner\",\n    \"char\",\n    \"dépanneur\",\n    \"chu\",\n    \"icitte\",\n    \"pantoute\",\n}",
-        "detail": "tools.pipeline_ops",
-        "documentation": {}
-    },
-    {
-        "label": "FR_FR_TO_FR_CA_REPLACEMENTS",
-        "kind": 5,
-        "importPath": "tools.pipeline_ops",
-        "description": "tools.pipeline_ops",
-        "peekOfCode": "FR_FR_TO_FR_CA_REPLACEMENTS = {\n    \"email\": \"courriel\",\n    \"week-end\": \"fin de semaine\",\n    \"voiture\": \"char\",\n}\n@dataclass\nclass Record:\n    source: str\n    text: str\n    register: str",
         "detail": "tools.pipeline_ops",
         "documentation": {}
     },
@@ -2696,6 +4610,15 @@
         "documentation": {}
     },
     {
+        "label": "ensure_required_nested_agents",
+        "kind": 2,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "def ensure_required_nested_agents() -> list[Path]:\n    return [init_nested(rel) for rel in REQUIRED_NESTED_DIRS]\ndef validate() -> None:\n    if not RELEASE_GATES_PATH.exists():\n        raise SystemExit(f\"Validation failed; missing release gates file: {RELEASE_GATES_PATH}\")\n    eval_text = EVAL_PATH.read_text()\n    try:\n        gates_text = RELEASE_GATES_PATH.read_text()\n    except OSError as exc:\n        raise SystemExit(f\"Validation failed; could not read release gates file {RELEASE_GATES_PATH}: {exc}\") from exc",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
         "label": "validate",
         "kind": 2,
         "importPath": "tools.update_agents",
@@ -2709,7 +4632,7 @@
         "kind": 2,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "def main() -> None:\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--write\", action=\"store_true\")\n    parser.add_argument(\"--sync-status\", action=\"store_true\")\n    parser.add_argument(\"--validate\", action=\"store_true\")\n    parser.add_argument(\"--init-nested\", metavar=\"PATH\")\n    args = parser.parse_args()\n    if args.sync_status:\n        sync_status()\n        print(\"Status synced.\")",
+        "peekOfCode": "def main() -> None:\n    parser = argparse.ArgumentParser()\n    parser.add_argument(\"--write\", action=\"store_true\")\n    parser.add_argument(\"--sync-status\", action=\"store_true\")\n    parser.add_argument(\"--validate\", action=\"store_true\")\n    parser.add_argument(\"--init-nested\", metavar=\"PATH\")\n    parser.add_argument(\"--ensure-nested\", action=\"store_true\")\n    args = parser.parse_args()\n    if args.sync_status:\n        sync_status()",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2718,7 +4641,7 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTATUS_PATH = ROOT / \"project\" / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTATUS_PATH = ROOT / \"project\" / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2727,7 +4650,7 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "STATUS_PATH = ROOT / \"project\" / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",",
+        "peekOfCode": "STATUS_PATH = ROOT / \"project\" / \"status.json\"\nAGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2736,7 +4659,7 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "AGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",",
+        "peekOfCode": "AGENTS_PATH = ROOT / \"AGENTS.md\"\nEVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2745,7 +4668,7 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "EVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",",
+        "peekOfCode": "EVAL_PATH = ROOT / \"eval\" / \"evaluation_manifest.template.yaml\"\nRELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2754,7 +4677,7 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "RELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",",
+        "peekOfCode": "RELEASE_GATES_PATH = ROOT / \"project\" / \"release_gates.yaml\"\nSTART = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2763,7 +4686,7 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "START = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",",
+        "peekOfCode": "START = \"## Dynamic State (auto-generated)\"\nEND = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
@@ -2772,7 +4695,16 @@
         "kind": 5,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "END = \"## Non-Negotiable Rules (Drift Prevention)\"\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",\n    \"T8\": ROOT / \"src\" / \"qfr_pipeline\" / \"contamination.py\",",
+        "peekOfCode": "END = \"## Non-Negotiable Rules (Drift Prevention)\"\nREQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",",
+        "detail": "tools.update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "REQUIRED_NESTED_DIRS",
+        "kind": 5,
+        "importPath": "tools.update_agents",
+        "description": "tools.update_agents",
+        "peekOfCode": "REQUIRED_NESTED_DIRS = (\"manifests\", \"rules\", \"eval\", \"src\", \"project\")\nTASK_FILES = {\n    \"T1\": ROOT / \"manifests\" / \"dataset_manifest.template.yaml\",\n    \"T2\": ROOT / \"rules\" / \"lp_rule_manifest.template.yaml\",\n    \"T3\": ROOT / \"eval\" / \"evaluation_manifest.template.yaml\",\n    \"T4\": ROOT / \"tools\" / \"minimal_pair_generator_spec.md\",\n    \"T5\": ROOT / \"tools\" / \"update_agents.py\",\n    \"T6\": ROOT / \"manifests\" / \"AGENTS.md\",\n    \"T7\": ROOT / \"src\" / \"qfr_pipeline\" / \"validation.py\",\n    \"T8\": ROOT / \"src\" / \"qfr_pipeline\" / \"contamination.py\",",
         "detail": "tools.update_agents",
         "documentation": {}
     },
