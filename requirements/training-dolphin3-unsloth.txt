@@ -1,0 +1,14 @@
+# Optional local training stack for continuing Dolphin3.0-Qwen2.5-3b with Unsloth.
+# Install this only on your training machine, not in deterministic CI.
+# Official Unsloth docs currently recommend `pip install unsloth` for the latest pip release.
+unsloth>=2025.0.0
+transformers>=4.45
+trl>=0.9.6
+accelerate>=0.34
+peft>=0.12
+datasets>=2.20
+bitsandbytes>=0.43
+safetensors>=0.4
+tqdm>=4.66
+sentencepiece>=0.2
+protobuf>=4.25
