@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
-from qfr_pipeline.schemas import CorpusSourceManifest, CurationPolicyManifest, DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, ensure_eval_gates_sync
+from qfr_pipeline.schemas import CorpusSourceManifest, CurationPolicyManifest, DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, SplitPolicyManifest, ensure_eval_gates_sync
 
 
 @dataclass
@@ -51,6 +51,10 @@ def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:
     return _validate(path, CurationPolicyManifest)
 
 
+def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:
+    return _validate(path, SplitPolicyManifest)
+
+
 def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:
     eval_manifest = _validate(path, EvaluationManifest)
     gates = validate_release_gates(release_gates_path)
@@ -82,6 +86,8 @@ def validate_repository(root: Path) -> ValidationReport:
                 validate_corpus_source_manifest(path)
             elif kind == "curation_policy_manifest":
                 validate_curation_policy_manifest(path)
+            elif kind == "split_policy_manifest":
+                validate_split_policy_manifest(path)
             else:
                 raise ValueError(f"Unsupported manifests kind: {kind}")
             report.checked_files.append(str(path))

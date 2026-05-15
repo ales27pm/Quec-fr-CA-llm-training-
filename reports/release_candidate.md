@@ -12,6 +12,10 @@
   - Artifacts: ['manifests/curation_policy_manifest.template.yaml']
 - corpus_curation: PASS
   - Artifacts: ['reports/corpus_curation/accepted.jsonl', 'reports/corpus_curation/review_required.jsonl', 'reports/corpus_curation/quarantine.jsonl', 'reports/corpus_curation/rejected.jsonl', 'reports/corpus_curation/report.json']
+- split_policy_validation: PASS
+  - Artifacts: ['manifests/split_policy_manifest.template.yaml']
+- curated_corpus_split: PASS
+  - Artifacts: ['reports/curated_splits/train.jsonl', 'reports/curated_splits/dev.jsonl', 'reports/curated_splits/test.jsonl', 'reports/curated_splits/split_report.json']
 - diagnostics_generation: PASS
   - Artifacts: ['reports/diagnostics.lp9_lp20.json', 'reports/diagnostics.lp9_lp20.md']
 - lp9_minimal_pairs: PASS
@@ -37,3 +41,9 @@
 - Review required: `0`
 - Quarantine: `0`
 - Rejected: `1`
+
+## Curated split summary
+- Records total: `2`
+- Train: `1`
+- Dev: `0`
+- Test: `1`

@@ -69,6 +69,34 @@
       "error": null
     },
     {
+      "name": "split_policy_validation",
+      "ok": true,
+      "artifacts": [
+        "manifests/split_policy_manifest.template.yaml"
+      ],
+      "blocking": true,
+      "details": null,
+      "error": null
+    },
+    {
+      "name": "curated_corpus_split",
+      "ok": true,
+      "artifacts": [
+        "reports/curated_splits/train.jsonl",
+        "reports/curated_splits/dev.jsonl",
+        "reports/curated_splits/test.jsonl",
+        "reports/curated_splits/split_report.json"
+      ],
+      "blocking": true,
+      "details": {
+        "train": 1,
+        "dev": 0,
+        "test": 1,
+        "records_total": 2
+      },
+      "error": null
+    },
+    {
       "name": "diagnostics_generation",
       "ok": true,
       "artifacts": [
@@ -185,6 +213,10 @@
     "corpus_ingestion_jsonl": "reports/corpus_ingestion/harvest.jsonl",
     "corpus_ingestion_report": "reports/corpus_ingestion/report.json",
     "corpus_curation_report": "reports/corpus_curation/report.json",
+    "curated_split_train": "reports/curated_splits/train.jsonl",
+    "curated_split_dev": "reports/curated_splits/dev.jsonl",
+    "curated_split_test": "reports/curated_splits/test.jsonl",
+    "curated_split_report": "reports/curated_splits/split_report.json",
     "release_candidate_json": "reports/release_candidate.json",
     "release_candidate_md": "reports/release_candidate.md"
   },
@@ -210,6 +242,13 @@
     "review_required": 0,
     "quarantine": 0,
     "rejected": 1
+  },
+  "split_summary": {
+    "records_total": 2,
+    "train": 1,
+    "dev": 0,
+    "test": 1,
+    "forbidden_records_seen": 0
   },
   "blocking_failures": []
 }
