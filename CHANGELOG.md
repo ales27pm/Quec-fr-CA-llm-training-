@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-15 — T20 corpus curation policy and deterministic quality scoring contract
+- Added `manifests/curation_policy_manifest.template.yaml` and strict curation schema validation models.
+- Added deterministic corpus curation module and CLI commands: `qfr validate-curation-policy` and `qfr curate-corpus`.
+- Integrated curation policy validation and curation artifacts into repository validation, CI/local validation, and release-candidate orchestration reports.
+- Resolved Pydantic field shadowing by aliasing `register` to internal `language_register` in corpus source schemas.
+- Added curation and regression tests including duplicate detection, output accounting, and no field-shadow warning checks.
+
 ## 2026-05-15 — T19 corpus source manifest ingestion contract
 - Added `manifests/corpus_source_manifest.template.yaml` with strict source-policy fields for licensing, provenance, holdout safety, review gating, and fixture-only local paths.
 - Added `CorpusSourceManifest`/`CorpusSourceEntry` strict schema models and repository validation wiring (`qfr validate` now checks corpus manifests).

@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "policy": "manifests/curation_policy_manifest.template.yaml",
+  "input": "reports/corpus_ingestion/harvest.jsonl",
+  "records_total": 3,
+  "accepted": 2,
+  "review_required": 0,
+  "quarantine": 0,
+  "rejected": 1,
+  "reason_counts": {
+    "marker:char": 1,
+    "marker:courriel": 1,
+    "marker:dépanneur": 1,
+    "marker:fin de semaine": 1,
+    "marker:icitte": 1,
+    "marker:magasiner": 1,
+    "penalty:email": 1,
+    "penalty:low_fr_ca_marker_score": 1,
+    "penalty:voiture": 1,
+    "penalty:week-end": 1
+  },
+  "outputs": {
+    "accepted": "reports/corpus_curation/accepted.jsonl",
+    "review_required": "reports/corpus_curation/review_required.jsonl",
+    "quarantine": "reports/corpus_curation/quarantine.jsonl",
+    "rejected": "reports/corpus_curation/rejected.jsonl",
+    "report": "reports/corpus_curation/report.json"
+  }
+}

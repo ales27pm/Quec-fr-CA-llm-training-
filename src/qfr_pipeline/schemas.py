@@ -2,7 +2,8 @@ from typing import Any
 import unicodedata
 from pathlib import Path
 
-from pydantic import BaseModel, Field, field_validator, model_validator
+import math
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 REQUIRED_HOLDOUTS = {"qfrblimp", "multiblimp_fr", "qfrcore_eval", "qfrcort_eval"}
 GATE_TOLERANCE = 1e-6
@@ -155,6 +156,7 @@ class ProjectStatus(BaseModel):
 
 
 class CorpusSourceEntry(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
     source_id: str
     name: str
     source_type: str
@@ -170,7 +172,7 @@ class CorpusSourceEntry(BaseModel):
     contains_personal_data: bool
     requires_review: bool
     quality_tier: str
-    register: str
+    language_register: str = Field(alias="register")
     dialect_region: str
     notes: str
 
@@ -189,7 +191,7 @@ class CorpusSourceEntry(BaseModel):
             raise ValueError("quality_tier must be one of gold|silver|bronze|quarantine")
         return v
 
-    @field_validator("register")
+    @field_validator("language_register")
     @classmethod
     def valid_register(cls, v: str) -> str:
         if v not in {"formal", "informal", "mixed", "unknown"}:
@@ -243,6 +245,98 @@ class CorpusSourceManifest(BaseModel):
             raise ValueError("source_id must be unique")
         return self
 
+
+
+SUPPORTED_CURATION_LABELS = {"accepted", "review_required", "quarantine", "rejected"}
+
+
+class CurationRule(BaseModel):
+    rule_id: str
+    description: str
+    classification: str
+    pattern: str
+
+    @field_validator("classification")
+    @classmethod
+    def valid_classification(cls, v: str) -> str:
+        if v not in SUPPORTED_CURATION_LABELS:
+            raise ValueError(f"classification must be one of {sorted(SUPPORTED_CURATION_LABELS)}")
+        return v
+
+    @model_validator(mode="after")
+    def validate_rule(self):
+        if not self.rule_id.strip() or not self.pattern.strip() or not self.description.strip():
+            raise ValueError("rule_id, pattern, and description must be non-empty")
+        if "fr_fr" in self.description.casefold() or "neutraliz" in self.description.casefold() or "standard parisian" in self.description.casefold():
+            raise ValueError("rule cannot recommend dialect neutralization")
+        return self
+
+
+class CurationThresholds(BaseModel):
+    accept_min_score: float
+    review_min_score: float
+    quarantine_below_score: float
+    reject_below_score: float
+
+    @model_validator(mode="after")
+    def validate_thresholds(self):
+        vals = [self.accept_min_score, self.review_min_score, self.quarantine_below_score, self.reject_below_score]
+        if any((not math.isfinite(float(v))) for v in vals):
+            raise ValueError("all thresholds must be finite numeric values")
+        if not (self.accept_min_score >= self.review_min_score >= self.quarantine_below_score >= self.reject_below_score):
+            raise ValueError("threshold ordering must satisfy accept >= review >= quarantine >= reject")
+        return self
+
+
+class CurationScoringConfig(BaseModel):
+    base_score: float
+    marker_weights: dict[str, float]
+    penalties: dict[str, float]
+    thresholds: CurationThresholds
+    blocking_rules: list[CurationRule]
+    review_rules: list[CurationRule]
+    quarantine_rules: list[CurationRule]
+
+    @model_validator(mode="after")
+    def validate_scoring(self):
+        if not math.isfinite(float(self.base_score)):
+            raise ValueError("base_score must be finite")
+        for mapping_name, mapping in (("marker_weights", self.marker_weights), ("penalties", self.penalties)):
+            for term, value in mapping.items():
+                if not isinstance(term, str) or not term.strip():
+                    raise ValueError(f"{mapping_name} terms must be non-empty strings")
+                if not math.isfinite(float(value)):
+                    raise ValueError(f"{mapping_name} values must be finite")
+        return self
+
+
+class CurationPolicyManifest(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    kind: str
+    schema_version: str
+    primary_language: str
+    policy_id: str
+    description: str
+    scoring: CurationScoringConfig
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "curation_policy_manifest":
+            raise ValueError("kind must be curation_policy_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        if not self.policy_id.strip() or not self.description.strip():
+            raise ValueError("policy_id and description must be non-empty")
+        for rule in [*self.scoring.blocking_rules, *self.scoring.review_rules, *self.scoring.quarantine_rules]:
+            if rule.classification not in SUPPORTED_CURATION_LABELS:
+                raise ValueError("unsupported classification label")
+        return self
 class ErrorTaxonomyItem(BaseModel):
     error_code: str
     label: str
