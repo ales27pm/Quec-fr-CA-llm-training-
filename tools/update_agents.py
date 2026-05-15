@@ -161,14 +161,7 @@ def _extract_gate_values(yaml_text: str) -> dict[str, str]:
 
 
 def ensure_required_nested_agents() -> list[Path]:
-    created: list[Path] = []
-    for rel in REQUIRED_NESTED_DIRS:
-        nested = init_nested(rel)
-        if nested.exists() and nested.stat().st_size > 0:
-            # init_nested writes only when missing, so we detect newly created by mtime proximity is brittle;
-            # instead rely on existence check before invocation in caller when needed.
-            pass
-    return created
+    return [init_nested(rel) for rel in REQUIRED_NESTED_DIRS]
 
 
 def validate() -> None:
@@ -233,7 +226,7 @@ def main() -> None:
     if args.validate:
         validate()
     if args.ensure_nested:
-        ensured = [init_nested(path) for path in REQUIRED_NESTED_DIRS]
+        ensured = ensure_required_nested_agents()
         print("Ensured nested AGENTS: " + ", ".join(str(p.relative_to(ROOT)) for p in ensured))
     if args.init_nested:
         print(f"Nested AGENTS ready at: {init_nested(args.init_nested)}")
