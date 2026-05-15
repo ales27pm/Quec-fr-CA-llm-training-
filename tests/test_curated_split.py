@@ -1,6 +1,8 @@
 import json
+import re
 from pathlib import Path
 
+import yaml
 from typer.testing import CliRunner
 
 from qfr_pipeline.cli import app
@@ -36,3 +38,14 @@ def test_split_curated_rejects_forbidden_label(tmp_path: Path):
 def test_cli_split_commands():
     r1 = runner.invoke(app, ["validate-split-policy", "--policy", "manifests/split_policy_manifest.template.yaml"])
     assert r1.exit_code == 0
+
+
+def test_ci_workflow_contains_split_steps_and_valid_yaml():
+    ci_path = Path(".github/workflows/ci.yml")
+    content = ci_path.read_text(encoding="utf-8")
+    assert "- run: qfr validate-split-policy --policy manifests/split_policy_manifest.template.yaml" in content
+    assert "- run: qfr split-curated-corpus --input reports/corpus_curation/accepted.jsonl --policy manifests/split_policy_manifest.template.yaml --out-dir reports/curated_splits" in content
+    assert re.search(r"^qfr validate-split-policy", content, flags=re.MULTILINE) is None
+    assert re.search(r"^qfr split-curated-corpus", content, flags=re.MULTILINE) is None
+    parsed = yaml.safe_load(content)
+    assert isinstance(parsed, dict)

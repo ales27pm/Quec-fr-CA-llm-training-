@@ -18,8 +18,8 @@ jobs:
       - run: qfr ingest-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml --out reports/corpus_ingestion/harvest.jsonl --report reports/corpus_ingestion/report.json --min-chars 20
       - run: qfr validate-curation-policy --policy manifests/curation_policy_manifest.template.yaml
       - run: qfr curate-corpus --input reports/corpus_ingestion/harvest.jsonl --policy manifests/curation_policy_manifest.template.yaml --out-dir reports/corpus_curation
-qfr validate-split-policy --policy manifests/split_policy_manifest.template.yaml
-qfr split-curated-corpus --input reports/corpus_curation/accepted.jsonl --policy manifests/split_policy_manifest.template.yaml --out-dir reports/curated_splits
+      - run: qfr validate-split-policy --policy manifests/split_policy_manifest.template.yaml
+      - run: qfr split-curated-corpus --input reports/corpus_curation/accepted.jsonl --policy manifests/split_policy_manifest.template.yaml --out-dir reports/curated_splits
       - run: qfr validate-taxonomy --taxonomy eval/lp9_error_taxonomy.yaml
       - run: qfr validate-taxonomy --taxonomy eval/lp20_error_taxonomy.yaml
       - run: qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --taxonomy eval/lp9_error_taxonomy.yaml --taxonomy eval/lp20_error_taxonomy.yaml --out-json reports/diagnostics.lp9_lp20.json --out-md reports/diagnostics.lp9_lp20.md
