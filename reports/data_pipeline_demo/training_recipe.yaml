@@ -1,0 +1,13 @@
+model:
+  base: mistral-7b-instruct
+  dtype: float16
+runtime:
+  target: ctranslate2
+data:
+  train: reports/data_pipeline_demo/splits/train.jsonl
+  dev: reports/data_pipeline_demo/splits/dev.jsonl
+  test: reports/data_pipeline_demo/splits/test.jsonl
+alignment:
+  include_qfrblimp_gold_pairs: true
+  lp7_post_alignment_max_drop_key: alignment.lp7_standard_negation_max_post_alignment_drop_ratio
+  lp7_post_alignment_max_drop_ratio: 0.03

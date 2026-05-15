@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-14",
+  "last_updated": "2026-05-15",
   "tasks": [
     {
       "id": "T1",
@@ -100,6 +100,12 @@
     {
       "id": "T17",
       "goal": "Legacy diagnostics compatibility wrapper",
+      "status": "fully_implemented",
+      "evidence": "Provided"
+    },
+    {
+      "id": "T18",
+      "goal": "Package data-pipeline compatibility wrappers",
       "status": "fully_implemented",
       "evidence": "Provided"
     }

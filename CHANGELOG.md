@@ -64,3 +64,5 @@
 - Restored `.github/workflows/ci.yml` with valid LP9/LP20 diagnostics + deterministic artifact checks (including release report artifacts).
 - Added `scripts/run_local_validation.sh` to run the same validation sequence locally when GitHub Actions is unreliable.
 - Preserved governance status for T11/T15 without downgrade after AGENTS/status refresh.
+
+- T18: Data-pipeline logic moved into package modules with legacy `tools/pipeline_ops.py` compatibility wrappers and qfr-native commands.

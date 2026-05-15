@@ -1,0 +1,7 @@
+{
+  "pre_alignment_score": 0.95,
+  "post_alignment_score": 0.94,
+  "drop_ratio": 0.010526,
+  "max_allowed_drop_ratio": 0.03,
+  "rollback_required": false
+}

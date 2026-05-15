@@ -1,0 +1,3 @@
+{"id": "6c6fbc19e334258409270e4959bba1fe8624e3b395fdc1ab56d5c70b3795308c", "source": "raw_sample_1.txt", "text": "Courriel de suivi pour la fin de semaine au dépanneur du quartier.", "fr_ca_marker_hits": 3, "fr_ca_score": 0.25}
+{"id": "bc1bf2a412b3329bcb474b8b2369ac7e30cd37d15f4cbe1e5486e8d03010efdd", "source": "raw_sample_1.txt", "text": "Nous allons magasiner icitte avec le char familial samedi matin.", "fr_ca_marker_hits": 3, "fr_ca_score": 0.3}
+{"id": "8f7e8200c3e7edfd3bc18918e00166da96e571f6f204d6e204ed6cca30326577", "source": "raw_sample_2.txt", "text": "On est chu prêts pantoute pour magasiner au dépanneur ce soir.", "fr_ca_marker_hits": 4, "fr_ca_score": 0.3636}
