@@ -2,3 +2,15 @@
 __pycache__/
 **/__pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+*.so
+*.dylib
+*.dll
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+src/*.egg-info/
+build/
+dist/

@@ -7,7 +7,7 @@ This file governs the entire repository unless a deeper nested `AGENTS.md` overr
 Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned with OQLF/BDL standards, reproducible evaluation, and explicit governance.
 
 ## Dynamic State (auto-generated)
-> Last auto-update: **2026-05-14 UTC**  
+> Last auto-update: **2026-05-15 UTC**  
 > Source: `project/status.json` (managed by `python3 tools/update_agents.py --write`)
 
 | Task ID | Goal | Status | Evidence |
