@@ -17,6 +17,11 @@ python3 tools/update_agents.py --validate
 echo "==> Repository validation"
 qfr validate
 
+
+echo "==> Corpus source contract"
+qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml
+qfr ingest-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml --out reports/corpus_ingestion/harvest.jsonl --report reports/corpus_ingestion/report.json --min-chars 20
+
 echo "==> Taxonomy validation"
 qfr validate-taxonomy --taxonomy eval/lp9_error_taxonomy.yaml
 qfr validate-taxonomy --taxonomy eval/lp20_error_taxonomy.yaml
@@ -54,4 +59,4 @@ qfr training-recipe --data-dir reports/data_pipeline_demo/splits --out reports/d
 qfr monitor-lp7 --pre 0.95 --post 0.94 --release-gates project/release_gates.yaml --out reports/data_pipeline_demo/lp7_monitor.json
 
 echo "==> Deterministic artifact guard"
-git diff --exit-code -- data/generated/minimal_pairs.lp9.jsonl reports/minimal_pair_quality.lp9.json data/generated/minimal_pairs.lp20.jsonl reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json reports/diagnostics.lp9_lp20.md reports/diagnostics.legacy_semantic.json reports/release_report.json reports/release_report.md reports/release_candidate.json reports/release_candidate.md reports/data_pipeline_demo/harvest.jsonl reports/data_pipeline_demo/curated.jsonl reports/data_pipeline_demo/edited.jsonl reports/data_pipeline_demo/splits/train.jsonl reports/data_pipeline_demo/splits/dev.jsonl reports/data_pipeline_demo/splits/test.jsonl reports/data_pipeline_demo/training_recipe.yaml reports/data_pipeline_demo/lp7_monitor.json
+git diff --exit-code -- data/generated/minimal_pairs.lp9.jsonl reports/minimal_pair_quality.lp9.json data/generated/minimal_pairs.lp20.jsonl reports/minimal_pair_quality.lp20.json reports/diagnostics.lp9_lp20.json reports/diagnostics.lp9_lp20.md reports/diagnostics.legacy_semantic.json reports/release_report.json reports/release_report.md reports/release_candidate.json reports/release_candidate.md reports/data_pipeline_demo/harvest.jsonl reports/data_pipeline_demo/curated.jsonl reports/data_pipeline_demo/edited.jsonl reports/data_pipeline_demo/splits/train.jsonl reports/data_pipeline_demo/splits/dev.jsonl reports/data_pipeline_demo/splits/test.jsonl reports/data_pipeline_demo/training_recipe.yaml reports/data_pipeline_demo/lp7_monitor.json reports/corpus_ingestion/harvest.jsonl reports/corpus_ingestion/report.json

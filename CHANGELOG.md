@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-05-15 — T19 corpus source manifest ingestion contract
+- Added `manifests/corpus_source_manifest.template.yaml` with strict source-policy fields for licensing, provenance, holdout safety, review gating, and fixture-only local paths.
+- Added `CorpusSourceManifest`/`CorpusSourceEntry` strict schema models and repository validation wiring (`qfr validate` now checks corpus manifests).
+- Added `qfr_pipeline.corpus_sources` deterministic ingestion contract logic and new CLI commands: `qfr validate-corpus-sources` and `qfr ingest-corpus-sources`.
+- Added deterministic ingestion artifacts under `reports/corpus_ingestion/` and policy-focused pytest coverage for allowed/blocked source handling.
+- Extended CI/local validation and deterministic-artifact guard to include corpus source validation/ingestion outputs.
+
+
 ## 2026-05-14 — T17 legacy diagnostics compatibility wrapper
 - Added `src/qfr_pipeline/legacy_diagnostics.py` with legacy CSV ingestion and LP9/LP20 alias mapping, then delegated diagnostics execution to maintained `qfr_pipeline.diagnostics` taxonomy-aware logic.
 - Refactored `tools/pipeline_ops.py diagnose-semantic` into a compatibility wrapper over maintained diagnostics logic (kept `--in-csv`/`--out-json`; added optional `--taxonomy` and `--allow-missing-phenomena`).

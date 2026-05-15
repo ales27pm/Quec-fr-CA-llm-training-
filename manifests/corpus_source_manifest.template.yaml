@@ -1,0 +1,56 @@
+kind: corpus_source_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+sources:
+  - source_id: fixture_raw_1
+    name: Fixture raw sample 1
+    source_type: local_text
+    path: fixtures/data_pipeline/raw_sample_1.txt
+    license: internal_demo
+    license_url: https://example.invalid/internal_demo
+    provenance: repo_fixture
+    collection_method: manual_fixture_copy
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: Deterministic repository fixture for ingestion-contract testing.
+  - source_id: fixture_raw_2_review
+    name: Fixture raw sample 2 review required
+    source_type: manual_fixture
+    path: fixtures/data_pipeline/raw_sample_2.txt
+    license: internal_demo
+    provenance: repo_fixture
+    collection_method: manual_fixture_copy
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: true
+    requires_review: true
+    quality_tier: bronze
+    register: mixed
+    dialect_region: Canada_fr
+    notes: Requires explicit opt-in via --include-review-required.
+  - source_id: future_remote_catalog_only
+    name: Remote source contract placeholder
+    source_type: future_remote
+    path: fixtures/data_pipeline/raw_sample_1.txt
+    license: pending
+    provenance: catalog_only
+    collection_method: future_connector
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: unknown
+    dialect_region: unknown
+    notes: Cataloged only; skipped by local ingestion.

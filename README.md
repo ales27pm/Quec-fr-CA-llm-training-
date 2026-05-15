@@ -28,3 +28,6 @@ This repository includes a sovereignty-first roadmap and centralized release thr
 
 ## Data pipeline demo
 Use legacy + package commands to generate deterministic artifacts under `reports/data_pipeline_demo/`.
+
+- Validate corpus source contract: `qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml`.
+- Ingest contract-approved local corpus fixtures: `qfr ingest-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml --out reports/corpus_ingestion/harvest.jsonl --report reports/corpus_ingestion/report.json --min-chars 20`.

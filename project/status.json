@@ -108,6 +108,12 @@
       "goal": "Package data-pipeline compatibility wrappers",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T19",
+      "goal": "Corpus source manifest and ingestion contract",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "manifest": "manifests/corpus_source_manifest.template.yaml",
+  "sources_total": 3,
+  "sources_ingested": 1,
+  "records_written": 3,
+  "skipped_sources": [
+    {
+      "source_id": "fixture_raw_2_review",
+      "reason": "requires_review"
+    },
+    {
+      "source_id": "future_remote_catalog_only",
+      "reason": "future_remote"
+    }
+  ],
+  "issues": [],
+  "output": "reports/corpus_ingestion/harvest.jsonl"
+}

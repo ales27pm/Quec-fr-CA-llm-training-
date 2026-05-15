@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
-from qfr_pipeline.schemas import DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, ensure_eval_gates_sync
+from qfr_pipeline.schemas import CorpusSourceManifest, DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, ensure_eval_gates_sync
 
 
 @dataclass
@@ -43,6 +43,10 @@ def validate_error_taxonomy_manifest(path: Path) -> ErrorTaxonomyManifest:
     return _validate(path, ErrorTaxonomyManifest)
 
 
+def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:
+    return _validate(path, CorpusSourceManifest)
+
+
 def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:
     eval_manifest = _validate(path, EvaluationManifest)
     gates = validate_release_gates(release_gates_path)
@@ -61,12 +65,23 @@ def validate_repository(root: Path) -> ValidationReport:
         report.issues.append(ValidationIssue(str(gates_path), "release_gates", str(exc)))
 
     for path in sorted((root / "manifests").glob("*.y*ml")):
+        manifest_kind = "dataset_manifest"
         try:
-            validate_dataset_manifest(path)
+            doc = load_yaml(path)
+            if not isinstance(doc, dict) or "kind" not in doc:
+                raise ValueError("Manifest must be a mapping and include a 'kind' field")
+            kind = doc.get("kind")
+            manifest_kind = str(kind)
+            if kind == "dataset_manifest":
+                validate_dataset_manifest(path)
+            elif kind == "corpus_source_manifest":
+                validate_corpus_source_manifest(path)
+            else:
+                raise ValueError(f"Unsupported manifests kind: {kind}")
             report.checked_files.append(str(path))
         except Exception as exc:
             report.ok = False
-            report.issues.append(ValidationIssue(str(path), "dataset_manifest", str(exc)))
+            report.issues.append(ValidationIssue(str(path), manifest_kind, str(exc)))
 
     for path in sorted((root / "rules").glob("*.y*ml")):
         manifest_kind = "lp_manifest_unknown"

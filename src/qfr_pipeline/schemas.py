@@ -1,5 +1,6 @@
 from typing import Any
 import unicodedata
+from pathlib import Path
 
 from pydantic import BaseModel, Field, field_validator, model_validator
 
@@ -150,6 +151,97 @@ class ProjectStatus(BaseModel):
 
 
 
+
+
+
+class CorpusSourceEntry(BaseModel):
+    source_id: str
+    name: str
+    source_type: str
+    path: str
+    license: str
+    license_url: str | None = None
+    provenance: str
+    collection_method: str
+    allowed_for_training: bool
+    allowed_for_evaluation: bool
+    contains_holdout_material: bool
+    holdout_only: bool = False
+    contains_personal_data: bool
+    requires_review: bool
+    quality_tier: str
+    register: str
+    dialect_region: str
+    notes: str
+
+    @field_validator("source_type")
+    @classmethod
+    def valid_source_type(cls, v: str) -> str:
+        allowed = {"local_text", "local_jsonl", "local_csv", "manual_fixture", "future_remote"}
+        if v not in allowed:
+            raise ValueError(f"source_type must be one of {sorted(allowed)}")
+        return v
+
+    @field_validator("quality_tier")
+    @classmethod
+    def valid_quality_tier(cls, v: str) -> str:
+        if v not in {"gold", "silver", "bronze", "quarantine"}:
+            raise ValueError("quality_tier must be one of gold|silver|bronze|quarantine")
+        return v
+
+    @field_validator("register")
+    @classmethod
+    def valid_register(cls, v: str) -> str:
+        if v not in {"formal", "informal", "mixed", "unknown"}:
+            raise ValueError("register must be one of formal|informal|mixed|unknown")
+        return v
+
+    @field_validator("dialect_region")
+    @classmethod
+    def valid_dialect_region(cls, v: str) -> str:
+        if v not in {"Quebec", "Canada_fr", "unknown"}:
+            raise ValueError("dialect_region must be one of Quebec|Canada_fr|unknown")
+        return v
+
+    @model_validator(mode="after")
+    def validate_policy(self):
+        for field_name in ("source_id", "name", "path", "license", "provenance", "collection_method", "notes"):
+            if not getattr(self, field_name).strip():
+                raise ValueError(f"{field_name} must be non-empty")
+        if Path(self.path).is_absolute():
+            raise ValueError("path must be repo-relative")
+        if self.allowed_for_training and self.contains_holdout_material:
+            raise ValueError("allowed_for_training and contains_holdout_material cannot both be true")
+        if self.allowed_for_evaluation and self.contains_holdout_material and (not self.holdout_only):
+            raise ValueError("allowed_for_evaluation with holdout material requires holdout_only=true")
+        if self.quality_tier == "quarantine" and self.allowed_for_training:
+            raise ValueError("quality_tier=quarantine cannot be allowed for training")
+        if self.contains_personal_data and (not self.requires_review):
+            raise ValueError("contains_personal_data=true requires requires_review=true")
+        return self
+
+
+class CorpusSourceManifest(BaseModel):
+    kind: str
+    schema_version: str
+    primary_language: str
+    sources: list[CorpusSourceEntry]
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "corpus_source_manifest":
+            raise ValueError("kind must be corpus_source_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        ids = [s.source_id for s in self.sources]
+        if len(set(ids)) != len(ids):
+            raise ValueError("source_id must be unique")
+        return self
 
 class ErrorTaxonomyItem(BaseModel):
     error_code: str
