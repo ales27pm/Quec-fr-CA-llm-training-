@@ -1,0 +1,163 @@
+kind: corpus_source_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+sources:
+  - source_id: gutenberg_maria_chapdelaine_fr_13525
+    name: Maria Chapdelaine by Louis Hémon
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/maria_chapdelaine_13525.txt
+    download_url: https://www.gutenberg.org/ebooks/13525.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 13525
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: French novel set in rural Québec/Lac-Saint-Jean; verify Project Gutenberg terms and local jurisdiction before release.
+
+  - source_id: gutenberg_au_large_de_l_ecueil_fr_17791
+    name: Au large de l'écueil: roman canadien by Hector Bernier
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/au_large_de_l_ecueil_17791.txt
+    download_url: https://www.gutenberg.org/ebooks/17791.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 17791; source notes reference BNQ/Bibliothèque Nationale du Québec
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: French-Canadian fiction; deterministic remote source candidate.
+
+  - source_id: gutenberg_un_amour_vrai_fr_14537
+    name: Un amour vrai by Laure Conan
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/un_amour_vrai_14537.txt
+    download_url: https://www.gutenberg.org/ebooks/14537.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 14537
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Laure Conan.
+
+  - source_id: gutenberg_l_influence_d_un_livre_fr_15305
+    name: L'influence d'un livre: Roman historique by Philippe Aubert de Gaspé
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/l_influence_d_un_livre_15305.txt
+    download_url: https://www.gutenberg.org/ebooks/15305.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 15305
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian historical fiction.
+
+  - source_id: gutenberg_angeline_de_montbrun_fr_17267
+    name: Angéline de Montbrun by Laure Conan
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/angeline_de_montbrun_17267.txt
+    download_url: https://www.gutenberg.org/ebooks/17267.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 17267
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Laure Conan.
+
+  - source_id: gutenberg_le_debutant_fr_19497
+    name: Le débutant by Arsène Bessette
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/le_debutant_19497.txt
+    download_url: https://www.gutenberg.org/ebooks/19497.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 19497
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Arsène Bessette.
+
+  - source_id: gutenberg_ce_que_disait_la_flamme_fr_14399
+    name: Ce que disait la flamme by Hector Bernier
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/ce_que_disait_la_flamme_14399.txt
+    download_url: https://www.gutenberg.org/ebooks/14399.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 14399
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Hector Bernier.
+
+  - source_id: gutenberg_le_cap_au_diable_fr_13059
+    name: Le Cap au Diable, Légende Canadienne by Charles DeGuise
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/le_cap_au_diable_13059.txt
+    download_url: https://www.gutenberg.org/ebooks/13059.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 13059
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: bronze
+    register: formal
+    dialect_region: Canada_fr
+    notes: French Canadian legend/fiction candidate; review language fit after download.
