@@ -81,3 +81,5 @@
 - Preserved governance status for T11/T15 without downgrade after AGENTS/status refresh.
 
 - T18: Data-pipeline logic moved into package modules with legacy `tools/pipeline_ops.py` compatibility wrappers and qfr-native commands.
+
+- Added T21 curated split contract and commands.

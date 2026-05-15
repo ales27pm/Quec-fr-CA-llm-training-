@@ -40,7 +40,9 @@ TASK_FILES = {
     "T18": ROOT / "src" / "qfr_pipeline" / "data_pipeline.py",
     "T19": ROOT / "src" / "qfr_pipeline" / "corpus_sources.py",
     "T20": ROOT / "src" / "qfr_pipeline" / "curation_policy.py",
+    "T21": ROOT / "src" / "qfr_pipeline" / "curated_split.py",
 }
+
 
 def icon(status: str) -> str:
     return {

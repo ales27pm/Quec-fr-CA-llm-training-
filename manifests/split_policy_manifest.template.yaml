@@ -1,0 +1,20 @@
+kind: split_policy_manifest
+schema_version: "1.0.0"
+policy_id: qfr_split_policy_v1
+primary_language: fr-CA
+input_label_required: accepted
+split_ratios:
+  train: 0.8
+  dev: 0.1
+  test: 0.1
+seed: 42
+min_records: 1
+allow_empty_dev_test_for_small_fixture: true
+source_requirements:
+  forbid_labels:
+    - review_required
+    - quarantine
+    - rejected
+  require_policy_id: true
+  require_curation_score: true
+  require_curation_reasons: true

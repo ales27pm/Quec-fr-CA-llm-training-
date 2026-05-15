@@ -34,3 +34,6 @@ Use legacy + package commands to generate deterministic artifacts under `reports
 
 - Validate curation policy: `qfr validate-curation-policy --policy manifests/curation_policy_manifest.template.yaml`.
 - Curate ingested corpus deterministically: `qfr curate-corpus --input reports/corpus_ingestion/harvest.jsonl --policy manifests/curation_policy_manifest.template.yaml --out-dir reports/corpus_curation`.
+
+## T21 Curated Split
+Use `qfr validate-split-policy` and `qfr split-curated-corpus` to produce `reports/curated_splits/*` from accepted curated corpus only.

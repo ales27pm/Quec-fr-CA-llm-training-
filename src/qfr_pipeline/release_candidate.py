@@ -6,6 +6,7 @@ from typing import Any
 
 from qfr_pipeline.corpus_sources import ingest_corpus_sources, validate_corpus_source_manifest
 from qfr_pipeline.curation_policy import curate_ingested_corpus, validate_curation_policy_manifest
+from qfr_pipeline.curated_split import split_curated_corpus, validate_split_policy_manifest
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
 from qfr_pipeline.io import write_json
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
@@ -52,6 +53,7 @@ class ReleaseCandidateReport:
     diagnostics_summary: dict[str, Any] | None = None
     minimal_pair_summary: dict[str, Any] | None = None
     curation_summary: dict[str, Any] | None = None
+    split_summary: dict[str, Any] | None = None
     blocking_failures: list[str] | None = None
 
     def to_json(self) -> dict[str, Any]:
@@ -64,6 +66,7 @@ class ReleaseCandidateReport:
             "diagnostics_summary": self.diagnostics_summary,
             "minimal_pair_summary": self.minimal_pair_summary,
             "curation_summary": self.curation_summary,
+            "split_summary": self.split_summary,
             "blocking_failures": self.blocking_failures or [],
         }
 
@@ -83,6 +86,8 @@ class ReleaseCandidateReport:
             lines.extend(["", "## Minimal-pair summary", f"- LP9 records: `{self.minimal_pair_summary.get('lp9_records')}`", f"- LP20 records: `{self.minimal_pair_summary.get('lp20_records')}`"])
         if self.curation_summary is not None:
             lines.extend(["", "## Corpus curation summary", f"- Accepted: `{self.curation_summary.get('accepted')}`", f"- Review required: `{self.curation_summary.get('review_required')}`", f"- Quarantine: `{self.curation_summary.get('quarantine')}`", f"- Rejected: `{self.curation_summary.get('rejected')}`"])
+        if self.split_summary is not None:
+            lines.extend(["", "## Curated split summary", f"- Records total: `{self.split_summary.get('records_total')}`", f"- Train: `{self.split_summary.get('train')}`", f"- Dev: `{self.split_summary.get('dev')}`", f"- Test: `{self.split_summary.get('test')}`"])
         if self.blocking_failures:
             lines.extend(["", "## Blocking failures", *[f"- {x}" for x in self.blocking_failures]])
         return "\n".join(lines) + "\n"
@@ -101,6 +106,10 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "corpus_ingestion_jsonl": "reports/corpus_ingestion/harvest.jsonl",
         "corpus_ingestion_report": "reports/corpus_ingestion/report.json",
         "corpus_curation_report": "reports/corpus_curation/report.json",
+        "curated_split_train": "reports/curated_splits/train.jsonl",
+        "curated_split_dev": "reports/curated_splits/dev.jsonl",
+        "curated_split_test": "reports/curated_splits/test.jsonl",
+        "curated_split_report": "reports/curated_splits/split_report.json",
         "release_candidate_json": repo_relative_path(out_json),
         "release_candidate_md": repo_relative_path(out_md),
     }
@@ -141,6 +150,14 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         stages.append(ReleaseCandidateStage(name="corpus_curation", ok=curation.ok, artifacts=list(curation.outputs.values()), details={"accepted": curation.accepted, "review_required": curation.review_required, "quarantine": curation.quarantine, "rejected": curation.rejected}))
         if not curation.ok:
             blocking_failures.append("corpus_curation")
+        split_policy = ROOT / "manifests/split_policy_manifest.template.yaml"
+        validate_split_policy_manifest(split_policy)
+        stages.append(ReleaseCandidateStage(name="split_policy_validation", ok=True, artifacts=[repo_relative_path(split_policy)]))
+        split = split_curated_corpus(ROOT / "reports/corpus_curation/accepted.jsonl", split_policy, ROOT / "reports/curated_splits")
+        stages.append(ReleaseCandidateStage(name="curated_corpus_split", ok=split.ok, artifacts=list(split.outputs.values()), details={"train": split.train, "dev": split.dev, "test": split.test, "records_total": split.records_total}))
+        if not split.ok:
+            blocking_failures.append("curated_corpus_split")
+        split_summary = {"records_total": split.records_total, "train": split.train, "dev": split.dev, "test": split.test, "forbidden_records_seen": split.forbidden_records_seen}
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)
@@ -195,6 +212,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         diagnostics_summary=diag_summary,
         minimal_pair_summary=mp_summary,
         curation_summary=curation_summary,
+        split_summary=split_summary,
         blocking_failures=blocking_failures,
     )
     write_json(out_json, report.to_json())

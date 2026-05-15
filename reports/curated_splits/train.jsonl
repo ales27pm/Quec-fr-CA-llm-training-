@@ -1,0 +1,1 @@
+{"id": "bc1bf2a412b3329bcb474b8b2369ac7e30cd37d15f4cbe1e5486e8d03010efdd", "source": "raw_sample_1.txt", "text": "Nous allons magasiner icitte avec le char familial samedi matin.", "curation_score": 2.0, "curation_label": "accepted", "curation_reasons": ["marker:magasiner", "marker:char", "marker:icitte"], "policy_id": "qfr_curation_policy_v1"}

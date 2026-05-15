@@ -1,0 +1,1 @@
+{"id": "6c6fbc19e334258409270e4959bba1fe8624e3b395fdc1ab56d5c70b3795308c", "source": "raw_sample_1.txt", "text": "Courriel de suivi pour la fin de semaine au dépanneur du quartier.", "curation_score": 2.4, "curation_label": "accepted", "curation_reasons": ["marker:courriel", "marker:fin de semaine", "marker:dépanneur"], "policy_id": "qfr_curation_policy_v1"}

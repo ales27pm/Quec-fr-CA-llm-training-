@@ -9,6 +9,7 @@ import yaml
 from rich import print
 
 from qfr_pipeline.contamination import detect_contamination
+from qfr_pipeline.curated_split import split_curated_corpus, validate_split_policy_manifest
 from qfr_pipeline.curation_policy import curate_ingested_corpus, validate_curation_policy_manifest
 from qfr_pipeline.corpus_sources import ingest_corpus_sources, validate_corpus_source_manifest, write_ingestion_report
 from qfr_pipeline.data_pipeline import curate, edit_normative, harvest, split_train_dev_test, write_training_recipe
@@ -21,7 +22,7 @@ from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_mani
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import evaluate_release, ReleaseReport
 from qfr_pipeline.release_candidate import run_release_candidate
-from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository
+from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model
 
 app = typer.Typer()
 
@@ -159,6 +160,27 @@ def validate_curation_policy_cmd(policy: Path = typer.Option(..., "--policy")):
     validate_curation_policy_manifest_model(policy)
     validate_curation_policy_manifest(policy)
     print("Curation policy manifest valid")
+
+
+@app.command("validate-split-policy")
+def validate_split_policy_cmd(policy: Path = typer.Option(..., "--policy")):
+    _refresh_dynamic_agents()
+    validate_split_policy_manifest_model(policy)
+    validate_split_policy_manifest(policy)
+    print("Split policy manifest valid")
+
+
+@app.command("split-curated-corpus")
+def split_curated_corpus_cmd(
+    input: Path = typer.Option(..., "--input"),
+    policy: Path = typer.Option(..., "--policy"),
+    out_dir: Path = typer.Option(..., "--out-dir"),
+):
+    _refresh_dynamic_agents()
+    report = split_curated_corpus(input, policy, out_dir)
+    print(f"Curated split report: {out_dir / 'split_report.json'}")
+    if not report.ok:
+        raise typer.Exit(code=1)
 
 
 @app.command("curate-corpus")

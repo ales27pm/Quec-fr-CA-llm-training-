@@ -337,6 +337,66 @@ class CurationPolicyManifest(BaseModel):
             if rule.classification not in SUPPORTED_CURATION_LABELS:
                 raise ValueError("unsupported classification label")
         return self
+
+
+class SplitRatios(BaseModel):
+    train: float
+    dev: float
+    test: float
+
+    @model_validator(mode="after")
+    def validate_ratios(self):
+        vals = [self.train, self.dev, self.test]
+        if any((not math.isfinite(float(v))) or float(v) <= 0 for v in vals):
+            raise ValueError("split ratios must be finite positive numbers")
+        if abs(sum(vals) - 1.0) > 1e-6:
+            raise ValueError("split ratios must sum to 1.0 within tolerance")
+        return self
+
+
+class SplitSourceRequirements(BaseModel):
+    forbid_labels: list[str]
+    require_policy_id: bool
+    require_curation_score: bool
+    require_curation_reasons: bool
+
+    @model_validator(mode="after")
+    def validate_requirements(self):
+        forbidden = set(self.forbid_labels)
+        required = {"review_required", "quarantine", "rejected"}
+        if not required.issubset(forbidden):
+            raise ValueError("forbid_labels must include review_required, quarantine, rejected")
+        return self
+
+
+class SplitPolicyManifest(BaseModel):
+    kind: str
+    schema_version: str
+    policy_id: str
+    primary_language: str
+    input_label_required: str
+    split_ratios: SplitRatios
+    seed: int
+    min_records: int
+    allow_empty_dev_test_for_small_fixture: bool
+    source_requirements: SplitSourceRequirements
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "split_policy_manifest":
+            raise ValueError("kind must be split_policy_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        if self.input_label_required != "accepted":
+            raise ValueError("input_label_required must be accepted")
+        if self.min_records < 1:
+            raise ValueError("min_records must be >= 1")
+        return self
 class ErrorTaxonomyItem(BaseModel):
     error_code: str
     label: str
