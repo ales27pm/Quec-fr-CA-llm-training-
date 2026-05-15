@@ -65,6 +65,44 @@ Review licensing/jurisdiction before using downloaded text for an actual trainin
 ## T21 Curated Split
 Use `qfr validate-split-policy` and `qfr split-curated-corpus` to produce `reports/curated_splits/*` from accepted curated corpus only.
 
+## Dolphin3 + Unsloth local training path
+
+Use this path when you want to continue Dolphin's existing instruction/personality tuning. The correct non-GGUF training base is `dphn/Dolphin3.0-Qwen2.5-3b`. The clean upstream base is `Qwen/Qwen2.5-3B`, useful for ablations only. The GGUF model `bartowski/Dolphin3.0-Qwen2.5-3b-GGUF` remains runtime-only and must not be used as the training source.
+
+See:
+
+- `project/model_selection.dolphin3_unsloth.yaml`
+- `docs/dolphin3_unsloth_training.md`
+- `requirements/training-dolphin3-unsloth.txt`
+- `scripts/train_qfr_dolphin3_unsloth_lora.py`
+- `scripts/export_qfr_dolphin3_unsloth_gguf.py`
+
+Smoke-test commands:
+
+```bash
+python3 -m venv .venv-unsloth
+source .venv-unsloth/bin/activate
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements/training-dolphin3-unsloth.txt
+
+python scripts/train_qfr_dolphin3_unsloth_lora.py \
+  --base-model dphn/Dolphin3.0-Qwen2.5-3b \
+  --train reports/curated_splits/train.jsonl \
+  --eval reports/curated_splits/test.jsonl \
+  --output-dir models/qfr-dolphin3-qwen25-3b-lora-smoke \
+  --max-steps 10
+```
+
+Direct Unsloth GGUF export after training:
+
+```bash
+python scripts/export_qfr_dolphin3_unsloth_gguf.py \
+  --base-model dphn/Dolphin3.0-Qwen2.5-3b \
+  --adapter models/qfr-dolphin3-qwen25-3b-lora-smoke \
+  --merged-16bit-dir models/qfr-dolphin3-qwen25-3b-merged \
+  --gguf-dir models/qfr-dolphin3-qwen25-3b-gguf \
+  --quantization q4_k_m
+```
 
 ## Fresh checkout
 Install dependencies before any `qfr` or governance commands:
