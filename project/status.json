@@ -114,6 +114,12 @@
       "goal": "Corpus source manifest and ingestion contract",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T20",
+      "goal": "Corpus curation policy and quality scoring contract",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

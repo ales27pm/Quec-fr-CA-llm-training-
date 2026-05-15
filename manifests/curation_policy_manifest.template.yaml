@@ -1,0 +1,44 @@
+kind: curation_policy_manifest
+schema_version: "1.0.0"
+primary_language: fr-CA
+policy_id: qfr_curation_policy_v1
+description: Deterministic scoring and labeling policy for ingested fr-CA corpus records.
+scoring:
+  base_score: 1.0
+  marker_weights:
+    courriel: 0.5
+    fin de semaine: 0.5
+    magasiner: 0.4
+    dépanneur: 0.4
+    char: 0.3
+    chu: 0.3
+    icitte: 0.3
+    pantoute: 0.3
+  penalties:
+    email: 0.6
+    week-end: 0.6
+    voiture: 0.4
+    excessive_uppercase_ratio: 0.5
+    too_short: 0.7
+    duplicate_text: 0.8
+    low_fr_ca_marker_score: 0.4
+  thresholds:
+    accept_min_score: 1.4
+    review_min_score: 0.8
+    quarantine_below_score: 0.2
+    reject_below_score: -0.2
+  blocking_rules:
+    - rule_id: block_holdout_reference
+      description: Block records that explicitly mention holdout benchmark identifiers.
+      classification: rejected
+      pattern: qfrblimp
+  review_rules:
+    - rule_id: review_personal_data_placeholder
+      description: Placeholder policy for potential personal data indicators.
+      classification: review_required
+      pattern: "[pii_review]"
+  quarantine_rules:
+    - rule_id: quarantine_policy_placeholder
+      description: Placeholder quarantine policy for unresolved licensing markers.
+      classification: quarantine
+      pattern: "[license_review]"

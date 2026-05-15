@@ -31,3 +31,6 @@ Use legacy + package commands to generate deterministic artifacts under `reports
 
 - Validate corpus source contract: `qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml`.
 - Ingest contract-approved local corpus fixtures: `qfr ingest-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml --out reports/corpus_ingestion/harvest.jsonl --report reports/corpus_ingestion/report.json --min-chars 20`.
+
+- Validate curation policy: `qfr validate-curation-policy --policy manifests/curation_policy_manifest.template.yaml`.
+- Curate ingested corpus deterministically: `qfr curate-corpus --input reports/corpus_ingestion/harvest.jsonl --policy manifests/curation_policy_manifest.template.yaml --out-dir reports/corpus_curation`.

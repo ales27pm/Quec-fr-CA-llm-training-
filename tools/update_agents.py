@@ -39,7 +39,9 @@ TASK_FILES = {
     "T17": ROOT / "src" / "qfr_pipeline" / "legacy_diagnostics.py",
     "T18": ROOT / "src" / "qfr_pipeline" / "data_pipeline.py",
     "T19": ROOT / "src" / "qfr_pipeline" / "corpus_sources.py",
+    "T20": ROOT / "src" / "qfr_pipeline" / "curation_policy.py",
 }
+
 def icon(status: str) -> str:
     return {
         "fully_implemented": "✅ fully_implemented",

@@ -4,6 +4,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
+from qfr_pipeline.corpus_sources import ingest_corpus_sources, validate_corpus_source_manifest
+from qfr_pipeline.curation_policy import curate_ingested_corpus, validate_curation_policy_manifest
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
 from qfr_pipeline.io import write_json
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
@@ -49,6 +51,7 @@ class ReleaseCandidateReport:
     release_report_summary: dict[str, Any] | None = None
     diagnostics_summary: dict[str, Any] | None = None
     minimal_pair_summary: dict[str, Any] | None = None
+    curation_summary: dict[str, Any] | None = None
     blocking_failures: list[str] | None = None
 
     def to_json(self) -> dict[str, Any]:
@@ -60,6 +63,7 @@ class ReleaseCandidateReport:
             "release_report_summary": self.release_report_summary,
             "diagnostics_summary": self.diagnostics_summary,
             "minimal_pair_summary": self.minimal_pair_summary,
+            "curation_summary": self.curation_summary,
             "blocking_failures": self.blocking_failures or [],
         }
 
@@ -77,6 +81,8 @@ class ReleaseCandidateReport:
             lines.extend(["", "## Diagnostics summary", f"- OK: `{self.diagnostics_summary.get('ok')}`", f"- Phenomena: `{self.diagnostics_summary.get('phenomena')}`"])
         if self.minimal_pair_summary is not None:
             lines.extend(["", "## Minimal-pair summary", f"- LP9 records: `{self.minimal_pair_summary.get('lp9_records')}`", f"- LP20 records: `{self.minimal_pair_summary.get('lp20_records')}`"])
+        if self.curation_summary is not None:
+            lines.extend(["", "## Corpus curation summary", f"- Accepted: `{self.curation_summary.get('accepted')}`", f"- Review required: `{self.curation_summary.get('review_required')}`", f"- Quarantine: `{self.curation_summary.get('quarantine')}`", f"- Rejected: `{self.curation_summary.get('rejected')}`"])
         if self.blocking_failures:
             lines.extend(["", "## Blocking failures", *[f"- {x}" for x in self.blocking_failures]])
         return "\n".join(lines) + "\n"
@@ -92,6 +98,9 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "lp20_quality": "reports/minimal_pair_quality.lp20.json",
         "release_report_json": "reports/release_report.json",
         "release_report_md": "reports/release_report.md",
+        "corpus_ingestion_jsonl": "reports/corpus_ingestion/harvest.jsonl",
+        "corpus_ingestion_report": "reports/corpus_ingestion/report.json",
+        "corpus_curation_report": "reports/corpus_curation/report.json",
         "release_candidate_json": repo_relative_path(out_json),
         "release_candidate_md": repo_relative_path(out_md),
     }
@@ -100,6 +109,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
     release_summary: dict[str, Any] | None = None
     diag_summary: dict[str, Any] | None = None
     mp_summary: dict[str, Any] | None = None
+    curation_summary: dict[str, Any] | None = None
     det_ts = "project-status-last-updated:" + __import__("json").loads((ROOT / "project/status.json").read_text(encoding="utf-8")).get("last_updated", "unknown")
     try:
         repo_report = validate_repository(ROOT)
@@ -111,6 +121,26 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         validate_error_taxonomy_manifest(ROOT / "eval/lp9_error_taxonomy.yaml")
         validate_error_taxonomy_manifest(ROOT / "eval/lp20_error_taxonomy.yaml")
         stages.append(ReleaseCandidateStage(name="taxonomy_validation", ok=True, artifacts=[]))
+
+        corpus_manifest = ROOT / "manifests/corpus_source_manifest.template.yaml"
+        validate_corpus_source_manifest(corpus_manifest)
+        stages.append(ReleaseCandidateStage(name="corpus_source_validation", ok=True, artifacts=[]))
+
+        ingestion = ingest_corpus_sources(corpus_manifest, ROOT / artifacts["corpus_ingestion_jsonl"], min_chars=20)
+        from qfr_pipeline.corpus_sources import write_ingestion_report
+        write_ingestion_report(ingestion, ROOT / artifacts["corpus_ingestion_report"])
+        stages.append(ReleaseCandidateStage(name="corpus_ingestion", ok=ingestion.ok, artifacts=[artifacts["corpus_ingestion_jsonl"], artifacts["corpus_ingestion_report"]]))
+        if not ingestion.ok:
+            blocking_failures.append("corpus_ingestion")
+
+        curation_policy = ROOT / "manifests/curation_policy_manifest.template.yaml"
+        validate_curation_policy_manifest(curation_policy)
+        stages.append(ReleaseCandidateStage(name="curation_policy_validation", ok=True, artifacts=[repo_relative_path(curation_policy)]))
+
+        curation = curate_ingested_corpus(ROOT / artifacts["corpus_ingestion_jsonl"], curation_policy, ROOT / "reports/corpus_curation")
+        stages.append(ReleaseCandidateStage(name="corpus_curation", ok=curation.ok, artifacts=list(curation.outputs.values()), details={"accepted": curation.accepted, "review_required": curation.review_required, "quarantine": curation.quarantine, "rejected": curation.rejected}))
+        if not curation.ok:
+            blocking_failures.append("corpus_curation")
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)
@@ -151,6 +181,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         if not rr.passed:
             blocking_failures.append("release_report")
         release_summary = {"passed": rr.passed, "missing_metrics": rr.missing_metrics}
+        curation_summary = {"accepted": curation.accepted, "review_required": curation.review_required, "quarantine": curation.quarantine, "rejected": curation.rejected}
     except Exception as exc:
         stages.append(ReleaseCandidateStage(name="runtime_exception", ok=False, artifacts=[], error=str(exc)))
         blocking_failures.append("runtime_exception")
@@ -163,6 +194,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         release_report_summary=release_summary,
         diagnostics_summary=diag_summary,
         minimal_pair_summary=mp_summary,
+        curation_summary=curation_summary,
         blocking_failures=blocking_failures,
     )
     write_json(out_json, report.to_json())
