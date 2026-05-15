@@ -1,6 +1,7 @@
 # Optional local training stack for continuing Dolphin3.0-Qwen2.5-3b with Unsloth.
 # Install this only on your training machine, not in deterministic CI.
 # Official Unsloth docs currently recommend `pip install unsloth` for the latest pip release.
+# We require `unsloth>=2025.0.0` as the minimum version for this Qwen2.5 continuation workflow.
 unsloth>=2025.0.0
 transformers>=4.45
 trl>=0.9.6

@@ -292,7 +292,7 @@ def main() -> int:
     started = time.time()
     report: dict[str, Any] = {
         "ok": True,
-        "catalog": str(catalog_path.relative_to(ROOT)),
+        "catalog": str(catalog_path.relative_to(ROOT)) if catalog_path.is_relative_to(ROOT) else str(catalog_path),
         "mode": args.mode,
         "dry_run": args.dry_run,
         "sources_total": 0,

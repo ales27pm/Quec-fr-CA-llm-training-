@@ -171,7 +171,8 @@ def show_status(defaults):
                 p = path / child
                 if p.exists():
                     extra += f" {child}={line_count(p)}"
-        print(f"- {key:28} {'yes' if path.exists() else 'no ':3} {path.relative_to(ROOT)}{extra}")
+        shown_path = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
+        print(f"- {key:28} {'yes' if path.exists() else 'no ':3} {shown_path}{extra}")
 
 
 def edit_defaults(defaults):
@@ -230,7 +231,7 @@ def main():
         show_status(defaults)
         return 0
     if args.full or args.full_with_smoke_training:
-        order = ["1", "2", "3", "5", "6", "7", "8", "9"]
+        order = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
         if args.full_with_smoke_training:
             order.append("10")
         run_sequence(order)
@@ -260,7 +261,7 @@ def main():
             label, cmds = menu[choice]
             all_results += run_group(label, [(label, c) for c in cmds], log_path)
         elif choice in {"11", "12"}:
-            order = ["1", "2", "3", "5", "6", "7", "8", "9"]
+            order = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
             if choice == "12":
                 order.append("10")
             run_sequence(order)

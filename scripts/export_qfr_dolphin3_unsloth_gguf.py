@@ -21,6 +21,11 @@ def main() -> int:
     parser.add_argument("--max-seq-length", type=int, default=1024)
     parser.add_argument("--load-in-4bit", action="store_true", default=True)
     parser.add_argument("--no-4bit", action="store_false", dest="load_in_4bit")
+    parser.add_argument(
+        "--trust-remote-code",
+        action="store_true",
+        help="Allow executing remote model code for trusted model repositories only.",
+    )
     args = parser.parse_args()
 
     from peft import PeftModel
@@ -31,7 +36,7 @@ def main() -> int:
         max_seq_length=args.max_seq_length,
         dtype=None,
         load_in_4bit=args.load_in_4bit,
-        trust_remote_code=True,
+        trust_remote_code=args.trust_remote_code,
     )
     model = PeftModel.from_pretrained(model, str(args.adapter))
 

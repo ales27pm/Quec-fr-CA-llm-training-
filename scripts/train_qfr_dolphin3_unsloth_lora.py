@@ -121,7 +121,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Continue Dolphin3.0-Qwen2.5-3b with Unsloth QLoRA on accepted Québec-French data.")
     parser.add_argument("--base-model", default="dphn/Dolphin3.0-Qwen2.5-3b", help="Non-GGUF Dolphin safetensors checkpoint.")
     parser.add_argument("--train", type=Path, default=Path("reports/curated_splits/train.jsonl"))
-    parser.add_argument("--eval", type=Path, default=Path("reports/curated_splits/test.jsonl"))
+    parser.add_argument("--eval", type=Path, default=Path("reports/curated_splits/dev.jsonl"))
     parser.add_argument("--output-dir", type=Path, default=Path("models/qfr-dolphin3-qwen25-3b-lora"))
     parser.add_argument("--merged-16bit-dir", type=Path, default=None, help="Optional: save merged 16-bit HF model here after training.")
     parser.add_argument("--gguf-dir", type=Path, default=None, help="Optional: export GGUF directory directly through Unsloth after training.")
@@ -133,10 +133,15 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--gradient-accumulation-steps", type=int, default=16)
     parser.add_argument("--lora-r", type=int, default=16)
-    parser.add_argument("--lora-alpha", type=int, default=32)
+    parser.add_argument("--lora-alpha", type=int, default=16)
     parser.add_argument("--lora-dropout", type=float, default=0.0)
     parser.add_argument("--load-in-4bit", action="store_true", default=True)
     parser.add_argument("--no-4bit", action="store_false", dest="load_in_4bit")
+    parser.add_argument(
+        "--trust-remote-code",
+        action="store_true",
+        help="Allow executing remote model code for trusted model repositories only.",
+    )
     parser.add_argument("--format", choices=["chat", "completion"], default="chat")
     parser.add_argument("--system-prompt", default=SYSTEM_PROMPT)
     parser.add_argument("--user-prompt", default=DEFAULT_USER_PROMPT)
@@ -156,7 +161,7 @@ def main() -> int:
         max_seq_length=args.max_seq_length,
         dtype=None,
         load_in_4bit=args.load_in_4bit,
-        trust_remote_code=True,
+        trust_remote_code=args.trust_remote_code,
     )
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
