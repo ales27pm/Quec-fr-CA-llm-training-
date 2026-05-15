@@ -1,0 +1,419 @@
+kind: corpus_source_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+sources:
+  # Direct-download public-domain-oriented text sources for initial local corpus expansion.
+  - source_id: gutenberg_maria_chapdelaine_fr_13525
+    name: Maria Chapdelaine by Louis Hémon
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/maria_chapdelaine_13525.txt
+    download_url: https://www.gutenberg.org/ebooks/13525.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 13525
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: French novel set in rural Québec/Lac-Saint-Jean; verify Project Gutenberg terms and local jurisdiction before release.
+
+  - source_id: gutenberg_au_large_de_l_ecueil_fr_17791
+    name: Au large de l'écueil: roman canadien by Hector Bernier
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/au_large_de_l_ecueil_17791.txt
+    download_url: https://www.gutenberg.org/ebooks/17791.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 17791; source notes reference BNQ/Bibliothèque Nationale du Québec
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: French-Canadian fiction; deterministic remote source candidate.
+
+  - source_id: gutenberg_un_amour_vrai_fr_14537
+    name: Un amour vrai by Laure Conan
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/un_amour_vrai_14537.txt
+    download_url: https://www.gutenberg.org/ebooks/14537.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 14537
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Laure Conan.
+
+  - source_id: gutenberg_l_influence_d_un_livre_fr_15305
+    name: L'influence d'un livre: Roman historique by Philippe Aubert de Gaspé
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/l_influence_d_un_livre_15305.txt
+    download_url: https://www.gutenberg.org/ebooks/15305.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 15305
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian historical fiction.
+
+  - source_id: gutenberg_angeline_de_montbrun_fr_17267
+    name: Angéline de Montbrun by Laure Conan
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/angeline_de_montbrun_17267.txt
+    download_url: https://www.gutenberg.org/ebooks/17267.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 17267
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Laure Conan.
+
+  - source_id: gutenberg_le_debutant_fr_19497
+    name: Le débutant by Arsène Bessette
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/le_debutant_19497.txt
+    download_url: https://www.gutenberg.org/ebooks/19497.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 19497
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Arsène Bessette.
+
+  - source_id: gutenberg_ce_que_disait_la_flamme_fr_14399
+    name: Ce que disait la flamme by Hector Bernier
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/ce_que_disait_la_flamme_14399.txt
+    download_url: https://www.gutenberg.org/ebooks/14399.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 14399
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: French-Canadian fiction by Hector Bernier.
+
+  - source_id: gutenberg_le_cap_au_diable_fr_13059
+    name: Le Cap au Diable, Légende Canadienne by Charles DeGuise
+    source_type: future_remote
+    path: data/corpus/raw/gutenberg/le_cap_au_diable_13059.txt
+    download_url: https://www.gutenberg.org/ebooks/13059.txt.utf-8
+    license: project_gutenberg_public_domain_us_verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    provenance: Project Gutenberg ebook 13059
+    collection_method: remote_text_download
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: false
+    quality_tier: bronze
+    register: formal
+    dialect_region: Canada_fr
+    notes: French Canadian legend/fiction candidate; review language fit after download.
+
+  # Québec-specific benchmarks and holdouts. Catalog only: never ingest into training.
+  - source_id: hf_graalul_qfrcore_qfrcort_holdout
+    name: QFrCoRE and QFrCoRT Québec regional expressions/terms benchmark
+    source_type: future_remote
+    path: data/eval/catalog/qfrcore_qfrcort.jsonl
+    repository_url: https://huggingface.co/datasets/graalul/QFrCoRE_QFrCoRT
+    hf_dataset_id: graalul/QFrCoRE_QFrCoRT
+    license: verify_dataset_card_before_use
+    license_url: https://huggingface.co/datasets/graalul/QFrCoRE_QFrCoRT
+    provenance: Hugging Face dataset graalul/QFrCoRE_QFrCoRT
+    collection_method: catalog_only_holdout
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    contains_holdout_material: true
+    holdout_only: true
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: gold
+    register: mixed
+    dialect_region: Quebec
+    notes: Evaluation benchmark only; do not train on QFrCoRE/QFrCoRT.
+
+  - source_id: github_qfrblimp_holdout
+    name: QFrBLiMP Québec-French minimal-pair benchmark
+    source_type: future_remote
+    path: data/eval/catalog/qfrblimp.jsonl
+    repository_url: https://github.com/davebulaval/QFrBLiMP
+    huggingface_url: https://huggingface.co/datasets/graalul/qfrblimp
+    paper_url: https://arxiv.org/abs/2509.25664
+    license: verify_repository_license_before_use
+    license_url: https://github.com/davebulaval/QFrBLiMP
+    provenance: QFrBLiMP repository and paper
+    collection_method: catalog_only_holdout
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    contains_holdout_material: true
+    holdout_only: true
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: gold
+    register: mixed
+    dialect_region: Quebec
+    notes: Benchmark of 1,761 minimal pairs across 20 Québec-French linguistic phenomena; evaluation only.
+
+  - source_id: hf_graalul_cole_public_holdout
+    name: COLE public benchmark suite Québec-specific tasks
+    source_type: future_remote
+    path: data/eval/catalog/cole_public.jsonl
+    repository_url: https://huggingface.co/datasets/graalul/COLE-public
+    hf_dataset_id: graalul/COLE-public
+    organization_url: https://huggingface.co/QuebecLLM
+    license: verify_dataset_card_before_use
+    license_url: https://huggingface.co/datasets/graalul/COLE-public
+    provenance: COLE public benchmark suite
+    collection_method: catalog_only_holdout
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    contains_holdout_material: true
+    holdout_only: true
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: gold
+    register: mixed
+    dialect_region: Quebec
+    notes: Benchmark/evaluation suite only; never include in train split.
+
+  # Québec/French-Canadian sources that need custom adapters, access review, or license review.
+  - source_id: hf_lyon_nlp_alloprof_candidate
+    name: AlloProf QA dataset formatted by lyon-nlp
+    source_type: future_remote
+    path: data/corpus/raw/huggingface/alloprof_lyon_nlp.jsonl
+    repository_url: https://huggingface.co/datasets/lyon-nlp/alloprof
+    hf_dataset_id: lyon-nlp/alloprof
+    license: verify_dataset_card_and_original_terms_before_training
+    license_url: https://huggingface.co/datasets/lyon-nlp/alloprof
+    provenance: Hugging Face dataset lyon-nlp/alloprof; original Québec educational help-site data
+    collection_method: future_huggingface_dataset_adapter
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: bronze
+    register: mixed
+    dialect_region: Quebec
+    notes: Potential QA/instruction corpus after license review and adapter implementation; not currently ingested.
+
+  - source_id: hf_antoinelb7_alloprof_original_candidate
+    name: AlloProf QA dataset original mirror
+    source_type: future_remote
+    path: data/corpus/raw/huggingface/alloprof_antoinelb7.jsonl
+    repository_url: https://huggingface.co/datasets/antoinelb7/alloprof
+    hf_dataset_id: antoinelb7/alloprof
+    license: verify_dataset_card_and_original_terms_before_training
+    license_url: https://huggingface.co/datasets/antoinelb7/alloprof
+    provenance: Hugging Face dataset antoinelb7/alloprof; original Québec educational help-site data
+    collection_method: future_huggingface_dataset_adapter
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: bronze
+    register: mixed
+    dialect_region: Quebec
+    notes: Potential QA/instruction corpus after license review and adapter implementation; not currently ingested.
+
+  - source_id: assnat_journal_debats_catalog
+    name: Assemblée nationale du Québec Journal des débats
+    source_type: future_remote
+    path: data/corpus/raw/assnat/journal_debats.txt
+    repository_url: https://www.assnat.qc.ca/en/
+    license: verify_official_terms_before_training
+    license_url: https://www.assnat.qc.ca/en/
+    provenance: Assemblée nationale du Québec official website
+    collection_method: future_official_site_adapter
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: silver
+    register: formal
+    dialect_region: Quebec
+    notes: Strong institutional Québec French candidate, but requires official adapter and legal review before training use.
+
+  - source_id: fdlq_crifuq_catalog
+    name: Fonds de données linguistiques du Québec
+    source_type: future_remote
+    path: data/corpus/raw/fdlq/fdlq.txt
+    repository_url: https://fdlq.crifuq.usherbrooke.ca/
+    license: access_restricted_verify_crifuq_terms
+    license_url: https://fdlq.crifuq.usherbrooke.ca/
+    provenance: CRIFUQ / Université de Sherbrooke FDLQ
+    collection_method: catalog_only_access_request
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: gold
+    register: mixed
+    dialect_region: Quebec
+    notes: Large Québec linguistic repository candidate; access/terms must be reviewed before any download or training.
+
+  - source_id: github_ikblab_cereales_asr_catalog
+    name: CEREALES Québec accented spontaneous speech corpus
+    source_type: future_remote
+    path: data/speech/catalog/cereales.jsonl
+    repository_url: https://github.com/IKBLab/CEREALES
+    paper_url: https://www.isca-archive.org/interspeech_2025/maison25_interspeech.pdf
+    license: verify_repository_license_before_use
+    license_url: https://github.com/IKBLab/CEREALES
+    provenance: IKBLab/CEREALES repository and Interspeech 2025 paper
+    collection_method: catalog_only_speech_corpus
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: true
+    requires_review: true
+    quality_tier: gold
+    register: mixed
+    dialect_region: Quebec
+    notes: Speech/ASR corpus, not plain text LLM corpus; requires modality-specific pipeline and privacy/license review.
+
+  - source_id: github_clac_lab_quebecllm_cpt_pipeline
+    name: QuebecLLM-CPT training and evaluation pipeline
+    source_type: future_remote
+    path: data/pipelines/catalog/quebecllm_cpt.json
+    repository_url: https://github.com/CLaC-Lab/QuebecLLM-CPT
+    organization_url: https://huggingface.co/QuebecLLM
+    license: verify_repository_license_before_reuse
+    license_url: https://github.com/CLaC-Lab/QuebecLLM-CPT
+    provenance: CLaC-Lab/QuebecLLM-CPT
+    collection_method: catalog_only_pipeline_reference
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: silver
+    register: mixed
+    dialect_region: Quebec
+    notes: Pipeline/reference repository, not a corpus source.
+
+  # Broader French/MTEB-style datasets from the provided list. Catalog-only unless a future task adds adapters and license review.
+  - source_id: hf_rbawden_diabla_catalog
+    name: DiaBLa informal French dialogues
+    source_type: future_remote
+    path: data/corpus/raw/huggingface/diabla.jsonl
+    repository_url: https://huggingface.co/datasets/rbawden/DiaBLa
+    hf_dataset_id: rbawden/DiaBLa
+    license: verify_dataset_card_before_training
+    license_url: https://huggingface.co/datasets/rbawden/DiaBLa
+    provenance: Hugging Face dataset rbawden/DiaBLa
+    collection_method: future_huggingface_dataset_adapter
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: bronze
+    register: informal
+    dialect_region: unknown
+    notes: Broader French informal dialogue candidate, not Québec-specific.
+
+  - source_id: hf_mteb_amazon_reviews_fr_catalog
+    name: Amazon Reviews Multi French subset
+    source_type: future_remote
+    path: data/corpus/raw/huggingface/amazon_reviews_multi_fr.jsonl
+    repository_url: https://huggingface.co/datasets/mteb/amazon_reviews_multi/viewer/fr
+    hf_dataset_id: mteb/amazon_reviews_multi
+    license: verify_dataset_card_before_training
+    license_url: https://huggingface.co/datasets/mteb/amazon_reviews_multi
+    provenance: Hugging Face dataset mteb/amazon_reviews_multi French subset
+    collection_method: future_huggingface_dataset_adapter
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    contains_holdout_material: false
+    holdout_only: false
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: bronze
+    register: mixed
+    dialect_region: unknown
+    notes: Broad French review data candidate; not Québec-specific and requires license/task review.
+
+  - source_id: hf_stsb_multi_mt_catalog
+    name: STS Benchmark multilingual French data
+    source_type: future_remote
+    path: data/eval/catalog/stsb_multi_mt.jsonl
+    repository_url: https://huggingface.co/datasets/stsb_multi_mt
+    hf_dataset_id: stsb_multi_mt
+    license: verify_dataset_card_before_use
+    license_url: https://huggingface.co/datasets/stsb_multi_mt
+    provenance: Hugging Face dataset stsb_multi_mt
+    collection_method: catalog_only_benchmark
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    contains_holdout_material: true
+    holdout_only: true
+    contains_personal_data: false
+    requires_review: true
+    quality_tier: silver
+    register: mixed
+    dialect_region: unknown
+    notes: Benchmark/evaluation candidate, not training data.
