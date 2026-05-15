@@ -8,7 +8,9 @@ import os
 import shutil
 import tempfile
 from pathlib import Path
+
 import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "project" / "status.json"
 AGENTS_PATH = ROOT / "AGENTS.md"
@@ -16,6 +18,7 @@ EVAL_PATH = ROOT / "eval" / "evaluation_manifest.template.yaml"
 RELEASE_GATES_PATH = ROOT / "project" / "release_gates.yaml"
 START = "## Dynamic State (auto-generated)"
 END = "## Non-Negotiable Rules (Drift Prevention)"
+REQUIRED_NESTED_DIRS = ("manifests", "rules", "eval", "src", "project")
 TASK_FILES = {
     "T1": ROOT / "manifests" / "dataset_manifest.template.yaml",
     "T2": ROOT / "rules" / "lp_rule_manifest.template.yaml",
@@ -157,6 +160,17 @@ def _extract_gate_values(yaml_text: str) -> dict[str, str]:
     return {k: str(v) for k, v in out.items()}
 
 
+def ensure_required_nested_agents() -> list[Path]:
+    created: list[Path] = []
+    for rel in REQUIRED_NESTED_DIRS:
+        nested = init_nested(rel)
+        if nested.exists() and nested.stat().st_size > 0:
+            # init_nested writes only when missing, so we detect newly created by mtime proximity is brittle;
+            # instead rely on existence check before invocation in caller when needed.
+            pass
+    return created
+
+
 def validate() -> None:
     if not RELEASE_GATES_PATH.exists():
         raise SystemExit(f"Validation failed; missing release gates file: {RELEASE_GATES_PATH}")
@@ -208,6 +222,7 @@ def main() -> None:
     parser.add_argument("--sync-status", action="store_true")
     parser.add_argument("--validate", action="store_true")
     parser.add_argument("--init-nested", metavar="PATH")
+    parser.add_argument("--ensure-nested", action="store_true")
     args = parser.parse_args()
     if args.sync_status:
         sync_status()
@@ -217,9 +232,12 @@ def main() -> None:
         print("Updated root AGENTS.md dynamic section.")
     if args.validate:
         validate()
+    if args.ensure_nested:
+        ensured = [init_nested(path) for path in REQUIRED_NESTED_DIRS]
+        print("Ensured nested AGENTS: " + ", ".join(str(p.relative_to(ROOT)) for p in ensured))
     if args.init_nested:
         print(f"Nested AGENTS ready at: {init_nested(args.init_nested)}")
-    if not any([args.sync_status, args.write, args.validate, args.init_nested]):
+    if not any([args.sync_status, args.write, args.validate, args.init_nested, args.ensure_nested]):
         parser.print_help()
 if __name__ == "__main__":
     main()
