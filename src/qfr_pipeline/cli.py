@@ -216,9 +216,13 @@ def release_candidate(
 
 
 
-@app.command("harvest")
-def harvest_cmd(inputs: list[Path] = typer.Option(..., "--inputs"), out: Path = typer.Option(..., "--out"), min_chars: int = typer.Option(20, "--min-chars"), dedupe_batch_size: int = typer.Option(0, "--dedupe-batch-size")):
-    print(harvest(inputs, out, min_chars, dedupe_batch_size))
+@app.command("harvest", context_settings={"allow_extra_args": True, "ignore_unknown_options": False})
+def harvest_cmd(ctx: typer.Context, inputs: list[Path] = typer.Option([], "--inputs"), out: Path = typer.Option(..., "--out"), min_chars: int = typer.Option(20, "--min-chars"), dedupe_batch_size: int = typer.Option(0, "--dedupe-batch-size")):
+    extra_inputs = [Path(arg) for arg in ctx.args if not str(arg).startswith("-")]
+    all_inputs = [*inputs, *extra_inputs]
+    if not all_inputs:
+        raise typer.BadParameter("At least one input path is required via --inputs")
+    print(harvest(all_inputs, out, min_chars, dedupe_batch_size))
 
 
 @app.command("curate")

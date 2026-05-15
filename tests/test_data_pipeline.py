@@ -38,6 +38,20 @@ def test_curate_and_edit_and_split_and_recipe(tmp_path: Path):
     assert "lp7_post_alignment_max_drop_ratio" in (tmp_path / "recipe.yaml").read_text(encoding="utf-8")
 
 
+def test_write_training_recipe_rejects_non_mapping_alignment(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    splits = tmp_path / "splits"
+    splits.mkdir()
+    for name in ("train", "dev", "test"):
+        (splits / f"{name}.jsonl").write_text("{}\n", encoding="utf-8")
+    bad = tmp_path / "bad_gates.yaml"
+    bad.write_text("alignment: []\n", encoding="utf-8")
+    import qfr_pipeline.data_pipeline as dp
+
+    monkeypatch.setattr(dp, "RELEASE_GATES_PATH", bad)
+    with pytest.raises(SystemExit, match="alignment"):
+        write_training_recipe(splits, tmp_path / "recipe.yaml")
+
+
 def test_monitor_lp7():
     ok = monitor_lp7(0.95, 0.94, ROOT / "project/release_gates.yaml")
     assert ok["rollback_required"] is False
@@ -49,15 +63,27 @@ def test_monitor_lp7():
 
 def test_legacy_wrapper_and_qfr_cli(tmp_path: Path):
     harvest_out = tmp_path / "h1.jsonl"
-    subprocess.run([sys.executable, "tools/pipeline_ops.py", "harvest", "--inputs", "fixtures/data_pipeline/raw_sample_1.txt", "fixtures/data_pipeline/raw_sample_2.txt", "--out", str(harvest_out), "--min-chars", "20"], check=True)
+    subprocess.run([sys.executable, str(ROOT / "tools/pipeline_ops.py"), "harvest", "--inputs", str(ROOT / "fixtures/data_pipeline/raw_sample_1.txt"), str(ROOT / "fixtures/data_pipeline/raw_sample_2.txt"), "--out", str(harvest_out), "--min-chars", "20"], check=True)
     pkg_out = tmp_path / "h2.jsonl"
     harvest([ROOT / "fixtures/data_pipeline/raw_sample_1.txt", ROOT / "fixtures/data_pipeline/raw_sample_2.txt"], pkg_out, 20)
     assert harvest_out.read_text(encoding="utf-8") == pkg_out.read_text(encoding="utf-8")
 
     rc = CliRunner()
     out = tmp_path / "lp7.json"
-    r = rc.invoke(app, ["monitor-lp7", "--pre", "0.95", "--post", "0.94", "--release-gates", "project/release_gates.yaml", "--out", str(out)])
+    r = rc.invoke(app, ["monitor-lp7", "--pre", "0.95", "--post", "0.94", "--release-gates", str(ROOT / "project/release_gates.yaml"), "--out", str(out)])
     assert r.exit_code == 0 and out.exists()
+
+
+def test_harvest_cli_accepts_both_input_forms(tmp_path: Path):
+    rc = CliRunner()
+    out1 = tmp_path / "h1.jsonl"
+    out2 = tmp_path / "h2.jsonl"
+    a = str(ROOT / "fixtures/data_pipeline/raw_sample_1.txt")
+    b = str(ROOT / "fixtures/data_pipeline/raw_sample_2.txt")
+    r1 = rc.invoke(app, ["harvest", "--inputs", a, b, "--out", str(out1), "--min-chars", "20"])
+    r2 = rc.invoke(app, ["harvest", "--inputs", a, "--inputs", b, "--out", str(out2), "--min-chars", "20"])
+    assert r1.exit_code == 0 and r2.exit_code == 0
+    assert out1.read_text(encoding="utf-8") == out2.read_text(encoding="utf-8")
 
 
 def test_pipeline_ops_is_wrapper_only():

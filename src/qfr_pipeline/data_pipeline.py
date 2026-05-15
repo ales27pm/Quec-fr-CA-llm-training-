@@ -132,7 +132,13 @@ def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:
         raise SystemExit(f"Missing split files in {data_dir}: {missing}")
     gates = yaml.safe_load(RELEASE_GATES_PATH.read_text(encoding="utf-8")) or {}
     lp7_key = "alignment.lp7_standard_negation_max_post_alignment_drop_ratio"
-    if not isinstance(gates, dict) or "alignment" not in gates or lp7_key.split(".")[-1] not in gates["alignment"]:
+    if not isinstance(gates, dict):
+        raise SystemExit(f"Malformed release gates in {RELEASE_GATES_PATH}: expected top-level mapping")
+    alignment = gates.get("alignment")
+    if not isinstance(alignment, dict):
+        raise SystemExit(f"Malformed release gates in {RELEASE_GATES_PATH}: `alignment` must be a mapping")
+    gate_name = lp7_key.split(".")[-1]
+    if gate_name not in alignment:
         raise SystemExit(f"Missing `{lp7_key}` in {RELEASE_GATES_PATH}")
     recipe = {
         "model": {"base": "mistral-7b-instruct", "dtype": "float16"},
@@ -141,7 +147,7 @@ def write_training_recipe(data_dir: Path, out_yaml: Path) -> None:
         "alignment": {
             "include_qfrblimp_gold_pairs": True,
             "lp7_post_alignment_max_drop_key": lp7_key,
-            "lp7_post_alignment_max_drop_ratio": gates["alignment"]["lp7_standard_negation_max_post_alignment_drop_ratio"],
+            "lp7_post_alignment_max_drop_ratio": alignment["lp7_standard_negation_max_post_alignment_drop_ratio"],
         },
     }
     out_yaml.parent.mkdir(parents=True, exist_ok=True)
