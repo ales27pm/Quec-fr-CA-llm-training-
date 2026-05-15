@@ -1,0 +1,7 @@
+# Optional dataset materialization stack.
+# Install only when fetching/converting external datasets locally.
+datasets>=2.20
+huggingface_hub>=0.24
+requests>=2.32
+pyyaml>=6.0
+tqdm>=4.66

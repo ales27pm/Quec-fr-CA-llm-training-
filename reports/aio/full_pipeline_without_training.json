@@ -1,0 +1,85 @@
+{
+  "kind": "qfr_full_pipeline_without_training_run",
+  "schema_version": "1.0",
+  "status": "completed_with_environment_notes",
+  "branch": "feat/dolphin3-unsloth-training-v2",
+  "training_executed": false,
+  "gpu_training_executed": false,
+  "commands_executed": [
+    {"command": "python3 -m pip install -e .[dev]", "ok": true},
+    {"command": "python3 tools/update_agents.py --ensure-nested", "ok": true},
+    {"command": "python3 tools/update_agents.py --validate", "ok": true},
+    {"command": "python3 tools/update_agents.py --write", "ok": true},
+    {"command": "qfr validate", "ok": true},
+    {"command": "qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml", "ok": true},
+    {"command": "qfr ingest-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml --out reports/corpus_ingestion/harvest.jsonl --report reports/corpus_ingestion/report.json --min-chars 20", "ok": true},
+    {"command": "qfr validate-curation-policy --policy manifests/curation_policy_manifest.template.yaml", "ok": true},
+    {"command": "qfr curate-corpus --input reports/corpus_ingestion/harvest.jsonl --policy manifests/curation_policy_manifest.template.yaml --out-dir reports/corpus_curation", "ok": true},
+    {"command": "qfr validate-split-policy --policy manifests/split_policy_manifest.template.yaml", "ok": true},
+    {"command": "qfr split-curated-corpus --input reports/corpus_curation/accepted.jsonl --policy manifests/split_policy_manifest.template.yaml --out-dir reports/curated_splits", "ok": true},
+    {"command": "qfr validate-training-export --manifest manifests/training_export_manifest.template.yaml", "ok": true},
+    {"command": "qfr export-training-dataset --manifest manifests/training_export_manifest.template.yaml --out-dir reports/training_export", "ok": true},
+    {"command": "qfr diagnose-eval --input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --taxonomy eval/lp9_error_taxonomy.yaml --taxonomy eval/lp20_error_taxonomy.yaml --out-json reports/diagnostics.lp9_lp20.json --out-md reports/diagnostics.lp9_lp20.md", "ok": true},
+    {"command": "python tools/pipeline_ops.py diagnose-semantic --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json", "ok": true},
+    {"command": "qfr diagnose-legacy-csv --in-csv fixtures/diagnostics/lp9_lp20_legacy_semantic.csv --out-json reports/diagnostics.legacy_semantic.json", "ok": true},
+    {"command": "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml --out data/generated/minimal_pairs.lp9.jsonl --report reports/minimal_pair_quality.lp9.json", "ok": true},
+    {"command": "qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp9.jsonl --context rules/lp9_lexical_semantics.contexts.yaml --report reports/minimal_pair_quality.lp9.json", "ok": true},
+    {"command": "qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp20_orphaned_preposition.contexts.yaml --out data/generated/minimal_pairs.lp20.jsonl --report reports/minimal_pair_quality.lp20.json", "ok": true},
+    {"command": "qfr validate-minimal-pairs --input data/generated/minimal_pairs.lp20.jsonl --context rules/lp20_orphaned_preposition.contexts.yaml --report reports/minimal_pair_quality.lp20.json", "ok": true},
+    {"command": "qfr release-report --metrics fixtures/valid_metrics.json --diagnostics reports/diagnostics.lp9_lp20.json --out-json reports/release_report.json --out-md reports/release_report.md", "ok": true},
+    {"command": "qfr release-candidate --metrics fixtures/valid_metrics.json --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md", "ok": true},
+    {"command": "python tools/pipeline_ops.py harvest --inputs fixtures/data_pipeline/raw_sample_1.txt fixtures/data_pipeline/raw_sample_2.txt --out reports/data_pipeline_demo/harvest.jsonl --min-chars 20", "ok": true},
+    {"command": "qfr curate --in reports/data_pipeline_demo/harvest.jsonl --out reports/data_pipeline_demo/curated.jsonl --min-fr-ca-score 0.05", "ok": true},
+    {"command": "qfr edit-normative --in reports/data_pipeline_demo/curated.jsonl --out reports/data_pipeline_demo/edited.jsonl", "ok": true},
+    {"command": "qfr split --in reports/data_pipeline_demo/edited.jsonl --out-dir reports/data_pipeline_demo/splits --seed 42", "ok": true},
+    {"command": "qfr training-recipe --data-dir reports/data_pipeline_demo/splits --out reports/data_pipeline_demo/training_recipe.yaml", "ok": true},
+    {"command": "qfr monitor-lp7 --pre 0.95 --post 0.94 --release-gates project/release_gates.yaml --out reports/data_pipeline_demo/lp7_monitor.json", "ok": true}
+  ],
+  "not_executed": [
+    {"command": "python scripts/train_qfr_dolphin3_unsloth_lora.py ...", "reason": "excluded by user request: except training"},
+    {"command": "python scripts/export_qfr_dolphin3_unsloth_gguf.py ...", "reason": "requires trained adapter; excluded with training"},
+    {"command": "python tools/download_real_corpus_sources.py ...", "reason": "network/DNS unavailable in execution environment; would only generate failure artifacts here"},
+    {"command": "python scripts/materialize_external_datasets.py ...", "reason": "external network/Hugging Face unavailable in execution environment; catalog/code committed separately"},
+    {"command": "bash scripts/run_local_validation.sh", "reason": "interactive environment enforced a 60-second execution interrupt; equivalent component commands above passed"}
+  ],
+  "record_counts": {
+    "reports/corpus_ingestion/harvest.jsonl": 3,
+    "reports/corpus_curation/accepted.jsonl": 2,
+    "reports/corpus_curation/rejected.jsonl": 1,
+    "reports/curated_splits/train.jsonl": 1,
+    "reports/curated_splits/dev.jsonl": 0,
+    "reports/curated_splits/test.jsonl": 1,
+    "data/generated/minimal_pairs.lp9.jsonl": 3,
+    "data/generated/minimal_pairs.lp20.jsonl": 8,
+    "reports/data_pipeline_demo/harvest.jsonl": 5,
+    "reports/data_pipeline_demo/curated.jsonl": 3,
+    "reports/data_pipeline_demo/edited.jsonl": 3,
+    "reports/data_pipeline_demo/splits/train.jsonl": 2,
+    "reports/data_pipeline_demo/splits/dev.jsonl": 0,
+    "reports/data_pipeline_demo/splits/test.jsonl": 1
+  },
+  "training_export": {
+    "ok": true,
+    "dataset_name": "quebec-fr-curated-training",
+    "dataset_version": "0.1.0",
+    "records_total": 2,
+    "train": 1,
+    "dev": 0,
+    "test": 1,
+    "aggregate_sha256": "0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13"
+  },
+  "release_candidate": {
+    "ok": true,
+    "artifact_json": "reports/release_candidate.json",
+    "artifact_md": "reports/release_candidate.md"
+  },
+  "deterministic_artifact_drift": {
+    "checked_against_uploaded_main_zip_baseline": true,
+    "generated_artifacts_changed": false,
+    "note": "Regenerated deterministic artifacts matched the committed baseline; this run report is the committed generated artifact for this execution."
+  },
+  "environment_notes": [
+    "The execution environment printed a spreadsheet runtime warmup warning from artifact_tool at Python startup; all qfr commands reported exit code 0 despite that unrelated startup warning.",
+    "The environment could not resolve github.com, so remote corpus download and Hugging Face materialization were not executed here."
+  ]
+}

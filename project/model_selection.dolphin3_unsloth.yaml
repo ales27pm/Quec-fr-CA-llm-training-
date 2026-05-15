@@ -1,0 +1,69 @@
+kind: model_selection_config
+schema_version: "1.0"
+selection_id: dolphin3_qwen25_3b_qfr_unsloth_v1
+primary_language: fr-CA
+purpose: Continue Dolphin3.0-Qwen2.5-3b instruction/personality tuning with Québec-French accepted curated data using Unsloth QLoRA.
+
+models:
+  continued_instruction_base:
+    repo_id: dphn/Dolphin3.0-Qwen2.5-3b
+    format: safetensors
+    architecture: qwen2
+    parameters: 3.0859B
+    role: preferred_training_base_when_preserving_dolphin_personality
+    reason: This is the non-GGUF Dolphin checkpoint. It preserves Dolphin's existing instruction/personality tuning and can be continued with LoRA/QLoRA.
+  upstream_clean_base:
+    repo_id: Qwen/Qwen2.5-3B
+    format: safetensors
+    architecture: qwen2
+    parameters: 3.0859B
+    role: ablation_or_clean_base_only
+    reason: This is the upstream model behind Dolphin. Use it only if you want to remove Dolphin behaviour.
+  runtime_reference_gguf:
+    repo_id: bartowski/Dolphin3.0-Qwen2.5-3b-GGUF
+    format: gguf
+    role: runtime_reference_only
+    reason: GGUF is a quantized inference format and is not the training source.
+
+training:
+  framework: unsloth
+  method: qlora
+  base_model: dphn/Dolphin3.0-Qwen2.5-3b
+  input_train: reports/curated_splits/train.jsonl
+  input_eval: reports/curated_splits/test.jsonl
+  output_adapter: models/qfr-dolphin3-qwen25-3b-lora
+  max_seq_length: 1024
+  load_in_4bit: true
+  lora:
+    r: 16
+    alpha: 16
+    dropout: 0.0
+    target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+  rtx_2070_8gb_defaults:
+    per_device_train_batch_size: 1
+    gradient_accumulation_steps: 16
+    fp16: true
+    bf16: false
+    max_steps_smoke_test: 10
+
+export:
+  merged_16bit_dir: models/qfr-dolphin3-qwen25-3b-merged
+  gguf_dir: models/qfr-dolphin3-qwen25-3b-gguf
+  recommended_quantization: q4_k_m
+  alternative_quantizations:
+    - q5_k_m
+    - q8_0
+
+safety:
+  do_not_train_from_gguf: true
+  require_curated_accepted_records: true
+  require_holdout_exclusion: true
+  preserve_quebec_french_markers: true
+  avoid_dialect_neutralization: true

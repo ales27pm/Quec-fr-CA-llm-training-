@@ -1,0 +1,702 @@
+kind: external_dataset_catalog
+schema_version: "1.0"
+primary_language: fr-CA
+policy:
+  default_training_requires_license_review: true
+  default_review_required: true
+  benchmark_sets_are_holdout_only: true
+  speech_sets_require_modality_adapter: true
+  web_forums_require_tos_and_robots_review: true
+sources:
+  # Direct text training candidates already supported by tools/download_real_corpus_sources.py.
+  - source_id: gutenberg_maria_chapdelaine_fr_13525
+    name: Maria Chapdelaine by Louis Hémon
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/13525.txt.utf-8
+    output_path: data/external_materialized/gutenberg/maria_chapdelaine_13525.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: mixed
+    notes: Public-domain-oriented literary source set in rural Québec/Lac-Saint-Jean. Verify jurisdiction before release.
+
+  - source_id: gutenberg_au_large_de_l_ecueil_fr_17791
+    name: "Au large de l'écueil: roman canadien by Hector Bernier"
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/17791.txt.utf-8
+    output_path: data/external_materialized/gutenberg/au_large_de_l_ecueil_17791.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: mixed
+    notes: French-Canadian fiction candidate.
+
+  - source_id: gutenberg_un_amour_vrai_fr_14537
+    name: Un amour vrai by Laure Conan
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/14537.txt.utf-8
+    output_path: data/external_materialized/gutenberg/un_amour_vrai_14537.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: formal
+    notes: French-Canadian fiction by Laure Conan.
+
+  - source_id: gutenberg_l_influence_d_un_livre_fr_15305
+    name: "L'influence d'un livre: Roman historique by Philippe Aubert de Gaspé"
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/15305.txt.utf-8
+    output_path: data/external_materialized/gutenberg/l_influence_d_un_livre_15305.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: formal
+    notes: French-Canadian historical fiction candidate.
+
+  - source_id: gutenberg_angeline_de_montbrun_fr_17267
+    name: Angéline de Montbrun by Laure Conan
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/17267.txt.utf-8
+    output_path: data/external_materialized/gutenberg/angeline_de_montbrun_17267.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: formal
+    notes: French-Canadian fiction by Laure Conan.
+
+  - source_id: gutenberg_le_debutant_fr_19497
+    name: Le débutant by Arsène Bessette
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/19497.txt.utf-8
+    output_path: data/external_materialized/gutenberg/le_debutant_19497.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: mixed
+    notes: French-Canadian fiction by Arsène Bessette.
+
+  - source_id: gutenberg_ce_que_disait_la_flamme_fr_14399
+    name: Ce que disait la flamme by Hector Bernier
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/14399.txt.utf-8
+    output_path: data/external_materialized/gutenberg/ce_que_disait_la_flamme_14399.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Quebec
+    register: formal
+    notes: French-Canadian fiction by Hector Bernier.
+
+  - source_id: gutenberg_le_cap_au_diable_fr_13059
+    name: Le Cap au Diable, Légende Canadienne by Charles DeGuise
+    category: literary_training_candidate
+    modality: text
+    adapter: remote_text
+    url: https://www.gutenberg.org/ebooks/13059.txt.utf-8
+    output_path: data/external_materialized/gutenberg/le_cap_au_diable_13059.jsonl
+    license_status: verify_jurisdiction
+    license_url: https://www.gutenberg.org/policy/license.html
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: false
+    license_reviewed: false
+    dialect_region: Canada_fr
+    register: formal
+    notes: French Canadian legend/fiction candidate.
+
+  # Québec-specific evaluation benchmarks. These are never training data.
+  - source_id: qfrcore_qfrcort_holdout
+    name: QFrCoRE and QFrCoRT Québec regional expressions and terms
+    category: benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: graalul/QFrCoRE_QFrCoRT
+    output_path: data/external_materialized/eval/qfrcore_qfrcort.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/graalul/QFrCoRE_QFrCoRT
+    dialect_region: Quebec
+    register: mixed
+    text_fields: []
+    notes: Québec idiom/term benchmark. Evaluation only.
+
+  - source_id: qfrblimp_holdout
+    name: QFrBLiMP Québec-French minimal-pair benchmark
+    category: benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: graalul/qfrblimp
+    repository_url: https://github.com/davebulaval/QFrBLiMP
+    output_path: data/external_materialized/eval/qfrblimp.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_repository_license
+    license_url: https://github.com/davebulaval/QFrBLiMP
+    dialect_region: Quebec
+    register: mixed
+    text_fields: []
+    notes: Holdout minimal-pair benchmark. Do not train on it.
+
+  - source_id: cole_public_holdout
+    name: COLE public Québec benchmark suite
+    category: benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: graalul/COLE-public
+    organization_url: https://huggingface.co/QuebecLLM
+    output_path: data/external_materialized/eval/cole_public.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/graalul/COLE-public
+    dialect_region: Quebec
+    register: mixed
+    text_fields: []
+    notes: Evaluation only. Protect against training contamination.
+
+  # Québec institutional / educational candidates requiring explicit license/adaptor review.
+  - source_id: alloprof_lyon_nlp_candidate
+    name: AlloProf formatted QA dataset by lyon-nlp
+    category: qa_training_candidate_review_required
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: lyon-nlp/alloprof
+    output_path: data/external_materialized/huggingface/alloprof_lyon_nlp.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card_and_original_terms
+    license_url: https://huggingface.co/datasets/lyon-nlp/alloprof
+    dialect_region: Quebec
+    register: mixed
+    text_fields: []
+    notes: Québec educational QA candidate. Requires license review before training use.
+
+  - source_id: alloprof_antoinelb7_candidate
+    name: AlloProf original QA mirror by antoinelb7
+    category: qa_training_candidate_review_required
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: antoinelb7/alloprof
+    output_path: data/external_materialized/huggingface/alloprof_antoinelb7.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card_and_original_terms
+    license_url: https://huggingface.co/datasets/antoinelb7/alloprof
+    dialect_region: Quebec
+    register: mixed
+    text_fields: []
+    notes: Québec educational QA candidate. Requires license review before training use.
+
+  - source_id: assnat_journal_debats_catalog
+    name: Assemblée nationale du Québec Journal des débats
+    category: institutional_training_candidate_adapter_required
+    modality: text
+    adapter: catalog_only
+    url: https://www.assnat.qc.ca/en/
+    output_path: data/external_materialized/assnat/journal_debats.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_official_terms
+    license_url: https://www.assnat.qc.ca/en/
+    dialect_region: Quebec
+    register: formal
+    notes: Strong formal Québec source. Needs dedicated official-site adapter and legal review.
+
+  - source_id: fdlq_crifuq_catalog
+    name: Fonds de données linguistiques du Québec
+    category: institutional_training_candidate_access_required
+    modality: text
+    adapter: catalog_only
+    url: https://fdlq.crifuq.usherbrooke.ca/
+    output_path: data/external_materialized/fdlq/fdlq.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: access_restricted_verify_terms
+    license_url: https://fdlq.crifuq.usherbrooke.ca/
+    dialect_region: Quebec
+    register: mixed
+    notes: Large Québec corpus repository. Access and terms review required before ingestion.
+
+  # Speech / ASR assets. Cataloged here but not plain text LLM training material.
+  - source_id: cereales_asr_catalog
+    name: CEREALES Québec accented spontaneous speech corpus
+    category: speech_asr_catalog
+    modality: speech
+    adapter: catalog_only
+    repository_url: https://github.com/IKBLab/CEREALES
+    paper_url: https://www.isca-archive.org/interspeech_2025/maison25_interspeech.pdf
+    output_path: data/external_materialized/speech/cereales.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_repository_license_and_privacy_terms
+    dialect_region: Quebec
+    register: mixed
+    notes: ASR corpus, not plain LLM text. Needs modality-specific pipeline.
+
+  - source_id: whisper_large_v3_turbo_fr_quebecois_model
+    name: Whisper large-v3-turbo fr-québécois model
+    category: speech_model_reference
+    modality: model
+    adapter: catalog_only
+    hf_model_id: ele-sage/whisper-large-v3-turbo-fr-quebecois
+    model_url: https://huggingface.co/ele-sage/whisper-large-v3-turbo-fr-quebecois
+    output_path: data/external_materialized/models/whisper_large_v3_turbo_fr_quebecois.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_model_card
+    dialect_region: Quebec
+    register: mixed
+    notes: Model reference only.
+
+  - source_id: whisper_large_v3_turbo_fr_quebecois_ct2_model
+    name: Whisper large-v3-turbo fr-québécois CTranslate2 model
+    category: speech_model_reference
+    modality: model
+    adapter: catalog_only
+    hf_model_id: ele-sage/whisper-large-v3-turbo-fr-quebecois-ct2
+    model_url: https://huggingface.co/ele-sage/whisper-large-v3-turbo-fr-quebecois-ct2
+    output_path: data/external_materialized/models/whisper_large_v3_turbo_fr_quebecois_ct2.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_model_card
+    dialect_region: Quebec
+    register: mixed
+    notes: Optimized ASR model reference only.
+
+  - source_id: openslr_57_african_accented_french
+    name: OpenSLR 57 African accented French speech
+    category: speech_asr_catalog
+    modality: speech
+    adapter: catalog_only
+    url: https://openslr.org/57/
+    output_path: data/external_materialized/speech/openslr_57.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_openslr_terms
+    dialect_region: unknown
+    register: mixed
+    notes: Speech reference; not Québec-specific LLM text.
+
+  # Training infrastructure reference.
+  - source_id: quebecllm_cpt_pipeline_reference
+    name: QuebecLLM-CPT training/evaluation pipeline
+    category: pipeline_reference
+    modality: code
+    adapter: catalog_only
+    repository_url: https://github.com/CLaC-Lab/QuebecLLM-CPT
+    organization_url: https://huggingface.co/QuebecLLM
+    output_path: data/external_materialized/pipelines/quebecllm_cpt.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_repository_license
+    dialect_region: Quebec
+    register: mixed
+    notes: Pipeline reference, not a corpus.
+
+  # Broader French / MTEB-style datasets. Default to non-training until license/task review.
+  - source_id: diabla_informal_dialogues
+    name: DiaBLa informal dialogues
+    category: broader_french_candidate_review_required
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: rbawden/DiaBLa
+    output_path: data/external_materialized/huggingface/diabla.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/rbawden/DiaBLa
+    dialect_region: unknown
+    register: informal
+    text_fields: []
+    notes: Broader French informal dialogue data. Not Québec-specific.
+
+  - source_id: flores_translation_benchmark
+    name: FLORES machine translation benchmark
+    category: benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: facebook/flores
+    output_path: data/external_materialized/eval/flores.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/facebook/flores
+    dialect_region: unknown
+    register: formal
+    text_fields: []
+    notes: Translation benchmark. Evaluation only.
+
+  - source_id: amazon_reviews_multi_fr
+    name: Amazon Reviews Multi French subset
+    category: broader_french_candidate_review_required
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: mteb/amazon_reviews_multi
+    config: fr
+    output_path: data/external_materialized/huggingface/amazon_reviews_multi_fr.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/mteb/amazon_reviews_multi
+    dialect_region: unknown
+    register: mixed
+    text_fields: [review_body, review_title]
+    notes: Broad French reviews. Not Québec-specific.
+
+  - source_id: masakhanews_french
+    name: MasakhaNEWS French/African news
+    category: broader_french_candidate_review_required
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: masakhane/masakhanews
+    output_path: data/external_materialized/huggingface/masakhanews.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/masakhane/masakhanews
+    dialect_region: unknown
+    register: formal
+    text_fields: []
+    notes: Broad French/African news candidate. Not Québec-specific.
+
+  - source_id: amazon_massive_intent_fr
+    name: MASSIVE intent French
+    category: intent_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: mteb/amazon_massive_intent
+    output_path: data/external_materialized/eval/amazon_massive_intent.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/mteb/amazon_massive_intent
+    dialect_region: unknown
+    register: mixed
+    text_fields: []
+    notes: Intent benchmark. Evaluation only.
+
+  - source_id: mtop_intent_fr
+    name: MTOP intent French
+    category: intent_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: mteb/mtop_intent
+    output_path: data/external_materialized/eval/mtop_intent.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/mteb/mtop_intent
+    dialect_region: unknown
+    register: mixed
+    text_fields: []
+    notes: Intent benchmark. Evaluation only.
+
+  - source_id: mtop_domain_fr
+    name: MTOP domain French
+    category: domain_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: mteb/mtop_domain
+    output_path: data/external_materialized/eval/mtop_domain.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/mteb/mtop_domain
+    dialect_region: unknown
+    register: mixed
+    text_fields: []
+    notes: Domain benchmark. Evaluation only.
+
+  - source_id: bsard_belgian_legal
+    name: BSARD Belgian legal retrieval
+    category: retrieval_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: maastrichtlawtech/bsard
+    output_path: data/external_materialized/eval/bsard.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/maastrichtlawtech/bsard
+    dialect_region: unknown
+    register: formal
+    text_fields: []
+    notes: French legal retrieval benchmark. Evaluation only.
+
+  - source_id: opusparcus_french
+    name: Opusparcus subtitles/paraphrase
+    category: paraphrase_candidate_review_required
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: GEM/opusparcus
+    output_path: data/external_materialized/huggingface/opusparcus.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/GEM/opusparcus
+    dialect_region: unknown
+    register: informal
+    text_fields: []
+    notes: Subtitle/paraphrase candidate. Requires review.
+
+  - source_id: syntec_retrieval
+    name: Syntec French retrieval dataset
+    category: retrieval_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: lyon-nlp/mteb-fr-retrieval-syntec-s2p
+    output_path: data/external_materialized/eval/syntec_retrieval.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/lyon-nlp/mteb-fr-retrieval-syntec-s2p
+    dialect_region: unknown
+    register: formal
+    text_fields: []
+    notes: Retrieval benchmark. Evaluation only.
+
+  - source_id: clustering_hal_s2s
+    name: HAL scientific-publication clustering
+    category: clustering_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: lyon-nlp/clustering-hal-s2s
+    output_path: data/external_materialized/eval/clustering_hal_s2s.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/lyon-nlp/clustering-hal-s2s
+    dialect_region: unknown
+    register: formal
+    text_fields: []
+    notes: Clustering benchmark. Evaluation only.
+
+  - source_id: summarization_summeval_fr
+    name: SummEval French summarization
+    category: summarization_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: lyon-nlp/summarization-summeval-fr-p2p
+    output_path: data/external_materialized/eval/summarization_summeval_fr.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/lyon-nlp/summarization-summeval-fr-p2p
+    dialect_region: unknown
+    register: formal
+    text_fields: []
+    notes: Summarization benchmark. Evaluation only.
+
+  - source_id: stsb_multi_mt_fr
+    name: STS Benchmark multilingual French
+    category: sts_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: stsb_multi_mt
+    output_path: data/external_materialized/eval/stsb_multi_mt.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/stsb_multi_mt
+    dialect_region: unknown
+    register: mixed
+    text_fields: []
+    notes: Semantic textual similarity benchmark. Evaluation only.
+
+  - source_id: sts22_crosslingual_sts_fr
+    name: STS22 crosslingual STS French
+    category: sts_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: mteb/sts22-crosslingual-sts
+    output_path: data/external_materialized/eval/sts22_crosslingual_sts.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/mteb/sts22-crosslingual-sts
+    dialect_region: unknown
+    register: mixed
+    text_fields: []
+    notes: Semantic textual similarity benchmark. Evaluation only.
+
+  - source_id: sick_fr
+    name: SICK-FR semantic relatedness/entailment
+    category: sts_benchmark_holdout
+    modality: text
+    adapter: huggingface_dataset
+    hf_dataset_id: Lajavaness/SICK-fr
+    output_path: data/external_materialized/eval/sick_fr.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: true
+    holdout_only: true
+    requires_review: true
+    license_reviewed: false
+    license_status: verify_dataset_card
+    license_url: https://huggingface.co/datasets/Lajavaness/SICK-fr
+    dialect_region: unknown
+    register: mixed
+    text_fields: []
+    notes: Semantic relatedness/entailment benchmark. Evaluation only.
+
+  # Vernacular web sources discussed. Catalog-only until ToS, robots, privacy, and consent review.
+  - source_id: depotoir_forum_catalog
+    name: Depotoir.ca vernacular Québec forum
+    category: vernacular_web_catalog
+    modality: text
+    adapter: catalog_only
+    url: https://www.depotoir.ca/
+    output_path: data/external_materialized/web/depotoir.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: requires_tos_robots_privacy_review
+    dialect_region: Quebec
+    register: informal
+    notes: Vernacular Québec signal. No scraper is enabled until legal/ToS/privacy review is complete.
+
+  - source_id: montrealracing_forum_catalog
+    name: MontrealRacing.com vernacular forum
+    category: vernacular_web_catalog
+    modality: text
+    adapter: catalog_only
+    url: https://www.montrealracing.com/
+    output_path: data/external_materialized/web/montrealracing.jsonl
+    allowed_for_training: false
+    allowed_for_evaluation: false
+    holdout_only: false
+    requires_review: true
+    license_reviewed: false
+    license_status: requires_tos_robots_privacy_review
+    dialect_region: Quebec
+    register: informal
+    notes: Vernacular Québec/Montréal signal. No scraper is enabled until legal/ToS/privacy review is complete.

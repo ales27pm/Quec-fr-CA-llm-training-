@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-05-15 — Dolphin3 + Unsloth continuation path
+- Added `project/model_selection.dolphin3_unsloth.yaml` to make `dphn/Dolphin3.0-Qwen2.5-3b` the preferred base when preserving Dolphin instruction/personality tuning.
+- Added `requirements/training-dolphin3-unsloth.txt` and Unsloth-based scripts for QLoRA training plus merged/GGUF export.
+- Added `docs/dolphin3_unsloth_training.md` with RTX 2070-friendly smoke-test and `q4_k_m` export commands.
+- Documented that `bartowski/Dolphin3.0-Qwen2.5-3b-GGUF` is runtime-only and must not be used as a training source.
+
 ## 2026-05-15 — T20 corpus curation policy and deterministic quality scoring contract
 - Added `manifests/curation_policy_manifest.template.yaml` and strict curation schema validation models.
 - Added deterministic corpus curation module and CLI commands: `qfr validate-curation-policy` and `qfr curate-corpus`.

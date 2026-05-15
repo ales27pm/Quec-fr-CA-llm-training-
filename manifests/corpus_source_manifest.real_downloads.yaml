@@ -24,7 +24,7 @@ sources:
     notes: French novel set in rural Québec/Lac-Saint-Jean; verify Project Gutenberg terms and local jurisdiction before release.
 
   - source_id: gutenberg_au_large_de_l_ecueil_fr_17791
-    name: Au large de l'écueil: roman canadien by Hector Bernier
+    name: "Au large de l'écueil: roman canadien by Hector Bernier"
     source_type: future_remote
     path: data/corpus/raw/gutenberg/au_large_de_l_ecueil_17791.txt
     download_url: https://www.gutenberg.org/ebooks/17791.txt.utf-8
@@ -64,7 +64,7 @@ sources:
     notes: French-Canadian fiction by Laure Conan.
 
   - source_id: gutenberg_l_influence_d_un_livre_fr_15305
-    name: L'influence d'un livre: Roman historique by Philippe Aubert de Gaspé
+    name: "L'influence d'un livre: Roman historique by Philippe Aubert de Gaspé"
     source_type: future_remote
     path: data/corpus/raw/gutenberg/l_influence_d_un_livre_15305.txt
     download_url: https://www.gutenberg.org/ebooks/15305.txt.utf-8
