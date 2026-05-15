@@ -1,0 +1,41 @@
+kind: training_export_manifest
+schema_version: "1.0.0"
+export_id: "t22-training-export-v1"
+primary_language: fr-CA
+dataset_name: "quebec-fr-curated-training"
+dataset_version: "0.1.0"
+description: "Deterministic metadata export for curated fr-CA training splits."
+intended_use: "Training and validation of Québécois French language models using accepted curated records only."
+forbidden_uses:
+  - "Do not train on benchmark holdout material."
+  - "Do not use for dialect neutralization to fr_FR."
+inputs:
+  train: reports/curated_splits/train.jsonl
+  dev: reports/curated_splits/dev.jsonl
+  test: reports/curated_splits/test.jsonl
+  split_report: reports/curated_splits/split_report.json
+  corpus_source_manifest: manifests/corpus_source_manifest.template.yaml
+  curation_policy_manifest: manifests/curation_policy_manifest.template.yaml
+  split_policy_manifest: manifests/split_policy_manifest.template.yaml
+lineage:
+  source_contract_report: reports/corpus_ingestion/report.json
+  curation_report: reports/corpus_curation/report.json
+  release_candidate_report: reports/release_candidate.json
+quality_requirements:
+  require_accepted_only: true
+  require_no_holdout_material: true
+  require_repo_relative_paths: true
+  require_nonempty_train: true
+  allow_empty_dev_test_for_small_fixture: true
+dataset_card:
+  license: "See corpus source manifest for per-source licensing constraints."
+  language: "fr-CA"
+  dialect: "Québécois French"
+  region: "Québec, Canada"
+  limitations:
+    - "Fixture-scale dataset; linguistic coverage is incomplete."
+    - "Not intended for benchmark scoring or holdout evaluation ingestion."
+  ethical_notes:
+    - "Respect provenance, privacy, and source-license constraints before release."
+    - "Avoid harmful stereotype amplification and exclusionary usage."
+  provenance_summary: "Derived from repository-local corpus ingestion, curation, and accepted-only split artifacts."

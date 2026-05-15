@@ -22,6 +22,7 @@ from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_mani
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import evaluate_release, ReleaseReport
 from qfr_pipeline.release_candidate import run_release_candidate
+from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
 from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model
 
 app = typer.Typer()
@@ -327,3 +328,19 @@ def monitor_lp7_cmd(pre: float = typer.Option(..., "--pre"), post: float = typer
 
 if __name__ == "__main__":
     app()
+
+
+@app.command("validate-training-export")
+def validate_training_export_cmd(manifest: Path = typer.Option(..., "--manifest")):
+    _refresh_dynamic_agents()
+    validate_training_export_manifest(manifest)
+    print("Training export manifest valid")
+
+
+@app.command("export-training-dataset")
+def export_training_dataset_cmd(manifest: Path = typer.Option(..., "--manifest"), out_dir: Path = typer.Option(..., "--out-dir")):
+    _refresh_dynamic_agents()
+    report = export_training_dataset(manifest, out_dir)
+    if not report.ok:
+        raise typer.Exit(code=1)
+    print(f"Training export artifacts generated in {out_dir}")

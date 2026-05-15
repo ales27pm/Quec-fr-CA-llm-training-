@@ -1,0 +1,35 @@
+{
+  "ok": true,
+  "manifest": "manifests/training_export_manifest.template.yaml",
+  "dataset_name": "quebec-fr-curated-training",
+  "dataset_version": "0.1.0",
+  "records": {
+    "train": 1,
+    "dev": 0,
+    "test": 1,
+    "total": 2
+  },
+  "hashes": {
+    "train_sha256": "e45c41753e8916f86352c0c968abdba6a9b7fc8945ba10090fe7013cf18c012c",
+    "dev_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_sha256": "6136071306f04dbaa81521cc71633326f269e4ee7abac7aba0535cb379390e97",
+    "aggregate_sha256": "0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13"
+  },
+  "lineage": {
+    "source_contract_report": "reports/corpus_ingestion/report.json",
+    "curation_report": "reports/corpus_curation/report.json",
+    "release_candidate_report": "reports/release_candidate.json"
+  },
+  "policy_refs": {
+    "corpus_source_manifest": "manifests/corpus_source_manifest.template.yaml",
+    "curation_policy_manifest": "manifests/curation_policy_manifest.template.yaml",
+    "split_policy_manifest": "manifests/split_policy_manifest.template.yaml"
+  },
+  "issues": [],
+  "outputs": {
+    "training_manifest_json": "reports/training_export/training_manifest.json",
+    "training_manifest_yaml": "reports/training_export/training_manifest.yaml",
+    "dataset_card_md": "reports/training_export/dataset_card.md",
+    "export_report_json": "reports/training_export/export_report.json"
+  }
+}

@@ -13,6 +13,7 @@ from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_con
 from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, write_jsonl
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import ReleaseReport, evaluate_release
+from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
 from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_repository
 
 
@@ -54,6 +55,8 @@ class ReleaseCandidateReport:
     minimal_pair_summary: dict[str, Any] | None = None
     curation_summary: dict[str, Any] | None = None
     split_summary: dict[str, Any] | None = None
+    training_export_summary: dict[str, Any] | None = None
+    training_export_summary: dict[str, Any] | None = None
     blocking_failures: list[str] | None = None
 
     def to_json(self) -> dict[str, Any]:
@@ -67,6 +70,7 @@ class ReleaseCandidateReport:
             "minimal_pair_summary": self.minimal_pair_summary,
             "curation_summary": self.curation_summary,
             "split_summary": self.split_summary,
+            "training_export_summary": self.training_export_summary,
             "blocking_failures": self.blocking_failures or [],
         }
 
@@ -88,6 +92,8 @@ class ReleaseCandidateReport:
             lines.extend(["", "## Corpus curation summary", f"- Accepted: `{self.curation_summary.get('accepted')}`", f"- Review required: `{self.curation_summary.get('review_required')}`", f"- Quarantine: `{self.curation_summary.get('quarantine')}`", f"- Rejected: `{self.curation_summary.get('rejected')}`"])
         if self.split_summary is not None:
             lines.extend(["", "## Curated split summary", f"- Records total: `{self.split_summary.get('records_total')}`", f"- Train: `{self.split_summary.get('train')}`", f"- Dev: `{self.split_summary.get('dev')}`", f"- Test: `{self.split_summary.get('test')}`"])
+        if self.training_export_summary is not None:
+            lines.extend(["", "## Training export summary", f"- Dataset: `{self.training_export_summary.get('dataset_name')}`", f"- Version: `{self.training_export_summary.get('dataset_version')}`", f"- Total: `{self.training_export_summary.get('total')}`", f"- Train/Dev/Test: `{self.training_export_summary.get('train')}`/`{self.training_export_summary.get('dev')}`/`{self.training_export_summary.get('test')}`", f"- Aggregate SHA-256: `{self.training_export_summary.get('aggregate_sha256')}`"])
         if self.blocking_failures:
             lines.extend(["", "## Blocking failures", *[f"- {x}" for x in self.blocking_failures]])
         return "\n".join(lines) + "\n"
@@ -110,6 +116,11 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "curated_split_dev": "reports/curated_splits/dev.jsonl",
         "curated_split_test": "reports/curated_splits/test.jsonl",
         "curated_split_report": "reports/curated_splits/split_report.json",
+        "training_export_manifest": "manifests/training_export_manifest.template.yaml",
+        "training_export_report": "reports/training_export/export_report.json",
+        "training_manifest_json": "reports/training_export/training_manifest.json",
+        "training_manifest_yaml": "reports/training_export/training_manifest.yaml",
+        "training_dataset_card": "reports/training_export/dataset_card.md",
         "release_candidate_json": repo_relative_path(out_json),
         "release_candidate_md": repo_relative_path(out_md),
     }
@@ -120,6 +131,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
     mp_summary: dict[str, Any] | None = None
     curation_summary: dict[str, Any] | None = None
     split_summary: dict[str, Any] | None = None
+    training_export_summary: dict[str, Any] | None = None
     det_ts = "project-status-last-updated:" + __import__("json").loads((ROOT / "project/status.json").read_text(encoding="utf-8")).get("last_updated", "unknown")
     try:
         repo_report = validate_repository(ROOT)
@@ -159,6 +171,15 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         if not split.ok:
             blocking_failures.append("curated_corpus_split")
         split_summary = {"records_total": split.records_total, "train": split.train, "dev": split.dev, "test": split.test, "forbidden_records_seen": split.forbidden_records_seen}
+
+        training_manifest = ROOT / "manifests/training_export_manifest.template.yaml"
+        validate_training_export_manifest(training_manifest)
+        stages.append(ReleaseCandidateStage(name="training_export_manifest_validation", ok=True, artifacts=[repo_relative_path(training_manifest)]))
+        tx_report = export_training_dataset(training_manifest, ROOT / "reports/training_export")
+        stages.append(ReleaseCandidateStage(name="training_export_generation", ok=tx_report.ok, artifacts=list(tx_report.outputs.values()), details={"records": tx_report.records, "hashes": tx_report.hashes}))
+        if not tx_report.ok:
+            blocking_failures.append("training_export_generation")
+        training_export_summary = {"dataset_name": tx_report.dataset_name, "dataset_version": tx_report.dataset_version, "train": tx_report.records["train"], "dev": tx_report.records["dev"], "test": tx_report.records["test"], "total": tx_report.records["total"], "aggregate_sha256": tx_report.hashes["aggregate_sha256"]}
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)
@@ -214,6 +235,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         minimal_pair_summary=mp_summary,
         curation_summary=curation_summary,
         split_summary=split_summary,
+        training_export_summary=training_export_summary,
         blocking_failures=blocking_failures,
     )
     write_json(out_json, report.to_json())

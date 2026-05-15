@@ -585,3 +585,70 @@ def ensure_eval_gates_sync(eval_manifest: EvaluationManifest, release_gates: Rel
         raise ValueError(f"Mismatch in lp_floors.9: eval={lp9_f} release_gates={rg_lp9}")
     if abs(lp20_f - rg_lp20) > GATE_TOLERANCE:
         raise ValueError(f"Mismatch in lp_floors.20: eval={lp20_f} release_gates={rg_lp20}")
+
+
+class TrainingExportInputs(BaseModel):
+    train: str
+    dev: str
+    test: str
+    split_report: str
+    corpus_source_manifest: str
+    curation_policy_manifest: str
+    split_policy_manifest: str
+
+
+class TrainingExportLineage(BaseModel):
+    source_contract_report: str
+    curation_report: str
+    release_candidate_report: str
+
+
+class TrainingExportQualityRequirements(BaseModel):
+    require_accepted_only: bool
+    require_no_holdout_material: bool
+    require_repo_relative_paths: bool
+    require_nonempty_train: bool
+    allow_empty_dev_test_for_small_fixture: bool
+
+
+class DatasetCardMetadata(BaseModel):
+    license: str
+    language: str
+    dialect: str
+    region: str
+    limitations: list[str]
+    ethical_notes: list[str]
+    provenance_summary: str
+
+
+class TrainingExportManifest(BaseModel):
+    kind: str
+    schema_version: str
+    export_id: str
+    primary_language: str
+    dataset_name: str
+    dataset_version: str
+    description: str
+    intended_use: str
+    forbidden_uses: list[str]
+    inputs: TrainingExportInputs
+    lineage: TrainingExportLineage
+    quality_requirements: TrainingExportQualityRequirements
+    dataset_card: DatasetCardMetadata
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "training_export_manifest":
+            raise ValueError("kind must be training_export_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        if any((not x) or (not x.strip()) for x in self.forbidden_uses):
+            raise ValueError("forbidden_uses entries must be non-empty")
+        if "fr-ca" not in self.dataset_card.language.casefold() or "québécois" not in self.dataset_card.dialect.casefold():
+            raise ValueError("dataset_card language/dialect must identify fr-CA / Québécois French")
+        return self

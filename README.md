@@ -37,3 +37,20 @@ Use legacy + package commands to generate deterministic artifacts under `reports
 
 ## T21 Curated Split
 Use `qfr validate-split-policy` and `qfr split-curated-corpus` to produce `reports/curated_splits/*` from accepted curated corpus only.
+
+
+## Fresh checkout
+Install dependencies before any `qfr` or governance commands:
+
+```bash
+python3 -m pip install -e ".[dev]"
+# or:
+bash scripts/bootstrap_dev_env.sh
+
+python3 tools/update_agents.py --ensure-nested
+python3 tools/update_agents.py --validate
+qfr validate
+bash scripts/run_local_validation.sh
+```
+
+`qfr` is installed by the editable package install. `tools/update_agents.py` imports PyYAML, so dependencies must be installed first. No top-level `qfr` wrapper is intentionally provided.
