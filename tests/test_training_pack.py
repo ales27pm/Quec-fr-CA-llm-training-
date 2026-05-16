@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Generator
 import json
 from pathlib import Path
 import tempfile
@@ -10,11 +11,15 @@ from typer.testing import CliRunner
 
 from qfr_pipeline.cli import app
 from qfr_pipeline.paths import ROOT
-from qfr_pipeline.training_pack import audit_training_pack, build_training_pack, validate_training_pack_policy
+from qfr_pipeline.training_pack import (
+    audit_training_pack,
+    build_training_pack,
+    validate_training_pack_policy,
+)
 
 
 @pytest.fixture()
-def repo_tmp_dir() -> Path:
+def repo_tmp_dir() -> Generator[Path, None, None]:
     reports_dir = ROOT / "reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:
@@ -42,8 +47,11 @@ def _read_jsonl(path: Path) -> list[dict]:
 
 
 def _base_row(text: str, source_id: str = "src_a", **overrides) -> dict:
+    record_suffix = (
+        json.dumps(text, ensure_ascii=False).encode("utf-8").hex()[:16]
+    )
     payload = {
-        "record_id": f"{source_id}:{json.dumps(text, ensure_ascii=False).encode('utf-8').hex()[:16]}",
+        "record_id": f"{source_id}:{record_suffix}",
         "source_id": source_id,
         "source_name": source_id,
         "text": text,
@@ -63,7 +71,9 @@ def _base_row(text: str, source_id: str = "src_a", **overrides) -> dict:
 
 def _policy_template(repo_tmp_dir: Path, input_rel_paths: list[str]) -> dict:
     policy = yaml.safe_load(
-        (ROOT / "manifests/training_pack_policy.template.yaml").read_text(encoding="utf-8")
+        (ROOT / "manifests/training_pack_policy.template.yaml").read_text(
+            encoding="utf-8"
+        )
     )
     output_dir = _repo_rel(repo_tmp_dir / "pack")
     policy["output_dir"] = output_dir
@@ -91,14 +101,24 @@ def _policy_template(repo_tmp_dir: Path, input_rel_paths: list[str]) -> dict:
     return policy
 
 
-def _write_policy(repo_tmp_dir: Path, payload: dict, name: str = "policy.yaml") -> Path:
+def _write_policy(
+    repo_tmp_dir: Path, payload: dict, name: str = "policy.yaml"
+) -> Path:
     repo_tmp_dir.mkdir(parents=True, exist_ok=True)
     path = repo_tmp_dir / name
-    path.write_text(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True), encoding="utf-8")
+    path.write_text(
+        yaml.safe_dump(payload, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
     return path
 
 
-def _build_with_rows(repo_tmp_dir: Path, rows: list[dict], *, policy_overrides: dict | None = None) -> tuple[Path, dict]:
+def _build_with_rows(
+    repo_tmp_dir: Path,
+    rows: list[dict],
+    *,
+    policy_overrides: dict | None = None,
+) -> tuple[Path, dict]:
     input_path = repo_tmp_dir / "input.jsonl"
     _write_jsonl(input_path, rows)
     policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])
@@ -112,7 +132,9 @@ def _build_with_rows(repo_tmp_dir: Path, rows: list[dict], *, policy_overrides: 
 
 def test_valid_training_pack_policy_passes(repo_tmp_dir: Path) -> None:
     input_path = repo_tmp_dir / "in.jsonl"
-    _write_jsonl(input_path, [_base_row("Courriel et fin de semaine pour test.")])
+    _write_jsonl(
+        input_path, [_base_row("Courriel et fin de semaine pour test.")]
+    )
     policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])
     policy_path = _write_policy(repo_tmp_dir, policy)
     validate_training_pack_policy(policy_path)
@@ -151,10 +173,14 @@ def test_allowed_for_training_false_is_rejected(repo_tmp_dir: Path) -> None:
         repo_tmp_dir,
         [_base_row("Texte non entraînable.", allowed_for_training=False)],
     )
-    assert report["rejection_reasons"].get("allowed_for_training_false", 0) >= 1
+    assert (
+        report["rejection_reasons"].get("allowed_for_training_false", 0) >= 1
+    )
 
 
-def test_requires_review_true_without_permission_is_rejected(repo_tmp_dir: Path) -> None:
+def test_requires_review_true_without_permission_is_rejected(
+    repo_tmp_dir: Path,
+) -> None:
     _, report = _build_with_rows(
         repo_tmp_dir,
         [
@@ -190,9 +216,7 @@ def test_source_dominance_downsampling_works(repo_tmp_dir: Path) -> None:
     rows = [
         _base_row(f"Texte dominant {idx} avec courriel.", source_id="dominant")
         for idx in range(10)
-    ] + [
-        _base_row("Texte minoritaire avec courriel.", source_id="minor")
-    ]
+    ] + [_base_row("Texte minoritaire avec courriel.", source_id="minor")]
     policy_path, report = _build_with_rows(
         repo_tmp_dir,
         rows,
@@ -208,13 +232,19 @@ def test_source_dominance_downsampling_works(repo_tmp_dir: Path) -> None:
         },
     )
     assert report["ok"]
-    pack = json.loads((ROOT / report["artifacts"]["report"]).read_text(encoding="utf-8"))
+    pack = json.loads(
+        (ROOT / report["artifacts"]["report"]).read_text(encoding="utf-8")
+    )
     assert pack["max_single_source_share"] <= 0.6
     validate_training_pack_policy(policy_path)
 
 
-def test_instructionization_creates_qwen_chatml_messages(repo_tmp_dir: Path) -> None:
-    _, report = _build_with_rows(repo_tmp_dir, [_base_row("Courriel et fin de semaine en contexte.")])
+def test_instructionization_creates_qwen_chatml_messages(
+    repo_tmp_dir: Path,
+) -> None:
+    _, report = _build_with_rows(
+        repo_tmp_dir, [_base_row("Courriel et fin de semaine en contexte.")]
+    )
     train = _read_jsonl(ROOT / report["artifacts"]["train"])
     assert train
     assert "<|im_start|>" in train[0]["text"]
@@ -222,59 +252,117 @@ def test_instructionization_creates_qwen_chatml_messages(repo_tmp_dir: Path) -> 
 
 
 def test_preserve_raw_example_format_is_correct(repo_tmp_dir: Path) -> None:
-    _, report = _build_with_rows(repo_tmp_dir, [_base_row("Passage source à conserver tel quel.")])
-    rows = _read_jsonl(ROOT / report["artifacts"]["train"]) + _read_jsonl(ROOT / report["artifacts"]["dev"]) + _read_jsonl(ROOT / report["artifacts"]["test"])
-    raw = next((row for row in rows if row["task_type"] == "preserve_raw"), None)
+    _, report = _build_with_rows(
+        repo_tmp_dir, [_base_row("Passage source à conserver tel quel.")]
+    )
+    rows = (
+        _read_jsonl(ROOT / report["artifacts"]["train"])
+        + _read_jsonl(ROOT / report["artifacts"]["dev"])
+        + _read_jsonl(ROOT / report["artifacts"]["test"])
+    )
+    raw = next(
+        (row for row in rows if row["task_type"] == "preserve_raw"), None
+    )
     assert raw is not None
     assert raw["messages"][0]["role"] == "system"
     assert raw["messages"][1]["role"] == "user"
     assert raw["messages"][2]["role"] == "assistant"
 
 
-def test_summarize_uses_deterministic_extractive_summary(repo_tmp_dir: Path) -> None:
-    text = "Première phrase claire. Deuxième phrase utile. Troisième phrase complémentaire."
+def test_summarize_uses_deterministic_extractive_summary(
+    repo_tmp_dir: Path,
+) -> None:
+    text = (
+        "Première phrase claire. Deuxième phrase utile. "
+        "Troisième phrase complémentaire."
+    )
     _, report = _build_with_rows(repo_tmp_dir, [_base_row(text)])
-    rows = _read_jsonl(ROOT / report["artifacts"]["train"]) + _read_jsonl(ROOT / report["artifacts"]["dev"]) + _read_jsonl(ROOT / report["artifacts"]["test"])
-    summary = next((row for row in rows if row["task_type"] == "summarize"), None)
+    rows = (
+        _read_jsonl(ROOT / report["artifacts"]["train"])
+        + _read_jsonl(ROOT / report["artifacts"]["dev"])
+        + _read_jsonl(ROOT / report["artifacts"]["test"])
+    )
+    summary = next(
+        (row for row in rows if row["task_type"] == "summarize"), None
+    )
     assert summary is not None
     assert "Première phrase claire." in summary["messages"][2]["content"]
 
 
-def test_explain_term_only_emits_when_marker_exists(repo_tmp_dir: Path) -> None:
+def test_explain_term_only_emits_when_marker_exists(
+    repo_tmp_dir: Path,
+) -> None:
     rows = [
-        _base_row("Le courriel est prêt pour la fin de semaine.", source_id="marker"),
-        _base_row("Texte neutre sans marqueur explicite.", source_id="neutral"),
+        _base_row(
+            "Le courriel est prêt pour la fin de semaine.", source_id="marker"
+        ),
+        _base_row(
+            "Texte neutre sans marqueur explicite.", source_id="neutral"
+        ),
     ]
     _, report = _build_with_rows(repo_tmp_dir, rows)
-    output_rows = _read_jsonl(ROOT / report["artifacts"]["train"]) + _read_jsonl(ROOT / report["artifacts"]["dev"]) + _read_jsonl(ROOT / report["artifacts"]["test"])
-    explain_rows = [row for row in output_rows if row["task_type"] == "explain_term"]
+    output_rows = (
+        _read_jsonl(ROOT / report["artifacts"]["train"])
+        + _read_jsonl(ROOT / report["artifacts"]["dev"])
+        + _read_jsonl(ROOT / report["artifacts"]["test"])
+    )
+    explain_rows = [
+        row for row in output_rows if row["task_type"] == "explain_term"
+    ]
     assert explain_rows
-    assert all("courriel" in row["messages"][1]["content"].casefold() for row in explain_rows)
+    assert all(
+        "courriel" in row["messages"][1]["content"].casefold()
+        for row in explain_rows
+    )
 
 
-def test_normalize_to_quebec_fr_applies_known_replacements_only(repo_tmp_dir: Path) -> None:
+def test_normalize_to_quebec_fr_applies_known_replacements_only(
+    repo_tmp_dir: Path,
+) -> None:
     rows = [
         _base_row("Mon email parle de shopping et de parking."),
         _base_row("Texte sans termes à remplacer.", source_id="plain"),
     ]
     _, report = _build_with_rows(repo_tmp_dir, rows)
-    output_rows = _read_jsonl(ROOT / report["artifacts"]["train"]) + _read_jsonl(ROOT / report["artifacts"]["dev"]) + _read_jsonl(ROOT / report["artifacts"]["test"])
-    norm_rows = [row for row in output_rows if row["task_type"] == "normalize_to_quebec_fr"]
+    output_rows = (
+        _read_jsonl(ROOT / report["artifacts"]["train"])
+        + _read_jsonl(ROOT / report["artifacts"]["dev"])
+        + _read_jsonl(ROOT / report["artifacts"]["test"])
+    )
+    norm_rows = [
+        row
+        for row in output_rows
+        if row["task_type"] == "normalize_to_quebec_fr"
+    ]
     assert norm_rows
-    assert any("courriel" in row["messages"][2]["content"].casefold() for row in norm_rows)
+    assert any(
+        "courriel" in row["messages"][2]["content"].casefold()
+        for row in norm_rows
+    )
 
 
 def test_examples_split_deterministically(repo_tmp_dir: Path) -> None:
-    rows = [_base_row(f"Texte split {idx} avec courriel.", source_id=f"s{idx % 2}") for idx in range(12)]
+    rows = [
+        _base_row(f"Texte split {idx} avec courriel.", source_id=f"s{idx % 2}")
+        for idx in range(12)
+    ]
     _, report_one = _build_with_rows(repo_tmp_dir / "a", rows)
     _, report_two = _build_with_rows(repo_tmp_dir / "b", rows)
     train_one = _read_jsonl(ROOT / report_one["artifacts"]["train"])
     train_two = _read_jsonl(ROOT / report_two["artifacts"]["train"])
-    assert [row["example_id"] for row in train_one] == [row["example_id"] for row in train_two]
+    assert [row["example_id"] for row in train_one] == [
+        row["example_id"] for row in train_two
+    ]
 
 
-def test_small_pack_populates_train_dev_test_when_total_ge_three(repo_tmp_dir: Path) -> None:
-    rows = [_base_row("Texte court. Deuxième phrase. Troisième phrase.", source_id="solo")]
+def test_small_pack_populates_train_dev_test_when_total_ge_three(
+    repo_tmp_dir: Path,
+) -> None:
+    rows = [
+        _base_row(
+            "Texte court. Deuxième phrase. Troisième phrase.", source_id="solo"
+        )
+    ]
     _, report = _build_with_rows(repo_tmp_dir, rows)
     train_rows = _read_jsonl(ROOT / report["artifacts"]["train"])
     dev_rows = _read_jsonl(ROOT / report["artifacts"]["dev"])
@@ -286,12 +374,26 @@ def test_small_pack_populates_train_dev_test_when_total_ge_three(repo_tmp_dir: P
         assert test_rows
 
 
-def test_no_source_record_id_across_multiple_splits_when_enough_examples(repo_tmp_dir: Path) -> None:
-    rows = [_base_row(f"Texte multi-split {idx}.", source_id=f"src_{idx}") for idx in range(20)]
+def test_no_source_record_id_across_multiple_splits_when_enough_examples(
+    repo_tmp_dir: Path,
+) -> None:
+    rows = [
+        _base_row(f"Texte multi-split {idx}.", source_id=f"src_{idx}")
+        for idx in range(20)
+    ]
     _, report = _build_with_rows(repo_tmp_dir, rows)
-    train_ids = {row["source_record_id"] for row in _read_jsonl(ROOT / report["artifacts"]["train"])}
-    dev_ids = {row["source_record_id"] for row in _read_jsonl(ROOT / report["artifacts"]["dev"])}
-    test_ids = {row["source_record_id"] for row in _read_jsonl(ROOT / report["artifacts"]["test"])}
+    train_ids = {
+        row["source_record_id"]
+        for row in _read_jsonl(ROOT / report["artifacts"]["train"])
+    }
+    dev_ids = {
+        row["source_record_id"]
+        for row in _read_jsonl(ROOT / report["artifacts"]["dev"])
+    }
+    test_ids = {
+        row["source_record_id"]
+        for row in _read_jsonl(ROOT / report["artifacts"]["test"])
+    }
     assert train_ids.isdisjoint(dev_ids)
     assert train_ids.isdisjoint(test_ids)
     assert dev_ids.isdisjoint(test_ids)
@@ -300,11 +402,15 @@ def test_no_source_record_id_across_multiple_splits_when_enough_examples(repo_tm
 def test_report_paths_are_repo_relative(repo_tmp_dir: Path) -> None:
     _, report = _build_with_rows(repo_tmp_dir, [_base_row("Texte relatif.")])
     assert not Path(report["output_dir"]).is_absolute()
-    assert all(not Path(path).is_absolute() for path in report["artifacts"].values())
+    assert all(
+        not Path(path).is_absolute() for path in report["artifacts"].values()
+    )
 
 
 def test_dataset_card_generated(repo_tmp_dir: Path) -> None:
-    _, report = _build_with_rows(repo_tmp_dir, [_base_row("Texte dataset card.")])
+    _, report = _build_with_rows(
+        repo_tmp_dir, [_base_row("Texte dataset card.")]
+    )
     card_path = ROOT / report["artifacts"]["dataset_card"]
     assert card_path.exists()
     assert "Dataset Card" in card_path.read_text(encoding="utf-8")
@@ -316,7 +422,9 @@ def test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:
     policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])
     policy_path = _write_policy(repo_tmp_dir, policy)
     runner = CliRunner()
-    result = runner.invoke(app, ["validate-training-pack-policy", "--policy", str(policy_path)])
+    result = runner.invoke(
+        app, ["validate-training-pack-policy", "--policy", str(policy_path)]
+    )
     assert result.exit_code == 0
 
 
@@ -341,7 +449,9 @@ def test_cli_build_training_pack_works(repo_tmp_dir: Path) -> None:
     assert (out_dir / "report.json").exists()
 
 
-def test_cli_audit_training_pack_fail_below_production_on_fixture_scale(repo_tmp_dir: Path) -> None:
+def test_cli_audit_training_pack_fail_below_production_on_fixture_scale(
+    repo_tmp_dir: Path,
+) -> None:
     input_path = repo_tmp_dir / "in.jsonl"
     _write_jsonl(input_path, [_base_row("Texte audit CLI.")])
     policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])
@@ -365,7 +475,9 @@ def test_cli_audit_training_pack_fail_below_production_on_fixture_scale(repo_tmp
     assert result.exit_code != 0
 
 
-def test_release_candidate_includes_training_pack_fields(tmp_path: Path) -> None:
+def test_release_candidate_includes_training_pack_fields(
+    tmp_path: Path,
+) -> None:
     runner = CliRunner()
     out_json = tmp_path / "rc.json"
     out_md = tmp_path / "rc.md"
@@ -398,13 +510,19 @@ def test_release_candidate_includes_training_pack_fields(tmp_path: Path) -> None
         assert key in summary
 
 
-def test_no_workspace_or_runner_leakage_in_generated_reports(repo_tmp_dir: Path) -> None:
-    _, report = _build_with_rows(repo_tmp_dir, [_base_row("Texte fuite path.")])
+def test_no_workspace_or_runner_leakage_in_generated_reports(
+    repo_tmp_dir: Path,
+) -> None:
+    _, report = _build_with_rows(
+        repo_tmp_dir, [_base_row("Texte fuite path.")]
+    )
     audit_out = repo_tmp_dir / "audit.json"
     audit_training_pack(ROOT / report["output_dir"], audit_out)
     combined = (
         (ROOT / report["artifacts"]["report"]).read_text(encoding="utf-8")
-        + (ROOT / report["artifacts"]["dataset_card"]).read_text(encoding="utf-8")
+        + (ROOT / report["artifacts"]["dataset_card"]).read_text(
+            encoding="utf-8"
+        )
         + audit_out.read_text(encoding="utf-8")
     )
     assert "/workspace" not in combined

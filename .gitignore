@@ -15,3 +15,4 @@ src/*.egg-info/
 build/
 dist/
 .vscode/
+.vscode/PythonImportHelper-v2-Completion.json

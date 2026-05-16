@@ -2933,6 +2933,14 @@
         "documentation": {}
     },
     {
+        "label": "Generator",
+        "importPath": "collections.abc",
+        "description": "collections.abc",
+        "isExtraImport": true,
+        "detail": "collections.abc",
+        "documentation": {}
+    },
+    {
         "label": "importlib.util",
         "kind": 6,
         "isExtraImport": true,
@@ -6195,7 +6203,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def repo_tmp_dir() -> Path:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        yield Path(tmp)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_jsonl(path: Path, rows: list[dict]) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(",
+        "peekOfCode": "def repo_tmp_dir() -> Generator[Path, None, None]:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        yield Path(tmp)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_jsonl(path: Path, rows: list[dict]) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6204,7 +6212,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_valid_training_pack_policy_passes(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Courriel et fin de semaine pour test.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    validate_training_pack_policy(policy_path)\ndef test_invalid_split_ratios_fail(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte valide pour ratios.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])",
+        "peekOfCode": "def test_valid_training_pack_policy_passes(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(\n        input_path, [_base_row(\"Courriel et fin de semaine pour test.\")]\n    )\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    validate_training_pack_policy(policy_path)\ndef test_invalid_split_ratios_fail(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6240,7 +6248,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_allowed_for_training_false_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [_base_row(\"Texte non entraînable.\", allowed_for_training=False)],\n    )\n    assert report[\"rejection_reasons\"].get(\"allowed_for_training_false\", 0) >= 1\ndef test_requires_review_true_without_permission_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [",
+        "peekOfCode": "def test_allowed_for_training_false_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [_base_row(\"Texte non entraînable.\", allowed_for_training=False)],\n    )\n    assert (\n        report[\"rejection_reasons\"].get(\"allowed_for_training_false\", 0) >= 1\n    )\ndef test_requires_review_true_without_permission_is_rejected(\n    repo_tmp_dir: Path,",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6249,7 +6257,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_requires_review_true_without_permission_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [\n            _base_row(\n                \"Texte sous revue.\",\n                requires_review=True,\n                commercial_use=\"permission_required\",\n            )\n        ],",
+        "peekOfCode": "def test_requires_review_true_without_permission_is_rejected(\n    repo_tmp_dir: Path,\n) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [\n            _base_row(\n                \"Texte sous revue.\",\n                requires_review=True,\n                commercial_use=\"permission_required\",",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6276,7 +6284,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_source_dominance_downsampling_works(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(f\"Texte dominant {idx} avec courriel.\", source_id=\"dominant\")\n        for idx in range(10)\n    ] + [\n        _base_row(\"Texte minoritaire avec courriel.\", source_id=\"minor\")\n    ]\n    policy_path, report = _build_with_rows(\n        repo_tmp_dir,\n        rows,",
+        "peekOfCode": "def test_source_dominance_downsampling_works(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(f\"Texte dominant {idx} avec courriel.\", source_id=\"dominant\")\n        for idx in range(10)\n    ] + [_base_row(\"Texte minoritaire avec courriel.\", source_id=\"minor\")]\n    policy_path, report = _build_with_rows(\n        repo_tmp_dir,\n        rows,\n        policy_overrides={\n            \"balancing\": {",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6285,7 +6293,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_instructionization_creates_qwen_chatml_messages(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Courriel et fin de semaine en contexte.\")])\n    train = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])\n    assert train\n    assert \"<|im_start|>\" in train[0][\"text\"]\n    assert \"<|im_end|>\" in train[0][\"text\"]\ndef test_preserve_raw_example_format_is_correct(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Passage source à conserver tel quel.\")])\n    rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    raw = next((row for row in rows if row[\"task_type\"] == \"preserve_raw\"), None)",
+        "peekOfCode": "def test_instructionization_creates_qwen_chatml_messages(\n    repo_tmp_dir: Path,\n) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir, [_base_row(\"Courriel et fin de semaine en contexte.\")]\n    )\n    train = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])\n    assert train\n    assert \"<|im_start|>\" in train[0][\"text\"]\n    assert \"<|im_end|>\" in train[0][\"text\"]",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6294,7 +6302,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_preserve_raw_example_format_is_correct(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Passage source à conserver tel quel.\")])\n    rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    raw = next((row for row in rows if row[\"task_type\"] == \"preserve_raw\"), None)\n    assert raw is not None\n    assert raw[\"messages\"][0][\"role\"] == \"system\"\n    assert raw[\"messages\"][1][\"role\"] == \"user\"\n    assert raw[\"messages\"][2][\"role\"] == \"assistant\"\ndef test_summarize_uses_deterministic_extractive_summary(repo_tmp_dir: Path) -> None:\n    text = \"Première phrase claire. Deuxième phrase utile. Troisième phrase complémentaire.\"",
+        "peekOfCode": "def test_preserve_raw_example_format_is_correct(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir, [_base_row(\"Passage source à conserver tel quel.\")]\n    )\n    rows = (\n        _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])\n        + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"])\n        + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    )\n    raw = next(",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6303,7 +6311,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_summarize_uses_deterministic_extractive_summary(repo_tmp_dir: Path) -> None:\n    text = \"Première phrase claire. Deuxième phrase utile. Troisième phrase complémentaire.\"\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(text)])\n    rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    summary = next((row for row in rows if row[\"task_type\"] == \"summarize\"), None)\n    assert summary is not None\n    assert \"Première phrase claire.\" in summary[\"messages\"][2][\"content\"]\ndef test_explain_term_only_emits_when_marker_exists(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Le courriel est prêt pour la fin de semaine.\", source_id=\"marker\"),",
+        "peekOfCode": "def test_summarize_uses_deterministic_extractive_summary(\n    repo_tmp_dir: Path,\n) -> None:\n    text = (\n        \"Première phrase claire. Deuxième phrase utile. \"\n        \"Troisième phrase complémentaire.\"\n    )\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(text)])\n    rows = (\n        _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6312,7 +6320,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_explain_term_only_emits_when_marker_exists(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Le courriel est prêt pour la fin de semaine.\", source_id=\"marker\"),\n        _base_row(\"Texte neutre sans marqueur explicite.\", source_id=\"neutral\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    output_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    explain_rows = [row for row in output_rows if row[\"task_type\"] == \"explain_term\"]\n    assert explain_rows\n    assert all(\"courriel\" in row[\"messages\"][1][\"content\"].casefold() for row in explain_rows)",
+        "peekOfCode": "def test_explain_term_only_emits_when_marker_exists(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(\n            \"Le courriel est prêt pour la fin de semaine.\", source_id=\"marker\"\n        ),\n        _base_row(\n            \"Texte neutre sans marqueur explicite.\", source_id=\"neutral\"\n        ),",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6321,7 +6329,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_normalize_to_quebec_fr_applies_known_replacements_only(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Mon email parle de shopping et de parking.\"),\n        _base_row(\"Texte sans termes à remplacer.\", source_id=\"plain\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    output_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    norm_rows = [row for row in output_rows if row[\"task_type\"] == \"normalize_to_quebec_fr\"]\n    assert norm_rows\n    assert any(\"courriel\" in row[\"messages\"][2][\"content\"].casefold() for row in norm_rows)",
+        "peekOfCode": "def test_normalize_to_quebec_fr_applies_known_replacements_only(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(\"Mon email parle de shopping et de parking.\"),\n        _base_row(\"Texte sans termes à remplacer.\", source_id=\"plain\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    output_rows = (\n        _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6330,7 +6338,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_examples_split_deterministically(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(f\"Texte split {idx} avec courriel.\", source_id=f\"s{idx % 2}\") for idx in range(12)]\n    _, report_one = _build_with_rows(repo_tmp_dir / \"a\", rows)\n    _, report_two = _build_with_rows(repo_tmp_dir / \"b\", rows)\n    train_one = _read_jsonl(ROOT / report_one[\"artifacts\"][\"train\"])\n    train_two = _read_jsonl(ROOT / report_two[\"artifacts\"][\"train\"])\n    assert [row[\"example_id\"] for row in train_one] == [row[\"example_id\"] for row in train_two]\ndef test_small_pack_populates_train_dev_test_when_total_ge_three(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(\"Texte court. Deuxième phrase. Troisième phrase.\", source_id=\"solo\")]\n    _, report = _build_with_rows(repo_tmp_dir, rows)",
+        "peekOfCode": "def test_examples_split_deterministically(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(f\"Texte split {idx} avec courriel.\", source_id=f\"s{idx % 2}\")\n        for idx in range(12)\n    ]\n    _, report_one = _build_with_rows(repo_tmp_dir / \"a\", rows)\n    _, report_two = _build_with_rows(repo_tmp_dir / \"b\", rows)\n    train_one = _read_jsonl(ROOT / report_one[\"artifacts\"][\"train\"])\n    train_two = _read_jsonl(ROOT / report_two[\"artifacts\"][\"train\"])\n    assert [row[\"example_id\"] for row in train_one] == [",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6339,7 +6347,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_small_pack_populates_train_dev_test_when_total_ge_three(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(\"Texte court. Deuxième phrase. Troisième phrase.\", source_id=\"solo\")]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    train_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])\n    dev_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"])\n    test_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    total = len(train_rows) + len(dev_rows) + len(test_rows)\n    if total >= 3:\n        assert train_rows\n        assert dev_rows",
+        "peekOfCode": "def test_small_pack_populates_train_dev_test_when_total_ge_three(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(\n            \"Texte court. Deuxième phrase. Troisième phrase.\", source_id=\"solo\"\n        )\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    train_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6348,7 +6356,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_no_source_record_id_across_multiple_splits_when_enough_examples(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(f\"Texte multi-split {idx}.\", source_id=f\"src_{idx}\") for idx in range(20)]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    train_ids = {row[\"source_record_id\"] for row in _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])}\n    dev_ids = {row[\"source_record_id\"] for row in _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"])}\n    test_ids = {row[\"source_record_id\"] for row in _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])}\n    assert train_ids.isdisjoint(dev_ids)\n    assert train_ids.isdisjoint(test_ids)\n    assert dev_ids.isdisjoint(test_ids)\ndef test_report_paths_are_repo_relative(repo_tmp_dir: Path) -> None:",
+        "peekOfCode": "def test_no_source_record_id_across_multiple_splits_when_enough_examples(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(f\"Texte multi-split {idx}.\", source_id=f\"src_{idx}\")\n        for idx in range(20)\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    train_ids = {\n        row[\"source_record_id\"]",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6357,7 +6365,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_report_paths_are_repo_relative(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte relatif.\")])\n    assert not Path(report[\"output_dir\"]).is_absolute()\n    assert all(not Path(path).is_absolute() for path in report[\"artifacts\"].values())\ndef test_dataset_card_generated(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte dataset card.\")])\n    card_path = ROOT / report[\"artifacts\"][\"dataset_card\"]\n    assert card_path.exists()\n    assert \"Dataset Card\" in card_path.read_text(encoding=\"utf-8\")\ndef test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:",
+        "peekOfCode": "def test_report_paths_are_repo_relative(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte relatif.\")])\n    assert not Path(report[\"output_dir\"]).is_absolute()\n    assert all(\n        not Path(path).is_absolute() for path in report[\"artifacts\"].values()\n    )\ndef test_dataset_card_generated(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir, [_base_row(\"Texte dataset card.\")]\n    )",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6366,7 +6374,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_dataset_card_generated(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte dataset card.\")])\n    card_path = ROOT / report[\"artifacts\"][\"dataset_card\"]\n    assert card_path.exists()\n    assert \"Dataset Card\" in card_path.read_text(encoding=\"utf-8\")\ndef test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)",
+        "peekOfCode": "def test_dataset_card_generated(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir, [_base_row(\"Texte dataset card.\")]\n    )\n    card_path = ROOT / report[\"artifacts\"][\"dataset_card\"]\n    assert card_path.exists()\n    assert \"Dataset Card\" in card_path.read_text(encoding=\"utf-8\")\ndef test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6375,7 +6383,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    runner = CliRunner()\n    result = runner.invoke(app, [\"validate-training-pack-policy\", \"--policy\", str(policy_path)])\n    assert result.exit_code == 0\ndef test_cli_build_training_pack_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"",
+        "peekOfCode": "def test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    runner = CliRunner()\n    result = runner.invoke(\n        app, [\"validate-training-pack-policy\", \"--policy\", str(policy_path)]\n    )\n    assert result.exit_code == 0",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6393,7 +6401,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_cli_audit_training_pack_fail_below_production_on_fixture_scale(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte audit CLI.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    out_dir = repo_tmp_dir / \"pack_cli\"\n    build_training_pack(policy_path, out_dir=out_dir)\n    audit_out = repo_tmp_dir / \"audit.json\"\n    runner = CliRunner()\n    result = runner.invoke(",
+        "peekOfCode": "def test_cli_audit_training_pack_fail_below_production_on_fixture_scale(\n    repo_tmp_dir: Path,\n) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte audit CLI.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    out_dir = repo_tmp_dir / \"pack_cli\"\n    build_training_pack(policy_path, out_dir=out_dir)\n    audit_out = repo_tmp_dir / \"audit.json\"",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6402,7 +6410,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_release_candidate_includes_training_pack_fields(tmp_path: Path) -> None:\n    runner = CliRunner()\n    out_json = tmp_path / \"rc.json\"\n    out_md = tmp_path / \"rc.md\"\n    result = runner.invoke(\n        app,\n        [\n            \"release-candidate\",\n            \"--metrics\",\n            \"fixtures/valid_metrics.json\",",
+        "peekOfCode": "def test_release_candidate_includes_training_pack_fields(\n    tmp_path: Path,\n) -> None:\n    runner = CliRunner()\n    out_json = tmp_path / \"rc.json\"\n    out_md = tmp_path / \"rc.md\"\n    result = runner.invoke(\n        app,\n        [\n            \"release-candidate\",",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
@@ -6411,7 +6419,7 @@
         "kind": 2,
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
-        "peekOfCode": "def test_no_workspace_or_runner_leakage_in_generated_reports(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte fuite path.\")])\n    audit_out = repo_tmp_dir / \"audit.json\"\n    audit_training_pack(ROOT / report[\"output_dir\"], audit_out)\n    combined = (\n        (ROOT / report[\"artifacts\"][\"report\"]).read_text(encoding=\"utf-8\")\n        + (ROOT / report[\"artifacts\"][\"dataset_card\"]).read_text(encoding=\"utf-8\")\n        + audit_out.read_text(encoding=\"utf-8\")\n    )\n    assert \"/workspace\" not in combined",
+        "peekOfCode": "def test_no_workspace_or_runner_leakage_in_generated_reports(\n    repo_tmp_dir: Path,\n) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir, [_base_row(\"Texte fuite path.\")]\n    )\n    audit_out = repo_tmp_dir / \"audit.json\"\n    audit_training_pack(ROOT / report[\"output_dir\"], audit_out)\n    combined = (\n        (ROOT / report[\"artifacts\"][\"report\"]).read_text(encoding=\"utf-8\")",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },
