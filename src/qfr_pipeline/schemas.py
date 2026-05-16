@@ -887,7 +887,9 @@ class ModernCorpusAdapterConfig(BaseModel):
     def validate_adapter_fields(self):
         if self.name == "donnees_quebec_ckan" and not self.base_url:
             raise ValueError("adapter.base_url is required for donnees_quebec_ckan")
-        if self.name == "donnees_quebec_ckan" and (not self.query.strip()) and (not self.query_terms):
+        if self.name == "donnees_quebec_ckan" and (not self.query.strip()) and (
+            not any(term.strip() for term in self.query_terms)
+        ):
             raise ValueError("donnees_quebec_ckan requires adapter.query or adapter.query_terms")
         if self.name == "assnat_journal_debats" and not self.seed_urls:
             raise ValueError("adapter.seed_urls must be non-empty for assnat_journal_debats")

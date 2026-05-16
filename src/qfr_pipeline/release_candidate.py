@@ -200,7 +200,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
             blocking_failures.append("corpus_curation")
         readiness_input = ROOT / "reports/corpus_curation/accepted.jsonl"
         readiness = audit_corpus_readiness(readiness_input, ROOT / artifacts["corpus_readiness_report"])
-        readiness_ok = readiness.get("ok", False)
+        readiness_ok = readiness.get("ok", False) and not readiness.get("blocking_reasons")
         stages.append(ReleaseCandidateStage(name="corpus_readiness_audit", ok=readiness_ok, artifacts=[artifacts["corpus_readiness_report"]], details=readiness))
         if not readiness_ok:
             blocking_failures.append("corpus_readiness_audit")
