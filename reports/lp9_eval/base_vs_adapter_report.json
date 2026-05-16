@@ -1,0 +1,412 @@
+{
+  "ok": true,
+  "kind": "lp9_base_vs_adapter_report",
+  "prompts": "reports/lp9_eval/eval_prompts.jsonl",
+  "total_prompts": 50,
+  "base_score": -2,
+  "adapter_score": 7,
+  "delta": 9,
+  "per_pair": {
+    "01:email": {
+      "count": 5,
+      "base_score": 2,
+      "adapter_score": 2,
+      "delta": 0
+    },
+    "02:parking": {
+      "count": 5,
+      "base_score": 1,
+      "adapter_score": 4,
+      "delta": 3
+    },
+    "03:shopping": {
+      "count": 5,
+      "base_score": -1,
+      "adapter_score": 1,
+      "delta": 2
+    },
+    "04:téléphone_portable": {
+      "count": 5,
+      "base_score": 0,
+      "adapter_score": 1,
+      "delta": 1
+    },
+    "05:weekend": {
+      "count": 5,
+      "base_score": -2,
+      "adapter_score": -1,
+      "delta": 1
+    },
+    "06:chat": {
+      "count": 5,
+      "base_score": -2,
+      "adapter_score": -5,
+      "delta": -3
+    },
+    "07:newsletter": {
+      "count": 5,
+      "base_score": -1,
+      "adapter_score": 1,
+      "delta": 2
+    },
+    "08:upload": {
+      "count": 5,
+      "base_score": -1,
+      "adapter_score": 2,
+      "delta": 3
+    },
+    "09:download": {
+      "count": 5,
+      "base_score": 3,
+      "adapter_score": 3,
+      "delta": 0
+    },
+    "10:smartphone": {
+      "count": 5,
+      "base_score": -1,
+      "adapter_score": -1,
+      "delta": 0
+    }
+  },
+  "per_task_type": {
+    "rewrite": {
+      "count": 10,
+      "base_score": -8,
+      "adapter_score": 2,
+      "delta": 10
+    },
+    "direct_preference": {
+      "count": 10,
+      "base_score": 3,
+      "adapter_score": 8,
+      "delta": 5
+    },
+    "choose_best_term": {
+      "count": 10,
+      "base_score": 10,
+      "adapter_score": 2,
+      "delta": -8
+    },
+    "correction": {
+      "count": 10,
+      "base_score": -6,
+      "adapter_score": 2,
+      "delta": 8
+    },
+    "open_generation": {
+      "count": 10,
+      "base_score": -1,
+      "adapter_score": -7,
+      "delta": -6
+    }
+  },
+  "failures": [
+    {
+      "prompt_id": "lp9-eval-0003",
+      "lexical_pair_id": "01:email",
+      "task_type": "choose_best_term",
+      "base_score": 1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0005",
+      "lexical_pair_id": "01:email",
+      "task_type": "open_generation",
+      "base_score": 0,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_contains_forbidden"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0010",
+      "lexical_pair_id": "02:parking",
+      "task_type": "open_generation",
+      "base_score": 1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0011",
+      "lexical_pair_id": "03:shopping",
+      "task_type": "rewrite",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0014",
+      "lexical_pair_id": "03:shopping",
+      "task_type": "correction",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0015",
+      "lexical_pair_id": "03:shopping",
+      "task_type": "open_generation",
+      "base_score": -1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0016",
+      "lexical_pair_id": "04:téléphone_portable",
+      "task_type": "rewrite",
+      "base_score": 0,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0019",
+      "lexical_pair_id": "04:téléphone_portable",
+      "task_type": "correction",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_contains_forbidden"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0020",
+      "lexical_pair_id": "04:téléphone_portable",
+      "task_type": "open_generation",
+      "base_score": 0,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0023",
+      "lexical_pair_id": "05:weekend",
+      "task_type": "choose_best_term",
+      "base_score": 1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0024",
+      "lexical_pair_id": "05:weekend",
+      "task_type": "correction",
+      "base_score": -1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0025",
+      "lexical_pair_id": "05:weekend",
+      "task_type": "open_generation",
+      "base_score": 0,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0026",
+      "lexical_pair_id": "06:chat",
+      "task_type": "rewrite",
+      "base_score": -1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0027",
+      "lexical_pair_id": "06:chat",
+      "task_type": "direct_preference",
+      "base_score": 0,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0028",
+      "lexical_pair_id": "06:chat",
+      "task_type": "choose_best_term",
+      "base_score": 1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0029",
+      "lexical_pair_id": "06:chat",
+      "task_type": "correction",
+      "base_score": -1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0030",
+      "lexical_pair_id": "06:chat",
+      "task_type": "open_generation",
+      "base_score": -1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0031",
+      "lexical_pair_id": "07:newsletter",
+      "task_type": "rewrite",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0034",
+      "lexical_pair_id": "07:newsletter",
+      "task_type": "correction",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0035",
+      "lexical_pair_id": "07:newsletter",
+      "task_type": "open_generation",
+      "base_score": -1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0036",
+      "lexical_pair_id": "08:upload",
+      "task_type": "rewrite",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0040",
+      "lexical_pair_id": "08:upload",
+      "task_type": "open_generation",
+      "base_score": 0,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0041",
+      "lexical_pair_id": "09:download",
+      "task_type": "rewrite",
+      "base_score": 0,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0045",
+      "lexical_pair_id": "09:download",
+      "task_type": "open_generation",
+      "base_score": 1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0046",
+      "lexical_pair_id": "10:smartphone",
+      "task_type": "rewrite",
+      "base_score": -1,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0048",
+      "lexical_pair_id": "10:smartphone",
+      "task_type": "choose_best_term",
+      "base_score": 1,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0049",
+      "lexical_pair_id": "10:smartphone",
+      "task_type": "correction",
+      "base_score": 0,
+      "adapter_score": 0,
+      "reasons": [
+        "adapter_missing_preferred"
+      ]
+    },
+    {
+      "prompt_id": "lp9-eval-0050",
+      "lexical_pair_id": "10:smartphone",
+      "task_type": "open_generation",
+      "base_score": 0,
+      "adapter_score": -1,
+      "reasons": [
+        "adapter_under_base",
+        "adapter_contains_forbidden",
+        "adapter_missing_preferred"
+      ]
+    }
+  ],
+  "generations_jsonl": "reports/lp9_eval/base_vs_adapter_generations.jsonl"
+}
