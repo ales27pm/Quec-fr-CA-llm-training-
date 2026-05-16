@@ -73,6 +73,10 @@ qfr generate-lp9-micro-pack \
 qfr generate-lp9-eval \
   --manifest manifests/lp9_lexical_preference_pack.template.yaml \
   --out reports/lp9_eval/eval_prompts.jsonl
+
+qfr generate-lp9-failure-pack \
+  --policy manifests/lp9_failure_mining_policy.template.yaml \
+  --out-dir reports/lp9_failure_pack
 ```
 
 Train a targeted LP9 adapter (manual/local run):

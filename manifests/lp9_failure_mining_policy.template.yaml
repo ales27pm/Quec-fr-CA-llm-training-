@@ -1,0 +1,33 @@
+kind: lp9_failure_mining_policy
+schema_version: "1.0.0"
+primary_language: fr-CA
+source_eval_report: reports/lp9_eval/base_vs_adapter_report.json
+source_generations: reports/lp9_eval/base_vs_adapter_generations.jsonl
+output_dir: reports/lp9_failure_pack
+random_seed: 42
+repetitions_per_failure: 2
+min_failures_per_pair: 1
+include_adapter_under_base: true
+include_missing_preferred: true
+include_contains_forbidden: true
+task_type_weights:
+  rewrite: 1.0
+  direct_preference: 1.0
+  choose_best_term: 1.5
+  correction: 1.0
+  open_generation: 1.0
+lexical_pair_overrides:
+  chat:
+    preferred_terms: [clavardage]
+    forbidden_terms: [chat]
+    require_digital_context: true
+  smartphone:
+    preferred_terms: [cellulaire]
+    forbidden_terms: [smartphone]
+    require_digital_context: true
+  email:
+    preferred_terms: [courriel]
+    forbidden_terms: [email, e-mail]
+    require_digital_context: true
+max_examples: 200
+train_ratio: 0.8

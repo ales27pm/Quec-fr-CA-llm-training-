@@ -8,6 +8,7 @@ from qfr_pipeline.schemas import (
     DatasetManifest,
     ErrorTaxonomyManifest,
     EvaluationManifest,
+    LP9FailureMiningPolicyManifest,
     LP9LexicalPreferencePackManifest,
     LPContextManifest,
     LPRuleManifest,
@@ -78,6 +79,10 @@ def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:
     return _validate(path, TrainingPackPolicyManifest)
 
 
+def validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:
+    return _validate(path, LP9FailureMiningPolicyManifest)
+
+
 def validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:
     return _validate(path, LP9LexicalPreferencePackManifest)
 
@@ -119,6 +124,8 @@ def validate_repository(root: Path) -> ValidationReport:
                 validate_training_export_manifest(path)
             elif kind == "training_pack_policy_manifest":
                 validate_training_pack_policy(path)
+            elif kind == "lp9_failure_mining_policy":
+                validate_lp9_failure_mining_policy(path)
             elif kind == "lp9_lexical_preference_pack":
                 validate_lp9_lexical_preference_pack_manifest(path)
             elif kind == "modern_corpus_acquisition_manifest":

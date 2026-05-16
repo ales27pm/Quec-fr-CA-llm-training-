@@ -925,6 +925,90 @@ class LP9LexicalPreferencePackManifest(BaseModel):
             raise ValueError("At least one LP9 task flag must be enabled")
         return self
 
+class LP9FailureMiningPairOverride(BaseModel):
+    preferred_terms: list[str] = Field(default_factory=list)
+    forbidden_terms: list[str] = Field(default_factory=list)
+    require_digital_context: bool = False
+
+    @model_validator(mode="after")
+    def validate_override(self):
+        if not self.preferred_terms:
+            raise ValueError("preferred_terms must be non-empty")
+        if not self.forbidden_terms:
+            raise ValueError("forbidden_terms must be non-empty")
+        return self
+
+class LP9FailureMiningTaskWeights(BaseModel):
+    rewrite: float = Field(gt=0)
+    direct_preference: float = Field(gt=0)
+    choose_best_term: float = Field(gt=0)
+    correction: float = Field(gt=0)
+    open_generation: float = Field(gt=0)
+
+class LP9FailureMiningPolicyManifest(BaseModel):
+    kind: str
+    schema_version: str
+    primary_language: str
+    source_eval_report: str
+    source_generations: str
+    output_dir: str
+    random_seed: int
+    repetitions_per_failure: int
+    min_failures_per_pair: int
+    include_adapter_under_base: bool = True
+    include_missing_preferred: bool = True
+    include_contains_forbidden: bool = True
+    task_type_weights: LP9FailureMiningTaskWeights
+    lexical_pair_overrides: dict[str, LP9FailureMiningPairOverride] = Field(default_factory=dict)
+    max_examples: int = 0
+    train_ratio: float = Field(ge=0.0, le=1.0)
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, value: str) -> str:
+        if value != "lp9_failure_mining_policy":
+            raise ValueError("kind must be lp9_failure_mining_policy")
+        return value
+
+    @field_validator("output_dir", mode="before")
+    @classmethod
+    def validate_output_dir(cls, value: str) -> str:
+        if not _is_repo_relative_path(value):
+            raise ValueError("output_dir must be repo-relative")
+        return value
+
+    @field_validator("source_eval_report", mode="before")
+    @classmethod
+    def validate_source_eval_report(cls, value: str) -> str:
+        if not _is_repo_relative_path(value):
+            raise ValueError("source_eval_report must be repo-relative")
+        return value
+
+    @field_validator("source_generations", mode="before")
+    @classmethod
+    def validate_source_generations(cls, value: str) -> str:
+        if not _is_repo_relative_path(value):
+            raise ValueError("source_generations must be repo-relative")
+        return value
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        if self.random_seed < 0:
+            raise ValueError("random_seed must be >= 0")
+        if self.repetitions_per_failure <= 0:
+            raise ValueError("repetitions_per_failure must be > 0")
+        if self.min_failures_per_pair < 0:
+            raise ValueError("min_failures_per_pair must be >= 0")
+        if self.max_examples < 0:
+            raise ValueError("max_examples must be >= 0")
+        if not (0.0 <= self.train_ratio <= 1.0):
+            raise ValueError("train_ratio must be between 0.0 and 1.0")
+        if not self.task_type_weights:
+            raise ValueError("task_type_weights must be defined")
+        return self
+
 class ModernCorpusAdapterConfig(BaseModel):
     name: str
     base_url: str | None = None

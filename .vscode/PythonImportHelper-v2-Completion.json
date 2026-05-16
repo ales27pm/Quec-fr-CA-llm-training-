@@ -256,6 +256,22 @@
         "documentation": {}
     },
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
         "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
@@ -306,6 +322,22 @@
     },
     {
         "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
         "importPath": "collections",
         "description": "collections",
         "isExtraImport": true,
@@ -738,6 +770,22 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -779,6 +827,14 @@
     },
     {
         "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -2075,6 +2131,22 @@
     },
     {
         "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
         "importPath": "qfr_pipeline.io",
         "description": "qfr_pipeline.io",
         "isExtraImport": true,
@@ -3541,6 +3613,22 @@
         "documentation": {}
     },
     {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
         "label": "repo_relative_path",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
@@ -3614,6 +3702,14 @@
     },
     {
         "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
         "isExtraImport": true,
@@ -3974,6 +4070,30 @@
         "documentation": {}
     },
     {
+        "label": "generate_lp9_failure_pack",
+        "importPath": "qfr_pipeline.lp9_failure_mining",
+        "description": "qfr_pipeline.lp9_failure_mining",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_failure_pack",
+        "importPath": "qfr_pipeline.lp9_failure_mining",
+        "description": "qfr_pipeline.lp9_failure_mining",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_failure_mining_policy",
+        "importPath": "qfr_pipeline.lp9_failure_mining",
+        "description": "qfr_pipeline.lp9_failure_mining",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
         "label": "generate_lp9_micro_pack",
         "importPath": "qfr_pipeline.lp9_micro_pack",
         "description": "qfr_pipeline.lp9_micro_pack",
@@ -4055,6 +4175,14 @@
     },
     {
         "label": "validate_evaluation_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_failure_mining_policy",
         "importPath": "qfr_pipeline.validation",
         "description": "qfr_pipeline.validation",
         "isExtraImport": true,
@@ -4232,6 +4360,14 @@
         "documentation": {}
     },
     {
+        "label": "LP9FailureMiningPolicyManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "LP9LexicalPair",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
@@ -4337,6 +4473,14 @@
     },
     {
         "label": "EvaluationManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LP9FailureMiningPolicyManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
@@ -4483,28 +4627,35 @@
         "documentation": {}
     },
     {
-        "label": "HTMLParser",
-        "importPath": "html.parser",
-        "description": "html.parser",
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "detail": "html.parser",
+        "detail": "pydantic",
         "documentation": {}
     },
     {
-        "label": "urllib.parse",
-        "kind": 6,
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "importPath": "urllib.parse",
-        "description": "urllib.parse",
-        "detail": "urllib.parse",
+        "detail": "pydantic",
         "documentation": {}
     },
     {
-        "label": "urlencode",
-        "importPath": "urllib.parse",
-        "description": "urllib.parse",
+        "label": "field_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
         "isExtraImport": true,
-        "detail": "urllib.parse",
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "model_validator",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
         "documentation": {}
     },
     {
@@ -4553,6 +4704,31 @@
         "description": "pydantic",
         "isExtraImport": true,
         "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "HTMLParser",
+        "importPath": "html.parser",
+        "description": "html.parser",
+        "isExtraImport": true,
+        "detail": "html.parser",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "urlencode",
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "isExtraImport": true,
+        "detail": "urllib.parse",
         "documentation": {}
     },
     {
@@ -18837,7 +19013,16 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.cli",
         "description": "src.qfr_pipeline.cli",
-        "peekOfCode": "def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_training_pack_policy_model(policy)\n    print(\"Training pack policy manifest valid\")\n@app.command(\"generate-lp9-micro-pack\")\ndef generate_lp9_micro_pack_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n):\n    _refresh_dynamic_agents()",
+        "peekOfCode": "def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_training_pack_policy_model(policy)\n    print(\"Training pack policy manifest valid\")\n@app.command(\"generate-lp9-failure-pack\")\ndef generate_lp9_failure_pack_cmd(\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n):\n    _refresh_dynamic_agents()",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_failure_pack_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def generate_lp9_failure_pack_cmd(\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n):\n    _refresh_dynamic_agents()\n    payload = generate_lp9_failure_pack(policy, out_dir=out_dir)\n    print(\n        {\n            \"ok\": payload.get(\"ok\", False),\n            \"failures_seen\": payload.get(\"failures_seen\", 0),",
         "detail": "src.qfr_pipeline.cli",
         "documentation": {}
     },
@@ -19442,6 +19627,78 @@
         "description": "src.qfr_pipeline.lp9_eval",
         "peekOfCode": "PROMPT_CONTEXTS = [\n    \"Dans un message professionnel à un client québécois.\",\n    \"Dans une consigne destinée au personnel d'un service public du Québec.\",\n    \"Dans un guide d'utilisation pour une application mobile au Québec.\",\n    \"Dans un contexte scolaire standard en français québécois.\",\n    \"Dans une communication courante entre collègues au Québec.\",\n]\ndef _normalize(text: str) -> str:\n    return \" \".join(text.casefold().split())\ndef _term_pattern(term: str) -> re.Pattern[str]:",
         "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "load_lp9_failure_mining_policy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "def load_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return LP9FailureMiningPolicyManifest.model_validate(load_yaml(path))\ndef validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return load_lp9_failure_mining_policy(path)\ndef _resolve_repo_path(path_str: str) -> Path:\n    if Path(path_str).is_absolute():\n        return Path(path_str)\n    return ROOT / path_str\ndef _derive_pair_key(lexical_pair_id: str) -> str:\n    if \":\" in lexical_pair_id:",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_failure_mining_policy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "def validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return load_lp9_failure_mining_policy(path)\ndef _resolve_repo_path(path_str: str) -> Path:\n    if Path(path_str).is_absolute():\n        return Path(path_str)\n    return ROOT / path_str\ndef _derive_pair_key(lexical_pair_id: str) -> str:\n    if \":\" in lexical_pair_id:\n        return lexical_pair_id.split(\":\", 1)[1]\n    return lexical_pair_id",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_failure_pack",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "def generate_lp9_failure_pack(\n    policy_path: Path,\n    out_dir: Path | None = None,\n) -> dict[str, Any]:\n    policy = validate_lp9_failure_mining_policy(policy_path)\n    output_dir = out_dir or (ROOT / policy.output_dir)\n    if not output_dir.is_absolute():\n        output_dir = ROOT / output_dir\n    report = _read_json(_resolve_repo_path(policy.source_eval_report))\n    failures = [failure for failure in report.get(\"failures\", []) if _failure_included(failure, policy)]",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "SYSTEM_PROMPT = (\n    \"Tu es un assistant linguistique qui répond en français québécois standard, \"\n    \"avec un vocabulaire recommandé par les usages normatifs du Québec.\"\n)\nFAILURE_TASKS = [\n    \"rewrite\",\n    \"direct_preference\",\n    \"choose_best_term\",\n    \"correction\",\n    \"open_generation\",",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "FAILURE_TASKS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "FAILURE_TASKS = [\n    \"rewrite\",\n    \"direct_preference\",\n    \"choose_best_term\",\n    \"correction\",\n    \"open_generation\",\n]\nDIGITAL_CONTEXTS = [\n    \"dans un contexte numérique\",\n    \"dans une application mobile\",",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "DIGITAL_CONTEXTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "DIGITAL_CONTEXTS = [\n    \"dans un contexte numérique\",\n    \"dans une application mobile\",\n    \"sur un site web\",\n    \"dans un service en ligne\",\n    \"dans un message ou une interface digitale\",\n]\nGENERAL_CONTEXTS = [\n    \"dans un message professionnel au Québec\",\n    \"dans une communication de service québécois\",",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "GENERAL_CONTEXTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "GENERAL_CONTEXTS = [\n    \"dans un message professionnel au Québec\",\n    \"dans une communication de service québécois\",\n    \"dans une phrase naturelle en français québécois\",\n    \"pour une personne vivant au Québec\",\n    \"dans un contexte courant québécois\",\n]\nPAIR_OVERRIDE_KEYS = {\n    \"chat\": \"chat\",\n    \"weekend\": \"weekend\",",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "PAIR_OVERRIDE_KEYS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_failure_mining",
+        "description": "src.qfr_pipeline.lp9_failure_mining",
+        "peekOfCode": "PAIR_OVERRIDE_KEYS = {\n    \"chat\": \"chat\",\n    \"weekend\": \"weekend\",\n    \"email\": \"email\",\n    \"smartphone\": \"smartphone\",\n}\ndef _is_repo_relative_path(value: str) -> bool:\n    return bool(value and not value.startswith(('/', './', '../')))\ndef _sha256(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()",
+        "detail": "src.qfr_pipeline.lp9_failure_mining",
         "documentation": {}
     },
     {
@@ -20255,6 +20512,33 @@
         "documentation": {}
     },
     {
+        "label": "LP9FailureMiningPairOverride",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LP9FailureMiningPairOverride(BaseModel):\n    preferred_terms: list[str] = Field(default_factory=list)\n    forbidden_terms: list[str] = Field(default_factory=list)\n    require_digital_context: bool = False\n    @model_validator(mode=\"after\")\n    def validate_override(self):\n        if not self.preferred_terms:\n            raise ValueError(\"preferred_terms must be non-empty\")\n        if not self.forbidden_terms:\n            raise ValueError(\"forbidden_terms must be non-empty\")",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LP9FailureMiningTaskWeights",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LP9FailureMiningTaskWeights(BaseModel):\n    rewrite: float = Field(gt=0)\n    direct_preference: float = Field(gt=0)\n    choose_best_term: float = Field(gt=0)\n    correction: float = Field(gt=0)\n    open_generation: float = Field(gt=0)\nclass LP9FailureMiningPolicyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LP9FailureMiningPolicyManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LP9FailureMiningPolicyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str\n    source_eval_report: str\n    source_generations: str\n    output_dir: str\n    random_seed: int\n    repetitions_per_failure: int\n    min_failures_per_pair: int",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "ModernCorpusAdapterConfig",
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
@@ -20538,7 +20822,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)",
+        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return _validate(path, LP9FailureMiningPolicyManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -20547,7 +20831,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
+        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return _validate(path, LP9FailureMiningPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -20556,7 +20840,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return _validate(path, LP9FailureMiningPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -20565,7 +20849,16 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "peekOfCode": "def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return _validate(path, LP9FailureMiningPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_failure_mining_policy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_lp9_failure_mining_policy(path: Path) -> LP9FailureMiningPolicyManifest:\n    return _validate(path, LP9FailureMiningPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -21287,6 +21580,24 @@
         "description": "tests.test_lp9_eval",
         "peekOfCode": "lp9_eval_script = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(lp9_eval_script)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(\n        (ROOT / \"manifests/lp9_lexical_preference_pack.template.yaml\").read_text(\n            encoding=\"utf-8\"\n        )\n    )",
         "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "test_generate_lp9_failure_pack_outputs_unique_training_examples",
+        "kind": 2,
+        "importPath": "tests.test_lp9_failure_mining",
+        "description": "tests.test_lp9_failure_mining",
+        "peekOfCode": "def test_generate_lp9_failure_pack_outputs_unique_training_examples() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        source_eval_path = tmp_root / \"lp9_eval_report.json\"\n        source_generations_path = tmp_root / \"lp9_generations.jsonl\"\n        report = {\n            \"failures\": [\n                {",
+        "detail": "tests.test_lp9_failure_mining",
+        "documentation": {}
+    },
+    {
+        "label": "test_validate_lp9_failure_mining_policy_requires_repo_relative_paths",
+        "kind": 2,
+        "importPath": "tests.test_lp9_failure_mining",
+        "description": "tests.test_lp9_failure_mining",
+        "peekOfCode": "def test_validate_lp9_failure_mining_policy_requires_repo_relative_paths() -> None:\n    policy = {\n        \"kind\": \"lp9_failure_mining_policy\",\n        \"schema_version\": \"1.0.0\",\n        \"primary_language\": \"fr-CA\",\n        \"source_eval_report\": \"/absolute/path/report.json\",\n        \"source_generations\": \"./relative/path/generations.jsonl\",\n        \"output_dir\": \"reports/lp9_failure_pack\",\n        \"random_seed\": 42,\n        \"repetitions_per_failure\": 1,",
+        "detail": "tests.test_lp9_failure_mining",
         "documentation": {}
     },
     {

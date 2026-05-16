@@ -1,11 +1,14 @@
 # Quec-fr-CA-llm-training
 
 ## Strategic planning
+
 This repository includes a sovereignty-first roadmap and centralized release thresholds for the Québécois (fr-CA) training program.
+
 - Roadmap: [docs/strategic_roadmap.md](docs/strategic_roadmap.md)
 - Threshold source of truth: [project/release_gates.yaml](project/release_gates.yaml)
 
 ## Executable Pipeline
+
 - Install: `pip install -e .[dev]`
 - Validate repo: `qfr validate`
 - Generate quality-gated LP9 minimal pairs: `qfr generate-minimal-pairs --rule rules/lp_rule_manifest.template.yaml --context rules/lp9_lexical_semantics.contexts.yaml --out data/generated/minimal_pairs.lp9.jsonl --report reports/minimal_pair_quality.lp9.json`
@@ -27,6 +30,7 @@ This repository includes a sovereignty-first roadmap and centralized release thr
 - Unified release-candidate orchestration: `qfr release-candidate --metrics <metrics-data.json> --diagnostics-input fixtures/diagnostics/lp9_lp20_eval_sample.jsonl --out-json reports/release_candidate.json --out-md reports/release_candidate.md`.
 
 ## Data pipeline demo
+
 Use legacy + package commands to generate deterministic artifacts under `reports/data_pipeline_demo/`.
 
 - Validate corpus source contract: `qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.template.yaml`.
@@ -36,6 +40,7 @@ Use legacy + package commands to generate deterministic artifacts under `reports
 - Curate ingested corpus deterministically: `qfr curate-corpus --input reports/corpus_ingestion/harvest.jsonl --policy manifests/curation_policy_manifest.template.yaml --out-dir reports/corpus_curation`.
 
 ## Real corpus download workflow
+
 The committed template corpus is intentionally tiny. To materialize real remote text sources, use the separate real-download manifest and downloader:
 
 ```bash
@@ -83,6 +88,7 @@ python tools/download_real_corpus_sources.py \
 Review licensing/jurisdiction before using downloaded text for an actual training release. The default real-download manifest uses Project Gutenberg links, which are public-domain-oriented but still require checking local copyright and Project Gutenberg terms.
 
 ## Local real pack build (T26)
+
 The previous local real run produced `0` ingested records because Gutenberg files were read line by line, and hard-wrapped lines were shorter than `--min-chars 80`. Ingestion now performs paragraph-level reconstruction for plain text sources and filters common Gutenberg boilerplate.
 
 Use fixture-scale pack build in CI for deterministic checks, and use the local real workflow only for local experimentation:
@@ -95,16 +101,19 @@ This script runs real local ingestion/curation plus live modern acquisition and 
 If transient remote failures happen, the downloader resumes from cached files, accepts partial local runs once at least five downloads are available, and prints a warning to rerun later for missing sources.
 
 Mode guidance:
+
 - `manifests/training_pack_policy.template.yaml` is `fixture_ci` and intentionally tiny.
 - `manifests/training_pack_policy.local_real.template.yaml` is `local_research` and can include noncommercial sources for research training experiments.
 - `manifests/training_pack_policy.local_smoke.template.yaml` is `local_research` for local high-volume smoke/pilot training from real accepted corpora; it is intentionally non-production.
 - `production_commercial` mode is stricter and rejects noncommercial/permission-required/unknown commercial-use records.
 
 Commercial caveat:
+
 - Assemblée nationale content remains noncommercial/permission-required unless explicit commercial permission is obtained.
 - A pack can be technically trainable for research while still blocked for commercial production release.
 
 ## T21 Curated Split
+
 Use `qfr validate-split-policy` and `qfr split-curated-corpus` to produce `reports/curated_splits/*` from accepted curated corpus only.
 
 ## Dolphin3 + Unsloth local training path
@@ -148,6 +157,7 @@ python scripts/export_qfr_dolphin3_unsloth_gguf.py \
 ```
 
 ## Fresh checkout
+
 Install dependencies before any `qfr` or governance commands:
 
 ```bash
@@ -163,8 +173,8 @@ bash scripts/run_local_validation.sh
 
 `qfr` is installed by the editable package install. `tools/update_agents.py` imports PyYAML, so dependencies must be installed first. No top-level `qfr` wrapper is intentionally provided.
 
-
 ## Modern corpus acquisition (T23/T24)
+
 - `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition_manifest.template.yaml`
 - `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition.donnees_quebec.template.yaml`
 - `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition.assnat_seed.template.yaml`
@@ -182,6 +192,7 @@ Use `--fixture-mode` to hard-require adapter fixtures for networked adapters, `-
 Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only by default and must not be used for training.
 
 ## Training pack builder (T25)
+
 - `qfr validate-training-pack-policy --policy manifests/training_pack_policy.template.yaml`
 - `qfr validate-training-pack-policy --policy manifests/training_pack_policy.local_real.template.yaml`
 - `qfr validate-training-pack-policy --policy manifests/training_pack_policy.local_smoke.template.yaml`
@@ -194,12 +205,14 @@ Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only 
 `manifests/training_pack_policy.template.yaml` defines deterministic source merging, global deduplication, source/share balancing, and instructionization into Qwen ChatML-compatible examples for Dolphin3/Unsloth continuation training inputs.
 
 Safety behavior is strict by default:
+
 - holdout and holdout-like records are rejected;
 - non-trainable or review-gated records are rejected unless explicitly permission-granted;
 - permission-required/noncommercial material is excluded unless a local permission manifest is provided;
 - duplicate exact and normalized text is rejected.
 
 Readiness thresholds are enforced in policy:
+
 - smoke test: `500000` tokens
 - pilot LoRA candidate: `20000000` tokens
 - production LoRA candidate: `150000000` tokens and `200000` instruction examples
@@ -207,20 +220,25 @@ Readiness thresholds are enforced in policy:
 Current deterministic fixture-scale outputs are expected to be smoke/pilot-oriented only and not production-ready; production requires much larger volume, broader source diversity, and commercially safe licensing coverage.
 
 Notes on local research packs:
+
 - `reports/training_pack_real/` is governance-balanced and can be very small when source-dominance and diversity controls trigger.
 - `reports/training_pack_smoke/` is for local technical smoke/pilot training only.
 - A production-quality pack still requires substantially more modern/diverse licensed data and a `production_commercial` pass.
 
 Local smoke-pack helper:
+
 - `bash scripts/build_local_smoke_pack.sh`
 
 ## LP9 lexical micro-pack (T30)
+
 Use this targeted pack only for controlled lexical steering experiments. It is not a production corpus replacement.
 
 - Generate targeted LP9 micro-pack:
   - `qfr generate-lp9-micro-pack --manifest manifests/lp9_lexical_preference_pack.template.yaml --out-dir reports/lp9_micro_pack`
 - Generate deterministic LP9 eval prompts:
   - `qfr generate-lp9-eval --manifest manifests/lp9_lexical_preference_pack.template.yaml --out reports/lp9_eval/eval_prompts.jsonl`
+- Generate LP9 failure-mining hard-negative pack from eval failures:
+  - `qfr generate-lp9-failure-pack --policy manifests/lp9_failure_mining_policy.template.yaml --out-dir reports/lp9_failure_pack`
 
 Local targeted LP9 LoRA steering run (manual/local only):
 
@@ -247,6 +265,7 @@ python scripts/evaluate_lp9_adapter.py \
 ```
 
 Unsloth input-format support:
+
 - `--input-format auto` detects curated vs training-pack rows.
 - `--input-format curated` enforces accepted curation schema.
 - `--input-format training-pack` consumes generated training-pack rows directly.
