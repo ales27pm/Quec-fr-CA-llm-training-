@@ -359,13 +359,11 @@
         "output_dir": "reports/training_pack",
         "input_files": [
           "reports/corpus_curation/accepted.jsonl",
-          "reports/corpus_curation_real/accepted.jsonl",
           "reports/modern_corpus/assnat_fixture_harvest.jsonl",
           "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
         ],
         "input_files_seen": [
           "reports/corpus_curation/accepted.jsonl",
-          "reports/corpus_curation_real/accepted.jsonl",
           "reports/modern_corpus/assnat_fixture_harvest.jsonl",
           "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
         ],

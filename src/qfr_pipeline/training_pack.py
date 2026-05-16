@@ -998,6 +998,18 @@ def build_training_pack(
     if max_source_family_share > policy.balancing.max_single_source_family_share + 1e-9:
         blocking_reasons.append("single_source_family_dominance")
 
+    if pack_mode == "local_research" and examples:
+        modern_like_examples = sum(
+            count
+            for source_family, count in source_family_summary.items()
+            if "literary" not in str(source_family).casefold()
+        )
+        modern_like_share = modern_like_examples / len(examples)
+        if max_source_family_share >= 0.75:
+            blocking_reasons.append("source_family_dominance")
+        if modern_like_share < 0.20:
+            blocking_reasons.append("insufficient_modern_diversity")
+
     if readiness_level == "production_lora_candidate":
         if len(examples) < thresholds["production_instruction_examples"]:
             blocking_reasons.append("insufficient_instruction_examples_for_production")

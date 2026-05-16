@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Continue Dolphin3.0-Qwen2.5-3b with Québec-French accepted data using Unsloth QLoRA.
+"""Continue Dolphin3.0-Qwen2.5-3b with Québec-French data using Unsloth QLoRA.
 
 This script intentionally trains from the non-GGUF Dolphin checkpoint:
     dphn/Dolphin3.0-Qwen2.5-3b
 
 It does not train from bartowski's GGUF artifact. GGUF is exported after training.
 
-Input records must come from qfr-pipeline curated accepted splits and must contain:
-  - text
-  - curation_label == "accepted"
-  - curation_score
-  - curation_reasons
-  - policy_id
+Input formats:
+  - curated accepted rows (`reports/curated_splits/*.jsonl`)
+  - generated training-pack rows (`reports/training_pack*/train.jsonl`)
 
 Smoke test:
   python scripts/train_qfr_dolphin3_unsloth_lora.py \
@@ -26,9 +23,10 @@ Full local run starts from the same command with more data and max-steps -1.
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 SYSTEM_PROMPT = (
     "Tu es un assistant IA québécois précis, utile et naturel. "
@@ -41,6 +39,9 @@ DEFAULT_USER_PROMPT = (
 )
 
 TARGET_MODULES = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+INPUT_FORMAT_CHOICES = ("auto", "curated", "training-pack")
+CURATED_REQUIRED_FIELDS = ("text", "curation_score", "curation_reasons", "policy_id")
+LOCAL_RESEARCH_ONLY_COMMERCIAL_USE = {"permission_required", "unknown", "prohibited"}
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -56,18 +57,92 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
                 row = json.loads(stripped)
             except json.JSONDecodeError as exc:
                 raise ValueError(f"Invalid JSONL at {path}:{line_no}: {exc}") from exc
+            if not isinstance(row, dict):
+                raise ValueError(f"Invalid JSONL object at {path}:{line_no}: expected JSON object")
             rows.append(row)
     return rows
 
 
-def accepted_rows(path: Path) -> list[dict[str, Any]]:
-    rows = read_jsonl(path)
+def _parse_bool(value: Any, *, default: bool) -> bool:
+    if value is None:
+        return default
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return bool(value)
+    if isinstance(value, str):
+        lowered = value.strip().casefold()
+        if lowered in {"1", "true", "yes", "y"}:
+            return True
+        if lowered in {"0", "false", "no", "n", ""}:
+            return False
+    return bool(value)
+
+
+def _is_present(value: Any) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, (list, dict, tuple, set)):
+        return len(value) > 0
+    return True
+
+
+def _first_non_empty_row(rows: list[dict[str, Any]]) -> dict[str, Any] | None:
+    for row in rows:
+        if any(_is_present(value) for value in row.values()):
+            return row
+    return None
+
+
+def _looks_curated_row(row: dict[str, Any]) -> bool:
+    return all(field in row for field in ("curation_label", "text", "curation_score"))
+
+
+def _looks_training_pack_row(row: dict[str, Any]) -> bool:
+    if "messages" in row:
+        return True
+    if "example_id" in row or "task_type" in row:
+        return True
+    if "assistant_text" in row or "prompt" in row:
+        return True
+    text = str(row.get("text") or "").strip()
+    return bool(text and "<|im_start|>" in text and "<|im_end|>" in text)
+
+
+def detect_input_format(
+    rows: list[dict[str, Any]],
+    *,
+    requested_format: str,
+    path: Path,
+) -> Literal["curated", "training-pack"]:
+    if requested_format == "curated":
+        return "curated"
+    if requested_format == "training-pack":
+        return "training-pack"
+    probe = _first_non_empty_row(rows)
+    if probe is None:
+        raise ValueError(f"No non-empty rows found in {path}")
+    if _looks_curated_row(probe):
+        return "curated"
+    if _looks_training_pack_row(probe):
+        return "training-pack"
+    keys = sorted(probe.keys())
+    raise ValueError(
+        f"Unable to auto-detect input format for {path}. "
+        f"First non-empty row keys: {keys}. "
+        "Use --input-format curated or --input-format training-pack."
+    )
+
+
+def accepted_curated_rows(rows: list[dict[str, Any]], *, path: Path) -> list[dict[str, Any]]:
     accepted: list[dict[str, Any]] = []
     for idx, row in enumerate(rows, start=1):
         label = row.get("curation_label")
         if label != "accepted":
             raise ValueError(f"Forbidden non-accepted record in {path} at row {idx}: {label!r}")
-        missing = [k for k in ("text", "curation_score", "curation_reasons", "policy_id") if k not in row]
+        missing = [k for k in CURATED_REQUIRED_FIELDS if k not in row]
         if missing:
             raise ValueError(f"Missing required curation metadata in {path} at row {idx}: {missing}")
         text = str(row["text"]).strip()
@@ -78,15 +153,135 @@ def accepted_rows(path: Path) -> list[dict[str, Any]]:
     return accepted
 
 
+def _normalize_messages(messages: Any, *, path: Path, row_idx: int) -> list[dict[str, str]]:
+    if not isinstance(messages, list):
+        raise ValueError(f"Invalid messages field in {path} at row {row_idx}: expected list")
+    normalized: list[dict[str, str]] = []
+    for message_idx, message in enumerate(messages, start=1):
+        if not isinstance(message, dict):
+            raise ValueError(
+                f"Invalid message in {path} at row {row_idx}, message {message_idx}: expected object"
+            )
+        role = str(message.get("role") or "").strip()
+        content = str(message.get("content") or "").strip()
+        if not role or not content:
+            raise ValueError(
+                f"Invalid message in {path} at row {row_idx}, message {message_idx}: role/content required"
+            )
+        normalized.append({"role": role, "content": content})
+    if not normalized:
+        raise ValueError(f"Empty messages/text in {path} at row {row_idx}")
+    return normalized
+
+
+def accepted_training_pack_rows(
+    rows: list[dict[str, Any]],
+    *,
+    path: Path,
+) -> tuple[list[dict[str, Any]], int]:
+    accepted: list[dict[str, Any]] = []
+    local_research_warnings = 0
+
+    for idx, row in enumerate(rows, start=1):
+        holdout_only = _parse_bool(row.get("holdout_only"), default=False)
+        contains_holdout = _parse_bool(row.get("contains_holdout_material"), default=False)
+        if holdout_only or contains_holdout:
+            raise ValueError(f"Forbidden holdout record in {path} at row {idx}")
+
+        allowed_for_training = _parse_bool(row.get("allowed_for_training"), default=True)
+        if not allowed_for_training:
+            raise ValueError(f"Forbidden allowed_for_training=false record in {path} at row {idx}")
+
+        requires_review = _parse_bool(row.get("requires_review"), default=False)
+        permission_granted = _parse_bool(row.get("permission_granted"), default=False)
+        if requires_review and not permission_granted:
+            raise ValueError(
+                f"Forbidden requires_review=true without permission_granted in {path} at row {idx}"
+            )
+
+        normalized = dict(row)
+        text = str(row.get("text") or "").strip()
+        messages: list[dict[str, str]] | None = None
+
+        if row.get("messages") is not None:
+            messages = _normalize_messages(row.get("messages"), path=path, row_idx=idx)
+        elif row.get("assistant_text") is not None or row.get("prompt") is not None:
+            assistant_text = str(row.get("assistant_text") or "").strip()
+            prompt = str(row.get("prompt") or DEFAULT_USER_PROMPT).strip() or DEFAULT_USER_PROMPT
+            system_prompt = str(row.get("system_prompt") or SYSTEM_PROMPT).strip() or SYSTEM_PROMPT
+            if not assistant_text:
+                raise ValueError(f"Empty assistant_text in {path} at row {idx}")
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt},
+                {"role": "assistant", "content": assistant_text},
+            ]
+
+        if not text and not messages:
+            raise ValueError(f"Empty messages/text in {path} at row {idx}")
+
+        if text:
+            normalized["text"] = text
+        if messages is not None:
+            normalized["messages"] = messages
+
+        commercial_use = str(row.get("commercial_use") or "").strip().casefold()
+        if commercial_use in LOCAL_RESEARCH_ONLY_COMMERCIAL_USE:
+            local_research_warnings += 1
+            normalized["_local_research_only_commercial_use"] = commercial_use
+
+        accepted.append(normalized)
+
+    if not accepted:
+        raise ValueError(f"No accepted training-pack records found in {path}")
+    return accepted, local_research_warnings
+
+
+def load_input_rows(
+    path: Path,
+    *,
+    requested_input_format: str,
+) -> tuple[list[dict[str, Any]], Literal["curated", "training-pack"], int]:
+    rows = read_jsonl(path)
+    detected_format = detect_input_format(rows, requested_format=requested_input_format, path=path)
+    if detected_format == "curated":
+        return accepted_curated_rows(rows, path=path), "curated", 0
+    accepted, warnings_count = accepted_training_pack_rows(rows, path=path)
+    return accepted, "training-pack", warnings_count
+
+
+def fallback_qwen_chatml(messages: list[dict[str, str]]) -> str:
+    lines: list[str] = []
+    for message in messages:
+        role = str(message.get("role") or "").strip()
+        content = str(message.get("content") or "").strip()
+        if not role or not content:
+            continue
+        lines.append(f"<|im_start|>{role}")
+        lines.append(content)
+        lines.append("<|im_end|>")
+    rendered = "\n".join(lines).strip()
+    return rendered + "\n" if rendered else ""
+
+
 def fallback_qwen_chat(system: str, user: str, assistant: str) -> str:
-    return (
-        "<|im_start|>system\n"
-        f"{system}<|im_end|>\n"
-        "<|im_start|>user\n"
-        f"{user}<|im_end|>\n"
-        "<|im_start|>assistant\n"
-        f"{assistant}<|im_end|>\n"
+    return fallback_qwen_chatml(
+        [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+            {"role": "assistant", "content": assistant},
+        ]
     )
+
+
+def render_messages(tokenizer: Any, messages: list[dict[str, str]]) -> str:
+    apply_chat_template = getattr(tokenizer, "apply_chat_template", None)
+    if callable(apply_chat_template):
+        try:
+            return apply_chat_template(messages, tokenize=False, add_generation_prompt=False)
+        except Exception:
+            pass
+    return fallback_qwen_chatml(messages)
 
 
 def render_chat(tokenizer: Any, assistant_text: str, *, system_prompt: str, user_prompt: str) -> str:
@@ -95,26 +290,97 @@ def render_chat(tokenizer: Any, assistant_text: str, *, system_prompt: str, user
         {"role": "user", "content": user_prompt},
         {"role": "assistant", "content": assistant_text},
     ]
-    try:
-        return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False)
-    except Exception:
-        return fallback_qwen_chat(system_prompt, user_prompt, assistant_text)
+    return render_messages(tokenizer, messages)
 
 
-def rows_to_dataset(rows: list[dict[str, Any]], tokenizer: Any, *, format_mode: str, system_prompt: str, user_prompt: str):
+def render_training_pack_row(tokenizer: Any, row: dict[str, Any]) -> str:
+    text = str(row.get("text") or "").strip()
+    if text:
+        return text
+    if row.get("messages") is not None:
+        messages = _normalize_messages(row.get("messages"), path=Path("<in-memory>"), row_idx=0)
+        return render_messages(tokenizer, messages)
+    assistant_text = str(row.get("assistant_text") or "").strip()
+    if assistant_text:
+        prompt = str(row.get("prompt") or DEFAULT_USER_PROMPT).strip() or DEFAULT_USER_PROMPT
+        system_prompt = str(row.get("system_prompt") or SYSTEM_PROMPT).strip() or SYSTEM_PROMPT
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt},
+            {"role": "assistant", "content": assistant_text},
+        ]
+        return render_messages(tokenizer, messages)
+    raise ValueError("Training-pack row does not include renderable text/messages")
+
+
+def rows_to_dataset(
+    rows: list[dict[str, Any]],
+    tokenizer: Any,
+    *,
+    input_format: Literal["curated", "training-pack"],
+    format_mode: str,
+    system_prompt: str,
+    user_prompt: str,
+):
     from datasets import Dataset
 
     records: list[dict[str, str]] = []
     for row in rows:
-        text = str(row["text"]).strip()
-        if format_mode == "chat":
-            rendered = render_chat(tokenizer, text, system_prompt=system_prompt, user_prompt=user_prompt)
-        elif format_mode == "completion":
-            rendered = text
+        if input_format == "curated":
+            text = str(row["text"]).strip()
+            if format_mode == "chat":
+                rendered = render_chat(tokenizer, text, system_prompt=system_prompt, user_prompt=user_prompt)
+            elif format_mode == "completion":
+                rendered = text
+            else:
+                raise ValueError(f"Unsupported format mode: {format_mode}")
+        elif input_format == "training-pack":
+            rendered = render_training_pack_row(tokenizer, row)
         else:
-            raise ValueError(f"Unsupported format mode: {format_mode}")
-        records.append({"text": rendered})
+            raise ValueError(f"Unsupported input format: {input_format}")
+
+        if not str(rendered).strip():
+            continue
+
+        record: dict[str, str] = {"text": rendered}
+        for field in ("example_id", "source_id", "task_type", "source_record_id", "source_family"):
+            value = row.get(field)
+            if _is_present(value):
+                record[field] = str(value)
+        records.append(record)
+
+    if not records:
+        raise ValueError("No training examples remained after rendering input rows.")
     return Dataset.from_list(records)
+
+
+def summarize_input_rows(
+    *,
+    input_format: Literal["curated", "training-pack"],
+    train_rows: list[dict[str, Any]],
+    eval_rows: list[dict[str, Any]],
+    local_research_warning_count: int,
+) -> None:
+    task_counts: Counter[str] = Counter()
+    source_ids: set[str] = set()
+    for row in [*train_rows, *eval_rows]:
+        if _is_present(row.get("task_type")):
+            task_counts[str(row["task_type"])] += 1
+        if _is_present(row.get("source_id")):
+            source_ids.add(str(row["source_id"]))
+
+    print("Training input summary:")
+    print(f"  input_format: {input_format}")
+    print(f"  train_rows: {len(train_rows)}")
+    print(f"  eval_rows: {len(eval_rows)}")
+    print(f"  task_type_counts: {dict(sorted(task_counts.items())) if task_counts else {}}")
+    print(f"  source_count: {len(source_ids)}")
+    print(f"  local_research_license_warnings: {local_research_warning_count}")
+    if local_research_warning_count:
+        print(
+            "  warning: rows with commercial_use in "
+            "{permission_required, unknown, prohibited} are local-research-only."
+        )
 
 
 def main() -> int:
@@ -143,14 +409,41 @@ def main() -> int:
         help="Allow executing remote model code for trusted model repositories only.",
     )
     parser.add_argument("--format", choices=["chat", "completion"], default="chat")
+    parser.add_argument(
+        "--input-format",
+        choices=INPUT_FORMAT_CHOICES,
+        default="auto",
+        help="Input record format: auto-detect, curated accepted rows, or generated training-pack rows.",
+    )
     parser.add_argument("--system-prompt", default=SYSTEM_PROMPT)
     parser.add_argument("--user-prompt", default=DEFAULT_USER_PROMPT)
     parser.add_argument("--packing", action="store_true")
     parser.add_argument("--seed", type=int, default=3407)
     args = parser.parse_args()
 
-    train_rows = accepted_rows(args.train)
-    eval_rows = accepted_rows(args.eval) if args.eval.exists() and args.eval.stat().st_size > 0 else []
+    train_rows, input_format, warning_count = load_input_rows(
+        args.train,
+        requested_input_format=args.input_format,
+    )
+    eval_rows: list[dict[str, Any]] = []
+    if args.eval.exists() and args.eval.stat().st_size > 0:
+        eval_rows, eval_input_format, eval_warnings = load_input_rows(
+            args.eval,
+            requested_input_format=args.input_format,
+        )
+        if eval_input_format != input_format:
+            raise ValueError(
+                f"Train/eval input-format mismatch: train={input_format}, eval={eval_input_format}. "
+                "Use matching file formats."
+            )
+        warning_count += eval_warnings
+
+    summarize_input_rows(
+        input_format=input_format,
+        train_rows=train_rows,
+        eval_rows=eval_rows,
+        local_research_warning_count=warning_count,
+    )
 
     from unsloth import FastLanguageModel, is_bfloat16_supported
     from transformers import DataCollatorForSeq2Seq, TrainingArguments
@@ -179,8 +472,26 @@ def main() -> int:
         loftq_config=None,
     )
 
-    train_dataset = rows_to_dataset(train_rows, tokenizer, format_mode=args.format, system_prompt=args.system_prompt, user_prompt=args.user_prompt)
-    eval_dataset = rows_to_dataset(eval_rows, tokenizer, format_mode=args.format, system_prompt=args.system_prompt, user_prompt=args.user_prompt) if eval_rows else None
+    train_dataset = rows_to_dataset(
+        train_rows,
+        tokenizer,
+        input_format=input_format,
+        format_mode=args.format,
+        system_prompt=args.system_prompt,
+        user_prompt=args.user_prompt,
+    )
+    eval_dataset = (
+        rows_to_dataset(
+            eval_rows,
+            tokenizer,
+            input_format=input_format,
+            format_mode=args.format,
+            system_prompt=args.system_prompt,
+            user_prompt=args.user_prompt,
+        )
+        if eval_rows
+        else None
+    )
 
     training_args = TrainingArguments(
         output_dir=str(args.output_dir),
@@ -240,7 +551,9 @@ def main() -> int:
         "eval": str(args.eval),
         "train_records": len(train_rows),
         "eval_records": len(eval_rows),
+        "input_format": input_format,
         "format": args.format,
+        "local_research_license_warnings": warning_count,
         "output_dir": str(args.output_dir),
         "merged_16bit_dir": str(args.merged_16bit_dir) if args.merged_16bit_dir else None,
         "gguf_dir": str(args.gguf_dir) if args.gguf_dir else None,

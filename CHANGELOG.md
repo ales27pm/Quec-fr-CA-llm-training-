@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-16 — T29 Unsloth training-pack compatibility and local smoke policy
+- Updated `scripts/train_qfr_dolphin3_unsloth_lora.py` to support `--input-format {auto,curated,training-pack}` with deterministic auto-detection and format-specific validation.
+- Preserved strict curated-mode enforcement (`curation_label == accepted` + required curation metadata) while adding training-pack-mode support for `messages`, pre-rendered `text`, and compatible `prompt`/`assistant_text` rows.
+- Added training-pack safety checks in the trainer input loader: holdout rejection, `allowed_for_training=false` rejection, review-gated rejection without explicit `permission_granted=true`, and local-research warnings for `commercial_use` values requiring non-commercial handling.
+- Added pre-training input summary output (input format, train/eval row counts, task-type counts, source counts, local-research warning count).
+- Added `manifests/training_pack_policy.local_smoke.template.yaml` and `scripts/build_local_smoke_pack.sh` for local technical smoke/pilot pack generation without model training.
+- Added `tests/test_dolphin3_unsloth_training_inputs.py` covering curated/training-pack loaders, auto-detection, safety rejections, ChatML rendering fallback, smoke-policy validation, no-training smoke script guard, and no tracked model/GGUF output guard.
+- Added local-research blocking reasons in training-pack reporting for smoke-style packs (`source_family_dominance`, `insufficient_modern_diversity`) so local high-volume packs remain explicitly non-production.
+
 ## 2026-05-16 — T27 resilient real corpus downloader
 - Added resilient retry-aware behavior to `tools/download_real_corpus_sources.py` with transient network retry handling (timeouts, reset/unreachable errors, HTTP 429, HTTP 5xx), permanent-failure no-retry behavior (blocked schemes, malformed URLs, HTTP 404), and per-source attempt/error/status accounting.
 - Added resumable cache reuse controls (`--resume`, `--skip-existing`) so existing downloaded files are treated as cached with recomputed character/SHA-256 metadata instead of being discarded.
