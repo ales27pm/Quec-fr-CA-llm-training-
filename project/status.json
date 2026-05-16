@@ -168,6 +168,12 @@
       "goal": "Unsloth training-pack input compatibility and local smoke-pack policy/workflow",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T30",
+      "goal": "LP9 lexical evaluation harness and targeted micro-pack generator",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

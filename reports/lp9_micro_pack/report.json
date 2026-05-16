@@ -1,0 +1,137 @@
+{
+  "ok": true,
+  "kind": "lp9_micro_pack_report",
+  "manifest": "manifests/lp9_lexical_preference_pack.template.yaml",
+  "pack_id": "lp9-quebec-lexical-preference-v1",
+  "schema_version": "1.0.0",
+  "primary_language": "fr-CA",
+  "random_seed": 42,
+  "repetitions_per_pattern": 50,
+  "lexical_pair_count": 10,
+  "task_types": [
+    "rewrite_to_quebec_fr",
+    "direct_preference",
+    "explain_preference",
+    "negative_contrast"
+  ],
+  "records_total": 2000,
+  "train_count": 1600,
+  "dev_count": 400,
+  "duplicate_text_hashes": 0,
+  "unique_text_hashes": 2000,
+  "by_pair": {
+    "01-email-to-courriel": 200,
+    "02-parking-to-stationnement": 200,
+    "03-shopping-to-magasinage": 200,
+    "04-t-l-phone-portable-to-cellulaire": 200,
+    "05-weekend-to-fin-de-semaine": 200,
+    "06-chat-to-clavardage": 200,
+    "07-newsletter-to-infolettre": 200,
+    "08-upload-to-t-l-verser": 200,
+    "09-download-to-t-l-charger": 200,
+    "10-smartphone-to-cellulaire": 200
+  },
+  "by_task_type": {
+    "rewrite_to_quebec_fr": 500,
+    "direct_preference": 500,
+    "explain_preference": 500,
+    "negative_contrast": 500
+  },
+  "split_task_counts": {
+    "train": {
+      "rewrite_to_quebec_fr": 400,
+      "direct_preference": 400,
+      "explain_preference": 400,
+      "negative_contrast": 400
+    },
+    "dev": {
+      "rewrite_to_quebec_fr": 100,
+      "direct_preference": 100,
+      "explain_preference": 100,
+      "negative_contrast": 100
+    }
+  },
+  "split_context_counts": {
+    "train": {
+      "question": 200,
+      "customer support": 200,
+      "workplace": 200,
+      "school": 200,
+      "family": 200,
+      "commerce": 200,
+      "mobile/device": 200,
+      "email/message": 200
+    },
+    "dev": {
+      "government/service": 200,
+      "everyday casual": 200
+    }
+  },
+  "pair_task_coverage": {
+    "01-email-to-courriel": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "02-parking-to-stationnement": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "03-shopping-to-magasinage": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "04-t-l-phone-portable-to-cellulaire": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "05-weekend-to-fin-de-semaine": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "06-chat-to-clavardage": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "07-newsletter-to-infolettre": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "08-upload-to-t-l-verser": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "09-download-to-t-l-charger": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ],
+    "10-smartphone-to-cellulaire": [
+      "direct_preference",
+      "explain_preference",
+      "negative_contrast",
+      "rewrite_to_quebec_fr"
+    ]
+  },
+  "outputs": {
+    "train": "reports/lp9_micro_pack/train.jsonl",
+    "dev": "reports/lp9_micro_pack/dev.jsonl",
+    "report": "reports/lp9_micro_pack/report.json"
+  }
+}

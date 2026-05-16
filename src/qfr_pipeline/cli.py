@@ -26,7 +26,9 @@ from qfr_pipeline.modern_corpus import acquire_modern_corpus, validate_modern_co
 from qfr_pipeline.corpus_readiness import audit_corpus_readiness
 from qfr_pipeline.training_pack import READINESS_LEVELS, audit_training_pack, build_training_pack
 from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
-from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model, validate_training_pack_policy as validate_training_pack_policy_model
+from qfr_pipeline.lp9_eval import generate_lp9_eval_prompts, write_baseline_expected_report
+from qfr_pipeline.lp9_micro_pack import generate_lp9_micro_pack
+from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp9_lexical_preference_pack_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model, validate_training_pack_policy as validate_training_pack_policy_model
 
 app = typer.Typer()
 
@@ -118,6 +120,8 @@ def validate_file(path: Path):
         kind = None
     if kind == "dataset_manifest":
         validate_dataset_manifest(p)
+    elif kind == "lp9_lexical_preference_pack":
+        validate_lp9_lexical_preference_pack_manifest(p)
     elif kind == "lp_rule_manifest":
         validate_lp_rule_manifest(p)
     elif kind == "lp_context_manifest":
@@ -350,6 +354,48 @@ def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., "--policy
     _refresh_dynamic_agents()
     validate_training_pack_policy_model(policy)
     print("Training pack policy manifest valid")
+
+
+@app.command("generate-lp9-micro-pack")
+def generate_lp9_micro_pack_cmd(
+    manifest: Path = typer.Option(..., "--manifest"),
+    out_dir: Path | None = typer.Option(None, "--out-dir"),
+):
+    _refresh_dynamic_agents()
+    payload = generate_lp9_micro_pack(manifest, out_dir=out_dir)
+    print(
+        {
+            "ok": payload.get("ok", False),
+            "records_total": payload.get("records_total", 0),
+            "train_count": payload.get("train_count", 0),
+            "dev_count": payload.get("dev_count", 0),
+            "output_train": payload.get("outputs", {}).get("train"),
+            "output_dev": payload.get("outputs", {}).get("dev"),
+            "report": payload.get("outputs", {}).get("report"),
+        }
+    )
+    if not payload.get("ok", False):
+        raise typer.Exit(code=1)
+
+
+@app.command("generate-lp9-eval")
+def generate_lp9_eval_cmd(
+    manifest: Path = typer.Option(..., "--manifest"),
+    out: Path = typer.Option(..., "--out"),
+):
+    _refresh_dynamic_agents()
+    summary = generate_lp9_eval_prompts(manifest, out)
+    baseline_path = out.parent / "baseline_expected_report.json"
+    baseline = write_baseline_expected_report(baseline_path, out)
+    print(
+        {
+            "ok": summary.get("ok", False),
+            "prompt_count": summary.get("prompt_count", 0),
+            "output": summary.get("output"),
+            "baseline_expected_report": str(baseline_path),
+            "baseline_expected_total_score": baseline.get("expected_total_score"),
+        }
+    )
 
 
 @app.command("build-training-pack")

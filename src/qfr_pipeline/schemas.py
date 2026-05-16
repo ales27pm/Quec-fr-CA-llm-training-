@@ -845,6 +845,86 @@ class TrainingPackPolicyManifest(BaseModel):
             seen.add(item.path)
         return self
 
+
+class LP9LexicalPair(BaseModel):
+    source_term: str
+    preferred_term: str
+    rejected_terms: list[str]
+    domain: str
+
+    @model_validator(mode="after")
+    def validate_pair(self):
+        if not self.source_term.strip():
+            raise ValueError("source_term must be non-empty")
+        if not self.preferred_term.strip():
+            raise ValueError("preferred_term must be non-empty")
+        if not self.domain.strip():
+            raise ValueError("domain must be non-empty")
+        if not self.rejected_terms:
+            raise ValueError("rejected_terms must be non-empty")
+        normalized_rejected = {normalize_text(term) for term in self.rejected_terms if term.strip()}
+        if normalize_text(self.source_term) not in normalized_rejected:
+            raise ValueError("rejected_terms must include source_term")
+        if normalize_text(self.preferred_term) in normalized_rejected:
+            raise ValueError("rejected_terms must not include preferred_term")
+        return self
+
+
+class LP9LexicalPreferencePackManifest(BaseModel):
+    kind: str
+    schema_version: str
+    primary_language: str
+    pack_id: str
+    output_dir: str
+    random_seed: int
+    repetitions_per_pattern: int
+    include_rewrite_tasks: bool = True
+    include_direct_preference_tasks: bool = True
+    include_explanation_tasks: bool = True
+    include_negative_contrast_tasks: bool = True
+    lexical_pairs: list[LP9LexicalPair]
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, value: str) -> str:
+        if value != "lp9_lexical_preference_pack":
+            raise ValueError("kind must be lp9_lexical_preference_pack")
+        return value
+
+    @field_validator("output_dir")
+    @classmethod
+    def validate_output_dir(cls, value: str) -> str:
+        if not _is_repo_relative_path(value):
+            raise ValueError("output_dir must be repo-relative")
+        return value
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        if not self.pack_id.strip():
+            raise ValueError("pack_id must be non-empty")
+        if self.repetitions_per_pattern <= 0:
+            raise ValueError("repetitions_per_pattern must be > 0")
+        if not self.lexical_pairs:
+            raise ValueError("lexical_pairs must be non-empty")
+        pair_ids = [
+            f"{normalize_text(pair.source_term)}->{normalize_text(pair.preferred_term)}"
+            for pair in self.lexical_pairs
+        ]
+        if len(pair_ids) != len(set(pair_ids)):
+            raise ValueError("lexical_pairs source/preferred combinations must be unique")
+        if not any(
+            (
+                self.include_rewrite_tasks,
+                self.include_direct_preference_tasks,
+                self.include_explanation_tasks,
+                self.include_negative_contrast_tasks,
+            )
+        ):
+            raise ValueError("At least one LP9 task flag must be enabled")
+        return self
+
 class ModernCorpusAdapterConfig(BaseModel):
     name: str
     base_url: str | None = None
