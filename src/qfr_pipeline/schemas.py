@@ -654,6 +654,191 @@ class TrainingExportManifest(BaseModel):
             raise ValueError("dataset_card language/dialect must identify fr-CA / Québécois French")
         return self
 
+
+def _is_repo_relative_path(value: str) -> bool:
+    p = Path(value)
+    if p.is_absolute():
+        return False
+    if ".." in p.parts:
+        return False
+    return True
+
+
+class TrainingPackSplitRatios(BaseModel):
+    train: float
+    dev: float
+    test: float
+
+    @model_validator(mode="after")
+    def validate_ratios(self):
+        values = [self.train, self.dev, self.test]
+        if any(v <= 0 for v in values):
+            raise ValueError("split ratios must be strictly positive")
+        total = sum(values)
+        if not math.isclose(total, 1.0, abs_tol=1e-6):
+            raise ValueError("split ratios must sum to 1.0")
+        return self
+
+
+class TrainingPackSourceInput(BaseModel):
+    path: str
+    source_family: str
+    source_priority: int = 0
+    allowed_for_training_required: bool = True
+    max_source_share: float = 1.0
+    include_if_exists: bool = True
+    required: bool = False
+
+    @field_validator("path")
+    @classmethod
+    def validate_path(cls, value: str) -> str:
+        if not _is_repo_relative_path(value):
+            raise ValueError("source_inputs.path must be repo-relative")
+        return value
+
+    @field_validator("max_source_share")
+    @classmethod
+    def validate_max_source_share(cls, value: float) -> float:
+        if not 0 <= value <= 1:
+            raise ValueError("source_inputs.max_source_share must be in [0,1]")
+        return value
+
+
+class TrainingPackInstructionizationConfig(BaseModel):
+    enabled: bool = True
+    strategies: list[
+        Literal[
+            "style_rewrite",
+            "explain_term",
+            "summarize",
+            "qa_from_context",
+            "preserve_raw",
+            "normalize_to_quebec_fr",
+            "contrast_fr_fr_vs_fr_ca",
+        ]
+    ] = Field(default_factory=list)
+    max_examples_per_record: int = 4
+    preserve_raw_text_probability: float = 1.0
+    min_text_chars: int = 40
+    max_text_chars: int = 2400
+    prompt_language: str = "fr-CA"
+    chat_format: Literal["qwen_chatml", "alpaca", "raw_completion"] = "qwen_chatml"
+
+    @model_validator(mode="after")
+    def validate_config(self):
+        if self.max_examples_per_record <= 0:
+            raise ValueError("instructionization.max_examples_per_record must be > 0")
+        if not 0 <= self.preserve_raw_text_probability <= 1:
+            raise ValueError("instructionization.preserve_raw_text_probability must be in [0,1]")
+        if self.min_text_chars <= 0:
+            raise ValueError("instructionization.min_text_chars must be > 0")
+        if self.max_text_chars < self.min_text_chars:
+            raise ValueError("instructionization.max_text_chars must be >= min_text_chars")
+        return self
+
+
+class TrainingPackBalancingConfig(BaseModel):
+    max_single_source_share: float = 1.0
+    max_single_source_family_share: float = 1.0
+    min_domain_count_for_pilot: int = 3
+    min_register_count_for_pilot: int = 2
+    target_register_mix: dict[str, float] = Field(default_factory=dict)
+    target_domain_mix: dict[str, float] = Field(default_factory=dict)
+
+    @field_validator("max_single_source_share", "max_single_source_family_share")
+    @classmethod
+    def validate_shares(cls, value: float) -> float:
+        if not 0 <= value <= 1:
+            raise ValueError("balancing share values must be in [0,1]")
+        return value
+
+    @model_validator(mode="after")
+    def validate_mixes(self):
+        for name, mix in (
+            ("target_register_mix", self.target_register_mix),
+            ("target_domain_mix", self.target_domain_mix),
+        ):
+            for key, value in mix.items():
+                if not key.strip():
+                    raise ValueError(f"{name} keys must be non-empty")
+                if not 0 <= float(value) <= 1:
+                    raise ValueError(f"{name} values must be in [0,1]")
+        return self
+
+
+class TrainingPackSafetyConfig(BaseModel):
+    reject_holdout_material: bool = True
+    reject_permission_required_without_grant: bool = True
+    reject_commercial_unknown_for_production: bool = True
+    reject_duplicate_normalized_text: bool = True
+    reject_empty_text: bool = True
+
+
+class TrainingPackReadinessThresholds(BaseModel):
+    smoke_test_tokens: int = 500_000
+    pilot_lora_tokens: int = 20_000_000
+    production_lora_tokens: int = 150_000_000
+    production_instruction_examples: int = 200_000
+
+    @model_validator(mode="after")
+    def validate_thresholds(self):
+        if self.smoke_test_tokens <= 0:
+            raise ValueError("readiness_thresholds.smoke_test_tokens must be > 0")
+        if self.pilot_lora_tokens <= self.smoke_test_tokens:
+            raise ValueError("pilot_lora_tokens must be > smoke_test_tokens")
+        if self.production_lora_tokens <= self.pilot_lora_tokens:
+            raise ValueError("production_lora_tokens must be > pilot_lora_tokens")
+        if self.production_instruction_examples <= 0:
+            raise ValueError("production_instruction_examples must be > 0")
+        return self
+
+
+class TrainingPackPolicyManifest(BaseModel):
+    kind: str
+    schema_version: str
+    primary_language: str
+    pack_id: str
+    pack_version: str
+    output_dir: str
+    random_seed: int
+    split_ratios: TrainingPackSplitRatios
+    source_inputs: list[TrainingPackSourceInput]
+    instructionization: TrainingPackInstructionizationConfig
+    balancing: TrainingPackBalancingConfig
+    safety: TrainingPackSafetyConfig
+    readiness_thresholds: TrainingPackReadinessThresholds
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, value: str) -> str:
+        if value != "training_pack_policy_manifest":
+            raise ValueError("kind must be training_pack_policy_manifest")
+        return value
+
+    @field_validator("output_dir")
+    @classmethod
+    def validate_output_dir(cls, value: str) -> str:
+        if not _is_repo_relative_path(value):
+            raise ValueError("output_dir must be repo-relative")
+        return value
+
+    @model_validator(mode="after")
+    def validate_manifest(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        if not self.pack_id.strip():
+            raise ValueError("pack_id must be non-empty")
+        if not self.pack_version.strip():
+            raise ValueError("pack_version must be non-empty")
+        if not self.source_inputs:
+            raise ValueError("source_inputs must be non-empty")
+        seen = set()
+        for item in self.source_inputs:
+            if item.path in seen:
+                raise ValueError("source_inputs.path values must be unique")
+            seen.add(item.path)
+        return self
+
 class ModernCorpusAdapterConfig(BaseModel):
     name: str
     base_url: str | None = None

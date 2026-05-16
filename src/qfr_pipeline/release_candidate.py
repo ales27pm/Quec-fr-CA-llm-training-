@@ -16,8 +16,9 @@ from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_mani
 from qfr_pipeline.modern_corpus import acquire_modern_corpus, validate_modern_corpus_manifest
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import ReleaseReport, evaluate_release
+from qfr_pipeline.training_pack import audit_training_pack, build_training_pack
 from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
-from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_repository
+from qfr_pipeline.validation import validate_error_taxonomy_manifest, validate_repository, validate_training_pack_policy
 
 
 def _build_minimal_pair_report(*, context: Path, context_manifest, quality, gen_report=None) -> dict:
@@ -97,6 +98,18 @@ class ReleaseCandidateReport:
             lines.extend(["", "## Curated split summary", f"- Records total: `{self.split_summary.get('records_total')}`", f"- Train: `{self.split_summary.get('train')}`", f"- Dev: `{self.split_summary.get('dev')}`", f"- Test: `{self.split_summary.get('test')}`"])
         if self.training_export_summary is not None:
             lines.extend(["", "## Training export summary", f"- Dataset: `{self.training_export_summary.get('dataset_name')}`", f"- Version: `{self.training_export_summary.get('dataset_version')}`", f"- Total: `{self.training_export_summary.get('total')}`", f"- Train/Dev/Test: `{self.training_export_summary.get('train')}`/`{self.training_export_summary.get('dev')}`/`{self.training_export_summary.get('test')}`", f"- Aggregate SHA-256: `{self.training_export_summary.get('aggregate_sha256')}`"])
+            if "training_pack_readiness_level" in self.training_export_summary:
+                lines.extend(
+                    [
+                        "",
+                        "## Training pack summary",
+                        f"- Readiness level: `{self.training_export_summary.get('training_pack_readiness_level')}`",
+                        f"- Examples total: `{self.training_export_summary.get('training_pack_examples_total')}`",
+                        f"- Train/Dev/Test examples: `{self.training_export_summary.get('training_pack_train_count')}`/`{self.training_export_summary.get('training_pack_dev_count')}`/`{self.training_export_summary.get('training_pack_test_count')}`",
+                        f"- Estimated tokens: `{self.training_export_summary.get('training_pack_estimated_tokens')}`",
+                        f"- Blocking reasons: `{self.training_export_summary.get('training_pack_blocking_reasons')}`",
+                    ]
+                )
         if self.blocking_failures:
             lines.extend(["", "## Blocking failures", *[f"- {x}" for x in self.blocking_failures]])
         return "\n".join(lines) + "\n"
@@ -124,6 +137,13 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "training_manifest_json": "reports/training_export/training_manifest.json",
         "training_manifest_yaml": "reports/training_export/training_manifest.yaml",
         "training_dataset_card": "reports/training_export/dataset_card.md",
+        "training_pack_policy": "manifests/training_pack_policy.template.yaml",
+        "training_pack_train": "reports/training_pack/train.jsonl",
+        "training_pack_dev": "reports/training_pack/dev.jsonl",
+        "training_pack_test": "reports/training_pack/test.jsonl",
+        "training_pack_report": "reports/training_pack/report.json",
+        "training_pack_dataset_card": "reports/training_pack/dataset_card.md",
+        "training_pack_audit": "reports/training_pack/audit.json",
         "modern_corpus_dry_run_report": "reports/modern_corpus/dry_run_report.json",
         "donnees_quebec_fixture_report": "reports/modern_corpus/donnees_quebec_fixture_report.json",
         "assnat_fixture_report": "reports/modern_corpus/assnat_fixture_report.json",
@@ -221,6 +241,71 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
             if fixture_path.exists():
                 fixture_payload = json.loads(fixture_path.read_text(encoding="utf-8"))
                 training_export_summary[field] = int(fixture_payload.get("records_written", 0))
+
+        training_pack_policy = ROOT / artifacts["training_pack_policy"]
+        validate_training_pack_policy(training_pack_policy)
+        stages.append(
+            ReleaseCandidateStage(
+                name="training_pack_policy_validation",
+                ok=True,
+                artifacts=[artifacts["training_pack_policy"]],
+            )
+        )
+        training_pack_report = build_training_pack(
+            training_pack_policy,
+            out_dir=ROOT / "reports/training_pack",
+        )
+        stages.append(
+            ReleaseCandidateStage(
+                name="training_pack_build",
+                ok=bool(training_pack_report.get("ok", False)),
+                artifacts=[
+                    artifacts["training_pack_train"],
+                    artifacts["training_pack_dev"],
+                    artifacts["training_pack_test"],
+                    artifacts["training_pack_report"],
+                    artifacts["training_pack_dataset_card"],
+                ],
+                details=training_pack_report,
+            )
+        )
+        if not training_pack_report.get("ok", False):
+            blocking_failures.append("training_pack_build")
+        training_pack_audit = audit_training_pack(
+            ROOT / "reports/training_pack",
+            ROOT / artifacts["training_pack_audit"],
+        )
+        stages.append(
+            ReleaseCandidateStage(
+                name="training_pack_readiness",
+                ok=bool(training_pack_audit.get("ok", False)),
+                artifacts=[artifacts["training_pack_audit"]],
+                details=training_pack_audit,
+            )
+        )
+        if not training_pack_audit.get("ok", False):
+            blocking_failures.append("training_pack_readiness")
+        training_export_summary["training_pack_readiness_level"] = training_pack_report.get(
+            "readiness_level", "insufficient"
+        )
+        training_export_summary["training_pack_examples_total"] = int(
+            training_pack_report.get("examples_generated", 0)
+        )
+        training_export_summary["training_pack_train_count"] = int(
+            training_pack_report.get("train_count", 0)
+        )
+        training_export_summary["training_pack_dev_count"] = int(
+            training_pack_report.get("dev_count", 0)
+        )
+        training_export_summary["training_pack_test_count"] = int(
+            training_pack_report.get("test_count", 0)
+        )
+        training_export_summary["training_pack_estimated_tokens"] = int(
+            training_pack_report.get("estimated_tokens_total", 0)
+        )
+        training_export_summary["training_pack_blocking_reasons"] = list(
+            training_pack_report.get("blocking_reasons", [])
+        )
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)

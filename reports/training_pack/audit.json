@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "pack_dir": "reports/training_pack",
+  "report": "reports/training_pack/report.json",
+  "readiness_level": "insufficient",
+  "blocking_reasons": [
+    "single_source_dominance",
+    "single_source_family_dominance"
+  ],
+  "examples_generated": 3,
+  "raw_records_count": 1,
+  "train_count": 1,
+  "dev_count": 1,
+  "test_count": 1,
+  "estimated_tokens_total": 406,
+  "raw_records_tokens_total": 105,
+  "instruction_examples_total": 3,
+  "instruction_like_ratio": 1.0,
+  "source_diversity_count": 1,
+  "domain_diversity_count": 1,
+  "register_diversity_count": 1,
+  "source_summary": {
+    "donnees_quebec_ckan_metadata_modern": 3
+  },
+  "domain_summary": {
+    "public_administration": 3
+  },
+  "register_summary": {
+    "administrative": 3
+  }
+}

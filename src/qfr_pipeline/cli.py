@@ -24,8 +24,9 @@ from qfr_pipeline.release_report import evaluate_release, ReleaseReport
 from qfr_pipeline.release_candidate import run_release_candidate
 from qfr_pipeline.modern_corpus import acquire_modern_corpus, validate_modern_corpus_manifest
 from qfr_pipeline.corpus_readiness import audit_corpus_readiness
+from qfr_pipeline.training_pack import READINESS_LEVELS, audit_training_pack, build_training_pack
 from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
-from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model
+from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model, validate_training_pack_policy as validate_training_pack_policy_model
 
 app = typer.Typer()
 
@@ -342,6 +343,56 @@ def export_training_dataset_cmd(manifest: Path = typer.Option(..., "--manifest")
     if not report.ok:
         raise typer.Exit(code=1)
     print(f"Training export artifacts generated in {out_dir}")
+
+
+@app.command("validate-training-pack-policy")
+def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., "--policy")):
+    _refresh_dynamic_agents()
+    validate_training_pack_policy_model(policy)
+    print("Training pack policy manifest valid")
+
+
+@app.command("build-training-pack")
+def build_training_pack_cmd(
+    policy: Path = typer.Option(..., "--policy"),
+    out_dir: Path | None = typer.Option(None, "--out-dir"),
+    permission_manifest: Path | None = typer.Option(None, "--permission-manifest"),
+):
+    _refresh_dynamic_agents()
+    payload = build_training_pack(policy, out_dir=out_dir, permission_manifest=permission_manifest)
+    print(
+        {
+            "ok": payload.get("ok", False),
+            "records_accepted": payload.get("records_accepted", 0),
+            "examples_generated": payload.get("examples_generated", 0),
+            "readiness_level": payload.get("readiness_level", "insufficient"),
+            "output_dir": payload.get("output_dir"),
+        }
+    )
+    if not payload.get("ok", False):
+        raise typer.Exit(code=1)
+
+
+@app.command("audit-training-pack")
+def audit_training_pack_cmd(
+    pack_dir: Path = typer.Option(..., "--pack-dir"),
+    out: Path = typer.Option(..., "--out"),
+    fail_below: str | None = typer.Option(None, "--fail-below"),
+):
+    _refresh_dynamic_agents()
+    payload = audit_training_pack(pack_dir, out)
+    if not payload.get("ok", False):
+        raise typer.Exit(code=1)
+    level = payload.get("readiness_level", "insufficient")
+    effective_level = "insufficient" if level == "production_blocked" else level
+    if fail_below and fail_below not in READINESS_LEVELS:
+        raise typer.BadParameter(
+            f"Invalid --fail-below value: '{fail_below}'. Expected one of {READINESS_LEVELS}"
+        )
+    if fail_below and READINESS_LEVELS.index(
+        effective_level if effective_level in READINESS_LEVELS else "insufficient"
+    ) < READINESS_LEVELS.index(fail_below):
+        raise typer.Exit(code=1)
 
 
 @app.command("validate-modern-corpus")

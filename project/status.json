@@ -144,6 +144,12 @@
       "goal": "Real modern Qu\u00e9bec source adapters with deterministic fixture acquisition",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T25",
+      "goal": "Deterministic Qu\u00e9bec-French training-pack builder and instructionization workflow",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }
