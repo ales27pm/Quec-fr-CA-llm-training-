@@ -51,6 +51,13 @@ TASK_FILES = {
         ROOT / "reports" / "modern_corpus" / "assnat_fixture_report.json",
         ROOT / "reports" / "corpus_readiness" / "modern_fixture_report.json",
     ),
+    "T25": (
+        ROOT / "manifests" / "training_pack_policy.template.yaml",
+        ROOT / "src" / "qfr_pipeline" / "training_pack.py",
+        ROOT / "reports" / "training_pack" / "report.json",
+        ROOT / "reports" / "training_pack" / "train.jsonl",
+        ROOT / "reports" / "training_pack" / "dataset_card.md",
+    ),
 }
 
 

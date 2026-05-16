@@ -1,0 +1,87 @@
+kind: training_pack_policy_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+pack_id: qfr_dolphin3_unsloth_pack
+pack_version: 0.1.0
+output_dir: reports/training_pack
+random_seed: 42
+split_ratios:
+  train: 0.9
+  dev: 0.05
+  test: 0.05
+source_inputs:
+  - path: reports/corpus_curation_real/accepted.jsonl
+    source_family: literary_curated_real
+    source_priority: 10
+    allowed_for_training_required: false
+    max_source_share: 0.75
+    include_if_exists: true
+    required: false
+  - path: reports/corpus_curation/accepted.jsonl
+    source_family: literary_curated_fixture
+    source_priority: 20
+    allowed_for_training_required: false
+    max_source_share: 0.75
+    include_if_exists: true
+    required: true
+  - path: reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl
+    source_family: institutional_ckan
+    source_priority: 30
+    allowed_for_training_required: true
+    max_source_share: 0.60
+    include_if_exists: true
+    required: false
+  - path: reports/modern_corpus/assnat_fixture_harvest.jsonl
+    source_family: parliamentary_seed
+    source_priority: 40
+    allowed_for_training_required: true
+    max_source_share: 0.60
+    include_if_exists: true
+    required: false
+  - path: reports/modern_corpus/modern_fixture_harvest.jsonl
+    source_family: modern_fixture_merged
+    source_priority: 50
+    allowed_for_training_required: true
+    max_source_share: 0.60
+    include_if_exists: true
+    required: false
+instructionization:
+  enabled: true
+  strategies:
+    - preserve_raw
+    - summarize
+    - style_rewrite
+    - explain_term
+    - qa_from_context
+    - normalize_to_quebec_fr
+    - contrast_fr_fr_vs_fr_ca
+  max_examples_per_record: 4
+  preserve_raw_text_probability: 0.5
+  min_text_chars: 40
+  max_text_chars: 2000
+  prompt_language: fr-CA
+  chat_format: qwen_chatml
+balancing:
+  max_single_source_share: 0.55
+  max_single_source_family_share: 0.70
+  min_domain_count_for_pilot: 3
+  min_register_count_for_pilot: 2
+  target_register_mix:
+    literary: 0.35
+    administrative: 0.35
+    parliamentary: 0.30
+  target_domain_mix:
+    general: 0.30
+    public_administration: 0.35
+    politics: 0.35
+safety:
+  reject_holdout_material: true
+  reject_permission_required_without_grant: true
+  reject_commercial_unknown_for_production: true
+  reject_duplicate_normalized_text: true
+  reject_empty_text: true
+readiness_thresholds:
+  smoke_test_tokens: 500000
+  pilot_lora_tokens: 20000000
+  production_lora_tokens: 150000000
+  production_instruction_examples: 200000

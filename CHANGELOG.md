@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-16 — T25 deterministic training-pack builder
+- Added `manifests/training_pack_policy.template.yaml` and strict schema validation for production-oriented training pack policy controls (split ratios, source input contracts, safety gates, balancing, instructionization, and readiness thresholds).
+- Added `src/qfr_pipeline/training_pack.py` with deterministic source merge, global duplicate suppression (exact + normalized), holdout/permission/commercial safety filtering, source and source-family dominance caps, instructionization strategies, and train/dev/test JSONL emission.
+- Added Qwen ChatML-compatible example rendering and metadata-preserving provenance so output artifacts can be consumed by Dolphin3/Qwen continuation training workflows (including Unsloth pipelines).
+- Added `qfr` CLI commands: `validate-training-pack-policy`, `build-training-pack`, and `audit-training-pack` with readiness-level gating support.
+- Integrated training-pack validation/build/readiness stages into `qfr release-candidate` and surfaced training-pack readiness/count/token/blocker fields in release-candidate JSON/Markdown summaries.
+- Added deterministic fixture-scale artifacts under `reports/training_pack/` (`train.jsonl`, `dev.jsonl`, `test.jsonl`, `report.json`, `dataset_card.md`, `audit.json`) and a full T25 test suite in `tests/test_training_pack.py`.
+- Updated CI and local validation workflows to build/audit the training pack without requiring live external network acquisition.
+
 ## 2026-05-16 — T24 modern Québec source adapters (fixture-safe)
 - Implemented production-grade `donnees_quebec_ckan` metadata extraction: deterministic per-package records, package/resource metadata text normalization, package-level license gating, duplicate suppression via normalized text hash, fixture-response mode, and detailed package/license/organization/domain reporting.
 - Implemented safer `assnat_journal_debats` acquisition: explicit seed-only fetches, noncommercial explicit-flag gating, fixture `file://` support, deterministic paragraph segmentation, navigation junk filtering, and no-crawl behavior.

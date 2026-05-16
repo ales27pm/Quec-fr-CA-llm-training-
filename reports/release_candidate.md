@@ -26,6 +26,12 @@
   - Artifacts: ['manifests/training_export_manifest.template.yaml']
 - training_export_generation: PASS
   - Artifacts: ['reports/training_export/training_manifest.json', 'reports/training_export/training_manifest.yaml', 'reports/training_export/dataset_card.md', 'reports/training_export/export_report.json']
+- training_pack_policy_validation: PASS
+  - Artifacts: ['manifests/training_pack_policy.template.yaml']
+- training_pack_build: PASS
+  - Artifacts: ['reports/training_pack/train.jsonl', 'reports/training_pack/dev.jsonl', 'reports/training_pack/test.jsonl', 'reports/training_pack/report.json', 'reports/training_pack/dataset_card.md']
+- training_pack_readiness: PASS
+  - Artifacts: ['reports/training_pack/audit.json']
 - diagnostics_generation: PASS
   - Artifacts: ['reports/diagnostics.lp9_lp20.json', 'reports/diagnostics.lp9_lp20.md']
 - lp9_minimal_pairs: PASS
@@ -64,3 +70,10 @@
 - Total: `2`
 - Train/Dev/Test: `1`/`0`/`1`
 - Aggregate SHA-256: `0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13`
+
+## Training pack summary
+- Readiness level: `insufficient`
+- Examples total: `3`
+- Train/Dev/Test examples: `1`/`1`/`1`
+- Estimated tokens: `406`
+- Blocking reasons: `['single_source_dominance', 'single_source_family_dominance']`

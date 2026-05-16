@@ -1,0 +1,76 @@
+{
+  "ok": true,
+  "policy": "manifests/training_pack_policy.template.yaml",
+  "output_dir": "reports/training_pack",
+  "input_files": [
+    "reports/corpus_curation/accepted.jsonl",
+    "reports/modern_corpus/assnat_fixture_harvest.jsonl",
+    "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
+  ],
+  "records_seen": 10,
+  "records_accepted": 1,
+  "records_rejected": 9,
+  "rejection_reasons": {
+    "commercial_not_safe": 2,
+    "downsample_source_input_share": 1,
+    "permission_required_without_grant": 6
+  },
+  "examples_generated": 3,
+  "raw_records_count": 1,
+  "train_count": 1,
+  "dev_count": 1,
+  "test_count": 1,
+  "estimated_tokens_total": 406,
+  "estimated_tokens_train": 155,
+  "raw_records_tokens_total": 105,
+  "instruction_examples_total": 3,
+  "instruction_like_ratio": 1.0,
+  "source_diversity_count": 1,
+  "domain_diversity_count": 1,
+  "register_diversity_count": 1,
+  "source_summary": {
+    "donnees_quebec_ckan_metadata_modern": 3
+  },
+  "source_family_summary": {
+    "institutional_ckan": 3
+  },
+  "domain_summary": {
+    "public_administration": 3
+  },
+  "register_summary": {
+    "administrative": 3
+  },
+  "task_type_summary": {
+    "qa_from_context": 1,
+    "style_rewrite_identity": 1,
+    "summarize": 1
+  },
+  "license_status_summary": {
+    "open_compatible": 3
+  },
+  "commercial_use_summary": {
+    "allowed": 3
+  },
+  "max_single_source_share": 1.0,
+  "max_single_source_family_share": 1.0,
+  "duplicate_exact_rejected": 0,
+  "duplicate_normalized_rejected": 0,
+  "holdout_rejected": 0,
+  "permission_rejected": 6,
+  "readiness_level": "insufficient",
+  "blocking_reasons": [
+    "single_source_dominance",
+    "single_source_family_dominance"
+  ],
+  "recommendations": [
+    "Increase instruction-style examples and diversified registers/domains for pilot readiness.",
+    "Keep adding modern institutional and conversational sources to reduce dominance."
+  ],
+  "artifacts": {
+    "train": "reports/training_pack/train.jsonl",
+    "dev": "reports/training_pack/dev.jsonl",
+    "test": "reports/training_pack/test.jsonl",
+    "report": "reports/training_pack/report.json",
+    "dataset_card": "reports/training_pack/dataset_card.md"
+  }
+}

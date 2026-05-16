@@ -137,3 +137,24 @@ bash scripts/run_local_validation.sh
 Use `--fixture-mode` to hard-require adapter fixtures for networked adapters, `--timeout` to tune request limits, and `--fail-on-empty` when empty harvests should fail the command.
 
 Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only by default and must not be used for training.
+
+## Training pack builder (T25)
+- `qfr validate-training-pack-policy --policy manifests/training_pack_policy.template.yaml`
+- `qfr build-training-pack --policy manifests/training_pack_policy.template.yaml --out-dir reports/training_pack`
+- `qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json`
+- Optional gate: `qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json --fail-below pilot_lora_candidate`
+
+`manifests/training_pack_policy.template.yaml` defines deterministic source merging, global deduplication, source/share balancing, and instructionization into Qwen ChatML-compatible examples for Dolphin3/Unsloth continuation training inputs.
+
+Safety behavior is strict by default:
+- holdout and holdout-like records are rejected;
+- non-trainable or review-gated records are rejected unless explicitly permission-granted;
+- permission-required/noncommercial material is excluded unless a local permission manifest is provided;
+- duplicate exact and normalized text is rejected.
+
+Readiness thresholds are enforced in policy:
+- smoke test: `500000` tokens
+- pilot LoRA candidate: `20000000` tokens
+- production LoRA candidate: `150000000` tokens and `200000` instruction examples
+
+Current deterministic fixture-scale outputs are expected to be smoke/pilot-oriented only and not production-ready; production requires much larger volume, broader source diversity, and commercially safe licensing coverage.
