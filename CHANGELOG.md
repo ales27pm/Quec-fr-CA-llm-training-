@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-16 — T26 real ingestion and local real pack workflow
+- Fixed corpus ingestion for real downloaded plain-text sources: `qfr ingest-corpus-sources` now performs paragraph-level reconstruction for hard-wrapped text, filters common Project Gutenberg boilerplate, supports line-level fallback for no-blank-line files, and keeps deterministic normalized-text deduplication.
+- Preserved corpus-source metadata in ingestion records (`source_id`, source provenance/licensing flags, register/dialect, training/eval gates) while emitting curation/training-pack-compatible fields and repo-relative paths.
+- Added provenance-aware curation scoring bonus (`source_trust:quebec_fr_validated_provenance`) so trusted Québec/French-Canadian sources are not systematically dropped when lexical marker density is low, without overriding holdout or review/permission gating.
+- Added `manifests/training_pack_policy.local_real.template.yaml` with `pack_mode: local_research` and live-input-aware source list (real curated corpus + optional live modern harvest fallbacks).
+- Extended training-pack builder reporting and gating with `pack_mode`, optional-input accounting, commercial-readiness status, and explicit commercial blocking reasons; local research builds remain non-commercial-release-ready by design.
+- Added `scripts/run_local_real_pack.sh` to run the full local real ingestion/curation/live-modern-acquisition/training-pack pipeline without running model training.
+- Added/updated tests for real plain-text ingestion, provenance curation behavior, and local-research vs production-commercial training-pack behavior.
+
 ## 2026-05-16 — T25 deterministic training-pack builder
 - Added `manifests/training_pack_policy.template.yaml` and strict schema validation for production-oriented training pack policy controls (split ratios, source input contracts, safety gates, balancing, instructionization, and readiness thresholds).
 - Added `src/qfr_pipeline/training_pack.py` with deterministic source merge, global duplicate suppression (exact + normalized), holdout/permission/commercial safety filtering, source and source-family dominance caps, instructionization strategies, and train/dev/test JSONL emission.

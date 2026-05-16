@@ -2,6 +2,12 @@
   "ok": true,
   "pack_dir": "reports/training_pack",
   "report": "reports/training_pack/report.json",
+  "pack_mode": "fixture_ci",
+  "commercial_release_ready": false,
+  "commercial_blocking_reasons": [
+    "commercial_safety_filters_triggered",
+    "pack_mode_fixture_ci_not_for_commercial_release"
+  ],
   "readiness_level": "insufficient",
   "blocking_reasons": [
     "single_source_dominance",

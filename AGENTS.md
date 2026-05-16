@@ -37,6 +37,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T23 | Modern corpus acquisition contracts, adapters, and readiness gate | ✅ fully_implemented | `Provided` |
 | T24 | Real modern Québec source adapters with deterministic fixture acquisition | ✅ fully_implemented | `Provided` |
 | T25 | Deterministic Québec-French training-pack builder and instructionization workflow | ✅ fully_implemented | `Provided` |
+| T26 | Real corpus paragraph ingestion and local research training-pack flow | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.

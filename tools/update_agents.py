@@ -58,6 +58,12 @@ TASK_FILES = {
         ROOT / "reports" / "training_pack" / "train.jsonl",
         ROOT / "reports" / "training_pack" / "dataset_card.md",
     ),
+    "T26": (
+        ROOT / "src" / "qfr_pipeline" / "corpus_sources.py",
+        ROOT / "manifests" / "training_pack_policy.local_real.template.yaml",
+        ROOT / "scripts" / "run_local_real_pack.sh",
+        ROOT / "src" / "qfr_pipeline" / "training_pack.py",
+    ),
 }
 
 

@@ -62,6 +62,26 @@ qfr curate-corpus \
 
 Review licensing/jurisdiction before using downloaded text for an actual training release. The default real-download manifest uses Project Gutenberg links, which are public-domain-oriented but still require checking local copyright and Project Gutenberg terms.
 
+## Local real pack build (T26)
+The previous local real run produced `0` ingested records because Gutenberg files were read line by line, and hard-wrapped lines were shorter than `--min-chars 80`. Ingestion now performs paragraph-level reconstruction for plain text sources and filters common Gutenberg boilerplate.
+
+Use fixture-scale pack build in CI for deterministic checks, and use the local real workflow only for local experimentation:
+
+```bash
+bash scripts/run_local_real_pack.sh
+```
+
+This script runs real local ingestion/curation plus live modern acquisition and then builds `reports/training_pack_real/`.
+
+Mode guidance:
+- `manifests/training_pack_policy.template.yaml` is `fixture_ci` and intentionally tiny.
+- `manifests/training_pack_policy.local_real.template.yaml` is `local_research` and can include noncommercial sources for research training experiments.
+- `production_commercial` mode is stricter and rejects noncommercial/permission-required/unknown commercial-use records.
+
+Commercial caveat:
+- Assemblée nationale content remains noncommercial/permission-required unless explicit commercial permission is obtained.
+- A pack can be technically trainable for research while still blocked for commercial production release.
+
 ## T21 Curated Split
 Use `qfr validate-split-policy` and `qfr split-curated-corpus` to produce `reports/curated_splits/*` from accepted curated corpus only.
 
@@ -140,6 +160,7 @@ Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only 
 
 ## Training pack builder (T25)
 - `qfr validate-training-pack-policy --policy manifests/training_pack_policy.template.yaml`
+- `qfr validate-training-pack-policy --policy manifests/training_pack_policy.local_real.template.yaml`
 - `qfr build-training-pack --policy manifests/training_pack_policy.template.yaml --out-dir reports/training_pack`
 - `qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json`
 - Optional gate: `qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json --fail-below pilot_lora_candidate`

@@ -175,6 +175,7 @@ class CorpusSourceEntry(BaseModel):
     quality_tier: str
     language_register: str = Field(alias="register")
     dialect_region: str
+    domain: str | None = None
     notes: str
 
     @field_validator("source_type")
@@ -221,6 +222,8 @@ class CorpusSourceEntry(BaseModel):
             raise ValueError("quality_tier=quarantine cannot be allowed for training")
         if self.contains_personal_data and (not self.requires_review):
             raise ValueError("contains_personal_data=true requires requires_review=true")
+        if self.domain is not None and (not self.domain.strip()):
+            raise ValueError("domain must be non-empty when provided")
         return self
 
 
@@ -797,6 +800,9 @@ class TrainingPackPolicyManifest(BaseModel):
     kind: str
     schema_version: str
     primary_language: str
+    pack_mode: Literal["fixture_ci", "local_research", "production_commercial"] = (
+        "fixture_ci"
+    )
     pack_id: str
     pack_version: str
     output_dir: str

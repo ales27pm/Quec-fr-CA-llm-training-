@@ -26,6 +26,7 @@ qfr acquire-modern-corpus --manifest manifests/modern_corpus_acquisition.donnees
 qfr acquire-modern-corpus --manifest manifests/modern_corpus_acquisition.assnat_seed.template.yaml --out reports/modern_corpus/assnat_fixture_harvest.jsonl --report reports/modern_corpus/assnat_fixture_report.json --include-noncommercial --max-documents 10
 qfr audit-corpus-readiness --input reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl --out reports/corpus_readiness/modern_fixture_report.json
 qfr validate-training-pack-policy --policy manifests/training_pack_policy.template.yaml
+qfr validate-training-pack-policy --policy manifests/training_pack_policy.local_real.template.yaml
 qfr build-training-pack --policy manifests/training_pack_policy.template.yaml --out-dir reports/training_pack
 qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json
 

@@ -150,6 +150,12 @@
       "goal": "Deterministic Qu\u00e9bec-French training-pack builder and instructionization workflow",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T26",
+      "goal": "Real corpus paragraph ingestion and local research training-pack flow",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

@@ -5,16 +5,16 @@
   "estimated_tokens": 32,
   "source_count": 1,
   "acquisition_source_type_summary": {
-    "unknown": 2
+    "local_text": 2
   },
   "domain_balance": {
     "unknown": 2
   },
   "register_balance": {
-    "unknown": 2
+    "mixed": 2
   },
   "source_balance": {
-    "unknown": 2
+    "fixture_raw_1": 2
   },
   "license_status_summary": {
     "unknown": 2

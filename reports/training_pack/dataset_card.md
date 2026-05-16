@@ -1,7 +1,9 @@
 # Dataset Card — qfr_dolphin3_unsloth_pack
 
 - Version: `0.1.0`
+- Pack mode: `fixture_ci`
 - Readiness level: `insufficient`
+- Commercial release ready: `False`
 - Train / Dev / Test: `1` / `1` / `1`
 - Estimated tokens: `406`
 

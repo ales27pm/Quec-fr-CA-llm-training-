@@ -209,8 +209,8 @@
       "details": {
         "accepted": 2,
         "review_required": 0,
-        "quarantine": 0,
-        "rejected": 1
+        "quarantine": 1,
+        "rejected": 0
       },
       "error": null
     },
@@ -228,16 +228,16 @@
         "estimated_tokens": 32,
         "source_count": 1,
         "acquisition_source_type_summary": {
-          "unknown": 2
+          "local_text": 2
         },
         "domain_balance": {
           "unknown": 2
         },
         "register_balance": {
-          "unknown": 2
+          "mixed": 2
         },
         "source_balance": {
-          "unknown": 2
+          "fixture_raw_1": 2
         },
         "license_status_summary": {
           "unknown": 2
@@ -323,10 +323,10 @@
           "total": 2
         },
         "hashes": {
-          "train_sha256": "e45c41753e8916f86352c0c968abdba6a9b7fc8945ba10090fe7013cf18c012c",
+          "train_sha256": "204c0354734bf0008bf8dd9e4e96e05a53361ee13fdbe7b0c23f2780291678c6",
           "dev_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-          "test_sha256": "6136071306f04dbaa81521cc71633326f269e4ee7abac7aba0535cb379390e97",
-          "aggregate_sha256": "0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13"
+          "test_sha256": "ca5db13a1bc2defe3d4c4f5f3ad641d7cd39b925609d9880709beba140d49535",
+          "aggregate_sha256": "7eebddfcab2d35fd854d06fdcb99c7e8e678b3d76d085ba7bcef8c641c69647a"
         }
       },
       "error": null
@@ -355,12 +355,24 @@
       "details": {
         "ok": true,
         "policy": "manifests/training_pack_policy.template.yaml",
+        "pack_mode": "fixture_ci",
         "output_dir": "reports/training_pack",
         "input_files": [
           "reports/corpus_curation/accepted.jsonl",
+          "reports/corpus_curation_real/accepted.jsonl",
           "reports/modern_corpus/assnat_fixture_harvest.jsonl",
           "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
         ],
+        "input_files_seen": [
+          "reports/corpus_curation/accepted.jsonl",
+          "reports/corpus_curation_real/accepted.jsonl",
+          "reports/modern_corpus/assnat_fixture_harvest.jsonl",
+          "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
+        ],
+        "input_files_missing_optional": [
+          "reports/modern_corpus/modern_fixture_harvest.jsonl"
+        ],
+        "input_files_required_missing": [],
         "records_seen": 10,
         "records_accepted": 1,
         "records_rejected": 9,
@@ -411,6 +423,13 @@
         "duplicate_normalized_rejected": 0,
         "holdout_rejected": 0,
         "permission_rejected": 6,
+        "noncommercial_records_count": 0,
+        "permission_required_records_count": 0,
+        "commercial_release_ready": false,
+        "commercial_blocking_reasons": [
+          "commercial_safety_filters_triggered",
+          "pack_mode_fixture_ci_not_for_commercial_release"
+        ],
         "readiness_level": "insufficient",
         "blocking_reasons": [
           "single_source_dominance",
@@ -441,6 +460,12 @@
         "ok": true,
         "pack_dir": "reports/training_pack",
         "report": "reports/training_pack/report.json",
+        "pack_mode": "fixture_ci",
+        "commercial_release_ready": false,
+        "commercial_blocking_reasons": [
+          "commercial_safety_filters_triggered",
+          "pack_mode_fixture_ci_not_for_commercial_release"
+        ],
         "readiness_level": "insufficient",
         "blocking_reasons": [
           "single_source_dominance",
@@ -630,8 +655,8 @@
   "curation_summary": {
     "accepted": 2,
     "review_required": 0,
-    "quarantine": 0,
-    "rejected": 1
+    "quarantine": 1,
+    "rejected": 0
   },
   "split_summary": {
     "records_total": 2,
@@ -647,7 +672,7 @@
     "dev": 0,
     "test": 1,
     "total": 2,
-    "aggregate_sha256": "0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13",
+    "aggregate_sha256": "7eebddfcab2d35fd854d06fdcb99c7e8e678b3d76d085ba7bcef8c641c69647a",
     "modern_corpus_sources_total": 11,
     "modern_corpus_active_sources": 2,
     "modern_corpus_blocked_sources": 11,
@@ -667,6 +692,12 @@
     "training_pack_blocking_reasons": [
       "single_source_dominance",
       "single_source_family_dominance"
+    ],
+    "training_pack_mode": "fixture_ci",
+    "training_pack_commercial_release_ready": false,
+    "training_pack_commercial_blocking_reasons": [
+      "commercial_safety_filters_triggered",
+      "pack_mode_fixture_ci_not_for_commercial_release"
     ]
   },
   "blocking_failures": []

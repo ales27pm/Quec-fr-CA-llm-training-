@@ -55,8 +55,8 @@
 ## Corpus curation summary
 - Accepted: `2`
 - Review required: `0`
-- Quarantine: `0`
-- Rejected: `1`
+- Quarantine: `1`
+- Rejected: `0`
 
 ## Curated split summary
 - Records total: `2`
@@ -69,7 +69,7 @@
 - Version: `0.1.0`
 - Total: `2`
 - Train/Dev/Test: `1`/`0`/`1`
-- Aggregate SHA-256: `0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13`
+- Aggregate SHA-256: `7eebddfcab2d35fd854d06fdcb99c7e8e678b3d76d085ba7bcef8c641c69647a`
 
 ## Training pack summary
 - Readiness level: `insufficient`
@@ -77,3 +77,5 @@
 - Train/Dev/Test examples: `1`/`1`/`1`
 - Estimated tokens: `406`
 - Blocking reasons: `['single_source_dominance', 'single_source_family_dominance']`
+- Pack mode: `fixture_ci`
+- Commercial release ready: `False`
