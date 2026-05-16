@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-16 — T30 LP9 lexical micro-pack + evaluation harness
+- Added `manifests/lp9_lexical_preference_pack.template.yaml` and strict manifest validation model support for deterministic LP9 lexical preference steering packs.
+- Added `src/qfr_pipeline/lp9_micro_pack.py` to generate deterministic training-pack-style LP9 train/dev JSONL artifacts with Qwen ChatML rendering, task-type coverage, split disjointness, and duplicate-hash guardrails.
+- Added `src/qfr_pipeline/lp9_eval.py` to generate deterministic LP9 lexical eval prompts and reusable preferred/forbidden lexical scoring helpers.
+- Added `scripts/evaluate_lp9_adapter.py` to run manual local base-vs-adapter LP9 evaluation with greedy decoding, per-prompt scoring, per-pair/per-task aggregation, and generations/report artifacts.
+- Added `qfr generate-lp9-micro-pack` and `qfr generate-lp9-eval` CLI commands (model-free) plus `scripts/generate_lp9_micro_pack.sh`.
+- Added LP9-focused tests covering manifest validation, micro-pack split/duplicate/task guarantees, training-pack loader compatibility, eval prompt schema/scoring behavior, fake base-vs-adapter report scoring, and path-leakage safeguards.
+- Added deterministic artifacts under `reports/lp9_micro_pack/` and `reports/lp9_eval/`, plus governance wiring for T30 in `project/status.json` and `tools/update_agents.py`.
+
 ## 2026-05-16 — T29 Unsloth training-pack compatibility and local smoke policy
 - Updated `scripts/train_qfr_dolphin3_unsloth_lora.py` to support `--input-format {auto,curated,training-pack}` with deterministic auto-detection and format-specific validation.
 - Preserved strict curated-mode enforcement (`curation_label == accepted` + required curation metadata) while adding training-pack-mode support for `messages`, pre-rendered `text`, and compatible `prompt`/`assistant_text` rows.

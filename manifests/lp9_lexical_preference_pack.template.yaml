@@ -1,0 +1,52 @@
+kind: lp9_lexical_preference_pack
+schema_version: "1.0.0"
+primary_language: fr-CA
+pack_id: lp9-quebec-lexical-preference-v1
+output_dir: reports/lp9_micro_pack
+random_seed: 42
+repetitions_per_pattern: 50
+include_rewrite_tasks: true
+include_direct_preference_tasks: true
+include_explanation_tasks: true
+include_negative_contrast_tasks: true
+lexical_pairs:
+  - source_term: email
+    preferred_term: courriel
+    rejected_terms: [email, e-mail, mél]
+    domain: digital
+  - source_term: parking
+    preferred_term: stationnement
+    rejected_terms: [parking]
+    domain: public_space
+  - source_term: shopping
+    preferred_term: magasinage
+    rejected_terms: [shopping]
+    domain: commerce
+  - source_term: téléphone portable
+    preferred_term: cellulaire
+    rejected_terms: [portable, téléphone portable]
+    domain: digital
+  - source_term: weekend
+    preferred_term: fin de semaine
+    rejected_terms: [weekend, week-end]
+    domain: time
+  - source_term: chat
+    preferred_term: clavardage
+    rejected_terms: [chat]
+    domain: digital
+  - source_term: newsletter
+    preferred_term: infolettre
+    rejected_terms: [newsletter]
+    domain: digital
+  - source_term: upload
+    preferred_term: téléverser
+    rejected_terms: [upload, uploader]
+    domain: digital
+  - source_term: download
+    preferred_term: télécharger
+    rejected_terms: [download, downloader]
+    domain: digital
+  - source_term: smartphone
+    preferred_term: cellulaire
+    rejected_terms: [smartphone]
+    domain: digital

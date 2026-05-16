@@ -2,7 +2,22 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
-from qfr_pipeline.schemas import CorpusSourceManifest, CurationPolicyManifest, DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ModernCorpusAcquisitionManifest, ReleaseGates, SplitPolicyManifest, TrainingExportManifest, TrainingPackPolicyManifest, ensure_eval_gates_sync
+from qfr_pipeline.schemas import (
+    CorpusSourceManifest,
+    CurationPolicyManifest,
+    DatasetManifest,
+    ErrorTaxonomyManifest,
+    EvaluationManifest,
+    LP9LexicalPreferencePackManifest,
+    LPContextManifest,
+    LPRuleManifest,
+    ModernCorpusAcquisitionManifest,
+    ReleaseGates,
+    SplitPolicyManifest,
+    TrainingExportManifest,
+    TrainingPackPolicyManifest,
+    ensure_eval_gates_sync,
+)
 
 
 @dataclass
@@ -63,6 +78,10 @@ def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:
     return _validate(path, TrainingPackPolicyManifest)
 
 
+def validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:
+    return _validate(path, LP9LexicalPreferencePackManifest)
+
+
 def validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:
     eval_manifest = _validate(path, EvaluationManifest)
     gates = validate_release_gates(release_gates_path)
@@ -100,6 +119,8 @@ def validate_repository(root: Path) -> ValidationReport:
                 validate_training_export_manifest(path)
             elif kind == "training_pack_policy_manifest":
                 validate_training_pack_policy(path)
+            elif kind == "lp9_lexical_preference_pack":
+                validate_lp9_lexical_preference_pack_manifest(path)
             elif kind == "modern_corpus_acquisition_manifest":
                 validate_modern_corpus_manifest(path)
             else:

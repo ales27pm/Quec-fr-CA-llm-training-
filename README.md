@@ -214,6 +214,38 @@ Notes on local research packs:
 Local smoke-pack helper:
 - `bash scripts/build_local_smoke_pack.sh`
 
+## LP9 lexical micro-pack (T30)
+Use this targeted pack only for controlled lexical steering experiments. It is not a production corpus replacement.
+
+- Generate targeted LP9 micro-pack:
+  - `qfr generate-lp9-micro-pack --manifest manifests/lp9_lexical_preference_pack.template.yaml --out-dir reports/lp9_micro_pack`
+- Generate deterministic LP9 eval prompts:
+  - `qfr generate-lp9-eval --manifest manifests/lp9_lexical_preference_pack.template.yaml --out reports/lp9_eval/eval_prompts.jsonl`
+
+Local targeted LP9 LoRA steering run (manual/local only):
+
+```bash
+python scripts/train_qfr_dolphin3_unsloth_lora.py \
+  --base-model dphn/Dolphin3.0-Qwen2.5-3b \
+  --train reports/lp9_micro_pack/train.jsonl \
+  --eval reports/lp9_micro_pack/dev.jsonl \
+  --output-dir models/qfr-dolphin3-qwen25-3b-lora-lp9 \
+  --max-steps 100 \
+  --learning-rate 5e-5 \
+  --gradient-accumulation-steps 8 \
+  --input-format training-pack
+```
+
+Base-vs-adapter lexical evaluation (manual/local only):
+
+```bash
+python scripts/evaluate_lp9_adapter.py \
+  --base-model dphn/Dolphin3.0-Qwen2.5-3b \
+  --adapter-model models/qfr-dolphin3-qwen25-3b-lora-lp9 \
+  --prompts reports/lp9_eval/eval_prompts.jsonl \
+  --out reports/lp9_eval/base_vs_adapter_report.json
+```
+
 Unsloth input-format support:
 - `--input-format auto` detects curated vs training-pack rows.
 - `--input-format curated` enforces accepted curation schema.

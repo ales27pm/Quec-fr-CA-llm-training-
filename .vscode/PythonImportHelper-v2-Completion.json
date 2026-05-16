@@ -216,6 +216,46 @@
         "documentation": {}
     },
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
         "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
@@ -225,348 +265,91 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
         "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "hashlib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "hashlib",
-        "description": "hashlib",
-        "detail": "hashlib",
+        "detail": "collections",
         "documentation": {}
     },
     {
@@ -576,6 +359,1903 @@
         "importPath": "json",
         "description": "json",
         "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_prompts",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "score_response",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_eval_prompts",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "write_baseline_expected_report",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_eval_prompts",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_prompts",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "score_response",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "write_baseline_expected_report",
+        "importPath": "qfr_pipeline.lp9_eval",
+        "description": "qfr_pipeline.lp9_eval",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
         "documentation": {}
     },
     {
@@ -1064,1238 +2744,6 @@
         "documentation": {}
     },
     {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Iterable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Literal",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Literal",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Set",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Callable",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Tuple",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "yaml",
         "kind": 6,
         "isExtraImport": true,
@@ -2328,62 +2776,6 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "defaultdict",
-        "importPath": "collections",
-        "description": "collections",
-        "isExtraImport": true,
-        "detail": "collections",
         "documentation": {}
     },
     {
@@ -2893,158 +3285,6 @@
         "documentation": {}
     },
     {
-        "label": "load_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "write_json",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
-        "label": "load_yaml",
-        "importPath": "qfr_pipeline.io",
-        "description": "qfr_pipeline.io",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.io",
-        "documentation": {}
-    },
-    {
         "label": "run_legacy_semantic_diagnostics",
         "importPath": "qfr_pipeline.legacy_diagnostics",
         "description": "qfr_pipeline.legacy_diagnostics",
@@ -3301,6 +3541,30 @@
         "documentation": {}
     },
     {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
         "label": "RELEASE_GATES_PATH",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
@@ -3350,6 +3614,22 @@
     },
     {
         "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
         "isExtraImport": true,
@@ -3694,6 +3974,54 @@
         "documentation": {}
     },
     {
+        "label": "generate_lp9_micro_pack",
+        "importPath": "qfr_pipeline.lp9_micro_pack",
+        "description": "qfr_pipeline.lp9_micro_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "load_lp9_micro_pack_manifest",
+        "importPath": "qfr_pipeline.lp9_micro_pack",
+        "description": "qfr_pipeline.lp9_micro_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_micro_pack",
+        "importPath": "qfr_pipeline.lp9_micro_pack",
+        "description": "qfr_pipeline.lp9_micro_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_micro_pack",
+        "importPath": "qfr_pipeline.lp9_micro_pack",
+        "description": "qfr_pipeline.lp9_micro_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "load_lp9_micro_pack_rows",
+        "importPath": "qfr_pipeline.lp9_micro_pack",
+        "description": "qfr_pipeline.lp9_micro_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_micro_pack_manifest",
+        "importPath": "qfr_pipeline.lp9_micro_pack",
+        "description": "qfr_pipeline.lp9_micro_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
         "label": "validate_corpus_source_manifest",
         "importPath": "qfr_pipeline.validation",
         "description": "qfr_pipeline.validation",
@@ -3727,6 +4055,14 @@
     },
     {
         "label": "validate_evaluation_manifest",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_lexical_preference_pack_manifest",
         "importPath": "qfr_pipeline.validation",
         "description": "qfr_pipeline.validation",
         "isExtraImport": true,
@@ -3896,6 +4232,22 @@
         "documentation": {}
     },
     {
+        "label": "LP9LexicalPair",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LP9LexicalPreferencePackManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "LPContextManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
@@ -3985,6 +4337,14 @@
     },
     {
         "label": "EvaluationManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LP9LexicalPreferencePackManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
@@ -17672,6 +18032,69 @@
         "documentation": {}
     },
     {
+        "label": "generate_text",
+        "kind": 2,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "def generate_text(\n    *,\n    model: Any,\n    tokenizer: Any,\n    prompt: str,\n    max_new_tokens: int,\n) -> str:\n    \"\"\"Generate a deterministic greedy response for one eval prompt.\"\"\"\n    import torch\n    rendered_prompt = _render_prompt(tokenizer, prompt)",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "evaluate_prompt_pair",
+        "kind": 2,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "def evaluate_prompt_pair(\n    *,\n    prompt_row: dict[str, Any],\n    base_response: str,\n    adapter_response: str,\n) -> dict[str, Any]:\n    scoring = prompt_row[\"scoring\"]\n    base_eval = score_response(base_response, scoring)\n    adapter_eval = score_response(adapter_response, scoring)\n    return {",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "build_report",
+        "kind": 2,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "def build_report(\n    *,\n    prompt_path: Path,\n    report_out: Path,\n    generations: list[dict[str, Any]],\n) -> dict[str, Any]:\n    base_score = sum(int(item[\"base\"][\"score\"]) for item in generations)\n    adapter_score = sum(int(item[\"adapter\"][\"score\"]) for item in generations)\n    per_pair: dict[str, dict[str, int]] = defaultdict(_summary_bucket)\n    per_task_type: dict[str, dict[str, int]] = defaultdict(_summary_bucket)",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "run_evaluation",
+        "kind": 2,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "def run_evaluation(\n    *,\n    prompts_path: Path,\n    report_out: Path,\n    generate_base: Any,\n    generate_adapter: Any,\n) -> dict[str, Any]:\n    prompts = load_eval_prompts(prompts_path)\n    generations: list[dict[str, Any]] = []\n    for prompt_row in prompts:",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "def parse_args() -> argparse.Namespace:\n    parser = argparse.ArgumentParser(\n        description=\"Evaluate LP9 lexical preference behavior for base vs adapter model.\",\n    )\n    parser.add_argument(\"--base-model\", required=True)\n    parser.add_argument(\"--adapter-model\", required=True)\n    parser.add_argument(\"--prompts\", type=Path, required=True)\n    parser.add_argument(\"--out\", type=Path, required=True)\n    parser.add_argument(\"--max-new-tokens\", type=int, default=120)\n    parser.add_argument(\"--temperature\", type=float, default=0.0)",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "def main() -> int:\n    args = parse_args()\n    # Keep heavy model dependencies local to runtime entrypoint.\n    from unsloth import FastLanguageModel\n    if args.temperature != 0.0:\n        print(\n            \"Warning: --temperature is ignored because greedy decoding \"\n            \"uses do_sample=false.\"\n        )\n    base_model, base_tokenizer = FastLanguageModel.from_pretrained(",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "scripts.evaluate_lp9_adapter",
+        "description": "scripts.evaluate_lp9_adapter",
+        "peekOfCode": "SYSTEM_PROMPT = (\n    \"Tu es un assistant qui répond en français québécois standard et privilégie \"\n    \"les termes recommandés au Québec.\"\n)\ndef _read_jsonl(path: Path) -> list[dict[str, Any]]:\n    rows: list[dict[str, Any]] = []\n    for line in path.read_text(encoding=\"utf-8\").splitlines():\n        if line.strip():\n            rows.append(json.loads(line))\n    return rows",
+        "detail": "scripts.evaluate_lp9_adapter",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": "scripts.export_qfr_dolphin3_unsloth_gguf",
@@ -17865,7 +18288,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def load_defaults():\n    if DEFAULTS_PATH.exists():\n        data = json.loads(DEFAULTS_PATH.read_text(encoding=\"utf-8\"))\n        merged = dict(DEFAULTS)\n        merged.update(data)\n        return merged\n    return dict(DEFAULTS)\ndef save_defaults(defaults):\n    DEFAULTS_PATH.write_text(json.dumps(defaults, indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\ndef truthy(value) -> bool:",
+        "peekOfCode": "def load_defaults() -> dict[str, str]:\n    \"\"\"Load saved defaults, falling back to built-in defaults.\"\"\"\n    if DEFAULTS_PATH.exists():\n        data = json.loads(DEFAULTS_PATH.read_text(encoding=\"utf-8\"))\n        merged = dict(DEFAULTS)\n        merged.update(data)\n        return merged\n    return dict(DEFAULTS)\ndef save_defaults(defaults: dict[str, str]) -> None:\n    \"\"\"Persist interactive defaults to disk.\"\"\"",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17874,7 +18297,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def save_defaults(defaults):\n    DEFAULTS_PATH.write_text(json.dumps(defaults, indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\ndef truthy(value) -> bool:\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"y\", \"on\"}\ndef line_count(path: Path):\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    width = 28",
+        "peekOfCode": "def save_defaults(defaults: dict[str, str]) -> None:\n    \"\"\"Persist interactive defaults to disk.\"\"\"\n    payload = json.dumps(defaults, indent=2, ensure_ascii=False) + \"\\n\"\n    DEFAULTS_PATH.write_text(payload, encoding=\"utf-8\")\ndef truthy(value: Any) -> bool:\n    \"\"\"Parse common truthy string values.\"\"\"\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"y\", \"on\"}\ndef line_count(path: Path) -> int | None:\n    \"\"\"Count lines in a file, or return None for non-files.\"\"\"\n    if not path.exists() or not path.is_file():",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17883,7 +18306,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def truthy(value) -> bool:\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"y\", \"on\"}\ndef line_count(path: Path):\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    width = 28\n    pos = int(elapsed * 8) % width\n    return \"[\" + \"\".join(\"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)) + \"]\"",
+        "peekOfCode": "def truthy(value: Any) -> bool:\n    \"\"\"Parse common truthy string values.\"\"\"\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"y\", \"on\"}\ndef line_count(path: Path) -> int | None:\n    \"\"\"Count lines in a file, or return None for non-files.\"\"\"\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    \"\"\"Render a lightweight animated elapsed-time meter.\"\"\"",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17892,7 +18315,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def line_count(path: Path):\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    width = 28\n    pos = int(elapsed * 8) % width\n    return \"[\" + \"\".join(\"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)) + \"]\"\ndef run(name, cmd, log_path):\n    print(f\"\\n==> {name}\")",
+        "peekOfCode": "def line_count(path: Path) -> int | None:\n    \"\"\"Count lines in a file, or return None for non-files.\"\"\"\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    \"\"\"Render a lightweight animated elapsed-time meter.\"\"\"\n    width = 28\n    pos = int(elapsed * 8) % width\n    fill = \"\".join(",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17901,7 +18324,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def meter_bar(elapsed: float) -> str:\n    width = 28\n    pos = int(elapsed * 8) % width\n    return \"[\" + \"\".join(\"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)) + \"]\"\ndef run(name, cmd, log_path):\n    print(f\"\\n==> {name}\")\n    print(\"$ \" + \" \".join(cmd))\n    start = time.monotonic()\n    last_tick = start\n    spinner = \"|/-\\\\\"",
+        "peekOfCode": "def meter_bar(elapsed: float) -> str:\n    \"\"\"Render a lightweight animated elapsed-time meter.\"\"\"\n    width = 28\n    pos = int(elapsed * 8) % width\n    fill = \"\".join(\n        \"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)\n    )\n    return \"[\" + fill + \"]\"\ndef run(name: str, cmd: list[str], log_path: Path) -> dict[str, Any]:\n    \"\"\"Execute one command with streaming log + live terminal progress.\"\"\"",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17910,7 +18333,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def run(name, cmd, log_path):\n    print(f\"\\n==> {name}\")\n    print(\"$ \" + \" \".join(cmd))\n    start = time.monotonic()\n    last_tick = start\n    spinner = \"|/-\\\\\"\n    spin = 0\n    with log_path.open(\"a\", encoding=\"utf-8\") as log:\n        log.write(f\"\\n===== {name} =====\\n\")\n        log.write(\"START \" + datetime.now().isoformat(timespec=\"seconds\") + \"\\n\")",
+        "peekOfCode": "def run(name: str, cmd: list[str], log_path: Path) -> dict[str, Any]:\n    \"\"\"Execute one command with streaming log + live terminal progress.\"\"\"\n    print(f\"\\n==> {name}\")\n    print(\"$ \" + \" \".join(cmd))\n    start = time.monotonic()\n    last_tick = start\n    spinner = \"|/-\\\\\"\n    spin = 0\n    with log_path.open(\"a\", encoding=\"utf-8\") as log:\n        log.write(f\"\\n===== {name} =====\\n\")",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17919,7 +18342,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def external_materializer_command(defaults):\n    p = defaults[\"python\"]\n    cmd = [\n        p,\n        \"scripts/materialize_external_datasets.py\",\n        \"--catalog\",\n        defaults[\"external_catalog\"],\n        \"--report\",\n        defaults[\"external_report\"],\n        \"--mode\",",
+        "peekOfCode": "def external_materializer_command(defaults: dict[str, str]) -> list[str]:\n    \"\"\"Build CLI args for external dataset materialization.\"\"\"\n    p = defaults[\"python\"]\n    cmd = [\n        p,\n        \"scripts/materialize_external_datasets.py\",\n        \"--catalog\",\n        defaults[\"external_catalog\"],\n        \"--report\",\n        defaults[\"external_report\"],",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17928,7 +18351,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def commands(defaults):\n    p = defaults[\"python\"]\n    return {\n        \"1\": (\"Bootstrap\", [[\"bash\", \"scripts/bootstrap_dev_env.sh\"]]),\n        \"2\": (\"Validate\", [[p, \"tools/update_agents.py\", \"--ensure-nested\"], [p, \"tools/update_agents.py\", \"--validate\"], [\"qfr\", \"validate\"]]),\n        \"3\": (\"Download Gutenberg real corpus\", [[p, \"tools/download_real_corpus_sources.py\", \"--manifest\", defaults[\"download_manifest\"], \"--out-manifest\", defaults[\"downloaded_manifest\"], \"--report\", defaults[\"download_report\"], \"--overwrite\"]]),\n        \"4\": (\"Materialize external dataset catalog\", [external_materializer_command(defaults)]),\n        \"5\": (\"Ingest real corpus\", [[\"qfr\", \"validate-corpus-sources\", \"--manifest\", defaults[\"downloaded_manifest\"]], [\"qfr\", \"ingest-corpus-sources\", \"--manifest\", defaults[\"downloaded_manifest\"], \"--out\", defaults[\"real_harvest\"], \"--report\", defaults[\"real_ingestion_report\"], \"--min-chars\", defaults[\"real_min_chars\"]]]),\n        \"6\": (\"Curate real corpus\", [[\"qfr\", \"curate-corpus\", \"--input\", defaults[\"real_harvest\"], \"--policy\", defaults[\"curation_policy\"], \"--out-dir\", defaults[\"real_curation_dir\"]]]),\n        \"7\": (\"Split accepted corpus\", [[\"qfr\", \"validate-split-policy\", \"--policy\", defaults[\"split_policy\"]], [\"qfr\", \"split-curated-corpus\", \"--input\", defaults[\"split_input\"], \"--policy\", defaults[\"split_policy\"], \"--out-dir\", defaults[\"split_out_dir\"]]]),",
+        "peekOfCode": "def commands(\n    defaults: dict[str, str],\n) -> dict[str, tuple[str, list[list[str]]]]:\n    \"\"\"Build the interactive menu command map.\"\"\"\n    p = defaults[\"python\"]\n    return {\n        \"1\": (\"Bootstrap\", [[\"bash\", \"scripts/bootstrap_dev_env.sh\"]]),\n        \"2\": (\n            \"Validate\",\n            [",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17937,7 +18360,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def show_status(defaults):\n    print(\"\\nArtifact status\")\n    keys = [\"real_harvest\", \"real_ingestion_report\", \"external_report\", \"real_curation_dir\", \"split_out_dir\", \"training_export_dir\", \"release_candidate_json\", \"dolphin_output_dir\"]\n    for key in keys:\n        path = ROOT / str(defaults[key])\n        extra = \"\"\n        if path.is_file() and path.suffix == \".jsonl\":\n            extra = f\" lines={line_count(path)}\"\n        if path.is_dir():\n            for child in [\"accepted.jsonl\", \"train.jsonl\", \"test.jsonl\"]:",
+        "peekOfCode": "def show_status(defaults: dict[str, str]) -> None:\n    \"\"\"Print existence and lightweight counts for key pipeline artifacts.\"\"\"\n    print(\"\\nArtifact status\")\n    for key in _status_keys():\n        path = ROOT / str(defaults[key])\n        extra = _status_extra(path)\n        shown_path = _relative_if_possible(path)\n        exists_label = \"yes\" if path.exists() else \"no \"\n        print(f\"- {key:28} {exists_label:3} {shown_path}{extra}\")\ndef edit_defaults(defaults: dict[str, str]) -> None:",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17946,7 +18369,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def edit_defaults(defaults):\n    keys = sorted(defaults)\n    while True:\n        for i, key in enumerate(keys, 1):\n            print(f\"{i:2}. {key} = {defaults[key]}\")\n        choice = input(\"Edit number, s=save, Enter=back: \").strip()\n        if choice == \"\":\n            return\n        if choice.lower() == \"s\":\n            save_defaults(defaults)",
+        "peekOfCode": "def edit_defaults(defaults: dict[str, str]) -> None:\n    \"\"\"Interactively edit persisted defaults.\"\"\"\n    keys = sorted(defaults)\n    while True:\n        for i, key in enumerate(keys, 1):\n            print(f\"{i:2}. {key} = {defaults[key]}\")\n        choice = input(\"Edit number, s=save, Enter=back: \").strip()\n        if choice == \"\":\n            return\n        if choice.lower() == \"s\":",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17955,7 +18378,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def run_group(label, group, log_path):\n    print(f\"\\n### {label}\")\n    results = []\n    for name, cmd in group:\n        result = run(name, cmd, log_path)\n        results.append(result)\n        if result[\"rc\"] != 0:\n            break\n    return results\ndef main():",
+        "peekOfCode": "def run_group(\n    label: str, group: list[tuple[str, list[str]]], log_path: Path\n) -> list[dict[str, Any]]:\n    \"\"\"Run a command group and stop at first non-zero return code.\"\"\"\n    print(f\"\\n### {label}\")\n    results = []\n    for name, cmd in group:\n        result = run(name, cmd, log_path)\n        results.append(result)\n        if result[\"rc\"] != 0:",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17964,7 +18387,7 @@
         "kind": 2,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"Interactive QFR all-in-one console.\")\n    parser.add_argument(\"--full\", action=\"store_true\")\n    parser.add_argument(\"--full-with-smoke-training\", action=\"store_true\")\n    parser.add_argument(\"--status\", action=\"store_true\")\n    args = parser.parse_args()\n    defaults = load_defaults()\n    LOG_DIR.mkdir(parents=True, exist_ok=True)\n    log_path = LOG_DIR / f\"qfr_aio_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log\"\n    all_results = []",
+        "peekOfCode": "def main() -> int:\n    \"\"\"Entry point for interactive and full-run workflows.\"\"\"\n    parser = _build_parser()\n    args = parser.parse_args()\n    defaults = load_defaults()\n    LOG_DIR.mkdir(parents=True, exist_ok=True)\n    ts = datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n    log_path = LOG_DIR / f\"qfr_aio_{ts}.log\"\n    all_results: list[dict[str, Any]] = []\n    if args.status:",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -17991,7 +18414,7 @@
         "kind": 5,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "LOG_DIR = ROOT / \"reports\" / \"aio\"\nASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"\nDEFAULTS = {",
+        "peekOfCode": "LOG_DIR = ROOT / \"reports\" / \"aio\"\nASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"\nFULL_PIPELINE_ORDER = [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"]",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -18000,7 +18423,16 @@
         "kind": 5,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "ASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"\nDEFAULTS = {\n    \"python\": \"python3\",",
+        "peekOfCode": "ASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"\nFULL_PIPELINE_ORDER = [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"]\nDEFAULTS = {",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "FULL_PIPELINE_ORDER",
+        "kind": 5,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "FULL_PIPELINE_ORDER = [\"1\", \"2\", \"3\", \"4\", \"5\", \"6\", \"7\", \"8\", \"9\"]\nDEFAULTS = {\n    \"python\": \"python3\",\n    \"download_manifest\": (\n        \"manifests/corpus_source_manifest.real_downloads.yaml\"\n    ),\n    \"downloaded_manifest\": (\n        \"manifests/corpus_source_manifest.real_downloaded.local.yaml\"\n    ),\n    \"download_report\": \"reports/corpus_ingestion/downloads.real.json\",",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -18009,7 +18441,7 @@
         "kind": 5,
         "importPath": "scripts.qfr_aio",
         "description": "scripts.qfr_aio",
-        "peekOfCode": "DEFAULTS = {\n    \"python\": \"python3\",\n    \"download_manifest\": \"manifests/corpus_source_manifest.real_downloads.yaml\",\n    \"downloaded_manifest\": \"manifests/corpus_source_manifest.real_downloaded.local.yaml\",\n    \"download_report\": \"reports/corpus_ingestion/downloads.real.json\",\n    \"external_catalog\": \"project/external_dataset_catalog.yaml\",\n    \"external_report\": \"reports/external_datasets/materialization_report.json\",\n    \"external_mode\": \"all-safe\",\n    \"external_min_chars\": \"80\",\n    \"external_max_records\": \"\",",
+        "peekOfCode": "DEFAULTS = {\n    \"python\": \"python3\",\n    \"download_manifest\": (\n        \"manifests/corpus_source_manifest.real_downloads.yaml\"\n    ),\n    \"downloaded_manifest\": (\n        \"manifests/corpus_source_manifest.real_downloaded.local.yaml\"\n    ),\n    \"download_report\": \"reports/corpus_ingestion/downloads.real.json\",\n    \"external_catalog\": \"project/external_dataset_catalog.yaml\",",
         "detail": "scripts.qfr_aio",
         "documentation": {}
     },
@@ -18405,7 +18837,25 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.cli",
         "description": "src.qfr_pipeline.cli",
-        "peekOfCode": "def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_training_pack_policy_model(policy)\n    print(\"Training pack policy manifest valid\")\n@app.command(\"build-training-pack\")\ndef build_training_pack_cmd(\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n    permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"),\n):",
+        "peekOfCode": "def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_training_pack_policy_model(policy)\n    print(\"Training pack policy manifest valid\")\n@app.command(\"generate-lp9-micro-pack\")\ndef generate_lp9_micro_pack_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n):\n    _refresh_dynamic_agents()",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_micro_pack_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def generate_lp9_micro_pack_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n):\n    _refresh_dynamic_agents()\n    payload = generate_lp9_micro_pack(manifest, out_dir=out_dir)\n    print(\n        {\n            \"ok\": payload.get(\"ok\", False),\n            \"records_total\": payload.get(\"records_total\", 0),",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_eval_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def generate_lp9_eval_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out: Path = typer.Option(..., \"--out\"),\n):\n    _refresh_dynamic_agents()\n    summary = generate_lp9_eval_prompts(manifest, out)\n    baseline_path = out.parent / \"baseline_expected_report.json\"\n    baseline = write_baseline_expected_report(baseline_path, out)\n    print(\n        {",
         "detail": "src.qfr_pipeline.cli",
         "documentation": {}
     },
@@ -18920,6 +19370,150 @@
         "description": "src.qfr_pipeline.lp7_monitor",
         "peekOfCode": "def monitor_lp7(pre_alignment_score: float, post_alignment_score: float, release_gates_path: Path) -> dict[str, float | bool]:\n    try:\n        gates = yaml.safe_load(release_gates_path.read_text(encoding=\"utf-8\")) or {}\n    except (OSError, yaml.YAMLError) as exc:\n        raise ValueError(f\"Failed to read/parse release gates YAML at {release_gates_path}: {exc}\") from exc\n    if not isinstance(gates, dict):\n        raise ValueError(f\"Malformed release gates config at {release_gates_path}: expected top-level mapping.\")\n    if \"alignment\" not in gates or not isinstance(gates[\"alignment\"], dict):\n        raise ValueError(f\"Malformed release gates config at {release_gates_path}: missing mapping key `alignment`.\")\n    key = \"lp7_standard_negation_max_post_alignment_drop_ratio\"",
         "detail": "src.qfr_pipeline.lp7_monitor",
+        "documentation": {}
+    },
+    {
+        "label": "contains_term",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "def contains_term(text: str, term: str) -> bool:\n    if not term.strip():\n        return False\n    normalized_text = _normalize(text)\n    return bool(_term_pattern(term).search(normalized_text))\ndef contains_any_term(text: str, terms: list[str]) -> bool:\n    return any(contains_term(text, term) for term in terms)\ndef score_response(response: str, scoring: dict[str, Any]) -> dict[str, Any]:\n    required_any = [str(term) for term in scoring.get(\"required_any\", [])]\n    forbidden_any = [str(term) for term in scoring.get(\"forbidden_any\", [])]",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "contains_any_term",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "def contains_any_term(text: str, terms: list[str]) -> bool:\n    return any(contains_term(text, term) for term in terms)\ndef score_response(response: str, scoring: dict[str, Any]) -> dict[str, Any]:\n    required_any = [str(term) for term in scoring.get(\"required_any\", [])]\n    forbidden_any = [str(term) for term in scoring.get(\"forbidden_any\", [])]\n    bonus_term = str(scoring.get(\"exact_preferred_bonus\", \"\")).strip()\n    preferred_hit = contains_any_term(response, required_any)\n    forbidden_hit = contains_any_term(response, forbidden_any)\n    bonus_hit = bool(bonus_term) and contains_term(response, bonus_term)\n    score = 0",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "score_response",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "def score_response(response: str, scoring: dict[str, Any]) -> dict[str, Any]:\n    required_any = [str(term) for term in scoring.get(\"required_any\", [])]\n    forbidden_any = [str(term) for term in scoring.get(\"forbidden_any\", [])]\n    bonus_term = str(scoring.get(\"exact_preferred_bonus\", \"\")).strip()\n    preferred_hit = contains_any_term(response, required_any)\n    forbidden_hit = contains_any_term(response, forbidden_any)\n    bonus_hit = bool(bonus_term) and contains_term(response, bonus_term)\n    score = 0\n    if preferred_hit:\n        score += 1",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_eval_prompts",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "def generate_lp9_eval_prompts(manifest_path: Path, out_path: Path) -> dict[str, Any]:\n    manifest = load_lp9_micro_pack_manifest(manifest_path)\n    out_path = Path(out_path)\n    if not out_path.is_absolute():\n        out_path = Path.cwd() / out_path\n    rows: list[dict[str, Any]] = []\n    prompt_counter = 0\n    for pair_idx, pair in enumerate(manifest.lexical_pairs, start=1):\n        pair_id = f\"{pair_idx:02d}:{_normalize(pair.source_term).replace(' ', '_')}\"\n        rejected = [str(term) for term in pair.rejected_terms]",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "load_eval_prompts",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "def load_eval_prompts(path: Path) -> list[dict[str, Any]]:\n    rows: list[dict[str, Any]] = []\n    for line in path.read_text(encoding=\"utf-8\").splitlines():\n        if line.strip():\n            rows.append(json.loads(line))\n    return rows\ndef write_baseline_expected_report(path: Path, prompts_path: Path) -> dict[str, Any]:\n    prompts = load_eval_prompts(prompts_path)\n    strategy = \"Réponse simulée contenant seulement le terme source (forbidden).\"\n    expected_score = -1 * len(prompts)",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "write_baseline_expected_report",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "def write_baseline_expected_report(path: Path, prompts_path: Path) -> dict[str, Any]:\n    prompts = load_eval_prompts(prompts_path)\n    strategy = \"Réponse simulée contenant seulement le terme source (forbidden).\"\n    expected_score = -1 * len(prompts)\n    report = {\n        \"kind\": \"lp9_eval_baseline_expected_report\",\n        \"prompts\": repo_relative_path(prompts_path),\n        \"strategy\": strategy,\n        \"total_prompts\": len(prompts),\n        \"expected_total_score\": expected_score,",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "PROMPT_TASK_ORDER",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "PROMPT_TASK_ORDER = [\n    \"rewrite\",\n    \"direct_preference\",\n    \"choose_best_term\",\n    \"correction\",\n    \"open_generation\",\n]\nPROMPT_CONTEXTS = [\n    \"Dans un message professionnel à un client québécois.\",\n    \"Dans une consigne destinée au personnel d'un service public du Québec.\",",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "PROMPT_CONTEXTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_eval",
+        "description": "src.qfr_pipeline.lp9_eval",
+        "peekOfCode": "PROMPT_CONTEXTS = [\n    \"Dans un message professionnel à un client québécois.\",\n    \"Dans une consigne destinée au personnel d'un service public du Québec.\",\n    \"Dans un guide d'utilisation pour une application mobile au Québec.\",\n    \"Dans un contexte scolaire standard en français québécois.\",\n    \"Dans une communication courante entre collègues au Québec.\",\n]\ndef _normalize(text: str) -> str:\n    return \" \".join(text.casefold().split())\ndef _term_pattern(term: str) -> re.Pattern[str]:",
+        "detail": "src.qfr_pipeline.lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "load_lp9_micro_pack_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "def load_lp9_micro_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return LP9LexicalPreferencePackManifest.model_validate(load_yaml(path))\ndef validate_lp9_micro_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return load_lp9_micro_pack_manifest(path)\ndef _enabled_task_types(manifest: LP9LexicalPreferencePackManifest) -> list[str]:\n    enabled: list[str] = []\n    if manifest.include_rewrite_tasks:\n        enabled.append(\"rewrite_to_quebec_fr\")\n    if manifest.include_direct_preference_tasks:\n        enabled.append(\"direct_preference\")",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_micro_pack_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "def validate_lp9_micro_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return load_lp9_micro_pack_manifest(path)\ndef _enabled_task_types(manifest: LP9LexicalPreferencePackManifest) -> list[str]:\n    enabled: list[str] = []\n    if manifest.include_rewrite_tasks:\n        enabled.append(\"rewrite_to_quebec_fr\")\n    if manifest.include_direct_preference_tasks:\n        enabled.append(\"direct_preference\")\n    if manifest.include_explanation_tasks:\n        enabled.append(\"explain_preference\")",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "generate_lp9_micro_pack",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "def generate_lp9_micro_pack(\n    manifest_path: Path,\n    out_dir: Path | None = None,\n) -> dict[str, Any]:\n    manifest = validate_lp9_micro_pack_manifest(manifest_path)\n    output_dir = out_dir or (ROOT / manifest.output_dir)\n    if not output_dir.is_absolute():\n        output_dir = ROOT / output_dir\n    train_contexts, dev_contexts = _context_splits(manifest.repetitions_per_pattern)\n    task_types = _enabled_task_types(manifest)",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "load_lp9_micro_pack_rows",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "def load_lp9_micro_pack_rows(pack_dir: Path) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:\n    train_rows = _read_jsonl(pack_dir / \"train.jsonl\")\n    dev_rows = _read_jsonl(pack_dir / \"dev.jsonl\")\n    return train_rows, dev_rows",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "SYSTEM_PROMPT = (\n    \"Tu es un assistant linguistique qui répond en français québécois standard, \"\n    \"avec un vocabulaire recommandé par les usages normatifs du Québec.\"\n)\nCONTEXT_GROUP_ORDER = [\n    \"question\",\n    \"customer support\",\n    \"workplace\",\n    \"school\",\n    \"family\",",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "CONTEXT_GROUP_ORDER",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "CONTEXT_GROUP_ORDER = [\n    \"question\",\n    \"customer support\",\n    \"workplace\",\n    \"school\",\n    \"family\",\n    \"government/service\",\n    \"commerce\",\n    \"mobile/device\",\n    \"email/message\",",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "DEV_CONTEXT_GROUPS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "DEV_CONTEXT_GROUPS = {\"government/service\", \"everyday casual\"}\nCONTEXT_TEMPLATES: dict[str, list[str]] = {\n    \"question\": [\n        \"Dans cette question fréquente, est-ce que le terme « {source_term} » convient?\",\n        \"Je prépare une FAQ; dois-je garder « {source_term} » dans la réponse?\",\n        \"Pour ce formulaire de questions, faut-il écrire « {source_term} »?\",\n        \"Dans un questionnaire d'aide, le mot « {source_term} » est-il approprié?\",\n        \"Question de vocabulaire: faut-il conserver « {source_term} » ici?\",\n    ],\n    \"customer support\": [",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "TASK_ORDER",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.lp9_micro_pack",
+        "description": "src.qfr_pipeline.lp9_micro_pack",
+        "peekOfCode": "TASK_ORDER = [\n    \"rewrite_to_quebec_fr\",\n    \"direct_preference\",\n    \"explain_preference\",\n    \"negative_contrast\",\n]\ndef _normalize_text(text: str) -> str:\n    return \" \".join(text.casefold().split())\ndef _sha256(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()",
+        "detail": "src.qfr_pipeline.lp9_micro_pack",
         "documentation": {}
     },
     {
@@ -19643,6 +20237,24 @@
         "documentation": {}
     },
     {
+        "label": "LP9LexicalPair",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LP9LexicalPair(BaseModel):\n    source_term: str\n    preferred_term: str\n    rejected_terms: list[str]\n    domain: str\n    @model_validator(mode=\"after\")\n    def validate_pair(self):\n        if not self.source_term.strip():\n            raise ValueError(\"source_term must be non-empty\")\n        if not self.preferred_term.strip():",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "LP9LexicalPreferencePackManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class LP9LexicalPreferencePackManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str\n    pack_id: str\n    output_dir: str\n    random_seed: int\n    repetitions_per_pattern: int\n    include_rewrite_tasks: bool = True\n    include_direct_preference_tasks: bool = True",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "ModernCorpusAdapterConfig",
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
@@ -19926,7 +20538,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
+        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -19935,7 +20547,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -19944,7 +20556,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -19953,7 +20565,16 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
+        "peekOfCode": "def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_lp9_lexical_preference_pack_manifest",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_lp9_lexical_preference_pack_manifest(path: Path) -> LP9LexicalPreferencePackManifest:\n    return _validate(path, LP9LexicalPreferencePackManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -20603,6 +21224,141 @@
         "description": "tests.test_legacy_diagnostics",
         "peekOfCode": "def test_pipeline_ops_no_standalone_semantic_diagnostics_engine():\n    text = (ROOT / \"tools/pipeline_ops.py\").read_text(encoding=\"utf-8\")\n    assert \"def lp_semantic_diagnostics\" not in text\n    assert \"_cosine_similarity\" not in text",
         "detail": "tests.test_legacy_diagnostics",
+        "documentation": {}
+    },
+    {
+        "label": "test_eval_prompts_include_required_and_forbidden_terms",
+        "kind": 2,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "def test_eval_prompts_include_required_and_forbidden_terms() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        manifest_path = _write_manifest_with_output_dir(\n            tmp_root,\n            _repo_rel(tmp_root / \"lp9_pack\"),\n        )\n        out = tmp_root / \"eval_prompts.jsonl\"",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "test_score_response_counts_preferred_and_forbidden_terms",
+        "kind": 2,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "def test_score_response_counts_preferred_and_forbidden_terms() -> None:\n    scoring = {\n        \"required_any\": [\"courriel\"],\n        \"forbidden_any\": [\"email\", \"e-mail\"],\n        \"exact_preferred_bonus\": \"courriel\",\n    }\n    preferred = score_response(\"Nous envoyons un courriel officiel.\", scoring)\n    forbidden = score_response(\"Nous envoyons un email officiel.\", scoring)\n    both = score_response(\"Un courriel remplace email dans ce texte.\", scoring)\n    assert preferred[\"score\"] == 1",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "test_fake_greedy_eval_report_scoring_and_outputs",
+        "kind": 2,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "def test_fake_greedy_eval_report_scoring_and_outputs() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        manifest_path = _write_manifest_with_output_dir(\n            tmp_root,\n            _repo_rel(tmp_root / \"lp9_pack\"),\n        )\n        # Build both artifacts to mimic the intended local flow.",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_eval_baseline_report_and_path_leakage",
+        "kind": 2,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "def test_lp9_eval_baseline_report_and_path_leakage() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        manifest_path = _write_manifest_with_output_dir(\n            tmp_root,\n            _repo_rel(tmp_root / \"lp9_pack\"),\n        )\n        prompts_path = tmp_root / \"eval_prompts.jsonl\"",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "EVAL_SCRIPT_PATH",
+        "kind": 5,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "EVAL_SCRIPT_PATH = ROOT / \"scripts\" / \"evaluate_lp9_adapter.py\"\nspec = importlib.util.spec_from_file_location(\"qfr_lp9_eval_script\", EVAL_SCRIPT_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load script module from {EVAL_SCRIPT_PATH}\")\nlp9_eval_script = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(lp9_eval_script)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "spec",
+        "kind": 5,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "spec = importlib.util.spec_from_file_location(\"qfr_lp9_eval_script\", EVAL_SCRIPT_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load script module from {EVAL_SCRIPT_PATH}\")\nlp9_eval_script = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(lp9_eval_script)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(\n        (ROOT / \"manifests/lp9_lexical_preference_pack.template.yaml\").read_text(",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "lp9_eval_script",
+        "kind": 5,
+        "importPath": "tests.test_lp9_eval",
+        "description": "tests.test_lp9_eval",
+        "peekOfCode": "lp9_eval_script = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(lp9_eval_script)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(\n        (ROOT / \"manifests/lp9_lexical_preference_pack.template.yaml\").read_text(\n            encoding=\"utf-8\"\n        )\n    )",
+        "detail": "tests.test_lp9_eval",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_manifest_validates",
+        "kind": 2,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "def test_lp9_manifest_validates() -> None:\n    validate_lp9_micro_pack_manifest(\n        ROOT / \"manifests/lp9_lexical_preference_pack.template.yaml\"\n    )\ndef test_lp9_micro_pack_generation_no_duplicates_and_disjoint_splits() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        out_dir = tmp_root / \"lp9_pack\"",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_micro_pack_generation_no_duplicates_and_disjoint_splits",
+        "kind": 2,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "def test_lp9_micro_pack_generation_no_duplicates_and_disjoint_splits() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        out_dir = tmp_root / \"lp9_pack\"\n        manifest_path = _write_manifest_with_output_dir(tmp_root, _repo_rel(out_dir))\n        report = generate_lp9_micro_pack(manifest_path)\n        train_rows, dev_rows = load_lp9_micro_pack_rows(out_dir)\n        assert report[\"ok\"]",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_micro_pack_pair_task_coverage_and_safety_flags",
+        "kind": 2,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "def test_lp9_micro_pack_pair_task_coverage_and_safety_flags() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        out_dir = tmp_root / \"lp9_pack\"\n        manifest_path = _write_manifest_with_output_dir(tmp_root, _repo_rel(out_dir))\n        generate_lp9_micro_pack(manifest_path)\n        train_rows, dev_rows = load_lp9_micro_pack_rows(out_dir)\n        rows = [*train_rows, *dev_rows]",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_micro_pack_rows_are_accepted_by_training_pack_loader",
+        "kind": 2,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "def test_lp9_micro_pack_rows_are_accepted_by_training_pack_loader() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        out_dir = tmp_root / \"lp9_pack\"\n        manifest_path = _write_manifest_with_output_dir(tmp_root, _repo_rel(out_dir))\n        generate_lp9_micro_pack(manifest_path)\n        train_path = out_dir / \"train.jsonl\"\n        dev_path = out_dir / \"dev.jsonl\"",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_lp9_micro_pack_report_has_no_path_leakage",
+        "kind": 2,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "def test_lp9_micro_pack_report_has_no_path_leakage() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        tmp_root = Path(tmp)\n        out_dir = tmp_root / \"lp9_pack\"\n        manifest_path = _write_manifest_with_output_dir(tmp_root, _repo_rel(out_dir))\n        generate_lp9_micro_pack(manifest_path)\n        for path in [\n            out_dir / \"train.jsonl\",",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "TRAINING_SCRIPT_PATH",
+        "kind": 5,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "TRAINING_SCRIPT_PATH = ROOT / \"scripts\" / \"train_qfr_dolphin3_unsloth_lora.py\"\nspec = importlib.util.spec_from_file_location(\"qfr_training_inputs_lp9\", TRAINING_SCRIPT_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load script module from {TRAINING_SCRIPT_PATH}\")\ntraining_inputs = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(training_inputs)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "spec",
+        "kind": 5,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "spec = importlib.util.spec_from_file_location(\"qfr_training_inputs_lp9\", TRAINING_SCRIPT_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load script module from {TRAINING_SCRIPT_PATH}\")\ntraining_inputs = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(training_inputs)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(\n        (ROOT / \"manifests/lp9_lexical_preference_pack.template.yaml\").read_text(",
+        "detail": "tests.test_lp9_micro_pack",
+        "documentation": {}
+    },
+    {
+        "label": "training_inputs",
+        "kind": 5,
+        "importPath": "tests.test_lp9_micro_pack",
+        "description": "tests.test_lp9_micro_pack",
+        "peekOfCode": "training_inputs = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(training_inputs)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_manifest_with_output_dir(tmp_root: Path, output_dir_rel: str) -> Path:\n    manifest = yaml.safe_load(\n        (ROOT / \"manifests/lp9_lexical_preference_pack.template.yaml\").read_text(\n            encoding=\"utf-8\"\n        )\n    )",
+        "detail": "tests.test_lp9_micro_pack",
         "documentation": {}
     },
     {

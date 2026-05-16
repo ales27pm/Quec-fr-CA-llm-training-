@@ -75,6 +75,14 @@ TASK_FILES = {
         ROOT / "scripts" / "build_local_smoke_pack.sh",
         ROOT / "tests" / "test_dolphin3_unsloth_training_inputs.py",
     ),
+    "T30": (
+        ROOT / "manifests" / "lp9_lexical_preference_pack.template.yaml",
+        ROOT / "src" / "qfr_pipeline" / "lp9_micro_pack.py",
+        ROOT / "src" / "qfr_pipeline" / "lp9_eval.py",
+        ROOT / "scripts" / "evaluate_lp9_adapter.py",
+        ROOT / "reports" / "lp9_micro_pack" / "report.json",
+        ROOT / "reports" / "lp9_eval" / "eval_prompts.jsonl",
+    ),
 }
 
 

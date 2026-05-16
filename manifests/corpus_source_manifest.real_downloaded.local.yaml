@@ -22,7 +22,7 @@ sources:
   dialect_region: Quebec
   notes: French novel set in rural Québec/Lac-Saint-Jean; verify Project Gutenberg
     terms and local jurisdiction before release. Downloaded from https://www.gutenberg.org/ebooks/13525.txt.utf-8.
-    SHA-256=1b5e4aa5aa1f94fb2939d5805df7e5dbed332e52be508cea405dfc3240900258
+    SHA-256=ea7d322a53adf69d43d65d80ad2a433e63f53fa19c608045d1f33de101a8ca31
 - source_id: gutenberg_au_large_de_l_ecueil_fr_17791
   name: 'Au large de l''écueil: roman canadien by Hector Bernier'
   source_type: local_text
@@ -43,7 +43,7 @@ sources:
   register: mixed
   dialect_region: Quebec
   notes: French-Canadian fiction; deterministic remote source candidate. Downloaded
-    from https://www.gutenberg.org/ebooks/17791.txt.utf-8. SHA-256=8bdfcf9737311627dc396fe7bcad3810fce167b6804ed2071977d4f97bd12024
+    from https://www.gutenberg.org/ebooks/17791.txt.utf-8. SHA-256=72b82bb42902e72199fc64762ddc6d43f829ac309473f1eea3918c8883333707
 - source_id: gutenberg_un_amour_vrai_fr_14537
   name: Un amour vrai by Laure Conan
   source_type: local_text
@@ -63,7 +63,7 @@ sources:
   register: formal
   dialect_region: Quebec
   notes: French-Canadian fiction by Laure Conan. Downloaded from https://www.gutenberg.org/ebooks/14537.txt.utf-8.
-    SHA-256=8a9a71868a8e0d6273be1dd38013a06e02184425d8a7128945664326fd5061a4
+    SHA-256=b9375ce90dc0de5d0a9128ca3eef825ce0676827884ea4f0e5b5a721fbb12245
 - source_id: gutenberg_l_influence_d_un_livre_fr_15305
   name: 'L''influence d''un livre: Roman historique by Philippe Aubert de Gaspé'
   source_type: local_text
@@ -83,7 +83,7 @@ sources:
   register: formal
   dialect_region: Quebec
   notes: French-Canadian historical fiction. Downloaded from https://www.gutenberg.org/ebooks/15305.txt.utf-8.
-    SHA-256=97d5db0a697b3ec145a15cd22cd9973bb42cfa0709fee7fa5e31968d51268447
+    SHA-256=8134e08d2510ab28efd9a316045ba21d2a7073215d6a546287f45db5cfad9ac8
 - source_id: gutenberg_angeline_de_montbrun_fr_17267
   name: Angéline de Montbrun by Laure Conan
   source_type: local_text
@@ -103,7 +103,7 @@ sources:
   register: formal
   dialect_region: Quebec
   notes: French-Canadian fiction by Laure Conan. Downloaded from https://www.gutenberg.org/ebooks/17267.txt.utf-8.
-    SHA-256=84b42912ec782c853f332532fc274149a95b5bda7122459b7e61463d74b4edc8
+    SHA-256=14f7467b3b905b0f8affff86432ced51f40620f2ab0bb8141c72494b2806063d
 - source_id: gutenberg_le_debutant_fr_19497
   name: Le débutant by Arsène Bessette
   source_type: local_text
@@ -123,7 +123,7 @@ sources:
   register: mixed
   dialect_region: Quebec
   notes: French-Canadian fiction by Arsène Bessette. Downloaded from https://www.gutenberg.org/ebooks/19497.txt.utf-8.
-    SHA-256=85b19d955de259a2e83a6ceb98d8d468c5d4e900e85ddcc810e70674d5aab9c0
+    SHA-256=4cf37cf48469bd9dbdbcba7dc9f1d1009eeeeceb970525aa0c2ede60b4d0d0a6
 - source_id: gutenberg_ce_que_disait_la_flamme_fr_14399
   name: Ce que disait la flamme by Hector Bernier
   source_type: local_text
@@ -143,7 +143,7 @@ sources:
   register: formal
   dialect_region: Quebec
   notes: French-Canadian fiction by Hector Bernier. Downloaded from https://www.gutenberg.org/ebooks/14399.txt.utf-8.
-    SHA-256=f57fec1404d64f1d27329c260df7f55197e9182b449b47aa8ae16fc570933001
+    SHA-256=511308e4a657cf788c00100bde24da316fe3feedebbfee54b12f54d2e04c97c7
 - source_id: gutenberg_le_cap_au_diable_fr_13059
   name: Le Cap au Diable, Légende Canadienne by Charles DeGuise
   source_type: local_text
@@ -163,4 +163,4 @@ sources:
   register: formal
   dialect_region: Canada_fr
   notes: French Canadian legend/fiction candidate; review language fit after download.
-    Downloaded from https://www.gutenberg.org/ebooks/13059.txt.utf-8. SHA-256=efa6796f22cb9e29e95074a6f8003a771d75b205bf3bdeb732f3bf9db4962439
+    Downloaded from https://www.gutenberg.org/ebooks/13059.txt.utf-8. SHA-256=26464ad8ef8907acb1f43f9ebbaf25cccee6d53b3850d5873fd3c8595d0dde95

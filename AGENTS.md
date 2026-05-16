@@ -40,6 +40,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T26 | Real corpus paragraph ingestion and local research training-pack flow | ✅ fully_implemented | `Provided` |
 | T27 | Resilient real corpus downloader with retries, cache reuse, partial-success mode, and clear resume behavior | ✅ fully_implemented | `Provided` |
 | T29 | Unsloth training-pack input compatibility and local smoke-pack policy/workflow | ✅ fully_implemented | `Provided` |
+| T30 | LP9 lexical evaluation harness and targeted micro-pack generator | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.
@@ -55,7 +56,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 2. Implement changes following manifest/rule schemas.
 3. Run validation checks (`--validate`).
 4. Update dynamic state (`--write`).
-5. Commit with concise message referencing relevant Task IDs (T1–T29).
+5. Commit with concise message referencing relevant Task IDs (T1–T30).
 
 ## Creation/Modification of Root and Nested AGENTS
 ```bash

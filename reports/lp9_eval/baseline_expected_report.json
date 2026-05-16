@@ -1,0 +1,8 @@
+{
+  "kind": "lp9_eval_baseline_expected_report",
+  "prompts": "reports/lp9_eval/eval_prompts.jsonl",
+  "strategy": "Réponse simulée contenant seulement le terme source (forbidden).",
+  "total_prompts": 50,
+  "expected_total_score": -50,
+  "notes": "Ce rapport sert de repère déterministe: si un système répond avec les termes forbidden sans termes préférés, le score total attendu est négatif."
+}
