@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "manual": true,
+  "examples_generated": 1000,
+  "train_count": 900,
+  "dev_count": 100,
+  "pairs": [
+    "email",
+    "chat",
+    "smartphone",
+    "weekend",
+    "shopping"
+  ]
+}

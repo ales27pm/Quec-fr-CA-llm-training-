@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "manual": true,
+  "stage": "t31b",
+  "examples_generated": 1200,
+  "train_count": 1080,
+  "dev_count": 120,
+  "focus": [
+    "choose_best_term",
+    "open_generation",
+    "download",
+    "chat",
+    "email",
+    "weekend",
+    "smartphone"
+  ]
+}
