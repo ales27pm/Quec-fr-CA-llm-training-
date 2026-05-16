@@ -1,9 +1,9 @@
 {
   "ok": true,
   "manifest": "manifests/corpus_source_manifest.real_downloaded.local.yaml",
-  "sources_total": 8,
-  "sources_ingested": 8,
-  "records_written": 0,
+  "sources_total": 6,
+  "sources_ingested": 6,
+  "records_written": 3318,
   "skipped_sources": [],
   "issues": [],
   "output": "reports/corpus_ingestion/harvest.real.jsonl"

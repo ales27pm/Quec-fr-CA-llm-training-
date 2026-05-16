@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "pack_dir": "reports/training_pack_real",
+  "report": "reports/training_pack_real/report.json",
+  "pack_mode": "local_research",
+  "commercial_release_ready": false,
+  "commercial_blocking_reasons": [
+    "commercial_safety_filters_triggered",
+    "contains_noncommercial_records",
+    "contains_permission_required_records",
+    "pack_mode_local_research_blocks_commercial_release"
+  ],
+  "readiness_level": "insufficient",
+  "blocking_reasons": [],
+  "examples_generated": 12,
+  "raw_records_count": 4,
+  "train_count": 6,
+  "dev_count": 3,
+  "test_count": 3,
+  "estimated_tokens_total": 1267,
+  "raw_records_tokens_total": 276,
+  "instruction_examples_total": 12,
+  "instruction_like_ratio": 1.0,
+  "source_diversity_count": 2,
+  "domain_diversity_count": 2,
+  "register_diversity_count": 2,
+  "source_summary": {
+    "assnat_journal_debats_seed_modern": 6,
+    "donnees_quebec_ckan_metadata_modern": 6
+  },
+  "domain_summary": {
+    "politics": 6,
+    "public_administration": 6
+  },
+  "register_summary": {
+    "administrative": 6,
+    "parliamentary": 6
+  }
+}
