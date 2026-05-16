@@ -1,0 +1,71 @@
+{
+  "ok": true,
+  "manifest": "manifests/modern_corpus_acquisition.donnees_quebec.template.yaml",
+  "sources_total": 1,
+  "sources_active": 1,
+  "sources_acquired": 1,
+  "records_written": 2,
+  "skipped_sources": [],
+  "issues": [],
+  "per_source": {
+    "donnees_quebec_ckan_metadata_modern": 2
+  },
+  "source_reports": {
+    "donnees_quebec_ckan_metadata_modern": {
+      "source_id": "donnees_quebec_ckan_metadata_modern",
+      "adapter": "donnees_quebec_ckan",
+      "package_count_seen": 3,
+      "package_count_selected": 2,
+      "package_count_skipped": 1,
+      "records_written": 2,
+      "license_summary": {
+        "open_compatible": 2
+      },
+      "organization_summary": {
+        "Ministère des Transports du Québec": 1,
+        "Ville de Québec": 1
+      },
+      "domain_summary": {
+        "public_administration": 2
+      },
+      "skipped_packages": [
+        {
+          "source_id": "donnees_quebec_ckan_metadata_modern",
+          "package_id": "pkg-003",
+          "package_name": "jeu-licence-inconnue",
+          "reason": "license_not_allowed:unknown"
+        }
+      ],
+      "issues": []
+    }
+  },
+  "license_summary": {
+    "open_compatible": 2
+  },
+  "domain_summary": {
+    "public_administration": 2
+  },
+  "register_summary": {
+    "administrative": 2
+  },
+  "organization_summary": {
+    "Ministère des Transports du Québec": 1,
+    "Ville de Québec": 1
+  },
+  "package_count_seen": 3,
+  "package_count_selected": 2,
+  "package_count_skipped": 1,
+  "skipped_packages": [
+    {
+      "source_id": "donnees_quebec_ckan_metadata_modern",
+      "package_id": "pkg-003",
+      "package_name": "jeu-licence-inconnue",
+      "reason": "license_not_allowed:unknown"
+    }
+  ],
+  "seed_urls_total": 0,
+  "seed_urls_fetched": 0,
+  "skipped_seed_urls": [],
+  "holdout_registry": [],
+  "output": "reports/modern_corpus/donnees_quebec_live_harvest.jsonl"
+}

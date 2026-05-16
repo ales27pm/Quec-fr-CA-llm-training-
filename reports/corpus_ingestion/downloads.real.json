@@ -1,0 +1,123 @@
+{
+  "ok": true,
+  "manifest": "manifests/corpus_source_manifest.real_downloads.yaml",
+  "out_manifest": "manifests/corpus_source_manifest.real_downloaded.local.yaml",
+  "sources_total": 20,
+  "downloaded": [
+    {
+      "source_id": "gutenberg_maria_chapdelaine_fr_13525",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/maria_chapdelaine_13525.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/13525.txt.utf-8",
+      "characters": 278148,
+      "sha256": "ea7d322a53adf69d43d65d80ad2a433e63f53fa19c608045d1f33de101a8ca31"
+    },
+    {
+      "source_id": "gutenberg_au_large_de_l_ecueil_fr_17791",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/au_large_de_l_ecueil_17791.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/17791.txt.utf-8",
+      "characters": 344063,
+      "sha256": "72b82bb42902e72199fc64762ddc6d43f829ac309473f1eea3918c8883333707"
+    },
+    {
+      "source_id": "gutenberg_un_amour_vrai_fr_14537",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/un_amour_vrai_14537.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/14537.txt.utf-8",
+      "characters": 78706,
+      "sha256": "b9375ce90dc0de5d0a9128ca3eef825ce0676827884ea4f0e5b5a721fbb12245"
+    },
+    {
+      "source_id": "gutenberg_l_influence_d_un_livre_fr_15305",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/l_influence_d_un_livre_15305.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/15305.txt.utf-8",
+      "characters": 152067,
+      "sha256": "8134e08d2510ab28efd9a316045ba21d2a7073215d6a546287f45db5cfad9ac8"
+    },
+    {
+      "source_id": "gutenberg_angeline_de_montbrun_fr_17267",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/angeline_de_montbrun_17267.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/17267.txt.utf-8",
+      "characters": 273222,
+      "sha256": "14f7467b3b905b0f8affff86432ced51f40620f2ab0bb8141c72494b2806063d"
+    },
+    {
+      "source_id": "gutenberg_le_debutant_fr_19497",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/le_debutant_19497.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/19497.txt.utf-8",
+      "characters": 393431,
+      "sha256": "4cf37cf48469bd9dbdbcba7dc9f1d1009eeeeceb970525aa0c2ede60b4d0d0a6"
+    },
+    {
+      "source_id": "gutenberg_ce_que_disait_la_flamme_fr_14399",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/ce_que_disait_la_flamme_14399.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/14399.txt.utf-8",
+      "characters": 567171,
+      "sha256": "511308e4a657cf788c00100bde24da316fe3feedebbfee54b12f54d2e04c97c7"
+    },
+    {
+      "source_id": "gutenberg_le_cap_au_diable_fr_13059",
+      "status": "downloaded",
+      "path": "data/corpus/raw/gutenberg/le_cap_au_diable_13059.txt",
+      "download_url": "https://www.gutenberg.org/ebooks/13059.txt.utf-8",
+      "characters": 99775,
+      "sha256": "26464ad8ef8907acb1f43f9ebbaf25cccee6d53b3850d5873fd3c8595d0dde95"
+    }
+  ],
+  "skipped": [
+    {
+      "source_id": "hf_graalul_qfrcore_qfrcort_holdout",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "github_qfrblimp_holdout",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "hf_graalul_cole_public_holdout",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "hf_lyon_nlp_alloprof_candidate",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "hf_antoinelb7_alloprof_original_candidate",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "assnat_journal_debats_catalog",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "fdlq_crifuq_catalog",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "github_ikblab_cereales_asr_catalog",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "github_clac_lab_quebecllm_cpt_pipeline",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "hf_rbawden_diabla_catalog",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "hf_mteb_amazon_reviews_fr_catalog",
+      "reason": "missing_download_url"
+    },
+    {
+      "source_id": "hf_stsb_multi_mt_catalog",
+      "reason": "missing_download_url"
+    }
+  ],
+  "issues": []
+}

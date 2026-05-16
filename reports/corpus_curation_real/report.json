@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "policy": "manifests/curation_policy_manifest.template.yaml",
+  "input": "reports/corpus_ingestion/harvest.real.jsonl",
+  "records_total": 0,
+  "accepted": 0,
+  "review_required": 0,
+  "quarantine": 0,
+  "rejected": 0,
+  "reason_counts": {},
+  "outputs": {
+    "accepted": "reports/corpus_curation_real/accepted.jsonl",
+    "review_required": "reports/corpus_curation_real/review_required.jsonl",
+    "quarantine": "reports/corpus_curation_real/quarantine.jsonl",
+    "rejected": "reports/corpus_curation_real/rejected.jsonl",
+    "report": "reports/corpus_curation_real/report.json"
+  }
+}
