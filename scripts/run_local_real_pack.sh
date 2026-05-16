@@ -9,7 +9,25 @@ python tools/download_real_corpus_sources.py \
   --manifest manifests/corpus_source_manifest.real_downloads.yaml \
   --out-manifest manifests/corpus_source_manifest.real_downloaded.local.yaml \
   --report reports/corpus_ingestion/downloads.real.json \
-  --overwrite
+  --resume \
+  --skip-existing \
+  --retries 3 \
+  --retry-delay-seconds 2 \
+  --timeout 30 \
+  --allow-partial \
+  --fail-under-downloaded 5
+
+python - <<'PY'
+import json
+from pathlib import Path
+
+report = json.loads(Path("reports/corpus_ingestion/downloads.real.json").read_text(encoding="utf-8"))
+available = int(report.get("downloaded_count", 0)) + int(report.get("cached_count", 0))
+if available < 5:
+    raise SystemExit(f"Downloader produced only {available} available downloads (<5); aborting.")
+if report.get("partial_ok"):
+    print("Partial corpus download accepted for local research pack; rerun later to fill missing sources.")
+PY
 
 echo "==> Validate and ingest downloaded corpus"
 qfr validate-corpus-sources \

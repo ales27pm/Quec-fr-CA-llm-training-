@@ -156,6 +156,12 @@
       "goal": "Real corpus paragraph ingestion and local research training-pack flow",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T27",
+      "goal": "Resilient real corpus downloader with retries, cache reuse, partial-success mode, and clear resume behavior",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

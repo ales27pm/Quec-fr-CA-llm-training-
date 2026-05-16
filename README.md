@@ -44,7 +44,13 @@ python tools/download_real_corpus_sources.py \
   --manifest manifests/corpus_source_manifest.real_downloads.yaml \
   --out-manifest manifests/corpus_source_manifest.real_downloaded.local.yaml \
   --report reports/corpus_ingestion/downloads.real.json \
-  --overwrite
+  --resume \
+  --skip-existing \
+  --retries 3 \
+  --retry-delay-seconds 2 \
+  --timeout 30 \
+  --allow-partial \
+  --fail-under-downloaded 5
 
 qfr validate-corpus-sources --manifest manifests/corpus_source_manifest.real_downloaded.local.yaml
 qfr ingest-corpus-sources \
@@ -60,6 +66,20 @@ qfr curate-corpus \
 
 `manifests/corpus_source_manifest.real_downloads.yaml` uses `future_remote` entries plus `download_url` metadata so normal deterministic validation does not download network content. The downloader creates local UTF-8 text files under `data/corpus/raw/` and emits a generated local manifest that the existing ingestion command can validate and ingest.
 
+Retry-only resume command (useful after transient Gutenberg errors):
+
+```bash
+python tools/download_real_corpus_sources.py \
+  --manifest manifests/corpus_source_manifest.real_downloads.yaml \
+  --out-manifest manifests/corpus_source_manifest.real_downloaded.local.yaml \
+  --report reports/corpus_ingestion/downloads.real.json \
+  --resume \
+  --skip-existing \
+  --retries 5 \
+  --allow-partial \
+  --fail-under-downloaded 5
+```
+
 Review licensing/jurisdiction before using downloaded text for an actual training release. The default real-download manifest uses Project Gutenberg links, which are public-domain-oriented but still require checking local copyright and Project Gutenberg terms.
 
 ## Local real pack build (T26)
@@ -72,6 +92,7 @@ bash scripts/run_local_real_pack.sh
 ```
 
 This script runs real local ingestion/curation plus live modern acquisition and then builds `reports/training_pack_real/`.
+If transient remote failures happen, the downloader resumes from cached files, accepts partial local runs once at least five downloads are available, and prints a warning to rerun later for missing sources.
 
 Mode guidance:
 - `manifests/training_pack_policy.template.yaml` is `fixture_ci` and intentionally tiny.

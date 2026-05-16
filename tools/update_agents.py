@@ -64,6 +64,11 @@ TASK_FILES = {
         ROOT / "scripts" / "run_local_real_pack.sh",
         ROOT / "src" / "qfr_pipeline" / "training_pack.py",
     ),
+    "T27": (
+        ROOT / "tools" / "download_real_corpus_sources.py",
+        ROOT / "scripts" / "run_local_real_pack.sh",
+        ROOT / "tests" / "test_real_corpus_downloader.py",
+    ),
 }
 
 

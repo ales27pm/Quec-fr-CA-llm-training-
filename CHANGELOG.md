@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-05-16 — T27 resilient real corpus downloader
+- Added resilient retry-aware behavior to `tools/download_real_corpus_sources.py` with transient network retry handling (timeouts, reset/unreachable errors, HTTP 429, HTTP 5xx), permanent-failure no-retry behavior (blocked schemes, malformed URLs, HTTP 404), and per-source attempt/error/status accounting.
+- Added resumable cache reuse controls (`--resume`, `--skip-existing`) so existing downloaded files are treated as cached with recomputed character/SHA-256 metadata instead of being discarded.
+- Added partial-success controls (`--allow-partial`, `--fail-under-downloaded`) and richer report fields (`downloaded_count`, `cached_count`, `failed_count`, `skipped_count`, `failed_sources`, `minimum_required_downloaded`, `partial_ok`) while keeping failed sources out of generated local manifests.
+- Updated `scripts/run_local_real_pack.sh` to use retries/resume/partial-threshold download flow and to print an explicit warning when partial local corpus download is accepted.
+- Added deterministic unit tests for cache reuse, retry success/failure paths, partial acceptance gating, out-manifest filtering, skipped-holdout handling, report ordering, and path-leak prevention.
+
 ## 2026-05-16 — T26 real ingestion and local real pack workflow
 - Fixed corpus ingestion for real downloaded plain-text sources: `qfr ingest-corpus-sources` now performs paragraph-level reconstruction for hard-wrapped text, filters common Project Gutenberg boilerplate, supports line-level fallback for no-blank-line files, and keeps deterministic normalized-text deduplication.
 - Preserved corpus-source metadata in ingestion records (`source_id`, source provenance/licensing flags, register/dialect, training/eval gates) while emitting curation/training-pack-compatible fields and repo-relative paths.
