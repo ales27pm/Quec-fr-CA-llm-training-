@@ -200,12 +200,28 @@
         "documentation": {}
     },
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
         "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "argparse",
         "description": "argparse",
         "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -881,6 +897,14 @@
     },
     {
         "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -2731,6 +2755,15 @@
         "documentation": {}
     },
     {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
         "label": "urlencode",
         "importPath": "urllib.parse",
         "description": "urllib.parse",
@@ -2965,6 +2998,15 @@
         "documentation": {}
     },
     {
+        "label": "importlib.util",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "importlib.util",
+        "description": "importlib.util",
+        "detail": "importlib.util",
+        "documentation": {}
+    },
+    {
         "label": "Generator",
         "importPath": "collections.abc",
         "description": "collections.abc",
@@ -2973,12 +3015,12 @@
         "documentation": {}
     },
     {
-        "label": "importlib.util",
+        "label": "socket",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "importlib.util",
-        "description": "importlib.util",
-        "detail": "importlib.util",
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
         "documentation": {}
     },
     {
@@ -6141,6 +6183,132 @@
         "documentation": {}
     },
     {
+        "label": "_FakeResponse",
+        "kind": 6,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "class _FakeResponse:\n    def __init__(self, text: str) -> None:\n        self._payload = text.encode(\"utf-8\")\n    def __enter__(self) -> \"_FakeResponse\":\n        return self\n    def __exit__(self, exc_type: Any, exc: Any, tb: Any) -> bool:\n        return False\n    def read(self) -> bytes:\n        return self._payload\ndef _repo_rel(path: Path) -> str:",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_existing_local_file_reused_as_cached_with_resume",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_existing_local_file_reused_as_cached_with_resume(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        local_source = tmp_dir / \"cached_source.txt\"\n        local_source.write_text(\"Texte de cache local.\\n\", encoding=\"utf-8\")\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        _write_manifest(",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_transient_failure_retries_then_succeeds",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_transient_failure_retries_then_succeeds(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        local_source = tmp_dir / \"retried_source.txt\"\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        _write_manifest(\n            manifest,",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_transient_failure_exhausts_retries_and_fails",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_transient_failure_exhausts_retries_and_fails(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        local_source = tmp_dir / \"retry_fail_source.txt\"\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        _write_manifest(\n            manifest,",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_allow_partial_with_enough_successes_returns_ok",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_allow_partial_with_enough_successes_returns_ok(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        source_a = tmp_dir / \"a.txt\"\n        source_b = tmp_dir / \"b.txt\"\n        source_c = tmp_dir / \"c.txt\"",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_allow_partial_with_too_few_successes_returns_not_ok",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_allow_partial_with_too_few_successes_returns_not_ok(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        source_a = tmp_dir / \"a.txt\"\n        source_b = tmp_dir / \"b.txt\"\n        source_c = tmp_dir / \"c.txt\"",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_out_manifest_contains_only_downloaded_or_cached_sources",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_out_manifest_contains_only_downloaded_or_cached_sources(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        cached_source = tmp_dir / \"cached.txt\"\n        cached_source.write_text(\"cache local\\n\", encoding=\"utf-8\")\n        downloaded_source = tmp_dir / \"downloaded.txt\"\n        failed_source = tmp_dir / \"failed.txt\"\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_skipped_holdout_and_catalog_sources_not_counted_as_failed",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_skipped_holdout_and_catalog_sources_not_counted_as_failed(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        source_a = tmp_dir / \"a.txt\"\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        _write_manifest(\n            manifest,",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_report_is_deterministic_and_keeps_manifest_source_order",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_report_is_deterministic_and_keeps_manifest_source_order(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        cached_source = tmp_dir / \"cached.txt\"\n        cached_source.write_text(\"cache local\\n\", encoding=\"utf-8\")\n        downloaded_source = tmp_dir / \"downloaded.txt\"\n        failed_source = tmp_dir / \"failed.txt\"\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "test_report_has_no_workspace_or_home_runner_path_leaks",
+        "kind": 2,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "def test_report_has_no_workspace_or_home_runner_path_leaks(monkeypatch: Any) -> None:\n    (ROOT / \"reports\").mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=ROOT / \"reports\") as tmp:\n        tmp_dir = Path(tmp)\n        source_a = tmp_dir / \"a.txt\"\n        manifest = tmp_dir / \"manifest.yaml\"\n        out_manifest = tmp_dir / \"out.yaml\"\n        report = tmp_dir / \"report.json\"\n        _write_manifest(\n            manifest,",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nDOWNLOADER_PATH = ROOT / \"tools\" / \"download_real_corpus_sources.py\"\nspec = importlib.util.spec_from_file_location(\"qfr_real_downloader_test\", DOWNLOADER_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load downloader module from {DOWNLOADER_PATH}\")\ndownloader = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(downloader)\nclass _FakeResponse:\n    def __init__(self, text: str) -> None:\n        self._payload = text.encode(\"utf-8\")",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "DOWNLOADER_PATH",
+        "kind": 5,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "DOWNLOADER_PATH = ROOT / \"tools\" / \"download_real_corpus_sources.py\"\nspec = importlib.util.spec_from_file_location(\"qfr_real_downloader_test\", DOWNLOADER_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load downloader module from {DOWNLOADER_PATH}\")\ndownloader = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(downloader)\nclass _FakeResponse:\n    def __init__(self, text: str) -> None:\n        self._payload = text.encode(\"utf-8\")\n    def __enter__(self) -> \"_FakeResponse\":",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "spec",
+        "kind": 5,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "spec = importlib.util.spec_from_file_location(\"qfr_real_downloader_test\", DOWNLOADER_PATH)\nif spec is None or spec.loader is None:\n    raise RuntimeError(f\"Could not load downloader module from {DOWNLOADER_PATH}\")\ndownloader = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(downloader)\nclass _FakeResponse:\n    def __init__(self, text: str) -> None:\n        self._payload = text.encode(\"utf-8\")\n    def __enter__(self) -> \"_FakeResponse\":\n        return self",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
+        "label": "downloader",
+        "kind": 5,
+        "importPath": "tests.test_real_corpus_downloader",
+        "description": "tests.test_real_corpus_downloader",
+        "peekOfCode": "downloader = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(downloader)\nclass _FakeResponse:\n    def __init__(self, text: str) -> None:\n        self._payload = text.encode(\"utf-8\")\n    def __enter__(self) -> \"_FakeResponse\":\n        return self\n    def __exit__(self, exc_type: Any, exc: Any, tb: Any) -> bool:\n        return False\n    def read(self) -> bytes:",
+        "detail": "tests.test_real_corpus_downloader",
+        "documentation": {}
+    },
+    {
         "label": "test_ckan_fixture_acquisition_writes_deterministic_records",
         "kind": 2,
         "importPath": "tests.test_t24_modern_source_adapters",
@@ -6649,7 +6817,16 @@
         "kind": 2,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "def repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved\ndef strip_project_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)",
+        "peekOfCode": "def repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved\ndef display_path(path: Path) -> str:\n    if path.is_absolute() and path.is_relative_to(ROOT):",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "display_path",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def display_path(path: Path) -> str:\n    if path.is_absolute() and path.is_relative_to(ROOT):\n        return path.relative_to(ROOT).as_posix()\n    return path.as_posix()\ndef strip_project_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)\n    end = END_RE.search(text)\n    if start and end and start.end() < end.start():\n        return text[start.end() : end.start()].strip() + \"\\n\"\n    return text",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6658,7 +6835,16 @@
         "kind": 2,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "def strip_project_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)\n    end = END_RE.search(text)\n    if start and end and start.end() < end.start():\n        return text[start.end() : end.start()].strip() + \"\\n\"\n    return text\ndef download_text(url: str, *, timeout: int) -> str:\n    request = urllib.request.Request(url, headers={\"User-Agent\": \"qfr-pipeline-corpus-downloader/0.1\"})\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n        data = response.read()",
+        "peekOfCode": "def strip_project_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)\n    end = END_RE.search(text)\n    if start and end and start.end() < end.start():\n        return text[start.end() : end.start()].strip() + \"\\n\"\n    return text\ndef validate_download_url(url: str) -> None:\n    parsed = urllib.parse.urlparse(url)\n    scheme = parsed.scheme.lower()\n    if scheme not in ALLOWED_SCHEMES:",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "validate_download_url",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def validate_download_url(url: str) -> None:\n    parsed = urllib.parse.urlparse(url)\n    scheme = parsed.scheme.lower()\n    if scheme not in ALLOWED_SCHEMES:\n        raise ValueError(f\"Blocked URL scheme: {scheme or '<missing>'}\")\n    if not parsed.netloc:\n        raise ValueError(f\"Malformed download URL: {url}\")\ndef download_text(url: str, *, timeout: float) -> str:\n    request = urllib.request.Request(url, headers={\"User-Agent\": \"qfr-pipeline-corpus-downloader/0.2\"})\n    with urllib.request.urlopen(request, timeout=timeout) as response:",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6667,7 +6853,7 @@
         "kind": 2,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "def download_text(url: str, *, timeout: int) -> str:\n    request = urllib.request.Request(url, headers={\"User-Agent\": \"qfr-pipeline-corpus-downloader/0.1\"})\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n        data = response.read()\n    return data.decode(\"utf-8\", errors=\"replace\")\ndef sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",",
+        "peekOfCode": "def download_text(url: str, *, timeout: float) -> str:\n    request = urllib.request.Request(url, headers={\"User-Agent\": \"qfr-pipeline-corpus-downloader/0.2\"})\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n        data = response.read()\n    return data.decode(\"utf-8\", errors=\"replace\")\ndef sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6676,7 +6862,7 @@
         "kind": 2,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "def sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",\n        \"schema_version\": remote_manifest.get(\"schema_version\", \"1.0\"),\n        \"primary_language\": remote_manifest.get(\"primary_language\", \"fr-CA\"),\n        \"sources\": downloaded_sources,\n    }\ndef main() -> int:",
+        "peekOfCode": "def sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",\n        \"schema_version\": remote_manifest.get(\"schema_version\", \"1.0\"),\n        \"primary_language\": remote_manifest.get(\"primary_language\", \"fr-CA\"),\n        \"sources\": downloaded_sources,\n    }\ndef is_transient_error(exc: Exception) -> bool:",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6685,7 +6871,34 @@
         "kind": 2,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "def build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",\n        \"schema_version\": remote_manifest.get(\"schema_version\", \"1.0\"),\n        \"primary_language\": remote_manifest.get(\"primary_language\", \"fr-CA\"),\n        \"sources\": downloaded_sources,\n    }\ndef main() -> int:\n    parser = argparse.ArgumentParser(description=\"Download approved remote corpus sources and emit a local ingestion manifest.\")\n    parser.add_argument(\"--manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloads.yaml\")",
+        "peekOfCode": "def build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",\n        \"schema_version\": remote_manifest.get(\"schema_version\", \"1.0\"),\n        \"primary_language\": remote_manifest.get(\"primary_language\", \"fr-CA\"),\n        \"sources\": downloaded_sources,\n    }\ndef is_transient_error(exc: Exception) -> bool:\n    if isinstance(exc, urllib.error.HTTPError):\n        return exc.code == 429 or 500 <= exc.code <= 599",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "is_transient_error",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def is_transient_error(exc: Exception) -> bool:\n    if isinstance(exc, urllib.error.HTTPError):\n        return exc.code == 429 or 500 <= exc.code <= 599\n    if isinstance(exc, urllib.error.URLError):\n        reason = exc.reason\n        if isinstance(reason, (socket.timeout, TimeoutError)):\n            return True\n        if isinstance(reason, OSError) and reason.errno in {101, 104, 110}:\n            return True\n        message = str(reason).lower()",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "to_local_source",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def to_local_source(source: dict[str, Any], url: str, digest: str) -> dict[str, Any]:\n    local_source = dict(source)\n    local_source[\"source_type\"] = \"local_text\"\n    local_source[\"collection_method\"] = \"remote_text_download_materialized_locally\"\n    notes = str(source.get(\"notes\", \"\")).strip()\n    suffix = f\"Downloaded from {url}. SHA-256={digest}\"\n    local_source[\"notes\"] = f\"{notes} {suffix}\".strip()\n    return local_source\ndef parse_args() -> argparse.Namespace:\n    parser = argparse.ArgumentParser(description=\"Download approved remote corpus sources and emit a local ingestion manifest.\")",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "parse_args",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def parse_args() -> argparse.Namespace:\n    parser = argparse.ArgumentParser(description=\"Download approved remote corpus sources and emit a local ingestion manifest.\")\n    parser.add_argument(\"--manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloads.yaml\")\n    parser.add_argument(\"--out-manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloaded.local.yaml\")\n    parser.add_argument(\"--report\", type=Path, default=ROOT / \"reports/corpus_ingestion/downloads.real.json\")\n    parser.add_argument(\"--overwrite\", action=\"store_true\", help=\"Re-download files even when the target path already exists.\")\n    parser.add_argument(\"--resume\", action=\"store_true\", help=\"Treat existing files as cached and continue remaining downloads.\")\n    parser.add_argument(\"--skip-existing\", action=\"store_true\", help=\"Do not download sources with existing output files.\")\n    parser.add_argument(\"--retries\", type=int, default=3, help=\"Retry attempts for transient failures (in addition to the first attempt).\")\n    parser.add_argument(\"--retry-delay-seconds\", type=float, default=2.0)",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6694,7 +6907,7 @@
         "kind": 2,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "def main() -> int:\n    parser = argparse.ArgumentParser(description=\"Download approved remote corpus sources and emit a local ingestion manifest.\")\n    parser.add_argument(\"--manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloads.yaml\")\n    parser.add_argument(\"--out-manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloaded.local.yaml\")\n    parser.add_argument(\"--report\", type=Path, default=ROOT / \"reports/corpus_ingestion/downloads.real.json\")\n    parser.add_argument(\"--overwrite\", action=\"store_true\", help=\"Re-download files even when the target path already exists.\")\n    parser.add_argument(\"--timeout\", type=int, default=60)\n    parser.add_argument(\"--keep-gutenberg-boilerplate\", action=\"store_true\")\n    args = parser.parse_args()\n    manifest_path = args.manifest if args.manifest.is_absolute() else ROOT / args.manifest",
+        "peekOfCode": "def main() -> int:\n    args = parse_args()\n    manifest_path = args.manifest if args.manifest.is_absolute() else ROOT / args.manifest\n    out_manifest_path = args.out_manifest if args.out_manifest.is_absolute() else ROOT / args.out_manifest\n    report_path = args.report if args.report.is_absolute() else ROOT / args.report\n    manifest = yaml.safe_load(manifest_path.read_text(encoding=\"utf-8\"))\n    sources = manifest.get(\"sources\", [])\n    if not isinstance(sources, list):\n        raise ValueError(\"Manifest sources must be a list\")\n    downloadable_total = sum(1 for source in sources if isinstance(source, dict) and source.get(\"download_url\"))",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6703,7 +6916,7 @@
         "kind": 5,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTART_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTART_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nALLOWED_SCHEMES = {\"http\", \"https\"}\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6712,7 +6925,7 @@
         "kind": 5,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "START_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved",
+        "peekOfCode": "START_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nALLOWED_SCHEMES = {\"http\", \"https\"}\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
@@ -6721,7 +6934,16 @@
         "kind": 5,
         "importPath": "tools.download_real_corpus_sources",
         "description": "tools.download_real_corpus_sources",
-        "peekOfCode": "END_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved\ndef strip_project_gutenberg_boilerplate(text: str) -> str:",
+        "peekOfCode": "END_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nALLOWED_SCHEMES = {\"http\", \"https\"}\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_SCHEMES",
+        "kind": 5,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "ALLOWED_SCHEMES = {\"http\", \"https\"}\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved\ndef display_path(path: Path) -> str:",
         "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },

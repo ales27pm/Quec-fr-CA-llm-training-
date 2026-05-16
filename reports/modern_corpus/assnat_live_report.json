@@ -1,44 +1,57 @@
 {
-  "ok": true,
-  "manifest": "manifests/modern_corpus_acquisition.assnat_seed.template.yaml",
+  "ok": false,
+  "manifest": "/tmp/qfr_assnat_live.Eep73J.yaml",
   "sources_total": 1,
   "sources_active": 1,
-  "sources_acquired": 1,
-  "records_written": 6,
+  "sources_acquired": 0,
+  "records_written": 0,
   "skipped_sources": [],
-  "issues": [],
-  "per_source": {
-    "assnat_journal_debats_seed_modern": 6
-  },
+  "issues": [
+    {
+      "source_id": "assnat_journal_debats_modern",
+      "error": "assnat_fetch_failed:https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>"
+    }
+  ],
+  "per_source": {},
   "source_reports": {
-    "assnat_journal_debats_seed_modern": {
-      "source_id": "assnat_journal_debats_seed_modern",
+    "assnat_journal_debats_modern": {
+      "source_id": "assnat_journal_debats_modern",
       "adapter": "assnat_journal_debats",
       "seed_urls_total": 1,
-      "seed_urls_fetched": 1,
-      "records_written": 6,
+      "seed_urls_fetched": 0,
+      "records_written": 0,
       "skipped_sources": [],
-      "skipped_seed_urls": [],
-      "issues": []
+      "skipped_seed_urls": [
+        {
+          "seed_url": "https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/",
+          "reason": "fetch_failed"
+        }
+      ],
+      "issues": [
+        {
+          "source_id": "assnat_journal_debats_modern",
+          "error": "assnat_fetch_failed:https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>"
+        }
+      ]
     }
   },
-  "license_summary": {
-    "noncommercial_only": 6
-  },
-  "domain_summary": {
-    "politics": 6
-  },
-  "register_summary": {
-    "parliamentary": 6
-  },
+  "license_summary": {},
+  "domain_summary": {},
+  "register_summary": {},
   "organization_summary": {},
   "package_count_seen": 0,
   "package_count_selected": 0,
   "package_count_skipped": 0,
   "skipped_packages": [],
   "seed_urls_total": 1,
-  "seed_urls_fetched": 1,
-  "skipped_seed_urls": [],
+  "seed_urls_fetched": 0,
+  "skipped_seed_urls": [
+    {
+      "source_id": "assnat_journal_debats_modern",
+      "seed_url": "https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/",
+      "reason": "fetch_failed"
+    }
+  ],
   "holdout_registry": [],
   "output": "reports/modern_corpus/assnat_live_harvest.jsonl"
 }

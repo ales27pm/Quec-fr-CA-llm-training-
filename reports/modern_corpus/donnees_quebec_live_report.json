@@ -1,68 +1,70 @@
 {
   "ok": true,
-  "manifest": "manifests/modern_corpus_acquisition.donnees_quebec.template.yaml",
+  "manifest": "/tmp/qfr_dq_live.VU3YxY.yaml",
   "sources_total": 1,
   "sources_active": 1,
   "sources_acquired": 1,
-  "records_written": 2,
+  "records_written": 25,
   "skipped_sources": [],
   "issues": [],
   "per_source": {
-    "donnees_quebec_ckan_metadata_modern": 2
+    "donnees_quebec_ckan_textual": 25
   },
   "source_reports": {
-    "donnees_quebec_ckan_metadata_modern": {
-      "source_id": "donnees_quebec_ckan_metadata_modern",
+    "donnees_quebec_ckan_textual": {
+      "source_id": "donnees_quebec_ckan_textual",
       "adapter": "donnees_quebec_ckan",
-      "package_count_seen": 3,
-      "package_count_selected": 2,
-      "package_count_skipped": 1,
-      "records_written": 2,
+      "package_count_seen": 25,
+      "package_count_selected": 25,
+      "package_count_skipped": 0,
+      "records_written": 25,
       "license_summary": {
-        "open_compatible": 2
+        "open_compatible": 25
       },
       "organization_summary": {
-        "Ministère des Transports du Québec": 1,
-        "Ville de Québec": 1
+        "Autorité régionale de transport métropolitain (ARTM)": 1,
+        "Ministère de la Sécurité publique": 2,
+        "Ministère de l’Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs": 6,
+        "Ministère de l’Immigration, de la Francisation et de l’Intégration": 1,
+        "Ministère des Ressources naturelles et des Forêts": 2,
+        "Société du Grand Théatre": 1,
+        "Ville de Québec": 1,
+        "Ville de Rouyn-Noranda": 5,
+        "Ville de Saint-Hyacinthe": 2,
+        "Ville de Sherbrooke - Données géomatiques": 4
       },
       "domain_summary": {
-        "public_administration": 2
+        "public_administration": 25
       },
-      "skipped_packages": [
-        {
-          "source_id": "donnees_quebec_ckan_metadata_modern",
-          "package_id": "pkg-003",
-          "package_name": "jeu-licence-inconnue",
-          "reason": "license_not_allowed:unknown"
-        }
-      ],
+      "skipped_packages": [],
       "issues": []
     }
   },
   "license_summary": {
-    "open_compatible": 2
+    "open_compatible": 25
   },
   "domain_summary": {
-    "public_administration": 2
+    "public_administration": 25
   },
   "register_summary": {
-    "administrative": 2
+    "administrative": 25
   },
   "organization_summary": {
-    "Ministère des Transports du Québec": 1,
-    "Ville de Québec": 1
+    "Autorité régionale de transport métropolitain (ARTM)": 1,
+    "Ministère de la Sécurité publique": 2,
+    "Ministère de l’Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs": 6,
+    "Ministère de l’Immigration, de la Francisation et de l’Intégration": 1,
+    "Ministère des Ressources naturelles et des Forêts": 2,
+    "Société du Grand Théatre": 1,
+    "Ville de Québec": 1,
+    "Ville de Rouyn-Noranda": 5,
+    "Ville de Saint-Hyacinthe": 2,
+    "Ville de Sherbrooke - Données géomatiques": 4
   },
-  "package_count_seen": 3,
-  "package_count_selected": 2,
-  "package_count_skipped": 1,
-  "skipped_packages": [
-    {
-      "source_id": "donnees_quebec_ckan_metadata_modern",
-      "package_id": "pkg-003",
-      "package_name": "jeu-licence-inconnue",
-      "reason": "license_not_allowed:unknown"
-    }
-  ],
+  "package_count_seen": 25,
+  "package_count_selected": 25,
+  "package_count_skipped": 0,
+  "skipped_packages": [],
   "seed_urls_total": 0,
   "seed_urls_fetched": 0,
   "skipped_seed_urls": [],
