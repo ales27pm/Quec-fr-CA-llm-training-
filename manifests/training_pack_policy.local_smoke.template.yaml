@@ -1,0 +1,80 @@
+kind: training_pack_policy_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+pack_mode: local_research
+pack_id: qfr_dolphin3_unsloth_pack_local_smoke
+pack_version: 0.1.0
+output_dir: reports/training_pack_smoke
+random_seed: 42
+split_ratios:
+  train: 0.9
+  dev: 0.05
+  test: 0.05
+source_inputs:
+  - path: reports/corpus_curation_real/accepted.jsonl
+    source_family: literary_curated_real
+    source_priority: 10
+    allowed_for_training_required: true
+    max_source_share: 1.0
+    include_if_exists: true
+    required: true
+  - path: reports/modern_corpus/donnees_quebec_live_harvest.jsonl
+    source_family: institutional_ckan_live
+    source_priority: 20
+    allowed_for_training_required: true
+    max_source_share: 1.0
+    include_if_exists: true
+    required: false
+  - path: reports/modern_corpus/assnat_live_harvest.jsonl
+    source_family: parliamentary_seed_live
+    source_priority: 30
+    allowed_for_training_required: true
+    max_source_share: 1.0
+    include_if_exists: true
+    required: false
+  - path: reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl
+    source_family: institutional_ckan_fixture
+    source_priority: 40
+    allowed_for_training_required: true
+    max_source_share: 1.0
+    include_if_exists: true
+    required: false
+  - path: reports/modern_corpus/assnat_fixture_harvest.jsonl
+    source_family: parliamentary_seed_fixture
+    source_priority: 50
+    allowed_for_training_required: true
+    max_source_share: 1.0
+    include_if_exists: true
+    required: false
+instructionization:
+  enabled: true
+  strategies:
+    - preserve_raw
+    - summarize
+    - qa_from_context
+    - style_rewrite
+    - explain_term
+  max_examples_per_record: 3
+  preserve_raw_text_probability: 0.5
+  min_text_chars: 80
+  max_text_chars: 2500
+  prompt_language: fr-CA
+  chat_format: qwen_chatml
+balancing:
+  max_single_source_share: 1.0
+  max_single_source_family_share: 1.0
+  min_domain_count_for_pilot: 1
+  min_register_count_for_pilot: 1
+  target_register_mix: {}
+  target_domain_mix: {}
+safety:
+  reject_holdout_material: true
+  reject_permission_required_without_grant: true
+  reject_commercial_unknown_for_production: false
+  reject_duplicate_normalized_text: true
+  reject_empty_text: true
+readiness_thresholds:
+  smoke_test_tokens: 500000
+  pilot_lora_tokens: 20000000
+  production_lora_tokens: 150000000
+  production_instruction_examples: 200000

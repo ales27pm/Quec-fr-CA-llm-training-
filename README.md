@@ -97,6 +97,7 @@ If transient remote failures happen, the downloader resumes from cached files, a
 Mode guidance:
 - `manifests/training_pack_policy.template.yaml` is `fixture_ci` and intentionally tiny.
 - `manifests/training_pack_policy.local_real.template.yaml` is `local_research` and can include noncommercial sources for research training experiments.
+- `manifests/training_pack_policy.local_smoke.template.yaml` is `local_research` for local high-volume smoke/pilot training from real accepted corpora; it is intentionally non-production.
 - `production_commercial` mode is stricter and rejects noncommercial/permission-required/unknown commercial-use records.
 
 Commercial caveat:
@@ -128,10 +129,11 @@ python3 -m pip install -r requirements/training-dolphin3-unsloth.txt
 
 python scripts/train_qfr_dolphin3_unsloth_lora.py \
   --base-model dphn/Dolphin3.0-Qwen2.5-3b \
-  --train reports/curated_splits/train.jsonl \
-  --eval reports/curated_splits/test.jsonl \
+  --train reports/training_pack_smoke/train.jsonl \
+  --eval reports/training_pack_smoke/dev.jsonl \
   --output-dir models/qfr-dolphin3-qwen25-3b-lora-smoke \
-  --max-steps 10
+  --max-steps 10 \
+  --input-format training-pack
 ```
 
 Direct Unsloth GGUF export after training:
@@ -182,8 +184,11 @@ Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only 
 ## Training pack builder (T25)
 - `qfr validate-training-pack-policy --policy manifests/training_pack_policy.template.yaml`
 - `qfr validate-training-pack-policy --policy manifests/training_pack_policy.local_real.template.yaml`
+- `qfr validate-training-pack-policy --policy manifests/training_pack_policy.local_smoke.template.yaml`
 - `qfr build-training-pack --policy manifests/training_pack_policy.template.yaml --out-dir reports/training_pack`
+- `qfr build-training-pack --policy manifests/training_pack_policy.local_smoke.template.yaml --out-dir reports/training_pack_smoke`
 - `qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json`
+- `qfr audit-training-pack --pack-dir reports/training_pack_smoke --out reports/training_pack_smoke/audit.json || true`
 - Optional gate: `qfr audit-training-pack --pack-dir reports/training_pack --out reports/training_pack/audit.json --fail-below pilot_lora_candidate`
 
 `manifests/training_pack_policy.template.yaml` defines deterministic source merging, global deduplication, source/share balancing, and instructionization into Qwen ChatML-compatible examples for Dolphin3/Unsloth continuation training inputs.
@@ -200,3 +205,16 @@ Readiness thresholds are enforced in policy:
 - production LoRA candidate: `150000000` tokens and `200000` instruction examples
 
 Current deterministic fixture-scale outputs are expected to be smoke/pilot-oriented only and not production-ready; production requires much larger volume, broader source diversity, and commercially safe licensing coverage.
+
+Notes on local research packs:
+- `reports/training_pack_real/` is governance-balanced and can be very small when source-dominance and diversity controls trigger.
+- `reports/training_pack_smoke/` is for local technical smoke/pilot training only.
+- A production-quality pack still requires substantially more modern/diverse licensed data and a `production_commercial` pass.
+
+Local smoke-pack helper:
+- `bash scripts/build_local_smoke_pack.sh`
+
+Unsloth input-format support:
+- `--input-format auto` detects curated vs training-pack rows.
+- `--input-format curated` enforces accepted curation schema.
+- `--input-format training-pack` consumes generated training-pack rows directly.

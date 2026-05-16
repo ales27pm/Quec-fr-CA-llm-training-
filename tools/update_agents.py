@@ -69,6 +69,12 @@ TASK_FILES = {
         ROOT / "scripts" / "run_local_real_pack.sh",
         ROOT / "tests" / "test_real_corpus_downloader.py",
     ),
+    "T29": (
+        ROOT / "scripts" / "train_qfr_dolphin3_unsloth_lora.py",
+        ROOT / "manifests" / "training_pack_policy.local_smoke.template.yaml",
+        ROOT / "scripts" / "build_local_smoke_pack.sh",
+        ROOT / "tests" / "test_dolphin3_unsloth_training_inputs.py",
+    ),
 }
 
 

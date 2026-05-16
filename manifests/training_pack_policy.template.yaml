@@ -16,7 +16,7 @@ source_inputs:
     source_priority: 10
     allowed_for_training_required: false
     max_source_share: 0.75
-    include_if_exists: true
+    include_if_exists: false
     required: false
   - path: reports/corpus_curation/accepted.jsonl
     source_family: literary_curated_fixture

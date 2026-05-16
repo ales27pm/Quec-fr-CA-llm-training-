@@ -1,0 +1,53 @@
+{
+  "ok": true,
+  "pack_dir": "reports/training_pack_smoke",
+  "report": "reports/training_pack_smoke/report.json",
+  "pack_mode": "local_research",
+  "commercial_release_ready": false,
+  "commercial_blocking_reasons": [
+    "contains_noncommercial_records",
+    "contains_permission_required_records",
+    "pack_mode_local_research_blocks_commercial_release"
+  ],
+  "readiness_level": "smoke_test",
+  "blocking_reasons": [
+    "insufficient_modern_diversity",
+    "source_family_dominance"
+  ],
+  "examples_generated": 14803,
+  "raw_records_count": 4967,
+  "train_count": 13321,
+  "dev_count": 741,
+  "test_count": 741,
+  "estimated_tokens_total": 1571335,
+  "raw_records_tokens_total": 472501,
+  "instruction_examples_total": 14803,
+  "instruction_like_ratio": 0.83348,
+  "source_diversity_count": 11,
+  "domain_diversity_count": 3,
+  "register_diversity_count": 4,
+  "source_summary": {
+    "assnat_journal_debats_seed_modern": 18,
+    "donnees_quebec_ckan_metadata_modern": 6,
+    "donnees_quebec_ckan_textual": 48,
+    "gutenberg_angeline_de_montbrun_fr_17267": 3159,
+    "gutenberg_au_large_de_l_ecueil_fr_17791": 2392,
+    "gutenberg_ce_que_disait_la_flamme_fr_14399": 3249,
+    "gutenberg_l_influence_d_un_livre_fr_15305": 859,
+    "gutenberg_le_cap_au_diable_fr_13059": 500,
+    "gutenberg_le_debutant_fr_19497": 1849,
+    "gutenberg_maria_chapdelaine_fr_13525": 2233,
+    "gutenberg_un_amour_vrai_fr_14537": 490
+  },
+  "domain_summary": {
+    "politics": 18,
+    "public_administration": 54,
+    "unknown": 14731
+  },
+  "register_summary": {
+    "administrative": 54,
+    "formal": 8257,
+    "mixed": 6474,
+    "parliamentary": 18
+  }
+}
