@@ -18,3 +18,5 @@ dist/
 .vscode/PythonImportHelper-v2-Completion.json
 .venv-unsloth/
 .venv-unsloth/pyvenv.cfg
+models/
+unsloth_compiled_cache/
