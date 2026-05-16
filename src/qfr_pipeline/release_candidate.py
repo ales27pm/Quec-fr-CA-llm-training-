@@ -108,6 +108,8 @@ class ReleaseCandidateReport:
                         f"- Train/Dev/Test examples: `{self.training_export_summary.get('training_pack_train_count')}`/`{self.training_export_summary.get('training_pack_dev_count')}`/`{self.training_export_summary.get('training_pack_test_count')}`",
                         f"- Estimated tokens: `{self.training_export_summary.get('training_pack_estimated_tokens')}`",
                         f"- Blocking reasons: `{self.training_export_summary.get('training_pack_blocking_reasons')}`",
+                        f"- Pack mode: `{self.training_export_summary.get('training_pack_mode')}`",
+                        f"- Commercial release ready: `{self.training_export_summary.get('training_pack_commercial_release_ready')}`",
                     ]
                 )
         if self.blocking_failures:
@@ -306,6 +308,15 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         training_export_summary["training_pack_blocking_reasons"] = list(
             training_pack_report.get("blocking_reasons", [])
         )
+        training_export_summary["training_pack_mode"] = training_pack_report.get(
+            "pack_mode", "fixture_ci"
+        )
+        training_export_summary["training_pack_commercial_release_ready"] = bool(
+            training_pack_report.get("commercial_release_ready", False)
+        )
+        training_export_summary[
+            "training_pack_commercial_blocking_reasons"
+        ] = list(training_pack_report.get("commercial_blocking_reasons", []))
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)

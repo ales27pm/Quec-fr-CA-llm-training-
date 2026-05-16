@@ -363,9 +363,11 @@ def build_training_pack_cmd(
     print(
         {
             "ok": payload.get("ok", False),
+            "pack_mode": payload.get("pack_mode", "fixture_ci"),
             "records_accepted": payload.get("records_accepted", 0),
             "examples_generated": payload.get("examples_generated", 0),
             "readiness_level": payload.get("readiness_level", "insufficient"),
+            "commercial_release_ready": payload.get("commercial_release_ready", False),
             "output_dir": payload.get("output_dir"),
         }
     )

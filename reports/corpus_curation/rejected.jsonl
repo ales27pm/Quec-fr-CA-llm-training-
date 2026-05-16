@@ -1,1 +1,0 @@
-{"id": "f3f583466f60b2129b4aee5d2e89e5728bf4b31b0fee71d08adea7f8a2ac4cc5", "source": "raw_sample_1.txt", "text": "email de suivi pour le week-end avec la voiture de location.", "curation_score": -1.0, "curation_label": "rejected", "curation_reasons": ["penalty:email", "penalty:week-end", "penalty:voiture", "penalty:low_fr_ca_marker_score"], "policy_id": "qfr_curation_policy_v1"}

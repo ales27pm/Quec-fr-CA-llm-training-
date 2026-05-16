@@ -434,7 +434,9 @@ def _build_dataset_card(
         f"# Dataset Card — {policy.pack_id}",
         "",
         f"- Version: `{policy.pack_version}`",
+        f"- Pack mode: `{report.get('pack_mode', 'fixture_ci')}`",
         f"- Readiness level: `{report['readiness_level']}`",
+        f"- Commercial release ready: `{report.get('commercial_release_ready', False)}`",
         f"- Train / Dev / Test: `{report['train_count']}` / `{report['dev_count']}` / `{report['test_count']}`",
         f"- Estimated tokens: `{report['estimated_tokens_total']}`",
         "",
@@ -491,7 +493,10 @@ def build_training_pack(
     output_root = output_dir if output_dir.is_absolute() else ROOT / output_dir
     output_root.mkdir(parents=True, exist_ok=True)
 
-    input_files: list[str] = []
+    pack_mode = policy.pack_mode
+    input_files_seen: list[str] = []
+    input_files_missing_optional: list[str] = []
+    input_files_required_missing: list[str] = []
     issues: list[str] = []
     rejection_reasons: Counter[str] = Counter()
     duplicate_exact_rejected = 0
@@ -514,15 +519,17 @@ def build_training_pack(
         key=lambda item: (item.source_priority, item.source_family, item.path),
     ):
         path = ROOT / source_input.path
-        exists = path.exists()
-        if not exists:
+        if not path.exists():
             if source_input.required:
+                input_files_required_missing.append(source_input.path)
                 issues.append(f"required_input_missing:{source_input.path}")
+            else:
+                input_files_missing_optional.append(source_input.path)
             continue
         if not source_input.include_if_exists:
             continue
 
-        input_files.append(source_input.path)
+        input_files_seen.append(source_input.path)
         rows = _read_jsonl(path)
         for raw_row in rows:
             records_seen += 1
@@ -548,10 +555,7 @@ def build_training_pack(
                 source_record_id = _sha256(f"{source_id}:{text}")[:24]
 
             raw_allowed = raw_row.get("allowed_for_training")
-            if raw_allowed is None:
-                allowed_for_training = True
-            else:
-                allowed_for_training = bool(raw_allowed)
+            allowed_for_training = True if raw_allowed is None else bool(raw_allowed)
 
             holdout_only = bool(raw_row.get("holdout_only", False))
             contains_holdout = bool(raw_row.get("contains_holdout_material", False))
@@ -573,31 +577,51 @@ def build_training_pack(
                 rejection_reasons["source_input_training_requirement_failed"] += 1
                 continue
 
+            is_noncommercial = (
+                license_status == "noncommercial_only"
+                or commercial_use == "permission_required"
+            )
             permission_required = (
                 commercial_use == "permission_required"
                 or license_status == "permission_required"
                 or source_type == "permission_required"
                 or requires_review
             )
-            if (
-                policy.safety.reject_permission_required_without_grant
-                and permission_required
-                and source_id not in permission_sources
-            ):
-                rejection_reasons["permission_required_without_grant"] += 1
-                permission_rejected += 1
-                continue
 
-            if (
+            if pack_mode == "production_commercial":
+                if commercial_use in {"permission_required", "unknown", "prohibited"}:
+                    rejection_reasons["commercial_mode_reject"] += 1
+                    continue
+                if license_status in {
+                    "noncommercial_only",
+                    "permission_required",
+                    "unclear",
+                    "blocked",
+                }:
+                    rejection_reasons["commercial_mode_reject"] += 1
+                    continue
+            elif (
                 policy.safety.reject_commercial_unknown_for_production
                 and commercial_use in {"unknown", "prohibited"}
             ):
                 rejection_reasons["commercial_not_safe"] += 1
                 continue
 
+            if policy.safety.reject_permission_required_without_grant:
+                permission_without_grant = permission_required and source_id not in permission_sources
+                if permission_without_grant:
+                    if pack_mode == "local_research" and is_noncommercial and not requires_review:
+                        pass
+                    else:
+                        rejection_reasons["permission_required_without_grant"] += 1
+                        permission_rejected += 1
+                        continue
+
             text_sha = str(raw_row.get("text_sha256") or _sha256(text))
             normalized_text = _normalize_text(text)
-            normalized_sha = str(raw_row.get("normalized_text_sha256") or _sha256(normalized_text))
+            normalized_sha = str(
+                raw_row.get("normalized_text_sha256") or _sha256(normalized_text)
+            )
 
             if text_sha in seen_text_hashes:
                 rejection_reasons["duplicate_exact_text"] += 1
@@ -614,7 +638,9 @@ def build_training_pack(
             seen_text_hashes.add(text_sha)
             seen_normalized_hashes.add(normalized_sha)
 
-            drop_score = _sha256(f"{policy.random_seed}:{source_id}:{normalized_sha}:{source_record_id}")
+            drop_score = _sha256(
+                f"{policy.random_seed}:{source_id}:{normalized_sha}:{source_record_id}"
+            )
             accepted_records.append(
                 {
                     "source_record_id": source_record_id,
@@ -646,8 +672,12 @@ def build_training_pack(
         report = {
             "ok": False,
             "policy": repo_relative_path(policy_path),
+            "pack_mode": pack_mode,
             "output_dir": repo_relative_path(output_root),
-            "input_files": sorted(input_files),
+            "input_files": sorted(input_files_seen),
+            "input_files_seen": sorted(input_files_seen),
+            "input_files_missing_optional": sorted(input_files_missing_optional),
+            "input_files_required_missing": sorted(input_files_required_missing),
             "records_seen": records_seen,
             "records_accepted": len(accepted_records),
             "records_rejected": sum(rejection_reasons.values()),
@@ -671,6 +701,13 @@ def build_training_pack(
             "duplicate_normalized_rejected": duplicate_normalized_rejected,
             "holdout_rejected": holdout_rejected,
             "permission_rejected": permission_rejected,
+            "noncommercial_records_count": 0,
+            "permission_required_records_count": 0,
+            "commercial_release_ready": False,
+            "commercial_blocking_reasons": [
+                "required_input_missing",
+                "build_not_completed",
+            ],
             "readiness_level": "insufficient",
             "blocking_reasons": sorted(set(issues)),
             "recommendations": ["Provide required source inputs to build the training pack."],
@@ -791,7 +828,9 @@ def build_training_pack(
                 marker = _detect_marker(text)
                 if marker is None:
                     continue
-                first_sentence = _first_sentence(text, policy.instructionization.max_text_chars)
+                first_sentence = _first_sentence(
+                    text, policy.instructionization.max_text_chars
+                )
                 explanation = (
                     f"Dans ce passage, « {marker} » est utilisé dans un contexte québécois: "
                     f"{first_sentence}"
@@ -924,14 +963,10 @@ def build_training_pack(
         1 for row in examples if row.get("task_type") != "preserve_raw"
     )
     instruction_like_ratio = (
-        instruction_like_examples / len(examples)
-        if examples
-        else 0.0
+        instruction_like_examples / len(examples) if examples else 0.0
     )
 
-    max_source_share = (
-        max(source_summary.values()) / len(examples) if examples else 0.0
-    )
+    max_source_share = max(source_summary.values()) / len(examples) if examples else 0.0
     max_source_family_share = (
         max(source_family_summary.values()) / len(examples) if examples else 0.0
     )
@@ -969,6 +1004,43 @@ def build_training_pack(
         if blocking_reasons:
             readiness_level = "production_blocked"
 
+    noncommercial_records_count = sum(
+        1
+        for row in accepted_records
+        if row["license_status"] == "noncommercial_only"
+        or row["commercial_use"] == "permission_required"
+    )
+    permission_required_records_count = sum(
+        1
+        for row in accepted_records
+        if row["commercial_use"] == "permission_required"
+        or row["license_status"] == "permission_required"
+        or row["requires_review"]
+    )
+
+    commercial_blocking_reasons: list[str] = []
+    if pack_mode == "local_research":
+        commercial_blocking_reasons.append(
+            "pack_mode_local_research_blocks_commercial_release"
+        )
+    elif pack_mode == "fixture_ci":
+        commercial_blocking_reasons.append(
+            "pack_mode_fixture_ci_not_for_commercial_release"
+        )
+    if noncommercial_records_count > 0:
+        commercial_blocking_reasons.append("contains_noncommercial_records")
+    if permission_required_records_count > 0:
+        commercial_blocking_reasons.append("contains_permission_required_records")
+    if any(
+        reason in rejection_reasons
+        for reason in ("commercial_mode_reject", "commercial_not_safe")
+    ):
+        commercial_blocking_reasons.append("commercial_safety_filters_triggered")
+
+    commercial_release_ready = (
+        pack_mode == "production_commercial" and not commercial_blocking_reasons
+    )
+
     recommendations = [
         "Increase instruction-style examples and diversified registers/domains for pilot readiness.",
         "Keep adding modern institutional and conversational sources to reduce dominance.",
@@ -990,6 +1062,10 @@ def build_training_pack(
         recommendations.append(
             "Instruction-like ratio is low; increase non-preserve_raw strategies."
         )
+    if pack_mode == "local_research":
+        recommendations.append(
+            "This build is research-grade only; rerun with pack_mode=production_commercial for release checks."
+        )
 
     artifacts = {
         "train": repo_relative_path(output_root / "train.jsonl"),
@@ -1002,8 +1078,12 @@ def build_training_pack(
     report = {
         "ok": True,
         "policy": repo_relative_path(policy_path),
+        "pack_mode": pack_mode,
         "output_dir": repo_relative_path(output_root),
-        "input_files": sorted(input_files),
+        "input_files": sorted(input_files_seen),
+        "input_files_seen": sorted(input_files_seen),
+        "input_files_missing_optional": sorted(input_files_missing_optional),
+        "input_files_required_missing": sorted(input_files_required_missing),
         "records_seen": records_seen,
         "records_accepted": len(accepted_records),
         "records_rejected": sum(rejection_reasons.values()),
@@ -1034,6 +1114,10 @@ def build_training_pack(
         "duplicate_normalized_rejected": duplicate_normalized_rejected,
         "holdout_rejected": holdout_rejected,
         "permission_rejected": permission_rejected,
+        "noncommercial_records_count": noncommercial_records_count,
+        "permission_required_records_count": permission_required_records_count,
+        "commercial_release_ready": commercial_release_ready,
+        "commercial_blocking_reasons": sorted(set(commercial_blocking_reasons)),
         "readiness_level": readiness_level,
         "blocking_reasons": sorted(set(blocking_reasons)),
         "recommendations": recommendations,
@@ -1054,6 +1138,9 @@ def audit_training_pack(pack_dir: Path, out_report: Path) -> dict[str, Any]:
             "ok": False,
             "pack_dir": repo_relative_path(pack_root),
             "report": repo_relative_path(report_path),
+            "pack_mode": "unknown",
+            "commercial_release_ready": False,
+            "commercial_blocking_reasons": ["missing_training_pack_report"],
             "blocking_reasons": ["missing_training_pack_report"],
             "readiness_level": "insufficient",
             "examples_generated": 0,
@@ -1070,6 +1157,9 @@ def audit_training_pack(pack_dir: Path, out_report: Path) -> dict[str, Any]:
         "ok": bool(report.get("ok", False)),
         "pack_dir": repo_relative_path(pack_root),
         "report": repo_relative_path(report_path),
+        "pack_mode": report.get("pack_mode", "fixture_ci"),
+        "commercial_release_ready": bool(report.get("commercial_release_ready", False)),
+        "commercial_blocking_reasons": report.get("commercial_blocking_reasons", []),
         "readiness_level": report.get("readiness_level", "insufficient"),
         "blocking_reasons": report.get("blocking_reasons", []),
         "examples_generated": int(report.get("examples_generated", 0)),

@@ -1,6 +1,7 @@
 {
   "ok": true,
   "policy": "manifests/training_pack_policy.template.yaml",
+  "pack_mode": "fixture_ci",
   "output_dir": "reports/training_pack",
   "input_files": [
     "reports/corpus_curation/accepted.jsonl",
@@ -8,6 +9,16 @@
     "reports/modern_corpus/assnat_fixture_harvest.jsonl",
     "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
   ],
+  "input_files_seen": [
+    "reports/corpus_curation/accepted.jsonl",
+    "reports/corpus_curation_real/accepted.jsonl",
+    "reports/modern_corpus/assnat_fixture_harvest.jsonl",
+    "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl"
+  ],
+  "input_files_missing_optional": [
+    "reports/modern_corpus/modern_fixture_harvest.jsonl"
+  ],
+  "input_files_required_missing": [],
   "records_seen": 10,
   "records_accepted": 1,
   "records_rejected": 9,
@@ -58,6 +69,13 @@
   "duplicate_normalized_rejected": 0,
   "holdout_rejected": 0,
   "permission_rejected": 6,
+  "noncommercial_records_count": 0,
+  "permission_required_records_count": 0,
+  "commercial_release_ready": false,
+  "commercial_blocking_reasons": [
+    "commercial_safety_filters_triggered",
+    "pack_mode_fixture_ci_not_for_commercial_release"
+  ],
   "readiness_level": "insufficient",
   "blocking_reasons": [
     "single_source_dominance",

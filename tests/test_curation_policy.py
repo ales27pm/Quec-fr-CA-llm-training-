@@ -54,6 +54,61 @@ def test_score_record_flows_and_duplicate_detection():
     assert any("duplicate_text" in reason for reason in a3.reasons)
 
 
+def test_trusted_quebec_provenance_can_be_accepted_with_low_marker_density():
+    policy = validate_curation_policy_manifest(
+        ROOT / "manifests/curation_policy_manifest.template.yaml"
+    )
+    record = {
+        "text": "Texte littéraire descriptif sans marqueur lexical explicite.",
+        "dialect_region": "Quebec",
+        "quality_tier": "silver",
+        "allowed_for_training": True,
+        "holdout_only": False,
+        "contains_holdout_material": False,
+        "requires_review": False,
+    }
+    assessment = score_record(record, policy, set())
+    assert assessment.label == "accepted"
+    assert "source_trust:quebec_fr_validated_provenance" in assessment.reasons
+
+
+def test_holdout_source_is_still_rejected_with_trust_bonus():
+    policy = validate_curation_policy_manifest(
+        ROOT / "manifests/curation_policy_manifest.template.yaml"
+    )
+    record = {
+        "text": "Texte littéraire descriptif sans marqueur lexical explicite.",
+        "dialect_region": "Quebec",
+        "quality_tier": "silver",
+        "allowed_for_training": True,
+        "holdout_only": True,
+        "contains_holdout_material": True,
+        "requires_review": False,
+    }
+    assessment = score_record(record, policy, set())
+    assert assessment.label == "rejected"
+    assert "blocking:holdout_material" in assessment.reasons
+
+
+def test_permission_or_review_required_source_not_auto_accepted():
+    policy = validate_curation_policy_manifest(
+        ROOT / "manifests/curation_policy_manifest.template.yaml"
+    )
+    record = {
+        "text": "Texte littéraire descriptif sans marqueur lexical explicite.",
+        "dialect_region": "Quebec",
+        "quality_tier": "silver",
+        "allowed_for_training": True,
+        "holdout_only": False,
+        "contains_holdout_material": False,
+        "requires_review": True,
+        "commercial_use": "permission_required",
+    }
+    assessment = score_record(record, policy, set())
+    assert assessment.label in {"review_required", "quarantine", "rejected"}
+    assert "review:permission_required_source" in assessment.reasons
+
+
 def test_curate_ingested_corpus_outputs(tmp_path: Path):
     input_jsonl = tmp_path / "harvest.jsonl"
     input_jsonl.write_text(

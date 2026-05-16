@@ -192,12 +192,28 @@
         "documentation": {}
     },
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
         "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "argparse",
         "description": "argparse",
         "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -616,7 +632,7 @@
         "documentation": {}
     },
     {
-        "label": "dataclass",
+        "label": "asdict",
         "importPath": "dataclasses",
         "description": "dataclasses",
         "isExtraImport": true,
@@ -624,7 +640,7 @@
         "documentation": {}
     },
     {
-        "label": "asdict",
+        "label": "dataclass",
         "importPath": "dataclasses",
         "description": "dataclasses",
         "isExtraImport": true,
@@ -1133,6 +1149,14 @@
         "documentation": {}
     },
     {
+        "label": "ingest_corpus_sources",
+        "importPath": "qfr_pipeline.corpus_sources",
+        "description": "qfr_pipeline.corpus_sources",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
         "label": "curate",
         "importPath": "qfr_pipeline.data_pipeline",
         "description": "qfr_pipeline.data_pipeline",
@@ -1166,14 +1190,6 @@
     },
     {
         "label": "write_training_recipe",
-        "importPath": "qfr_pipeline.data_pipeline",
-        "description": "qfr_pipeline.data_pipeline",
-        "isExtraImport": true,
-        "detail": "qfr_pipeline.data_pipeline",
-        "documentation": {}
-    },
-    {
-        "label": "harvest",
         "importPath": "qfr_pipeline.data_pipeline",
         "description": "qfr_pipeline.data_pipeline",
         "isExtraImport": true,
@@ -1933,6 +1949,14 @@
         "documentation": {}
     },
     {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
         "label": "RELEASE_GATES_PATH",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
@@ -2423,6 +2447,23 @@
         "documentation": {}
     },
     {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "CorpusSourceEntry",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "CorpusSourceManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
@@ -2679,15 +2720,6 @@
         "importPath": "tempfile",
         "description": "tempfile",
         "detail": "tempfile",
-        "documentation": {}
-    },
-    {
-        "label": "csv",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "csv",
-        "description": "csv",
-        "detail": "csv",
         "documentation": {}
     },
     {
@@ -3719,7 +3751,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.corpus_sources",
         "description": "src.qfr_pipeline.corpus_sources",
-        "peekOfCode": "def load_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return CorpusSourceManifest.model_validate(load_yaml(path))\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    manifest = load_corpus_source_manifest(path)\n    for source in manifest.sources:\n        source_path = ROOT / source.path\n        if source.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"} and not source_path.exists():\n            raise ValueError(f\"source path does not exist: {source.path}\")\n    return manifest\ndef resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:",
+        "peekOfCode": "def load_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return CorpusSourceManifest.model_validate(load_yaml(path))\ndef validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    manifest = load_corpus_source_manifest(path)\n    for source in manifest.sources:\n        source_path = ROOT / source.path\n        if source.source_type in {\n            \"local_text\",\n            \"local_jsonl\",\n            \"local_csv\",",
         "detail": "src.qfr_pipeline.corpus_sources",
         "documentation": {}
     },
@@ -3728,7 +3760,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.corpus_sources",
         "description": "src.qfr_pipeline.corpus_sources",
-        "peekOfCode": "def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    manifest = load_corpus_source_manifest(path)\n    for source in manifest.sources:\n        source_path = ROOT / source.path\n        if source.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"} and not source_path.exists():\n            raise ValueError(f\"source path does not exist: {source.path}\")\n    return manifest\ndef resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:\n    return [ROOT / s.path for s in manifest.sources if s.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"}]\ndef ingest_corpus_sources(manifest_path: Path, out_jsonl: Path, *, min_chars: int = 20, include_review_required: bool = False) -> CorpusIngestionReport:",
+        "peekOfCode": "def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    manifest = load_corpus_source_manifest(path)\n    for source in manifest.sources:\n        source_path = ROOT / source.path\n        if source.source_type in {\n            \"local_text\",\n            \"local_jsonl\",\n            \"local_csv\",\n            \"manual_fixture\",\n        } and not source_path.exists():",
         "detail": "src.qfr_pipeline.corpus_sources",
         "documentation": {}
     },
@@ -3737,7 +3769,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.corpus_sources",
         "description": "src.qfr_pipeline.corpus_sources",
-        "peekOfCode": "def resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:\n    return [ROOT / s.path for s in manifest.sources if s.source_type in {\"local_text\", \"local_jsonl\", \"local_csv\", \"manual_fixture\"}]\ndef ingest_corpus_sources(manifest_path: Path, out_jsonl: Path, *, min_chars: int = 20, include_review_required: bool = False) -> CorpusIngestionReport:\n    manifest = validate_corpus_source_manifest(manifest_path)\n    skipped: list[dict[str, str]] = []\n    issues: list[str] = []\n    ingest_paths: list[Path] = []\n    for source in manifest.sources:\n        if source.source_type == \"future_remote\":\n            skipped.append({\"source_id\": source.source_id, \"reason\": \"future_remote\"})",
+        "peekOfCode": "def resolve_source_paths(manifest: CorpusSourceManifest) -> list[Path]:\n    return [\n        ROOT / source.path\n        for source in manifest.sources\n        if source.source_type in {\n            \"local_text\",\n            \"local_jsonl\",\n            \"local_csv\",\n            \"manual_fixture\",\n        }",
         "detail": "src.qfr_pipeline.corpus_sources",
         "documentation": {}
     },
@@ -3746,7 +3778,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.corpus_sources",
         "description": "src.qfr_pipeline.corpus_sources",
-        "peekOfCode": "def ingest_corpus_sources(manifest_path: Path, out_jsonl: Path, *, min_chars: int = 20, include_review_required: bool = False) -> CorpusIngestionReport:\n    manifest = validate_corpus_source_manifest(manifest_path)\n    skipped: list[dict[str, str]] = []\n    issues: list[str] = []\n    ingest_paths: list[Path] = []\n    for source in manifest.sources:\n        if source.source_type == \"future_remote\":\n            skipped.append({\"source_id\": source.source_id, \"reason\": \"future_remote\"})\n            continue\n        if not source.allowed_for_training:",
+        "peekOfCode": "def ingest_corpus_sources(\n    manifest_path: Path,\n    out_jsonl: Path,\n    *,\n    min_chars: int = 20,\n    include_review_required: bool = False,\n) -> CorpusIngestionReport:\n    manifest = validate_corpus_source_manifest(manifest_path)\n    skipped: list[dict[str, str]] = []\n    issues: list[str] = []",
         "detail": "src.qfr_pipeline.corpus_sources",
         "documentation": {}
     },
@@ -3756,6 +3788,33 @@
         "importPath": "src.qfr_pipeline.corpus_sources",
         "description": "src.qfr_pipeline.corpus_sources",
         "peekOfCode": "def write_ingestion_report(report: CorpusIngestionReport, out_report: Path) -> None:\n    out_report.parent.mkdir(parents=True, exist_ok=True)\n    write_json(out_report, asdict(report))",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "GUTENBERG_START_RE",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "GUTENBERG_START_RE = re.compile(\n    r\"\\*\\*\\*\\s*start of(?: the)? project gutenberg\", re.IGNORECASE\n)\nGUTENBERG_END_RE = re.compile(\n    r\"\\*\\*\\*\\s*end of(?: the)? project gutenberg\", re.IGNORECASE\n)\nGUTENBERG_BOILERPLATE_RE = [\n    re.compile(pattern, re.IGNORECASE)\n    for pattern in [\n        r\"project gutenberg\",",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "GUTENBERG_END_RE",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "GUTENBERG_END_RE = re.compile(\n    r\"\\*\\*\\*\\s*end of(?: the)? project gutenberg\", re.IGNORECASE\n)\nGUTENBERG_BOILERPLATE_RE = [\n    re.compile(pattern, re.IGNORECASE)\n    for pattern in [\n        r\"project gutenberg\",\n        r\"gutenberg-?tm\",\n        r\"produced by\",\n        r\"distributed proofreading team\",",
+        "detail": "src.qfr_pipeline.corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "GUTENBERG_BOILERPLATE_RE",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.corpus_sources",
+        "description": "src.qfr_pipeline.corpus_sources",
+        "peekOfCode": "GUTENBERG_BOILERPLATE_RE = [\n    re.compile(pattern, re.IGNORECASE)\n    for pattern in [\n        r\"project gutenberg\",\n        r\"gutenberg-?tm\",\n        r\"produced by\",\n        r\"distributed proofreading team\",\n        r\"this ebook\",\n        r\"full project gutenberg license\",\n        r\"www\\.gutenberg\\.org\",",
         "detail": "src.qfr_pipeline.corpus_sources",
         "documentation": {}
     },
@@ -4808,7 +4867,7 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
         "description": "src.qfr_pipeline.schemas",
-        "peekOfCode": "class TrainingPackPolicyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str\n    pack_id: str\n    pack_version: str\n    output_dir: str\n    random_seed: int\n    split_ratios: TrainingPackSplitRatios\n    source_inputs: list[TrainingPackSourceInput]",
+        "peekOfCode": "class TrainingPackPolicyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str\n    pack_mode: Literal[\"fixture_ci\", \"local_research\", \"production_commercial\"] = (\n        \"fixture_ci\"\n    )\n    pack_id: str\n    pack_version: str\n    output_dir: str",
         "detail": "src.qfr_pipeline.schemas",
         "documentation": {}
     },
@@ -4979,7 +5038,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.training_pack",
         "description": "src.qfr_pipeline.training_pack",
-        "peekOfCode": "def audit_training_pack(pack_dir: Path, out_report: Path) -> dict[str, Any]:\n    pack_root = pack_dir if pack_dir.is_absolute() else ROOT / pack_dir\n    report_path = pack_root / \"report.json\"\n    if not report_path.exists():\n        payload = {\n            \"ok\": False,\n            \"pack_dir\": repo_relative_path(pack_root),\n            \"report\": repo_relative_path(report_path),\n            \"blocking_reasons\": [\"missing_training_pack_report\"],\n            \"readiness_level\": \"insufficient\",",
+        "peekOfCode": "def audit_training_pack(pack_dir: Path, out_report: Path) -> dict[str, Any]:\n    pack_root = pack_dir if pack_dir.is_absolute() else ROOT / pack_dir\n    report_path = pack_root / \"report.json\"\n    if not report_path.exists():\n        payload = {\n            \"ok\": False,\n            \"pack_dir\": repo_relative_path(pack_root),\n            \"report\": repo_relative_path(report_path),\n            \"pack_mode\": \"unknown\",\n            \"commercial_release_ready\": False,",
         "detail": "src.qfr_pipeline.training_pack",
         "documentation": {}
     },
@@ -5290,6 +5349,33 @@
         "documentation": {}
     },
     {
+        "label": "test_hard_wrapped_text_produces_paragraph_records",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources_real_ingestion",
+        "description": "tests.test_corpus_sources_real_ingestion",
+        "peekOfCode": "def test_hard_wrapped_text_produces_paragraph_records() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        repo_tmp_dir = Path(tmp)\n        source = repo_tmp_dir / \"gutenberg.txt\"\n        source.write_text(\n            (\n                \"*** START OF THE PROJECT GUTENBERG EBOOK TEST ***\\n\"\n                \"Produced by Example Team\\n\\n\"",
+        "detail": "tests.test_corpus_sources_real_ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "test_no_blank_lines_falls_back_to_line_level",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources_real_ingestion",
+        "description": "tests.test_corpus_sources_real_ingestion",
+        "peekOfCode": "def test_no_blank_lines_falls_back_to_line_level() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        repo_tmp_dir = Path(tmp)\n        source = repo_tmp_dir / \"plain.txt\"\n        source.write_text(\n            \"\\n\".join(\n                [\n                    \"Ligne courte.\",",
+        "detail": "tests.test_corpus_sources_real_ingestion",
+        "documentation": {}
+    },
+    {
+        "label": "test_min_chars_and_normalized_duplicate_suppression",
+        "kind": 2,
+        "importPath": "tests.test_corpus_sources_real_ingestion",
+        "description": "tests.test_corpus_sources_real_ingestion",
+        "peekOfCode": "def test_min_chars_and_normalized_duplicate_suppression() -> None:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        repo_tmp_dir = Path(tmp)\n        source = repo_tmp_dir / \"dupes.txt\"\n        source.write_text(\n            \"\"\"\nTexte très long avec plusieurs mots pour dépasser largement le seuil minimal.\n  texte   très long avec plusieurs mots pour dépasser largement le seuil minimal.  ",
+        "detail": "tests.test_corpus_sources_real_ingestion",
+        "documentation": {}
+    },
+    {
         "label": "test_validate_split_policy_manifest_validates",
         "kind": 2,
         "importPath": "tests.test_curated_split",
@@ -5384,7 +5470,34 @@
         "kind": 2,
         "importPath": "tests.test_curation_policy",
         "description": "tests.test_curation_policy",
-        "peekOfCode": "def test_score_record_flows_and_duplicate_detection():\n    policy = validate_curation_policy_manifest(ROOT / \"manifests/curation_policy_manifest.template.yaml\")\n    seen: set[str] = set()\n    a1 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert a1.label == \"accepted\"\n    a2 = score_record({\"text\": \"EMAIL WEEK-END VOITURE\"}, policy, seen)\n    assert a2.label in {\"review_required\", \"quarantine\", \"rejected\"}\n    a3 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert any(\"duplicate_text\" in reason for reason in a3.reasons)\ndef test_curate_ingested_corpus_outputs(tmp_path: Path):",
+        "peekOfCode": "def test_score_record_flows_and_duplicate_detection():\n    policy = validate_curation_policy_manifest(ROOT / \"manifests/curation_policy_manifest.template.yaml\")\n    seen: set[str] = set()\n    a1 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert a1.label == \"accepted\"\n    a2 = score_record({\"text\": \"EMAIL WEEK-END VOITURE\"}, policy, seen)\n    assert a2.label in {\"review_required\", \"quarantine\", \"rejected\"}\n    a3 = score_record({\"text\": \"Je t'écris un courriel cette fin de semaine.\"}, policy, seen)\n    assert any(\"duplicate_text\" in reason for reason in a3.reasons)\ndef test_trusted_quebec_provenance_can_be_accepted_with_low_marker_density():",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_trusted_quebec_provenance_can_be_accepted_with_low_marker_density",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_trusted_quebec_provenance_can_be_accepted_with_low_marker_density():\n    policy = validate_curation_policy_manifest(\n        ROOT / \"manifests/curation_policy_manifest.template.yaml\"\n    )\n    record = {\n        \"text\": \"Texte littéraire descriptif sans marqueur lexical explicite.\",\n        \"dialect_region\": \"Quebec\",\n        \"quality_tier\": \"silver\",\n        \"allowed_for_training\": True,\n        \"holdout_only\": False,",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_holdout_source_is_still_rejected_with_trust_bonus",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_holdout_source_is_still_rejected_with_trust_bonus():\n    policy = validate_curation_policy_manifest(\n        ROOT / \"manifests/curation_policy_manifest.template.yaml\"\n    )\n    record = {\n        \"text\": \"Texte littéraire descriptif sans marqueur lexical explicite.\",\n        \"dialect_region\": \"Quebec\",\n        \"quality_tier\": \"silver\",\n        \"allowed_for_training\": True,\n        \"holdout_only\": True,",
+        "detail": "tests.test_curation_policy",
+        "documentation": {}
+    },
+    {
+        "label": "test_permission_or_review_required_source_not_auto_accepted",
+        "kind": 2,
+        "importPath": "tests.test_curation_policy",
+        "description": "tests.test_curation_policy",
+        "peekOfCode": "def test_permission_or_review_required_source_not_auto_accepted():\n    policy = validate_curation_policy_manifest(\n        ROOT / \"manifests/curation_policy_manifest.template.yaml\"\n    )\n    record = {\n        \"text\": \"Texte littéraire descriptif sans marqueur lexical explicite.\",\n        \"dialect_region\": \"Quebec\",\n        \"quality_tier\": \"silver\",\n        \"allowed_for_training\": True,\n        \"holdout_only\": False,",
         "detail": "tests.test_curation_policy",
         "documentation": {}
     },
@@ -6384,6 +6497,60 @@
         "importPath": "tests.test_training_pack",
         "description": "tests.test_training_pack",
         "peekOfCode": "def test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    runner = CliRunner()\n    result = runner.invoke(\n        app, [\"validate-training-pack-policy\", \"--policy\", str(policy_path)]\n    )\n    assert result.exit_code == 0",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_local_real_training_pack_policy_validates",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_local_real_training_pack_policy_validates() -> None:\n    validate_training_pack_policy(\n        ROOT / \"manifests/training_pack_policy.local_real.template.yaml\"\n    )\ndef test_local_research_mode_includes_noncommercial_but_not_commercial_ready(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(\n            \"Texte institutionnel noncommercial pour validation.\",",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_local_research_mode_includes_noncommercial_but_not_commercial_ready",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_local_research_mode_includes_noncommercial_but_not_commercial_ready(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(\n            \"Texte institutionnel noncommercial pour validation.\",\n            source_id=\"assnat_seed\",\n            license_status=\"noncommercial_only\",\n            commercial_use=\"permission_required\",\n            requires_review=False,",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_production_commercial_mode_rejects_noncommercial",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_production_commercial_mode_rejects_noncommercial(\n    repo_tmp_dir: Path,\n) -> None:\n    rows = [\n        _base_row(\n            \"Texte institutionnel noncommercial à exclure.\",\n            source_id=\"assnat_seed\",\n            license_status=\"noncommercial_only\",\n            commercial_use=\"permission_required\",\n            requires_review=False,",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_optional_missing_inputs_are_reported",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_optional_missing_inputs_are_reported(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte principal.\")])\n    missing_path = _repo_rel(repo_tmp_dir / \"missing.jsonl\")\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy[\"source_inputs\"].append(\n        {\n            \"path\": missing_path,\n            \"source_family\": \"missing_optional\",\n            \"source_priority\": 999,",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_validate_training_pack_policy_local_real_works",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_cli_validate_training_pack_policy_local_real_works() -> None:\n    runner = CliRunner()\n    result = runner.invoke(\n        app,\n        [\n            \"validate-training-pack-policy\",\n            \"--policy\",\n            \"manifests/training_pack_policy.local_real.template.yaml\",\n        ],\n    )",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_build_training_pack_with_live_like_input_has_examples",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_cli_build_training_pack_with_live_like_input_has_examples(\n    repo_tmp_dir: Path,\n) -> None:\n    input_path = repo_tmp_dir / \"live_like.jsonl\"\n    _write_jsonl(\n        input_path,\n        [\n            _base_row(\n                \"Texte institutionnel pour génération d'exemples en mode local research.\"\n            )",
         "detail": "tests.test_training_pack",
         "documentation": {}
     },

@@ -5,6 +5,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 import json
 import re
+import unicodedata
 
 from qfr_pipeline.io import load_yaml
 from qfr_pipeline.paths import repo_relative_path
@@ -49,6 +50,37 @@ def _norm_text(text: str) -> str:
     return " ".join(re.sub(r"\s+", " ", text.casefold()).split())
 
 
+def _norm_atom(value: object) -> str:
+    text = unicodedata.normalize("NFKD", str(value or ""))
+    return "".join(ch for ch in text if not unicodedata.combining(ch)).casefold()
+
+
+def _trusted_quebec_provenance(record: dict) -> bool:
+    dialect = _norm_atom(record.get("dialect_region"))
+    trusted_dialects = {
+        "quebec",
+        "canada_fr",
+        "canada-fr",
+        "french_canadian",
+        "canadian_french",
+        "fr_ca",
+    }
+    quality_tier = _norm_atom(record.get("quality_tier"))
+    trusted_tiers = {"gold", "silver", "bronze"}
+    allowed_for_training = bool(record.get("allowed_for_training", False))
+    holdout_only = bool(record.get("holdout_only", False))
+    contains_holdout = bool(record.get("contains_holdout_material", False))
+    requires_review = bool(record.get("requires_review", False))
+    return (
+        dialect in trusted_dialects
+        and quality_tier in trusted_tiers
+        and allowed_for_training
+        and (not holdout_only)
+        and (not contains_holdout)
+        and (not requires_review)
+    )
+
+
 def load_curation_policy_manifest(path: Path) -> CurationPolicyManifest:
     return CurationPolicyManifest.model_validate(load_yaml(path))
 
@@ -86,12 +118,28 @@ def score_record(record: dict, policy: CurationPolicyManifest, seen_texts: set[s
     if marker_hits == 0:
         score -= float(policy.scoring.penalties.get("low_fr_ca_marker_score", 0.0))
         reasons.append("penalty:low_fr_ca_marker_score")
+    if _trusted_quebec_provenance(record):
+        score += 0.9
+        reasons.append("source_trust:quebec_fr_validated_provenance")
     if seen_texts is not None:
         if normalized in seen_texts:
             score -= float(policy.scoring.penalties.get("duplicate_text", 0.0))
             reasons.append("penalty:duplicate_text")
         else:
             seen_texts.add(normalized)
+
+    if bool(record.get("holdout_only", False)) or bool(
+        record.get("contains_holdout_material", False)
+    ):
+        reasons.append("blocking:holdout_material")
+
+    commercial_use = _norm_atom(record.get("commercial_use"))
+    license_status = _norm_atom(record.get("license_status"))
+    if bool(record.get("requires_review", False)) or commercial_use in {
+        "permission_required",
+        "prohibited",
+    } or license_status in {"permission_required", "blocked", "unclear"}:
+        reasons.append("review:permission_required_source")
 
     for rule in policy.scoring.blocking_rules:
         if rule.pattern.casefold() in normalized:

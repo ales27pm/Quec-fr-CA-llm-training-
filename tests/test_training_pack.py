@@ -428,6 +428,126 @@ def test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:
     assert result.exit_code == 0
 
 
+def test_local_real_training_pack_policy_validates() -> None:
+    validate_training_pack_policy(
+        ROOT / "manifests/training_pack_policy.local_real.template.yaml"
+    )
+
+
+def test_local_research_mode_includes_noncommercial_but_not_commercial_ready(
+    repo_tmp_dir: Path,
+) -> None:
+    rows = [
+        _base_row(
+            "Texte institutionnel noncommercial pour validation.",
+            source_id="assnat_seed",
+            license_status="noncommercial_only",
+            commercial_use="permission_required",
+            requires_review=False,
+        )
+    ]
+    _, report = _build_with_rows(
+        repo_tmp_dir,
+        rows,
+        policy_overrides={"pack_mode": "local_research"},
+    )
+    assert report["records_accepted"] >= 1
+    assert report["noncommercial_records_count"] >= 1
+    assert report["commercial_release_ready"] is False
+    assert (
+        "pack_mode_local_research_blocks_commercial_release"
+        in report["commercial_blocking_reasons"]
+    )
+
+
+def test_production_commercial_mode_rejects_noncommercial(
+    repo_tmp_dir: Path,
+) -> None:
+    rows = [
+        _base_row(
+            "Texte institutionnel noncommercial à exclure.",
+            source_id="assnat_seed",
+            license_status="noncommercial_only",
+            commercial_use="permission_required",
+            requires_review=False,
+        )
+    ]
+    _, report = _build_with_rows(
+        repo_tmp_dir,
+        rows,
+        policy_overrides={"pack_mode": "production_commercial"},
+    )
+    assert report["records_accepted"] == 0
+    assert report["rejection_reasons"].get("commercial_mode_reject", 0) >= 1
+
+
+def test_optional_missing_inputs_are_reported(repo_tmp_dir: Path) -> None:
+    input_path = repo_tmp_dir / "in.jsonl"
+    _write_jsonl(input_path, [_base_row("Texte principal.")])
+    missing_path = _repo_rel(repo_tmp_dir / "missing.jsonl")
+    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])
+    policy["source_inputs"].append(
+        {
+            "path": missing_path,
+            "source_family": "missing_optional",
+            "source_priority": 999,
+            "allowed_for_training_required": True,
+            "max_source_share": 1.0,
+            "include_if_exists": True,
+            "required": False,
+        }
+    )
+    policy_path = _write_policy(repo_tmp_dir, policy)
+    report = build_training_pack(policy_path)
+    assert report["ok"] is True
+    assert missing_path in report["input_files_missing_optional"]
+
+
+def test_cli_validate_training_pack_policy_local_real_works() -> None:
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "validate-training-pack-policy",
+            "--policy",
+            "manifests/training_pack_policy.local_real.template.yaml",
+        ],
+    )
+    assert result.exit_code == 0
+
+
+def test_cli_build_training_pack_with_live_like_input_has_examples(
+    repo_tmp_dir: Path,
+) -> None:
+    input_path = repo_tmp_dir / "live_like.jsonl"
+    _write_jsonl(
+        input_path,
+        [
+            _base_row(
+                "Texte institutionnel pour génération d'exemples en mode local research."
+            )
+        ],
+    )
+    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])
+    policy["pack_mode"] = "local_research"
+    policy_path = _write_policy(repo_tmp_dir, policy, name="policy_local.yaml")
+    out_dir = repo_tmp_dir / "pack_live_like"
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        [
+            "build-training-pack",
+            "--policy",
+            str(policy_path),
+            "--out-dir",
+            _repo_rel(out_dir),
+        ],
+    )
+    assert result.exit_code == 0
+    report = json.loads((out_dir / "report.json").read_text(encoding="utf-8"))
+    assert report["examples_generated"] > 0
+
+
 def test_cli_build_training_pack_works(repo_tmp_dir: Path) -> None:
     input_path = repo_tmp_dir / "in.jsonl"
     _write_jsonl(input_path, [_base_row("Texte CLI build.")])

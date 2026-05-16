@@ -1,10 +1,10 @@
 dataset_name: quebec-fr-curated-training
 dataset_version: 0.1.0
 hashes:
-  aggregate_sha256: 0c0396caefdf911a7895262edd74c7b4988999a41a9cda0e4f9a7c844f4aed13
+  aggregate_sha256: 7eebddfcab2d35fd854d06fdcb99c7e8e678b3d76d085ba7bcef8c641c69647a
   dev_sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-  test_sha256: 6136071306f04dbaa81521cc71633326f269e4ee7abac7aba0535cb379390e97
-  train_sha256: e45c41753e8916f86352c0c968abdba6a9b7fc8945ba10090fe7013cf18c012c
+  test_sha256: ca5db13a1bc2defe3d4c4f5f3ad641d7cd39b925609d9880709beba140d49535
+  train_sha256: 204c0354734bf0008bf8dd9e4e96e05a53361ee13fdbe7b0c23f2780291678c6
 inputs:
   corpus_source_manifest: manifests/corpus_source_manifest.template.yaml
   curation_policy_manifest: manifests/curation_policy_manifest.template.yaml

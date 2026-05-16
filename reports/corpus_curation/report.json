@@ -5,8 +5,8 @@
   "records_total": 3,
   "accepted": 2,
   "review_required": 0,
-  "quarantine": 0,
-  "rejected": 1,
+  "quarantine": 1,
+  "rejected": 0,
   "reason_counts": {
     "marker:char": 1,
     "marker:courriel": 1,
@@ -17,7 +17,8 @@
     "penalty:email": 1,
     "penalty:low_fr_ca_marker_score": 1,
     "penalty:voiture": 1,
-    "penalty:week-end": 1
+    "penalty:week-end": 1,
+    "source_trust:quebec_fr_validated_provenance": 3
   },
   "outputs": {
     "accepted": "reports/corpus_curation/accepted.jsonl",
