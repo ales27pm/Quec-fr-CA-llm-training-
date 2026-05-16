@@ -4,12 +4,13 @@
 - Pack mode: `local_research`
 - Readiness level: `insufficient`
 - Commercial release ready: `False`
-- Train / Dev / Test: `6` / `3` / `3`
-- Estimated tokens: `1267`
+- Train / Dev / Test: `53` / `4` / `3`
+- Estimated tokens: `9497`
 
 ## Source summary
-- assnat_journal_debats_seed_modern: `6`
+- assnat_journal_debats_seed_modern: `20`
 - donnees_quebec_ckan_metadata_modern: `6`
+- donnees_quebec_ckan_textual: `34`
 
 ## Intended use
 - Continuation training pack for Québec-French adaptation with Dolphin3/Qwen-compatible chat format.
@@ -25,4 +26,4 @@
 - Records flagged as holdout-only or containing holdout material are rejected during pack build.
 
 ## Known limitations
-- No blocking limitations detected by policy checks.
+- single_source_dominance

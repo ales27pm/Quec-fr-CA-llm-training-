@@ -21,66 +21,69 @@
   ],
   "input_files_missing_optional": [],
   "input_files_required_missing": [],
-  "records_seen": 3319,
-  "records_accepted": 4,
-  "records_rejected": 3315,
+  "records_seen": 5019,
+  "records_accepted": 17,
+  "records_rejected": 5002,
   "rejection_reasons": {
-    "commercial_not_safe": 3242,
+    "commercial_not_safe": 4908,
     "downsample_source_input_share": 3,
-    "downsample_source_share": 1,
-    "duplicate_exact_text": 8,
-    "text_too_long": 61
+    "downsample_source_share": 3,
+    "text_too_long": 88
   },
-  "examples_generated": 12,
-  "raw_records_count": 4,
-  "train_count": 6,
-  "dev_count": 3,
+  "examples_generated": 60,
+  "raw_records_count": 17,
+  "train_count": 53,
+  "dev_count": 4,
   "test_count": 3,
-  "estimated_tokens_total": 1267,
-  "estimated_tokens_train": 837,
-  "raw_records_tokens_total": 276,
-  "instruction_examples_total": 12,
-  "instruction_like_ratio": 1.0,
-  "source_diversity_count": 2,
+  "estimated_tokens_total": 9497,
+  "estimated_tokens_train": 8990,
+  "raw_records_tokens_total": 2540,
+  "instruction_examples_total": 60,
+  "instruction_like_ratio": 0.883333,
+  "source_diversity_count": 3,
   "domain_diversity_count": 2,
   "register_diversity_count": 2,
   "source_summary": {
-    "assnat_journal_debats_seed_modern": 6,
-    "donnees_quebec_ckan_metadata_modern": 6
+    "assnat_journal_debats_seed_modern": 20,
+    "donnees_quebec_ckan_metadata_modern": 6,
+    "donnees_quebec_ckan_textual": 34
   },
   "source_family_summary": {
-    "institutional_ckan_live": 6,
-    "parliamentary_seed_live": 6
+    "institutional_ckan_fixture": 6,
+    "institutional_ckan_live": 34,
+    "parliamentary_seed_fixture": 20
   },
   "domain_summary": {
-    "politics": 6,
-    "public_administration": 6
+    "politics": 20,
+    "public_administration": 40
   },
   "register_summary": {
-    "administrative": 6,
-    "parliamentary": 6
+    "administrative": 40,
+    "parliamentary": 20
   },
   "task_type_summary": {
-    "qa_from_context": 4,
-    "style_rewrite_identity": 4,
-    "summarize": 4
+    "explain_term": 4,
+    "preserve_raw": 7,
+    "qa_from_context": 15,
+    "style_rewrite_identity": 17,
+    "summarize": 17
   },
   "license_status_summary": {
-    "noncommercial_only": 6,
-    "open_compatible": 6
+    "noncommercial_only": 20,
+    "open_compatible": 40
   },
   "commercial_use_summary": {
-    "allowed": 6,
-    "permission_required": 6
+    "allowed": 40,
+    "permission_required": 20
   },
-  "max_single_source_share": 0.5,
-  "max_single_source_family_share": 0.5,
-  "duplicate_exact_rejected": 8,
+  "max_single_source_share": 0.566667,
+  "max_single_source_family_share": 0.566667,
+  "duplicate_exact_rejected": 0,
   "duplicate_normalized_rejected": 0,
   "holdout_rejected": 0,
   "permission_rejected": 0,
-  "noncommercial_records_count": 2,
-  "permission_required_records_count": 2,
+  "noncommercial_records_count": 6,
+  "permission_required_records_count": 6,
   "commercial_release_ready": false,
   "commercial_blocking_reasons": [
     "commercial_safety_filters_triggered",
@@ -89,7 +92,9 @@
     "pack_mode_local_research_blocks_commercial_release"
   ],
   "readiness_level": "insufficient",
-  "blocking_reasons": [],
+  "blocking_reasons": [
+    "single_source_dominance"
+  ],
   "recommendations": [
     "Increase instruction-style examples and diversified registers/domains for pilot readiness.",
     "Keep adding modern institutional and conversational sources to reduce dominance.",

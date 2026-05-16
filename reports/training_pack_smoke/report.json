@@ -1,0 +1,119 @@
+{
+  "ok": true,
+  "policy": "manifests/training_pack_policy.local_smoke.template.yaml",
+  "pack_mode": "local_research",
+  "output_dir": "reports/training_pack_smoke",
+  "input_files": [
+    "reports/corpus_curation_real/accepted.jsonl",
+    "reports/modern_corpus/assnat_fixture_harvest.jsonl",
+    "reports/modern_corpus/assnat_live_harvest.jsonl",
+    "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl",
+    "reports/modern_corpus/donnees_quebec_live_harvest.jsonl"
+  ],
+  "input_files_seen": [
+    "reports/corpus_curation_real/accepted.jsonl",
+    "reports/modern_corpus/assnat_fixture_harvest.jsonl",
+    "reports/modern_corpus/assnat_live_harvest.jsonl",
+    "reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl",
+    "reports/modern_corpus/donnees_quebec_live_harvest.jsonl"
+  ],
+  "input_files_missing_optional": [],
+  "input_files_required_missing": [],
+  "records_seen": 5017,
+  "records_accepted": 4967,
+  "records_rejected": 50,
+  "rejection_reasons": {
+    "text_too_long": 50
+  },
+  "examples_generated": 14803,
+  "raw_records_count": 4967,
+  "train_count": 13321,
+  "dev_count": 741,
+  "test_count": 741,
+  "estimated_tokens_total": 1571335,
+  "estimated_tokens_train": 1413787,
+  "raw_records_tokens_total": 472501,
+  "instruction_examples_total": 14803,
+  "instruction_like_ratio": 0.83348,
+  "source_diversity_count": 11,
+  "domain_diversity_count": 3,
+  "register_diversity_count": 4,
+  "source_summary": {
+    "assnat_journal_debats_seed_modern": 18,
+    "donnees_quebec_ckan_metadata_modern": 6,
+    "donnees_quebec_ckan_textual": 48,
+    "gutenberg_angeline_de_montbrun_fr_17267": 3159,
+    "gutenberg_au_large_de_l_ecueil_fr_17791": 2392,
+    "gutenberg_ce_que_disait_la_flamme_fr_14399": 3249,
+    "gutenberg_l_influence_d_un_livre_fr_15305": 859,
+    "gutenberg_le_cap_au_diable_fr_13059": 500,
+    "gutenberg_le_debutant_fr_19497": 1849,
+    "gutenberg_maria_chapdelaine_fr_13525": 2233,
+    "gutenberg_un_amour_vrai_fr_14537": 490
+  },
+  "source_family_summary": {
+    "institutional_ckan_fixture": 6,
+    "institutional_ckan_live": 48,
+    "literary_curated_real": 14731,
+    "parliamentary_seed_fixture": 18
+  },
+  "domain_summary": {
+    "politics": 18,
+    "public_administration": 54,
+    "unknown": 14731
+  },
+  "register_summary": {
+    "administrative": 54,
+    "formal": 8257,
+    "mixed": 6474,
+    "parliamentary": 18
+  },
+  "task_type_summary": {
+    "explain_term": 6,
+    "preserve_raw": 2465,
+    "qa_from_context": 4804,
+    "style_rewrite_identity": 2568,
+    "summarize": 4960
+  },
+  "license_status_summary": {
+    "noncommercial_only": 18,
+    "open_compatible": 54,
+    "unknown": 14731
+  },
+  "commercial_use_summary": {
+    "allowed": 54,
+    "permission_required": 18,
+    "unknown": 14731
+  },
+  "max_single_source_share": 0.219483,
+  "max_single_source_family_share": 0.995136,
+  "duplicate_exact_rejected": 0,
+  "duplicate_normalized_rejected": 0,
+  "holdout_rejected": 0,
+  "permission_rejected": 0,
+  "noncommercial_records_count": 6,
+  "permission_required_records_count": 6,
+  "commercial_release_ready": false,
+  "commercial_blocking_reasons": [
+    "contains_noncommercial_records",
+    "contains_permission_required_records",
+    "pack_mode_local_research_blocks_commercial_release"
+  ],
+  "readiness_level": "smoke_test",
+  "blocking_reasons": [
+    "insufficient_modern_diversity",
+    "source_family_dominance"
+  ],
+  "recommendations": [
+    "Increase instruction-style examples and diversified registers/domains for pilot readiness.",
+    "Keep adding modern institutional and conversational sources to reduce dominance.",
+    "This build is research-grade only; rerun with pack_mode=production_commercial for release checks."
+  ],
+  "artifacts": {
+    "train": "reports/training_pack_smoke/train.jsonl",
+    "dev": "reports/training_pack_smoke/dev.jsonl",
+    "test": "reports/training_pack_smoke/test.jsonl",
+    "report": "reports/training_pack_smoke/report.json",
+    "dataset_card": "reports/training_pack_smoke/dataset_card.md"
+  }
+}
