@@ -119,3 +119,12 @@ bash scripts/run_local_validation.sh
 ```
 
 `qfr` is installed by the editable package install. `tools/update_agents.py` imports PyYAML, so dependencies must be installed first. No top-level `qfr` wrapper is intentionally provided.
+
+
+## Modern corpus acquisition (T23)
+- `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition_manifest.template.yaml`
+- `qfr acquire-modern-corpus --manifest manifests/modern_corpus_acquisition_manifest.template.yaml --out reports/modern_corpus/harvest.jsonl --report reports/modern_corpus/dry_run_report.json --max-documents 0`
+- `qfr audit-corpus-readiness --input reports/corpus_curation/accepted.jsonl --out reports/corpus_readiness/report.json`
+
+Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only by default and must not be used for training.
+Current fixture-scale corpus is not production-grade for LoRA release (insufficient scale/diversity and instruction-turn coverage).

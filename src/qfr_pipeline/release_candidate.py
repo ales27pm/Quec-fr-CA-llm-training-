@@ -5,12 +5,14 @@ from pathlib import Path
 from typing import Any
 
 from qfr_pipeline.corpus_sources import ingest_corpus_sources, validate_corpus_source_manifest
+from qfr_pipeline.corpus_readiness import audit_corpus_readiness
 from qfr_pipeline.curation_policy import curate_ingested_corpus, validate_curation_policy_manifest
 from qfr_pipeline.curated_split import split_curated_corpus, validate_split_policy_manifest
 from qfr_pipeline.diagnostics import load_eval_rows, load_taxonomies, run_diagnostics, write_diagnostics_json, write_diagnostics_markdown
 from qfr_pipeline.io import write_json
 from qfr_pipeline.minimal_pair_quality import validate_minimal_pairs_against_context
 from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_manifest, write_jsonl
+from qfr_pipeline.modern_corpus import acquire_modern_corpus, validate_modern_corpus_manifest
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import ReleaseReport, evaluate_release
 from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
@@ -121,6 +123,8 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "training_manifest_json": "reports/training_export/training_manifest.json",
         "training_manifest_yaml": "reports/training_export/training_manifest.yaml",
         "training_dataset_card": "reports/training_export/dataset_card.md",
+        "modern_corpus_dry_run_report": "reports/modern_corpus/dry_run_report.json",
+        "corpus_readiness_report": "reports/corpus_readiness/report.json",
         "release_candidate_json": repo_relative_path(out_json),
         "release_candidate_md": repo_relative_path(out_md),
     }
@@ -143,6 +147,20 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         validate_error_taxonomy_manifest(ROOT / "eval/lp9_error_taxonomy.yaml")
         validate_error_taxonomy_manifest(ROOT / "eval/lp20_error_taxonomy.yaml")
         stages.append(ReleaseCandidateStage(name="taxonomy_validation", ok=True, artifacts=[]))
+        modern_manifest = ROOT / "manifests/modern_corpus_acquisition_manifest.template.yaml"
+        validate_modern_corpus_manifest(modern_manifest)
+        stages.append(ReleaseCandidateStage(name="modern_corpus_manifest_validation", ok=True, artifacts=[repo_relative_path(modern_manifest)]))
+        modern_dry_run = acquire_modern_corpus(modern_manifest, ROOT / "reports/modern_corpus/harvest.jsonl", ROOT / artifacts["modern_corpus_dry_run_report"], max_documents=0)
+        stages.append(ReleaseCandidateStage(name="modern_corpus_acquisition_dry_run", ok=modern_dry_run.get("ok", False), artifacts=[artifacts["modern_corpus_dry_run_report"]], details=modern_dry_run))
+        if not modern_dry_run.get("ok", False):
+            blocking_failures.append("modern_corpus_acquisition_dry_run")
+        readiness_input = ROOT / "reports/corpus_curation_real/accepted.jsonl"
+        if not readiness_input.exists():
+            readiness_input = ROOT / "reports/corpus_curation/accepted.jsonl"
+        readiness = audit_corpus_readiness(readiness_input, ROOT / artifacts["corpus_readiness_report"])
+        stages.append(ReleaseCandidateStage(name="corpus_readiness_audit", ok=readiness.get("ok", False), artifacts=[artifacts["corpus_readiness_report"]], details=readiness))
+        if not readiness.get("ok", False):
+            blocking_failures.append("corpus_readiness_audit")
 
         corpus_manifest = ROOT / "manifests/corpus_source_manifest.template.yaml"
         validate_corpus_source_manifest(corpus_manifest)
@@ -180,6 +198,12 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         if not tx_report.ok:
             blocking_failures.append("training_export_generation")
         training_export_summary = {"dataset_name": tx_report.dataset_name, "dataset_version": tx_report.dataset_version, "train": tx_report.records["train"], "dev": tx_report.records["dev"], "test": tx_report.records["test"], "total": tx_report.records["total"], "aggregate_sha256": tx_report.hashes["aggregate_sha256"]}
+        training_export_summary["modern_corpus_sources_total"] = modern_dry_run.get("sources_total", 0)
+        training_export_summary["modern_corpus_active_sources"] = modern_dry_run.get("sources_active", 0)
+        training_export_summary["modern_corpus_blocked_sources"] = len(modern_dry_run.get("skipped_sources", []))
+        training_export_summary["corpus_readiness_level"] = readiness.get("readiness_level", "insufficient")
+        training_export_summary["estimated_tokens"] = readiness.get("estimated_tokens", 0)
+        training_export_summary["production_blocking_reasons"] = readiness.get("blocking_reasons", [])
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)

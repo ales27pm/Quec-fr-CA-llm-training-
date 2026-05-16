@@ -42,6 +42,7 @@ TASK_FILES = {
     "T20": ROOT / "src" / "qfr_pipeline" / "curation_policy.py",
     "T21": ROOT / "src" / "qfr_pipeline" / "curated_split.py",
     "T22": ROOT / "src" / "qfr_pipeline" / "training_export.py",
+    "T23": ROOT / "src" / "qfr_pipeline" / "modern_corpus.py",
 }
 
 

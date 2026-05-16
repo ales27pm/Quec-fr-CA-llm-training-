@@ -34,7 +34,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T20 | Corpus curation policy and quality scoring contract | ✅ fully_implemented | `Provided` |
 | T21 | Curated corpus train/dev/test split contract | ✅ fully_implemented | `Provided` |
 | T22 | Training export manifest and dataset card | ✅ fully_implemented | `Provided` |
-| T23 | Modern corpus acquisition contracts, adapters, and readiness gate | ❌ not_implemented | `Pending` |
+| T23 | Modern corpus acquisition contracts, adapters, and readiness gate | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.

@@ -1,1 +1,32 @@
-{"ok":true,"readiness_level":"insufficient"}
+{
+  "ok": true,
+  "input": "reports/corpus_curation/accepted.jsonl",
+  "records_total": 2,
+  "estimated_tokens": 32,
+  "source_count": 1,
+  "domain_balance": {
+    "unknown": 2
+  },
+  "register_balance": {
+    "unknown": 2
+  },
+  "source_balance": {
+    "unknown": 2
+  },
+  "max_single_source_share": 1.0,
+  "instruction_like_count": 0,
+  "instruction_like_ratio": 0.0,
+  "dialog_like_count": 0,
+  "dialog_like_ratio": 0.0,
+  "legal_license_ok_ratio": 0.0,
+  "commercial_ready_ratio": 0.0,
+  "holdout_contamination_risk_count": 0,
+  "duplicates_exact": 0,
+  "duplicates_normalized": 0,
+  "readiness_level": "insufficient",
+  "blocking_reasons": [],
+  "recommendations": [
+    "Increase modern (2020-2026) institutional, educational, and instruction/dialogue coverage.",
+    "Reduce source concentration and improve register/domain diversity for production readiness."
+  ]
+}

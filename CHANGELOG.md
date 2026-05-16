@@ -97,3 +97,5 @@
 
 ## T23
 - Added modern corpus acquisition and readiness auditing scaffolding with legal gating and holdout separation.
+
+- T23 cleanup/finalization: hardened deterministic modern-corpus acquisition and readiness auditing; removed backup artifact; integrated release-candidate dry-run/readiness stages.

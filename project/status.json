@@ -136,8 +136,8 @@
     {
       "id": "T23",
       "goal": "Modern corpus acquisition contracts, adapters, and readiness gate",
-      "status": "not_implemented",
-      "evidence": "Pending"
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

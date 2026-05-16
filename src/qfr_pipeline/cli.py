@@ -328,10 +328,6 @@ def monitor_lp7_cmd(pre: float = typer.Option(..., "--pre"), post: float = typer
     print(payload)
 
 
-if __name__ == "__main__":
-    app()
-
-
 @app.command("validate-training-export")
 def validate_training_export_cmd(manifest: Path = typer.Option(..., "--manifest")):
     _refresh_dynamic_agents()
@@ -365,6 +361,14 @@ def acquire_modern_corpus_cmd(manifest: Path = typer.Option(..., "--manifest"), 
 def audit_corpus_readiness_cmd(input: Path = typer.Option(..., "--input"), out: Path = typer.Option(..., "--out"), fail_below: str | None = typer.Option(None, "--fail-below")):
     _refresh_dynamic_agents()
     payload = audit_corpus_readiness(input, out)
-    levels=["insufficient","smoke_test","pilot_lora_candidate","production_lora_candidate"]
-    if fail_below and levels.index(payload['readiness_level'] if payload['readiness_level'] in levels else 'insufficient') < levels.index(fail_below):
+    if not payload.get("ok", False):
         raise typer.Exit(code=1)
+    levels = ["insufficient", "smoke_test", "pilot_lora_candidate", "production_lora_candidate"]
+    level = payload.get("readiness_level", "insufficient")
+    effective_level = "insufficient" if level == "production_blocked" else level
+    if fail_below and levels.index(effective_level if effective_level in levels else "insufficient") < levels.index(fail_below):
+        raise typer.Exit(code=1)
+
+
+if __name__ == "__main__":
+    app()
