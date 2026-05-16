@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from qfr_pipeline.io import load_yaml
-from qfr_pipeline.schemas import CorpusSourceManifest, CurationPolicyManifest, DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ReleaseGates, SplitPolicyManifest, TrainingExportManifest, ensure_eval_gates_sync
+from qfr_pipeline.schemas import CorpusSourceManifest, CurationPolicyManifest, DatasetManifest, ErrorTaxonomyManifest, EvaluationManifest, LPContextManifest, LPRuleManifest, ModernCorpusAcquisitionManifest, ReleaseGates, SplitPolicyManifest, TrainingExportManifest, ensure_eval_gates_sync
 
 
 @dataclass
@@ -94,6 +94,8 @@ def validate_repository(root: Path) -> ValidationReport:
                 validate_split_policy_manifest(path)
             elif kind == "training_export_manifest":
                 validate_training_export_manifest(path)
+            elif kind == "modern_corpus_acquisition_manifest":
+                validate_modern_corpus_manifest(path)
             else:
                 raise ValueError(f"Unsupported manifests kind: {kind}")
             report.checked_files.append(str(path))
@@ -134,3 +136,7 @@ def validate_repository(root: Path) -> ValidationReport:
             kind = "error_taxonomy_manifest" if "taxonomy" in path.name else "evaluation_manifest"
             report.issues.append(ValidationIssue(str(path), kind, str(exc)))
     return report
+
+
+def validate_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:
+    return _validate(path, ModernCorpusAcquisitionManifest)

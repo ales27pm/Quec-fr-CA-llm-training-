@@ -652,3 +652,67 @@ class TrainingExportManifest(BaseModel):
         if "fr-ca" not in self.dataset_card.language.casefold() or "québécois" not in self.dataset_card.dialect.casefold():
             raise ValueError("dataset_card language/dialect must identify fr-CA / Québécois French")
         return self
+
+import re
+
+
+class ModernCorpusAdapterConfig(BaseModel):
+    name: str
+    base_url: str | None = None
+    query: str = "textuel"
+    rows: int = 20
+    seed_urls: list[str] = []
+    local_globs: list[str] = []
+
+class ModernCorpusSource(BaseModel):
+    source_id: str
+    name: str
+    source_type: str
+    acquisition_status: str
+    license_status: str
+    commercial_use: str
+    allowed_for_training: bool
+    allowed_for_evaluation: bool = True
+    holdout_only: bool = False
+    pii_risk: str = "low"
+    license_name: str = ""
+    license_url: str | None = None
+    date_min: str | None = None
+    date_max: str | None = None
+    min_delay_seconds: float = 0.0
+    adapter: ModernCorpusAdapterConfig
+
+    @model_validator(mode="after")
+    def checks(self):
+        if not re.match(r"^[a-z0-9][a-z0-9_\-]*$", self.source_id):
+            raise ValueError("source_id must be stable slug")
+        if self.acquisition_status == "active" and self.license_status in {"blocked", "unclear"}:
+            raise ValueError("active acquisition cannot have blocked/unknown license")
+        if self.source_type == "evaluation_holdout" or self.acquisition_status == "holdout_only":
+            if self.allowed_for_training:
+                raise ValueError("holdout/evaluation sources cannot be training allowed")
+        if self.min_delay_seconds < 0:
+            raise ValueError("min_delay_seconds >= 0")
+        return self
+
+class ModernCorpusAcquisitionManifest(BaseModel):
+    kind: str
+    schema_version: str
+    primary_language: str
+    sources: list[ModernCorpusSource]
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "modern_corpus_acquisition_manifest":
+            raise ValueError("kind must be modern_corpus_acquisition_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def check(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        ids=[s.source_id for s in self.sources]
+        if len(ids)!=len(set(ids)):
+            raise ValueError("source_id must be unique")
+        return self

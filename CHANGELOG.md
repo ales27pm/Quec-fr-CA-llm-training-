@@ -94,3 +94,6 @@
 - Added deterministic training export manifest template, schema/model validation, CLI commands, and export artifacts.
 - Added release-candidate integration with training export validation/generation summary.
 - Added bootstrap script and fresh-checkout docs clarifying dependency/install order.
+
+## T23
+- Added modern corpus acquisition and readiness auditing scaffolding with legal gating and holdout separation.

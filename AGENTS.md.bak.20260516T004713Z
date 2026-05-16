@@ -7,7 +7,7 @@ This file governs the entire repository unless a deeper nested `AGENTS.md` overr
 Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned with OQLF/BDL standards, reproducible evaluation, and explicit governance.
 
 ## Dynamic State (auto-generated)
-> Last auto-update: **2026-05-16 UTC**  
+> Last auto-update: **2026-05-15 UTC**  
 > Source: `project/status.json` (managed by `python3 tools/update_agents.py --write`)
 
 | Task ID | Goal | Status | Evidence |
@@ -34,7 +34,6 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T20 | Corpus curation policy and quality scoring contract | ✅ fully_implemented | `Provided` |
 | T21 | Curated corpus train/dev/test split contract | ✅ fully_implemented | `Provided` |
 | T22 | Training export manifest and dataset card | ✅ fully_implemented | `Provided` |
-| T23 | Modern corpus acquisition contracts, adapters, and readiness gate | ❌ not_implemented | `Pending` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.
