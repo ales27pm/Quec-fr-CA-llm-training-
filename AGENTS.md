@@ -35,6 +35,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 | T21 | Curated corpus train/dev/test split contract | ✅ fully_implemented | `Provided` |
 | T22 | Training export manifest and dataset card | ✅ fully_implemented | `Provided` |
 | T23 | Modern corpus acquisition contracts, adapters, and readiness gate | ✅ fully_implemented | `Provided` |
+| T24 | Real modern Québec source adapters with deterministic fixture acquisition | ✅ fully_implemented | `Provided` |
 
 ## Non-Negotiable Rules (Drift Prevention)
 1. **No benchmark contamination**: do not train/evaluate on holdouts in `eval/evaluation_manifest.template.yaml`.
@@ -50,7 +51,7 @@ Build and maintain a top-tier Québécois (fr-CA) LLM training pipeline aligned 
 2. Implement changes following manifest/rule schemas.
 3. Run validation checks (`--validate`).
 4. Update dynamic state (`--write`).
-5. Commit with concise message referencing relevant Task IDs (T1–T23).
+5. Commit with concise message referencing relevant Task IDs (T1–T24).
 
 ## Creation/Modification of Root and Nested AGENTS
 ```bash

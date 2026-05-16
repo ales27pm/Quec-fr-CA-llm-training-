@@ -9,15 +9,48 @@ sources:
     license_status: noncommercial_only
     commercial_use: permission_required
     allowed_for_training: true
-    adapter: {name: assnat_journal_debats, seed_urls: ["https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/"]}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    min_text_chars: 80
+    min_delay_seconds: 1.0
+    registers:
+      - parliamentary
+      - spoken_formal
+    domains:
+      - politics
+      - public_administration
+      - law
+    adapter:
+      name: assnat_journal_debats
+      seed_urls:
+        - https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/
+
   - source_id: donnees_quebec_ckan_textual
-    name: Données Québec CKAN text metadata
+    name: Données Québec CKAN metadata
     source_type: ckan_api
     acquisition_status: active
     license_status: open_compatible
-    commercial_use: allowed
+    commercial_use: allowed_if_package_license_allows
     allowed_for_training: true
-    adapter: {name: donnees_quebec_ckan, base_url: "https://www.donneesquebec.ca/recherche/api/3/action", query: "texte OR description"}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    min_text_chars: 120
+    registers:
+      - administrative
+    domains:
+      - public_administration
+    adapter:
+      name: donnees_quebec_ckan
+      base_url: https://www.donneesquebec.ca/recherche/api/3/action
+      query_terms:
+        - francais
+        - services
+        - municipal
+        - quebec
+      rows: 100
+
   - source_id: banq_rights_cleared_local
     name: BAnQ rights-cleared local
     source_type: local_permissioned_dump
@@ -25,7 +58,14 @@ sources:
     license_status: permission_required
     commercial_use: permission_required
     allowed_for_training: false
-    adapter: {name: local_text_bundle, local_globs: ["data/permissioned/banq/**/*.txt"]}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    adapter:
+      name: local_text_bundle
+      local_globs:
+        - data/permissioned/banq/**/*.txt
+
   - source_id: alloprof_permission_required
     name: Alloprof permission required
     source_type: permission_required
@@ -33,7 +73,12 @@ sources:
     license_status: permission_required
     commercial_use: permission_required
     allowed_for_training: false
-    adapter: {name: permissioned_html_dump}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    adapter:
+      name: permissioned_html_dump
+
   - source_id: oqlf_vitrine_reference_permission_required
     name: OQLF permission required
     source_type: permission_required
@@ -41,7 +86,12 @@ sources:
     license_status: permission_required
     commercial_use: permission_required
     allowed_for_training: false
-    adapter: {name: permissioned_html_dump}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    adapter:
+      name: permissioned_html_dump
+
   - source_id: fdlq_access_request
     name: FDLQ access request
     source_type: permission_required
@@ -49,7 +99,12 @@ sources:
     license_status: permission_required
     commercial_use: permission_required
     allowed_for_training: false
-    adapter: {name: restricted_corpus_request}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    adapter:
+      name: restricted_corpus_request
+
   - source_id: quebec_insurance_rag_corpora
     name: Quebec insurance RAG corpora
     source_type: github_dataset
@@ -57,7 +112,12 @@ sources:
     license_status: unclear
     commercial_use: unknown
     allowed_for_training: false
-    adapter: {name: github_json_or_text_dataset}
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    adapter:
+      name: github_json_or_text_dataset
+
   - source_id: qfrcola_holdout
     name: QFrCoLA holdout
     source_type: evaluation_holdout
@@ -65,7 +125,12 @@ sources:
     license_status: holdout_only
     commercial_use: prohibited
     allowed_for_training: false
-    adapter: {name: holdout_registry}
+    allowed_for_evaluation: false
+    holdout_only: true
+    pii_risk: low
+    adapter:
+      name: holdout_registry
+
   - source_id: qfrblimp_holdout
     name: QFrBLiMP holdout
     source_type: evaluation_holdout
@@ -73,7 +138,12 @@ sources:
     license_status: holdout_only
     commercial_use: prohibited
     allowed_for_training: false
-    adapter: {name: holdout_registry}
+    allowed_for_evaluation: false
+    holdout_only: true
+    pii_risk: low
+    adapter:
+      name: holdout_registry
+
   - source_id: qfrcore_qfrcort_holdout
     name: QFrCoRE/QFrCoRT holdout
     source_type: evaluation_holdout
@@ -81,7 +151,12 @@ sources:
     license_status: holdout_only
     commercial_use: prohibited
     allowed_for_training: false
-    adapter: {name: holdout_registry}
+    allowed_for_evaluation: false
+    holdout_only: true
+    pii_risk: low
+    adapter:
+      name: holdout_registry
+
   - source_id: cole_holdout
     name: COLE holdout
     source_type: evaluation_holdout
@@ -89,4 +164,8 @@ sources:
     license_status: holdout_only
     commercial_use: prohibited
     allowed_for_training: false
-    adapter: {name: holdout_registry}
+    allowed_for_evaluation: false
+    holdout_only: true
+    pii_risk: low
+    adapter:
+      name: holdout_registry

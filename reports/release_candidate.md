@@ -9,8 +9,6 @@
   - Artifacts: ['manifests/modern_corpus_acquisition_manifest.template.yaml']
 - modern_corpus_acquisition_dry_run: PASS
   - Artifacts: ['reports/modern_corpus/dry_run_report.json']
-- corpus_readiness_audit: PASS
-  - Artifacts: ['reports/corpus_readiness/report.json']
 - corpus_source_validation: PASS
 - corpus_ingestion: PASS
   - Artifacts: ['reports/corpus_ingestion/harvest.jsonl', 'reports/corpus_ingestion/report.json']
@@ -18,6 +16,8 @@
   - Artifacts: ['manifests/curation_policy_manifest.template.yaml']
 - corpus_curation: PASS
   - Artifacts: ['reports/corpus_curation/accepted.jsonl', 'reports/corpus_curation/review_required.jsonl', 'reports/corpus_curation/quarantine.jsonl', 'reports/corpus_curation/rejected.jsonl', 'reports/corpus_curation/report.json']
+- corpus_readiness_audit: PASS
+  - Artifacts: ['reports/corpus_readiness/report.json']
 - split_policy_validation: PASS
   - Artifacts: ['manifests/split_policy_manifest.template.yaml']
 - curated_corpus_split: PASS

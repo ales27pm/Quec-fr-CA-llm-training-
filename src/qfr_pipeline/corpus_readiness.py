@@ -30,8 +30,11 @@ def _build_report(input_jsonl: Path, rows: list[dict]) -> dict:
     estimated_tokens = int(max(chars / 4, words * 1.35))
 
     source_balance = Counter(str(r.get("source_id", "unknown")) for r in rows)
+    acquisition_source_type_summary = Counter(str(r.get("source_type", "unknown")) for r in rows)
     domain_balance = Counter(str(r.get("domain", "unknown")) for r in rows)
     register_balance = Counter(str(r.get("register", "unknown")) for r in rows)
+    license_status_summary = Counter(str(r.get("license_status", "unknown")) for r in rows)
+    commercial_use_summary = Counter(str(r.get("commercial_use", "unknown")) for r in rows)
     max_single_source_share = (max(source_balance.values()) / records_total) if records_total else 0.0
 
     exact_hashes = [r.get("text_sha256") or r.get("text", "") for r in rows]
@@ -45,6 +48,20 @@ def _build_report(input_jsonl: Path, rows: list[dict]) -> dict:
 
     legal_ok = sum(1 for r in rows if r.get("license_status") in {"open_compatible", "noncommercial_only"})
     commercial_ok = sum(1 for r in rows if r.get("commercial_use") == "allowed")
+    noncommercial_count = sum(1 for r in rows if r.get("license_status") == "noncommercial_only")
+    admin_like_domains = {
+        "public_administration",
+        "public_data",
+        "administrative",
+        "politics",
+        "law",
+        "education",
+    }
+    institutional_count = sum(1 for r in rows if str(r.get("domain", "")).casefold() in admin_like_domains)
+    modern_source_types = {"ckan_api", "official_html", "local_permissioned_dump", "permission_required"}
+    modern_source_count = sum(
+        1 for r in rows if str(r.get("source_type", "")).casefold() in modern_source_types
+    )
 
     level = "insufficient"
     if estimated_tokens >= 500_000:
@@ -72,15 +89,43 @@ def _build_report(input_jsonl: Path, rows: list[dict]) -> dict:
     if level == "production_lora_candidate" and blockers:
         level = "production_blocked"
 
+    recommendations = [
+        "Increase modern (2020-2026) institutional, educational, and instruction/dialogue coverage.",
+        "Reduce source concentration and improve register/domain diversity for production readiness.",
+    ]
+    literary_share = (domain_balance.get("literary", 0) / records_total) if records_total else 0.0
+    admin_share = (institutional_count / records_total) if records_total else 0.0
+    if literary_share >= 0.5:
+        recommendations.append(
+            "Corpus is mostly literary; add modern administrative, educational, and dialogue sources."
+        )
+    if admin_share >= 0.6:
+        recommendations.append(
+            "Corpus is mostly administrative; add conversational and instruction-turn examples."
+        )
+    if records_total and (noncommercial_count / records_total) >= 0.4:
+        recommendations.append(
+            "High noncommercial share detected; production release requires commercial-safe permissioned sources."
+        )
+    if records_total and (instruction_like_count / records_total) < 0.1:
+        recommendations.append(
+            "Instruction-like ratio is low; generate or collect instruction-format examples."
+        )
+
     return {
         "ok": True,
         "input": repo_relative_path(input_jsonl),
         "records_total": records_total,
         "estimated_tokens": estimated_tokens,
         "source_count": len(source_balance),
+        "acquisition_source_type_summary": dict(sorted(acquisition_source_type_summary.items())),
         "domain_balance": dict(sorted(domain_balance.items())),
         "register_balance": dict(sorted(register_balance.items())),
         "source_balance": dict(sorted(source_balance.items())),
+        "license_status_summary": dict(sorted(license_status_summary.items())),
+        "commercial_use_summary": dict(sorted(commercial_use_summary.items())),
+        "modern_source_ratio": (modern_source_count / records_total) if records_total else 0.0,
+        "institutional_source_ratio": (institutional_count / records_total) if records_total else 0.0,
         "max_single_source_share": round(max_single_source_share, 6),
         "instruction_like_count": instruction_like_count,
         "instruction_like_ratio": (instruction_like_count / records_total) if records_total else 0.0,
@@ -93,10 +138,7 @@ def _build_report(input_jsonl: Path, rows: list[dict]) -> dict:
         "duplicates_normalized": duplicates_normalized,
         "readiness_level": level,
         "blocking_reasons": sorted(blockers),
-        "recommendations": [
-            "Increase modern (2020-2026) institutional, educational, and instruction/dialogue coverage.",
-            "Reduce source concentration and improve register/domain diversity for production readiness.",
-        ],
+        "recommendations": recommendations,
     }
 
 
@@ -109,9 +151,14 @@ def audit_corpus_readiness(input_jsonl: Path, out_report: Path, policy_manifest:
             "records_total": 0,
             "estimated_tokens": 0,
             "source_count": 0,
+            "acquisition_source_type_summary": {},
             "domain_balance": {},
             "register_balance": {},
             "source_balance": {},
+            "license_status_summary": {},
+            "commercial_use_summary": {},
+            "modern_source_ratio": 0.0,
+            "institutional_source_ratio": 0.0,
             "max_single_source_share": 0.0,
             "instruction_like_count": 0,
             "instruction_like_ratio": 0.0,

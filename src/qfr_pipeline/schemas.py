@@ -657,11 +657,13 @@ class TrainingExportManifest(BaseModel):
 class ModernCorpusAdapterConfig(BaseModel):
     name: str
     base_url: str | None = None
-    query: str = "textuel"
-    rows: int = 20
+    query: str = ""
+    query_terms: list[str] = Field(default_factory=list)
+    rows: int = 100
     seed_urls: list[str] = Field(default_factory=list)
     local_globs: list[str] = Field(default_factory=list)
     raw_file_urls: list[str] = Field(default_factory=list)
+    fixture_response_path: str | None = None
 
     @field_validator("base_url")
     @classmethod
@@ -687,10 +689,23 @@ class ModernCorpusAdapterConfig(BaseModel):
             raise ValueError("rows must be >= 0")
         return value
 
+    @field_validator("fixture_response_path")
+    @classmethod
+    def valid_fixture_response_path(cls, value: str | None) -> str | None:
+        if value is None:
+            return value
+        if not value.strip():
+            raise ValueError("fixture_response_path must be non-empty when provided")
+        return value
+
     @model_validator(mode="after")
     def validate_adapter_fields(self):
         if self.name == "donnees_quebec_ckan" and not self.base_url:
             raise ValueError("adapter.base_url is required for donnees_quebec_ckan")
+        if self.name == "donnees_quebec_ckan" and (not self.query.strip()) and (
+            not any(term.strip() for term in self.query_terms)
+        ):
+            raise ValueError("donnees_quebec_ckan requires adapter.query or adapter.query_terms")
         if self.name == "assnat_journal_debats" and not self.seed_urls:
             raise ValueError("adapter.seed_urls must be non-empty for assnat_journal_debats")
         if self.name == "local_text_bundle" and not self.local_globs:
@@ -703,7 +718,7 @@ class ModernCorpusSource(BaseModel):
     source_type: Literal["official_html", "ckan_api", "github_dataset", "huggingface_dataset", "local_permissioned_dump", "catalog_only", "evaluation_holdout", "permission_required"]
     acquisition_status: Literal["active", "catalog_only", "blocked_license", "permission_required", "holdout_only", "local_only"]
     license_status: Literal["open_compatible", "noncommercial_only", "permission_required", "unclear", "blocked", "holdout_only"]
-    commercial_use: Literal["allowed", "prohibited", "permission_required", "unknown"]
+    commercial_use: Literal["allowed", "prohibited", "permission_required", "unknown", "allowed_if_package_license_allows"]
     allowed_for_training: bool
     allowed_for_evaluation: bool = True
     holdout_only: bool = False
@@ -714,8 +729,11 @@ class ModernCorpusSource(BaseModel):
     date_max: str | None = None
     min_delay_seconds: float = 0.0
     max_documents: int | None = None
+    min_text_chars: int = 40
     registers: list[str] = Field(default_factory=list)
     domains: list[str] = Field(default_factory=list)
+    notes: str = ""
+    requires_review: bool = False
     adapter: ModernCorpusAdapterConfig
 
     @model_validator(mode="after")
@@ -726,6 +744,8 @@ class ModernCorpusSource(BaseModel):
             raise ValueError("license_url must be HTTP/HTTPS")
         if self.max_documents is not None and self.max_documents < 0:
             raise ValueError("max_documents must be >= 0")
+        if self.min_text_chars < 0:
+            raise ValueError("min_text_chars must be >= 0")
         if self.acquisition_status == "active" and self.license_status in {"blocked", "unclear"}:
             raise ValueError("active acquisition cannot have blocked/unknown license")
         if self.source_type == "evaluation_holdout" or self.acquisition_status == "holdout_only":
@@ -771,7 +791,7 @@ class ModernCorpusAcquisitionManifest(BaseModel):
                 raise ValueError("permission_required acquisition_status requires source_type=permission_required")
             if source.source_type == "permission_required" and source.acquisition_status == "active":
                 raise ValueError("permission_required source cannot be active without permission config")
-            if source.source_id == "donnees_quebec_ckan_textual":
+            if source.adapter.name == "donnees_quebec_ckan":
                 if source.source_type != "ckan_api" or source.acquisition_status != "active":
-                    raise ValueError("donnees_quebec_ckan_textual must be active ckan_api")
+                    raise ValueError("donnees_quebec_ckan sources must be active ckan_api")
         return self

@@ -121,10 +121,19 @@ bash scripts/run_local_validation.sh
 `qfr` is installed by the editable package install. `tools/update_agents.py` imports PyYAML, so dependencies must be installed first. No top-level `qfr` wrapper is intentionally provided.
 
 
-## Modern corpus acquisition (T23)
+## Modern corpus acquisition (T23/T24)
 - `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition_manifest.template.yaml`
+- `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition.donnees_quebec.template.yaml`
+- `qfr validate-modern-corpus --manifest manifests/modern_corpus_acquisition.assnat_seed.template.yaml`
 - `qfr acquire-modern-corpus --manifest manifests/modern_corpus_acquisition_manifest.template.yaml --out reports/modern_corpus/harvest.jsonl --report reports/modern_corpus/dry_run_report.json --max-documents 0`
-- `qfr audit-corpus-readiness --input reports/modern_corpus/harvest.jsonl --out reports/corpus_readiness/report.json`
+- `qfr acquire-modern-corpus --manifest manifests/modern_corpus_acquisition.donnees_quebec.template.yaml --out reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl --report reports/modern_corpus/donnees_quebec_fixture_report.json --max-documents 25`
+- `qfr acquire-modern-corpus --manifest manifests/modern_corpus_acquisition.assnat_seed.template.yaml --out reports/modern_corpus/assnat_fixture_harvest.jsonl --report reports/modern_corpus/assnat_fixture_report.json --include-noncommercial --max-documents 10`
+- `qfr audit-corpus-readiness --input reports/modern_corpus/donnees_quebec_fixture_harvest.jsonl --out reports/corpus_readiness/modern_fixture_report.json`
+
+`manifests/modern_corpus_acquisition.donnees_quebec.template.yaml` runs deterministic fixture-mode CKAN extraction in CI/local validation and only extracts dataset/resource metadata text (no arbitrary resource file download in T24).
+
+`manifests/modern_corpus_acquisition.assnat_seed.template.yaml` is explicit-seed only (no crawling). Assemblée nationale records are noncommercial unless explicit commercial permission is obtained.
+
+Use `--fixture-mode` to hard-require adapter fixtures for networked adapters, `--timeout` to tune request limits, and `--fail-on-empty` when empty harvests should fail the command.
 
 Holdouts (`QFrCoLA`, `QFrBLiMP`, `QFrCoRE/QFrCoRT`, `COLE`) are evaluation-only by default and must not be used for training.
-Current fixture-scale corpus is not production-grade for LoRA release (insufficient scale/diversity and instruction-turn coverage).
