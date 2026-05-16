@@ -120,12 +120,379 @@
         "documentation": {}
     },
     {
-        "label": "os",
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.error",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.error",
+        "description": "urllib.error",
+        "detail": "urllib.error",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
         "documentation": {}
     },
     {
@@ -289,228 +656,99 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Iterable",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
+        "detail": "typing",
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "typer",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "typer",
-        "description": "typer",
-        "detail": "typer",
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -520,6 +758,50 @@
         "importPath": "yaml",
         "description": "yaml",
         "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "typer",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "typer",
+        "description": "typer",
+        "detail": "typer",
         "documentation": {}
     },
     {
@@ -1684,15 +1966,6 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "unicodedata",
         "kind": 6,
         "isExtraImport": true,
@@ -1886,15 +2159,6 @@
         "documentation": {}
     },
     {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
-        "documentation": {}
-    },
-    {
         "label": "math",
         "kind": 6,
         "isExtraImport": true,
@@ -1913,70 +2177,6 @@
         "documentation": {}
     },
     {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Counter",
         "importPath": "collections",
         "description": "collections",
@@ -1990,15 +2190,6 @@
         "description": "collections",
         "isExtraImport": true,
         "detail": "collections",
-        "documentation": {}
-    },
-    {
-        "label": "hashlib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "hashlib",
-        "description": "hashlib",
-        "detail": "hashlib",
         "documentation": {}
     },
     {
@@ -2198,24 +2389,6 @@
         "documentation": {}
     },
     {
-        "label": "subprocess",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "subprocess",
-        "description": "subprocess",
-        "detail": "subprocess",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
-        "documentation": {}
-    },
-    {
         "label": "importlib.util",
         "kind": 6,
         "isExtraImport": true,
@@ -2225,30 +2398,435 @@
         "documentation": {}
     },
     {
-        "label": "argparse",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "argparse",
-        "description": "argparse",
-        "detail": "argparse",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "datetime",
-        "description": "datetime",
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "shutil",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "shutil",
         "description": "shutil",
         "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.export_qfr_dolphin3_unsloth_gguf",
+        "description": "scripts.export_qfr_dolphin3_unsloth_gguf",
+        "peekOfCode": "def main() -> int:\n    parser = argparse.ArgumentParser(description=\"Export a Québec-French Dolphin3 LoRA to merged 16-bit and/or GGUF using Unsloth.\")\n    parser.add_argument(\"--base-model\", default=\"dphn/Dolphin3.0-Qwen2.5-3b\")\n    parser.add_argument(\"--adapter\", type=Path, required=True)\n    parser.add_argument(\"--merged-16bit-dir\", type=Path, default=Path(\"models/qfr-dolphin3-qwen25-3b-merged\"))\n    parser.add_argument(\"--gguf-dir\", type=Path, default=Path(\"models/qfr-dolphin3-qwen25-3b-gguf\"))\n    parser.add_argument(\"--quantization\", default=\"q4_k_m\", help=\"Recommended for RTX 2070. Alternatives: q5_k_m, q8_0.\")\n    parser.add_argument(\"--max-seq-length\", type=int, default=1024)\n    parser.add_argument(\"--load-in-4bit\", action=\"store_true\", default=True)\n    parser.add_argument(\"--no-4bit\", action=\"store_false\", dest=\"load_in_4bit\")",
+        "detail": "scripts.export_qfr_dolphin3_unsloth_gguf",
+        "documentation": {}
+    },
+    {
+        "label": "SourceDecision",
+        "kind": 6,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "class SourceDecision:\n    allowed: bool\n    reason: str\ndef repo_path(path: str | Path) -> Path:\n    p = Path(path)\n    if p.is_absolute():\n        raise ValueError(f\"Path must be repo-relative: {path}\")\n    resolved = (ROOT / p).resolve()\n    root = ROOT.resolve()\n    if resolved != root and root not in resolved.parents:",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "repo_path",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def repo_path(path: str | Path) -> Path:\n    p = Path(path)\n    if p.is_absolute():\n        raise ValueError(f\"Path must be repo-relative: {path}\")\n    resolved = (ROOT / p).resolve()\n    root = ROOT.resolve()\n    if resolved != root and root not in resolved.parents:\n        raise ValueError(f\"Path escapes repository root: {path}\")\n    return resolved\ndef sha256_text(text: str) -> str:",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "sha256_text",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef strip_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)\n    end = END_RE.search(text)\n    if start and end and start.end() < end.start():\n        return text[start.end() : end.start()].strip() + \"\\n\"\n    return text\ndef download_text(url: str, *, timeout: int) -> str:\n    req = urllib.request.Request(",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "strip_gutenberg_boilerplate",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def strip_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)\n    end = END_RE.search(text)\n    if start and end and start.end() < end.start():\n        return text[start.end() : end.start()].strip() + \"\\n\"\n    return text\ndef download_text(url: str, *, timeout: int) -> str:\n    req = urllib.request.Request(\n        url,\n        headers={\"User-Agent\": \"qfr-external-dataset-materializer/1.0\"},",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "download_text",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def download_text(url: str, *, timeout: int) -> str:\n    req = urllib.request.Request(\n        url,\n        headers={\"User-Agent\": \"qfr-external-dataset-materializer/1.0\"},\n    )\n    with urllib.request.urlopen(req, timeout=timeout) as response:\n        payload = response.read()\n    return payload.decode(\"utf-8\", errors=\"replace\")\ndef normalize_ws(text: str) -> str:\n    return \" \".join(str(text).replace(\"\\u00a0\", \" \").split())",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "normalize_ws",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def normalize_ws(text: str) -> str:\n    return \" \".join(str(text).replace(\"\\u00a0\", \" \").split())\ndef paragraph_records(text: str, *, min_chars: int) -> list[str]:\n    chunks = [normalize_ws(p) for p in re.split(r\"\\n\\s*\\n+\", text)]\n    return [p for p in chunks if len(p) >= min_chars]\ndef recursive_strings(value: Any) -> list[str]:\n    if value is None:\n        return []\n    if isinstance(value, str):\n        return [value]",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "paragraph_records",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def paragraph_records(text: str, *, min_chars: int) -> list[str]:\n    chunks = [normalize_ws(p) for p in re.split(r\"\\n\\s*\\n+\", text)]\n    return [p for p in chunks if len(p) >= min_chars]\ndef recursive_strings(value: Any) -> list[str]:\n    if value is None:\n        return []\n    if isinstance(value, str):\n        return [value]\n    if isinstance(value, (int, float, bool)):\n        return []",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "recursive_strings",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def recursive_strings(value: Any) -> list[str]:\n    if value is None:\n        return []\n    if isinstance(value, str):\n        return [value]\n    if isinstance(value, (int, float, bool)):\n        return []\n    if isinstance(value, dict):\n        out: list[str] = []\n        for v in value.values():",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "extract_text",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def extract_text(row: dict[str, Any], fields: list[str], *, min_chars: int) -> str | None:\n    values: list[str] = []\n    if fields:\n        for field in fields:\n            value = row.get(field)\n            if isinstance(value, str):\n                values.append(value)\n            elif isinstance(value, (list, dict)):\n                values.extend(recursive_strings(value))\n    else:",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "jsonl_record",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def jsonl_record(source: dict[str, Any], text: str, index: int, *, split: str | None = None) -> dict[str, Any]:\n    return {\n        \"record_id\": f\"{source['source_id']}:{index:08d}\",\n        \"source_id\": source[\"source_id\"],\n        \"source_name\": source.get(\"name\"),\n        \"text\": text,\n        \"text_sha256\": sha256_text(text),\n        \"language\": \"fr-CA\",\n        \"dialect_region\": source.get(\"dialect_region\", \"unknown\"),\n        \"register\": source.get(\"register\", \"unknown\"),",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "source_decision",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def source_decision(\n    source: dict[str, Any],\n    *,\n    mode: str,\n    include_review_required: bool,\n    include_unreviewed_license: bool,\n) -> SourceDecision:\n    adapter = source.get(\"adapter\")\n    modality = source.get(\"modality\", \"text\")\n    if adapter == \"catalog_only\":",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "atomic_write_jsonl",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def atomic_write_jsonl(path: Path, records: Iterable[dict[str, Any]]) -> int:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    tmp = path.with_suffix(path.suffix + \".tmp\")\n    count = 0\n    with tmp.open(\"w\", encoding=\"utf-8\") as handle:\n        for record in records:\n            handle.write(json.dumps(record, ensure_ascii=False, sort_keys=True) + \"\\n\")\n            count += 1\n    tmp.replace(path)\n    return count",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "materialize_remote_text",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def materialize_remote_text(source: dict[str, Any], *, min_chars: int, timeout: int, keep_boilerplate: bool, max_records: int | None) -> dict[str, Any]:\n    url = source.get(\"url\") or source.get(\"download_url\")\n    if not url:\n        raise ValueError(\"remote_text source missing url/download_url\")\n    text = download_text(url, timeout=timeout)\n    if \"gutenberg.org\" in url and not keep_boilerplate:\n        text = strip_gutenberg_boilerplate(text)\n    paragraphs = paragraph_records(text, min_chars=min_chars)\n    if max_records is not None:\n        paragraphs = paragraphs[:max_records]",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "materialize_huggingface",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def materialize_huggingface(source: dict[str, Any], *, min_chars: int, max_records: int | None) -> dict[str, Any]:\n    try:\n        from datasets import get_dataset_config_names, load_dataset\n    except Exception as exc:  # pragma: no cover - depends on optional installation\n        raise RuntimeError(\"Install optional requirements first: pip install -r requirements/dataset-adapters.txt\") from exc\n    dataset_id = source.get(\"hf_dataset_id\")\n    if not dataset_id:\n        raise ValueError(\"huggingface_dataset source missing hf_dataset_id\")\n    config = source.get(\"config\")\n    split = source.get(\"split\") or \"train\"",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "load_catalog",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def load_catalog(path: Path) -> dict[str, Any]:\n    doc = yaml.safe_load(path.read_text(encoding=\"utf-8\"))\n    if not isinstance(doc, dict) or doc.get(\"kind\") != \"external_dataset_catalog\":\n        raise ValueError(\"Catalog must be kind: external_dataset_catalog\")\n    sources = doc.get(\"sources\")\n    if not isinstance(sources, list) or not sources:\n        raise ValueError(\"Catalog must include a non-empty sources list\")\n    ids = [s.get(\"source_id\") for s in sources if isinstance(s, dict)]\n    if len(ids) != len(set(ids)):\n        raise ValueError(\"source_id entries must be unique\")",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "def main() -> int:\n    parser = argparse.ArgumentParser(description=\"Materialize policy-approved external datasets into normalized JSONL.\")\n    parser.add_argument(\"--catalog\", type=Path, default=ROOT / \"project/external_dataset_catalog.yaml\")\n    parser.add_argument(\"--report\", type=Path, default=DEFAULT_REPORT)\n    parser.add_argument(\"--mode\", choices=[\"training\", \"evaluation\", \"all-safe\"], default=\"all-safe\")\n    parser.add_argument(\"--source-id\", action=\"append\", default=[], help=\"Restrict to one or more source IDs.\")\n    parser.add_argument(\"--include-review-required\", action=\"store_true\")\n    parser.add_argument(\"--include-unreviewed-license\", action=\"store_true\")\n    parser.add_argument(\"--max-records\", type=int, default=None)\n    parser.add_argument(\"--min-chars\", type=int, default=80)",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTART_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nDEFAULT_REPORT = ROOT / \"reports\" / \"external_datasets\" / \"materialization_report.json\"\n@dataclass(frozen=True)\nclass SourceDecision:\n    allowed: bool\n    reason: str\ndef repo_path(path: str | Path) -> Path:\n    p = Path(path)",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "START_RE",
+        "kind": 5,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "START_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nDEFAULT_REPORT = ROOT / \"reports\" / \"external_datasets\" / \"materialization_report.json\"\n@dataclass(frozen=True)\nclass SourceDecision:\n    allowed: bool\n    reason: str\ndef repo_path(path: str | Path) -> Path:\n    p = Path(path)\n    if p.is_absolute():",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "END_RE",
+        "kind": 5,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "END_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nDEFAULT_REPORT = ROOT / \"reports\" / \"external_datasets\" / \"materialization_report.json\"\n@dataclass(frozen=True)\nclass SourceDecision:\n    allowed: bool\n    reason: str\ndef repo_path(path: str | Path) -> Path:\n    p = Path(path)\n    if p.is_absolute():\n        raise ValueError(f\"Path must be repo-relative: {path}\")",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_REPORT",
+        "kind": 5,
+        "importPath": "scripts.materialize_external_datasets",
+        "description": "scripts.materialize_external_datasets",
+        "peekOfCode": "DEFAULT_REPORT = ROOT / \"reports\" / \"external_datasets\" / \"materialization_report.json\"\n@dataclass(frozen=True)\nclass SourceDecision:\n    allowed: bool\n    reason: str\ndef repo_path(path: str | Path) -> Path:\n    p = Path(path)\n    if p.is_absolute():\n        raise ValueError(f\"Path must be repo-relative: {path}\")\n    resolved = (ROOT / p).resolve()",
+        "detail": "scripts.materialize_external_datasets",
+        "documentation": {}
+    },
+    {
+        "label": "load_defaults",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def load_defaults():\n    if DEFAULTS_PATH.exists():\n        data = json.loads(DEFAULTS_PATH.read_text(encoding=\"utf-8\"))\n        merged = dict(DEFAULTS)\n        merged.update(data)\n        return merged\n    return dict(DEFAULTS)\ndef save_defaults(defaults):\n    DEFAULTS_PATH.write_text(json.dumps(defaults, indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\ndef truthy(value) -> bool:",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "save_defaults",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def save_defaults(defaults):\n    DEFAULTS_PATH.write_text(json.dumps(defaults, indent=2, ensure_ascii=False) + \"\\n\", encoding=\"utf-8\")\ndef truthy(value) -> bool:\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"y\", \"on\"}\ndef line_count(path: Path):\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    width = 28",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "truthy",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def truthy(value) -> bool:\n    return str(value).strip().lower() in {\"1\", \"true\", \"yes\", \"y\", \"on\"}\ndef line_count(path: Path):\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    width = 28\n    pos = int(elapsed * 8) % width\n    return \"[\" + \"\".join(\"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)) + \"]\"",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "line_count",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def line_count(path: Path):\n    if not path.exists() or not path.is_file():\n        return None\n    return sum(1 for _ in path.open(\"r\", encoding=\"utf-8\", errors=\"ignore\"))\ndef meter_bar(elapsed: float) -> str:\n    width = 28\n    pos = int(elapsed * 8) % width\n    return \"[\" + \"\".join(\"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)) + \"]\"\ndef run(name, cmd, log_path):\n    print(f\"\\n==> {name}\")",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "meter_bar",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def meter_bar(elapsed: float) -> str:\n    width = 28\n    pos = int(elapsed * 8) % width\n    return \"[\" + \"\".join(\"█\" if i == pos else \"▓\" if i < pos else \"░\" for i in range(width)) + \"]\"\ndef run(name, cmd, log_path):\n    print(f\"\\n==> {name}\")\n    print(\"$ \" + \" \".join(cmd))\n    start = time.monotonic()\n    last_tick = start\n    spinner = \"|/-\\\\\"",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "run",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def run(name, cmd, log_path):\n    print(f\"\\n==> {name}\")\n    print(\"$ \" + \" \".join(cmd))\n    start = time.monotonic()\n    last_tick = start\n    spinner = \"|/-\\\\\"\n    spin = 0\n    with log_path.open(\"a\", encoding=\"utf-8\") as log:\n        log.write(f\"\\n===== {name} =====\\n\")\n        log.write(\"START \" + datetime.now().isoformat(timespec=\"seconds\") + \"\\n\")",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "external_materializer_command",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def external_materializer_command(defaults):\n    p = defaults[\"python\"]\n    cmd = [\n        p,\n        \"scripts/materialize_external_datasets.py\",\n        \"--catalog\",\n        defaults[\"external_catalog\"],\n        \"--report\",\n        defaults[\"external_report\"],\n        \"--mode\",",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "commands",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def commands(defaults):\n    p = defaults[\"python\"]\n    return {\n        \"1\": (\"Bootstrap\", [[\"bash\", \"scripts/bootstrap_dev_env.sh\"]]),\n        \"2\": (\"Validate\", [[p, \"tools/update_agents.py\", \"--ensure-nested\"], [p, \"tools/update_agents.py\", \"--validate\"], [\"qfr\", \"validate\"]]),\n        \"3\": (\"Download Gutenberg real corpus\", [[p, \"tools/download_real_corpus_sources.py\", \"--manifest\", defaults[\"download_manifest\"], \"--out-manifest\", defaults[\"downloaded_manifest\"], \"--report\", defaults[\"download_report\"], \"--overwrite\"]]),\n        \"4\": (\"Materialize external dataset catalog\", [external_materializer_command(defaults)]),\n        \"5\": (\"Ingest real corpus\", [[\"qfr\", \"validate-corpus-sources\", \"--manifest\", defaults[\"downloaded_manifest\"]], [\"qfr\", \"ingest-corpus-sources\", \"--manifest\", defaults[\"downloaded_manifest\"], \"--out\", defaults[\"real_harvest\"], \"--report\", defaults[\"real_ingestion_report\"], \"--min-chars\", defaults[\"real_min_chars\"]]]),\n        \"6\": (\"Curate real corpus\", [[\"qfr\", \"curate-corpus\", \"--input\", defaults[\"real_harvest\"], \"--policy\", defaults[\"curation_policy\"], \"--out-dir\", defaults[\"real_curation_dir\"]]]),\n        \"7\": (\"Split accepted corpus\", [[\"qfr\", \"validate-split-policy\", \"--policy\", defaults[\"split_policy\"]], [\"qfr\", \"split-curated-corpus\", \"--input\", defaults[\"split_input\"], \"--policy\", defaults[\"split_policy\"], \"--out-dir\", defaults[\"split_out_dir\"]]]),",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "show_status",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def show_status(defaults):\n    print(\"\\nArtifact status\")\n    keys = [\"real_harvest\", \"real_ingestion_report\", \"external_report\", \"real_curation_dir\", \"split_out_dir\", \"training_export_dir\", \"release_candidate_json\", \"dolphin_output_dir\"]\n    for key in keys:\n        path = ROOT / str(defaults[key])\n        extra = \"\"\n        if path.is_file() and path.suffix == \".jsonl\":\n            extra = f\" lines={line_count(path)}\"\n        if path.is_dir():\n            for child in [\"accepted.jsonl\", \"train.jsonl\", \"test.jsonl\"]:",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "edit_defaults",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def edit_defaults(defaults):\n    keys = sorted(defaults)\n    while True:\n        for i, key in enumerate(keys, 1):\n            print(f\"{i:2}. {key} = {defaults[key]}\")\n        choice = input(\"Edit number, s=save, Enter=back: \").strip()\n        if choice == \"\":\n            return\n        if choice.lower() == \"s\":\n            save_defaults(defaults)",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "run_group",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def run_group(label, group, log_path):\n    print(f\"\\n### {label}\")\n    results = []\n    for name, cmd in group:\n        result = run(name, cmd, log_path)\n        results.append(result)\n        if result[\"rc\"] != 0:\n            break\n    return results\ndef main():",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser(description=\"Interactive QFR all-in-one console.\")\n    parser.add_argument(\"--full\", action=\"store_true\")\n    parser.add_argument(\"--full-with-smoke-training\", action=\"store_true\")\n    parser.add_argument(\"--status\", action=\"store_true\")\n    args = parser.parse_args()\n    defaults = load_defaults()\n    LOG_DIR.mkdir(parents=True, exist_ok=True)\n    log_path = LOG_DIR / f\"qfr_aio_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log\"\n    all_results = []",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nDEFAULTS_PATH = ROOT / \".qfr_aio_defaults.json\"\nLOG_DIR = ROOT / \"reports\" / \"aio\"\nASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULTS_PATH",
+        "kind": 5,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "DEFAULTS_PATH = ROOT / \".qfr_aio_defaults.json\"\nLOG_DIR = ROOT / \"reports\" / \"aio\"\nASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "LOG_DIR",
+        "kind": 5,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "LOG_DIR = ROOT / \"reports\" / \"aio\"\nASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"\nDEFAULTS = {",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "ASCII",
+        "kind": 5,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "ASCII = r\"\"\"\n   ____  ______ ____        ___     ___   ____\n  / __ \\/ ____// __ \\      /   |   /  /  / __ \\\n / / / / /_   / /_/ /_____/ /| |  / /   / / / /\n/ /_/ / __/  / _, _/_____/ ___ | / /   / /_/ /\n\\___\\_\\_/    /_/ |_|     /_/  |_|/_/    \\____/\n     Québec French AI Sovereignty Pipeline Console\n\"\"\"\nDEFAULTS = {\n    \"python\": \"python3\",",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULTS",
+        "kind": 5,
+        "importPath": "scripts.qfr_aio",
+        "description": "scripts.qfr_aio",
+        "peekOfCode": "DEFAULTS = {\n    \"python\": \"python3\",\n    \"download_manifest\": \"manifests/corpus_source_manifest.real_downloads.yaml\",\n    \"downloaded_manifest\": \"manifests/corpus_source_manifest.real_downloaded.local.yaml\",\n    \"download_report\": \"reports/corpus_ingestion/downloads.real.json\",\n    \"external_catalog\": \"project/external_dataset_catalog.yaml\",\n    \"external_report\": \"reports/external_datasets/materialization_report.json\",\n    \"external_mode\": \"all-safe\",\n    \"external_min_chars\": \"80\",\n    \"external_max_records\": \"\",",
+        "detail": "scripts.qfr_aio",
+        "documentation": {}
+    },
+    {
+        "label": "read_jsonl",
+        "kind": 2,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "def read_jsonl(path: Path) -> list[dict[str, Any]]:\n    rows: list[dict[str, Any]] = []\n    if not path.exists():\n        raise FileNotFoundError(path)\n    with path.open(\"r\", encoding=\"utf-8\") as handle:\n        for line_no, line in enumerate(handle, start=1):\n            stripped = line.strip()\n            if not stripped:\n                continue\n            try:",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "accepted_rows",
+        "kind": 2,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "def accepted_rows(path: Path) -> list[dict[str, Any]]:\n    rows = read_jsonl(path)\n    accepted: list[dict[str, Any]] = []\n    for idx, row in enumerate(rows, start=1):\n        label = row.get(\"curation_label\")\n        if label != \"accepted\":\n            raise ValueError(f\"Forbidden non-accepted record in {path} at row {idx}: {label!r}\")\n        missing = [k for k in (\"text\", \"curation_score\", \"curation_reasons\", \"policy_id\") if k not in row]\n        if missing:\n            raise ValueError(f\"Missing required curation metadata in {path} at row {idx}: {missing}\")",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "fallback_qwen_chat",
+        "kind": 2,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "def fallback_qwen_chat(system: str, user: str, assistant: str) -> str:\n    return (\n        \"<|im_start|>system\\n\"\n        f\"{system}<|im_end|>\\n\"\n        \"<|im_start|>user\\n\"\n        f\"{user}<|im_end|>\\n\"\n        \"<|im_start|>assistant\\n\"\n        f\"{assistant}<|im_end|>\\n\"\n    )\ndef render_chat(tokenizer: Any, assistant_text: str, *, system_prompt: str, user_prompt: str) -> str:",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "render_chat",
+        "kind": 2,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "def render_chat(tokenizer: Any, assistant_text: str, *, system_prompt: str, user_prompt: str) -> str:\n    messages = [\n        {\"role\": \"system\", \"content\": system_prompt},\n        {\"role\": \"user\", \"content\": user_prompt},\n        {\"role\": \"assistant\", \"content\": assistant_text},\n    ]\n    try:\n        return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=False)\n    except Exception:\n        return fallback_qwen_chat(system_prompt, user_prompt, assistant_text)",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "rows_to_dataset",
+        "kind": 2,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "def rows_to_dataset(rows: list[dict[str, Any]], tokenizer: Any, *, format_mode: str, system_prompt: str, user_prompt: str):\n    from datasets import Dataset\n    records: list[dict[str, str]] = []\n    for row in rows:\n        text = str(row[\"text\"]).strip()\n        if format_mode == \"chat\":\n            rendered = render_chat(tokenizer, text, system_prompt=system_prompt, user_prompt=user_prompt)\n        elif format_mode == \"completion\":\n            rendered = text\n        else:",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "def main() -> int:\n    parser = argparse.ArgumentParser(description=\"Continue Dolphin3.0-Qwen2.5-3b with Unsloth QLoRA on accepted Québec-French data.\")\n    parser.add_argument(\"--base-model\", default=\"dphn/Dolphin3.0-Qwen2.5-3b\", help=\"Non-GGUF Dolphin safetensors checkpoint.\")\n    parser.add_argument(\"--train\", type=Path, default=Path(\"reports/curated_splits/train.jsonl\"))\n    parser.add_argument(\"--eval\", type=Path, default=Path(\"reports/curated_splits/dev.jsonl\"))\n    parser.add_argument(\"--output-dir\", type=Path, default=Path(\"models/qfr-dolphin3-qwen25-3b-lora\"))\n    parser.add_argument(\"--merged-16bit-dir\", type=Path, default=None, help=\"Optional: save merged 16-bit HF model here after training.\")\n    parser.add_argument(\"--gguf-dir\", type=Path, default=None, help=\"Optional: export GGUF directory directly through Unsloth after training.\")\n    parser.add_argument(\"--gguf-quantization\", default=\"q4_k_m\", help=\"Unsloth GGUF quantization method, e.g. q4_k_m, q5_k_m, q8_0.\")\n    parser.add_argument(\"--max-seq-length\", type=int, default=1024)",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "SYSTEM_PROMPT = (\n    \"Tu es un assistant IA québécois précis, utile et naturel. \"\n    \"Tu préserves le français québécois authentique, tu évites de neutraliser les marqueurs fr-CA, \"\n    \"et tu respectes les formes normatives lorsqu'elles sont pertinentes.\"\n)\nDEFAULT_USER_PROMPT = (\n    \"Rédige une réponse naturelle en français québécois en respectant le registre et le contenu attendu.\"\n)\nTARGET_MODULES = [\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\", \"gate_proj\", \"up_proj\", \"down_proj\"]\ndef read_jsonl(path: Path) -> list[dict[str, Any]]:",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_USER_PROMPT",
+        "kind": 5,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "DEFAULT_USER_PROMPT = (\n    \"Rédige une réponse naturelle en français québécois en respectant le registre et le contenu attendu.\"\n)\nTARGET_MODULES = [\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\", \"gate_proj\", \"up_proj\", \"down_proj\"]\ndef read_jsonl(path: Path) -> list[dict[str, Any]]:\n    rows: list[dict[str, Any]] = []\n    if not path.exists():\n        raise FileNotFoundError(path)\n    with path.open(\"r\", encoding=\"utf-8\") as handle:\n        for line_no, line in enumerate(handle, start=1):",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "documentation": {}
+    },
+    {
+        "label": "TARGET_MODULES",
+        "kind": 5,
+        "importPath": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "description": "scripts.train_qfr_dolphin3_unsloth_lora",
+        "peekOfCode": "TARGET_MODULES = [\"q_proj\", \"k_proj\", \"v_proj\", \"o_proj\", \"gate_proj\", \"up_proj\", \"down_proj\"]\ndef read_jsonl(path: Path) -> list[dict[str, Any]]:\n    rows: list[dict[str, Any]] = []\n    if not path.exists():\n        raise FileNotFoundError(path)\n    with path.open(\"r\", encoding=\"utf-8\") as handle:\n        for line_no, line in enumerate(handle, start=1):\n            stripped = line.strip()\n            if not stripped:\n                continue",
+        "detail": "scripts.train_qfr_dolphin3_unsloth_lora",
         "documentation": {}
     },
     {
@@ -4553,6 +5131,87 @@
         "description": "tests.test_update_agents",
         "peekOfCode": "update_agents = importlib.util.module_from_spec(spec)\nspec.loader.exec_module(update_agents)\ndef test_ensure_required_nested_agents_returns_all_required_paths():\n    ensured = update_agents.ensure_required_nested_agents()\n    expected = [ROOT / rel / \"AGENTS.md\" for rel in update_agents.REQUIRED_NESTED_DIRS]\n    assert ensured == expected\n    assert all(path.exists() for path in ensured)\ndef test_ensure_nested_cli_output_lists_all_required_paths():\n    proc = subprocess.run(\n        [sys.executable, \"tools/update_agents.py\", \"--ensure-nested\"],",
         "detail": "tests.test_update_agents",
+        "documentation": {}
+    },
+    {
+        "label": "repo_path",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved\ndef strip_project_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "strip_project_gutenberg_boilerplate",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def strip_project_gutenberg_boilerplate(text: str) -> str:\n    start = START_RE.search(text)\n    end = END_RE.search(text)\n    if start and end and start.end() < end.start():\n        return text[start.end() : end.start()].strip() + \"\\n\"\n    return text\ndef download_text(url: str, *, timeout: int) -> str:\n    request = urllib.request.Request(url, headers={\"User-Agent\": \"qfr-pipeline-corpus-downloader/0.1\"})\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n        data = response.read()",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "download_text",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def download_text(url: str, *, timeout: int) -> str:\n    request = urllib.request.Request(url, headers={\"User-Agent\": \"qfr-pipeline-corpus-downloader/0.1\"})\n    with urllib.request.urlopen(request, timeout=timeout) as response:\n        data = response.read()\n    return data.decode(\"utf-8\", errors=\"replace\")\ndef sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "sha256_text",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def sha256_text(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",\n        \"schema_version\": remote_manifest.get(\"schema_version\", \"1.0\"),\n        \"primary_language\": remote_manifest.get(\"primary_language\", \"fr-CA\"),\n        \"sources\": downloaded_sources,\n    }\ndef main() -> int:",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "build_local_manifest",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def build_local_manifest(remote_manifest: dict[str, Any], downloaded_sources: list[dict[str, Any]]) -> dict[str, Any]:\n    return {\n        \"kind\": \"corpus_source_manifest\",\n        \"schema_version\": remote_manifest.get(\"schema_version\", \"1.0\"),\n        \"primary_language\": remote_manifest.get(\"primary_language\", \"fr-CA\"),\n        \"sources\": downloaded_sources,\n    }\ndef main() -> int:\n    parser = argparse.ArgumentParser(description=\"Download approved remote corpus sources and emit a local ingestion manifest.\")\n    parser.add_argument(\"--manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloads.yaml\")",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "def main() -> int:\n    parser = argparse.ArgumentParser(description=\"Download approved remote corpus sources and emit a local ingestion manifest.\")\n    parser.add_argument(\"--manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloads.yaml\")\n    parser.add_argument(\"--out-manifest\", type=Path, default=ROOT / \"manifests/corpus_source_manifest.real_downloaded.local.yaml\")\n    parser.add_argument(\"--report\", type=Path, default=ROOT / \"reports/corpus_ingestion/downloads.real.json\")\n    parser.add_argument(\"--overwrite\", action=\"store_true\", help=\"Re-download files even when the target path already exists.\")\n    parser.add_argument(\"--timeout\", type=int, default=60)\n    parser.add_argument(\"--keep-gutenberg-boilerplate\", action=\"store_true\")\n    args = parser.parse_args()\n    manifest_path = args.manifest if args.manifest.is_absolute() else ROOT / args.manifest",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\nSTART_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "START_RE",
+        "kind": 5,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "START_RE = re.compile(r\"\\*\\*\\*\\s*START OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\nEND_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved",
+        "detail": "tools.download_real_corpus_sources",
+        "documentation": {}
+    },
+    {
+        "label": "END_RE",
+        "kind": 5,
+        "importPath": "tools.download_real_corpus_sources",
+        "description": "tools.download_real_corpus_sources",
+        "peekOfCode": "END_RE = re.compile(r\"\\*\\*\\*\\s*END OF (?:THE|THIS) PROJECT GUTENBERG EBOOK.*?\\*\\*\\*\", re.IGNORECASE)\ndef repo_path(value: str) -> Path:\n    path = Path(value)\n    if path.is_absolute():\n        raise ValueError(f\"Manifest path must be repo-relative: {value}\")\n    resolved = (ROOT / path).resolve()\n    if ROOT.resolve() not in resolved.parents and resolved != ROOT.resolve():\n        raise ValueError(f\"Manifest path escapes repository root: {value}\")\n    return resolved\ndef strip_project_gutenberg_boilerplate(text: str) -> str:",
+        "detail": "tools.download_real_corpus_sources",
         "documentation": {}
     },
     {
