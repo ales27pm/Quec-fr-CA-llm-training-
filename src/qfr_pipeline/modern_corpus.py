@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import re
 import time
+import unicodedata
 from typing import Any
 from urllib.error import URLError
 from urllib.parse import urlencode
@@ -129,7 +130,8 @@ def _clean_text(text: str) -> str:
 
 
 def _normalize_text(text: str) -> str:
-    return " ".join(_clean_text(text).casefold().split())
+    normalized = unicodedata.normalize("NFC", _clean_text(text))
+    return " ".join(normalized.casefold().split())
 
 
 def _flatten_lines(text: str) -> list[str]:
@@ -615,10 +617,20 @@ def acquire_donnees_quebec_ckan(
 
 
 def _looks_like_navigation(text: str) -> bool:
-    lowered = text.casefold()
-    if len(text) < 8:
+    clean = _clean_text(text)
+    lowered = clean.casefold()
+    if len(clean) < 8:
         return True
-    return any(pattern in lowered for pattern in _NAVIGATION_PATTERNS)
+    if lowered in _NAVIGATION_PATTERNS:
+        return True
+    # Treat terse menu-style prefixes as navigation while preserving full content lines
+    # that merely mention words like "recherche" in actual parliamentary text.
+    return any(
+        lowered.startswith(f"{pattern} ")
+        or lowered.startswith(f"{pattern} :")
+        or lowered.startswith(f"{pattern} -")
+        for pattern in _NAVIGATION_PATTERNS
+    )
 
 
 def _detect_speaker(line: str) -> str | None:
