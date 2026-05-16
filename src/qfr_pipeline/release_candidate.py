@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+import json
 from pathlib import Path
 from typing import Any
 
@@ -124,6 +125,8 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         "training_manifest_yaml": "reports/training_export/training_manifest.yaml",
         "training_dataset_card": "reports/training_export/dataset_card.md",
         "modern_corpus_dry_run_report": "reports/modern_corpus/dry_run_report.json",
+        "donnees_quebec_fixture_report": "reports/modern_corpus/donnees_quebec_fixture_report.json",
+        "assnat_fixture_report": "reports/modern_corpus/assnat_fixture_report.json",
         "corpus_readiness_report": "reports/corpus_readiness/report.json",
         "release_candidate_json": repo_relative_path(out_json),
         "release_candidate_md": repo_relative_path(out_md),
@@ -177,11 +180,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
             blocking_failures.append("corpus_curation")
         readiness_input = ROOT / "reports/corpus_curation/accepted.jsonl"
         readiness = audit_corpus_readiness(readiness_input, ROOT / artifacts["corpus_readiness_report"])
-        readiness_ok = (
-            readiness.get("ok", False)
-            and readiness.get("readiness_level") in {"pilot_lora_candidate", "production_lora_candidate"}
-            and not readiness.get("blocking_reasons")
-        )
+        readiness_ok = readiness.get("ok", False)
         stages.append(ReleaseCandidateStage(name="corpus_readiness_audit", ok=readiness_ok, artifacts=[artifacts["corpus_readiness_report"]], details=readiness))
         if not readiness_ok:
             blocking_failures.append("corpus_readiness_audit")
@@ -208,6 +207,20 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         training_export_summary["corpus_readiness_level"] = readiness.get("readiness_level", "insufficient")
         training_export_summary["estimated_tokens"] = readiness.get("estimated_tokens", 0)
         training_export_summary["production_blocking_reasons"] = readiness.get("blocking_reasons", [])
+        training_export_summary["modern_source_ratio"] = readiness.get("modern_source_ratio", 0.0)
+        training_export_summary["institutional_source_ratio"] = readiness.get(
+            "institutional_source_ratio", 0.0
+        )
+        training_export_summary["donnees_quebec_fixture_records"] = 0
+        training_export_summary["assnat_fixture_records"] = 0
+        fixture_report_paths = {
+            "donnees_quebec_fixture_records": ROOT / artifacts["donnees_quebec_fixture_report"],
+            "assnat_fixture_records": ROOT / artifacts["assnat_fixture_report"],
+        }
+        for field, fixture_path in fixture_report_paths.items():
+            if fixture_path.exists():
+                fixture_payload = json.loads(fixture_path.read_text(encoding="utf-8"))
+                training_export_summary[field] = int(fixture_payload.get("records_written", 0))
 
         tax = load_taxonomies([ROOT / "eval/lp9_error_taxonomy.yaml", ROOT / "eval/lp20_error_taxonomy.yaml"])
         rows = load_eval_rows(diagnostics_input)

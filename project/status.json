@@ -138,6 +138,12 @@
       "goal": "Modern corpus acquisition contracts, adapters, and readiness gate",
       "status": "fully_implemented",
       "evidence": "Provided"
+    },
+    {
+      "id": "T24",
+      "goal": "Real modern Qu\u00e9bec source adapters with deterministic fixture acquisition",
+      "status": "fully_implemented",
+      "evidence": "Provided"
     }
   ]
 }

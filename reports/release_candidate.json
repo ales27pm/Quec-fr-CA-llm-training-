@@ -104,9 +104,58 @@
           "qfrcore_qfrcort_holdout": 0,
           "quebec_insurance_rag_corpora": 0
         },
+        "source_reports": {
+          "assnat_journal_debats_modern": {
+            "source_id": "assnat_journal_debats_modern",
+            "adapter": "assnat_journal_debats",
+            "seed_urls_total": 1,
+            "seed_urls_fetched": 0,
+            "records_written": 0,
+            "skipped_sources": [
+              {
+                "source_id": "assnat_journal_debats_modern",
+                "reason": "noncommercial_requires_explicit_flag"
+              }
+            ],
+            "skipped_seed_urls": [
+              {
+                "seed_url": "https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/",
+                "reason": "noncommercial_requires_explicit_flag"
+              }
+            ],
+            "issues": []
+          },
+          "donnees_quebec_ckan_textual": {
+            "source_id": "donnees_quebec_ckan_textual",
+            "adapter": "donnees_quebec_ckan",
+            "package_count_seen": 0,
+            "package_count_selected": 0,
+            "package_count_skipped": 0,
+            "records_written": 0,
+            "license_summary": {},
+            "organization_summary": {},
+            "domain_summary": {},
+            "skipped_packages": [],
+            "issues": []
+          }
+        },
         "license_summary": {},
         "domain_summary": {},
         "register_summary": {},
+        "organization_summary": {},
+        "package_count_seen": 0,
+        "package_count_selected": 0,
+        "package_count_skipped": 0,
+        "skipped_packages": [],
+        "seed_urls_total": 1,
+        "seed_urls_fetched": 0,
+        "skipped_seed_urls": [
+          {
+            "source_id": "assnat_journal_debats_modern",
+            "seed_url": "https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/",
+            "reason": "noncommercial_requires_explicit_flag"
+          }
+        ],
         "holdout_registry": [
           "cole_holdout",
           "qfrblimp_holdout",
@@ -114,47 +163,6 @@
           "qfrcore_qfrcort_holdout"
         ],
         "output": "reports/modern_corpus/harvest.jsonl"
-      },
-      "error": null
-    },
-    {
-      "name": "corpus_readiness_audit",
-      "ok": true,
-      "artifacts": [
-        "reports/corpus_readiness/report.json"
-      ],
-      "blocking": true,
-      "details": {
-        "ok": true,
-        "input": "reports/corpus_curation/accepted.jsonl",
-        "records_total": 2,
-        "estimated_tokens": 32,
-        "source_count": 1,
-        "domain_balance": {
-          "unknown": 2
-        },
-        "register_balance": {
-          "unknown": 2
-        },
-        "source_balance": {
-          "unknown": 2
-        },
-        "max_single_source_share": 1.0,
-        "instruction_like_count": 0,
-        "instruction_like_ratio": 0.0,
-        "dialog_like_count": 0,
-        "dialog_like_ratio": 0.0,
-        "legal_license_ok_ratio": 0.0,
-        "commercial_ready_ratio": 0.0,
-        "holdout_contamination_risk_count": 0,
-        "duplicates_exact": 0,
-        "duplicates_normalized": 0,
-        "readiness_level": "insufficient",
-        "blocking_reasons": [],
-        "recommendations": [
-          "Increase modern (2020-2026) institutional, educational, and instruction/dialogue coverage.",
-          "Reduce source concentration and improve register/domain diversity for production readiness."
-        ]
       },
       "error": null
     },
@@ -203,6 +211,59 @@
         "review_required": 0,
         "quarantine": 0,
         "rejected": 1
+      },
+      "error": null
+    },
+    {
+      "name": "corpus_readiness_audit",
+      "ok": true,
+      "artifacts": [
+        "reports/corpus_readiness/report.json"
+      ],
+      "blocking": true,
+      "details": {
+        "ok": true,
+        "input": "reports/corpus_curation/accepted.jsonl",
+        "records_total": 2,
+        "estimated_tokens": 32,
+        "source_count": 1,
+        "acquisition_source_type_summary": {
+          "unknown": 2
+        },
+        "domain_balance": {
+          "unknown": 2
+        },
+        "register_balance": {
+          "unknown": 2
+        },
+        "source_balance": {
+          "unknown": 2
+        },
+        "license_status_summary": {
+          "unknown": 2
+        },
+        "commercial_use_summary": {
+          "unknown": 2
+        },
+        "modern_source_ratio": 0.0,
+        "institutional_source_ratio": 0.0,
+        "max_single_source_share": 1.0,
+        "instruction_like_count": 0,
+        "instruction_like_ratio": 0.0,
+        "dialog_like_count": 0,
+        "dialog_like_ratio": 0.0,
+        "legal_license_ok_ratio": 0.0,
+        "commercial_ready_ratio": 0.0,
+        "holdout_contamination_risk_count": 0,
+        "duplicates_exact": 0,
+        "duplicates_normalized": 0,
+        "readiness_level": "insufficient",
+        "blocking_reasons": [],
+        "recommendations": [
+          "Increase modern (2020-2026) institutional, educational, and instruction/dialogue coverage.",
+          "Reduce source concentration and improve register/domain diversity for production readiness.",
+          "Instruction-like ratio is low; generate or collect instruction-format examples."
+        ]
       },
       "error": null
     },
@@ -397,6 +458,8 @@
     "training_manifest_yaml": "reports/training_export/training_manifest.yaml",
     "training_dataset_card": "reports/training_export/dataset_card.md",
     "modern_corpus_dry_run_report": "reports/modern_corpus/dry_run_report.json",
+    "donnees_quebec_fixture_report": "reports/modern_corpus/donnees_quebec_fixture_report.json",
+    "assnat_fixture_report": "reports/modern_corpus/assnat_fixture_report.json",
     "corpus_readiness_report": "reports/corpus_readiness/report.json",
     "release_candidate_json": "reports/release_candidate.json",
     "release_candidate_md": "reports/release_candidate.md"
@@ -444,7 +507,11 @@
     "modern_corpus_blocked_sources": 11,
     "corpus_readiness_level": "insufficient",
     "estimated_tokens": 32,
-    "production_blocking_reasons": []
+    "production_blocking_reasons": [],
+    "modern_source_ratio": 0.0,
+    "institutional_source_ratio": 0.0,
+    "donnees_quebec_fixture_records": 2,
+    "assnat_fixture_records": 6
   },
   "blocking_failures": []
 }

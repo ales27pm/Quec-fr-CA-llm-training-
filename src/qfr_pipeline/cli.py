@@ -351,9 +351,39 @@ def validate_modern_corpus_cmd(manifest: Path = typer.Option(..., "--manifest"))
     print("Modern corpus manifest valid")
 
 @app.command("acquire-modern-corpus")
-def acquire_modern_corpus_cmd(manifest: Path = typer.Option(..., "--manifest"), out: Path = typer.Option(..., "--out"), report: Path = typer.Option(..., "--report"), permission_manifest: Path | None = typer.Option(None, "--permission-manifest"), include_noncommercial: bool = typer.Option(False, "--include-noncommercial"), max_documents: int | None = typer.Option(None, "--max-documents")):
+def acquire_modern_corpus_cmd(
+    manifest: Path = typer.Option(..., "--manifest"),
+    out: Path = typer.Option(..., "--out"),
+    report: Path = typer.Option(..., "--report"),
+    permission_manifest: Path | None = typer.Option(None, "--permission-manifest"),
+    include_noncommercial: bool = typer.Option(False, "--include-noncommercial"),
+    max_documents: int | None = typer.Option(None, "--max-documents"),
+    timeout: int = typer.Option(30, "--timeout"),
+    fixture_mode: bool = typer.Option(False, "--fixture-mode"),
+    fail_on_empty: bool = typer.Option(False, "--fail-on-empty"),
+):
     _refresh_dynamic_agents()
-    payload = acquire_modern_corpus(manifest, out, report, permission_manifest=permission_manifest, include_noncommercial=include_noncommercial, max_documents=max_documents)
+    payload = acquire_modern_corpus(
+        manifest,
+        out,
+        report,
+        permission_manifest=permission_manifest,
+        include_noncommercial=include_noncommercial,
+        max_documents=max_documents,
+        timeout=timeout,
+        fixture_mode=fixture_mode,
+    )
+    print(
+        {
+            "records_written": payload.get("records_written", 0),
+            "sources_acquired": payload.get("sources_acquired", 0),
+            "skipped_count": len(payload.get("skipped_sources", [])),
+            "issue_count": len(payload.get("issues", [])),
+            "report": repo_relative_path(report),
+        }
+    )
+    if fail_on_empty and payload.get("records_written", 0) == 0:
+        raise typer.Exit(code=1)
     if not payload.get('ok', False):
         raise typer.Exit(code=1)
 

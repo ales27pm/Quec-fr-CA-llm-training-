@@ -1,0 +1,30 @@
+kind: modern_corpus_acquisition_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+sources:
+  - source_id: assnat_journal_debats_seed_modern
+    name: Assemblée nationale - Journal des débats (seed explicite)
+    source_type: official_html
+    acquisition_status: active
+    license_status: noncommercial_only
+    commercial_use: permission_required
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    date_min: "2020-01-01"
+    date_max: "2026-12-31"
+    min_delay_seconds: 1.0
+    min_text_chars: 80
+    registers:
+      - parliamentary
+      - spoken_formal
+    domains:
+      - politics
+      - public_administration
+      - law
+    notes: noncommercial research-only unless written commercial permission.
+    adapter:
+      name: assnat_journal_debats
+      seed_urls:
+        - file://fixtures/modern_corpus/assnat_seed_page.html

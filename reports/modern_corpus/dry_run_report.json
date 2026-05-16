@@ -65,9 +65,58 @@
     "qfrcore_qfrcort_holdout": 0,
     "quebec_insurance_rag_corpora": 0
   },
+  "source_reports": {
+    "assnat_journal_debats_modern": {
+      "source_id": "assnat_journal_debats_modern",
+      "adapter": "assnat_journal_debats",
+      "seed_urls_total": 1,
+      "seed_urls_fetched": 0,
+      "records_written": 0,
+      "skipped_sources": [
+        {
+          "source_id": "assnat_journal_debats_modern",
+          "reason": "noncommercial_requires_explicit_flag"
+        }
+      ],
+      "skipped_seed_urls": [
+        {
+          "seed_url": "https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/",
+          "reason": "noncommercial_requires_explicit_flag"
+        }
+      ],
+      "issues": []
+    },
+    "donnees_quebec_ckan_textual": {
+      "source_id": "donnees_quebec_ckan_textual",
+      "adapter": "donnees_quebec_ckan",
+      "package_count_seen": 0,
+      "package_count_selected": 0,
+      "package_count_skipped": 0,
+      "records_written": 0,
+      "license_summary": {},
+      "organization_summary": {},
+      "domain_summary": {},
+      "skipped_packages": [],
+      "issues": []
+    }
+  },
   "license_summary": {},
   "domain_summary": {},
   "register_summary": {},
+  "organization_summary": {},
+  "package_count_seen": 0,
+  "package_count_selected": 0,
+  "package_count_skipped": 0,
+  "skipped_packages": [],
+  "seed_urls_total": 1,
+  "seed_urls_fetched": 0,
+  "skipped_seed_urls": [
+    {
+      "source_id": "assnat_journal_debats_modern",
+      "seed_url": "https://www.assnat.qc.ca/fr/travaux-parlementaires/journal-debats/",
+      "reason": "noncommercial_requires_explicit_flag"
+    }
+  ],
   "holdout_registry": [
     "cole_holdout",
     "qfrblimp_holdout",

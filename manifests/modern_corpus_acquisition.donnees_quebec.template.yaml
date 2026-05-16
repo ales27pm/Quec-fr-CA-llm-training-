@@ -1,0 +1,35 @@
+kind: modern_corpus_acquisition_manifest
+schema_version: "1.0"
+primary_language: fr-CA
+sources:
+  - source_id: donnees_quebec_ckan_metadata_modern
+    name: Données Québec CKAN metadata (moderne)
+    source_type: ckan_api
+    acquisition_status: active
+    license_status: open_compatible
+    commercial_use: allowed_if_package_license_allows
+    allowed_for_training: true
+    allowed_for_evaluation: false
+    holdout_only: false
+    pii_risk: low
+    max_documents: 100
+    min_text_chars: 120
+    registers:
+      - administrative
+    domains:
+      - public_administration
+    notes: metadata-only extraction; no arbitrary resource downloads in T24.
+    adapter:
+      name: donnees_quebec_ckan
+      base_url: https://www.donneesquebec.ca/recherche/api/3/action
+      query_terms:
+        - francais
+        - services
+        - municipal
+        - quebec
+        - environnement
+        - transport
+        - santé
+        - education
+      rows: 100
+      fixture_response_path: fixtures/modern_corpus/donnees_quebec_package_search_response.json

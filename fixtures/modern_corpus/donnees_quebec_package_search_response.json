@@ -1,0 +1,113 @@
+{
+  "help": "https://www.donneesquebec.ca/page-api/",
+  "success": true,
+  "result": {
+    "count": 3,
+    "results": [
+      {
+        "id": "pkg-001",
+        "name": "adaptation-services-municipaux",
+        "title": "Adaptation des services municipaux en français",
+        "notes": "Inventaire des services municipaux et des démarches administratives offerts en français aux citoyennes et citoyens du Québec.",
+        "url": "https://www.donneesquebec.ca/recherche/dataset/adaptation-services-municipaux",
+        "license_id": "cc-by",
+        "license_title": "Creative Commons Attribution 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "metadata_created": "2024-09-10T09:15:00.000000",
+        "metadata_modified": "2026-03-12T17:22:00.000000",
+        "organization": {
+          "name": "ville-quebec",
+          "title": "Ville de Québec"
+        },
+        "tags": [
+          {"name": "services", "display_name": "services"},
+          {"name": "municipal", "display_name": "municipal"},
+          {"name": "francais", "display_name": "français"}
+        ],
+        "groups": [
+          {"name": "administration", "display_name": "administration"}
+        ],
+        "resources": [
+          {
+            "id": "res-001",
+            "name": "Description des démarches",
+            "description": "Résumé textuel des procédures administratives et des points de service.",
+            "format": "CSV",
+            "url": "https://www.donneesquebec.ca/dataset/adaptation-services-municipaux/resource/res-001"
+          },
+          {
+            "id": "res-002",
+            "name": "Guide d'utilisation",
+            "description": "Guide public expliquant comment utiliser les données pour la planification locale.",
+            "format": "PDF",
+            "url": "https://www.donneesquebec.ca/dataset/adaptation-services-municipaux/resource/res-002"
+          }
+        ]
+      },
+      {
+        "id": "pkg-002",
+        "name": "transport-collectif-metadonnees",
+        "title": "Transport collectif et environnement",
+        "notes": "Métadonnées descriptives sur des indicateurs de mobilité, d'émissions et de couverture des services de transport collectif.",
+        "url": "https://www.donneesquebec.ca/recherche/dataset/transport-collectif-metadonnees",
+        "license_id": "cc-by-sa",
+        "license_title": "Creative Commons Attribution Share-Alike 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "metadata_created": "2023-04-18T14:20:00.000000",
+        "metadata_modified": "2026-01-06T11:03:00.000000",
+        "organization": {
+          "name": "mtq",
+          "title": "Ministère des Transports du Québec"
+        },
+        "tags": [
+          {"name": "transport", "display_name": "transport"},
+          {"name": "environnement", "display_name": "environnement"},
+          {"name": "quebec", "display_name": "québec"}
+        ],
+        "groups": [
+          {"name": "mobilite", "display_name": "mobilité"}
+        ],
+        "resources": [
+          {
+            "id": "res-010",
+            "name": "Dictionnaire des indicateurs",
+            "description": "Définitions textuelles des indicateurs utilisés dans les jeux liés au transport.",
+            "format": "TXT",
+            "url": "https://www.donneesquebec.ca/dataset/transport-collectif-metadonnees/resource/res-010"
+          }
+        ]
+      },
+      {
+        "id": "pkg-003",
+        "name": "jeu-licence-inconnue",
+        "title": "Jeu de données sans licence exploitable",
+        "notes": "Notice de test pour vérifier le rejet des licences manquantes ou ambiguës.",
+        "url": "https://www.donneesquebec.ca/recherche/dataset/jeu-licence-inconnue",
+        "license_id": "",
+        "license_title": "",
+        "license_url": "",
+        "metadata_created": "2022-11-01T08:00:00.000000",
+        "metadata_modified": "2025-12-20T09:10:00.000000",
+        "organization": {
+          "name": "org-sans-licence",
+          "title": "Organisation sans licence"
+        },
+        "tags": [
+          {"name": "sante", "display_name": "santé"}
+        ],
+        "groups": [
+          {"name": "test", "display_name": "test"}
+        ],
+        "resources": [
+          {
+            "id": "res-020",
+            "name": "Résumé du contenu",
+            "description": "Données de test sans droits explicites.",
+            "format": "JSON",
+            "url": "https://www.donneesquebec.ca/dataset/jeu-licence-inconnue/resource/res-020"
+          }
+        ]
+      }
+    ]
+  }
+}

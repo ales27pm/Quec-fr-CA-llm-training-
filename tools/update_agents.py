@@ -43,7 +43,29 @@ TASK_FILES = {
     "T21": ROOT / "src" / "qfr_pipeline" / "curated_split.py",
     "T22": ROOT / "src" / "qfr_pipeline" / "training_export.py",
     "T23": ROOT / "src" / "qfr_pipeline" / "modern_corpus.py",
+    "T24": (
+        ROOT / "manifests" / "modern_corpus_acquisition.donnees_quebec.template.yaml",
+        ROOT / "manifests" / "modern_corpus_acquisition.assnat_seed.template.yaml",
+        ROOT / "src" / "qfr_pipeline" / "modern_corpus.py",
+        ROOT / "reports" / "modern_corpus" / "donnees_quebec_fixture_report.json",
+        ROOT / "reports" / "modern_corpus" / "assnat_fixture_report.json",
+        ROOT / "reports" / "corpus_readiness" / "modern_fixture_report.json",
+    ),
 }
+
+
+def _task_paths(task_id: str) -> list[Path]:
+    configured = TASK_FILES.get(task_id)
+    if configured is None:
+        return []
+    if isinstance(configured, Path):
+        return [configured]
+    return list(configured)
+
+
+def _task_is_implemented(task_id: str) -> bool:
+    paths = _task_paths(task_id)
+    return bool(paths) and all(path.exists() for path in paths)
 
 
 def icon(status: str) -> str:
@@ -56,8 +78,7 @@ def sync_status() -> dict:
     data = json.loads(STATUS_PATH.read_text())
     for task in data.get("tasks", []):
         tid = task.get("id")
-        path = TASK_FILES.get(tid)
-        new_status = "fully_implemented" if (path and path.exists()) else "not_implemented"
+        new_status = "fully_implemented" if _task_is_implemented(str(tid)) else "not_implemented"
         task["status"] = new_status
         task["evidence"] = "Provided" if new_status == "fully_implemented" else "Pending"
     data["last_updated"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d")
@@ -211,8 +232,13 @@ def validate() -> None:
         raise SystemExit(f"Validation failed; could not load status file {STATUS_PATH}: {exc}") from exc
     for task in status_doc.get("tasks", []):
         if task.get("status") == "fully_implemented" and task.get("id") in TASK_FILES:
-            if not TASK_FILES[task["id"]].exists():
-                raise SystemExit(f"Validation failed; task {task['id']} marked fully_implemented but missing required file: {TASK_FILES[task['id']]}")
+            missing = [path for path in _task_paths(task["id"]) if not path.exists()]
+            if missing:
+                raise SystemExit(
+                    "Validation failed; task "
+                    f"{task['id']} marked fully_implemented but missing required file(s): "
+                    + ", ".join(str(path) for path in missing)
+                )
 
     print("Validation passed: contamination holdouts present and release gates synchronized to project/release_gates.yaml.")
 def main() -> None:

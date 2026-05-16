@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-05-16 — T24 modern Québec source adapters (fixture-safe)
+- Implemented production-grade `donnees_quebec_ckan` metadata extraction: deterministic per-package records, package/resource metadata text normalization, package-level license gating, duplicate suppression via normalized text hash, fixture-response mode, and detailed package/license/organization/domain reporting.
+- Implemented safer `assnat_journal_debats` acquisition: explicit seed-only fetches, noncommercial explicit-flag gating, fixture `file://` support, deterministic paragraph segmentation, navigation junk filtering, and no-crawl behavior.
+- Added new manifests and fixtures: `manifests/modern_corpus_acquisition.donnees_quebec.template.yaml`, `manifests/modern_corpus_acquisition.assnat_seed.template.yaml`, and `fixtures/modern_corpus/*`.
+- Extended CLI acquisition controls with `--timeout`, `--fixture-mode`, and `--fail-on-empty`, plus concise acquisition summary output.
+- Extended readiness reporting with acquisition source-type summary, license/commercial summaries, modern/institutional ratios, and targeted corpus-mix recommendations.
+- Integrated T24 fixture-aware fields into release-candidate summary without making live network acquisition mandatory.
+- Updated CI/local validation to run fixture-only T24 acquisition/audit commands and guard deterministic modern-corpus artifacts.
+
 ## 2026-05-15 — Dolphin3 + Unsloth continuation path
 - Added `project/model_selection.dolphin3_unsloth.yaml` to make `dphn/Dolphin3.0-Qwen2.5-3b` the preferred base when preserving Dolphin instruction/personality tuning.
 - Added `requirements/training-dolphin3-unsloth.txt` and Unsloth-based scripts for QLoRA training plus merged/GGUF export.
