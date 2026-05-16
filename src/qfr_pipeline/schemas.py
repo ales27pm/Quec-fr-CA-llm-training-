@@ -687,6 +687,16 @@ class ModernCorpusAdapterConfig(BaseModel):
             raise ValueError("rows must be >= 0")
         return value
 
+    @model_validator(mode="after")
+    def validate_adapter_fields(self):
+        if self.name == "donnees_quebec_ckan" and not self.base_url:
+            raise ValueError("adapter.base_url is required for donnees_quebec_ckan")
+        if self.name == "assnat_journal_debats" and not self.seed_urls:
+            raise ValueError("adapter.seed_urls must be non-empty for assnat_journal_debats")
+        if self.name == "local_text_bundle" and not self.local_globs:
+            raise ValueError("adapter.local_globs must be non-empty for local_text_bundle")
+        return self
+
 class ModernCorpusSource(BaseModel):
     source_id: str
     name: str
@@ -757,6 +767,8 @@ class ModernCorpusAcquisitionManifest(BaseModel):
                     raise ValueError(f"{sid} must not be training-allowed")
             if "assnat" in sid and source.commercial_use == "allowed":
                 raise ValueError("Assemblée nationale cannot be commercial-ready without explicit permission")
+            if source.acquisition_status == "permission_required" and source.source_type != "permission_required":
+                raise ValueError("permission_required acquisition_status requires source_type=permission_required")
             if source.source_type == "permission_required" and source.acquisition_status == "active":
                 raise ValueError("permission_required source cannot be active without permission config")
             if source.source_id == "donnees_quebec_ckan_textual":

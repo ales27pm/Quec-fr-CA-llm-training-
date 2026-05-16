@@ -7,6 +7,7 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+import time
 from typing import Any
 from urllib.error import URLError
 from urllib.parse import urlencode
@@ -125,6 +126,15 @@ def _append_record(result: AcquisitionResult, ctx: AcquisitionContext, source: M
     result.per_source[source.source_id] = result.per_source.get(source.source_id, 0) + 1
 
 
+def _effective_limit(source: ModernCorpusSource, ctx: AcquisitionContext, available: int) -> int:
+    cap = available
+    if ctx.max_documents is not None:
+        cap = min(cap, ctx.max_documents)
+    if source.max_documents is not None:
+        cap = min(cap, source.max_documents)
+    return cap
+
+
 def acquire_donnees_quebec_ckan(source: ModernCorpusSource, result: AcquisitionResult, ctx: AcquisitionContext) -> None:
     if ctx.max_documents == 0:
         result.per_source[source.source_id] = 0
@@ -141,7 +151,7 @@ def acquire_donnees_quebec_ckan(source: ModernCorpusSource, result: AcquisitionR
 
     entries = payload.get("result", {}).get("results", [])
     entries = sorted(entries, key=lambda x: (x.get("name", ""), x.get("id", "")))
-    limit = len(entries) if ctx.max_documents is None else min(ctx.max_documents, len(entries))
+    limit = _effective_limit(source, ctx, len(entries))
 
     for idx, item in enumerate(entries[:limit]):
         license_name = item.get("license_title") or item.get("license_id") or source.license_name
@@ -194,6 +204,8 @@ def acquire_assnat_seed_html(source: ModernCorpusSource, result: AcquisitionResu
         for paragraph in _segment_paragraphs(extractor.text()):
             rec = _record(source, paragraph, index, source_url=url, register=(source.registers[0] if source.registers else "parliamentary"), domain=(source.domains[0] if source.domains else "politics"))
             _append_record(result, ctx, source, rec)
+        if source.min_delay_seconds > 0 and index + 1 < limit:
+            time.sleep(source.min_delay_seconds)
 
 
 def acquire_local_text_bundle(source: ModernCorpusSource, result: AcquisitionResult, ctx: AcquisitionContext) -> None:
@@ -203,6 +215,7 @@ def acquire_local_text_bundle(source: ModernCorpusSource, result: AcquisitionRes
         return
     globs = sorted(source.adapter.local_globs)
     index = 0
+    source_limit = _effective_limit(source, ctx, 10**9)
     for pattern in globs:
         for file_path in sorted(ROOT.glob(pattern)):
             if not file_path.is_file():
@@ -212,7 +225,7 @@ def acquire_local_text_bundle(source: ModernCorpusSource, result: AcquisitionRes
                 rec = _record(source, paragraph, index, source_path=repo_relative_path(file_path), register=(source.registers[0] if source.registers else "mixed"), domain=(source.domains[0] if source.domains else "general"))
                 _append_record(result, ctx, source, rec)
                 index += 1
-                if ctx.max_documents is not None and result.per_source.get(source.source_id, 0) >= ctx.max_documents:
+                if result.per_source.get(source.source_id, 0) >= source_limit:
                     return
 
 

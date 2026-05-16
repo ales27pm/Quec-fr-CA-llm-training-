@@ -154,13 +154,7 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         stages.append(ReleaseCandidateStage(name="modern_corpus_acquisition_dry_run", ok=modern_dry_run.get("ok", False), artifacts=[artifacts["modern_corpus_dry_run_report"]], details=modern_dry_run))
         if not modern_dry_run.get("ok", False):
             blocking_failures.append("modern_corpus_acquisition_dry_run")
-        readiness_input = ROOT / "reports/corpus_curation_real/accepted.jsonl"
-        if not readiness_input.exists():
-            readiness_input = ROOT / "reports/corpus_curation/accepted.jsonl"
-        readiness = audit_corpus_readiness(readiness_input, ROOT / artifacts["corpus_readiness_report"])
-        stages.append(ReleaseCandidateStage(name="corpus_readiness_audit", ok=readiness.get("ok", False), artifacts=[artifacts["corpus_readiness_report"]], details=readiness))
-        if not readiness.get("ok", False):
-            blocking_failures.append("corpus_readiness_audit")
+        readiness: dict[str, Any] = {"ok": False, "readiness_level": "insufficient", "blocking_reasons": ["not_run"]}
 
         corpus_manifest = ROOT / "manifests/corpus_source_manifest.template.yaml"
         validate_corpus_source_manifest(corpus_manifest)
@@ -181,6 +175,16 @@ def run_release_candidate(*, metrics: Path, diagnostics_input: Path, out_json: P
         stages.append(ReleaseCandidateStage(name="corpus_curation", ok=curation.ok, artifacts=list(curation.outputs.values()), details={"accepted": curation.accepted, "review_required": curation.review_required, "quarantine": curation.quarantine, "rejected": curation.rejected}))
         if not curation.ok:
             blocking_failures.append("corpus_curation")
+        readiness_input = ROOT / "reports/corpus_curation/accepted.jsonl"
+        readiness = audit_corpus_readiness(readiness_input, ROOT / artifacts["corpus_readiness_report"])
+        readiness_ok = (
+            readiness.get("ok", False)
+            and readiness.get("readiness_level") in {"pilot_lora_candidate", "production_lora_candidate"}
+            and not readiness.get("blocking_reasons")
+        )
+        stages.append(ReleaseCandidateStage(name="corpus_readiness_audit", ok=readiness_ok, artifacts=[artifacts["corpus_readiness_report"]], details=readiness))
+        if not readiness_ok:
+            blocking_failures.append("corpus_readiness_audit")
         split_policy = ROOT / "manifests/split_policy_manifest.template.yaml"
         validate_split_policy_manifest(split_policy)
         stages.append(ReleaseCandidateStage(name="split_policy_validation", ok=True, artifacts=[repo_relative_path(split_policy)]))

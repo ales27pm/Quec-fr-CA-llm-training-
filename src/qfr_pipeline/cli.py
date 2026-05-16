@@ -366,6 +366,8 @@ def audit_corpus_readiness_cmd(input: Path = typer.Option(..., "--input"), out: 
     levels = ["insufficient", "smoke_test", "pilot_lora_candidate", "production_lora_candidate"]
     level = payload.get("readiness_level", "insufficient")
     effective_level = "insufficient" if level == "production_blocked" else level
+    if fail_below and fail_below not in levels:
+        raise typer.BadParameter(f"Invalid --fail-below value: '{fail_below}'. Expected one of {levels}")
     if fail_below and levels.index(effective_level if effective_level in levels else "insufficient") < levels.index(fail_below):
         raise typer.Exit(code=1)
 
