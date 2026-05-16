@@ -176,12 +176,52 @@
         "documentation": {}
     },
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
         "label": "argparse",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "argparse",
         "description": "argparse",
         "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
         "documentation": {}
     },
     {
@@ -825,6 +865,14 @@
     },
     {
         "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1525,6 +1573,22 @@
         "documentation": {}
     },
     {
+        "label": "write_json",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
+        "label": "load_yaml",
+        "importPath": "qfr_pipeline.io",
+        "description": "qfr_pipeline.io",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.io",
+        "documentation": {}
+    },
+    {
         "label": "run_legacy_semantic_diagnostics",
         "importPath": "qfr_pipeline.legacy_diagnostics",
         "description": "qfr_pipeline.legacy_diagnostics",
@@ -1829,6 +1893,22 @@
         "documentation": {}
     },
     {
+        "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
         "label": "ROOT",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
@@ -1870,6 +1950,14 @@
     },
     {
         "label": "repo_relative_path",
+        "importPath": "qfr_pipeline.paths",
+        "description": "qfr_pipeline.paths",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.paths",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
         "importPath": "qfr_pipeline.paths",
         "description": "qfr_pipeline.paths",
         "isExtraImport": true,
@@ -1982,6 +2070,22 @@
         "documentation": {}
     },
     {
+        "label": "acquire_modern_corpus",
+        "importPath": "qfr_pipeline.modern_corpus",
+        "description": "qfr_pipeline.modern_corpus",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.modern_corpus",
+        "documentation": {}
+    },
+    {
+        "label": "audit_corpus_readiness",
+        "importPath": "qfr_pipeline.corpus_readiness",
+        "description": "qfr_pipeline.corpus_readiness",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.corpus_readiness",
+        "documentation": {}
+    },
+    {
         "label": "audit_corpus_readiness",
         "importPath": "qfr_pipeline.corpus_readiness",
         "description": "qfr_pipeline.corpus_readiness",
@@ -2003,6 +2107,70 @@
         "description": "qfr_pipeline.corpus_readiness",
         "isExtraImport": true,
         "detail": "qfr_pipeline.corpus_readiness",
+        "documentation": {}
+    },
+    {
+        "label": "READINESS_LEVELS",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "audit_training_pack",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "build_training_pack",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "audit_training_pack",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "build_training_pack",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "audit_training_pack",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "build_training_pack",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_pack_policy",
+        "importPath": "qfr_pipeline.training_pack",
+        "description": "qfr_pipeline.training_pack",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.training_pack",
         "documentation": {}
     },
     {
@@ -2134,6 +2302,14 @@
         "documentation": {}
     },
     {
+        "label": "validate_training_pack_policy",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
         "label": "validate_error_taxonomy_manifest",
         "importPath": "qfr_pipeline.validation",
         "description": "qfr_pipeline.validation",
@@ -2143,6 +2319,14 @@
     },
     {
         "label": "validate_repository",
+        "importPath": "qfr_pipeline.validation",
+        "description": "qfr_pipeline.validation",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_pack_policy",
         "importPath": "qfr_pipeline.validation",
         "description": "qfr_pipeline.validation",
         "isExtraImport": true,
@@ -2223,6 +2407,22 @@
         "documentation": {}
     },
     {
+        "label": "Counter",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
+        "label": "defaultdict",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
+        "documentation": {}
+    },
+    {
         "label": "CorpusSourceManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
@@ -2296,6 +2496,14 @@
     },
     {
         "label": "TrainingExportManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackPolicyManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
@@ -2384,6 +2592,14 @@
     },
     {
         "label": "TrainingExportManifest",
+        "importPath": "qfr_pipeline.schemas",
+        "description": "qfr_pipeline.schemas",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackPolicyManifest",
         "importPath": "qfr_pipeline.schemas",
         "description": "qfr_pipeline.schemas",
         "isExtraImport": true,
@@ -2600,6 +2816,38 @@
         "description": "typer.testing",
         "isExtraImport": true,
         "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "CliRunner",
+        "importPath": "typer.testing",
+        "description": "typer.testing",
+        "isExtraImport": true,
+        "detail": "typer.testing",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "qfr_pipeline.cli",
+        "description": "qfr_pipeline.cli",
+        "isExtraImport": true,
+        "detail": "qfr_pipeline.cli",
         "documentation": {}
     },
     {
@@ -3337,7 +3585,34 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.cli",
         "description": "src.qfr_pipeline.cli",
-        "peekOfCode": "def export_training_dataset_cmd(manifest: Path = typer.Option(..., \"--manifest\"), out_dir: Path = typer.Option(..., \"--out-dir\")):\n    _refresh_dynamic_agents()\n    report = export_training_dataset(manifest, out_dir)\n    if not report.ok:\n        raise typer.Exit(code=1)\n    print(f\"Training export artifacts generated in {out_dir}\")\n@app.command(\"validate-modern-corpus\")\ndef validate_modern_corpus_cmd(manifest: Path = typer.Option(..., \"--manifest\")):\n    _refresh_dynamic_agents()\n    validate_modern_corpus_manifest(manifest)",
+        "peekOfCode": "def export_training_dataset_cmd(manifest: Path = typer.Option(..., \"--manifest\"), out_dir: Path = typer.Option(..., \"--out-dir\")):\n    _refresh_dynamic_agents()\n    report = export_training_dataset(manifest, out_dir)\n    if not report.ok:\n        raise typer.Exit(code=1)\n    print(f\"Training export artifacts generated in {out_dir}\")\n@app.command(\"validate-training-pack-policy\")\ndef validate_training_pack_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_training_pack_policy_model(policy)",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_pack_policy_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def validate_training_pack_policy_cmd(policy: Path = typer.Option(..., \"--policy\")):\n    _refresh_dynamic_agents()\n    validate_training_pack_policy_model(policy)\n    print(\"Training pack policy manifest valid\")\n@app.command(\"build-training-pack\")\ndef build_training_pack_cmd(\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n    permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"),\n):",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "build_training_pack_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def build_training_pack_cmd(\n    policy: Path = typer.Option(..., \"--policy\"),\n    out_dir: Path | None = typer.Option(None, \"--out-dir\"),\n    permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"),\n):\n    _refresh_dynamic_agents()\n    payload = build_training_pack(policy, out_dir=out_dir, permission_manifest=permission_manifest)\n    print(\n        {\n            \"ok\": payload.get(\"ok\", False),",
+        "detail": "src.qfr_pipeline.cli",
+        "documentation": {}
+    },
+    {
+        "label": "audit_training_pack_cmd",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.cli",
+        "description": "src.qfr_pipeline.cli",
+        "peekOfCode": "def audit_training_pack_cmd(\n    pack_dir: Path = typer.Option(..., \"--pack-dir\"),\n    out: Path = typer.Option(..., \"--out\"),\n    fail_below: str | None = typer.Option(None, \"--fail-below\"),\n):\n    _refresh_dynamic_agents()\n    payload = audit_training_pack(pack_dir, out)\n    if not payload.get(\"ok\", False):\n        raise typer.Exit(code=1)\n    level = payload.get(\"readiness_level\", \"insufficient\")",
         "detail": "src.qfr_pipeline.cli",
         "documentation": {}
     },
@@ -3346,7 +3621,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.cli",
         "description": "src.qfr_pipeline.cli",
-        "peekOfCode": "def validate_modern_corpus_cmd(manifest: Path = typer.Option(..., \"--manifest\")):\n    _refresh_dynamic_agents()\n    validate_modern_corpus_manifest(manifest)\n    print(\"Modern corpus manifest valid\")\n@app.command(\"acquire-modern-corpus\")\ndef acquire_modern_corpus_cmd(manifest: Path = typer.Option(..., \"--manifest\"), out: Path = typer.Option(..., \"--out\"), report: Path = typer.Option(..., \"--report\"), permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"), include_noncommercial: bool = typer.Option(False, \"--include-noncommercial\"), max_documents: int | None = typer.Option(None, \"--max-documents\")):\n    _refresh_dynamic_agents()\n    payload = acquire_modern_corpus(manifest, out, report, permission_manifest=permission_manifest, include_noncommercial=include_noncommercial, max_documents=max_documents)\n    if not payload.get('ok', False):\n        raise typer.Exit(code=1)",
+        "peekOfCode": "def validate_modern_corpus_cmd(manifest: Path = typer.Option(..., \"--manifest\")):\n    _refresh_dynamic_agents()\n    validate_modern_corpus_manifest(manifest)\n    print(\"Modern corpus manifest valid\")\n@app.command(\"acquire-modern-corpus\")\ndef acquire_modern_corpus_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out: Path = typer.Option(..., \"--out\"),\n    report: Path = typer.Option(..., \"--report\"),\n    permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"),",
         "detail": "src.qfr_pipeline.cli",
         "documentation": {}
     },
@@ -3355,7 +3630,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.cli",
         "description": "src.qfr_pipeline.cli",
-        "peekOfCode": "def acquire_modern_corpus_cmd(manifest: Path = typer.Option(..., \"--manifest\"), out: Path = typer.Option(..., \"--out\"), report: Path = typer.Option(..., \"--report\"), permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"), include_noncommercial: bool = typer.Option(False, \"--include-noncommercial\"), max_documents: int | None = typer.Option(None, \"--max-documents\")):\n    _refresh_dynamic_agents()\n    payload = acquire_modern_corpus(manifest, out, report, permission_manifest=permission_manifest, include_noncommercial=include_noncommercial, max_documents=max_documents)\n    if not payload.get('ok', False):\n        raise typer.Exit(code=1)\n@app.command(\"audit-corpus-readiness\")\ndef audit_corpus_readiness_cmd(input: Path = typer.Option(..., \"--input\"), out: Path = typer.Option(..., \"--out\"), fail_below: str | None = typer.Option(None, \"--fail-below\")):\n    _refresh_dynamic_agents()\n    payload = audit_corpus_readiness(input, out)\n    if not payload.get(\"ok\", False):",
+        "peekOfCode": "def acquire_modern_corpus_cmd(\n    manifest: Path = typer.Option(..., \"--manifest\"),\n    out: Path = typer.Option(..., \"--out\"),\n    report: Path = typer.Option(..., \"--report\"),\n    permission_manifest: Path | None = typer.Option(None, \"--permission-manifest\"),\n    include_noncommercial: bool = typer.Option(False, \"--include-noncommercial\"),\n    max_documents: int | None = typer.Option(None, \"--max-documents\"),\n    timeout: int = typer.Option(30, \"--timeout\"),\n    fixture_mode: bool = typer.Option(False, \"--fixture-mode\"),\n    fail_on_empty: bool = typer.Option(False, \"--fail-on-empty\"),",
         "detail": "src.qfr_pipeline.cli",
         "documentation": {}
     },
@@ -3409,7 +3684,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.corpus_readiness",
         "description": "src.qfr_pipeline.corpus_readiness",
-        "peekOfCode": "def audit_corpus_readiness(input_jsonl: Path, out_report: Path, policy_manifest: Path | None = None) -> dict:\n    del policy_manifest\n    if not input_jsonl.exists():\n        report = {\n            \"ok\": False,\n            \"input\": repo_relative_path(input_jsonl),\n            \"records_total\": 0,\n            \"estimated_tokens\": 0,\n            \"source_count\": 0,\n            \"domain_balance\": {},",
+        "peekOfCode": "def audit_corpus_readiness(input_jsonl: Path, out_report: Path, policy_manifest: Path | None = None) -> dict:\n    del policy_manifest\n    if not input_jsonl.exists():\n        report = {\n            \"ok\": False,\n            \"input\": repo_relative_path(input_jsonl),\n            \"records_total\": 0,\n            \"estimated_tokens\": 0,\n            \"source_count\": 0,\n            \"acquisition_source_type_summary\": {},",
         "detail": "src.qfr_pipeline.corpus_readiness",
         "documentation": {}
     },
@@ -3963,11 +4238,11 @@
         "documentation": {}
     },
     {
-        "label": "HTMLTextExtractor",
+        "label": "HTMLContentExtractor",
         "kind": 6,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "class HTMLTextExtractor(HTMLParser):\n    def __init__(self) -> None:\n        super().__init__()\n        self._chunks: list[str] = []\n    def handle_data(self, data: str) -> None:\n        self._chunks.append(data)\n    def text(self) -> str:\n        return \"\\n\".join(self._chunks)\n@dataclass\nclass AcquisitionContext:",
+        "peekOfCode": "class HTMLContentExtractor(HTMLParser):\n    \"\"\"Extract title and block-like text segments from HTML with stdlib only.\"\"\"\n    BLOCK_TAGS = {\n        \"p\",\n        \"div\",\n        \"li\",\n        \"h1\",\n        \"h2\",\n        \"h3\",\n        \"h4\",",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -3976,7 +4251,7 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "class AcquisitionContext:\n    include_noncommercial: bool\n    permission_sources: set[str]\n    max_documents: int | None\n    timeout: int\n    seen_hashes: set[str] = field(default_factory=set)\n@dataclass\nclass AcquisitionResult:\n    records: list[dict[str, Any]] = field(default_factory=list)\n    skipped_sources: list[dict[str, str]] = field(default_factory=list)",
+        "peekOfCode": "class AcquisitionContext:\n    include_noncommercial: bool\n    permission_sources: set[str]\n    max_documents: int | None\n    timeout: int\n    fixture_mode: bool\n    seen_text_hashes: set[str] = field(default_factory=set)\n    seen_normalized_hashes: set[str] = field(default_factory=set)\n@dataclass\nclass AcquisitionResult:",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -3985,7 +4260,7 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "class AcquisitionResult:\n    records: list[dict[str, Any]] = field(default_factory=list)\n    skipped_sources: list[dict[str, str]] = field(default_factory=list)\n    issues: list[dict[str, str]] = field(default_factory=list)\n    per_source: dict[str, int] = field(default_factory=dict)\n    holdout_registry: list[str] = field(default_factory=list)\ndef _sha256(text: str) -> str:\n    return hashlib.sha256(text.encode(\"utf-8\")).hexdigest()\ndef _clean_text(text: str) -> str:\n    return re.sub(r\"\\s+\", \" \", text).strip()",
+        "peekOfCode": "class AcquisitionResult:\n    records: list[dict[str, Any]] = field(default_factory=list)\n    skipped_sources: list[dict[str, str]] = field(default_factory=list)\n    issues: list[dict[str, str]] = field(default_factory=list)\n    per_source: dict[str, int] = field(default_factory=dict)\n    holdout_registry: list[str] = field(default_factory=list)\n    skipped_seed_urls: list[dict[str, str]] = field(default_factory=list)\n    skipped_packages: list[dict[str, str]] = field(default_factory=list)\n    source_reports: dict[str, dict[str, Any]] = field(default_factory=dict)\ndef _sha256(text: str) -> str:",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -3994,7 +4269,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "def load_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:\n    return ModernCorpusAcquisitionManifest.model_validate(load_yaml(path))\ndef validate_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:\n    return load_modern_corpus_manifest(path)\ndef _record(source: ModernCorpusSource, text: str, index: int, *, source_url: str | None = None, source_path: str | None = None, register: str = \"formal\", domain: str = \"general\", license_name: str | None = None, license_url: str | None = None) -> dict[str, Any]:\n    text_hash = _sha256(text)\n    return {\n        \"record_id\": f\"{source.source_id}:{index}:{text_hash[:12]}\",\n        \"source_id\": source.source_id,\n        \"source_name\": source.name,",
+        "peekOfCode": "def load_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:\n    return ModernCorpusAcquisitionManifest.model_validate(load_yaml(path))\ndef validate_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:\n    return load_modern_corpus_manifest(path)\ndef _record(\n    source: ModernCorpusSource,\n    text: str,\n    index: int,\n    *,\n    source_url: str | None = None,",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -4003,7 +4278,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "def validate_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:\n    return load_modern_corpus_manifest(path)\ndef _record(source: ModernCorpusSource, text: str, index: int, *, source_url: str | None = None, source_path: str | None = None, register: str = \"formal\", domain: str = \"general\", license_name: str | None = None, license_url: str | None = None) -> dict[str, Any]:\n    text_hash = _sha256(text)\n    return {\n        \"record_id\": f\"{source.source_id}:{index}:{text_hash[:12]}\",\n        \"source_id\": source.source_id,\n        \"source_name\": source.name,\n        \"text\": text,\n        \"text_sha256\": text_hash,",
+        "peekOfCode": "def validate_modern_corpus_manifest(path: Path) -> ModernCorpusAcquisitionManifest:\n    return load_modern_corpus_manifest(path)\ndef _record(\n    source: ModernCorpusSource,\n    text: str,\n    index: int,\n    *,\n    source_url: str | None = None,\n    source_path: str | None = None,\n    register: str = \"formal\",",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -4012,7 +4287,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "def acquire_donnees_quebec_ckan(source: ModernCorpusSource, result: AcquisitionResult, ctx: AcquisitionContext) -> None:\n    if ctx.max_documents == 0:\n        result.per_source[source.source_id] = 0\n        _catalog_skip(result, source.source_id, \"dry_run_max_documents_zero\")\n        return\n    base_url = (source.adapter.base_url or \"\").rstrip(\"/\")\n    query = urlencode({\"rows\": source.adapter.rows, \"q\": source.adapter.query})\n    try:\n        with urlopen(f\"{base_url}/package_search?{query}\", timeout=ctx.timeout) as response:\n            payload = json.loads(response.read())",
+        "peekOfCode": "def acquire_donnees_quebec_ckan(\n    source: ModernCorpusSource,\n    result: AcquisitionResult,\n    ctx: AcquisitionContext,\n) -> None:\n    package_count_seen = 0\n    package_count_selected = 0\n    package_count_skipped = 0\n    license_summary: Counter[str] = Counter()\n    organization_summary: Counter[str] = Counter()",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -4021,7 +4296,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "def acquire_assnat_seed_html(source: ModernCorpusSource, result: AcquisitionResult, ctx: AcquisitionContext) -> None:\n    if not ctx.include_noncommercial:\n        _catalog_skip(result, source.source_id, \"noncommercial_requires_explicit_flag\")\n        result.per_source[source.source_id] = 0\n        return\n    if ctx.max_documents == 0:\n        _catalog_skip(result, source.source_id, \"dry_run_max_documents_zero\")\n        result.per_source[source.source_id] = 0\n        return\n    urls = sorted(source.adapter.seed_urls)",
+        "peekOfCode": "def acquire_assnat_seed_html(\n    source: ModernCorpusSource,\n    result: AcquisitionResult,\n    ctx: AcquisitionContext,\n) -> None:\n    if not ctx.include_noncommercial:\n        _catalog_skip(result, source.source_id, _NONCOMMERCIAL_REQUIRE_PERMISSION)\n        result.per_source[source.source_id] = 0\n        result.source_reports[source.source_id] = {\n            \"source_id\": source.source_id,",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -4030,7 +4305,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "def acquire_local_text_bundle(source: ModernCorpusSource, result: AcquisitionResult, ctx: AcquisitionContext) -> None:\n    if source.source_id not in ctx.permission_sources:\n        _catalog_skip(result, source.source_id, \"permission_required\")\n        result.per_source[source.source_id] = 0\n        return\n    globs = sorted(source.adapter.local_globs)\n    index = 0\n    source_limit = _effective_limit(source, ctx, 10**9)\n    for pattern in globs:\n        for file_path in sorted(ROOT.glob(pattern)):",
+        "peekOfCode": "def acquire_local_text_bundle(\n    source: ModernCorpusSource,\n    result: AcquisitionResult,\n    ctx: AcquisitionContext,\n) -> None:\n    if source.source_id not in ctx.permission_sources:\n        _catalog_skip(result, source.source_id, \"permission_required\")\n        result.per_source[source.source_id] = 0\n        return\n    globs = sorted(source.adapter.local_globs)",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -4039,16 +4314,34 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "def acquire_modern_corpus(manifest_path: Path, out_jsonl: Path, report_path: Path, permission_manifest: Path | None = None, include_noncommercial: bool = False, max_documents: int | None = None, timeout: int = 30) -> dict[str, Any]:\n    manifest = load_modern_corpus_manifest(manifest_path)\n    permission_data = load_yaml(permission_manifest) if permission_manifest and permission_manifest.exists() else {}\n    permission_sources = set((permission_data or {}).get(\"sources\", {}).keys())\n    ctx = AcquisitionContext(include_noncommercial=include_noncommercial, permission_sources=permission_sources, max_documents=max_documents, timeout=timeout)\n    result = AcquisitionResult()\n    for source in sorted(manifest.sources, key=lambda s: s.source_id):\n        if source.acquisition_status in {\"catalog_only\", \"blocked_license\"}:\n            _catalog_skip(result, source.source_id, source.acquisition_status)\n            result.per_source[source.source_id] = 0",
+        "peekOfCode": "def acquire_modern_corpus(\n    manifest_path: Path,\n    out_jsonl: Path,\n    report_path: Path,\n    permission_manifest: Path | None = None,\n    include_noncommercial: bool = False,\n    max_documents: int | None = None,\n    timeout: int = 30,\n    fixture_mode: bool = False,\n) -> dict[str, Any]:",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
     {
-        "label": "MIN_TEXT_LEN",
+        "label": "DEFAULT_MIN_TEXT_LEN",
         "kind": 5,
         "importPath": "src.qfr_pipeline.modern_corpus",
         "description": "src.qfr_pipeline.modern_corpus",
-        "peekOfCode": "MIN_TEXT_LEN = 40\nclass HTMLTextExtractor(HTMLParser):\n    def __init__(self) -> None:\n        super().__init__()\n        self._chunks: list[str] = []\n    def handle_data(self, data: str) -> None:\n        self._chunks.append(data)\n    def text(self) -> str:\n        return \"\\n\".join(self._chunks)\n@dataclass",
+        "peekOfCode": "DEFAULT_MIN_TEXT_LEN = 40\n_NAVIGATION_PATTERNS = (\n    \"accueil\",\n    \"menu\",\n    \"navigation\",\n    \"fil d'ariane\",\n    \"recherche\",\n    \"nous joindre\",\n    \"retour en haut\",\n    \"imprimer\",",
+        "detail": "src.qfr_pipeline.modern_corpus",
+        "documentation": {}
+    },
+    {
+        "label": "_NAVIGATION_PATTERNS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.modern_corpus",
+        "description": "src.qfr_pipeline.modern_corpus",
+        "peekOfCode": "_NAVIGATION_PATTERNS = (\n    \"accueil\",\n    \"menu\",\n    \"navigation\",\n    \"fil d'ariane\",\n    \"recherche\",\n    \"nous joindre\",\n    \"retour en haut\",\n    \"imprimer\",\n    \"partager\",",
+        "detail": "src.qfr_pipeline.modern_corpus",
+        "documentation": {}
+    },
+    {
+        "label": "_NONCOMMERCIAL_REQUIRE_PERMISSION",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.modern_corpus",
+        "description": "src.qfr_pipeline.modern_corpus",
+        "peekOfCode": "_NONCOMMERCIAL_REQUIRE_PERMISSION = \"noncommercial_requires_explicit_flag\"\nclass HTMLContentExtractor(HTMLParser):\n    \"\"\"Extract title and block-like text segments from HTML with stdlib only.\"\"\"\n    BLOCK_TAGS = {\n        \"p\",\n        \"div\",\n        \"li\",\n        \"h1\",\n        \"h2\",\n        \"h3\",",
         "detail": "src.qfr_pipeline.modern_corpus",
         "documentation": {}
     },
@@ -4449,11 +4742,74 @@
         "documentation": {}
     },
     {
+        "label": "TrainingPackSplitRatios",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackSplitRatios(BaseModel):\n    train: float\n    dev: float\n    test: float\n    @model_validator(mode=\"after\")\n    def validate_ratios(self):\n        values = [self.train, self.dev, self.test]\n        if any(v <= 0 for v in values):\n            raise ValueError(\"split ratios must be strictly positive\")\n        total = sum(values)",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackSourceInput",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackSourceInput(BaseModel):\n    path: str\n    source_family: str\n    source_priority: int = 0\n    allowed_for_training_required: bool = True\n    max_source_share: float = 1.0\n    include_if_exists: bool = True\n    required: bool = False\n    @field_validator(\"path\")\n    @classmethod",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackInstructionizationConfig",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackInstructionizationConfig(BaseModel):\n    enabled: bool = True\n    strategies: list[\n        Literal[\n            \"style_rewrite\",\n            \"explain_term\",\n            \"summarize\",\n            \"qa_from_context\",\n            \"preserve_raw\",\n            \"normalize_to_quebec_fr\",",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackBalancingConfig",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackBalancingConfig(BaseModel):\n    max_single_source_share: float = 1.0\n    max_single_source_family_share: float = 1.0\n    min_domain_count_for_pilot: int = 3\n    min_register_count_for_pilot: int = 2\n    target_register_mix: dict[str, float] = Field(default_factory=dict)\n    target_domain_mix: dict[str, float] = Field(default_factory=dict)\n    @field_validator(\"max_single_source_share\", \"max_single_source_family_share\")\n    @classmethod\n    def validate_shares(cls, value: float) -> float:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackSafetyConfig",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackSafetyConfig(BaseModel):\n    reject_holdout_material: bool = True\n    reject_permission_required_without_grant: bool = True\n    reject_commercial_unknown_for_production: bool = True\n    reject_duplicate_normalized_text: bool = True\n    reject_empty_text: bool = True\nclass TrainingPackReadinessThresholds(BaseModel):\n    smoke_test_tokens: int = 500_000\n    pilot_lora_tokens: int = 20_000_000\n    production_lora_tokens: int = 150_000_000",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackReadinessThresholds",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackReadinessThresholds(BaseModel):\n    smoke_test_tokens: int = 500_000\n    pilot_lora_tokens: int = 20_000_000\n    production_lora_tokens: int = 150_000_000\n    production_instruction_examples: int = 200_000\n    @model_validator(mode=\"after\")\n    def validate_thresholds(self):\n        if self.smoke_test_tokens <= 0:\n            raise ValueError(\"readiness_thresholds.smoke_test_tokens must be > 0\")\n        if self.pilot_lora_tokens <= self.smoke_test_tokens:",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TrainingPackPolicyManifest",
+        "kind": 6,
+        "importPath": "src.qfr_pipeline.schemas",
+        "description": "src.qfr_pipeline.schemas",
+        "peekOfCode": "class TrainingPackPolicyManifest(BaseModel):\n    kind: str\n    schema_version: str\n    primary_language: str\n    pack_id: str\n    pack_version: str\n    output_dir: str\n    random_seed: int\n    split_ratios: TrainingPackSplitRatios\n    source_inputs: list[TrainingPackSourceInput]",
+        "detail": "src.qfr_pipeline.schemas",
+        "documentation": {}
+    },
+    {
         "label": "ModernCorpusAdapterConfig",
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
         "description": "src.qfr_pipeline.schemas",
-        "peekOfCode": "class ModernCorpusAdapterConfig(BaseModel):\n    name: str\n    base_url: str | None = None\n    query: str = \"textuel\"\n    rows: int = 20\n    seed_urls: list[str] = Field(default_factory=list)\n    local_globs: list[str] = Field(default_factory=list)\n    raw_file_urls: list[str] = Field(default_factory=list)\n    @field_validator(\"base_url\")\n    @classmethod",
+        "peekOfCode": "class ModernCorpusAdapterConfig(BaseModel):\n    name: str\n    base_url: str | None = None\n    query: str = \"\"\n    query_terms: list[str] = Field(default_factory=list)\n    rows: int = 100\n    seed_urls: list[str] = Field(default_factory=list)\n    local_globs: list[str] = Field(default_factory=list)\n    raw_file_urls: list[str] = Field(default_factory=list)\n    fixture_response_path: str | None = None",
         "detail": "src.qfr_pipeline.schemas",
         "documentation": {}
     },
@@ -4462,7 +4818,7 @@
         "kind": 6,
         "importPath": "src.qfr_pipeline.schemas",
         "description": "src.qfr_pipeline.schemas",
-        "peekOfCode": "class ModernCorpusSource(BaseModel):\n    source_id: str\n    name: str\n    source_type: Literal[\"official_html\", \"ckan_api\", \"github_dataset\", \"huggingface_dataset\", \"local_permissioned_dump\", \"catalog_only\", \"evaluation_holdout\", \"permission_required\"]\n    acquisition_status: Literal[\"active\", \"catalog_only\", \"blocked_license\", \"permission_required\", \"holdout_only\", \"local_only\"]\n    license_status: Literal[\"open_compatible\", \"noncommercial_only\", \"permission_required\", \"unclear\", \"blocked\", \"holdout_only\"]\n    commercial_use: Literal[\"allowed\", \"prohibited\", \"permission_required\", \"unknown\"]\n    allowed_for_training: bool\n    allowed_for_evaluation: bool = True\n    holdout_only: bool = False",
+        "peekOfCode": "class ModernCorpusSource(BaseModel):\n    source_id: str\n    name: str\n    source_type: Literal[\"official_html\", \"ckan_api\", \"github_dataset\", \"huggingface_dataset\", \"local_permissioned_dump\", \"catalog_only\", \"evaluation_holdout\", \"permission_required\"]\n    acquisition_status: Literal[\"active\", \"catalog_only\", \"blocked_license\", \"permission_required\", \"holdout_only\", \"local_only\"]\n    license_status: Literal[\"open_compatible\", \"noncommercial_only\", \"permission_required\", \"unclear\", \"blocked\", \"holdout_only\"]\n    commercial_use: Literal[\"allowed\", \"prohibited\", \"permission_required\", \"unknown\", \"allowed_if_package_license_allows\"]\n    allowed_for_training: bool\n    allowed_for_evaluation: bool = True\n    holdout_only: bool = False",
         "detail": "src.qfr_pipeline.schemas",
         "documentation": {}
     },
@@ -4584,6 +4940,78 @@
         "documentation": {}
     },
     {
+        "label": "load_training_pack_policy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "def load_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return TrainingPackPolicyManifest.model_validate(load_yaml(path))\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return load_training_pack_policy(path)\ndef _extract_sentences(text: str) -> list[str]:\n    text = _clean_text(text)\n    if not text:\n        return []\n    parts = re.split(r\"(?<=[.!?])\\s+\", text)\n    return [_clean_text(part) for part in parts if _clean_text(part)]",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_pack_policy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return load_training_pack_policy(path)\ndef _extract_sentences(text: str) -> list[str]:\n    text = _clean_text(text)\n    if not text:\n        return []\n    parts = re.split(r\"(?<=[.!?])\\s+\", text)\n    return [_clean_text(part) for part in parts if _clean_text(part)]\ndef _extract_summary(text: str, max_chars: int) -> str:\n    sentences = _extract_sentences(text)",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "build_training_pack",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "def build_training_pack(\n    policy_path: Path,\n    out_dir: Path | None = None,\n    permission_manifest: Path | None = None,\n) -> dict[str, Any]:\n    policy = validate_training_pack_policy(policy_path)\n    permission_sources = _load_permission_sources(permission_manifest)\n    output_dir = out_dir if out_dir is not None else Path(policy.output_dir)\n    output_root = output_dir if output_dir.is_absolute() else ROOT / output_dir\n    output_root.mkdir(parents=True, exist_ok=True)",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "audit_training_pack",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "def audit_training_pack(pack_dir: Path, out_report: Path) -> dict[str, Any]:\n    pack_root = pack_dir if pack_dir.is_absolute() else ROOT / pack_dir\n    report_path = pack_root / \"report.json\"\n    if not report_path.exists():\n        payload = {\n            \"ok\": False,\n            \"pack_dir\": repo_relative_path(pack_root),\n            \"report\": repo_relative_path(report_path),\n            \"blocking_reasons\": [\"missing_training_pack_report\"],\n            \"readiness_level\": \"insufficient\",",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "MARKERS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "MARKERS = [\n    \"courriel\",\n    \"dépanneur\",\n    \"stationnement\",\n    \"magasinage\",\n    \"cellulaire\",\n    \"clavarder\",\n    \"fin de semaine\",\n    \"char\",\n    \"icitte\",",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "NORMALIZATION_REPLACEMENTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "NORMALIZATION_REPLACEMENTS = [\n    (r\"\\bemail\\b\", \"courriel\"),\n    (r\"\\bparking\\b\", \"stationnement\"),\n    (r\"\\bshopping\\b\", \"magasinage\"),\n    (r\"\\btéléphone portable\\b\", \"cellulaire\"),\n    (r\"\\bportable\\b\", \"cellulaire\"),\n]\nFR_CA_CONTRASTS = [\n    (\"week-end\", \"fin de semaine\"),\n    (\"email\", \"courriel\"),",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "FR_CA_CONTRASTS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "FR_CA_CONTRASTS = [\n    (\"week-end\", \"fin de semaine\"),\n    (\"email\", \"courriel\"),\n    (\"parking\", \"stationnement\"),\n    (\"shopping\", \"magasinage\"),\n    (\"téléphone portable\", \"cellulaire\"),\n    (\"portable\", \"cellulaire\"),\n]\nREADINESS_LEVELS = [\n    \"insufficient\",",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "READINESS_LEVELS",
+        "kind": 5,
+        "importPath": "src.qfr_pipeline.training_pack",
+        "description": "src.qfr_pipeline.training_pack",
+        "peekOfCode": "READINESS_LEVELS = [\n    \"insufficient\",\n    \"smoke_test\",\n    \"pilot_lora_candidate\",\n    \"production_lora_candidate\",\n]\ndef _clean_text(text: str) -> str:\n    return re.sub(r\"\\s+\", \" \", text).strip()\ndef _normalize_text(text: str) -> str:\n    return \" \".join(_clean_text(text).casefold().split())",
+        "detail": "src.qfr_pipeline.training_pack",
+        "documentation": {}
+    },
+    {
         "label": "ValidationIssue",
         "kind": 6,
         "importPath": "src.qfr_pipeline.validation",
@@ -4651,7 +5079,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
+        "peekOfCode": "def validate_corpus_source_manifest(path: Path) -> CorpusSourceManifest:\n    return _validate(path, CorpusSourceManifest)\ndef validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -4660,7 +5088,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
+        "peekOfCode": "def validate_curation_policy_manifest(path: Path) -> CurationPolicyManifest:\n    return _validate(path, CurationPolicyManifest)\ndef validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -4669,7 +5097,7 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "peekOfCode": "def validate_split_policy_manifest(path: Path) -> SplitPolicyManifest:\n    return _validate(path, SplitPolicyManifest)\ndef validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -4678,7 +5106,16 @@
         "kind": 2,
         "importPath": "src.qfr_pipeline.validation",
         "description": "src.qfr_pipeline.validation",
-        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
+        "peekOfCode": "def validate_training_export_manifest(path: Path) -> TrainingExportManifest:\n    return _validate(path, TrainingExportManifest)\ndef validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:",
+        "detail": "src.qfr_pipeline.validation",
+        "documentation": {}
+    },
+    {
+        "label": "validate_training_pack_policy",
+        "kind": 2,
+        "importPath": "src.qfr_pipeline.validation",
+        "description": "src.qfr_pipeline.validation",
+        "peekOfCode": "def validate_training_pack_policy(path: Path) -> TrainingPackPolicyManifest:\n    return _validate(path, TrainingPackPolicyManifest)\ndef validate_evaluation_manifest(path: Path, release_gates_path: Path) -> EvaluationManifest:\n    eval_manifest = _validate(path, EvaluationManifest)\n    gates = validate_release_gates(release_gates_path)\n    ensure_eval_gates_sync(eval_manifest, gates)\n    return eval_manifest\ndef validate_repository(root: Path) -> ValidationReport:\n    report = ValidationReport(ok=True)\n    gates_path = root / \"project\" / \"release_gates.yaml\"",
         "detail": "src.qfr_pipeline.validation",
         "documentation": {}
     },
@@ -5583,6 +6020,123 @@
         "documentation": {}
     },
     {
+        "label": "test_ckan_fixture_acquisition_writes_deterministic_records",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_ckan_fixture_acquisition_writes_deterministic_records(tmp_path: Path) -> None:\n    out = tmp_path / \"dq.jsonl\"\n    report = tmp_path / \"dq_report.json\"\n    payload = acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",\n        out,\n        report,\n        max_documents=25,\n    )\n    rows = _read_jsonl(out)",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_ckan_adapter_skips_unknown_license_package",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_ckan_adapter_skips_unknown_license_package(tmp_path: Path) -> None:\n    out = tmp_path / \"dq.jsonl\"\n    report = tmp_path / \"dq_report.json\"\n    payload = acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",\n        out,\n        report,\n        max_documents=25,\n    )\n    skipped = payload[\"skipped_packages\"]",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_ckan_report_has_package_license_org_domain_summaries",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_ckan_report_has_package_license_org_domain_summaries(tmp_path: Path) -> None:\n    out = tmp_path / \"dq.jsonl\"\n    report = tmp_path / \"dq_report.json\"\n    acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",\n        out,\n        report,\n        max_documents=25,\n    )\n    payload = json.loads(report.read_text(encoding=\"utf-8\"))",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_ckan_max_documents_zero_no_fetch_and_empty_output",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_ckan_max_documents_zero_no_fetch_and_empty_output(tmp_path: Path, monkeypatch) -> None:\n    def _no_fetch(*args, **kwargs):\n        raise AssertionError(\"urlopen should not be called when --max-documents 0\")\n    monkeypatch.setattr(\"qfr_pipeline.modern_corpus.urlopen\", _no_fetch)\n    out = tmp_path / \"dq_empty.jsonl\"\n    report = tmp_path / \"dq_empty_report.json\"\n    payload = acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",\n        out,\n        report,",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_assnat_without_include_noncommercial_skips_source",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_assnat_without_include_noncommercial_skips_source(tmp_path: Path) -> None:\n    out = tmp_path / \"assnat_skip.jsonl\"\n    report = tmp_path / \"assnat_skip_report.json\"\n    payload = acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.assnat_seed.template.yaml\",\n        out,\n        report,\n        include_noncommercial=False,\n        max_documents=10,\n    )",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_assnat_with_include_noncommercial_fixture_writes_records",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_assnat_with_include_noncommercial_fixture_writes_records(tmp_path: Path) -> None:\n    out = tmp_path / \"assnat.jsonl\"\n    report = tmp_path / \"assnat_report.json\"\n    payload = acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.assnat_seed.template.yaml\",\n        out,\n        report,\n        include_noncommercial=True,\n        max_documents=10,\n    )",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_assnat_filters_navigation_junk_text",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_assnat_filters_navigation_junk_text(tmp_path: Path) -> None:\n    out = tmp_path / \"assnat.jsonl\"\n    report = tmp_path / \"assnat_report.json\"\n    acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.assnat_seed.template.yaml\",\n        out,\n        report,\n        include_noncommercial=True,\n        max_documents=10,\n    )",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_assnat_does_not_crawl_links",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_assnat_does_not_crawl_links(tmp_path: Path) -> None:\n    out = tmp_path / \"assnat.jsonl\"\n    report = tmp_path / \"assnat_report.json\"\n    acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.assnat_seed.template.yaml\",\n        out,\n        report,\n        include_noncommercial=True,\n        max_documents=10,\n    )",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_duplicate_text_suppression_works",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_duplicate_text_suppression_works(tmp_path: Path) -> None:\n    manifest = tmp_path / \"dup_manifest.yaml\"\n    manifest.write_text(\n        \"\"\"\nkind: modern_corpus_acquisition_manifest\nschema_version: \"1.0\"\nprimary_language: fr-CA\nsources:\n  - source_id: assnat_dup\n    name: AssNat Dup",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_no_workspace_or_runner_path_leakage",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_no_workspace_or_runner_path_leakage(tmp_path: Path) -> None:\n    out = tmp_path / \"dq.jsonl\"\n    report = tmp_path / \"dq_report.json\"\n    acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",\n        out,\n        report,\n        max_documents=25,\n    )\n    text = out.read_text(encoding=\"utf-8\") + report.read_text(encoding=\"utf-8\")",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_fail_on_empty_fails_only_when_expected",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_cli_fail_on_empty_fails_only_when_expected(tmp_path: Path) -> None:\n    runner = CliRunner()\n    empty_out = tmp_path / \"empty.jsonl\"\n    empty_report = tmp_path / \"empty.json\"\n    r1 = runner.invoke(\n        app,\n        [\n            \"acquire-modern-corpus\",\n            \"--manifest\",\n            \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "test_readiness_audit_includes_modern_and_institutional_ratios",
+        "kind": 2,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "def test_readiness_audit_includes_modern_and_institutional_ratios(tmp_path: Path) -> None:\n    out = tmp_path / \"dq.jsonl\"\n    report = tmp_path / \"dq_report.json\"\n    acquire_modern_corpus(\n        ROOT / \"manifests/modern_corpus_acquisition.donnees_quebec.template.yaml\",\n        out,\n        report,\n        max_documents=25,\n    )\n    readiness_out = tmp_path / \"readiness.json\"",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
+        "label": "ROOT",
+        "kind": 5,
+        "importPath": "tests.test_t24_modern_source_adapters",
+        "description": "tests.test_t24_modern_source_adapters",
+        "peekOfCode": "ROOT = Path(__file__).resolve().parents[1]\ndef _read_jsonl(path: Path) -> list[dict]:\n    rows = []\n    for line in path.read_text(encoding=\"utf-8\").splitlines():\n        if line.strip():\n            rows.append(json.loads(line))\n    return rows\ndef test_ckan_fixture_acquisition_writes_deterministic_records(tmp_path: Path) -> None:\n    out = tmp_path / \"dq.jsonl\"\n    report = tmp_path / \"dq_report.json\"",
+        "detail": "tests.test_t24_modern_source_adapters",
+        "documentation": {}
+    },
+    {
         "label": "test_valid_training_manifest_validates",
         "kind": 2,
         "importPath": "tests.test_training_export",
@@ -5634,6 +6188,231 @@
         "description": "tests.test_training_export",
         "peekOfCode": "runner = CliRunner()\ndef test_valid_training_manifest_validates():\n    m = validate_training_export_manifest(Path(\"manifests/training_export_manifest.template.yaml\"))\n    assert m.primary_language == \"fr-CA\"\ndef test_export_training_dataset_and_hash_determinism(tmp_path: Path):\n    r1 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out1\")\n    r2 = export_training_dataset(Path(\"manifests/training_export_manifest.template.yaml\"), tmp_path / \"out2\")\n    assert r1.ok and r2.ok\n    assert r1.hashes == r2.hashes\ndef test_cli_training_export_commands_pass(tmp_path: Path):",
         "detail": "tests.test_training_export",
+        "documentation": {}
+    },
+    {
+        "label": "repo_tmp_dir",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def repo_tmp_dir() -> Path:\n    reports_dir = ROOT / \"reports\"\n    reports_dir.mkdir(parents=True, exist_ok=True)\n    with tempfile.TemporaryDirectory(dir=reports_dir) as tmp:\n        yield Path(tmp)\ndef _repo_rel(path: Path) -> str:\n    return path.resolve().relative_to(ROOT.resolve()).as_posix()\ndef _write_jsonl(path: Path, rows: list[dict]) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    path.write_text(",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_training_pack_policy_passes",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_valid_training_pack_policy_passes(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Courriel et fin de semaine pour test.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    validate_training_pack_policy(policy_path)\ndef test_invalid_split_ratios_fail(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte valide pour ratios.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_split_ratios_fail",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_invalid_split_ratios_fail(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte valide pour ratios.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy[\"split_ratios\"] = {\"train\": 0.8, \"dev\": 0.2, \"test\": 0.2}\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    with pytest.raises(Exception):\n        validate_training_pack_policy(policy_path)\ndef test_absolute_source_path_fails(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_absolute_source_path_fails",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_absolute_source_path_fails(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte valide.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy[\"source_inputs\"][0][\"path\"] = str(input_path.resolve())\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    with pytest.raises(Exception):\n        validate_training_pack_policy(policy_path)\ndef test_holdout_record_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_holdout_record_is_rejected",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_holdout_record_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [_base_row(\"Texte holdout.\", holdout_only=True)],\n    )\n    assert report[\"holdout_rejected\"] >= 1\ndef test_allowed_for_training_false_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [_base_row(\"Texte non entraînable.\", allowed_for_training=False)],",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_allowed_for_training_false_is_rejected",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_allowed_for_training_false_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [_base_row(\"Texte non entraînable.\", allowed_for_training=False)],\n    )\n    assert report[\"rejection_reasons\"].get(\"allowed_for_training_false\", 0) >= 1\ndef test_requires_review_true_without_permission_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_requires_review_true_without_permission_is_rejected",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_requires_review_true_without_permission_is_rejected(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(\n        repo_tmp_dir,\n        [\n            _base_row(\n                \"Texte sous revue.\",\n                requires_review=True,\n                commercial_use=\"permission_required\",\n            )\n        ],",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_duplicate_exact_text_rejected",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_duplicate_exact_text_rejected(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Même texte en double.\"),\n        _base_row(\"Même texte en double.\", source_id=\"src_b\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    assert report[\"duplicate_exact_rejected\"] >= 1\ndef test_duplicate_normalized_text_rejected(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Bonjour   Québec\"),",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_duplicate_normalized_text_rejected",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_duplicate_normalized_text_rejected(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Bonjour   Québec\"),\n        _base_row(\"bonjour québec\", source_id=\"src_b\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    assert report[\"duplicate_normalized_rejected\"] >= 1\ndef test_source_dominance_downsampling_works(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(f\"Texte dominant {idx} avec courriel.\", source_id=\"dominant\")",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_source_dominance_downsampling_works",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_source_dominance_downsampling_works(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(f\"Texte dominant {idx} avec courriel.\", source_id=\"dominant\")\n        for idx in range(10)\n    ] + [\n        _base_row(\"Texte minoritaire avec courriel.\", source_id=\"minor\")\n    ]\n    policy_path, report = _build_with_rows(\n        repo_tmp_dir,\n        rows,",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_instructionization_creates_qwen_chatml_messages",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_instructionization_creates_qwen_chatml_messages(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Courriel et fin de semaine en contexte.\")])\n    train = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])\n    assert train\n    assert \"<|im_start|>\" in train[0][\"text\"]\n    assert \"<|im_end|>\" in train[0][\"text\"]\ndef test_preserve_raw_example_format_is_correct(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Passage source à conserver tel quel.\")])\n    rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    raw = next((row for row in rows if row[\"task_type\"] == \"preserve_raw\"), None)",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_preserve_raw_example_format_is_correct",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_preserve_raw_example_format_is_correct(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Passage source à conserver tel quel.\")])\n    rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    raw = next((row for row in rows if row[\"task_type\"] == \"preserve_raw\"), None)\n    assert raw is not None\n    assert raw[\"messages\"][0][\"role\"] == \"system\"\n    assert raw[\"messages\"][1][\"role\"] == \"user\"\n    assert raw[\"messages\"][2][\"role\"] == \"assistant\"\ndef test_summarize_uses_deterministic_extractive_summary(repo_tmp_dir: Path) -> None:\n    text = \"Première phrase claire. Deuxième phrase utile. Troisième phrase complémentaire.\"",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_summarize_uses_deterministic_extractive_summary",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_summarize_uses_deterministic_extractive_summary(repo_tmp_dir: Path) -> None:\n    text = \"Première phrase claire. Deuxième phrase utile. Troisième phrase complémentaire.\"\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(text)])\n    rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    summary = next((row for row in rows if row[\"task_type\"] == \"summarize\"), None)\n    assert summary is not None\n    assert \"Première phrase claire.\" in summary[\"messages\"][2][\"content\"]\ndef test_explain_term_only_emits_when_marker_exists(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Le courriel est prêt pour la fin de semaine.\", source_id=\"marker\"),",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_explain_term_only_emits_when_marker_exists",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_explain_term_only_emits_when_marker_exists(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Le courriel est prêt pour la fin de semaine.\", source_id=\"marker\"),\n        _base_row(\"Texte neutre sans marqueur explicite.\", source_id=\"neutral\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    output_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    explain_rows = [row for row in output_rows if row[\"task_type\"] == \"explain_term\"]\n    assert explain_rows\n    assert all(\"courriel\" in row[\"messages\"][1][\"content\"].casefold() for row in explain_rows)",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_normalize_to_quebec_fr_applies_known_replacements_only",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_normalize_to_quebec_fr_applies_known_replacements_only(repo_tmp_dir: Path) -> None:\n    rows = [\n        _base_row(\"Mon email parle de shopping et de parking.\"),\n        _base_row(\"Texte sans termes à remplacer.\", source_id=\"plain\"),\n    ]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    output_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"]) + _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    norm_rows = [row for row in output_rows if row[\"task_type\"] == \"normalize_to_quebec_fr\"]\n    assert norm_rows\n    assert any(\"courriel\" in row[\"messages\"][2][\"content\"].casefold() for row in norm_rows)",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_examples_split_deterministically",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_examples_split_deterministically(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(f\"Texte split {idx} avec courriel.\", source_id=f\"s{idx % 2}\") for idx in range(12)]\n    _, report_one = _build_with_rows(repo_tmp_dir / \"a\", rows)\n    _, report_two = _build_with_rows(repo_tmp_dir / \"b\", rows)\n    train_one = _read_jsonl(ROOT / report_one[\"artifacts\"][\"train\"])\n    train_two = _read_jsonl(ROOT / report_two[\"artifacts\"][\"train\"])\n    assert [row[\"example_id\"] for row in train_one] == [row[\"example_id\"] for row in train_two]\ndef test_small_pack_populates_train_dev_test_when_total_ge_three(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(\"Texte court. Deuxième phrase. Troisième phrase.\", source_id=\"solo\")]\n    _, report = _build_with_rows(repo_tmp_dir, rows)",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_small_pack_populates_train_dev_test_when_total_ge_three",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_small_pack_populates_train_dev_test_when_total_ge_three(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(\"Texte court. Deuxième phrase. Troisième phrase.\", source_id=\"solo\")]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    train_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])\n    dev_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"])\n    test_rows = _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])\n    total = len(train_rows) + len(dev_rows) + len(test_rows)\n    if total >= 3:\n        assert train_rows\n        assert dev_rows",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_no_source_record_id_across_multiple_splits_when_enough_examples",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_no_source_record_id_across_multiple_splits_when_enough_examples(repo_tmp_dir: Path) -> None:\n    rows = [_base_row(f\"Texte multi-split {idx}.\", source_id=f\"src_{idx}\") for idx in range(20)]\n    _, report = _build_with_rows(repo_tmp_dir, rows)\n    train_ids = {row[\"source_record_id\"] for row in _read_jsonl(ROOT / report[\"artifacts\"][\"train\"])}\n    dev_ids = {row[\"source_record_id\"] for row in _read_jsonl(ROOT / report[\"artifacts\"][\"dev\"])}\n    test_ids = {row[\"source_record_id\"] for row in _read_jsonl(ROOT / report[\"artifacts\"][\"test\"])}\n    assert train_ids.isdisjoint(dev_ids)\n    assert train_ids.isdisjoint(test_ids)\n    assert dev_ids.isdisjoint(test_ids)\ndef test_report_paths_are_repo_relative(repo_tmp_dir: Path) -> None:",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_report_paths_are_repo_relative",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_report_paths_are_repo_relative(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte relatif.\")])\n    assert not Path(report[\"output_dir\"]).is_absolute()\n    assert all(not Path(path).is_absolute() for path in report[\"artifacts\"].values())\ndef test_dataset_card_generated(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte dataset card.\")])\n    card_path = ROOT / report[\"artifacts\"][\"dataset_card\"]\n    assert card_path.exists()\n    assert \"Dataset Card\" in card_path.read_text(encoding=\"utf-8\")\ndef test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_dataset_card_generated",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_dataset_card_generated(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte dataset card.\")])\n    card_path = ROOT / report[\"artifacts\"][\"dataset_card\"]\n    assert card_path.exists()\n    assert \"Dataset Card\" in card_path.read_text(encoding=\"utf-8\")\ndef test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_validate_training_pack_policy_works",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_cli_validate_training_pack_policy_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI validate.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    runner = CliRunner()\n    result = runner.invoke(app, [\"validate-training-pack-policy\", \"--policy\", str(policy_path)])\n    assert result.exit_code == 0\ndef test_cli_build_training_pack_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_build_training_pack_works",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_cli_build_training_pack_works(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte CLI build.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    out_dir = repo_tmp_dir / \"pack_cli\"\n    runner = CliRunner()\n    result = runner.invoke(\n        app,\n        [",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_cli_audit_training_pack_fail_below_production_on_fixture_scale",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_cli_audit_training_pack_fail_below_production_on_fixture_scale(repo_tmp_dir: Path) -> None:\n    input_path = repo_tmp_dir / \"in.jsonl\"\n    _write_jsonl(input_path, [_base_row(\"Texte audit CLI.\")])\n    policy = _policy_template(repo_tmp_dir, [_repo_rel(input_path)])\n    policy_path = _write_policy(repo_tmp_dir, policy)\n    out_dir = repo_tmp_dir / \"pack_cli\"\n    build_training_pack(policy_path, out_dir=out_dir)\n    audit_out = repo_tmp_dir / \"audit.json\"\n    runner = CliRunner()\n    result = runner.invoke(",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_release_candidate_includes_training_pack_fields",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_release_candidate_includes_training_pack_fields(tmp_path: Path) -> None:\n    runner = CliRunner()\n    out_json = tmp_path / \"rc.json\"\n    out_md = tmp_path / \"rc.md\"\n    result = runner.invoke(\n        app,\n        [\n            \"release-candidate\",\n            \"--metrics\",\n            \"fixtures/valid_metrics.json\",",
+        "detail": "tests.test_training_pack",
+        "documentation": {}
+    },
+    {
+        "label": "test_no_workspace_or_runner_leakage_in_generated_reports",
+        "kind": 2,
+        "importPath": "tests.test_training_pack",
+        "description": "tests.test_training_pack",
+        "peekOfCode": "def test_no_workspace_or_runner_leakage_in_generated_reports(repo_tmp_dir: Path) -> None:\n    _, report = _build_with_rows(repo_tmp_dir, [_base_row(\"Texte fuite path.\")])\n    audit_out = repo_tmp_dir / \"audit.json\"\n    audit_training_pack(ROOT / report[\"output_dir\"], audit_out)\n    combined = (\n        (ROOT / report[\"artifacts\"][\"report\"]).read_text(encoding=\"utf-8\")\n        + (ROOT / report[\"artifacts\"][\"dataset_card\"]).read_text(encoding=\"utf-8\")\n        + audit_out.read_text(encoding=\"utf-8\")\n    )\n    assert \"/workspace\" not in combined",
+        "detail": "tests.test_training_pack",
         "documentation": {}
     },
     {
@@ -5794,7 +6573,7 @@
         "kind": 2,
         "importPath": "tools.update_agents",
         "description": "tools.update_agents",
-        "peekOfCode": "def sync_status() -> dict:\n    data = json.loads(STATUS_PATH.read_text())\n    for task in data.get(\"tasks\", []):\n        tid = task.get(\"id\")\n        path = TASK_FILES.get(tid)\n        new_status = \"fully_implemented\" if (path and path.exists()) else \"not_implemented\"\n        task[\"status\"] = new_status\n        task[\"evidence\"] = \"Provided\" if new_status == \"fully_implemented\" else \"Pending\"\n    data[\"last_updated\"] = dt.datetime.now(dt.timezone.utc).strftime(\"%Y-%m-%d\")\n    STATUS_PATH.write_text(json.dumps(data, indent=2) + \"\\n\")",
+        "peekOfCode": "def sync_status() -> dict:\n    data = json.loads(STATUS_PATH.read_text())\n    for task in data.get(\"tasks\", []):\n        tid = task.get(\"id\")\n        new_status = \"fully_implemented\" if _task_is_implemented(str(tid)) else \"not_implemented\"\n        task[\"status\"] = new_status\n        task[\"evidence\"] = \"Provided\" if new_status == \"fully_implemented\" else \"Pending\"\n    data[\"last_updated\"] = dt.datetime.now(dt.timezone.utc).strftime(\"%Y-%m-%d\")\n    STATUS_PATH.write_text(json.dumps(data, indent=2) + \"\\n\")\n    return data",
         "detail": "tools.update_agents",
         "documentation": {}
     },

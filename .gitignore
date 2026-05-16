@@ -1,5 +1,4 @@
 .venv/
-<<<<<<< HEAD
 __pycache__/
 **/__pycache__/
 *.py[cod]
@@ -15,5 +14,4 @@ __pycache__/
 src/*.egg-info/
 build/
 dist/
-=======
->>>>>>> f72a85a (,j)
+.vscode/
