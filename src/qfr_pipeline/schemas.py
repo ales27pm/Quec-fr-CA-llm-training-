@@ -1,6 +1,7 @@
-from typing import Any
+from typing import Any, Literal
 import unicodedata
 from pathlib import Path
+import re
 
 import math
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -651,4 +652,126 @@ class TrainingExportManifest(BaseModel):
             raise ValueError("forbidden_uses entries must be non-empty")
         if "fr-ca" not in self.dataset_card.language.casefold() or "québécois" not in self.dataset_card.dialect.casefold():
             raise ValueError("dataset_card language/dialect must identify fr-CA / Québécois French")
+        return self
+
+class ModernCorpusAdapterConfig(BaseModel):
+    name: str
+    base_url: str | None = None
+    query: str = "textuel"
+    rows: int = 20
+    seed_urls: list[str] = Field(default_factory=list)
+    local_globs: list[str] = Field(default_factory=list)
+    raw_file_urls: list[str] = Field(default_factory=list)
+
+    @field_validator("base_url")
+    @classmethod
+    def valid_base_url(cls, value: str | None) -> str | None:
+        if value is None:
+            return value
+        if not value.startswith(("http://", "https://")):
+            raise ValueError("base_url must be HTTP/HTTPS")
+        return value
+
+    @field_validator("seed_urls", "raw_file_urls")
+    @classmethod
+    def valid_urls(cls, value: list[str]) -> list[str]:
+        for url in value:
+            if not url.startswith(("http://", "https://", "file://")):
+                raise ValueError("adapter URLs must be HTTP/HTTPS (or file:// for tests)")
+        return value
+
+    @field_validator("rows")
+    @classmethod
+    def valid_rows(cls, value: int) -> int:
+        if value < 0:
+            raise ValueError("rows must be >= 0")
+        return value
+
+    @model_validator(mode="after")
+    def validate_adapter_fields(self):
+        if self.name == "donnees_quebec_ckan" and not self.base_url:
+            raise ValueError("adapter.base_url is required for donnees_quebec_ckan")
+        if self.name == "assnat_journal_debats" and not self.seed_urls:
+            raise ValueError("adapter.seed_urls must be non-empty for assnat_journal_debats")
+        if self.name == "local_text_bundle" and not self.local_globs:
+            raise ValueError("adapter.local_globs must be non-empty for local_text_bundle")
+        return self
+
+class ModernCorpusSource(BaseModel):
+    source_id: str
+    name: str
+    source_type: Literal["official_html", "ckan_api", "github_dataset", "huggingface_dataset", "local_permissioned_dump", "catalog_only", "evaluation_holdout", "permission_required"]
+    acquisition_status: Literal["active", "catalog_only", "blocked_license", "permission_required", "holdout_only", "local_only"]
+    license_status: Literal["open_compatible", "noncommercial_only", "permission_required", "unclear", "blocked", "holdout_only"]
+    commercial_use: Literal["allowed", "prohibited", "permission_required", "unknown"]
+    allowed_for_training: bool
+    allowed_for_evaluation: bool = True
+    holdout_only: bool = False
+    pii_risk: Literal["low", "medium", "high"] = "low"
+    license_name: str = ""
+    license_url: str | None = None
+    date_min: str | None = None
+    date_max: str | None = None
+    min_delay_seconds: float = 0.0
+    max_documents: int | None = None
+    registers: list[str] = Field(default_factory=list)
+    domains: list[str] = Field(default_factory=list)
+    adapter: ModernCorpusAdapterConfig
+
+    @model_validator(mode="after")
+    def checks(self):
+        if not re.match(r"^[a-z0-9][a-z0-9_\-]*$", self.source_id):
+            raise ValueError("source_id must be stable slug")
+        if self.license_url is not None and (not self.license_url.startswith(("http://", "https://"))):
+            raise ValueError("license_url must be HTTP/HTTPS")
+        if self.max_documents is not None and self.max_documents < 0:
+            raise ValueError("max_documents must be >= 0")
+        if self.acquisition_status == "active" and self.license_status in {"blocked", "unclear"}:
+            raise ValueError("active acquisition cannot have blocked/unknown license")
+        if self.source_type == "evaluation_holdout" or self.acquisition_status == "holdout_only":
+            if self.allowed_for_training:
+                raise ValueError("holdout/evaluation sources cannot be training allowed")
+        if self.min_delay_seconds < 0:
+            raise ValueError("min_delay_seconds >= 0")
+        return self
+
+class ModernCorpusAcquisitionManifest(BaseModel):
+    kind: str
+    schema_version: str
+    primary_language: str
+    sources: list[ModernCorpusSource]
+
+    @field_validator("kind")
+    @classmethod
+    def valid_kind(cls, v: str) -> str:
+        if v != "modern_corpus_acquisition_manifest":
+            raise ValueError("kind must be modern_corpus_acquisition_manifest")
+        return v
+
+    @model_validator(mode="after")
+    def check(self):
+        if self.primary_language != "fr-CA":
+            raise ValueError("primary_language must be fr-CA")
+        ids = [s.source_id for s in self.sources]
+        if len(ids) != len(set(ids)):
+            raise ValueError("source_id must be unique")
+        for source in self.sources:
+            sid = source.source_id
+            if any(x in sid for x in ("alloprof", "oqlf", "usito", "dhfq", "fdlq")):
+                if source.acquisition_status not in {"permission_required", "catalog_only", "local_only"}:
+                    raise ValueError(f"{sid} must be permission_required/catalog_only/local_only")
+            if any(x in sid for x in ("qfrcola", "qfrblimp", "qfrcore", "qfrcort", "cole")):
+                if source.acquisition_status != "holdout_only" or source.source_type != "evaluation_holdout":
+                    raise ValueError(f"{sid} must be evaluation_holdout + holdout_only")
+                if source.allowed_for_training:
+                    raise ValueError(f"{sid} must not be training-allowed")
+            if "assnat" in sid and source.commercial_use == "allowed":
+                raise ValueError("Assemblée nationale cannot be commercial-ready without explicit permission")
+            if source.acquisition_status == "permission_required" and source.source_type != "permission_required":
+                raise ValueError("permission_required acquisition_status requires source_type=permission_required")
+            if source.source_type == "permission_required" and source.acquisition_status == "active":
+                raise ValueError("permission_required source cannot be active without permission config")
+            if source.source_id == "donnees_quebec_ckan_textual":
+                if source.source_type != "ckan_api" or source.acquisition_status != "active":
+                    raise ValueError("donnees_quebec_ckan_textual must be active ckan_api")
         return self

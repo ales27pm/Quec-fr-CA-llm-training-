@@ -22,6 +22,8 @@ from qfr_pipeline.minimal_pairs import generate_minimal_pairs, load_context_mani
 from qfr_pipeline.paths import RELEASE_GATES_PATH, ROOT, repo_relative_path
 from qfr_pipeline.release_report import evaluate_release, ReleaseReport
 from qfr_pipeline.release_candidate import run_release_candidate
+from qfr_pipeline.modern_corpus import acquire_modern_corpus, validate_modern_corpus_manifest
+from qfr_pipeline.corpus_readiness import audit_corpus_readiness
 from qfr_pipeline.training_export import export_training_dataset, validate_training_export_manifest
 from qfr_pipeline.validation import validate_corpus_source_manifest as validate_corpus_source_manifest_model, validate_curation_policy_manifest as validate_curation_policy_manifest_model, validate_dataset_manifest, validate_error_taxonomy_manifest, validate_evaluation_manifest, validate_lp_context_manifest, validate_lp_rule_manifest, validate_release_gates, validate_repository, validate_split_policy_manifest as validate_split_policy_manifest_model
 
@@ -326,10 +328,6 @@ def monitor_lp7_cmd(pre: float = typer.Option(..., "--pre"), post: float = typer
     print(payload)
 
 
-if __name__ == "__main__":
-    app()
-
-
 @app.command("validate-training-export")
 def validate_training_export_cmd(manifest: Path = typer.Option(..., "--manifest")):
     _refresh_dynamic_agents()
@@ -344,3 +342,35 @@ def export_training_dataset_cmd(manifest: Path = typer.Option(..., "--manifest")
     if not report.ok:
         raise typer.Exit(code=1)
     print(f"Training export artifacts generated in {out_dir}")
+
+
+@app.command("validate-modern-corpus")
+def validate_modern_corpus_cmd(manifest: Path = typer.Option(..., "--manifest")):
+    _refresh_dynamic_agents()
+    validate_modern_corpus_manifest(manifest)
+    print("Modern corpus manifest valid")
+
+@app.command("acquire-modern-corpus")
+def acquire_modern_corpus_cmd(manifest: Path = typer.Option(..., "--manifest"), out: Path = typer.Option(..., "--out"), report: Path = typer.Option(..., "--report"), permission_manifest: Path | None = typer.Option(None, "--permission-manifest"), include_noncommercial: bool = typer.Option(False, "--include-noncommercial"), max_documents: int | None = typer.Option(None, "--max-documents")):
+    _refresh_dynamic_agents()
+    payload = acquire_modern_corpus(manifest, out, report, permission_manifest=permission_manifest, include_noncommercial=include_noncommercial, max_documents=max_documents)
+    if not payload.get('ok', False):
+        raise typer.Exit(code=1)
+
+@app.command("audit-corpus-readiness")
+def audit_corpus_readiness_cmd(input: Path = typer.Option(..., "--input"), out: Path = typer.Option(..., "--out"), fail_below: str | None = typer.Option(None, "--fail-below")):
+    _refresh_dynamic_agents()
+    payload = audit_corpus_readiness(input, out)
+    if not payload.get("ok", False):
+        raise typer.Exit(code=1)
+    levels = ["insufficient", "smoke_test", "pilot_lora_candidate", "production_lora_candidate"]
+    level = payload.get("readiness_level", "insufficient")
+    effective_level = "insufficient" if level == "production_blocked" else level
+    if fail_below and fail_below not in levels:
+        raise typer.BadParameter(f"Invalid --fail-below value: '{fail_below}'. Expected one of {levels}")
+    if fail_below and levels.index(effective_level if effective_level in levels else "insufficient") < levels.index(fail_below):
+        raise typer.Exit(code=1)
+
+
+if __name__ == "__main__":
+    app()

@@ -1,0 +1,78 @@
+{
+  "ok": true,
+  "manifest": "manifests/modern_corpus_acquisition_manifest.template.yaml",
+  "sources_total": 11,
+  "sources_active": 2,
+  "sources_acquired": 0,
+  "records_written": 0,
+  "skipped_sources": [
+    {
+      "source_id": "alloprof_permission_required",
+      "reason": "permission_required"
+    },
+    {
+      "source_id": "assnat_journal_debats_modern",
+      "reason": "noncommercial_requires_explicit_flag"
+    },
+    {
+      "source_id": "banq_rights_cleared_local",
+      "reason": "permission_required"
+    },
+    {
+      "source_id": "cole_holdout",
+      "reason": "holdout_only"
+    },
+    {
+      "source_id": "donnees_quebec_ckan_textual",
+      "reason": "dry_run_max_documents_zero"
+    },
+    {
+      "source_id": "fdlq_access_request",
+      "reason": "permission_required"
+    },
+    {
+      "source_id": "oqlf_vitrine_reference_permission_required",
+      "reason": "permission_required"
+    },
+    {
+      "source_id": "qfrblimp_holdout",
+      "reason": "holdout_only"
+    },
+    {
+      "source_id": "qfrcola_holdout",
+      "reason": "holdout_only"
+    },
+    {
+      "source_id": "qfrcore_qfrcort_holdout",
+      "reason": "holdout_only"
+    },
+    {
+      "source_id": "quebec_insurance_rag_corpora",
+      "reason": "catalog_only"
+    }
+  ],
+  "issues": [],
+  "per_source": {
+    "alloprof_permission_required": 0,
+    "assnat_journal_debats_modern": 0,
+    "banq_rights_cleared_local": 0,
+    "cole_holdout": 0,
+    "donnees_quebec_ckan_textual": 0,
+    "fdlq_access_request": 0,
+    "oqlf_vitrine_reference_permission_required": 0,
+    "qfrblimp_holdout": 0,
+    "qfrcola_holdout": 0,
+    "qfrcore_qfrcort_holdout": 0,
+    "quebec_insurance_rag_corpora": 0
+  },
+  "license_summary": {},
+  "domain_summary": {},
+  "register_summary": {},
+  "holdout_registry": [
+    "cole_holdout",
+    "qfrblimp_holdout",
+    "qfrcola_holdout",
+    "qfrcore_qfrcort_holdout"
+  ],
+  "output": "reports/modern_corpus/harvest.jsonl"
+}

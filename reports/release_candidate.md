@@ -1,10 +1,16 @@
 # Release Candidate: PASS
 
-- Deterministic timestamp: `project-status-last-updated:2026-05-15`
+- Deterministic timestamp: `project-status-last-updated:2026-05-16`
 
 ## Stages
 - repository_validation: PASS
 - taxonomy_validation: PASS
+- modern_corpus_manifest_validation: PASS
+  - Artifacts: ['manifests/modern_corpus_acquisition_manifest.template.yaml']
+- modern_corpus_acquisition_dry_run: PASS
+  - Artifacts: ['reports/modern_corpus/dry_run_report.json']
+- corpus_readiness_audit: PASS
+  - Artifacts: ['reports/corpus_readiness/report.json']
 - corpus_source_validation: PASS
 - corpus_ingestion: PASS
   - Artifacts: ['reports/corpus_ingestion/harvest.jsonl', 'reports/corpus_ingestion/report.json']
