@@ -1,0 +1,156 @@
+kind: third_party_sources
+schema_version: "1.0"
+project: Quec-fr-CA-llm-training
+owner: ales27pm
+policy: >-
+  This registry tracks external tools, datasets, corpora, benchmarks, models,
+  institutions, and references. Entries do not imply endorsement, affiliation,
+  permission, or approval. Each entry must be reviewed before public release,
+  commercial training, redistribution, or publication.
+entries:
+  - id: pydantic
+    name: Pydantic
+    category: software_dependency
+    usage: runtime_dependency
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: pyyaml
+    name: PyYAML
+    category: software_dependency
+    usage: runtime_dependency
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: typer
+    name: Typer
+    category: software_dependency
+    usage: cli_runtime_dependency
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: rich
+    name: Rich
+    category: software_dependency
+    usage: cli_output_dependency
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: pytest
+    name: pytest
+    category: software_dependency
+    usage: development_test_dependency
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: ruff
+    name: Ruff
+    category: software_dependency
+    usage: development_lint_dependency
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: unsloth
+    name: Unsloth
+    category: training_framework
+    usage: optional_local_training_stack
+    contact_required: recommended_before_public_model_release
+    license_review_status: review_before_release
+
+  - id: huggingface_transformers
+    name: Hugging Face Transformers
+    category: training_framework
+    usage: optional_training_stack
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: huggingface_datasets
+    name: Hugging Face Datasets
+    category: data_tooling
+    usage: optional_training_stack
+    contact_required: false
+    license_review_status: notice_required
+
+  - id: qwen25_3b
+    name: Qwen/Qwen2.5-3B
+    category: model
+    usage: upstream_clean_base_or_ablation
+    contact_required: recommended_before_public_model_release
+    license_review_status: review_before_release
+
+  - id: dolphin3_qwen25_3b
+    name: dphn/Dolphin3.0-Qwen2.5-3b
+    category: model
+    usage: preferred_continued_instruction_base
+    contact_required: recommended_before_public_model_release
+    license_review_status: review_before_release
+
+  - id: bartowski_dolphin3_gguf
+    name: bartowski/Dolphin3.0-Qwen2.5-3b-GGUF
+    category: model_reference
+    usage: runtime_reference_only_not_training_source
+    contact_required: recommended_before_public_model_release
+    license_review_status: review_before_release
+
+  - id: project_gutenberg
+    name: Project Gutenberg Québec/French-Canadian texts
+    category: corpus_source
+    usage: local_research_candidate_public_domain_oriented
+    contact_required: terms_review_required
+    license_review_status: verify_jurisdiction_and_terms
+
+  - id: qfrcore_qfrcort
+    name: QFrCoRE / QFrCoRT
+    category: benchmark_dataset
+    usage: evaluation_only_holdout
+    contact_required: true
+    license_review_status: verify_dataset_card_before_use
+
+  - id: qfrblimp
+    name: QFrBLiMP
+    category: benchmark_dataset
+    usage: evaluation_only_holdout
+    contact_required: true
+    license_review_status: verify_repository_license_before_use
+
+  - id: cole_public
+    name: COLE-public
+    category: benchmark_dataset
+    usage: evaluation_only_holdout
+    contact_required: true
+    license_review_status: verify_dataset_card_before_use
+
+  - id: alloprof_candidates
+    name: AlloProf-related dataset mirrors
+    category: corpus_candidate
+    usage: catalog_only_permission_review_required
+    contact_required: true
+    license_review_status: verify_original_terms_before_training
+
+  - id: assnat_journal_debats
+    name: Assemblée nationale du Québec Journal des débats
+    category: institutional_corpus_candidate
+    usage: catalog_only_permission_review_required
+    contact_required: true
+    license_review_status: verify_official_terms_before_training
+
+  - id: fdlq_crifuq
+    name: Fonds de données linguistiques du Québec / CRIFUQ
+    category: linguistic_corpus_candidate
+    usage: catalog_only_access_and_terms_review_required
+    contact_required: true
+    license_review_status: access_restricted_review_required
+
+  - id: cereales
+    name: CEREALES Québec accented spontaneous speech corpus
+    category: speech_corpus_candidate
+    usage: catalog_only_speech_or_asr_reference
+    contact_required: true
+    license_review_status: privacy_and_license_review_required
+
+  - id: quebecllm_cpt
+    name: CLaC-Lab/QuebecLLM-CPT
+    category: pipeline_reference
+    usage: pipeline_reference_catalog_only
+    contact_required: true
+    license_review_status: verify_repository_license_before_reuse
